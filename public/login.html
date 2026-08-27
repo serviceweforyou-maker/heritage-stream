@@ -55,6 +55,8 @@
   </div>
 
   <script>
+    const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : 'https://heritage-stream.onrender.com';
+
     document.getElementById('login-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = document.getElementById('email').value;
@@ -64,14 +66,18 @@
       errorMsg.classList.add('hidden');
 
       try {
-        const res = await fetch('/api/admin/login', {
+        const res = await fetch(API_BASE + '/api/admin/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })
         });
 
         if (res.ok) {
-          window.location.href = '/admin.html';
+          const data = await res.json();
+          if (data.token) {
+            localStorage.setItem('hs_admin_token', data.token);
+          }
+          window.location.href = 'admin.html';
         } else {
           const data = await res.json();
           errorMsg.textContent = data.error || "Authentication failed.";
