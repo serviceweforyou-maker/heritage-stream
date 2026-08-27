@@ -1,0 +1,2366 @@
+{
+  "categories": [
+    "Docu-Series",
+    "Audiobooks & Legends",
+    "God Series",
+    "Virtual Tours",
+    "Kids Stories",
+    "Unknown Knowledge"
+  ],
+  "content": [
+    {
+      "id": "hampi",
+      "title": "Hampi: The Lost Empire of Vijaynagara",
+      "tagline": "Stones that Sing, Pillars that Breathe",
+      "description": "Step into the ruins of the world's second-largest medieval city. Explore the architectural marvel of the Vitthala Temple, the musical pillars, and the rise and fall of an empire that guarded the peninsula for over two centuries.",
+      "duration": "45 Mins",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "category": "Docu-Series",
+      "personas": [
+        "History Buffs",
+        "Travel Enthusiasts"
+      ],
+      "imageUrl": "/images/hampi.jpg",
+      "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
+      "content": [
+        {
+          "title": "The Golden Age",
+          "text": "At its peak under Emperor Krishnadevaraya, Hampi was a glittering metropolis of over half a million people, trading diamonds, spices, and silk on its grand streets.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "The Architectural Symphony",
+          "text": "The Vitthala Temple's stone chariot is an iconic symbol of Indian craftsmanship. Most enigmatic are the 56 musical pillars that, when tapped gently, resonate with distinct musical notes.",
+          "visual": "🎼"
+        }
+      ]
+    },
+    {
+      "id": "ganesha",
+      "title": "The Wisdom of Ganesha: The Elephant Head",
+      "tagline": "Symbol of New Beginnings & Intellect",
+      "description": "Discover the captivating story of how Ganesha, the remover of obstacles, received his elephant head. Uncover the philosophical meanings behind his form, representing high intellect, listening ability, and cosmic wisdom.",
+      "duration": "20 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/ganesha.jpg",
+      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "category": "God Series",
+      "personas": [
+        "Kids",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "The Loyal Sentry",
+          "text": "Created by Goddess Parvati from turmeric paste, Ganesha was stationed to guard her chambers. Possessing absolute loyalty, Ganesha refused entry even to Lord Shiva.",
+          "visual": "🛡️"
+        },
+        {
+          "title": "Shiva's Trident",
+          "text": "Unaware that the boy was his son, Shiva engaged in battle. In a fit of divine rage, Shiva severed Ganesha's head with his Trishula.",
+          "visual": "🔱"
+        }
+      ]
+    },
+    {
+      "id": "dashavatara",
+      "title": "Dashavatara: Evolution of the Cosmos",
+      "tagline": "The Ten Incarnations of Lord Vishnu",
+      "description": "Travel through the ten divine descents (Avatars) of Lord Vishnu, starting from aquatic life to humanity. Discover how this sequence mirrors geological evolutionary timelines and human societal development.",
+      "duration": "40 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "isGodSeries": true,
+      "imageUrl": "/images/vishnu.jpg",
+      "videoUrl": "https://www.youtube.com/embed/9B8h48Z6_b8",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers",
+        "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "The Aquatic & Amphibian Age",
+          "text": "First is Matsya (the Fish) saving life from the Great Deluge, followed by Kurma (the Tortoise) supporting the churn of the ocean.",
+          "visual": "🐟"
+        }
+      ]
+    },
+    {
+      "id": "ajanta",
+      "title": "Ajanta & Ellora: Sculpting the Divine",
+      "tagline": "Monasteries Carved out of Living Stone",
+      "description": "Journey deep into the Sahyadri hills, where ancient monks carved 30 rock-cut cave monuments from a sheer cliff. Uncover the Jataka tales painted with pigments that have survived two millennia.",
+      "duration": "30 Mins",
+      "rating": "9.5 ★",
+      "year": "2025",
+      "isPremium": false,
+      "category": "Docu-Series",
+      "personas": [
+        "Travel Enthusiasts",
+        "History Buffs"
+      ],
+      "imageUrl": "/images/ajanta.jpg",
+      "videoUrl": "https://www.youtube.com/embed/3n4-HxIXJQI",
+      "content": [
+        {
+          "title": "Hidden for Centuries",
+          "text": "Discovered accidentally by a British officer in 1819 while hunting tigers, the Ajanta caves are a UNESCO World Heritage site representing Buddhist religious art.",
+          "visual": "⛰️"
+        }
+      ]
+    },
+    {
+      "id": "chola",
+      "title": "Chola Dynasty: Masters of the Oceans",
+      "tagline": "The Maritime Empire and Living Temples",
+      "description": "How did a dynasty in southern India establish a maritime trade empire stretching to Southeast Asia? Discover the engineering behind Brihadisvara Temple, the Chola Navy, and their bronze casting secrets.",
+      "duration": "50 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "category": "Docu-Series",
+      "personas": [
+        "History Buffs"
+      ],
+      "imageUrl": "/images/chola.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Ys0c3ZxJOsM",
+      "content": [
+        {
+          "title": "The Super Navy",
+          "text": "Rajaraja Chola I and his son Rajendra Chola I built a formidable navy, capturing parts of Sri Lanka, the Maldives, and dominating trade with the Srivijaya Empire.",
+          "visual": "⛵"
+        }
+      ]
+    },
+    {
+      "id": "meenakshi",
+      "title": "Meenakshi Temple: The Tower of Colors",
+      "tagline": "Spire of the Divine Mother",
+      "description": "Tour the breathtaking halls of the Meenakshi Amman Temple in Madurai. Learn the engineering behind its 14 towering gopurams decorated with thousands of colorful mythological figures.",
+      "duration": "25 Mins",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "category": "Virtual Tours",
+      "personas": [
+        "Travel Enthusiasts"
+      ],
+      "imageUrl": "/images/meenakshi.jpg",
+      "videoUrl": "https://www.youtube.com/embed/YBJ-4-MBVVY",
+      "content": [
+        {
+          "title": "Introduction to Madurai",
+          "text": "Meenakshi Temple is the heart of the ancient city of Madurai, built in Dravidian architectural style with massive stone towers.",
+          "visual": "🛕"
+        }
+      ]
+    },
+    {
+      "id": "shivaji",
+      "title": "Shivaji Maharaj: Father of Indian Navy",
+      "tagline": "Ruler of Forts & Oceans",
+      "description": "How a visionary leader pioneered guerrilla warfare tactics, built invincible sea forts like Sindhudurg, and established a formidable naval force along the Konkan coast.",
+      "duration": "35 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "category": "Docu-Series",
+      "personas": [
+        "History Buffs"
+      ],
+      "imageUrl": "/images/shivaji.jpg",
+      "videoUrl": "https://www.youtube.com/embed/GqzNAkOG6mg",
+      "content": [
+        {
+          "title": "The Naval Genesis",
+          "text": "Shivaji realized that a strong navy was essential to defend the coast from foreign merchants. He built ships out of local teak wood and established naval yards.",
+          "visual": "⛵"
+        }
+      ]
+    },
+    {
+      "id": "iron_pillar",
+      "title": "Mystery of the Rustless Iron Pillar",
+      "tagline": "Ancient Metallurgical Marvel of Delhi",
+      "description": "Standing tall in the Qutb complex for over 1,600 years, this solid iron pillar resists corrosion despite open rains and extreme heat. Uncover the secret compound created by ancient chemists.",
+      "duration": "18 Mins",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs",
+        "Travel Enthusiasts"
+      ],
+      "imageUrl": "/images/iron_pillar.jpg",
+      "videoUrl": "https://www.youtube.com/embed/zH8wS4tAfsY",
+      "content": [
+        {
+          "title": "A Pillar of Pure Iron",
+          "text": "Analysis shows the pillar contains high levels of phosphorus and low sulfur, which formed a thin protective crystalline layer over the metal.",
+          "visual": "⚙️"
+        }
+      ]
+    },
+    {
+      "id": "sundials",
+      "title": "Konark's Wheels: Telling Time by Shadows",
+      "tagline": "The Astronomical Calculations of Sun Temple",
+      "description": "How did 13th-century Odia engineers carve stone wheels that calculate time down to the minute using shadows? Learn the mathematical secrets behind the chariot of Konark.",
+      "duration": "22 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "category": "Unknown Knowledge",
+      "personas": [
+        "Travel Enthusiasts",
+        "History Buffs"
+      ],
+      "imageUrl": "/images/sundials.jpg",
+      "videoUrl": "https://www.youtube.com/embed/yY6qP7s9YJ8",
+      "content": [
+        {
+          "title": "The Solar Clock",
+          "text": "The temple features 24 wheels representing the hours of the day. The spoke placement tells time based on the sun's exact declination angle.",
+          "visual": "☀️"
+        }
+      ]
+    },
+    {
+      "id": "shiva",
+      "title": "Who is Lord Shiva: The Cosmic Dancer",
+      "narrator": "Voice of Heritage: Mahesh",
+      "duration": "14:10",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/shiva.jpg",
+      "desc": "Delve into the mythology and philosophy of Mahadeva, the destroyer and transformer of the Hindu trinity. Understand the significance of the crescent moon, his third eye, and the Tandava dance.",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "personas": [
+        "Spiritual Seekers"
+      ],
+      "category": "Audiobooks & Legends"
+    },
+    {
+      "id": "vishnu",
+      "title": "Who is Lord Vishnu: The Preserver",
+      "narrator": "Voice of Heritage: Hari",
+      "duration": "16:45",
+      "isPremium": true,
+      "isGodSeries": true,
+      "imageUrl": "/images/vishnu.jpg",
+      "desc": "Journey to the celestial ocean of Ksheera Sagara, where Lord Vishnu rests on the serpent Shesha, acting as the ultimate preserver of cosmic order, equilibrium, and righteousness.",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "personas": [
+        "Spiritual Seekers"
+      ],
+      "category": "Audiobooks & Legends"
+    },
+    {
+      "id": "dharma",
+      "title": "Dharma & Sanatana Dharma: The Eternal Path",
+      "narrator": "Voice of Philosophy: Acharya",
+      "duration": "11:20",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/dharma.jpg",
+      "desc": "What does Dharma truly mean? Demystify Sanatana Dharma, the cosmic framework of moral duties, truth, and universal laws that sustain order in the human experience.",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "personas": [
+        "Spiritual Seekers"
+      ],
+      "category": "Audiobooks & Legends"
+    },
+    {
+      "id": "lakshmibai",
+      "title": "Rani Lakshmibai: The Warrior Queen",
+      "narrator": "Voice of Heritage: Aditi",
+      "duration": "12:45",
+      "isPremium": false,
+      "imageUrl": "/images/lakshmibai.jpg",
+      "desc": "Relive the legendary tale of the Queen of Jhansi, who rode into battle with her child strapped to her back, refusing to yield her kingdom to the British empire during the rebellion of 1857.",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "personas": [
+        "History Buffs",
+        "Kids"
+      ],
+      "category": "Audiobooks & Legends"
+    },
+    {
+      "id": "ashoka",
+      "title": "The Conversion of Emperor Ashoka",
+      "narrator": "Voice of Heritage: Vikram",
+      "duration": "18:20",
+      "isPremium": true,
+      "imageUrl": "/images/ashoka.jpg",
+      "desc": "How did a ruthless conqueror who bathed in blood at the Battle of Kalinga transform into a beloved messenger of peace and non-violence? Listen to the epic transformation of Ashoka the Great.",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "personas": [
+        "History Buffs"
+      ],
+      "category": "Audiobooks & Legends"
+    },
+    {
+      "id": "krishna",
+      "title": "Lord Krishna: The Divine Flutist",
+      "narrator": "Voice of Heritage: Mahesh",
+      "duration": "18:15",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/krishna_cover.jpg",
+      "desc": "Explore the life of the eighth avatar of Lord Vishnu, from his childhood escapades in Gokul to the recitation of the Bhagavad Gita on the battlefield of Kurukshetra.",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "personas": [
+        "Kids",
+        "Spiritual Seekers"
+      ],
+      "category": "God Series"
+    },
+    {
+      "id": "ramayana",
+      "title": "The Epic of Ramayana: Journey of Rama",
+      "narrator": "Voice of Philosophy: Acharya",
+      "duration": "22:40",
+      "isPremium": true,
+      "imageUrl": "/images/ramayana_science.jpg",
+      "desc": "Delve into the ancient Sanskrit epic charting the exile, battles, and virtues of Prince Rama. Understand the moral framework of Ramayana and its impact on Southeast Asian architecture.",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "personas": [
+        "Spiritual Seekers",
+        "Kids"
+      ],
+      "category": "Audiobooks & Legends"
+    },
+    {
+      "id": "birbal_crows",
+      "title": "Birbal's Wit: The Count of Crows",
+      "narrator": "Voice of Tales: Grandma",
+      "duration": "08:15",
+      "isPremium": false,
+      "imageUrl": "/images/birbal.jpg",
+      "desc": "Enjoy the humorous kids tale of Akbar and Birbal, where Birbal solves the emperor's tricky riddle about how many crows live in the royal capital using clever mathematical reasoning.",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "personas": [
+        "Kids"
+      ],
+      "category": "Kids Stories"
+    },
+    {
+      "id": "tenali_riddles",
+      "title": "Tenali Raman and the Three Riddles",
+      "narrator": "Voice of Tales: Grandma",
+      "duration": "10:40",
+      "isPremium": false,
+      "imageUrl": "/images/tenali.jpg",
+      "desc": "Delight in the sharp intellect of court poet Tenali Raman. Listen to how he helps King Krishnadevaraya outwit a rival kingdom's philosophical challenges.",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "personas": [
+        "Kids"
+      ],
+      "category": "Kids Stories"
+    },
+    {
+      "id": "bhagavad_gita",
+      "title": "Bhagavad Gita: Core Teachings for Life",
+      "narrator": "Voice of Philosophy: Acharya",
+      "duration": "25:40",
+      "isPremium": false,
+      "imageUrl": "/images/krishna_cover.jpg",
+      "desc": "Listen to the translation of the 18 chapters of the Bhagavad Gita spoken by Lord Krishna to Arjuna. Explore concepts of Dharma, Nishkama Karma (selfless action), and spiritual equilibrium.",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "personas": [
+        "Spiritual Seekers",
+        "History Buffs"
+      ],
+      "category": "Audiobooks & Legends"
+    },
+    {
+      "id": "ramayana_science",
+      "title": "Scientific Mysteries of Ramayana",
+      "tagline": "Bridges, Astronomy & Botany",
+      "description": "Explore the astronomical dating of Ramayana matching planetary configurations, the geological research surrounding Rama's Bridge (Ram Setu), and the botany of Sanjeevani herbs.",
+      "duration": "30 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs",
+        "Travel Enthusiasts"
+      ],
+      "imageUrl": "/images/ramayana_science.jpg",
+      "videoUrl": "https://www.youtube.com/embed/9B8h48Z6_b8",
+      "content": [
+        {
+          "title": "Ram Setu Bridge",
+          "text": "Satellite imagery reveals a chain of limestone shoals between India and Sri Lanka that carbon dating places matching the epic's timeline.",
+          "visual": "🌉"
+        }
+      ]
+    },
+    {
+      "id": "ai_lonar_1787655517188",
+      "title": "Lonar Lake: The Meteor Impact Crater",
+      "tagline": "India's Ancient Space Crater",
+      "description": "Formed over 50,000 years ago by a hyper-velocity meteor impact, Lonar Lake is a unique saline and alkaline water body surrounded by temple ruins and dense foliage.",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "Travel & Architecture",
+        "History Buffs"
+      ],
+      "imageUrl": "/images/warrior_cover.jpg",
+      "videoUrl": "https://www.youtube.com/embed/kYJqD96lX-I",
+      "content": [
+        {
+          "title": "Out of this Space",
+          "text": "The crater is the only known impact crater in basalt rock on Earth. The water is highly alkaline, housing unique microorganisms found nowhere else.",
+          "visual": "☄️"
+        },
+        {
+          "title": "Ancient Temples",
+          "text": "The perimeter of the lake features ruins of 800-year-old temples, including the Daitya Sudan temple dedicated to Lord Vishnu, built with basalt carvings.",
+          "visual": "🛕"
+        }
+      ],
+      "isPremium": true,
+      "year": "2026",
+      "rating": "9.8 ★",
+      "duration": "20 Mins"
+    },
+    {
+      "id": "ai_lepakshi_bull_1787656110862",
+      "title": "The Giant Nandi of Lepakshi",
+      "tagline": "India's Largest Monolithic Bull",
+      "description": "Located just a mile from the Lepakshi temple, this colossal Nandi is carved from a single granite stone block. It stands as a peak of Vijayanagara stone craftsmanship.",
+      "category": "Video Series",
+      "personas": [
+        "Travel & Architecture",
+        "Spiritual Seekers"
+      ],
+      "imageUrl": "/images/ellora_kailasa.jpg",
+      "videoUrl": "https://www.youtube.com/embed/H68jZ2Gv19w",
+      "content": [
+        {
+          "title": "Monolithic Wonder",
+          "text": "Measuring 15 feet high and 27 feet long, it is the largest monolithic statue of Nandi (Shiva's mount) in India. Its proportions are perfectly balanced.",
+          "visual": "🐂"
+        }
+      ],
+      "isPremium": false,
+      "year": "2026",
+      "rating": "9.8 ★",
+      "duration": "20 Mins"
+    },
+    {
+      "id": "ai_lepakshi_1787657654821",
+      "title": "Lepakshi: The Mystery of the Hanging Pillar",
+      "tagline": "The Floating Stone of Andhra Pradesh",
+      "description": "Explore the Veerabhadra Temple in Lepakshi, featuring a massive granite pillar that does not touch the temple floor. Discover the engineering theories behind this gravity-defying medieval marvel.",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs",
+        "Travel & Architecture"
+      ],
+      "imageUrl": "/images/ellora_kailasa.jpg",
+      "videoUrl": "https://www.youtube.com/embed/H68jZ2Gv19w",
+      "content": [
+        {
+          "title": "The Floating Pillar",
+          "text": "Out of 70 stone pillars in the temple hall, one hangs suspended in the air. Visitors can pass a thin sheet of paper or cloth completely under the pillar's base, proving it doesn't rest on the floor.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Architectural Genius",
+          "text": "Built in the 16th century by brothers Viranna and Virupanna under the Vijayanagara Empire, the hanging pillar functions as a structural balance point, distributing weight across other columns.",
+          "visual": "📐"
+        }
+      ],
+      "isPremium": false,
+      "year": "2026",
+      "rating": "9.8 ★",
+      "duration": "20 Mins"
+    },
+    {
+      "id": "ai_lonar_1787660035586",
+      "title": "Lonar Lake: The Meteor Impact Crater",
+      "tagline": "India's Ancient Space Crater",
+      "description": "Formed over 50,000 years ago by a hyper-velocity meteor impact, Lonar Lake is a unique saline and alkaline water body surrounded by temple ruins and dense foliage.",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "Travel & Architecture",
+        "History Buffs"
+      ],
+      "imageUrl": "/images/warrior_cover.jpg",
+      "videoUrl": "https://www.youtube.com/embed/kYJqD96lX-I",
+      "content": [
+        {
+          "title": "Out of this Space",
+          "text": "The crater is the only known impact crater in basalt rock on Earth. The water is highly alkaline, housing unique microorganisms found nowhere else.",
+          "visual": "☄️"
+        },
+        {
+          "title": "Ancient Temples",
+          "text": "The perimeter of the lake features ruins of 800-year-old temples, including the Daitya Sudan temple dedicated to Lord Vishnu, built with basalt carvings.",
+          "visual": "🛕"
+        }
+      ],
+      "isPremium": false,
+      "year": "2026",
+      "rating": "9.8 ★",
+      "duration": "20 Mins"
+    },
+    {
+      "id": "eb_god_series_1",
+      "title": "Hanuman's Leap: Eating the Sun",
+      "tagline": "A Child's Cosmic Adventure",
+      "description": "Follow the young monkey god Hanuman as he mistakes the rising sun for a ripe mango, showcasing divine strength and cosmic intervention.",
+      "duration": "10:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/hanuman_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_2",
+      "title": "Ganga: The Descent of the River",
+      "tagline": "From Celestial Heights to Earth",
+      "description": "Discover how King Bhagiratha's intense penance brought the holy river Ganga down to Earth, and how Shiva caught her in his matted locks.",
+      "duration": "11:07",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/shiva.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_3",
+      "title": "Kaliya Daman: Krishna's Serpent Dance",
+      "tagline": "Taming the Poisonous Yamuna",
+      "description": "Relive the dramatic tale of young Krishna dancing on the hoods of the multi-headed serpent Kaliya to purify the Yamuna river.",
+      "duration": "12:14",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/krishna_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_4",
+      "title": "Samudra Manthan: Churning of the Ocean",
+      "tagline": "The Battle for the Nectar of Immortality",
+      "description": "How the Devas and Asuras came together to churn the ocean of milk using Mount Mandara, yielding nectar, poison, and divine treasures.",
+      "duration": "13:21",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/vishnu.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_5",
+      "title": "Hanuman and the Sanjeevani Mountain",
+      "tagline": "Saving Lakshmana on the Battlefield",
+      "description": "The story of Hanuman flying to the Himalayas to retrieve the life-saving Sanjeevani herb, bringing the entire mountain back with him.",
+      "duration": "14:28",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/hanuman_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_6",
+      "title": "Shiva Tandava: The Cosmic Dance",
+      "tagline": "Creation, Preservation & Destruction",
+      "description": "An exploration of the divine dance of Lord Shiva, detailing the cosmic rhythm of existence represented by Nataraja's form.",
+      "duration": "15:35",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/shiva.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_7",
+      "title": "Ganesha and the Moon's Curse",
+      "tagline": "The Lesson of Pride and Humility",
+      "description": "How Ganesha cursed the moon for laughing at him, explaining why the moon waxes and wanes and why we do not look at it on Ganesh Chaturthi.",
+      "duration": "16:42",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/ganesha.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_8",
+      "title": "The Story of Bhakta Prahlada",
+      "tagline": "Devotion that Crushed a Tyrant",
+      "description": "The tale of Prahlada's unwavering devotion to Lord Vishnu, leading to the descent of the half-man, half-lion Narasimha avatar.",
+      "duration": "17:49",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/vishnu.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_9",
+      "title": "The Curse of Gandhari",
+      "tagline": "Fate of the Yadava Clan",
+      "description": "A poignant episode from Mahabharata where Queen Gandhari's grief and anger shape the fate of Lord Krishna and his dynasty.",
+      "duration": "18:56",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/bhangarh_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_10",
+      "title": "Markandeya: Conquering Death",
+      "tagline": "The Sixteen-Year-Old Sage",
+      "description": "How the young sage Markandeya clung to the Shiva Linga, leading Lord Shiva to defeat Yama, the God of Death, to protect his devotee.",
+      "duration": "19:03",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/shiva.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_11",
+      "title": "Savitri and Satyavan",
+      "tagline": "Outwitting the God of Death",
+      "description": "The legendary tale of princess Savitri who followed Yama into the afterlife to win back her husband Satyavan's soul through wisdom.",
+      "duration": "20:10",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/queen_abbakka.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_12",
+      "title": "Durga and the Slaying of Mahishasura",
+      "tagline": "Victory of Divine Shakti",
+      "description": "How the combined energies of the gods created Goddess Durga to defeat the shape-shifting buffalo demon Mahishasura.",
+      "duration": "21:17",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/dharma.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_13",
+      "title": "The Marriage of Shiva and Parvati",
+      "tagline": "Union of Purusha and Prakriti",
+      "description": "Discover the beautiful union of the ascetic Shiva and the dedicated Parvati, symbolizing the balance of consciousness and nature.",
+      "duration": "22:24",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/shiva.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_14",
+      "title": "Kartikeya and the Peacock Mount",
+      "tagline": "The Commander of the Divine Army",
+      "description": "Follow the adventures of Shiva's warrior son Kartikeya, his weapon Vel, and how he chose the peacock as his vehicle.",
+      "duration": "23:31",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/shiva.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_15",
+      "title": "Dhruva: The Pole Star",
+      "tagline": "A Child's Unwavering Meditation",
+      "description": "How five-year-old Prince Dhruva achieved absolute focus, earning a permanent place in the northern sky as the guiding Pole Star.",
+      "duration": "24:38",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/vishnu.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_16",
+      "title": "Matsya: The First Incarnation",
+      "tagline": "The Great Flood and the Golden Horn",
+      "description": "How Lord Vishnu descended as a giant fish to guide King Manu's boat through the primeval deluge, saving Earth's species.",
+      "duration": "10:45",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/vishnu.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_17",
+      "title": "Kurma: The Cosmic Tortoise",
+      "tagline": "Supporting the Foundation of Creation",
+      "description": "Explore the second avatar of Vishnu, where he stabilized the cosmic churning rod on his back to keep the universe from collapsing.",
+      "duration": "11:52",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/vishnu.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_18",
+      "title": "Varaha: Rescuing Goddess Earth",
+      "tagline": "Lifting the World from Deep Waters",
+      "description": "How Vishnu incarnated as a giant boar to dive into the cosmic ocean and rescue Bhudevi (Earth) from the demon Hiranyaksha.",
+      "duration": "12:59",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/vishnu.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_19",
+      "title": "Vamana: Three Paces of Land",
+      "tagline": "Taming the Pride of King Bali",
+      "description": "The story of the dwarf Brahmin boy who stepped across earth, sky, and King Bali's head to restore cosmic equilibrium.",
+      "duration": "13:06",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/vishnu.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_20",
+      "title": "Parashurama: The Warrior Sage",
+      "tagline": "Axe of Justice and Cleansing",
+      "description": "Follow the story of the sixth avatar of Vishnu, who wielded a divine battle-axe to defeat corrupt rulers and restore peace.",
+      "duration": "14:13",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/vishnu.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_21",
+      "title": "Sudama's Gift: A Handful of Flaked Rice",
+      "tagline": "The Value of True Friendship",
+      "description": "The heartwarming story of poor Sudama visiting his royal friend Lord Krishna and receiving cosmic abundance in return.",
+      "duration": "15:20",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/krishna_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_22",
+      "title": "The Flute of Vrindavan",
+      "tagline": "Melody that Enchanted Nature",
+      "description": "How Krishna's magical flute music charmed cows, birds, rivers, and the hearts of the gopis in the mystical forests.",
+      "duration": "16:27",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/krishna_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_23",
+      "title": "Ganesha and Karthikeya's Race",
+      "tagline": "Circumnavigating the Universe",
+      "description": "A witty tale of a race around the cosmos, showing Ganesha's wisdom in declaring his parents as his entire universe.",
+      "duration": "17:34",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/ganesha.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_24",
+      "title": "The Syamantaka Gem Mystery",
+      "tagline": "Krishna and the Lion King",
+      "description": "Follow the mystery of a missing solar jewel, leading Krishna to battle the bear king Jambavan in a deep mountain cave.",
+      "duration": "18:41",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/krishna_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_25",
+      "title": "Kumbhakarna's Giant Sleep",
+      "tagline": "The Sleepy Giant of Lanka",
+      "description": "Discover the tragic giant Kumbhakarna, his accidental boon of deep sleep, and his loyalty to his brother Ravana.",
+      "duration": "19:48",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/vishnu.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_god_series_26",
+      "title": "The Birth of the Holy Tulsi",
+      "tagline": "The Sacred plant of Devotion",
+      "description": "Uncover the legend of Vrinda, her deep devotion, and how she transformed into the sacred Tulsi plant found in Indian courtyards.",
+      "duration": "20:55",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/vishnu.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_1",
+      "title": "Panchatantra: The Monkey and the Crocodile",
+      "tagline": "The Battle of Wits",
+      "description": "The classic fable of a clever monkey who saves himself from a greedy crocodile by claiming his heart is kept safe on a jamun tree.",
+      "duration": "10:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/panchatantra_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_2",
+      "title": "Akbar & Birbal: The Well Water",
+      "tagline": "A Lesson in Clever Contracts",
+      "description": "Birbal solves a hilarious dispute where a man sells his well but charges the buyer for using the water inside it.",
+      "duration": "11:07",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/birbal.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_3",
+      "title": "Tenali Raman: The Golden Mangoes",
+      "tagline": "Outsmarting Greedy Priests",
+      "description": "How Tenali Raman used hot iron rods to expose the greed of court priests who demanded gold mangoes from the King.",
+      "duration": "12:14",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/tenali.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_4",
+      "title": "Jataka Tales: The Golden Swan",
+      "tagline": "The Danger of Greed",
+      "description": "A mother plucks all the gold feathers of a magical swan at once, only to see them turn into ordinary white feathers.",
+      "duration": "13:21",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/jataka_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_5",
+      "title": "Panchatantra: The Talkative Tortoise",
+      "tagline": "Silence is Golden",
+      "description": "A tortoise falls to his doom because he could not resist opening his mouth to speak while flying on a stick carried by geese.",
+      "duration": "14:28",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/panchatantra_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_6",
+      "title": "Akbar & Birbal: The Count of Crows",
+      "tagline": "Estimating with Confidence",
+      "description": "Birbal counts the crows in Delhi instantly by using a clever psychological trick that Akbar could not disprove.",
+      "duration": "15:35",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/birbal.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_7",
+      "title": "Tenali Raman and the Magic Wells",
+      "tagline": "Finding the Missing Treasure",
+      "description": "Tenali outwits corrupt officers who claimed to have built public wells but only pocketed the royal treasury funds.",
+      "duration": "16:42",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/tenali.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_8",
+      "title": "Jataka Tales: The Brave Little Bowyer",
+      "tagline": "Skill Over Stature",
+      "description": "How a tiny archer used his supreme archery skills and intelligence to serve the king and defeat giant threats.",
+      "duration": "17:49",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/jataka_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_9",
+      "title": "Panchatantra: The Blue Jackal",
+      "tagline": "The False King of the Forest",
+      "description": "A jackal falls into a vat of blue dye and pretends to be a divine king sent to rule the forest, until he howls at night.",
+      "duration": "18:56",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/panchatantra_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_10",
+      "title": "Akbar & Birbal: The Intelligent Merchant",
+      "tagline": "Exposing the Royal Thief",
+      "description": "Birbal uses sticks of equal length that supposedly grow longer in a thief's hand to catch a servant who stole a diamond.",
+      "duration": "19:03",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/birbal.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_11",
+      "title": "Tenali Raman and the Three Riddles",
+      "tagline": "Defeating the Rival Scholar",
+      "description": "How Tenali Raman defeated a proud visiting philosopher using a simple bundle of straw and a clever play on words.",
+      "duration": "20:10",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/tenali.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_12",
+      "title": "Jataka Tales: The Merchant of Seri",
+      "tagline": "Honesty and Greed",
+      "description": "A tale of two merchants, a golden plate, and how greed lost one merchant a fortune while honesty rewarded the other.",
+      "duration": "21:17",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/jataka_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_13",
+      "title": "Panchatantra: The Loyal Mongoose",
+      "tagline": "Act in Haste, Repent at Leisure",
+      "description": "A tragic misunderstanding where a mother kills a loyal mongoose, believing it harmed her baby, only to find a dead cobra.",
+      "duration": "22:24",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/panchatantra_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_14",
+      "title": "Akbar & Birbal: Painting the Truth",
+      "tagline": "The Artist's Challenge",
+      "description": "How Birbal helped a poor painter get paid by a greedy rich man who kept changing his face to avoid paying for portraits.",
+      "duration": "23:31",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/birbal.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_15",
+      "title": "Tenali Raman and the Red Peacock",
+      "tagline": "Exposing Court Swindlers",
+      "description": "A greedy minister tries to sell a painted red peacock to the king. Tenali exposes the fraud by bringing the rain.",
+      "duration": "24:38",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/tenali.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_16",
+      "title": "Jataka Tales: The Monkey King's Bridge",
+      "tagline": "Leading by Selfless Sacrifice",
+      "description": "How a noble monkey king stretched his own body to form a bridge, saving his entire troop from attacking archers.",
+      "duration": "10:45",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/jataka_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_17",
+      "title": "Panchatantra: The Four Friends",
+      "tagline": "Strength in Unity",
+      "description": "Follow a deer, a crow, a tortoise, and a mouse as they coordinate their unique skills to escape a clever hunter's net.",
+      "duration": "11:52",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/panchatantra_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_18",
+      "title": "Akbar & Birbal: The Hot Khichdi",
+      "tagline": "Warmth of Hope",
+      "description": "How Birbal used a tall pole and a distant fire to show Akbar that a poor man could survive a freezing night in a lake on hope.",
+      "duration": "12:59",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/birbal.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_19",
+      "title": "Tenali Raman: The Elephant's Entry",
+      "tagline": "Solving the Wall Problem",
+      "description": "How Tenali Raman helped a poor citizen keep his house when a wealthy neighbor demanded a wall be broken for an elephant.",
+      "duration": "13:06",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/tenali.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_20",
+      "title": "Jataka Tales: The Elephant and the Dog",
+      "tagline": "The Bond of True Friendship",
+      "description": "A beautiful story of a royal elephant who fell sick from grief when his playmate, a stray dog, was taken away.",
+      "duration": "14:13",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/jataka_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_21",
+      "title": "Panchatantra: The Lion and the Clever Rabbit",
+      "tagline": "Brain Over Brawn",
+      "description": "How a small rabbit tricked a tyrannical lion into jumping into a deep well by showing him his own reflection.",
+      "duration": "15:20",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/panchatantra_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_22",
+      "title": "Akbar & Birbal: The Crying Tree",
+      "tagline": "Nature as a Witness",
+      "description": "Birbal solves a boundary dispute by calling a tree to stand witness in the royal court, catching the liar red-handed.",
+      "duration": "16:27",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/birbal.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_23",
+      "title": "Tenali Raman and the Goddess Kali",
+      "tagline": "The Boon of Laughter",
+      "description": "How Tenali Raman made Goddess Kali laugh by asking a funny question about her many hands, earning the title Vikatakavi.",
+      "duration": "17:34",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/tenali.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_24",
+      "title": "Jataka Tales: The Golden Deer",
+      "tagline": "Mercy Over Gold",
+      "description": "A king spares a beautiful golden stag who rescued a drowning man, learning a lesson in compassion and trust.",
+      "duration": "18:41",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/jataka_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_25",
+      "title": "Panchatantra: The Heron and the Crab",
+      "tagline": "The Deceiver Deceived",
+      "description": "A greedy heron pretends to rescue fish from a drought only to eat them, until an intelligent crab clamps his neck.",
+      "duration": "19:48",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/panchatantra_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_26",
+      "title": "Akbar & Birbal: The Heaviest Weight",
+      "tagline": "A Riddle of Truth",
+      "description": "Birbal answers Akbar's deep philosophical question about the heaviest weight on earth—revealing it to be a mother's love.",
+      "duration": "20:55",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/birbal.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_kids_stories_27",
+      "title": "Tenali Raman: The Guard's Share",
+      "tagline": "Lashing the Greedy Guards",
+      "description": "Tenali promises greedy palace guards a share of his reward from the king, which turns out to be fifty lashes.",
+      "duration": "21:02",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/tenali.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_1",
+      "title": "Chhatrapati Shivaji Maharaj: The Great Escape",
+      "tagline": "Outwitting Aurangzeb in Agra",
+      "description": "The thrilling escape of the Maratha founder from Agra in fruit baskets, establishing his legendary status across India.",
+      "duration": "10:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/shivaji.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_2",
+      "title": "Raja Raja Chola: Master of the Seas",
+      "tagline": "The Maritime Empire of South India",
+      "description": "Explore the naval expeditions of the Chola king, his trade routes with China, and the building of Brihadeeswarar Temple.",
+      "duration": "11:07",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/chola.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_3",
+      "title": "Rani Abbakka: The Fearless Queen",
+      "tagline": "India's First Female Freedom Fighter",
+      "description": "The untold legend of the Queen of Ullal who defeated the mighty Portuguese navy repeatedly using fire arrows.",
+      "duration": "12:14",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/queen_abbakka.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_4",
+      "title": "Samudragupta: The Napoleon of India",
+      "tagline": "The Poet King of the Gupta Empire",
+      "description": "Discover the military genius and cultural patron who ushered in the Golden Age of India, commemorated on gold coins.",
+      "duration": "13:21",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/maurya_dynasty.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_5",
+      "title": "Maharana Pratap and the Legend of Chetak",
+      "tagline": "Loyalty in the Battle of Haldighati",
+      "description": "The story of the patriotic ruler of Mewar and his loyal horse Chetak, who leaped across a stream to save his master.",
+      "duration": "14:28",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/warrior_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_6",
+      "title": "Chandragupta Maurya and Chanakya's Path",
+      "tagline": "Founding the Greatest Empire",
+      "description": "How a young shepherd boy under the guidance of the mastermind Chanakya united the subcontinent and defeated Seleucus.",
+      "duration": "15:35",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/maurya_dynasty.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_7",
+      "title": "Ahilyabai Holkar: The Queen of Temples",
+      "tagline": "Rebuilding India's Spiritual Heritage",
+      "description": "Follow the Holkar queen who rebuilt Somnath, Kashi Vishwanath, and established law and prosperity across central India.",
+      "duration": "16:42",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/queen_abbakka.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_8",
+      "title": "Krishnadevaraya: Golden Age of Vijayanagara",
+      "tagline": "The Emperor of Literature and Art",
+      "description": "The reign of the great southern emperor, his military campaigns, and how he transformed Hampi into a city of diamonds.",
+      "duration": "17:49",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/hampi.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_9",
+      "title": "Lachit Borphukan: Battle of Saraighat",
+      "tagline": "The Commander who Saved Assam",
+      "description": "How the Ahom general defeated the mighty Mughal army on the Brahmaputra river using clever naval guerrilla tactics.",
+      "duration": "18:56",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/shivaji.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_10",
+      "title": "Baji Rao I: The Unbeaten Peshwa",
+      "tagline": "The Blitzkrieg Cavalry Commander",
+      "description": "The story of the military general who fought 41 major battles and remained undefeated, expanding Maratha borders to Delhi.",
+      "duration": "19:03",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/shivaji.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_11",
+      "title": "Prithviraj Chauhan: The Last Hindu Emperor",
+      "tagline": "Valor and Betrayal at Tarain",
+      "description": "Relive the legendary archer king, his romance with Sanyogita, and his ultimate stand against invaders.",
+      "duration": "20:10",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/maurya_dynasty.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_12",
+      "title": "Rani Chennamma of Kittur",
+      "tagline": "The First Queen to Fight the British",
+      "description": "The heroic rebellion of Kittur Chennamma who fought the East India Company against the Doctrine of Lapse, decades before 1857.",
+      "duration": "21:17",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/queen_abbakka.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_13",
+      "title": "Harsha Vardhana: The Noble Emperor",
+      "tagline": "The Last Great Ruler of Kanauj",
+      "description": "Discover Harsha's transition from war to Buddhism, his patronage of Nalanda University, and his massive charity festivals.",
+      "duration": "22:24",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/maurya_dynasty.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_14",
+      "title": "Rajarshi Shahu Maharaj: The Social Reformer",
+      "tagline": "The King who Fought for Equality",
+      "description": "The Kolhapur king who introduced free education, reserved jobs for backward classes, and patronized Dr. B.R. Ambedkar.",
+      "duration": "23:31",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/warrior_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_15",
+      "title": "Chand Bibi: Defender of Ahmednagar",
+      "tagline": "The Queen who Fought Akbar's Army",
+      "description": "Follow the regency queen of Ahmednagar who stood in armor to defend her fort against the massive Mughal siege.",
+      "duration": "24:38",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/queen_abbakka.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_16",
+      "title": "Rajendra Chola's Ganges Expedition",
+      "tagline": "The Navy that Conquered the East",
+      "description": "How Rajendra Chola carried Ganga water to his new capital and established an empire stretching across Indonesia and Malaysia.",
+      "duration": "10:45",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/chola.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_17",
+      "title": "Martanda Varma: Defeating the Dutch",
+      "tagline": "The Battle of Colachel",
+      "description": "How the King of Travancore defeated the Dutch East India Company navy in 1741, the first Asian power to defeat a European force.",
+      "duration": "11:52",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/warrior_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_18",
+      "title": "Sangolli Rayanna: The Loyal Warrior",
+      "tagline": "The Guerrilla Fighter of Kittur",
+      "description": "The legend of Kittur's loyal general who continued the fight against the British using hit-and-run tactics until betrayed.",
+      "duration": "12:59",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/warrior_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_19",
+      "title": "Chandragupta II: The Vikramaditya",
+      "tagline": "The Nine Jewels of the Royal Court",
+      "description": "Explore the reign of the Gupta king, his defeat of the Sakas, and his court of Navaratnas including Kalidasa.",
+      "duration": "13:06",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/maurya_dynasty.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_20",
+      "title": "Rani Velu Nachiyar: The Invincible Queen",
+      "tagline": "India's Joan of Arc",
+      "description": "The Sivaganga queen who formed the first human bomb to blow up British ammunition storehouses in 1780.",
+      "duration": "14:13",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/queen_abbakka.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_21",
+      "title": "Pulakeshin II: The Chalukya Lion",
+      "tagline": "Defeating Harsha on the Narmada",
+      "description": "Discover the Western Chalukya ruler who stopped Harsha Vardhana's southern expansion at the banks of the Narmada river.",
+      "duration": "15:20",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/warrior_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_22",
+      "title": "Raja Chhatrasal: The Bundela Tiger",
+      "tagline": "The Fight for Bundelkhand",
+      "description": "The story of the Bundela chieftain who rose from a soldier to carve out an independent kingdom with the help of Shivaji.",
+      "duration": "16:27",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/shivaji.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_23",
+      "title": "Rani Durgavati: The Gond Queen",
+      "tagline": "Defending Garha-Katanga",
+      "description": "Follow the Gondwana queen who preferred death to surrender, leading her army against the Mughal general Asaf Khan.",
+      "duration": "17:34",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/queen_abbakka.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_24",
+      "title": "Hemu: The Fourteen-Day Emperor",
+      "tagline": "The Last Vikramaditya of Delhi",
+      "description": "The tragic general who won 22 consecutive battles, crowned himself at Delhi, and fought the Second Battle of Panipat.",
+      "duration": "18:41",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/maurya_dynasty.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_25",
+      "title": "Rani Padmavati: The Legend of Chittor",
+      "tagline": "Valor of the Rajput Queens",
+      "description": "The legend of the Mewar queen, her beauty, and the ultimate sacrifice of Jauhar to protect honor from invaders.",
+      "duration": "19:48",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/queen_abbakka.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_audiobooks___legends_26",
+      "title": "Gautamiputra Satakarni: The Satavahana Lion",
+      "tagline": "Restoring the Glory of Deccan",
+      "description": "Discover the great Satavahana emperor who defeated the Western Kshatrapas and consolidated power across central India.",
+      "duration": "20:55",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/maurya_dynasty.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_1",
+      "title": "Vault B: Padmanabhaswamy Temple",
+      "tagline": "The Serpent Door of Infinite Wealth",
+      "description": "Explore the mysteries of the sealed subterranean vault of Trivandrum, said to be guarded by a cobra curse and steel doors without locks.",
+      "duration": "10:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/vault_b_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_2",
+      "title": "The Hanging Pillar of Lepakshi",
+      "tagline": "Gravity-Defying Medieval Architecture",
+      "description": "Discover the Veerabhadra temple's floating column, which does not touch the ground, allowing paper to pass completely underneath.",
+      "duration": "11:07",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/ellora_kailasa.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_3",
+      "title": "Bhangarh: The Cursed Fort",
+      "tagline": "India's Most Haunted Ruins",
+      "description": "The dark history of Bhangarh Fort in Rajasthan, cursed by a wizard, where entry is legally prohibited between sunset and sunrise.",
+      "duration": "12:14",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/mysterious_ruins.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_4",
+      "title": "Kodinhi: The Twin Village",
+      "tagline": "The Genetic Mystery of Kerala",
+      "description": "Investigate the bizarre phenomenon of Kodinhi village in Kerala, home to over 400 pairs of twins with a twinning rate 6x the global average.",
+      "duration": "13:21",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/mysterious_ruins.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_5",
+      "title": "Kuldhara: The Abandoned Village",
+      "tagline": "The Overnight Ghost Town of Jaisalmer",
+      "description": "The mystery of 84 Paliwal Brahmin villages that were abandoned overnight in the 19th century to escape a cruel minister's tax.",
+      "duration": "14:28",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/mysterious_ruins.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_6",
+      "title": "Shani Shingnapur: The Doorless Village",
+      "tagline": "Where Faith Replaces Locks",
+      "description": "Explore the unique Maharashtrian village where houses have no doors or locks, protected by an unwavering belief in Lord Shani.",
+      "duration": "15:35",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/mysterious_ruins.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_7",
+      "title": "Roopkund: The Skeleton Lake",
+      "tagline": "The Frozen Mystery of the Himalayas",
+      "description": "Investigate the glacial lake in Uttarakhand containing hundreds of human skeletons dating back to the 9th century CE.",
+      "duration": "16:42",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/mysterious_ruins.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_8",
+      "title": "The Musical Pillars of Hampi",
+      "tagline": "Acoustic Stones of Vitthala Temple",
+      "description": "Uncover the secret of the 56 stone pillars that produce distinct musical notes when gently tapped, carved from single granite blocks.",
+      "duration": "17:49",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/hampi.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_9",
+      "title": "The Rustless Iron Pillar of Delhi",
+      "tagline": "1600 Years of Ancient Metallurgy",
+      "description": "How a solid iron column erected by Chandragupta II has stood exposed to rain and sun for centuries without rusting.",
+      "duration": "18:56",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/iron_pillar.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_10",
+      "title": "The Floating Stones of Rameshwaram",
+      "tagline": "The Engineering of Ram Setu",
+      "description": "Discover the volcanic, low-density pumice stones found at the tip of Tamil Nadu that float on water, linked to the epic Ramayana.",
+      "duration": "19:03",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/ramayana_science.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_11",
+      "title": "Magnetic Hill of Ladakh",
+      "tagline": "The Optical Gravity Illusion",
+      "description": "The mystery of the mountain road in Ladakh where vehicles appear to roll uphill when placed in neutral gear.",
+      "duration": "20:10",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/sundials.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_12",
+      "title": "The Great Wall of Kumbhalgarh",
+      "tagline": "The Second Longest Wall on Earth",
+      "description": "Discover the massive 36km perimeter wall of Kumbhalgarh Fort in Rajasthan, wide enough for eight horses to gallop abreast.",
+      "duration": "21:17",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/ellora_kailasa.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_13",
+      "title": "Taj Mahal: The Wooden Foundations",
+      "tagline": "The Secret of the Ebony Wells",
+      "description": "How the massive marble dome of Taj Mahal relies on a subterranean wooden ebony grid that must remain moist from the Yamuna river.",
+      "duration": "22:24",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/taj_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_14",
+      "title": "The Whispering Gallery of Gol Gumbaz",
+      "tagline": "The Acoustic Marvel of Vijayapura",
+      "description": "Explore the second-largest dome in the world, where a single whisper echoes eleven times across the massive hall.",
+      "duration": "23:31",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/ellora_kailasa.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_15",
+      "title": "Ellora: The Top-Down Kailasa Temple",
+      "tagline": "Carved Out of a Single Rock",
+      "description": "The engineering feat of the Kailasa Temple, which was carved top-down from a basalt cliff, removing 200,000 tons of rock.",
+      "duration": "24:38",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/ellora_kailasa.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_16",
+      "title": "The Living Root Bridges of Meghalaya",
+      "tagline": "Ficus Tree Architecture",
+      "description": "How the Khasi tribes train the roots of rubber trees over decades to form living suspension bridges across roaring jungle streams.",
+      "duration": "10:45",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/ellora_kailasa.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_17",
+      "title": "Jatinga: The Bird Mystery",
+      "tagline": "The Seasonal Avian Disorientation",
+      "description": "Investigate the Assam village where local and migratory birds drop from the sky during late monsoon nights under specific weather conditions.",
+      "duration": "11:52",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/mysterious_ruins.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_18",
+      "title": "The Magnetic Monolith of Konark",
+      "tagline": "The Black Pagoda's Lodestone",
+      "description": "Uncover the legend of the 52-ton magnet atop the Sun Temple that supposedly threw off European ships' magnetic compasses.",
+      "duration": "12:59",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/sundials.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_19",
+      "title": "Dhanushkodi: The Ghost Town",
+      "tagline": "Lost in the 1964 Cyclone",
+      "description": "The haunting ruins of Rameswaram's twin town, swallowed by a massive tidal wave, leaving behind a church, railway station, and post office.",
+      "duration": "13:06",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/mysterious_ruins.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_20",
+      "title": "Karakoram's Snow Penitents",
+      "tagline": "Ice Blades of the High Altitudes",
+      "description": "The strange blade-like snow formations (Nieves Penitentes) found in the high altitude passes, resembling white-robed monks.",
+      "duration": "14:13",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/warrior_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_21",
+      "title": "The Whispering Monolith of Jogimara",
+      "tagline": "Ancient India's Theater Acoustics",
+      "description": "Discover the oldest amphitheater in Chhattisgarh, featuring cave wall acoustics designed to amplify stage performances.",
+      "duration": "15:20",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/warrior_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_22",
+      "title": "Gharial: The River Dragon of Chambal",
+      "tagline": "Ancient Survivors of the Indian Rivers",
+      "description": "The prehistoric long-snouted crocodile Chambal sanctuary, a species that survived from the age of dinosaurs.",
+      "duration": "16:27",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/warrior_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_23",
+      "title": "The Hidden Water Systems of Hampi",
+      "tagline": "Aqueducts of the Royal Capital",
+      "description": "Explore the complex medieval terracotta and stone pipeline grid that supplied running water to public baths and pools.",
+      "duration": "17:34",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/hampi.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_24",
+      "title": "Lonar Crater: The Basalt Impact Lake",
+      "tagline": "Earth's Only Basaltic Meteor Crater",
+      "description": "The science of the Maharashtra lake formed by a meteor strike, boasting unique alkaline microbes and surrounding temple ruins.",
+      "duration": "18:41",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/warrior_cover.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_25",
+      "title": "The Shell Script of Ashoka Pillars",
+      "tagline": "The Undeciphered Shankhalipi",
+      "description": "Investigate the ornate, spiral shell-like characters carved alongside Ashokan Brahmi inscriptions that remain undeciphered.",
+      "duration": "19:48",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "/images/ashoka.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_unknown_knowledge_26",
+      "title": "The Giant Cobra of Lepakshi",
+      "tagline": "The Monolithic Nagalinga",
+      "description": "The massive granite sculpture of a seven-hooded serpent shielding a Shiva Linga, carved in a single day by stone artisans.",
+      "duration": "20:55",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/ellora_kailasa.jpg",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    }
+  ],
+  "subscribers": [
+    {
+      "id": "sub_1",
+      "name": "Arjun Sharma",
+      "paymentMethod": "UPI (arjun@upi)",
+      "amount": 399,
+      "timestamp": "2026-08-24T10:15:30Z"
+    },
+    {
+      "id": "sub_2",
+      "name": "Priyanka Patel",
+      "paymentMethod": "Credit Card (xxxx-xxxx-xxxx-1234)",
+      "amount": 399,
+      "timestamp": "2026-08-24T11:45:10Z"
+    }
+  ],
+  "stats": {
+    "totalRevenue": 798,
+    "totalSubscribers": 2
+  },
+  "aiStatus": {
+    "lastRun": "2026-08-25T12:13:55.586Z",
+    "history": [
+      {
+        "id": "ai_lonar_1787655517188",
+        "title": "Lonar Lake: The Meteor Impact Crater",
+        "category": "Unknown Knowledge",
+        "timestamp": "2026-08-25T10:58:37.188Z"
+      },
+      {
+        "id": "ai_lepakshi_bull_1787656110862",
+        "title": "The Giant Nandi of Lepakshi",
+        "category": "Video Series",
+        "timestamp": "2026-08-25T11:08:30.862Z"
+      },
+      {
+        "id": "ai_lepakshi_bull_1787657526476",
+        "title": "The Giant Nandi of Lepakshi",
+        "category": "Video Series",
+        "timestamp": "2026-08-25T11:32:06.476Z"
+      },
+      {
+        "id": "ai_lepakshi_1787657654821",
+        "title": "Lepakshi: The Mystery of the Hanging Pillar",
+        "category": "Unknown Knowledge",
+        "timestamp": "2026-08-25T11:34:14.821Z"
+      },
+      {
+        "id": "ai_lepakshi_bull_1787658542073",
+        "title": "The Giant Nandi of Lepakshi",
+        "category": "Video Series",
+        "timestamp": "2026-08-25T11:49:02.074Z"
+      },
+      {
+        "id": "ai_lonar_1787660035586",
+        "title": "Lonar Lake: The Meteor Impact Crater",
+        "category": "Unknown Knowledge",
+        "timestamp": "2026-08-25T12:13:55.586Z"
+      }
+    ]
+  }
+}
