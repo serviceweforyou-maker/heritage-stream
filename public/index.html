@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
+    const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : 'https://heritage-stream-backend.onrender.com';
     window.onerror = function(message, source, lineno, colno, error) {
       const errStr = message + ' at ' + source + ':' + lineno + ':' + colno;
-      fetch('/api/log-error', {
+      fetch(API_BASE + '/api/log-error', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ error: errStr })
@@ -14,7 +15,7 @@
     };
     window.addEventListener('unhandledrejection', function(event) {
       const errStr = 'Unhandled rejection: ' + event.reason;
-      fetch('/api/log-error', {
+      fetch(API_BASE + '/api/log-error', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ error: errStr })
