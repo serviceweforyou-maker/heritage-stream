@@ -353,20 +353,6 @@
       "category": "Kids Stories"
     },
     {
-      "id": "tenali_riddles",
-      "title": "Tenali Raman and the Three Riddles",
-      "narrator": "Voice of Tales: Grandma",
-      "duration": "10:40",
-      "isPremium": false,
-      "imageUrl": "/images/tenali.jpg",
-      "desc": "Delight in the sharp intellect of court poet Tenali Raman. Listen to how he helps King Krishnadevaraya outwit a rival kingdom's philosophical challenges.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
-      "personas": [
-        "Kids"
-      ],
-      "category": "Kids Stories"
-    },
-    {
       "id": "bhagavad_gita",
       "title": "Bhagavad Gita: Core Teachings for Life",
       "narrator": "Voice of Philosophy: Acharya",
@@ -480,35 +466,6 @@
           "title": "Architectural Genius",
           "text": "Built in the 16th century by brothers Viranna and Virupanna under the Vijayanagara Empire, the hanging pillar functions as a structural balance point, distributing weight across other columns.",
           "visual": "📐"
-        }
-      ],
-      "isPremium": false,
-      "year": "2026",
-      "rating": "9.8 ★",
-      "duration": "20 Mins"
-    },
-    {
-      "id": "ai_lonar_1787660035586",
-      "title": "Lonar Lake: The Meteor Impact Crater",
-      "tagline": "India's Ancient Space Crater",
-      "description": "Formed over 50,000 years ago by a hyper-velocity meteor impact, Lonar Lake is a unique saline and alkaline water body surrounded by temple ruins and dense foliage.",
-      "category": "Unknown Knowledge",
-      "personas": [
-        "Travel & Architecture",
-        "History Buffs"
-      ],
-      "imageUrl": "/images/warrior_cover.jpg",
-      "videoUrl": "https://www.youtube.com/embed/kYJqD96lX-I",
-      "content": [
-        {
-          "title": "Out of this Space",
-          "text": "The crater is the only known impact crater in basalt rock on Earth. The water is highly alkaline, housing unique microorganisms found nowhere else.",
-          "visual": "☄️"
-        },
-        {
-          "title": "Ancient Temples",
-          "text": "The perimeter of the lake features ruins of 800-year-old temples, including the Daitya Sudan temple dedicated to Lord Vishnu, built with basalt carvings.",
-          "visual": "🛕"
         }
       ],
       "isPremium": false,
