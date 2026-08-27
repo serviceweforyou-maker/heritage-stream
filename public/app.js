@@ -2,15 +2,18 @@ import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, 
 import heritageData from './data.js?v=18';
 import { TriviaGame, ChronologyGame, MemoryGame } from './games.js?v=18';
 
+// Base URL pointing to the backend. Automatically uses relative path on localhost.
+// Replace the Render URL with your live deployed Render backend service URL.
+export const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : 'https://heritage-stream-backend.onrender.com';
+
 // ==========================================
 // BACKEND & DATABASE INTEGRATION SERVICE
 // ==========================================
-// Replace this service's methods with real API fetch calls
 export class DatabaseService {
   static async fetchContent() {
     let raw;
     try {
-      const res = await fetch('/api/content');
+      const res = await fetch(API_BASE + '/api/content');
       if (!res.ok) throw new Error("API content fetch error");
       raw = await res.json();
     } catch (err) {
@@ -1579,10 +1582,10 @@ const bindSlideNavigation = () => {
     `;
 
     try {
-      const response = await fetch('/api/create-cashfree-order', {
+      const response = await fetch(API_BASE + '/api/create-cashfree-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone })
+        body: JSON.stringify({ name, email, phone, frontendOrigin: window.location.origin })
       });
 
       if (!response.ok) {
