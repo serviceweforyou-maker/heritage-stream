@@ -468,14 +468,23 @@
   letter-spacing: 0.05em;
 }
 
-/* Mobile responsive */
-@media (max-width: 720px) {
-  .flipbook-book {
-    width: 340px;
-    height: 480px;
+/* Mobile and Tablet responsive */
+@media (max-width: 1024px) {
+  #flipbook-stage {
+    padding: 60px 12px 80px;
   }
-  .fb-page.right { display: block; }
-  .fb-page.left { display: none; }
-  .flipbook-book .fb-spine { display: none; }
-  .fb-chapter-body { font-size: 13px; }
+  .flipbook-book {
+    width: 90vw !important;
+    max-width: 440px !important;
+    height: 72vh !important;
+  }
+  .fb-spine {
+    display: none !important;
+  }
+  .fb-page-content {
+    border-radius: 12px !important;
+  }
+  #flipbook-keyboard-hint {
+    display: none !important;
+  }
 }
