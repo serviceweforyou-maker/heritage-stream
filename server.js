@@ -710,6 +710,25 @@ app.delete('/api/content/:id', verifyAdminSession, (req, res) => {
   res.json({ success: true });
 });
 
+// Update Content (Admin)
+app.put('/api/content/:id', verifyAdminSession, (req, res) => {
+  const db = readDB();
+  const itemId = req.params.id;
+  const index = db.content.findIndex(item => item.id === itemId);
+  if (index === -1) {
+    return res.status(404).json({ error: "Item not found." });
+  }
+
+  db.content[index] = {
+    ...db.content[index],
+    ...req.body,
+    id: itemId // preserve the ID
+  };
+
+  writeDB(db);
+  res.json({ success: true, item: db.content[index] });
+});
+
 // 6. Get Admin Portal Stats
 app.get('/api/admin/stats', verifyAdminSession, (req, res) => {
   const db = readDB();
@@ -721,7 +740,7 @@ app.get('/api/admin/stats', verifyAdminSession, (req, res) => {
     totalVisits: db.stats.totalVisits || 0,
     uniqueVisitorsCount: db.stats.uniqueVisitorsCount || 0,
     recentSubscribers: db.subscribers.slice(-5).reverse(), // get last 5 in reverse order
-    contentList: db.content.map(c => ({ id: c.id, title: c.title, category: c.category, isPremium: c.isPremium, type: c.audioUrl ? 'Audio' : 'Video' }))
+    contentList: db.content
   });
 });
 
