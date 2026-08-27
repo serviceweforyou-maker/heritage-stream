@@ -186,30 +186,6 @@
       ]
     },
     {
-      "id": "iron_pillar",
-      "title": "Mystery of the Rustless Iron Pillar",
-      "tagline": "Ancient Metallurgical Marvel of Delhi",
-      "description": "Standing tall in the Qutb complex for over 1,600 years, this solid iron pillar resists corrosion despite open rains and extreme heat. Uncover the secret compound created by ancient chemists.",
-      "duration": "18 Mins",
-      "rating": "9.8 ★",
-      "year": "2026",
-      "isPremium": false,
-      "category": "Unknown Knowledge",
-      "personas": [
-        "History Buffs",
-        "Travel Enthusiasts"
-      ],
-      "imageUrl": "/images/iron_pillar.jpg",
-      "videoUrl": "https://www.youtube.com/embed/zH8wS4tAfsY",
-      "content": [
-        {
-          "title": "A Pillar of Pure Iron",
-          "text": "Analysis shows the pillar contains high levels of phosphorus and low sulfur, which formed a thin protective crystalline layer over the metal.",
-          "visual": "⚙️"
-        }
-      ]
-    },
-    {
       "id": "sundials",
       "title": "Konark's Wheels: Telling Time by Shadows",
       "tagline": "The Astronomical Calculations of Sun Temple",
@@ -339,20 +315,6 @@
       "category": "Audiobooks & Legends"
     },
     {
-      "id": "birbal_crows",
-      "title": "Birbal's Wit: The Count of Crows",
-      "narrator": "Voice of Tales: Grandma",
-      "duration": "08:15",
-      "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
-      "desc": "Enjoy the humorous kids tale of Akbar and Birbal, where Birbal solves the emperor's tricky riddle about how many crows live in the royal capital using clever mathematical reasoning.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "personas": [
-        "Kids"
-      ],
-      "category": "Kids Stories"
-    },
-    {
       "id": "bhagavad_gita",
       "title": "Bhagavad Gita: Core Teachings for Life",
       "narrator": "Voice of Philosophy: Acharya",
@@ -392,35 +354,6 @@
       ]
     },
     {
-      "id": "ai_lonar_1787655517188",
-      "title": "Lonar Lake: The Meteor Impact Crater",
-      "tagline": "India's Ancient Space Crater",
-      "description": "Formed over 50,000 years ago by a hyper-velocity meteor impact, Lonar Lake is a unique saline and alkaline water body surrounded by temple ruins and dense foliage.",
-      "category": "Unknown Knowledge",
-      "personas": [
-        "Travel & Architecture",
-        "History Buffs"
-      ],
-      "imageUrl": "/images/warrior_cover.jpg",
-      "videoUrl": "https://www.youtube.com/embed/kYJqD96lX-I",
-      "content": [
-        {
-          "title": "Out of this Space",
-          "text": "The crater is the only known impact crater in basalt rock on Earth. The water is highly alkaline, housing unique microorganisms found nowhere else.",
-          "visual": "☄️"
-        },
-        {
-          "title": "Ancient Temples",
-          "text": "The perimeter of the lake features ruins of 800-year-old temples, including the Daitya Sudan temple dedicated to Lord Vishnu, built with basalt carvings.",
-          "visual": "🛕"
-        }
-      ],
-      "isPremium": true,
-      "year": "2026",
-      "rating": "9.8 ★",
-      "duration": "20 Mins"
-    },
-    {
       "id": "ai_lepakshi_bull_1787656110862",
       "title": "The Giant Nandi of Lepakshi",
       "tagline": "India's Largest Monolithic Bull",
@@ -437,35 +370,6 @@
           "title": "Monolithic Wonder",
           "text": "Measuring 15 feet high and 27 feet long, it is the largest monolithic statue of Nandi (Shiva's mount) in India. Its proportions are perfectly balanced.",
           "visual": "🐂"
-        }
-      ],
-      "isPremium": false,
-      "year": "2026",
-      "rating": "9.8 ★",
-      "duration": "20 Mins"
-    },
-    {
-      "id": "ai_lepakshi_1787657654821",
-      "title": "Lepakshi: The Mystery of the Hanging Pillar",
-      "tagline": "The Floating Stone of Andhra Pradesh",
-      "description": "Explore the Veerabhadra Temple in Lepakshi, featuring a massive granite pillar that does not touch the temple floor. Discover the engineering theories behind this gravity-defying medieval marvel.",
-      "category": "Unknown Knowledge",
-      "personas": [
-        "History Buffs",
-        "Travel & Architecture"
-      ],
-      "imageUrl": "/images/ellora_kailasa.jpg",
-      "videoUrl": "https://www.youtube.com/embed/H68jZ2Gv19w",
-      "content": [
-        {
-          "title": "The Floating Pillar",
-          "text": "Out of 70 stone pillars in the temple hall, one hangs suspended in the air. Visitors can pass a thin sheet of paper or cloth completely under the pillar's base, proving it doesn't rest on the floor.",
-          "visual": "🏛️"
-        },
-        {
-          "title": "Architectural Genius",
-          "text": "Built in the 16th century by brothers Viranna and Virupanna under the Vijayanagara Empire, the hanging pillar functions as a structural balance point, distributing weight across other columns.",
-          "visual": "📐"
         }
       ],
       "isPremium": false,
