@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data.js?v=18";
-import heritageData from './data.js?v=18';
-import { TriviaGame, ChronologyGame, MemoryGame } from './games.js?v=18';
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data.js?v=21";
+import heritageData from './data.js?v=21';
+import { TriviaGame, ChronologyGame, MemoryGame } from './games.js?v=21';
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -18,7 +18,7 @@ export class DatabaseService {
       raw = await res.json();
     } catch (err) {
       console.warn("API load failed, using local database backup", err);
-      const module = await import('./data.js?v=18');
+      const module = await import('./data.js?v=21');
       raw = module.default;
     }
 
@@ -1177,6 +1177,34 @@ const bindSlideNavigation = () => {
     this.activeAudio.volume = 0.2; // Low background volume
 
     const textToSpeak = item.desc || item.description || "Welcome to HeritageStream audio chronicles.";
+    let currentTextToSpeak = textToSpeak;
+    let isTranslating = false;
+
+    const getTranslation = async (text, langCode) => {
+      const target = langCode.split('-')[0]; // 'en', 'kn', 'hi', 'ta', 'te'
+      if (target === 'en') return text;
+      
+      const cacheKey = `${item.id}_${target}`;
+      if (window.translationCache && window.translationCache[cacheKey]) {
+        return window.translationCache[cacheKey];
+      }
+      if (!window.translationCache) window.translationCache = {};
+
+      try {
+        const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${target}`);
+        if (!res.ok) throw new Error("Translation API failed");
+        const data = await res.json();
+        const translated = data.responseData.translatedText;
+        if (translated) {
+          window.translationCache[cacheKey] = translated;
+          return translated;
+        }
+      } catch (err) {
+        console.warn("Translation failed, using original English text", err);
+      }
+      return text;
+    };
+
     const totalWords = textToSpeak.split(/\s+/).length;
     // Estimate speaking time: average speaking rate is ~140 words per minute (~2.3 words per second)
     const totalDuration = Math.max(15, Math.ceil(totalWords / (2.3 * this.audioRateMultiplier))); 
@@ -1314,8 +1342,15 @@ const bindSlideNavigation = () => {
             `).join('')}
           </div>
 
-          <div class="max-w-md bg-white/5 border border-white/5 rounded-xl p-3 mb-4">
-            <p class="text-[10px] text-white/70 italic leading-relaxed text-left line-clamp-3 font-sans">"${textToSpeak}"</p>
+          <div class="max-w-md bg-white/5 border border-white/5 rounded-xl p-3 mb-4 w-full">
+            <p class="text-[10px] text-white/70 italic leading-relaxed text-left line-clamp-3 font-sans">
+              ${isTranslating ? `
+                <span class="flex items-center justify-center gap-2 py-4">
+                  <span class="w-3.5 h-3.5 border-2 border-gold border-t-transparent rounded-full animate-spin"></span>
+                  <span class="text-[10px] text-gold/80 font-bold uppercase tracking-wider">Translating...</span>
+                </span>
+              ` : `"${currentTextToSpeak}"`}
+            </p>
           </div>
 
           <!-- Playback Speed dropdown -->
@@ -1353,11 +1388,18 @@ const bindSlideNavigation = () => {
 
       // Bind language switcher buttons
       container.querySelectorAll('.voice-lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', async () => {
           selectedLang = btn.getAttribute('data-lang');
+          
+          isTranslating = true;
+          drawPlayerUI();
+          
+          currentTextToSpeak = await getTranslation(textToSpeak, selectedLang);
+          isTranslating = false;
+          
           if (isPlaying) {
             window.speechSynthesis.cancel();
-            speakWith(textToSpeak);
+            speakWith(currentTextToSpeak);
           }
           drawPlayerUI();
         });
@@ -1370,7 +1412,7 @@ const bindSlideNavigation = () => {
           localStorage.setItem('hs_audio_rate', String(this.audioRateMultiplier));
           if (isPlaying) {
             window.speechSynthesis.cancel();
-            speakWith(textToSpeak);
+            speakWith(currentTextToSpeak);
           }
         });
       }
@@ -1391,7 +1433,7 @@ const bindSlideNavigation = () => {
           if (window.speechSynthesis.paused) {
             window.speechSynthesis.resume();
           } else {
-            speakWith(textToSpeak);
+            speakWith(currentTextToSpeak);
           }
 
           // 3. Start progress interval timer
@@ -1413,8 +1455,8 @@ const bindSlideNavigation = () => {
         // Sync Speech by restarting at appropriate approximate offset
         window.speechSynthesis.cancel();
         if (isPlaying) {
-          const approxCharIndex = Math.floor((elapsedSeconds / totalDuration) * textToSpeak.length);
-          speakWith(textToSpeak.substring(approxCharIndex));
+          const approxCharIndex = Math.floor((elapsedSeconds / totalDuration) * currentTextToSpeak.length);
+          speakWith(currentTextToSpeak.substring(approxCharIndex));
         }
         drawPlayerUI();
       });
@@ -1423,8 +1465,8 @@ const bindSlideNavigation = () => {
         elapsedSeconds = Math.min(totalDuration, elapsedSeconds + 10);
         window.speechSynthesis.cancel();
         if (isPlaying && elapsedSeconds < totalDuration) {
-          const approxCharIndex = Math.floor((elapsedSeconds / totalDuration) * textToSpeak.length);
-          speakWith(textToSpeak.substring(approxCharIndex));
+          const approxCharIndex = Math.floor((elapsedSeconds / totalDuration) * currentTextToSpeak.length);
+          speakWith(currentTextToSpeak.substring(approxCharIndex));
         }
         drawPlayerUI();
       });
