@@ -66,7 +66,13 @@ export class DatabaseService {
   }
 
   static getUserScores() {
-    return JSON.parse(localStorage.getItem('hs_scores')) || { trivia: 0, chronology: 0, memory: 0 };
+    try {
+      const val = localStorage.getItem('hs_scores');
+      return val ? JSON.parse(val) : { trivia: 0, chronology: 0, memory: 0 };
+    } catch (err) {
+      console.warn("Failed to parse hs_scores, resetting scores", err);
+      return { trivia: 0, chronology: 0, memory: 0 };
+    }
   }
 
   static saveUserScore(gameType, score) {
@@ -197,16 +203,27 @@ class AppController {
     window.appInstance = this; // global reference for script tags
     this.isSubscribed = DatabaseService.isSubscribed();
     this.userScores = DatabaseService.getUserScores();
+    
+    const safeParse = (key, fallback) => {
+      try {
+        const val = localStorage.getItem(key);
+        return val ? JSON.parse(val) : fallback;
+      } catch (err) {
+        console.warn(`Error parsing localStorage key "${key}":`, err);
+        return fallback;
+      }
+    };
+
     this.gyanCoins = parseInt(localStorage.getItem('hs_gyan_coins')) || 0;
-    this.unlockedRewards = JSON.parse(localStorage.getItem('hs_unlocked_rewards')) || [];
+    this.unlockedRewards = safeParse('hs_unlocked_rewards', []);
     
     // Players
     this.activeAudio = null;
     this.audioProgressInterval = null;
     
     // OTT premium stats
-    this.watchlist = JSON.parse(localStorage.getItem('hs_watchlist') || '[]');
-    this.progress = JSON.parse(localStorage.getItem('hs_progress') || '{}');
+    this.watchlist = safeParse('hs_watchlist', []);
+    this.progress = safeParse('hs_progress', {});
     this.currentProfile = localStorage.getItem('hs_profile') || null;
     this.currentProfileAvatar = localStorage.getItem('hs_avatar') || '📜';
     this.audioRateMultiplier = parseFloat(localStorage.getItem('hs_audio_rate') || '1.0');
