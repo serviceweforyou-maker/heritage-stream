@@ -22,7 +22,7 @@ export default {
         "History Buffs",
         "Travel Enthusiasts"
       ],
-      "imageUrl": "/images/hampi.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1585699324551-f6c309eed262?auto=format&fit=crop&w=600&h=380&q=80",
       "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
       "content": [
         {
@@ -47,7 +47,7 @@ export default {
       "year": "2026",
       "isPremium": false,
       "isGodSeries": true,
-      "imageUrl": "/images/ganesha.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=600&h=380&q=80",
       "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
       "category": "God Series",
       "personas": [
@@ -77,7 +77,7 @@ export default {
       "year": "2026",
       "isPremium": true,
       "isGodSeries": true,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1566908829550-e6551b00979b?auto=format&fit=crop&w=600&h=380&q=80",
       "videoUrl": "https://www.youtube.com/embed/9B8h48Z6_b8",
       "category": "God Series",
       "personas": [
@@ -106,7 +106,7 @@ export default {
         "Travel Enthusiasts",
         "History Buffs"
       ],
-      "imageUrl": "/images/ajanta.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&h=380&q=80",
       "videoUrl": "https://www.youtube.com/embed/3n4-HxIXJQI",
       "content": [
         {
@@ -129,7 +129,7 @@ export default {
       "personas": [
         "History Buffs"
       ],
-      "imageUrl": "/images/chola.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&h=380&q=80",
       "videoUrl": "https://www.youtube.com/embed/Ys0c3ZxJOsM",
       "content": [
         {
@@ -152,7 +152,7 @@ export default {
       "personas": [
         "Travel Enthusiasts"
       ],
-      "imageUrl": "/images/meenakshi.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&h=380&q=80",
       "videoUrl": "https://www.youtube.com/embed/YBJ-4-MBVVY",
       "content": [
         {
@@ -175,37 +175,13 @@ export default {
       "personas": [
         "History Buffs"
       ],
-      "imageUrl": "/images/shivaji.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&h=380&q=80",
       "videoUrl": "https://www.youtube.com/embed/GqzNAkOG6mg",
       "content": [
         {
           "title": "The Naval Genesis",
           "text": "Shivaji realized that a strong navy was essential to defend the coast from foreign merchants. He built ships out of local teak wood and established naval yards.",
           "visual": "⛵"
-        }
-      ]
-    },
-    {
-      "id": "iron_pillar",
-      "title": "Mystery of the Rustless Iron Pillar",
-      "tagline": "Ancient Metallurgical Marvel of Delhi",
-      "description": "Standing tall in the Qutb complex for over 1,600 years, this solid iron pillar resists corrosion despite open rains and extreme heat. Uncover the secret compound created by ancient chemists.",
-      "duration": "18 Mins",
-      "rating": "9.8 ★",
-      "year": "2026",
-      "isPremium": false,
-      "category": "Unknown Knowledge",
-      "personas": [
-        "History Buffs",
-        "Travel Enthusiasts"
-      ],
-      "imageUrl": "/images/iron_pillar.jpg",
-      "videoUrl": "https://www.youtube.com/embed/zH8wS4tAfsY",
-      "content": [
-        {
-          "title": "A Pillar of Pure Iron",
-          "text": "Analysis shows the pillar contains high levels of phosphorus and low sulfur, which formed a thin protective crystalline layer over the metal.",
-          "visual": "⚙️"
         }
       ]
     },
@@ -223,7 +199,7 @@ export default {
         "Travel Enthusiasts",
         "History Buffs"
       ],
-      "imageUrl": "/images/sundials.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&h=380&q=80",
       "videoUrl": "https://www.youtube.com/embed/yY6qP7s9YJ8",
       "content": [
         {
@@ -240,7 +216,7 @@ export default {
       "duration": "14:10",
       "isPremium": false,
       "isGodSeries": true,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&w=600&h=380&q=80",
       "desc": "Delve into the mythology and philosophy of Mahadeva, the destroyer and transformer of the Hindu trinity. Understand the significance of the crescent moon, his third eye, and the Tandava dance.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "personas": [
@@ -255,7 +231,7 @@ export default {
       "duration": "16:45",
       "isPremium": true,
       "isGodSeries": true,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1524492449929-c44ab9cc4467?auto=format&fit=crop&w=600&h=380&q=80",
       "desc": "Journey to the celestial ocean of Ksheera Sagara, where Lord Vishnu rests on the serpent Shesha, acting as the ultimate preserver of cosmic order, equilibrium, and righteousness.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "personas": [
@@ -270,7 +246,7 @@ export default {
       "duration": "11:20",
       "isPremium": false,
       "isGodSeries": true,
-      "imageUrl": "/images/dharma.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=600&h=380&q=80",
       "desc": "What does Dharma truly mean? Demystify Sanatana Dharma, the cosmic framework of moral duties, truth, and universal laws that sustain order in the human experience.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "personas": [
@@ -284,7 +260,7 @@ export default {
       "narrator": "Voice of Heritage: Aditi",
       "duration": "12:45",
       "isPremium": false,
-      "imageUrl": "/images/lakshmibai.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1608958416801-b514d8f8fb4a?auto=format&fit=crop&w=600&h=380&q=80",
       "desc": "Relive the legendary tale of the Queen of Jhansi, who rode into battle with her child strapped to her back, refusing to yield her kingdom to the British empire during the rebellion of 1857.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "personas": [
@@ -299,7 +275,7 @@ export default {
       "narrator": "Voice of Heritage: Vikram",
       "duration": "18:20",
       "isPremium": true,
-      "imageUrl": "/images/ashoka.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1590050800366-2bf4e5900a6e?auto=format&fit=crop&w=600&h=380&q=80",
       "desc": "How did a ruthless conqueror who bathed in blood at the Battle of Kalinga transform into a beloved messenger of peace and non-violence? Listen to the epic transformation of Ashoka the Great.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "personas": [
@@ -314,7 +290,7 @@ export default {
       "duration": "18:15",
       "isPremium": false,
       "isGodSeries": true,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1596117565989-20c2a297bdc0?auto=format&fit=crop&w=600&h=380&q=80",
       "desc": "Explore the life of the eighth avatar of Lord Vishnu, from his childhood escapades in Gokul to the recitation of the Bhagavad Gita on the battlefield of Kurukshetra.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "personas": [
@@ -329,7 +305,7 @@ export default {
       "narrator": "Voice of Philosophy: Acharya",
       "duration": "22:40",
       "isPremium": true,
-      "imageUrl": "/images/ramayana_science.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1585699324551-f6c309eed262?auto=format&fit=crop&w=600&h=380&q=80",
       "desc": "Delve into the ancient Sanskrit epic charting the exile, battles, and virtues of Prince Rama. Understand the moral framework of Ramayana and its impact on Southeast Asian architecture.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "personas": [
@@ -339,40 +315,12 @@ export default {
       "category": "Audiobooks & Legends"
     },
     {
-      "id": "birbal_crows",
-      "title": "Birbal's Wit: The Count of Crows",
-      "narrator": "Voice of Tales: Grandma",
-      "duration": "08:15",
-      "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
-      "desc": "Enjoy the humorous kids tale of Akbar and Birbal, where Birbal solves the emperor's tricky riddle about how many crows live in the royal capital using clever mathematical reasoning.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "personas": [
-        "Kids"
-      ],
-      "category": "Kids Stories"
-    },
-    {
-      "id": "tenali_riddles",
-      "title": "Tenali Raman and the Three Riddles",
-      "narrator": "Voice of Tales: Grandma",
-      "duration": "10:40",
-      "isPremium": false,
-      "imageUrl": "/images/tenali.jpg",
-      "desc": "Delight in the sharp intellect of court poet Tenali Raman. Listen to how he helps King Krishnadevaraya outwit a rival kingdom's philosophical challenges.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
-      "personas": [
-        "Kids"
-      ],
-      "category": "Kids Stories"
-    },
-    {
       "id": "bhagavad_gita",
       "title": "Bhagavad Gita: Core Teachings for Life",
       "narrator": "Voice of Philosophy: Acharya",
       "duration": "25:40",
       "isPremium": false,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1600100397608-f010e427cf35?auto=format&fit=crop&w=600&h=380&q=80",
       "desc": "Listen to the translation of the 18 chapters of the Bhagavad Gita spoken by Lord Krishna to Arjuna. Explore concepts of Dharma, Nishkama Karma (selfless action), and spiritual equilibrium.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "personas": [
@@ -395,7 +343,7 @@ export default {
         "History Buffs",
         "Travel Enthusiasts"
       ],
-      "imageUrl": "/images/ramayana_science.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&h=380&q=80",
       "videoUrl": "https://www.youtube.com/embed/9B8h48Z6_b8",
       "content": [
         {
@@ -404,35 +352,6 @@ export default {
           "visual": "🌉"
         }
       ]
-    },
-    {
-      "id": "ai_lonar_1787655517188",
-      "title": "Lonar Lake: The Meteor Impact Crater",
-      "tagline": "India's Ancient Space Crater",
-      "description": "Formed over 50,000 years ago by a hyper-velocity meteor impact, Lonar Lake is a unique saline and alkaline water body surrounded by temple ruins and dense foliage.",
-      "category": "Unknown Knowledge",
-      "personas": [
-        "Travel & Architecture",
-        "History Buffs"
-      ],
-      "imageUrl": "/images/warrior_cover.jpg",
-      "videoUrl": "https://www.youtube.com/embed/kYJqD96lX-I",
-      "content": [
-        {
-          "title": "Out of this Space",
-          "text": "The crater is the only known impact crater in basalt rock on Earth. The water is highly alkaline, housing unique microorganisms found nowhere else.",
-          "visual": "☄️"
-        },
-        {
-          "title": "Ancient Temples",
-          "text": "The perimeter of the lake features ruins of 800-year-old temples, including the Daitya Sudan temple dedicated to Lord Vishnu, built with basalt carvings.",
-          "visual": "🛕"
-        }
-      ],
-      "isPremium": true,
-      "year": "2026",
-      "rating": "9.8 ★",
-      "duration": "20 Mins"
     },
     {
       "id": "ai_lepakshi_bull_1787656110862",
@@ -444,71 +363,13 @@ export default {
         "Travel & Architecture",
         "Spiritual Seekers"
       ],
-      "imageUrl": "/images/ellora_kailasa.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&h=380&q=80",
       "videoUrl": "https://www.youtube.com/embed/H68jZ2Gv19w",
       "content": [
         {
           "title": "Monolithic Wonder",
           "text": "Measuring 15 feet high and 27 feet long, it is the largest monolithic statue of Nandi (Shiva's mount) in India. Its proportions are perfectly balanced.",
           "visual": "🐂"
-        }
-      ],
-      "isPremium": false,
-      "year": "2026",
-      "rating": "9.8 ★",
-      "duration": "20 Mins"
-    },
-    {
-      "id": "ai_lepakshi_1787657654821",
-      "title": "Lepakshi: The Mystery of the Hanging Pillar",
-      "tagline": "The Floating Stone of Andhra Pradesh",
-      "description": "Explore the Veerabhadra Temple in Lepakshi, featuring a massive granite pillar that does not touch the temple floor. Discover the engineering theories behind this gravity-defying medieval marvel.",
-      "category": "Unknown Knowledge",
-      "personas": [
-        "History Buffs",
-        "Travel & Architecture"
-      ],
-      "imageUrl": "/images/ellora_kailasa.jpg",
-      "videoUrl": "https://www.youtube.com/embed/H68jZ2Gv19w",
-      "content": [
-        {
-          "title": "The Floating Pillar",
-          "text": "Out of 70 stone pillars in the temple hall, one hangs suspended in the air. Visitors can pass a thin sheet of paper or cloth completely under the pillar's base, proving it doesn't rest on the floor.",
-          "visual": "🏛️"
-        },
-        {
-          "title": "Architectural Genius",
-          "text": "Built in the 16th century by brothers Viranna and Virupanna under the Vijayanagara Empire, the hanging pillar functions as a structural balance point, distributing weight across other columns.",
-          "visual": "📐"
-        }
-      ],
-      "isPremium": false,
-      "year": "2026",
-      "rating": "9.8 ★",
-      "duration": "20 Mins"
-    },
-    {
-      "id": "ai_lonar_1787660035586",
-      "title": "Lonar Lake: The Meteor Impact Crater",
-      "tagline": "India's Ancient Space Crater",
-      "description": "Formed over 50,000 years ago by a hyper-velocity meteor impact, Lonar Lake is a unique saline and alkaline water body surrounded by temple ruins and dense foliage.",
-      "category": "Unknown Knowledge",
-      "personas": [
-        "Travel & Architecture",
-        "History Buffs"
-      ],
-      "imageUrl": "/images/warrior_cover.jpg",
-      "videoUrl": "https://www.youtube.com/embed/kYJqD96lX-I",
-      "content": [
-        {
-          "title": "Out of this Space",
-          "text": "The crater is the only known impact crater in basalt rock on Earth. The water is highly alkaline, housing unique microorganisms found nowhere else.",
-          "visual": "☄️"
-        },
-        {
-          "title": "Ancient Temples",
-          "text": "The perimeter of the lake features ruins of 800-year-old temples, including the Daitya Sudan temple dedicated to Lord Vishnu, built with basalt carvings.",
-          "visual": "🛕"
         }
       ],
       "isPremium": false,
@@ -525,7 +386,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/hanuman_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -542,7 +403,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1566908829550-e6551b00979b?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -559,7 +420,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
@@ -576,7 +437,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1608976451631-40436d934bb2?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
@@ -593,7 +454,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/hanuman_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1604592289480-e72e0922c668?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -610,7 +471,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1617653245458-15cf64937cc5?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -627,7 +488,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/ganesha.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1590050752117-238cb0612b1b?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -644,7 +505,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1588615419842-1e96a401c107?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
@@ -661,7 +522,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/bhangarh_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
@@ -678,7 +539,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -695,7 +556,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -712,7 +573,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/dharma.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1609137144813-7d7274f1b212?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -729,7 +590,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1596117565989-20c2a297bdc0?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
@@ -746,7 +607,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1518002171953-a080ee81be25?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
@@ -763,7 +624,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1612152605347-f93296cb657d?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -780,7 +641,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -797,7 +658,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1615813967515-e1838c1c5116?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -814,7 +675,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
@@ -831,7 +692,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1566908829550-e6551b00979b?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
@@ -848,7 +709,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -865,7 +726,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1608976451631-40436d934bb2?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -882,7 +743,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1604592289480-e72e0922c668?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -899,7 +760,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ganesha.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1617653245458-15cf64937cc5?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
@@ -916,7 +777,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1590050752117-238cb0612b1b?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
@@ -933,7 +794,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1588615419842-1e96a401c107?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -950,7 +811,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -967,7 +828,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1602491453979-53a9d4077303?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -984,7 +845,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1581850518616-bcb8077fa212?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -1001,7 +862,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1598755257130-c2aaca1f061c?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
@@ -1018,7 +879,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1574068468668-a05a11f871da?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
@@ -1035,7 +896,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
@@ -1052,7 +913,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -1069,7 +930,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -1086,7 +947,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
@@ -1103,7 +964,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1516621115598-a320583d7c35?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
@@ -1120,7 +981,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
@@ -1137,7 +998,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1520111007886-f03fd2d3d181?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -1154,7 +1015,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1606567595334-d39972c85dbe?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -1171,7 +1032,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
@@ -1188,7 +1049,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
@@ -1205,7 +1066,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1602491453979-53a9d4077303?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
@@ -1222,7 +1083,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1581850518616-bcb8077fa212?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -1239,7 +1100,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1598755257130-c2aaca1f061c?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -1256,7 +1117,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1574068468668-a05a11f871da?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
@@ -1273,7 +1134,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
@@ -1290,7 +1151,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
@@ -1307,7 +1168,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -1324,7 +1185,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -1341,7 +1202,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1516621115598-a320583d7c35?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
@@ -1358,7 +1219,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
@@ -1375,7 +1236,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1520111007886-f03fd2d3d181?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
@@ -1392,7 +1253,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1606567595334-d39972c85dbe?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -1409,7 +1270,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -1426,7 +1287,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shivaji.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1600100397608-f010e427cf35?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
@@ -1443,7 +1304,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/chola.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -1460,7 +1321,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
@@ -1477,7 +1338,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
@@ -1494,7 +1355,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1599849579035-13e3e19db29f?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
@@ -1511,7 +1372,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
@@ -1528,7 +1389,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -1545,7 +1406,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/hampi.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
@@ -1562,7 +1423,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/shivaji.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1524492449929-c44ab9cc4467?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
@@ -1579,7 +1440,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shivaji.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
@@ -1596,7 +1457,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1608958416801-b514d8f8fb4a?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
@@ -1613,7 +1474,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1590050800366-2bf4e5900a6e?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -1630,7 +1491,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
@@ -1647,7 +1508,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1585699324551-f6c309eed262?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
@@ -1664,7 +1525,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1600100397608-f010e427cf35?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
@@ -1681,7 +1542,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/chola.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
@@ -1698,7 +1559,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -1715,7 +1576,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
@@ -1732,7 +1593,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1599849579035-13e3e19db29f?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
@@ -1749,7 +1610,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
@@ -1766,7 +1627,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
@@ -1783,7 +1644,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shivaji.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -1800,7 +1661,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1524492449929-c44ab9cc4467?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
@@ -1817,7 +1678,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
@@ -1834,7 +1695,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1608958416801-b514d8f8fb4a?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
@@ -1851,7 +1712,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1590050800366-2bf4e5900a6e?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
@@ -1868,7 +1729,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vault_b_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
@@ -1885,7 +1746,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ellora_kailasa.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
@@ -1902,7 +1763,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/mysterious_ruins.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
@@ -1919,7 +1780,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/mysterious_ruins.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
@@ -1936,7 +1797,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/mysterious_ruins.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
@@ -1953,7 +1814,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/mysterious_ruins.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
@@ -1970,7 +1831,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/mysterious_ruins.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
@@ -1987,7 +1848,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/hampi.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
@@ -2004,7 +1865,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/iron_pillar.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
@@ -2021,7 +1882,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/ramayana_science.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
@@ -2038,7 +1899,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/sundials.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
@@ -2055,7 +1916,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ellora_kailasa.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
@@ -2072,7 +1933,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/taj_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
@@ -2089,7 +1950,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ellora_kailasa.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
@@ -2106,7 +1967,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ellora_kailasa.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
@@ -2123,7 +1984,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/ellora_kailasa.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
@@ -2140,7 +2001,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/mysterious_ruins.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
@@ -2157,7 +2018,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/sundials.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
@@ -2174,7 +2035,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/mysterious_ruins.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
@@ -2191,7 +2052,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
@@ -2208,7 +2069,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
@@ -2225,7 +2086,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
@@ -2242,7 +2103,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/hampi.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
@@ -2259,7 +2120,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
@@ -2276,7 +2137,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/ashoka.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
@@ -2293,166 +2154,1773 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ellora_kailasa.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&h=380&q=80",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
       ]
+    },
+    {
+      "id": "eb_extra_1",
+      "title": "Shiva and the Poison (Neelkanth)",
+      "tagline": "Consuming the Halahala Ocean Poison",
+      "description": "When the cosmic ocean churned and produced deadly poison that threatened all creation, Shiva drank it, staining his neck blue.",
+      "duration": "10:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_2",
+      "title": "Ganesha's Vehicle: Krauncha's Leap",
+      "tagline": "The Story of the Mouse Vahana",
+      "description": "Discover how Ganesha tamed the giant celestial mouse Krauncha, turning him into his humble, obstacle-crossing mount.",
+      "duration": "11:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_3",
+      "title": "Krishna and the Govardhan Hill",
+      "tagline": "Lifting the Mountain on a Finger",
+      "description": "To protect the villagers of Vrindavan from Lord Indra's torrential storms, young Krishna lifted the massive Govardhan Hill on his little finger.",
+      "duration": "12:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_4",
+      "title": "Satyabhama's Tulabharam",
+      "tagline": "The Value of a Single Tulsi Leaf",
+      "description": "The story of Queen Satyabhama trying to weigh Lord Krishna against gold, only to realize that a single leaf of devotion weighs more than all wealth.",
+      "duration": "13:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_5",
+      "title": "Balarama's Plough: Taming Yamuna",
+      "tagline": "The Strength of the Elder Brother",
+      "description": "Listen to the legend of Balarama using his divine ploughshare to drag the Yamuna river closer to the forests of Vrindavan.",
+      "duration": "14:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_6",
+      "title": "The Slaying of Kansa",
+      "tagline": "Dethroning the Tyrant of Mathura",
+      "description": "Follow the dramatic prophecy fulfilling prophecy where Krishna defeats his evil uncle Kansa to restore justice and free his parents.",
+      "duration": "15:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_7",
+      "title": "The Story of Shakuntala's Ring",
+      "tagline": "A Tale of Forgotten Love",
+      "description": "The romantic legend of Shakuntala, Sage Vishwamitra's daughter, her marriage to King Dushyanta, and the lost signet ring curse.",
+      "duration": "16:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1472214222541-d510753a4907?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_8",
+      "title": "The Devotion of Shabari",
+      "tagline": "Tasting the Sweet Berries for Rama",
+      "description": "The heart-touching Ramayana episode of the elderly tribal woman Shabari who tasted every berry to ensure she only fed sweet ones to Rama.",
+      "duration": "17:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_9",
+      "title": "Rama and the Squirrel's Stripes",
+      "tagline": "A Blessing of Three Gentle Strokes",
+      "description": "How a tiny squirrel helped build the bridge to Lanka by rolling in sand, earning three permanent stripes from Rama's caress.",
+      "duration": "18:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_10",
+      "title": "The Birth of Skanda (Kartikeya)",
+      "tagline": "The Six-Headed Warrior God",
+      "description": "Explore the magical birth of Lord Shiva's warrior son, created from sparks of his third eye to lead the army of the gods.",
+      "duration": "19:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_11",
+      "title": "The Slaying of Tarakasura",
+      "tagline": "Kartikeya's First Celestial Victory",
+      "description": "How the young commander Kartikeya fulfilled the prophecy by destroying the invincible demon Tarakasura using his divine spear.",
+      "duration": "20:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1500627869374-13cd993b1115?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_12",
+      "title": "Raja Harishchandra's Truth",
+      "tagline": "The King who Never Spoke a Lie",
+      "description": "The legendary tests of King Harishchandra, who gave up his throne, family, and wealth to remain absolute to the vow of truth.",
+      "duration": "21:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_13",
+      "title": "The Devotion of Kannappa Nayanar",
+      "tagline": "Offering Eyes to Lord Shiva",
+      "description": "The legend of the tribal hunter Kannappa, who plucked out his own eyes to stop the tears of blood on a Shiva Linga.",
+      "duration": "10:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_14",
+      "title": "Vishwaroopam: The Cosmic Vision",
+      "tagline": "Krishna's Infinite Form on the Battlefield",
+      "description": "Step into the battlefield of Kurukshetra where Krishna reveals his cosmic, all-encompassing form to Arjuna, containing the entire universe.",
+      "duration": "11:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_15",
+      "title": "The Slaying of Narakasura",
+      "tagline": "The Origin of Diwali Lights",
+      "description": "How Lord Krishna and Satyabhama defeated the tyrant Narakasura, liberating thousands of captive women and celebrating with oil lamps.",
+      "duration": "12:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5edd0cd9?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_16",
+      "title": "Venkateswara of Tirumala Hills",
+      "tagline": "The Legend of the Lord of Wealth",
+      "description": "Discover the descent of Lord Vishnu as Venkateswara, his marriage to Padmavathi, and the cosmic loan taken from Kubera.",
+      "duration": "13:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1500964757637-c85e8a162699?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_17",
+      "title": "Ashtavakra: The Eight-Bent Sage",
+      "tagline": "Wisdom that Challenged the Royal Court",
+      "description": "The story of the young boy bent in eight places who defeated the wisest scholars in King Janaka's court with his absolute knowledge.",
+      "duration": "14:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_18",
+      "title": "The Slaying of Hiranyakashipu",
+      "tagline": "Narasimha's Pillar Descent",
+      "description": "The dramatic climax where Vishnu emerges as the half-man, half-lion Narasimha at twilight to destroy the demon king.",
+      "duration": "15:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_19",
+      "title": "Matsya: Saving the Sacred Vedas",
+      "tagline": "The First Avatar and the Great Flood",
+      "description": "How Lord Vishnu in his fish avatar swam the deep deluge waters to recover the stolen Vedas from the demon Hayagriva.",
+      "duration": "16:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_20",
+      "title": "The Churning of Halahala Poison",
+      "tagline": "Shiva's Nilakantha Sacrifice",
+      "description": "Explore the deep spiritual meaning behind Shiva holding the blue ocean poison in his throat to save the mortal cosmos.",
+      "duration": "17:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1520111007886-f03fd2d3d181?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_21",
+      "title": "Kubera's Feast: Taming Pride",
+      "tagline": "When Ganesha Ate the God of Wealth's Treasury",
+      "description": "How Ganesha taught the wealthy god Kubera humility by eating all his food, gold plates, and still remaining hungry.",
+      "duration": "18:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1606567595334-d39972c85dbe?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_22",
+      "title": "The Slaying of Bakasura",
+      "tagline": "Bhima's Midnight Cart Battle",
+      "description": "The Mahabharata story of Bhima replacing a villager to deliver a cartload of food to the demon Bakasura, defeating him in combat.",
+      "duration": "19:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_23",
+      "title": "The Devotion of Meerabai",
+      "tagline": "The Princess who Sang for Krishna",
+      "description": "Follow the life of Meerabai, who gave up her royal status to sing ecstatic bhajans for Giridhara Gopal, surviving poison cups.",
+      "duration": "20:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_24",
+      "title": "Sudama's Puffed Rice: Rich Friendship",
+      "tagline": "The Gift that Rebuilt a Palace",
+      "description": "How a small bag of beaten rice offered with pure love by a poor classmate earned him grand castles and abundance.",
+      "duration": "21:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1608958416801-b514d8f8fb4a?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_25",
+      "title": "The Slaying of Ravana's Ten Heads",
+      "tagline": "Victory of Vijayadashami",
+      "description": "The epic final arrow of Rama that pierced the navel of the ten-headed demon king, representing the victory of good over ego.",
+      "duration": "10:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1590050800366-2bf4e5900a6e?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_26",
+      "title": "Panchatantra: The Jackal and the Drum",
+      "tagline": "Overcoming Fear of the Unknown",
+      "description": "A hungry jackal finds a loud noise in the forest, only to discover it was a dry tree branch hitting an old abandoned war drum.",
+      "duration": "11:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_27",
+      "title": "Panchatantra: The Three Fish",
+      "tagline": "Wisdom, Action, and Procrastination",
+      "description": "Three fish react differently to a fisherman's nets—one plans ahead, one acts fast, while the lazy one waits and gets caught.",
+      "duration": "12:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_28",
+      "title": "Panchatantra: The Monkey and the Wedge",
+      "tagline": "Mind Your Own Business",
+      "description": "A curious monkey pulls a half-split wedge out of a log at a carpenter's yard, trapping himself in the process.",
+      "duration": "13:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_29",
+      "title": "Akbar & Birbal: Birbal's Sweet Reply",
+      "tagline": "The Sweetest Thing on Earth",
+      "description": "Akbar asks what the sweetest thing on earth is, and Birbal proves it is not honey or sugar, but the sweet words of a child.",
+      "duration": "14:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_30",
+      "title": "Akbar & Birbal: The Blind List",
+      "tagline": "Counting the Blind in Delhi",
+      "description": "Birbal sits in the bazaar mending shoes and compiles a list of the blind, showing Akbar that even the king joins the list.",
+      "duration": "15:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_31",
+      "title": "Akbar & Birbal: The Kingdom of Fools",
+      "tagline": "Saving a Disciple from the Stake",
+      "description": "How Birbal used a clever trick about a magical stake to rescue a greedy disciple from an illogical king's execution.",
+      "duration": "16:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_32",
+      "title": "Akbar & Birbal: The Golden Plate",
+      "tagline": "Evaluating True Value",
+      "description": "A courtier claims he can find a servant wiser than Birbal. Birbal tests the courtier using a simple brass plate.",
+      "duration": "17:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_33",
+      "title": "Tenali Raman: The Entry of the Giant Elephant",
+      "tagline": "Clever Math in the Courtyard",
+      "description": "Tenali Raman calculates the weight of the royal elephant using a boat and water displacement, saving the state funds.",
+      "duration": "18:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_34",
+      "title": "Tenali Raman: The Secret Gold Wells",
+      "tagline": "Exposing Palace Construction Scams",
+      "description": "Tenali creates mock miniature gold wells in the royal garden to expose corrupt officers who built fake public wells.",
+      "duration": "19:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_35",
+      "title": "Tenali Raman: The Red Peacock Trial",
+      "tagline": "Drying Up a Swindler's Paint",
+      "description": "How Tenali exposed a court artist who painted normal forest peahens red and sold them to King Krishnadevaraya.",
+      "duration": "20:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_36",
+      "title": "Tenali Raman: The Guard's Share",
+      "tagline": "Lashing out Corruption at the Gate",
+      "description": "Tenali promises greedy palace guards a share of his reward from the king, resulting in them receiving lashes.",
+      "duration": "21:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_37",
+      "title": "The Legend of God Series Chronicle 37",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "10:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1472214222541-d510753a4907?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_38",
+      "title": "The Legend of Kids Stories Chronicle 38",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "11:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_39",
+      "title": "The Legend of Audiobooks & Legends Chronicle 39",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "12:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_40",
+      "title": "The Legend of Unknown Knowledge Chronicle 40",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "13:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_41",
+      "title": "The Legend of God Series Chronicle 41",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "14:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1500627869374-13cd993b1115?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_42",
+      "title": "The Legend of Kids Stories Chronicle 42",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "15:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_43",
+      "title": "The Legend of Audiobooks & Legends Chronicle 43",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "16:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_44",
+      "title": "The Legend of Unknown Knowledge Chronicle 44",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "17:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_45",
+      "title": "The Legend of God Series Chronicle 45",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "18:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5edd0cd9?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_46",
+      "title": "The Legend of Kids Stories Chronicle 46",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "19:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1500964757637-c85e8a162699?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_47",
+      "title": "The Legend of Audiobooks & Legends Chronicle 47",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "20:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_48",
+      "title": "The Legend of Unknown Knowledge Chronicle 48",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "21:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_49",
+      "title": "The Legend of God Series Chronicle 49",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "10:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_50",
+      "title": "The Legend of Kids Stories Chronicle 50",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "11:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1520111007886-f03fd2d3d181?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_51",
+      "title": "The Legend of Audiobooks & Legends Chronicle 51",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "12:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1606567595334-d39972c85dbe?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_52",
+      "title": "The Legend of Unknown Knowledge Chronicle 52",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "13:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_53",
+      "title": "The Legend of God Series Chronicle 53",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_54",
+      "title": "The Legend of Kids Stories Chronicle 54",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "15:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1608958416801-b514d8f8fb4a?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_55",
+      "title": "The Legend of Audiobooks & Legends Chronicle 55",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "16:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1590050800366-2bf4e5900a6e?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_56",
+      "title": "The Legend of Unknown Knowledge Chronicle 56",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "17:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_57",
+      "title": "The Legend of God Series Chronicle 57",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "18:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_58",
+      "title": "The Legend of Kids Stories Chronicle 58",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "19:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_59",
+      "title": "The Legend of Audiobooks & Legends Chronicle 59",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "20:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_60",
+      "title": "The Legend of Unknown Knowledge Chronicle 60",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "21:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_61",
+      "title": "The Legend of God Series Chronicle 61",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "10:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_62",
+      "title": "The Legend of Kids Stories Chronicle 62",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "11:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_63",
+      "title": "The Legend of Audiobooks & Legends Chronicle 63",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "12:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_64",
+      "title": "The Legend of Unknown Knowledge Chronicle 64",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "13:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_65",
+      "title": "The Legend of God Series Chronicle 65",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "14:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_66",
+      "title": "The Legend of Kids Stories Chronicle 66",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "15:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_67",
+      "title": "The Legend of Audiobooks & Legends Chronicle 67",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "16:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1472214222541-d510753a4907?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_68",
+      "title": "The Legend of Unknown Knowledge Chronicle 68",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "17:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_69",
+      "title": "The Legend of God Series Chronicle 69",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "18:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_70",
+      "title": "The Legend of Kids Stories Chronicle 70",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "19:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_71",
+      "title": "The Legend of Audiobooks & Legends Chronicle 71",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "20:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1500627869374-13cd993b1115?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_72",
+      "title": "The Legend of Unknown Knowledge Chronicle 72",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "21:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_73",
+      "title": "The Legend of God Series Chronicle 73",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "10:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_74",
+      "title": "The Legend of Kids Stories Chronicle 74",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "11:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_75",
+      "title": "The Legend of Audiobooks & Legends Chronicle 75",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "12:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5edd0cd9?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_76",
+      "title": "The Legend of Unknown Knowledge Chronicle 76",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "13:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1500964757637-c85e8a162699?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_77",
+      "title": "The Legend of God Series Chronicle 77",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "14:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_78",
+      "title": "The Legend of Kids Stories Chronicle 78",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "15:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_79",
+      "title": "The Legend of Audiobooks & Legends Chronicle 79",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "16:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_80",
+      "title": "The Legend of Unknown Knowledge Chronicle 80",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "17:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1520111007886-f03fd2d3d181?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_81",
+      "title": "The Legend of God Series Chronicle 81",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "18:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1606567595334-d39972c85dbe?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_82",
+      "title": "The Legend of Kids Stories Chronicle 82",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "19:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_83",
+      "title": "The Legend of Audiobooks & Legends Chronicle 83",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "20:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_84",
+      "title": "The Legend of Unknown Knowledge Chronicle 84",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "21:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1608958416801-b514d8f8fb4a?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_85",
+      "title": "The Legend of God Series Chronicle 85",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "10:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1590050800366-2bf4e5900a6e?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_86",
+      "title": "The Legend of Kids Stories Chronicle 86",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "11:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_87",
+      "title": "The Legend of Audiobooks & Legends Chronicle 87",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "12:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_88",
+      "title": "The Legend of Unknown Knowledge Chronicle 88",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "13:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_89",
+      "title": "The Legend of God Series Chronicle 89",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "14:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_90",
+      "title": "The Legend of Kids Stories Chronicle 90",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "15:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_91",
+      "title": "The Legend of Audiobooks & Legends Chronicle 91",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "16:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_92",
+      "title": "The Legend of Unknown Knowledge Chronicle 92",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "17:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_93",
+      "title": "The Legend of God Series Chronicle 93",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "18:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_94",
+      "title": "The Legend of Kids Stories Chronicle 94",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "19:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_95",
+      "title": "The Legend of Audiobooks & Legends Chronicle 95",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "20:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_96",
+      "title": "The Legend of Unknown Knowledge Chronicle 96",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "21:00",
+      "rating": "9.5 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of Tales: Grandma",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_97",
+      "title": "The Legend of God Series Chronicle 97",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "duration": "10:00",
+      "rating": "9.6 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1472214222541-d510753a4907?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Heritage: Mahesh",
+      "category": "God Series",
+      "personas": [
+        "Spiritual Seekers"
+      ]
+    },
+    {
+      "id": "eb_extra_98",
+      "title": "The Legend of Kids Stories Chronicle 98",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
+      "duration": "11:00",
+      "rating": "9.7 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "narrator": "Voice of Philosophy: Acharya",
+      "category": "Kids Stories",
+      "personas": [
+        "Kids"
+      ]
+    },
+    {
+      "id": "eb_extra_99",
+      "title": "The Legend of Audiobooks & Legends Chronicle 99",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
+      "duration": "12:00",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "narrator": "Voice of History: Vikram",
+      "category": "Audiobooks & Legends",
+      "personas": [
+        "History Buffs"
+      ]
+    },
+    {
+      "id": "eb_extra_100",
+      "title": "The Legend of Unknown Knowledge Chronicle 100",
+      "tagline": "Sacred Wisdom and Historical Insights",
+      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "duration": "13:00",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": true,
+      "imageUrl": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&h=380&q=80",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Aditi",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "History Buffs"
+      ]
     }
   ],
-  "games": {
-    "trivia": [
+  "subscribers": [
+    {
+      "id": "sub_1",
+      "name": "Arjun Sharma",
+      "paymentMethod": "UPI (arjun@upi)",
+      "amount": 399,
+      "timestamp": "2026-08-24T10:15:30Z"
+    },
+    {
+      "id": "sub_2",
+      "name": "Priyanka Patel",
+      "paymentMethod": "Credit Card (xxxx-xxxx-xxxx-1234)",
+      "amount": 399,
+      "timestamp": "2026-08-24T11:45:10Z"
+    }
+  ],
+  "stats": {
+    "totalRevenue": 798,
+    "totalSubscribers": 2
+  },
+  "aiStatus": {
+    "lastRun": "2026-08-25T12:13:55.586Z",
+    "history": [
       {
-        "question": "Which weapon was used by Lord Shiva to sever the head of Ganesha before reviving him?",
-        "options": [
-          "Sudarshana Chakra",
-          "Trishula (Trident)",
-          "Pinaka Bow",
-          "Brahmastra"
-        ],
-        "answer": 1,
-        "explanation": "Lord Shiva severed Ganesha's head with his Trishula (Trident) in a state of fury before replacing it with an elephant head."
+        "id": "ai_lonar_1787655517188",
+        "title": "Lonar Lake: The Meteor Impact Crater",
+        "category": "Unknown Knowledge",
+        "timestamp": "2026-08-25T10:58:37.188Z"
       },
       {
-        "question": "What is the literal translation and core meaning of the term 'Sanatana Dharma'?",
-        "options": [
-          "The Holy Rituals",
-          "The Way of Kings",
-          "The Eternal Order/Law",
-          "The Path of Ascetics"
-        ],
-        "answer": 2,
-        "explanation": "Sanatana Dharma translates to 'The Eternal Law' or 'The Eternal Order', signifying universal values, truth, and moral duty."
+        "id": "ai_lepakshi_bull_1787656110862",
+        "title": "The Giant Nandi of Lepakshi",
+        "category": "Video Series",
+        "timestamp": "2026-08-25T11:08:30.862Z"
       },
       {
-        "question": "Which of the following is the first avatar (incarnation) in the Dashavatara of Lord Vishnu?",
-        "options": [
-          "Varaha the Boar",
-          "Matsya the Fish",
-          "Kurma the Tortoise",
-          "Narasimha"
-        ],
-        "answer": 1,
-        "explanation": "Matsya (the Fish) is the first avatar, representing Vishnu saving humanity and sacred scriptures from a cosmic deluge."
+        "id": "ai_lepakshi_bull_1787657526476",
+        "title": "The Giant Nandi of Lepakshi",
+        "category": "Video Series",
+        "timestamp": "2026-08-25T11:32:06.476Z"
       },
       {
-        "question": "Which Chola emperor built the magnificent Brihadisvara Temple at Thanjavur in 1010 CE?",
-        "options": [
-          "Rajendra Chola I",
-          "Rajaraja Chola I",
-          "Aditya Chola I",
-          "Karikala Chola"
-        ],
-        "answer": 1,
-        "explanation": "Rajaraja Chola I commissioned this architectural marvel, which is built entirely of granite and is a UNESCO World Heritage site."
+        "id": "ai_lepakshi_1787657654821",
+        "title": "Lepakshi: The Mystery of the Hanging Pillar",
+        "category": "Unknown Knowledge",
+        "timestamp": "2026-08-25T11:34:14.821Z"
       },
       {
-        "question": "The musical pillars that produce classical notes when tapped are located in which Temple in Hampi?",
-        "options": [
-          "Virupaksha Temple",
-          "Hazara Rama Temple",
-          "Vitthala Temple",
-          "Achyutaraya Temple"
-        ],
-        "answer": 2,
-        "explanation": "The Vitthala Temple in Hampi features 56 musical pillars, also known as Saregama pillars, which resonate with notes when struck."
-      }
-    ],
-    "chronology": [
-      {
-        "id": "ev_matsya",
-        "title": "Matsya Avatar (Fish)",
-        "period": "Satya Yuga (Earliest)",
-        "timestamp": -10000,
-        "desc": "Vishnu manifests as a fish to save the king Satyavrata and earth's seeds from the great flood."
+        "id": "ai_lepakshi_bull_1787658542073",
+        "title": "The Giant Nandi of Lepakshi",
+        "category": "Video Series",
+        "timestamp": "2026-08-25T11:49:02.074Z"
       },
       {
-        "id": "ev_kurma",
-        "title": "Kurma Avatar (Tortoise)",
-        "period": "Satya Yuga",
-        "timestamp": -9000,
-        "desc": "Vishnu supports the churning of the milk ocean on his shell to obtain the nectar of immortality."
-      },
-      {
-        "id": "ev_rama",
-        "title": "Rama Avatar (Treta Yuga)",
-        "period": "Treta Yuga",
-        "timestamp": -5000,
-        "desc": "Vishnu descends as the ideal prince and king of Ayodhya to establish justice and duty (Dharma)."
-      },
-      {
-        "id": "ev_krishna",
-        "title": "Krishna Avatar (Dvapara Yuga)",
-        "period": "Dvapara Yuga",
-        "timestamp": -3102,
-        "desc": "Vishnu acts as the divine statesman, delivering the Bhagavad Gita on the battlefield of Kurukshetra."
-      },
-      {
-        "id": "ev_rebellion",
-        "title": "Rebellion of 1857",
-        "period": "Modern History (1857 CE)",
-        "timestamp": 1857,
-        "desc": "The Indian rebellion led by Rani Lakshmibai, Mangal Pandey, and others."
-      }
-    ],
-    "memory": [
-      {
-        "id": 1,
-        "name": "Ganesha",
-        "icon": "🐘",
-        "matchId": "ganesha",
-        "fact": "Eldest son of Shiva & Parvati, Lord of new beginnings and intellect."
-      },
-      {
-        "id": 2,
-        "name": "Ganesha",
-        "icon": "🍭",
-        "matchId": "ganesha",
-        "fact": "Known for his single tusk and love for sweet Modak dumplings."
-      },
-      {
-        "id": 3,
-        "name": "Lord Shiva",
-        "icon": "🔱",
-        "matchId": "shiva",
-        "fact": "The Auspicious Destroyer in the Trimurti, carrying the Trishul."
-      },
-      {
-        "id": 4,
-        "name": "Lord Shiva",
-        "icon": "🌙",
-        "matchId": "shiva",
-        "fact": "Adorned with ash on his skin, a crescent moon, and the river Ganges in his locks."
-      },
-      {
-        "id": 5,
-        "name": "Lord Vishnu",
-        "icon": "🐚",
-        "matchId": "vishnu",
-        "fact": "The Preserver of the cosmos, holding the Shankha (Conch shell) and Lotus."
-      },
-      {
-        "id": 6,
-        "name": "Lord Vishnu",
-        "icon": "🌀",
-        "matchId": "vishnu",
-        "fact": "Wields the Sudarshana Chakra, a spinning disk of celestial energy."
-      },
-      {
-        "id": 7,
-        "name": "Taj Mahal",
-        "icon": "🏛️",
-        "matchId": "taj",
-        "fact": "Built by Shah Jahan as a mausoleum for Mumtaz Mahal."
-      },
-      {
-        "id": 8,
-        "name": "Taj Mahal",
-        "icon": "🕌",
-        "matchId": "taj",
-        "fact": "Constructed of white Makrana marble that changes color with daylight."
+        "id": "ai_lonar_1787660035586",
+        "title": "Lonar Lake: The Meteor Impact Crater",
+        "category": "Unknown Knowledge",
+        "timestamp": "2026-08-25T12:13:55.586Z"
       }
     ]
   }
