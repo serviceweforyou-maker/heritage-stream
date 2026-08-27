@@ -532,7 +532,7 @@ class AppController {
           parentId: "audio-parent",
           subheading: "Heritage Audio Library",
           title: "Ebook & Audio Series",
-          items: all.filter(x => x.audioUrl || x.category === "Ebook & Audio Series" || x.category === "Audiobooks & Legends"),
+          items: all.filter(x => x.category === "Ebook & Audio Series" || x.category === "Audiobooks & Legends"),
           isAudio: true,
           weight: 1
         },
