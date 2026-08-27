@@ -203,7 +203,7 @@
               <input type="file" id="content-file" accept="image/*" class="w-full text-xs text-white/50 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20 cursor-pointer" required>
             </div>
 
-            <button type="submit" class="w-full py-3 mt-4 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl tracking-wider uppercase transition-all shadow-lg shadow-gold/20">
+            <button type="submit" id="submit-content-btn" class="w-full py-3 mt-4 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl tracking-wider uppercase transition-all shadow-lg shadow-gold/20">
               Publish Content Card
             </button>
           </form>
@@ -266,6 +266,7 @@
 
   <script>
     let imageBase64String = "";
+    let editingId = null;
 
     // Handle File Reader
     document.getElementById('content-file').addEventListener('change', (e) => {
@@ -428,20 +429,53 @@
           tableBody.innerHTML = data.contentList.map(item => `
             <tr class="hover:bg-white/5 transition-colors group">
               <td class="py-3 pl-2 font-semibold text-white/90">${item.title}</td>
-              <td class="py-3 font-mono text-white/60">${item.type === 'Audio' ? '🎙️ Audio' : '🎥 Video'}</td>
+              <td class="py-3 font-mono text-white/60">${item.audioUrl ? '🎙️ Audio' : '🎥 Video'}</td>
               <td class="py-3 text-white/60">${item.category}</td>
               <td class="py-3">
                 <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.isPremium ? 'bg-gold/10 text-gold border border-gold/25' : 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/25'}">
                   ${item.isPremium ? 'Premium' : 'Free'}
                 </span>
               </td>
-              <td class="py-3 text-right pr-2">
+              <td class="py-3 text-right pr-2 space-x-2">
+                <button class="edit-btn text-gold hover:text-white font-bold text-xs uppercase px-2.5 py-1 bg-gold/10 rounded border border-gold/20 transition-colors" data-id="${item.id}">
+                  Edit
+                </button>
                 <button class="delete-btn text-crimson hover:text-red-400 font-bold text-xs uppercase px-2 py-1 bg-crimson/10 rounded border border-crimson/20 opacity-60 group-hover:opacity-100 transition-opacity" data-id="${item.id}">
                   Delete
                 </button>
               </td>
             </tr>
           `).join('');
+
+          // Bind edit buttons
+          tableBody.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const id = btn.getAttribute('data-id');
+              const item = data.contentList.find(c => c.id === id);
+              if (item) {
+                editingId = item.id;
+                document.getElementById('content-title').value = item.title || "";
+                document.getElementById('content-tagline').value = item.tagline || "";
+                document.getElementById('content-desc').value = item.description || "";
+                document.getElementById('content-type').value = item.audioUrl ? "audio" : "video";
+                document.getElementById('content-category').value = item.category || "";
+                document.getElementById('content-duration').value = item.duration || "";
+                document.getElementById('content-premium').checked = !!item.isPremium;
+                document.getElementById('content-god').checked = !!item.isGodSeries;
+                document.getElementById('content-url').value = item.audioUrl || item.videoUrl || "";
+                
+                // Allow submitting without re-uploading file cover
+                document.getElementById('content-file').required = false;
+                
+                const submitBtn = document.getElementById('submit-content-btn');
+                submitBtn.textContent = "💾 Save Changes";
+                submitBtn.classList.remove('from-gold', 'to-amber-500');
+                submitBtn.classList.add('from-emerald-500', 'to-teal-500');
+                
+                document.getElementById('upload-content-form').scrollIntoView({ behavior: 'smooth' });
+              }
+            });
+          });
 
           // Bind delete buttons
           tableBody.querySelectorAll('.delete-btn').forEach(btn => {
@@ -543,33 +577,48 @@
         duration: document.getElementById('content-duration').value,
         isPremium: document.getElementById('content-premium').checked,
         isGodSeries: document.getElementById('content-god').checked,
-        mediaUrl: document.getElementById('content-url').value,
-        imageBase64: imageBase64String
+        mediaUrl: document.getElementById('content-url').value
       };
 
-      if (!imageBase64String) {
+      if (imageBase64String) {
+        payload.imageBase64 = imageBase64String;
+      }
+
+      if (!editingId && !imageBase64String) {
         alert("Please select a cover image tile to upload.");
         return;
       }
 
       try {
-        const res = await fetch('/api/content', {
-          method: 'POST',
+        const url = editingId ? `/api/content/${editingId}` : '/api/content';
+        const method = editingId ? 'PUT' : 'POST';
+
+        const res = await fetch(url, {
+          method: method,
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
 
         if (res.ok) {
-          alert("Content card published successfully! check homepage.");
+          alert(editingId ? "Content card updated successfully!" : "Content card published successfully! check homepage.");
+          
+          // Reset edit state
+          editingId = null;
+          document.getElementById('content-file').required = true;
+          const submitBtn = document.getElementById('submit-content-btn');
+          submitBtn.textContent = "Publish Content Card";
+          submitBtn.classList.remove('from-emerald-500', 'to-teal-500');
+          submitBtn.classList.add('from-gold', 'to-amber-500');
+
           document.getElementById('upload-content-form').reset();
           imageBase64String = "";
           loadDashboard();
         } else {
           const err = await res.json();
-          alert(`Publish failed: ${err.error}`);
+          alert(`Submission failed: ${err.error}`);
         }
       } catch (err) {
-        alert(`Error publishing content: ${err.message}`);
+        alert(`Error submitting content: ${err.message}`);
       }
     });
 
