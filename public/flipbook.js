@@ -227,6 +227,23 @@ class FlipBook {
 
   _coverHTML(item) {
     const visual = (item.content && item.content[0]?.visual) || '📜';
+    const isMobileOrTablet = window.innerWidth <= 1024;
+
+    if (isMobileOrTablet) {
+      return `
+        <div class="fb-cover" style="position:absolute;left:0;top:0;width:100%;height:100%;">
+          <div class="fb-cover-inner" style="padding:24px;">
+            <div class="fb-cover-ornament" style="font-size:44px;margin-bottom:12px;">${visual}</div>
+            <div class="fb-cover-divider"></div>
+            <div class="fb-cover-title" style="font-size:18px;">${item.title}</div>
+            <div class="fb-cover-divider"></div>
+            <div class="fb-cover-subtitle" style="font-size:9px;">${item.tagline || 'Heritage Chronicle'}</div>
+            <div style="margin-top:24px;font-size:9px;color:rgba(212,175,55,0.35);letter-spacing:0.15em;font-weight:600;">HERITAGESTREAM</div>
+          </div>
+        </div>
+      `;
+    }
+
     return `
       <!-- LEFT: Back cover (blank decorative) -->
       <div style="position:absolute;left:0;top:0;width:50%;height:100%;background:linear-gradient(160deg,#0d0702,#180e04);border-radius:8px 2px 2px 8px;display:flex;align-items:center;justify-content:center;">
@@ -259,6 +276,23 @@ class FlipBook {
       </li>
     `).join('');
 
+    const isMobileOrTablet = window.innerWidth <= 1024;
+
+    if (isMobileOrTablet) {
+      return `
+        <div style="position:absolute;left:0;top:0;width:100%;height:100%;">
+          <div class="paper-light fb-page-content single-side" style="height:100%;box-sizing:border-box;overflow-y:auto;padding:24px 20px;">
+            <div class="fb-chapter-num">Contents</div>
+            <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:700;color:#2c1a08;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(139,110,60,0.2);">Table of Contents</div>
+            <ul class="fb-toc-list">${listItems}</ul>
+            <div class="fb-page-num" style="margin-top:20px;position:relative;bottom:0;text-align:center;">
+              <span>ii</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     return `
       <!-- LEFT: Title page -->
       <div style="position:absolute;left:0;top:0;width:50%;height:100%;">
@@ -285,7 +319,6 @@ class FlipBook {
   }
 
   _chapterHTML(page) {
-    // Split long text across left and right pages
     const words = page.text.split(' ');
     const half = Math.ceil(words.length / 2);
     const leftText = words.slice(0, half).join(' ');
@@ -294,6 +327,25 @@ class FlipBook {
 
     const leftPageNum  = page.pageNum * 2;
     const rightPageNum = page.pageNum * 2 + 1;
+
+    const isMobileOrTablet = window.innerWidth <= 1024;
+
+    if (isMobileOrTablet) {
+      return `
+        <!-- Single Page layout for Mobile/Tablet -->
+        <div style="position:absolute;left:0;top:0;width:100%;height:100%;">
+          <div class="paper-light fb-page-content single-side" style="height:100%;box-sizing:border-box;overflow-y:auto;padding:24px 20px;">
+            <div class="fb-chapter-num">Chapter ${page.pageNum} of ${page.total}</div>
+            <div class="fb-chapter-visual" style="font-size:36px;margin:10px 0;">${page.visual}</div>
+            <div class="fb-chapter-title" style="font-size:18px;margin-bottom:12px;">${page.title}</div>
+            <div class="fb-chapter-body" style="font-size:13px;line-height:1.6;color:#2c1a08;padding-bottom:40px;">${page.text}</div>
+            <div class="fb-page-num" style="margin-top:20px;position:relative;bottom:10px;text-align:center;">
+              <span>Pg ${page.pageNum}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
 
     return `
       <!-- LEFT page -->
