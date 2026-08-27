@@ -4,7 +4,7 @@ import { TriviaGame, ChronologyGame, MemoryGame } from './games.js?v=18';
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
-export const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : 'https://heritage-stream-backend.onrender.com';
+export const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : 'https://heritage-stream.onrender.com';
 
 // ==========================================
 // BACKEND & DATABASE INTEGRATION SERVICE
