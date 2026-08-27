@@ -27,6 +27,17 @@ const PORT = 8080;
 
 app.use(express.json({ limit: '10mb' })); // support large base64 image payloads
 
+// Enable CORS for cross-origin hosting (e.g. Hostinger frontend to Render backend)
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
 // Intercept requests for admin page to enforce login redirect
 app.get('/admin.html', (req, res) => {
   const cookies = req.headers.cookie || '';
@@ -224,7 +235,7 @@ function getCashfreeCredentials() {
 
 // 4a. Create Live Cashfree Order
 app.post('/api/create-cashfree-order', async (req, res) => {
-  const { name, email, phone } = req.body;
+  const { name, email, phone, frontendOrigin } = req.body;
   const orderId = `order_${Date.now()}`;
   
   const { appId: cashfreeAppId, secretKey: cashfreeSecretKey } = getCashfreeCredentials();
@@ -236,23 +247,26 @@ app.post('/api/create-cashfree-order', async (req, res) => {
   const cashfreeUrl = "https://api.cashfree.com/pg/orders";
   const customerId = `cust_${Date.now()}`;
   
-  // Determine correct protocol origin
-  const origin = req.headers.origin || `${req.protocol}://${req.get('host')}`;
-  
+  // Determine backend URL to route response checks back to this server
+  const backendHost = `${req.protocol}://${req.get('host')}`;
+  const origin = req.headers.origin || backendHost;
+  const targetFrontend = frontendOrigin || origin;
+
+  // The return URL points to the backend /api/verify-payment route
+  const returnUrl = `${backendHost}/api/verify-payment?order_id=${orderId}&frontend_origin=${encodeURIComponent(targetFrontend)}`;
+
   // Cashfree Production credentials strictly require HTTPS return URLs
-  if (!origin.startsWith('https://')) {
-    if (origin.includes('localhost')) {
+  if (!returnUrl.startsWith('https://')) {
+    if (backendHost.includes('localhost')) {
       return res.status(400).json({
-        error: "Cashfree Production API requires an HTTPS redirect return URL. Localhost testing is only supported if you tunnel via HTTPS (e.g. ngrok or local SSL) or switch Cashfree keys to Sandbox mode."
+        error: "Cashfree Production API requires an HTTPS redirect return URL. Localhost testing is only supported if you tunnel your backend via HTTPS (e.g. ngrok) or switch Cashfree keys to Sandbox mode."
       });
     } else {
       return res.status(400).json({
-        error: "Cashfree Production API requires an HTTPS domain. Please install an SSL certificate on your hosting server to process live payments."
+        error: "Cashfree Production API requires an HTTPS redirect return URL. Please configure HTTPS/SSL on your backend server."
       });
     }
   }
-
-  const returnUrl = `${origin}/api/verify-payment?order_id={order_id}`;
 
   const payload = {
     order_amount: 399.00,
@@ -299,14 +313,16 @@ app.post('/api/create-cashfree-order', async (req, res) => {
 
 // 4b. Verify Cashfree Payment and Activate Subscription
 app.get('/api/verify-payment', async (req, res) => {
-  const { order_id } = req.query;
+  const { order_id, frontend_origin } = req.query;
   if (!order_id) {
     return res.redirect('/index.html?payment=failed&reason=no_order_id');
   }
 
+  const targetFrontend = frontend_origin || `${req.protocol}://${req.get('host')}`;
+
   const { appId: cashfreeAppId, secretKey: cashfreeSecretKey } = getCashfreeCredentials();
   if (!cashfreeAppId || !cashfreeSecretKey) {
-    return res.redirect('/index.html?payment=failed&reason=credentials_not_configured');
+    return res.redirect(`${targetFrontend}/index.html?payment=failed&reason=credentials_not_configured`);
   }
   
   const cashfreeUrl = `https://api.cashfree.com/pg/orders/${order_id}`;
@@ -353,14 +369,14 @@ app.get('/api/verify-payment', async (req, res) => {
         writeDB(db);
       }
 
-      // Redirect back with success query param
-      res.redirect(`/index.html?payment=success&order_id=${order_id}`);
+      // Redirect back to frontend domain with success query param
+      res.redirect(`${targetFrontend}/index.html?payment=success&order_id=${order_id}`);
     } else {
-      res.redirect(`/index.html?payment=failed&order_id=${order_id}&status=${data.order_status}`);
+      res.redirect(`${targetFrontend}/index.html?payment=failed&order_id=${order_id}&status=${data.order_status}`);
     }
   } catch (err) {
     console.error("Cashfree Order Verification Error:", err.message);
-    res.redirect(`/index.html?payment=failed&order_id=${order_id}&error=${encodeURIComponent(err.message)}`);
+    res.redirect(`${targetFrontend}/index.html?payment=failed&order_id=${order_id}&error=${encodeURIComponent(err.message)}`);
   }
 });
 
