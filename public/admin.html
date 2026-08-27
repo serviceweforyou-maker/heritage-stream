@@ -68,7 +68,7 @@
   <main class="max-w-7xl mx-auto px-6 py-12 space-y-12 w-full flex-grow">
 
     <!-- Stats Dashboard Section -->
-    <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+    <section class="grid grid-cols-1 md:grid-cols-5 gap-6">
       <div class="bg-white/5 border border-white/5 p-6 rounded-2xl relative overflow-hidden group hover:border-gold/30 transition-all flex flex-col justify-between">
         <span class="text-xs text-white/50 font-bold uppercase tracking-wider block">Total Sales Revenue</span>
         <span class="text-4xl font-extrabold text-gold font-mono my-4" id="stats-revenue">₹0</span>
@@ -82,16 +82,22 @@
       </div>
 
       <div class="bg-white/5 border border-white/5 p-6 rounded-2xl relative overflow-hidden group hover:border-gold/30 transition-all flex flex-col justify-between">
-        <span class="text-xs text-white/50 font-bold uppercase tracking-wider block">Total Catalog Items</span>
-        <span class="text-4xl font-extrabold text-gold font-mono my-4" id="stats-content">0</span>
-        <p class="text-[10px] text-white/40">Videos, audios, and chronicles</p>
+        <span class="text-xs text-white/50 font-bold uppercase tracking-wider block">Total Page Views</span>
+        <span class="text-4xl font-extrabold text-gold font-mono my-4" id="stats-visits">0</span>
+        <p class="text-[10px] text-white/40">Overall site hit counters</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/5 p-6 rounded-2xl relative overflow-hidden group hover:border-gold/30 transition-all flex flex-col justify-between">
+        <span class="text-xs text-white/50 font-bold uppercase tracking-wider block">Unique Visitors</span>
+        <span class="text-4xl font-extrabold text-gold font-mono my-4" id="stats-unique">0</span>
+        <p class="text-[10px] text-white/40">Unique IP track logs</p>
       </div>
 
       <div class="bg-white/5 border border-white/5 p-6 rounded-2xl relative overflow-hidden group hover:border-emerald-500/30 transition-all flex flex-col justify-between">
         <span class="text-xs text-white/50 font-bold uppercase tracking-wider block">System Status</span>
-        <span class="text-xl font-bold text-emerald-400 font-serif my-5 flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
-          <span>Online & Database Connected</span>
+        <span class="text-xl font-bold text-emerald-400 font-serif my-4 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+          <span>Online</span>
         </span>
         <p class="text-[10px] text-white/40">Serving JSON Data API</p>
       </div>
@@ -411,7 +417,8 @@
         // 1. Render metrics
         document.getElementById('stats-revenue').textContent = `₹${data.totalRevenue}`;
         document.getElementById('stats-subscribers').textContent = data.totalSubscribers;
-        document.getElementById('stats-content').textContent = data.totalContent;
+        document.getElementById('stats-visits').textContent = data.totalVisits || 0;
+        document.getElementById('stats-unique').textContent = data.uniqueVisitorsCount || 0;
 
         // 2. Render Catalogue Table
         const tableBody = document.getElementById('catalog-table-body');
