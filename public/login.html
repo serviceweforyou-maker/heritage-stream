@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeritageStream Console | Admin Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#d4af37',
+            crimson: '#e63946',
+            darkSlate: '#0a0b10',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#07080c] text-gray-100 min-h-screen flex items-center justify-center p-6 selection:bg-gold selection:text-black">
+  <div class="w-full max-w-md bg-white/5 border border-white/10 p-8 rounded-3xl space-y-6 backdrop-blur-xl relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold to-amber-500"></div>
+    <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-2xl pointer-events-none"></div>
+
+    <div class="text-center space-y-2">
+      <span class="text-4xl block">⚜️</span>
+      <h2 class="text-2xl font-bold font-serif text-white tracking-wider text-gradient-gold">Console Gateway</h2>
+      <p class="text-xs text-white/50">Enter authorized credentials to access admin database tools.</p>
+    </div>
+
+    <form id="login-form" class="space-y-4">
+      <div id="error-msg" class="hidden text-xs text-red-400 bg-red-500/10 border border-red-500/20 p-3.5 rounded-xl text-center font-medium animate-pulse"></div>
+
+      <div>
+        <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Email Address</label>
+        <input type="email" id="email" placeholder="prasanna.vyoma@gmail.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-gold/50 focus:outline-none" required>
+      </div>
+
+      <div>
+        <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Security Password</label>
+        <input type="password" id="password" placeholder="••••••••••••" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-gold/50 focus:outline-none" required>
+      </div>
+
+      <button type="submit" class="w-full py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl tracking-wider uppercase transition-all shadow-lg shadow-gold/15">
+        Unlock Console
+      </button>
+    </form>
+
+    <div class="text-center">
+      <a href="index.html" class="text-[11px] text-white/40 hover:text-gold transition-colors font-medium">← Back to Platform Homepage</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorMsg = document.getElementById('error-msg');
+
+      errorMsg.classList.add('hidden');
+
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        if (res.ok) {
+          window.location.href = '/admin.html';
+        } else {
+          const data = await res.json();
+          errorMsg.textContent = data.error || "Authentication failed.";
+          errorMsg.classList.remove('hidden');
+        }
+      } catch (err) {
+        errorMsg.textContent = "Server communication error.";
+        errorMsg.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
