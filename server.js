@@ -50,16 +50,237 @@ app.get('/admin.html', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// ==========================================
+// EMAIL NOTIFICATION SYSTEM (SMTP GMAIL)
+// ==========================================
+const nodemailer = require('nodemailer');
+
+// Helper to get Gmail credentials from environment or config.json
+function getGmailCredentials() {
+  let user = process.env.GMAIL_USER;
+  let pass = process.env.GMAIL_PASS;
+  if (!user || !pass) {
+    try {
+      const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), 'utf8'));
+      user = user || config.GMAIL_USER;
+      pass = pass || config.GMAIL_PASS;
+    } catch (err) {
+      // Config not found or invalid
+    }
+  }
+  return { user, pass };
+}
+
+function sendEmail(to, subject, html) {
+  const { user, pass } = getGmailCredentials();
+  if (!user || !pass) {
+    console.error("❌ Gmail credentials are not configured. Cannot send email.");
+    return Promise.reject(new Error("Email credentials missing"));
+  }
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: { user, pass }
+  });
+
+  const mailOptions = {
+    from: `"MANJUNATH ENTERPRISE" <${user}>`,
+    to: to,
+    subject: subject,
+    html: html
+  };
+
+  return transporter.sendMail(mailOptions)
+    .then(info => {
+      console.log(`✅ Email sent to ${to}: ${subject} (${info.messageId})`);
+      return info;
+    })
+    .catch(err => {
+      console.error(`❌ Failed to send email to ${to}:`, err.message);
+      throw err;
+    });
+}
+
+function sendWelcomeEmail(email, name) {
+  const html = `
+    <div style="background-color: #0c0d12; color: #ffffff; font-family: 'Georgia', serif; padding: 40px; max-width: 600px; margin: 0 auto; border: 1px solid #d4af37; border-radius: 16px;">
+      <div style="text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 20px;">
+        <h2 style="color: #d4af37; font-size: 24px; margin: 0;">⚜️ HERITAGE STREAM</h2>
+        <p style="color: rgba(255,255,255,0.6); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin: 5px 0 0 0;">Preserving Culture, Inspiring Minds</p>
+      </div>
+      
+      <h3 style="font-size: 20px; font-weight: bold; margin-top: 30px; color: #ffffff;">Welcome to the Premium Circle!</h3>
+      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Dear <strong>${name}</strong>,</p>
+      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Your subscription has been successfully activated. Thank you for supporting the preservation and education of our cultural history through <strong>MANJUNATH ENTERPRISE</strong>.</p>
+      
+      <div style="background-color: rgba(212, 175, 55, 0.05); border: 1px dashed rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 20px; margin: 25px 0; text-align: center;">
+        <p style="color: #d4af37; font-size: 12px; text-transform: uppercase; font-weight: bold; margin: 0 0 10px 0;">Premium Pass Details</p>
+        <span style="font-size: 22px; font-weight: 900; color: #ffffff;">₹399 / Year</span>
+        <p style="font-size: 11px; color: rgba(255,255,255,0.5); margin: 5px 0 0 0;">Valid for 365 Days • Unrestricted Access</p>
+      </div>
+
+      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">You now have full access to:
+        <ul style="padding-left: 20px; color: rgba(255,255,255,0.8); font-size: 13px; line-height: 1.8;">
+          <li>🎬 100+ high-fidelity Indian heritage docu-series</li>
+          <li>📚 Immersive audiobooks and historical chronicles</li>
+          <li>🎙️ Native Kannada narration and speed cadences</li>
+          <li>🧩 Interactive history games (Trivia, Chronology, Memory Match)</li>
+          <li>🌿 Divya Darshana widgets (Panchang, Ayurveda remedies, breathing coach)</li>
+        </ul>
+      </p>
+      
+      <div style="text-align: center; margin-top: 35px; margin-bottom: 20px;">
+        <a href="https://heritage-stream.onrender.com" style="background: linear-gradient(to right, #d4af37, #f39c12); color: #000000; text-decoration: none; padding: 14px 30px; font-weight: bold; border-radius: 8px; font-size: 14px; text-transform: uppercase; display: inline-block;">Start Exploring Now</a>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; margin-top: 40px; font-size: 10px; color: rgba(255,255,255,0.4); text-align: center; line-height: 1.5;">
+        This email was sent by MANJUNATH ENTERPRISE.<br>
+        Proprietor: MANJUNATHA PRASANNA | Contact: service.weforyou@gmail.com<br>
+        Address: Bangalore, Karnataka, India
+      </div>
+    </div>
+  `;
+  return sendEmail(email, "✨ Welcome to HeritageStream Premium Pass!", html);
+}
+
+function sendRenewalReminderEmail(email, name, expiryDate) {
+  const formattedDate = new Date(expiryDate).toLocaleDateString('en-IN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+  const html = `
+    <div style="background-color: #0c0d12; color: #ffffff; font-family: 'Georgia', serif; padding: 40px; max-width: 600px; margin: 0 auto; border: 1px solid #d4af37; border-radius: 16px;">
+      <div style="text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 20px;">
+        <h2 style="color: #d4af37; font-size: 24px; margin: 0;">⚜️ HERITAGE STREAM</h2>
+        <p style="color: rgba(255,255,255,0.6); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin: 5px 0 0 0;">Keep Your Access Active</p>
+      </div>
+      
+      <h3 style="font-size: 20px; font-weight: bold; margin-top: 30px; color: #ffffff;">Your Premium Pass Expires Soon!</h3>
+      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Dear <strong>${name}</strong>,</p>
+      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Your annual HeritageStream Premium Pass is scheduled to expire on <strong>${formattedDate}</strong>. To ensure you do not lose access to your watch history, watchlist, saved game scores, and premium features, please renew your subscription today.</p>
+      
+      <div style="background-color: rgba(212, 175, 55, 0.05); border: 1px dashed rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 20px; margin: 25px 0; text-align: center;">
+        <p style="color: #d4af37; font-size: 11px; text-transform: uppercase; font-weight: bold; margin: 0 0 5px 0;">Annual Renewal Amount</p>
+        <span style="font-size: 26px; font-weight: 900; color: #ffffff;">₹399 / Year</span>
+      </div>
+      
+      <div style="text-align: center; margin-top: 35px; margin-bottom: 20px;">
+        <a href="https://heritage-stream.onrender.com" style="background: linear-gradient(to right, #d4af37, #f39c12); color: #000000; text-decoration: none; padding: 14px 30px; font-weight: bold; border-radius: 8px; font-size: 14px; text-transform: uppercase; display: inline-block;">Renew My Pass Now</a>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; margin-top: 40px; font-size: 10px; color: rgba(255,255,255,0.4); text-align: center; line-height: 1.5;">
+        This email was sent by MANJUNATH ENTERPRISE.<br>
+        Proprietor: MANJUNATHA PRASANNA | Contact: service.weforyou@gmail.com
+      </div>
+    </div>
+  `;
+  return sendEmail(email, "⏳ Action Required: Your HeritageStream Premium Pass Expires Soon!", html);
+}
+
+function sendAbandonedCheckoutReminderEmail(email, name) {
+  const html = `
+    <div style="background-color: #0c0d12; color: #ffffff; font-family: 'Georgia', serif; padding: 40px; max-width: 600px; margin: 0 auto; border: 1px solid #d4af37; border-radius: 16px;">
+      <div style="text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 20px;">
+        <h2 style="color: #d4af37; font-size: 24px; margin: 0;">⚜️ HERITAGE STREAM</h2>
+        <p style="color: rgba(255,255,255,0.6); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin: 5px 0 0 0;">Complete Your Setup</p>
+      </div>
+      
+      <h3 style="font-size: 20px; font-weight: bold; margin-top: 30px; color: #ffffff;">Did you get disconnected?</h3>
+      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Dear <strong>${name}</strong>,</p>
+      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">We noticed you started setting up your HeritageStream Premium Pass but didn't complete the secure checkout. Don't worry—your cart has been saved.</p>
+      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">For just <strong>₹399/year</strong>, you'll unlock immediate access to our entire premium history library, Sanskrit scriptures, interactive games, and box-breathing coaching.</p>
+      
+      <div style="text-align: center; margin-top: 35px; margin-bottom: 20px;">
+        <a href="https://heritage-stream.onrender.com" style="background: linear-gradient(to right, #d4af37, #f39c12); color: #000000; text-decoration: none; padding: 14px 30px; font-weight: bold; border-radius: 8px; font-size: 14px; text-transform: uppercase; display: inline-block;">Complete Checkout Securely</a>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; margin-top: 40px; font-size: 10px; color: rgba(255,255,255,0.4); text-align: center; line-height: 1.5;">
+        This email was sent by MANJUNATH ENTERPRISE.<br>
+        Proprietor: MANJUNATHA PRASANNA | Contact: service.weforyou@gmail.com
+      </div>
+    </div>
+  `;
+  return sendEmail(email, "👀 Did you forget something? Complete your HeritageStream Pass!", html);
+}
+
+// Background Email Schedulers
+function startEmailSchedulers() {
+  console.log("📬 Email notification schedulers initialized.");
+
+  // 1. Abandoned Checkout Scanner: Run every 10 minutes
+  setInterval(async () => {
+    try {
+      const db = readDB();
+      const now = Date.now();
+      let changed = false;
+
+      db.orders.forEach(order => {
+        // If order was created more than 15 minutes ago, but less than 24 hours ago, and is still in ACTIVE (unpaid) status
+        if (order.status === "ACTIVE" && (now - order.timestamp) > 15 * 60 * 1000 && (now - order.timestamp) < 24 * 60 * 60 * 1000) {
+          order.status = "REMINDED"; // Mark reminded so we don't send multiple emails
+          changed = true;
+          
+          if (order.email) {
+            console.log(`✉️ Sending abandoned checkout reminder to ${order.name} (${order.email})...`);
+            sendAbandonedCheckoutReminderEmail(order.email, order.name).catch(() => {});
+          }
+        }
+      });
+
+      if (changed) {
+        writeDB(db);
+      }
+    } catch (err) {
+      console.error("Error in abandoned checkout scheduler:", err.message);
+    }
+  }, 10 * 60 * 1000); // 10 minutes
+
+  // 2. Subscription Expiry Scanner: Run once every 24 hours
+  setInterval(async () => {
+    try {
+      const db = readDB();
+      const now = Date.now();
+      let changed = false;
+
+      db.subscribers.forEach(sub => {
+        const subDate = new Date(sub.timestamp).getTime();
+        const expiryDate = subDate + 365 * 24 * 60 * 60 * 1000; // 1 year
+        const timeLeft = expiryDate - now;
+
+        // If subscription expires in 7 days (between 6 and 7 days left) and reminder not sent yet
+        if (timeLeft > 0 && timeLeft <= 7 * 24 * 60 * 60 * 1000 && timeLeft > 6 * 24 * 60 * 60 * 1000 && !sub.renewReminderSent) {
+          sub.renewReminderSent = true;
+          changed = true;
+
+          if (sub.email) {
+            console.log(`✉️ Sending renewal reminder to ${sub.name} (${sub.email}) expiring on ${new Date(expiryDate).toLocaleDateString()}...`);
+            sendRenewalReminderEmail(sub.email, sub.name, expiryDate).catch(() => {});
+          }
+        }
+      });
+
+      if (changed) {
+        writeDB(db);
+      }
+    } catch (err) {
+      console.error("Error in subscription expiry scheduler:", err.message);
+    }
+  }, 24 * 60 * 60 * 1000); // 24 hours
+}
+
 const DB_PATH = path.join(__dirname, 'db.json');
 
 // Helper to read database
 function readDB() {
   try {
     const data = fs.readFileSync(DB_PATH, 'utf8');
-    return JSON.parse(data);
+    const parsed = JSON.parse(data);
+    if (!parsed.orders) parsed.orders = [];
+    return parsed;
   } catch (err) {
     console.error("Error reading db.json, returning empty structure", err);
-    return { categories: [], content: [], subscribers: [], stats: { totalRevenue: 0, totalSubscribers: 0 } };
+    return { categories: [], content: [], subscribers: [], orders: [], stats: { totalRevenue: 0, totalSubscribers: 0 } };
   }
 }
 
@@ -301,6 +522,17 @@ app.post('/api/create-cashfree-order', async (req, res) => {
       throw new Error(data.message || "Failed to create order on Cashfree");
     }
 
+    const db = readDB();
+    db.orders.push({
+      orderId: data.order_id,
+      name: name || "Anonymous Explorer",
+      email: email || "",
+      phone: phone || "",
+      timestamp: Date.now(),
+      status: "ACTIVE"
+    });
+    writeDB(db);
+
     res.json({
       order_id: data.order_id,
       payment_session_id: data.payment_session_id
@@ -348,6 +580,12 @@ app.get('/api/verify-payment', async (req, res) => {
       const db = readDB();
       const customer = data.customer_details || {};
       
+      // Update order status in db.orders tracker
+      const loggedOrder = db.orders.find(o => o.orderId === order_id);
+      if (loggedOrder) {
+        loggedOrder.status = "PAID";
+      }
+
       // Check if order already processed in db to avoid duplicate credits
       const alreadySubscribed = db.subscribers.some(sub => sub.orderId === order_id);
       
@@ -366,6 +604,14 @@ app.get('/api/verify-payment', async (req, res) => {
         db.subscribers.push(newSub);
         db.stats.totalRevenue += 399;
         db.stats.totalSubscribers += 1;
+        writeDB(db);
+
+        // Send welcome email asynchronously to avoid blocking the redirect
+        if (newSub.email) {
+          console.log(`✉️ Sending welcome email to ${newSub.name} (${newSub.email})...`);
+          sendWelcomeEmail(newSub.email, newSub.name).catch(() => {});
+        }
+      } else {
         writeDB(db);
       }
 
@@ -680,6 +926,9 @@ setTimeout(() => {
 setInterval(() => {
   AIEngine.checkAndAutoRun();
 }, 1000 * 60 * 60);
+
+// Start background email notifications (Welcome, Renewal, Abandoned Checkout)
+startEmailSchedulers();
 
 app.listen(PORT, () => {
   console.log(`HeritageStream fullstack app listening on http://localhost:${PORT}`);
