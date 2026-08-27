@@ -38,6 +38,34 @@ app.use((req, res, next) => {
   next();
 });
 
+// Visitor Tracking Middleware
+app.use((req, res, next) => {
+  const pathName = req.path.toLowerCase();
+  const isPage = req.method === 'GET' && (pathName === '/' || pathName === '/index.html' || pathName === '/login.html' || pathName === '/admin.html');
+  if (isPage) {
+    try {
+      const db = readDB();
+      if (!db.stats) db.stats = { totalRevenue: 0, totalSubscribers: 0 };
+      
+      const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+      db.stats.totalVisits = (db.stats.totalVisits || 0) + 1;
+      
+      if (!db.stats.uniqueVisitors) db.stats.uniqueVisitors = [];
+      if (!db.stats.uniqueVisitors.includes(ip)) {
+        db.stats.uniqueVisitors.push(ip);
+        if (db.stats.uniqueVisitors.length > 1000) {
+          db.stats.uniqueVisitors.shift(); // Cap IP history array size to avoid bloat
+        }
+        db.stats.uniqueVisitorsCount = (db.stats.uniqueVisitorsCount || 0) + 1;
+      }
+      writeDB(db);
+    } catch (err) {
+      console.error("Visitor tracking log failed:", err.message);
+    }
+  }
+  next();
+});
+
 // Intercept requests for admin page to enforce login redirect
 app.get('/admin.html', (req, res) => {
   const cookies = req.headers.cookie || '';
@@ -49,6 +77,46 @@ app.get('/admin.html', (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Dynamic XML Sitemap Generator for Search Engines & AI Models
+app.get('/sitemap.xml', (req, res) => {
+  try {
+    const db = readDB();
+    const origin = `${req.protocol}://${req.get('host')}`;
+    
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+    
+    // Add static main pages
+    xml += `  <url>\n    <loc>${origin}/index.html</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
+    xml += `  <url>\n    <loc>${origin}/login.html</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.3</priority>\n  </url>\n`;
+    
+    // Add dynamically generated content URLs
+    db.content.forEach(item => {
+      xml += `  <url>\n    <loc>${origin}/index.html?play=${item.id}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+    });
+    
+    xml += `</urlset>`;
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
+  } catch (err) {
+    res.status(500).send("Error generating sitemap");
+  }
+});
+
+// Robots.txt configuration allowing Google & AI indexing
+app.get('/robots.txt', (req, res) => {
+  const origin = `${req.protocol}://${req.get('host')}`;
+  let text = `User-agent: *\n`;
+  text += `Allow: /\n`;
+  text += `Disallow: /admin.html\n`;
+  text += `Disallow: /config.json\n`;
+  text += `Disallow: /api/\n`;
+  text += `\n`;
+  text += `Sitemap: ${origin}/sitemap.xml\n`;
+  res.header('Content-Type', 'text/plain');
+  res.send(text);
+});
 
 // ==========================================
 // EMAIL NOTIFICATION SYSTEM (SMTP GMAIL)
@@ -650,6 +718,8 @@ app.get('/api/admin/stats', verifyAdminSession, (req, res) => {
     totalSubscribers: db.stats.totalSubscribers || db.subscribers.length,
     totalRevenue: db.stats.totalRevenue || (db.subscribers.length * 399),
     totalContent: db.content.length,
+    totalVisits: db.stats.totalVisits || 0,
+    uniqueVisitorsCount: db.stats.uniqueVisitorsCount || 0,
     recentSubscribers: db.subscribers.slice(-5).reverse(), // get last 5 in reverse order
     contentList: db.content.map(c => ({ id: c.id, title: c.title, category: c.category, isPremium: c.isPremium, type: c.audioUrl ? 'Audio' : 'Video' }))
   });
