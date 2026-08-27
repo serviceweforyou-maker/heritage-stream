@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onerror = function(message, source, lineno, colno, error) {
+      const errStr = message + ' at ' + source + ':' + lineno + ':' + colno;
+      fetch('/api/log-error', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ error: errStr })
+      }).catch(function() {});
+    };
+    window.addEventListener('unhandledrejection', function(event) {
+      const errStr = 'Unhandled rejection: ' + event.reason;
+      fetch('/api/log-error', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ error: errStr })
+      }).catch(function() {});
+    });
+  </script>
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+  <title>HeritageStream | Explore Heritage, Play & Learn</title>
+  <meta name="description" content="Discover ancient empires, listen to legendary sagas, and play educational games on HeritageStream. Access all content for ₹399/year.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="flipbook.css">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#d4af37',
+            crimson: '#e63946',
+            darkSlate: '#0a0b10',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-darkSlate text-gray-100 min-h-screen flex flex-col selection:bg-gold selection:text-black">
+
+  <!-- ── TOP UTILITY BAR ── -->
+  <div id="top-utility-bar" class="fixed top-0 left-0 right-0 z-[60] h-9 flex items-center justify-between px-6 border-b border-white/5" style="background: rgba(5,6,10,0.92); backdrop-filter: blur(12px);">
+    <!-- Left: scrolling heritage ticker -->
+    <div class="hidden md:flex items-center gap-2 overflow-hidden flex-1 mr-6">
+      <span class="text-[10px] font-bold text-gold uppercase tracking-widest whitespace-nowrap flex-shrink-0">📜 Latest:</span>
+      <div class="overflow-hidden flex-1 relative h-full flex items-center">
+        <div id="ticker-text" class="text-[10px] text-white/50 whitespace-nowrap" style="animation: tickerScroll 28s linear infinite;">Hampi &bull; Ajanta Caves &bull; Meenakshi Temple &bull; Konark Sun Temple &bull; Living Root Bridges of Meghalaya &bull; Lonar Meteor Crater &bull; Vijayanagara Empire &bull; Bhimbetka Rock Shelters &bull; The Iron Pillar of Delhi &bull; Tenali Raman's Wit &bull;&nbsp;&nbsp;&nbsp; Hampi &bull; Ajanta Caves &bull; Meenakshi Temple &bull; Konark Sun Temple &bull; Living Root Bridges of Meghalaya &bull; Lonar Meteor Crater &bull; Vijayanagara Empire &bull; Bhimbetka Rock Shelters &bull; The Iron Pillar of Delhi &bull; Tenali Raman's Wit &bull;</div>
+      </div>
+    </div>
+    <!-- Right: utility tools -->
+    <div class="flex items-center gap-4 flex-shrink-0 ml-auto">
+      <!-- Ambient Music -->
+      <button id="ambient-music-btn" class="flex items-center gap-1.5 text-white/50 hover:text-gold transition-colors text-[10px] font-semibold uppercase tracking-wider select-none">
+        <span id="ambient-music-icon">🪕</span>
+        <span id="ambient-music-text" class="hidden sm:inline">Ambient Music</span>
+      </button>
+      <!-- Divider -->
+      <span class="w-px h-4 bg-white/10"></span>
+      <!-- Subscription badge -->
+      <div id="navbar-sub-badge" class="flex items-center">
+        <!-- Managed dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MAIN NAVBAR ── -->
+  <header class="fixed left-0 right-0 z-50 transition-all duration-300 border-b border-white/5" style="top: 36px;" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-3">
+      <a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity flex-shrink-0">
+        <span class="text-xl leading-none">⚜️</span>
+        <span class="text-base md:text-xl font-bold font-serif tracking-wider text-gradient-gold leading-none">HeritageStream</span>
+      </a>
+      
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold text-white/80">
+        <a href="#library" class="hover:text-gold transition-colors">Library</a>
+        <a href="#explorer" class="hover:text-gold transition-colors">Map Explorer</a>
+        <a href="#divya-darshana" class="hover:text-gold transition-colors font-bold text-gold flex items-center gap-1">✨ Divya Darshana</a>
+        <a href="#play-zone" class="hover:text-gold transition-colors">Play Zone</a>
+        <a href="#dashboard" class="hover:text-gold transition-colors">Dashboard</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Search -->
+        <div class="relative">
+          <input type="text" id="search-input" placeholder="Search..." class="w-28 sm:w-36 focus:w-44 sm:focus:w-52 bg-white/5 border border-white/10 hover:border-white/20 focus:border-gold/50 rounded-full px-3 py-1.5 pl-8 text-xs text-white placeholder-white/40 focus:outline-none transition-all">
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
+        </div>
+        
+        <!-- User Profile avatar drop -->
+        <div class="relative group ml-1 hidden md:block" id="header-profile-dropdown">
+          <button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 hover:border-gold/30 transition-all text-xs font-bold text-white/90">
+            <span id="active-profile-avatar">📜</span>
+            <span id="active-profile-name">Scholar</span>
+            <span class="text-[9px] opacity-50">▼</span>
+          </button>
+          <div class="absolute right-0 top-10 w-40 bg-[#101116] border border-white/10 rounded-xl overflow-hidden shadow-2xl hidden group-hover:block z-[90]">
+            <button id="switch-profile-btn" class="w-full text-left px-4 py-2.5 text-xs text-white/70 hover:text-white hover:bg-white/5 transition-all flex items-center gap-2">
+              🔄 Switch Profile
+            </button>
+          </div>
+        </div>
+
+        <!-- Hamburger (mobile only) -->
+        <button id="mobile-menu-btn" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/5" aria-label="Menu">
+          <span class="mobile-bar w-5 h-0.5 bg-white/70 rounded-full transition-all"></span>
+          <span class="mobile-bar w-5 h-0.5 bg-white/70 rounded-full transition-all"></span>
+          <span class="mobile-bar w-5 h-0.5 bg-white/70 rounded-full transition-all"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-nav-menu" class="hidden md:hidden border-t border-white/5 px-4 py-4 space-y-1" style="background: rgba(5,6,10,0.97); backdrop-filter: blur(20px);">
+      <a href="#library" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-gold transition-all">📚 Library</a>
+      <a href="#explorer" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-gold transition-all">🗺️ Map Explorer</a>
+      <a href="#divya-darshana" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-bold text-gold hover:bg-white/5 transition-all">✨ Divya Darshana</a>
+      <a href="#play-zone" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-gold transition-all">🎮 Play Zone</a>
+      <a href="#dashboard" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-gold transition-all">📊 Dashboard</a>
+    </div>
+  </header>
+
+  <!-- Hero Section (Spotlight) -->
+  <section id="hero-spotlight" class="relative border-b border-white/5 overflow-hidden w-full" style="height: 85vh;">
+    <!-- Content injected dynamically via app.js -->
+  </section>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-16 space-y-12 md:space-y-24 w-full">
+    
+    <!-- Library Section -->
+    <section id="library" class="space-y-10 scroll-mt-24">
+      <!-- Persona Filter Bar -->
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 px-1">
+        <button class="persona-tab-btn flex-shrink-0 px-3 py-2 rounded-xl text-xs font-bold transition-all border border-gold bg-gold text-black shadow-lg shadow-gold/15 whitespace-nowrap" data-persona="all">✨ All</button>
+        <button class="persona-tab-btn flex-shrink-0 px-3 py-2 rounded-xl text-xs font-bold transition-all border border-white/10 hover:border-gold/30 text-white/70 whitespace-nowrap" data-persona="Kids">👶 Kids</button>
+        <button class="persona-tab-btn flex-shrink-0 px-3 py-2 rounded-xl text-xs font-bold transition-all border border-white/10 hover:border-gold/30 text-white/70 whitespace-nowrap" data-persona="History Buffs">⚔️ History</button>
+        <button class="persona-tab-btn flex-shrink-0 px-3 py-2 rounded-xl text-xs font-bold transition-all border border-white/10 hover:border-gold/30 text-white/70 whitespace-nowrap" data-persona="Spiritual Seekers">🕉️ Spiritual</button>
+        <button class="persona-tab-btn flex-shrink-0 px-3 py-2 rounded-xl text-xs font-bold transition-all border border-white/10 hover:border-gold/30 text-white/70 whitespace-nowrap" data-persona="Travel Enthusiasts">🧭 Travel</button>
+      </div>
+
+      <!-- Persona Filtered Grid (hidden by default) -->
+      <div id="persona-filtered-grid" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-4">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Dynamic Rows (Continue Watching, My List) -->
+      <div id="dynamic-library-rows" class="space-y-14"></div>
+
+      <!-- Standard Categorized Library rows -->
+      <div id="standard-library-rows" class="space-y-14">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Map Explorer -->
+    <section id="explorer" class="scroll-mt-24">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-2">Interactive Learning</span>
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-white mb-4">Heritage Site Explorer</h2>
+        <p class="text-sm text-white/60">Select ancient cities and wonders on the historical quadrant map to reveal their cultural significance.</p>
+      </div>
+
+      <!-- Region Filter Tabs -->
+      <div class="flex items-center justify-center gap-2 overflow-x-auto no-scrollbar pb-4 max-w-2xl mx-auto">
+        <button class="region-filter-btn px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-gold bg-gold text-black shadow-lg" data-region="all">📍 All Regions</button>
+        <button class="region-filter-btn px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-region="north">🏔️ North</button>
+        <button class="region-filter-btn px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-region="south">🌴 South</button>
+        <button class="region-filter-btn px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-region="east">🌅 East</button>
+        <button class="region-filter-btn px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-region="west">🏜️ West</button>
+        <button class="region-filter-btn px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-region="central">🏛️ Central</button>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-8 items-stretch">
+        <!-- Interactive Quadrant Map -->
+        <div class="lg:col-span-3 bg-white/5 border border-white/5 rounded-3xl p-6 relative overflow-hidden flex flex-col justify-between min-h-[460px]">
+          <!-- Grid BG Lines -->
+          <div class="absolute inset-0 grid grid-cols-8 grid-rows-8 opacity-[0.03] pointer-events-none">
+            <div class="border border-white"></div><div class="border border-white"></div><div class="border border-white"></div><div class="border border-white"></div>
+            <div class="border border-white"></div><div class="border border-white"></div><div class="border border-white"></div><div class="border border-white"></div>
+            <div class="border border-white"></div><div class="border border-white"></div><div class="border border-white"></div><div class="border border-white"></div>
+          </div>
+          
+          <div class="flex justify-between text-[10px] font-mono text-white/40 tracking-wider">
+            <span>REGION: IND-SUB</span>
+            <span id="map-radar-status" class="text-gold animate-pulse">📡 SCANNING RADAR ACTIVE...</span>
+          </div>
+
+          <!-- Stylized Marker Map Plot -->
+          <div class="relative w-full h-80 my-auto flex items-center justify-center" style="background: radial-gradient(circle, rgba(212,175,55,0.02) 0%, transparent 70%);">
+            <!-- Map Outlines (Stylized) -->
+            <div class="absolute w-96 h-72 bg-gold/5 rounded-full filter blur-3xl opacity-20"></div>
+            
+            <!-- Site Pins -->
+            
+            <!-- NORTH -->
+            <button class="map-pin absolute top-[28%] left-[49%] group transition-all" data-site="taj" data-region="north">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-gold border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Taj Mahal</span>
+            </button>
+
+            <button class="map-pin absolute top-[15%] left-[54%] group transition-all" data-site="kedarnath" data-region="north">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-gold border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Kedarnath</span>
+            </button>
+
+            <button class="map-pin absolute top-[24%] left-[45%] group transition-all" data-site="redfort" data-region="north">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-gold border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Red Fort</span>
+            </button>
+
+            <!-- SOUTH -->
+            <button class="map-pin absolute top-[74%] left-[43%] group transition-all" data-site="hampi" data-region="south">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-amber-500 border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Hampi</span>
+            </button>
+
+            <button class="map-pin absolute top-[85%] left-[48%] group transition-all" data-site="meenakshi" data-region="south">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-amber-500 border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Meenakshi Temple</span>
+            </button>
+
+            <button class="map-pin absolute top-[79%] left-[51%] group transition-all" data-site="brihad" data-region="south">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-amber-500 border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Brihadeeswarar</span>
+            </button>
+
+            <!-- EAST -->
+            <button class="map-pin absolute top-[58%] left-[64%] group transition-all" data-site="konark" data-region="east">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-rose-500 border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Konark Temple</span>
+            </button>
+
+            <button class="map-pin absolute top-[44%] left-[60%] group transition-all" data-site="nalanda" data-region="east">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-rose-500 border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Nalanda Ruins</span>
+            </button>
+
+            <button class="map-pin absolute top-[38%] left-[78%] group transition-all" data-site="kamakhya" data-region="east">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-rose-500 border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Kamakhya Temple</span>
+            </button>
+
+            <!-- WEST -->
+            <button class="map-pin absolute top-[54%] left-[38%] group transition-all" data-site="ajanta" data-region="west">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-teal-400 border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Ajanta Caves</span>
+            </button>
+
+            <button class="map-pin absolute top-[38%] left-[32%] group transition-all" data-site="jaisalmer" data-region="west">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-teal-400 border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Jaisalmer Fort</span>
+            </button>
+
+            <button class="map-pin absolute top-[50%] left-[24%] group transition-all" data-site="dwarka" data-region="west">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-teal-400 border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Dwarka Temple</span>
+            </button>
+
+            <!-- CENTRAL -->
+            <button class="map-pin absolute top-[44%] left-[50%] group transition-all" data-site="khajuraho" data-region="central">
+              <span class="relative flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-500 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-purple-500 border border-black shadow"></span>
+              </span>
+              <span class="absolute left-1/2 -translate-x-1/2 bottom-5 bg-black/80 border border-white/10 text-white text-[9px] font-bold py-0.5 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Khajuraho</span>
+            </button>
+
+          </div>
+
+          <div class="text-[10px] text-white/50 text-center font-mono uppercase tracking-wider">
+            Click nodes on the coordinates scanner to lock telemetry
+          </div>
+        </div>
+
+        <!-- Site Detail card -->
+        <div class="lg:col-span-2 bg-white/5 border border-white/5 rounded-3xl p-6 flex flex-col justify-between" id="map-detail-panel">
+          <div class="my-auto text-center p-8" id="map-detail-empty">
+            <span class="text-4xl text-white/20 block mb-3">🗺️</span>
+            <h4 class="font-bold font-serif text-lg text-white mb-1">Telemetry Offline</h4>
+            <p class="text-xs text-white/50">Select a coordinates node on the grid scanner to establish a radar lock.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DIVYA DARSHANA (SPIRITUAL COMPANION) ── -->
+    <section id="divya-darshana" class="scroll-mt-24 space-y-12">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-2">Spiritual &amp; Wellness Companion</span>
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-white mb-4">ದಿವ್ಯ ದರ್ಶನ | Divya Darshana</h2>
+        <p class="text-sm text-white/60">Your guide to Daily Panchang, Ayurvedic home wellness, and meditative breath control.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-8 items-start">
+        
+        <!-- Left Side: Panchang & Guided Breathing -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- Panchang Widget -->
+          <div class="bg-white/5 border border-white/5 rounded-3xl p-6 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+              <h3 class="font-serif font-bold text-white text-lg flex items-center gap-2">
+                <span>📅</span> Daily Panchang
+              </h3>
+              <span class="text-[10px] bg-gold/15 text-gold border border-gold/25 px-2.5 py-1 rounded-full font-mono font-bold" id="panchang-today-date">Loading...</span>
+            </div>
+
+            <div class="space-y-3.5 text-sm" id="panchang-widget-body">
+              <!-- Rendered dynamically by app.js -->
+              <div class="flex justify-between py-2 border-b border-white/5">
+                <span class="text-white/50">Lunar Month</span>
+                <span class="font-bold text-white" id="panchang-month">-</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-white/5">
+                <span class="text-white/50">Tithi</span>
+                <span class="font-bold text-gold" id="panchang-tithi">-</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-white/5">
+                <span class="text-white/50">Nakshatra</span>
+                <span class="font-bold text-white" id="panchang-nakshatra">-</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-white/5">
+                <span class="text-white/50">Auspicious (Abhijit)</span>
+                <span class="font-bold text-emerald-400" id="panchang-abhijit">-</span>
+              </div>
+              <div class="flex justify-between py-2">
+                <span class="text-white/50">Rahu Kala</span>
+                <span class="font-bold text-rose-400" id="panchang-rahu">-</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guided Breathing Widget -->
+          <div class="bg-white/5 border border-white/5 rounded-3xl p-6 flex flex-col items-center text-center relative overflow-hidden">
+            <h3 class="font-serif font-bold text-white text-lg flex items-center gap-2 mb-4 self-start">
+              <span>🧘</span> Pranayama Guide
+            </h3>
+            
+            <!-- Breathing Visual Circle -->
+            <div class="w-40 h-40 rounded-full border border-gold/25 flex flex-col items-center justify-center relative mb-6" id="pranayama-circle-outer" style="background: rgba(212,175,55,0.02); transition: all 0.5s ease;">
+              <div class="w-24 h-24 rounded-full bg-gold/10 border border-gold flex items-center justify-center text-black font-extrabold text-sm transition-all duration-1000 shadow-lg shadow-gold/10" id="pranayama-circle-inner" style="transform: scale(1.0);">
+                <span class="text-white font-serif tracking-wider" id="pranayama-state-text">Ready</span>
+              </div>
+            </div>
+
+            <p class="text-xs text-white/60 mb-6 max-w-xs leading-relaxed" id="pranayama-instruction">Click Start to begin alternate nostril box breathing. Balance your vital energy (Prana).</p>
+            
+            <div class="flex items-center gap-4">
+              <button id="pranayama-toggle-btn" class="px-6 py-2 bg-gold hover:bg-gold/90 text-black text-xs font-black uppercase tracking-widest rounded-xl transition-all">Start Sadhana</button>
+              <span id="pranayama-timer" class="text-sm font-bold text-white/50 font-mono">00:00</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Ayurveda Remedies Finder -->
+        <!-- Right Side: Interactive Spiritual Guides -->
+        <div class="lg:col-span-3 bg-white/5 border border-white/5 rounded-3xl p-6 space-y-6 flex flex-col justify-between min-h-[500px]">
+          <!-- Sub-Tab Header buttons -->
+          <div class="flex border border-white/10 p-1 bg-white/5 rounded-xl">
+            <button id="divya-tab-ayur" class="flex-1 py-2 text-xs font-extrabold rounded-lg bg-gold text-black transition-all">🌿 Ayurveda Wellness</button>
+            <button id="divya-tab-temple" class="flex-1 py-2 text-xs font-bold text-white/60 hover:text-white transition-all">🛕 Karnataka Darshana</button>
+          </div>
+
+          <!-- Tab Content 1: Ayurveda Remedies Finder -->
+          <div id="divya-panel-ayur" class="space-y-6 flex-grow flex flex-col justify-between">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+              <div>
+                <h3 class="font-serif font-bold text-white text-lg flex items-center gap-2">
+                  <span>🌿</span> Ayurveda Home Remedies
+                </h3>
+                <p class="text-[10px] text-white/50">Natural herb cures &amp; recipes for everyday health conditions.</p>
+              </div>
+              <!-- Search bar -->
+              <div class="relative w-full sm:w-60">
+                <input type="text" id="ayurveda-search" placeholder="Search remedies..." class="w-full bg-white/5 border border-white/10 hover:border-white/20 focus:border-gold/50 rounded-xl px-3.5 py-1.5 pl-9 text-xs text-white placeholder-white/40 focus:outline-none transition-all">
+                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
+              </div>
+            </div>
+
+            <!-- Category filter tabs -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-gold bg-gold text-black shadow-lg" data-category="all">✨ All Remedies</button>
+              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Cold &amp; Cough">🍲 Cold &amp; Cough</button>
+              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Immunity">💪 Immunity</button>
+              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Sleep &amp; Mind">🧠 Sleep &amp; Mind</button>
+              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Digestion">🥗 Digestion</button>
+              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Skin &amp; Hair">💅 Skin &amp; Hair</button>
+            </div>
+
+            <!-- Remedies Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[360px] overflow-y-auto pr-1 no-scrollbar flex-grow" id="ayurveda-remedies-grid">
+              <!-- Rendered dynamically by app.js -->
+            </div>
+          </div>
+
+          <!-- Tab Content 2: Karnataka Temple Darshana -->
+          <div id="divya-panel-temple" class="space-y-6 flex-grow flex flex-col justify-between hidden">
+            <!-- Search & Nearby Button -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+              <div class="relative flex-grow max-w-md">
+                <input type="text" id="temple-search" placeholder="Search temple, city, deity..." class="w-full bg-white/5 border border-white/10 hover:border-white/20 focus:border-gold/50 rounded-xl px-4 py-2 pl-10 text-xs text-white placeholder-white/40 focus:outline-none transition-all">
+                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
+              </div>
+              <button id="nearby-temples-btn" class="flex-shrink-0 flex items-center justify-center gap-1.5 px-4 py-2 bg-gold hover:bg-gold/90 text-black text-xs font-black rounded-xl transition-all shadow-lg shadow-gold/10">
+                📍 Nearby Temples
+              </button>
+            </div>
+
+            <!-- Deity/Category Filter Buttons from Screenshot -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 text-[10px]">
+              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-gold bg-gold text-black shadow-lg" data-category="all">All</button>
+              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Shakti Peetha">Shakti Peetha</button>
+              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="UNESCO Heritage">UNESCO Heritage</button>
+              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Major Pilgrimage">Major Pilgrimage</button>
+              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Hoysala Heritage">Hoysala Heritage</button>
+              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Dvaita Matha">Dvaita Matha</button>
+              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Adi Shankara Peetha">Adi Shankara Peetha</button>
+            </div>
+
+            <!-- Temples Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[360px] overflow-y-auto pr-1 no-scrollbar flex-grow animate-fade-in" id="karnataka-temples-grid">
+              <!-- Injected dynamically by app.js -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Play Zone (Learning Games Arena) -->
+    <section id="play-zone" class="scroll-mt-24 space-y-12">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-2">Gamified Learning</span>
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-white mb-4">Historical Play Arena</h2>
+        <p class="text-sm text-white/60">Play premium, pre-built games to test your memory, chronology, and historical wisdom.</p>
+      </div>
+
+      <!-- Tab Selectors -->
+      <div class="flex border-b border-white/10 max-w-xl mx-auto rounded-xl overflow-hidden bg-white/5 p-1.5">
+        <button class="game-tab-btn flex-1 py-3 text-sm font-extrabold rounded-lg active-game-tab text-gold transition-all duration-300" data-game="trivia">
+          ⚡ Trivia Challenge
+        </button>
+        <button class="game-tab-btn flex-1 py-3 text-sm font-extrabold rounded-lg text-white/60 border-transparent transition-all duration-300" data-game="chronology">
+          ⏳ Chronology Quest
+        </button>
+        <button class="game-tab-btn flex-1 py-3 text-sm font-extrabold rounded-lg text-white/60 border-transparent transition-all duration-300" data-game="memory">
+          🧩 Monument Match
+        </button>
+      </div>
+
+      <!-- Game Container Injector -->
+      <div class="max-w-2xl mx-auto" id="game-arena-body">
+        <!-- Rendered dynamically by games.js -->
+      </div>
+    </section>
+
+    <!-- Scores Dashboard & Accomplishments -->
+    <section id="dashboard" class="scroll-mt-24 space-y-12">
+      <!-- Profile Header Status Bar -->
+      <div class="max-w-4xl mx-auto bg-white/5 border border-white/5 p-6 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex items-center gap-4 relative z-10">
+          <div class="w-14 h-14 rounded-full bg-gold/15 border border-gold/30 text-gold flex items-center justify-center text-3xl font-serif">🎓</div>
+          <div>
+            <h3 class="font-serif font-bold text-white text-lg flex items-center gap-2">
+              <span id="profile-name">Vedic Scholar</span>
+              <span class="text-[10px] bg-gold/15 text-gold px-2 py-0.5 rounded border border-gold/25 font-sans uppercase font-bold" id="profile-level">Level 2</span>
+            </h3>
+            <p class="text-xs text-white/50" id="profile-rank-desc">Deep cultural exploration journey active.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-8 relative z-10">
+          <div class="text-center">
+            <span class="text-[10px] text-white/40 block font-bold uppercase tracking-wider mb-1">Learning Streak</span>
+            <span class="text-2xl font-black text-amber-500 font-mono flex items-center justify-center gap-1">
+              <span>🔥</span> <span id="profile-streak" class="streak-active">3 Days</span>
+            </span>
+          </div>
+          <div class="h-8 border-l border-white/10 hidden md:block"></div>
+          <div class="text-center">
+            <span class="text-[10px] text-white/40 block font-bold uppercase tracking-wider mb-1">Gyan Coins</span>
+            <span class="text-2xl font-black text-gold font-mono flex items-center justify-center gap-1">
+              <span>🪙</span> <span id="profile-coins">0</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-2">Performance Center</span>
+        <h2 class="text-3xl font-bold font-serif text-white">Your Achievements</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <!-- Score Card 1 -->
+        <div class="bg-white/5 border border-white/5 p-6 rounded-2xl text-center relative overflow-hidden group hover:border-gold/30 transition-all">
+          <div class="w-12 h-12 rounded-full bg-gold/10 text-gold flex items-center justify-center text-xl mx-auto mb-4 border border-gold/20">⚡</div>
+          <h4 class="font-bold text-white text-sm">Trivia Highscore</h4>
+          <span class="text-4xl font-extrabold font-mono text-gold block my-2" id="dash-score-trivia">0%</span>
+          <p class="text-[10px] text-white/50">Unlocked: Scholar of Antiquity</p>
+        </div>
+
+        <!-- Score Card 2 -->
+        <div class="bg-white/5 border border-white/5 p-6 rounded-2xl text-center relative overflow-hidden group hover:border-gold/30 transition-all">
+          <div class="w-12 h-12 rounded-full bg-gold/10 text-gold flex items-center justify-center text-xl mx-auto mb-4 border border-gold/20">⏳</div>
+          <h4 class="font-bold text-white text-sm">Chronology Highscore</h4>
+          <span class="text-4xl font-extrabold font-mono text-gold block my-2" id="dash-score-chrono">0%</span>
+          <p class="text-[10px] text-white/50">Unlocked: Master of Timelines</p>
+        </div>
+
+        <!-- Score Card 3 -->
+        <div class="bg-white/5 border border-white/5 p-6 rounded-2xl text-center relative overflow-hidden group hover:border-gold/30 transition-all">
+          <div class="w-12 h-12 rounded-full bg-gold/10 text-gold flex items-center justify-center text-xl mx-auto mb-4 border border-gold/20">🧩</div>
+          <h4 class="font-bold text-white text-sm">Monument Match Highscore</h4>
+          <span class="text-4xl font-extrabold font-mono text-gold block my-2" id="dash-score-memory">0%</span>
+          <p class="text-[10px] text-white/50">Unlocked: Architectural Sage</p>
+        </div>
+      </div>
+
+      <!-- Gyan Shop Section -->
+      <div class="max-w-4xl mx-auto bg-gradient-to-b from-white/[0.03] to-transparent border border-white/5 p-8 rounded-3xl space-y-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 bg-gold/10 text-gold text-[9px] font-bold px-3 py-1 rounded-br-lg uppercase tracking-wider">Gyan Store</div>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-white/5 pb-4">
+          <div>
+            <h3 class="text-xl font-bold font-serif text-white">Gyan Coins Rewards & Shop</h3>
+            <p class="text-xs text-white/50">Redeem Gyan coins earned from playing matches to unlock premium collectible digital assets.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="gyan-shop-grid">
+          <!-- Reward Item 1 -->
+          <div class="bg-black/30 border border-white/5 p-5 rounded-2xl flex flex-col justify-between reward-card relative group" id="reward-hampi_wall">
+            <span class="text-xs font-bold text-gold bg-gold/10 px-2 py-0.5 rounded self-start mb-4 border border-gold/20">Wallpaper</span>
+            <div class="mb-4">
+              <h4 class="font-serif font-bold text-white text-base">Hampi Chariot 4K Wallpaper</h4>
+              <p class="text-xs text-white/40 mt-1 font-sans">High-definition digital wallpaper of Vitthala Temple stone chariot.</p>
+            </div>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="text-xs text-white/60 font-semibold font-mono">🪙 40 Coins</span>
+              <button class="redeem-reward-btn px-4 py-2 bg-white/10 hover:bg-white text-white hover:text-black font-extrabold text-[10px] uppercase rounded-lg tracking-wider transition-all" data-id="hampi_wall" data-cost="40">Unlock</button>
+            </div>
+          </div>
+
+          <!-- Reward Item 2 -->
+          <div class="bg-black/30 border border-white/5 p-5 rounded-2xl flex flex-col justify-between reward-card relative group" id="reward-v_badge">
+            <span class="text-xs font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded self-start mb-4 border border-amber-500/20">Digital Badge</span>
+            <div class="mb-4">
+              <h4 class="font-serif font-bold text-white text-base">Dashavatara Collector Badge</h4>
+              <p class="text-xs text-white/40 mt-1 font-sans">Exclusive digital avatar badge illustrating Vishnu's incarnations.</p>
+            </div>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="text-xs text-white/60 font-semibold font-mono">🪙 60 Coins</span>
+              <button class="redeem-reward-btn px-4 py-2 bg-white/10 hover:bg-white text-white hover:text-black font-extrabold text-[10px] uppercase rounded-lg tracking-wider transition-all" data-id="v_badge" data-cost="60">Unlock</button>
+            </div>
+          </div>
+
+          <!-- Reward Item 3 -->
+          <div class="bg-black/30 border border-white/5 p-5 rounded-2xl flex flex-col justify-between reward-card relative group" id="reward-chola_guide">
+            <span class="text-xs font-bold text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded self-start mb-4 border border-blue-500/20">Guide Book</span>
+            <div class="mb-4">
+              <h4 class="font-serif font-bold text-white text-base">Chola Naval Empire PDF Guide</h4>
+              <p class="text-xs text-white/40 mt-1 font-sans">Detailed history handbook detailing Chola maritime design maps.</p>
+            </div>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="text-xs text-white/60 font-semibold font-mono">🪙 80 Coins</span>
+              <button class="redeem-reward-btn px-4 py-2 bg-white/10 hover:bg-white text-white hover:text-black font-extrabold text-[10px] uppercase rounded-lg tracking-wider transition-all" data-id="chola_guide" data-cost="80">Unlock</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="scroll-mt-24 max-w-4xl mx-auto my-16">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-2">Membership Plans</span>
+        <h2 class="text-3xl font-bold font-serif text-white mb-4">Pricing Plans</h2>
+        <p class="text-sm text-white/60">Choose a plan that fits your learning journey. Mentioned in Indian Rupees (INR).</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto px-4">
+        <!-- Plan 1: Free Tier -->
+        <div class="bg-white/5 border border-white/5 rounded-3xl p-8 flex flex-col justify-between hover:border-white/10 transition-all relative overflow-hidden">
+          <div>
+            <h3 class="text-lg font-bold text-white font-serif mb-2">Free Explorer Pass</h3>
+            <p class="text-xs text-white/50 mb-6">Start exploring Indian history and culture with standard access.</p>
+            <div class="mb-6">
+              <span class="text-4xl font-extrabold text-white font-mono">₹0</span>
+              <span class="text-sm text-white/40"> / free forever</span>
+            </div>
+            <ul class="space-y-3 text-xs text-white/70 font-sans mb-8">
+              <li class="flex items-center gap-2">✓ <span>Standard video documentaries</span></li>
+              <li class="flex items-center gap-2">✓ <span>Daily Panchang & Ayurveda search</span></li>
+              <li class="flex items-center gap-2">✓ <span>Basic 3D page-flip book reader</span></li>
+            </ul>
+          </div>
+          <button class="w-full py-3 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all border border-white/10">Current Plan</button>
+        </div>
+
+        <!-- Plan 2: Premium Pass -->
+        <div class="bg-gradient-to-br from-gold/10 to-amber-700/15 border border-gold/40 rounded-3xl p-8 flex flex-col justify-between hover:border-gold/50 transition-all relative overflow-hidden shadow-xl shadow-gold/5">
+          <div class="absolute top-0 right-0 bg-gold text-black text-[9px] font-extrabold px-3 py-1 rounded-bl-lg uppercase tracking-wider">Best Value</div>
+          <div>
+            <h3 class="text-lg font-bold text-gold font-serif mb-2">Premium Heritage Pass</h3>
+            <p class="text-xs text-white/60 mb-6">Gain full, unrestricted access to the entire streaming catalog and games.</p>
+            <div class="mb-6">
+              <span class="text-4xl font-extrabold text-gold font-mono">₹399</span>
+              <span class="text-sm text-white/60"> / Year</span>
+              <span class="text-[10px] text-white/40 block mt-1">Billed annually in Indian Rupees (INR)</span>
+            </div>
+            <ul class="space-y-3 text-xs text-white/80 font-sans mb-8">
+              <li class="flex items-center gap-2">✨ <span>All 100+ premium historical e-books</span></li>
+              <li class="flex items-center gap-2">✨ <span>360° VR interactive tours & audio narratives</span></li>
+              <li class="flex items-center gap-2">✨ <span>Interactive learning games & trivia awards</span></li>
+            </ul>
+          </div>
+          <button class="trigger-checkout w-full py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/20">Get Premium Pass</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscription Promo banner -->
+    <section id="premium-promo-card" class="max-w-4xl mx-auto">
+      <!-- Injected by app.js -->
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-auto border-t border-white/5 py-12 bg-black/40">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex flex-col items-start gap-1">
+        <div class="flex items-center gap-2">
+          <span class="text-lg">⚜️</span>
+          <span class="font-serif font-bold text-white text-sm">MANJUNATH ENTERPRISE</span>
+        </div>
+        <span class="text-[9px] text-white/40 block">Proprietor: MANJUNATHA PRASANNA</span>
+        <span class="text-[9px] text-white/40 block">Contact: service.weforyou@gmail.com | +91 9035442904</span>
+      </div>
+      
+      <!-- Policy links -->
+      <div class="flex flex-wrap gap-4 text-xs font-semibold text-white/60">
+        <button class="open-legal-btn hover:text-gold transition-colors" data-tab="terms">Terms of Service</button>
+        <span>•</span>
+        <button class="open-legal-btn hover:text-gold transition-colors" data-tab="refund">Refund Policy</button>
+        <span>•</span>
+        <button class="open-legal-btn hover:text-gold transition-colors" data-tab="privacy">Privacy Policy</button>
+        <span>•</span>
+        <button class="open-legal-btn hover:text-gold transition-colors" data-tab="contact">Contact Us</button>
+      </div>
+
+      <p class="text-xs text-white/40 md:text-right">© 2026 HeritageStream. Preservation through Education. Billed annually in INR.</p>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+
+  <!-- Media Player Modal -->
+  <div id="media-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div id="media-modal-container" class="bg-[#101116] border border-white/10 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative transition-all duration-300">
+      <!-- Top header bar -->
+      <div class="flex justify-between items-center px-6 py-4 border-b border-white/5">
+        <div id="media-modal-title"></div>
+        <button onclick="if(window.appInstance){window.appInstance.closeAllModals()}else{document.getElementById('media-modal').classList.add('hidden');document.getElementById('media-modal').classList.remove('flex')}" class="modal-close text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      </div>
+      <!-- Inner Content -->
+      <div id="media-modal-body" class="overflow-y-auto max-h-[75vh]">
+        <!-- Injected by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Payment Modal -->
+  <div id="payment-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="bg-[#101116] border border-gold/20 rounded-3xl w-full max-w-md shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar">
+      <button onclick="if(window.appInstance){window.appInstance.closeAllModals()}else{document.getElementById('payment-modal').classList.add('hidden');document.getElementById('payment-modal').classList.remove('flex')}" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <div id="payment-modal-body" class="mt-4">
+        <!-- Injected by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js?v=18"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Legal Modal Interaction Code
+      const legalModal = document.getElementById('legal-modal');
+      
+      if (legalModal) {
+        // Close legal modal
+        const closeBtn = legalModal.querySelector('.modal-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', () => {
+            legalModal.classList.add('hidden');
+            legalModal.classList.remove('flex');
+          });
+        }
+      }
+
+    const legalDocs = {
+      terms: `
+        <div class="space-y-4">
+          <h4 class="text-base font-bold text-white font-serif">Terms & Conditions</h4>
+          <p class="text-[10px] text-white/40">Last updated: August 2026</p>
+          <p>Welcome to HeritageStream. These Terms & Conditions govern your subscription and use of our digital streaming portal, operated by <strong>MANJUNATH ENTERPRISE</strong> (managed by <strong>MANJUNATHA PRASANNA</strong>).</p>
+          <p>By subscribing to our Premium Pass (priced at ₹399/year), you agree to these Terms, including billing rules and content guidelines.</p>
+          <h5 class="font-bold text-white mt-3">1. Subscriptions & Billing</h5>
+          <p>Subscription plans are billed annually in Indian Rupees (INR). Access is granted immediately upon successful authorization. Billed fees include taxes where applicable.</p>
+          <h5 class="font-bold text-white mt-3">2. Content Use & Limitations</h5>
+          <p>All documentary video materials, historical page-flip textbooks, and trivia scores are provided solely for educational, non-commercial purposes. Copying or redistribution is prohibited.</p>
+          <h5 class="font-bold text-white mt-3">3. Merchant Identity</h5>
+          <p>HeritageStream is a product of MANJUNATH ENTERPRISE. Contact: service.weforyou@gmail.com | +91 9035442904.</p>
+        </div>
+      `,
+      refund: `
+        <div class="space-y-4">
+          <h4 class="text-base font-bold text-white font-serif">Refund & Cancellation Policy</h4>
+          <p class="text-[10px] text-white/40">Last updated: August 2026</p>
+          <p>We want you to be fully satisfied with your learning experience on HeritageStream. Our Refund Policy details are as follows:</p>
+          <h5 class="font-bold text-white mt-3">1. 7-Day Money-Back Guarantee</h5>
+          <p>If you wish to cancel your Premium Pass subscription, you are entitled to a full refund within 7 days of your initial purchase date. No questions asked.</p>
+          <h5 class="font-bold text-white mt-3">2. How to Request a Refund</h5>
+          <p>To request a refund, please send an email from your registered account to <strong>service.weforyou@gmail.com</strong> or reach out via phone at <strong>9035442904</strong>. Refund transactions are processed back to the original payment mode (UPI/Card) within 5-7 working days.</p>
+          <h5 class="font-bold text-white mt-3">3. Cancellation</h5>
+          <p>You can cancel your annual membership at any time, and you will retain access until the end of your billing cycle.</p>
+        </div>
+      `,
+      privacy: `
+        <div class="space-y-4">
+          <h4 class="text-base font-bold text-white font-serif">Privacy Policy</h4>
+          <p class="text-[10px] text-white/40">Last updated: August 2026</p>
+          <p>HeritageStream respects your personal data. We collect your cardholder name, email address, and transaction logs solely to authenticate and activate subscription benefits.</p>
+          <p>We do not store raw card numbers, PINs, or UPI credentials. Payments are handled securely via authorized gateway services. For deletion requests, contact service.weforyou@gmail.com.</p>
+        </div>
+      `,
+      contact: `
+        <div class="space-y-4">
+          <h4 class="text-base font-bold text-white font-serif">Contact Information</h4>
+          <p>For support, billing inquiries, or refunds, please reach out to us:</p>
+          <div class="bg-white/5 border border-white/5 p-4 rounded-2xl space-y-3 font-mono text-[11px]">
+            <div>
+              <span class="text-white/40 block">LEGAL BUSINESS NAME:</span>
+              <span class="text-gold font-bold">MANJUNATH ENTERPRISE</span>
+            </div>
+            <div>
+              <span class="text-white/40 block">PROPRIETOR:</span>
+              <span class="text-white font-bold">MANJUNATHA PRASANNA</span>
+            </div>
+            <div>
+              <span class="text-white/40 block">EMAIL CONTACT:</span>
+              <a href="mailto:service.weforyou@gmail.com" class="text-gold underline font-bold">service.weforyou@gmail.com</a>
+            </div>
+            <div>
+              <span class="text-white/40 block">PHONE CONTACT:</span>
+              <span class="text-white font-bold">+91 9035442904</span>
+            </div>
+            <div>
+              <span class="text-white/40 block">OPERATING ADDRESS:</span>
+              <span class="text-white font-bold">Bangalore, Karnataka, India</span>
+            </div>
+          </div>
+        </div>
+      `
+    };
+
+    function showLegalTab(tabName) {
+      // Set active tab button style
+      document.querySelectorAll('.legal-tab-btn').forEach(btn => {
+        if (btn.getAttribute('data-tab') === tabName) {
+          btn.classList.add('border-gold', 'text-gold', 'font-extrabold');
+          btn.classList.remove('border-transparent', 'text-white/50');
+        } else {
+          btn.classList.remove('border-gold', 'text-gold', 'font-extrabold');
+          btn.classList.add('border-transparent', 'text-white/50');
+        }
+      });
+      // Inject content
+      document.getElementById('legal-modal-content').innerHTML = legalDocs[tabName] || '';
+    }
+
+    // Bind footer links
+    document.querySelectorAll('.open-legal-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.getAttribute('data-tab');
+        showLegalTab(tab);
+        legalModal.classList.remove('hidden');
+        legalModal.classList.add('flex');
+      });
+    });
+
+    // Bind tab switch buttons
+    document.querySelectorAll('.legal-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showLegalTab(btn.getAttribute('data-tab'));
+      });
+    });
+    
+    // Bind Interactive Quadrant Map clicks
+    const sitesInfo = {
+      taj: {
+        title: "The Taj Mahal",
+        subtitle: "Agra, Uttar Pradesh",
+        built: "1648 CE",
+        builder: "Shah Jahan",
+        coords: "27.1751° N",
+        image: "/images/taj_cover.jpg",
+        fact: "Built by Mughal Emperor Shah Jahan in memory of his third wife, Mumtaz Mahal. It represents the height of Mughal architecture combining Indian, Persian, and Islamic styles. Its white marble glows differently depending on the time of day.",
+        badge: "🕌 Mughal Masterpiece",
+        color: "border-gold/30 text-gold bg-gold/5"
+      },
+      kedarnath: {
+        title: "Kedarnath Temple",
+        subtitle: "Garhwal Himalayas, Uttarakhand",
+        built: "8th Cent. CE",
+        builder: "Adi Shankaracharya",
+        coords: "30.7352° N",
+        image: "/images/shiva.jpg",
+        fact: "Perched at 3,583 meters near Chorabari Glacier, this ancient temple is one of the 12 Jyotirlingas of Lord Shiva. Built of massive grey stone slabs, it survived the catastrophic 2013 Himalayan floods virtually unscathed.",
+        badge: "🏔️ Himalayan Sanctum",
+        color: "border-gold/30 text-gold bg-gold/5"
+      },
+      redfort: {
+        title: "The Red Fort",
+        subtitle: "Delhi",
+        built: "1648 CE",
+        builder: "Shah Jahan",
+        coords: "28.6562° N",
+        image: "/images/ashoka.jpg",
+        fact: "Constructed of red sandstone, the fort was the seat of power of the Mughal Empire for nearly 200 years. Its architectural design influenced subsequent gardens and palaces across northern India.",
+        badge: "🏰 Mughal Citadel",
+        color: "border-gold/30 text-gold bg-gold/5"
+      },
+      hampi: {
+        title: "Ruins of Hampi",
+        subtitle: "Ballari, Karnataka",
+        built: "14th Cent. CE",
+        builder: "Harihara & Bukka",
+        coords: "15.3350° N",
+        image: "/images/hampi.jpg",
+        fact: "Sprawling capital of the Vijayanagara Empire situated on the banks of the Tungabhadra river. Renowned for its monolithic carvings, royal stables, and the musical stone pillars of the Vitthala temple.",
+        badge: "🛕 Vijayanagara Capital",
+        color: "border-amber-500/30 text-amber-400 bg-amber-500/5"
+      },
+      meenakshi: {
+        title: "Meenakshi Temple",
+        subtitle: "Madurai, Tamil Nadu",
+        built: "13th Cent. CE",
+        builder: "Sundara Pandyan",
+        coords: "9.9195° N",
+        image: "/images/meenakshi.jpg",
+        fact: "An architectural marvel famous for its 14 towering gopurams decorated with thousands of colorful stucco figures. The temple is the center of Madurai's cultural and spiritual lifecycle.",
+        badge: "🎨 Gopuram of Colors",
+        color: "border-amber-500/30 text-amber-400 bg-amber-500/5"
+      },
+      brihad: {
+        title: "Brihadeeswarar Temple",
+        subtitle: "Thanjavur, Tamil Nadu",
+        built: "1010 CE",
+        builder: "Raja Raja Chola I",
+        coords: "10.7828° N",
+        image: "/images/chola.jpg",
+        fact: "Built entirely of granite, its grand Vimana tower rises 66 meters high without any binding mortar. The top kalasam capstone alone weighs over 80 tons and was hauled up a long earthen ramp.",
+        badge: "🏛️ Great Living Chola Temple",
+        color: "border-amber-500/30 text-amber-400 bg-amber-500/5"
+      },
+      konark: {
+        title: "Sun Temple of Konark",
+        subtitle: "Puri, Odisha",
+        built: "1250 CE",
+        builder: "Narasimhadeva I",
+        coords: "19.8876° N",
+        image: "/images/sundials.jpg",
+        fact: "Conceived as a colossal chariot of the Sun God Surya, pulled by seven stone horses and mounted on 24 wheels. The wheels function as highly accurate sundials measuring time to the minute.",
+        badge: "☀️ Chariot of the Sun",
+        color: "border-rose-500/30 text-rose-400 bg-rose-500/5"
+      },
+      nalanda: {
+        title: "Nalanda University",
+        subtitle: "Nalanda, Bihar",
+        built: "5th Cent. CE",
+        builder: "Kumaragupta I",
+        coords: "25.1378° N",
+        image: "/images/ashoka.jpg",
+        fact: "The world's first residential university, hosting over 10,000 students and 2,000 teachers from across Asia. Its legendary library held millions of manuscripts before its destruction in 1193.",
+        badge: "📜 Ancient Knowledge Seat",
+        color: "border-rose-500/30 text-rose-400 bg-rose-500/5"
+      },
+      kamakhya: {
+        title: "Kamakhya Temple",
+        subtitle: "Guwahati, Assam",
+        built: "8th Cent. CE",
+        builder: "Mlechchha Dynasty",
+        coords: "26.1661° N",
+        image: "/images/shiva.jpg",
+        fact: "Situated on Nilachal Hill, this is one of the oldest and most revered Shakti Peethas in India, celebrating the feminine creative power. It is the center of Tantric spiritual practices.",
+        badge: "🌺 Tantric Shakti Peetha",
+        color: "border-rose-500/30 text-rose-400 bg-rose-500/5"
+      },
+      ajanta: {
+        title: "Ajanta Caves",
+        subtitle: "Aurangabad, Maharashtra",
+        built: "2nd Cent. BCE",
+        builder: "Satavahana Dynasty",
+        coords: "20.5519° N",
+        image: "/images/ajanta.jpg",
+        fact: "A chain of 30 rock-cut caves housing classic Buddhist murals and rock sculptures. These masterpieces were carved into the steep gorge of the Waghur river and lay hidden for centuries.",
+        badge: "🎨 Mural Masterpiece",
+        color: "border-teal-500/30 text-teal-400 bg-teal-500/5"
+      },
+      jaisalmer: {
+        title: "Jaisalmer Fort",
+        subtitle: "Thar Desert, Rajasthan",
+        built: "1156 CE",
+        builder: "Rawal Jaisal",
+        coords: "26.9124° N",
+        image: "/images/warrior_cover.jpg",
+        fact: "Known as the Sonar Qila (Golden Fort) due to its yellow sandstone walls that blend with the sand. It is one of the few living forts in the world, with a quarter of the city's population residing inside.",
+        badge: "🏜️ Golden Living Fort",
+        color: "border-teal-500/30 text-teal-400 bg-teal-500/5"
+      },
+      dwarka: {
+        title: "Dwarkadhish Temple",
+        subtitle: "Dwarka, Gujarat",
+        built: "16th Cent. CE",
+        builder: "Vajranabh (origin)",
+        coords: "22.2442° N",
+        image: "/images/vishnu.jpg",
+        fact: "Dedicated to Lord Krishna, this five-story limestone temple stands on the banks of Gomti river. Historical excavations suggest a submerged ancient harbour city lies offshore.",
+        badge: "🌊 Gateway of Krishna",
+        color: "border-teal-500/30 text-teal-400 bg-teal-500/5"
+      },
+      khajuraho: {
+        title: "Khajuraho Temples",
+        subtitle: "Chhatarpur, Madhya Pradesh",
+        built: "1000 CE",
+        builder: "Chandela Dynasty",
+        coords: "24.8518° N",
+        image: "/images/dharma.jpg",
+        fact: "A stunning group of Hindu and Jain temples built of sandstone, famed for their intricate erotic reliefs, grand shikhara spires, and highly detailed depictions of 11th-century Indian daily life.",
+        badge: "🛕 Chandela Temple Art",
+        color: "border-purple-500/30 text-purple-400 bg-purple-500/5"
+      }
+    };
+
+    // Filter pins by region
+    document.querySelectorAll('.region-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Toggle button styling
+        document.querySelectorAll('.region-filter-btn').forEach(b => {
+          b.classList.remove('bg-gold', 'text-black', 'shadow-lg');
+          b.classList.add('border-white/10', 'text-white/70');
+        });
+        btn.classList.add('bg-gold', 'text-black', 'shadow-lg');
+        btn.classList.remove('border-white/10', 'text-white/70');
+
+        const region = btn.getAttribute('data-region');
+        
+        // Update radar status text
+        const statusSpan = document.getElementById('map-radar-status');
+        if (region === 'all') {
+          statusSpan.textContent = "📡 SCANNING RADAR ACTIVE...";
+        } else {
+          statusSpan.textContent = `📡 TELEMETRY locked: ${region.toUpperCase()} REGION`;
+        }
+
+        // Filter pins
+        document.querySelectorAll('.map-pin').forEach(pin => {
+          const pinRegion = pin.getAttribute('data-region');
+          if (region === 'all' || pinRegion === region) {
+            pin.classList.remove('opacity-20', 'pointer-events-none');
+          } else {
+            pin.classList.add('opacity-20', 'pointer-events-none');
+          }
+        });
+      });
+    });
+
+    // Handle pin clicks
+    document.querySelectorAll('.map-pin').forEach(pin => {
+      pin.addEventListener('click', () => {
+        // Reset active style from other pins
+        document.querySelectorAll('.map-pin').forEach(p => {
+          p.querySelector('.relative.flex').classList.remove('scale-125');
+        });
+        pin.querySelector('.relative.flex').classList.add('scale-125');
+
+        const siteKey = pin.getAttribute('data-site');
+        const detailPanel = document.getElementById('map-detail-panel');
+        const site = sitesInfo[siteKey];
+
+        if (site) {
+          detailPanel.innerHTML = `
+            <div class="space-y-4">
+              <!-- Site image preview -->
+              <div class="w-full h-36 rounded-2xl overflow-hidden relative border border-white/10">
+                <img src="${site.image}" class="w-full h-full object-cover" alt="${site.title}">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <span class="absolute bottom-3 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[9px] font-extrabold border border-gold bg-black/60 text-gold uppercase tracking-wider font-mono">
+                  ${site.badge}
+                </span>
+              </div>
+
+              <div>
+                <h3 class="text-2xl font-bold font-serif text-white leading-tight">${site.title}</h3>
+                <p class="text-xs text-white/50">${site.subtitle}</p>
+              </div>
+
+              <!-- Geographical telemetry details grid -->
+              <div class="grid grid-cols-3 gap-2 py-3 px-3 bg-white/5 rounded-xl border border-white/5 font-mono text-[9px]">
+                <div>
+                  <span class="text-white/40 block">CONSTRUCTION:</span>
+                  <span class="text-white font-bold">${site.built}</span>
+                </div>
+                <div>
+                  <span class="text-white/40 block">FOUNDER:</span>
+                  <span class="text-white font-bold truncate max-w-full block" title="${site.builder}">${site.builder}</span>
+                </div>
+                <div>
+                  <span class="text-white/40 block">COORDINATES:</span>
+                  <span class="text-gold font-bold">${site.coords}</span>
+                </div>
+              </div>
+
+              <p class="text-xs text-white/70 leading-relaxed font-sans">
+                ${site.fact}
+              </p>
+              
+              <div class="grid grid-cols-2 gap-3 pt-3">
+                <button class="trigger-checkout py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-[10px] uppercase tracking-wider transition-all shadow-md shadow-gold/10">
+                  Read Chronicle
+                </button>
+                <button class="trigger-vr py-2.5 bg-white/5 border border-white/10 text-white hover:border-gold/30 hover:bg-gold/5 font-extrabold rounded-xl text-[10px] uppercase tracking-wider transition-all">
+                  🕶️ 360° VR Tour
+                </button>
+              </div>
+            </div>
+          `;
+
+          // Re-bind the dynamically generated buttons
+          detailPanel.querySelector('.trigger-checkout').addEventListener('click', (e) => {
+            const subCheck = localStorage.getItem('hs_subscribed') === 'true';
+            if (subCheck) {
+              alert(`Premium Access Granted: Opening detailed manuscript for ${site.title}`);
+            } else {
+              document.querySelectorAll('.trigger-checkout')[0].click(); // trigger global modal opening
+            }
+          });
+
+          detailPanel.querySelector('.trigger-vr').addEventListener('click', (e) => {
+            const subCheck = localStorage.getItem('hs_subscribed') === 'true';
+            if (subCheck) {
+              if (window.appInstance) {
+                window.appInstance.openVRPan(siteKey);
+              }
+            } else {
+              document.querySelectorAll('.trigger-checkout')[0].click(); // trigger global checkout modal
+            }
+          });
+        }
+      });
+    });
+  });
+</script>
+    <!-- Legal Policies Modal -->
+  <div id="legal-modal" class="modal-overlay fixed inset-0 z-[110] hidden items-center justify-center p-4">
+    <div class="bg-[#101116] border border-white/10 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative flex flex-col h-[75vh]">
+      <!-- Header with Tabs -->
+      <div class="flex flex-col border-b border-white/5 bg-black/40">
+        <div class="flex justify-between items-center px-6 py-4">
+          <h3 class="text-lg font-bold font-serif text-white">Legal Information</h3>
+          <button onclick="document.getElementById('legal-modal').classList.add('hidden'); document.getElementById('legal-modal').classList.remove('flex')" class="modal-close text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+        </div>
+        <div class="flex border-t border-white/5 text-[10px] sm:text-xs">
+          <button class="legal-tab-btn flex-1 py-3 text-center border-b-2 border-gold font-extrabold text-gold uppercase tracking-wider" data-tab="terms">Terms</button>
+          <button class="legal-tab-btn flex-1 py-3 text-center border-b-2 border-transparent hover:text-white text-white/50 uppercase tracking-wider" data-tab="refund">Refunds</button>
+          <button class="legal-tab-btn flex-1 py-3 text-center border-b-2 border-transparent hover:text-white text-white/50 uppercase tracking-wider" data-tab="privacy">Privacy</button>
+          <button class="legal-tab-btn flex-1 py-3 text-center border-b-2 border-transparent hover:text-white text-white/50 uppercase tracking-wider" data-tab="contact">Contact Us</button>
+        </div>
+      </div>
+      
+      <!-- Content Area -->
+      <div class="p-6 overflow-y-auto flex-1 text-xs text-white/70 space-y-4 leading-relaxed font-sans" id="legal-modal-content">
+        <!-- Dynamically injected legal content -->
+      </div>
+    </div>
+  </div>
+    <!-- Netflix-style Profile Selector Modal -->
+  <div id="profile-modal" class="fixed inset-0 z-[120] hidden items-center justify-center bg-[#07080c] p-6">
+    <div class="max-w-2xl text-center space-y-8 animate-fade-in">
+      <h2 class="text-3xl md:text-4xl font-bold font-serif text-white tracking-wider">Who's Exploring Today?</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-xl mx-auto" id="profile-selection-grid">
+        <!-- Profile 1: Scholar -->
+        <button class="profile-card group flex flex-col items-center gap-3" data-profile="Scholar" data-avatar="📜" data-color="from-amber-500 to-yellow-600">
+          <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center text-4xl shadow-lg border-2 border-transparent group-hover:border-white transition-all transform group-hover:scale-105">
+            📜
+          </div>
+          <span class="text-sm font-bold text-white/70 group-hover:text-white transition-colors">Scholar</span>
+        </button>
+
+        <!-- Profile 2: Yogi -->
+        <button class="profile-card group flex flex-col items-center gap-3" data-profile="Yogi" data-avatar="🧘" data-color="from-orange-500 to-red-600">
+          <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-4xl shadow-lg border-2 border-transparent group-hover:border-white transition-all transform group-hover:scale-105">
+            🧘
+          </div>
+          <span class="text-sm font-bold text-white/70 group-hover:text-white transition-colors">Yogi</span>
+        </button>
+
+        <!-- Profile 3: Kids -->
+        <button class="profile-card group flex flex-col items-center gap-3" data-profile="Kids" data-avatar="👶" data-color="from-emerald-500 to-teal-600">
+          <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-4xl shadow-lg border-2 border-transparent group-hover:border-white transition-all transform group-hover:scale-105">
+            👶
+          </div>
+          <span class="text-sm font-bold text-white/70 group-hover:text-white transition-colors">Kids</span>
+        </button>
+
+        <!-- Profile 4: Warrior -->
+        <button class="profile-card group flex flex-col items-center gap-3" data-profile="Warrior" data-avatar="⚔️" data-color="from-rose-500 to-red-700">
+          <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-rose-500 to-red-700 flex items-center justify-center text-4xl shadow-lg border-2 border-transparent group-hover:border-white transition-all transform group-hover:scale-105">
+            ⚔️
+          </div>
+          <span class="text-sm font-bold text-white/70 group-hover:text-white transition-colors">Warrior</span>
+        </button>
+      </div>
+
+      <div class="flex items-center justify-center gap-4 mt-6">
+        <button id="manage-profiles-btn" class="px-6 py-2.5 border border-white/20 hover:border-white/50 text-white/60 hover:text-white rounded-lg text-xs uppercase tracking-wider transition-all">Manage Profiles</button>
+        <button id="skip-profile-btn" class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white/90 hover:text-white rounded-lg text-xs uppercase tracking-wider transition-all">Browse as Guest</button>
+      </div>
+    </div>
+  </div>
+  <script src="flipbook.js"></script>
+</body>
+</html>
