@@ -807,6 +807,8 @@ class AppController {
     
     // Check if item is in watchlist
     const isOnWatchlist = this.watchlist.includes(item.id);
+    // Check if item has saved progress
+    const progressVal = this.progress[item.id] ? this.progress[item.id].progress : 0;
     // Generate a unique thematic overlay color wash based on the item ID to make shared covers look distinct
     const overlayColors = [
       'rgba(212, 175, 55, 0.22)',   // Gold
