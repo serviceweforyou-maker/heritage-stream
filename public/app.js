@@ -348,7 +348,9 @@ class AppController {
         <!-- Slide items -->
         <div id="spotlight-slides-container" class="relative w-full h-full">
           ${slides.map((item, idx) => `
-            <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}" style="background-image: linear-gradient(to top, #0a0b10 10%, rgba(10, 11, 16, 0.3) 60%, rgba(10, 11, 16, 0.7) 100%), url('${item.imageUrl || '/images/hampi.jpg'}'); background-size: cover; background-position: center top; background-repeat: no-repeat;" data-index="${idx}">
+            <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}" data-index="${idx}">
+              <img src="${item.imageUrl || '/images/hampi.jpg'}" ${idx > 0 ? 'loading="lazy"' : ''} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000" alt="${item.title}">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0b10] via-transparent to-[#0a0b10]/60 z-10 pointer-events-none"></div>
               <div class="max-w-4xl pt-24 pb-8 px-6 md:px-12 h-full flex flex-col justify-end relative z-20">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-gold/15 text-gold text-xs font-bold uppercase tracking-wider mb-3 border border-gold/20 self-start">
                   🏆 FEATURED MASTERPIECE
@@ -362,7 +364,7 @@ class AppController {
                 <p class="text-xs sm:text-sm text-white/70 max-w-2xl mb-5 leading-relaxed line-clamp-2 md:line-clamp-3">
                   ${item.description}
                 </p>
-                <div class="flex flex-wrap gap-3 items-center mb-5">
+                <div class="hero-actions flex flex-wrap gap-3 items-center mb-5">
                   <button class="hero-play-slide-btn px-8 py-3.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-gold/20 flex items-center gap-2" data-id="${item.id}">
                     <span>▶ Play Episode</span>
                     <span class="text-xs opacity-75">(${item.duration})</span>
@@ -808,14 +810,6 @@ class AppController {
     // Check if item has saved progress
     const progressVal = this.progress[item.id] ? this.progress[item.id].progress : 0;
 
-    const coverBgStyle = item.imageUrl
-      ? `style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.95) 95%), url('${item.imageUrl}'); background-size: cover; background-position: center;"`
-      : ``;
-
-    const coverClass = item.imageUrl
-      ? `h-40 w-full relative flex flex-col justify-between p-4 transition-transform group-hover:scale-[1.02] duration-500`
-      : `h-40 w-full bg-gradient-to-br from-amber-600 to-amber-950 relative flex flex-col justify-between p-4 transition-transform group-hover:scale-[1.02] duration-500`;
-
     return `
       <div class="content-card flex-shrink-0 w-72 rounded-2xl overflow-hidden bg-white/5 border border-white/5 cursor-pointer relative group transition-all duration-500 hover:border-gold/30 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gold/5" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
         <!-- Watchlist Overlay Toggle Button -->
@@ -823,9 +817,17 @@ class AppController {
           ${isOnWatchlist ? '✓' : '＋'}
         </button>
 
-        <!-- Thumbnail Cover with beautiful Gradient & icon -->
-        <div class="${coverClass}" ${coverBgStyle}>
-          <div class="flex justify-between items-start w-full">
+        <!-- Thumbnail Cover with beautiful Gradient & lazy-loaded image -->
+        <div class="h-40 w-full relative flex flex-col justify-between p-4 overflow-hidden">
+          ${item.imageUrl ? `
+            <img src="${item.imageUrl}" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" alt="${item.title}">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-10 pointer-events-none"></div>
+          ` : `
+            <div class="absolute inset-0 bg-gradient-to-br from-amber-600 to-amber-950 transition-transform duration-500 group-hover:scale-[1.05]"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-10 pointer-events-none"></div>
+          `}
+
+          <div class="flex justify-between items-start w-full relative z-20">
             <span class="text-[9px] font-bold text-white/90 bg-black/40 px-2 py-0.8 rounded-md uppercase tracking-wider border border-white/5 backdrop-blur-md ml-auto">
               ${badgeText}
             </span>
@@ -840,13 +842,13 @@ class AppController {
             `}
           </div>
 
-          <div class="text-white z-10">
+          <div class="text-white z-20 relative">
             <h4 class="font-bold text-base font-serif line-clamp-1 leading-snug drop-shadow-md text-white/95">${item.title}</h4>
             <p class="text-[10px] text-white/70 line-clamp-1">${detailText}</p>
           </div>
           
           <!-- Hover Overlay Play Button -->
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
             <div class="w-12 h-12 rounded-full ${comingSoon ? 'bg-white/10 border border-gold/40' : 'bg-gold/90'} flex items-center justify-center text-black font-bold text-lg shadow-lg shadow-gold/20 transform scale-75 group-hover:scale-100 transition-transform duration-300">
               ${isLocked ? '🔒' : comingSoon ? '🎬' : '▶'}
             </div>
