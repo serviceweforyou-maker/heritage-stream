@@ -807,8 +807,23 @@ class AppController {
     
     // Check if item is in watchlist
     const isOnWatchlist = this.watchlist.includes(item.id);
-    // Check if item has saved progress
-    const progressVal = this.progress[item.id] ? this.progress[item.id].progress : 0;
+    // Generate a unique thematic overlay color wash based on the item ID to make shared covers look distinct
+    const overlayColors = [
+      'rgba(212, 175, 55, 0.22)',   // Gold
+      'rgba(16, 185, 129, 0.22)',   // Emerald
+      'rgba(59, 130, 246, 0.22)',   // Blue
+      'rgba(168, 85, 247, 0.22)',   // Purple
+      'rgba(249, 115, 22, 0.22)',   // Orange
+      'rgba(6, 182, 212, 0.22)',    // Cyan
+      'rgba(236, 72, 153, 0.22)',   // Pink
+      'rgba(239, 68, 68, 0.22)'     // Red
+    ];
+    let sum = 0;
+    const idStr = item.id || '';
+    for (let i = 0; i < idStr.length; i++) {
+      sum += idStr.charCodeAt(i);
+    }
+    const tintColor = overlayColors[sum % overlayColors.length];
 
     return `
       <div class="content-card flex-shrink-0 w-72 rounded-2xl overflow-hidden bg-white/5 border border-white/5 cursor-pointer relative group transition-all duration-500 hover:border-gold/30 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gold/5" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
@@ -821,10 +836,11 @@ class AppController {
         <div class="h-40 w-full relative flex flex-col justify-between p-4 overflow-hidden">
           ${item.imageUrl ? `
             <img src="${item.imageUrl}" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" alt="${item.title}">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute inset-0 z-10 pointer-events-none" style="background-color: ${tintColor}; mix-blend-mode: overlay; opacity: 0.85;"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-15 pointer-events-none"></div>
           ` : `
             <div class="absolute inset-0 bg-gradient-to-br from-amber-600 to-amber-950 transition-transform duration-500 group-hover:scale-[1.05]"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-15 pointer-events-none"></div>
           `}
 
           <div class="flex justify-between items-start w-full relative z-20">
