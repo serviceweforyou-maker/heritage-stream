@@ -269,6 +269,18 @@
     let imageBase64String = "";
     let editingId = null;
 
+    async function adminFetch(url, options = {}) {
+      const token = localStorage.getItem('hs_admin_token');
+      if (!options.headers) options.headers = {};
+      if (token) {
+        options.headers['Authorization'] = 'Bearer ' + token;
+      }
+      if (!options.headers['Content-Type'] && !(options.body instanceof FormData)) {
+        options.headers['Content-Type'] = 'application/json';
+      }
+      return fetch(url, options);
+    }
+
     // Handle File Reader
     document.getElementById('content-file').addEventListener('change', (e) => {
       const file = e.target.files[0];
@@ -412,7 +424,7 @@
     // Load Admin Stats & Lists
     async function loadDashboard() {
       try {
-        const res = await fetch(API_BASE + '/api/admin/stats');
+        const res = await adminFetch(API_BASE + '/api/admin/stats');
         if (!res.ok) throw new Error("Failed to load admin stats");
         const data = await res.json();
 
@@ -483,7 +495,7 @@
             btn.addEventListener('click', async () => {
               const id = btn.getAttribute('data-id');
               if (confirm("Are you sure you want to delete this catalogue content?")) {
-                const delRes = await fetch(API_BASE + `/api/content/${id}`, { method: 'DELETE' });
+                const delRes = await adminFetch(API_BASE + `/api/content/${id}`, { method: 'DELETE' });
                 if (delRes.ok) {
                   loadDashboard();
                 } else {
@@ -552,7 +564,7 @@
     // Load Categories Dropdown
     async function loadCategories() {
       try {
-        const res = await fetch(API_BASE + '/api/content');
+        const res = await adminFetch(API_BASE + '/api/content');
         if (!res.ok) throw new Error("Failed to load categories list");
         const data = await res.json();
 
@@ -594,9 +606,8 @@
         const url = editingId ? `${API_BASE}/api/content/${editingId}` : `${API_BASE}/api/content`;
         const method = editingId ? 'PUT' : 'POST';
 
-        const res = await fetch(url, {
+        const res = await adminFetch(url, {
           method: method,
-          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
 
@@ -629,9 +640,8 @@
       const name = document.getElementById('new-category-name').value;
 
       try {
-        const res = await fetch(API_BASE + '/api/categories', {
+        const res = await adminFetch(API_BASE + '/api/categories', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name })
         });
 
@@ -651,7 +661,7 @@
     // Load AI Status details
     async function loadAIStatus() {
       try {
-        const res = await fetch(API_BASE + '/api/ai/status');
+        const res = await adminFetch(API_BASE + '/api/ai/status');
         if (!res.ok) throw new Error("Failed to load AI pipeline status");
         const data = await res.json();
         
@@ -673,7 +683,7 @@
       btn.innerHTML = `<span>⏳ Running AI Engine...</span>`;
       
       try {
-        const res = await fetch(API_BASE + '/api/ai/generate', { method: 'POST' });
+        const res = await adminFetch(API_BASE + '/api/ai/generate', { method: 'POST' });
         if (res.ok) {
           const data = await res.json();
           alert(`Success! AI successfully generated and published a new card:\n"${data.item.title}"`);
@@ -694,7 +704,7 @@
     // Handle Logout Action
     document.getElementById('logout-btn').addEventListener('click', async () => {
       if (confirm("Are you sure you want to sign out of the admin console?")) {
-        const res = await fetch(API_BASE + '/api/admin/logout', { method: 'POST' });
+        const res = await adminFetch(API_BASE + '/api/admin/logout', { method: 'POST' });
         if (res.ok) {
           window.location.href = '/login.html';
         } else {
