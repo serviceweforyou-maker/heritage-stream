@@ -2436,7 +2436,6 @@ const bindSlideNavigation = () => {
       });
     });
   }
-
   openKarnatakaTempleModal(temple) {
     const modal = document.getElementById('media-modal');
     const modalTitle = document.getElementById('media-modal-title');
@@ -2456,6 +2455,22 @@ const bindSlideNavigation = () => {
           <div class="absolute bottom-4 left-4 text-white">
             <span class="text-xs bg-gold/20 border border-gold text-gold font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">${temple.deityTag}</span>
           </div>
+        </div>
+
+        <!-- Dynamic Map embed container -->
+        <div class="space-y-2">
+          <h4 class="text-sm font-bold text-white font-serif flex items-center gap-1.5">
+            <span>🗺️</span> Interactive Location Map
+          </h4>
+          <iframe 
+            class="w-full h-48 rounded-2xl border border-white/10 shadow-md" 
+            src="https://maps.google.com/maps?q=${temple.coords.lat},${temple.coords.lng}&z=15&output=embed" 
+            frameborder="0" 
+            scrolling="no" 
+            marginheight="0" 
+            marginwidth="0"
+            allowfullscreen>
+          </iframe>
         </div>
 
         <div class="grid grid-cols-2 gap-4 text-xs font-sans">
@@ -2494,7 +2509,6 @@ const bindSlideNavigation = () => {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
   }
-
   haversine(lat1, lon1, lat2, lon2) {
     const R = 6371; // Earth's radius in km
     const dLat = (lat2 - lat1) * Math.PI / 180;
