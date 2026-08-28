@@ -238,29 +238,50 @@ class AppController {
     this.init();
   }
 
-  async init() {
+    async init() {
     // Load live contents
-    this.contentData = await DatabaseService.fetchContent();
+    try {
+      this.contentData = await DatabaseService.fetchContent();
+    } catch (e) {
+      console.error("Failed to load content data:", e);
+    }
 
-    this.renderHeader();
-    this.renderSpotlight();
-    this.renderContentRows();
-    this.setupSubscriptionUI();
-    this.setupGameToggles();
-    this.renderScoresDashboard();
-    this.bindRewardsShop();
-    this.setupAmbientMusic();
-    this.setupPersonaFilters();
-    this.setupSearch();
-    this.initDivyaDarshana();
-    this.setupProfileSelector();
-    this.checkPaymentStatus();
+    const safeInit = (name, fn) => {
+      try {
+        fn.call(this);
+      } catch (e) {
+        console.error(`Error during ${name} initialization:`, e);
+      }
+    };
+
+    safeInit("renderHeader", this.renderHeader);
+    safeInit("renderSpotlight", this.renderSpotlight);
+    safeInit("renderContentRows", this.renderContentRows);
+    safeInit("setupSubscriptionUI", this.setupSubscriptionUI);
+    safeInit("setupGameToggles", this.setupGameToggles);
+    safeInit("renderScoresDashboard", this.renderScoresDashboard);
+    safeInit("bindRewardsShop", this.bindRewardsShop);
+    safeInit("setupAmbientMusic", this.setupAmbientMusic);
+    safeInit("setupPersonaFilters", this.setupPersonaFilters);
+    safeInit("setupSearch", this.setupSearch);
+    safeInit("initDivyaDarshana", this.initDivyaDarshana);
+    safeInit("setupProfileSelector", this.setupProfileSelector);
+    safeInit("checkPaymentStatus", this.checkPaymentStatus);
     
     // Listen to hash changes for catalog navigation explorer
-    window.addEventListener('hashchange', () => this.handleHashChange());
-    // Initial check on load
-    this.handleHashChange();
-    this.setupEyeMovements();
+    try {
+      window.addEventListener('hashchange', () => this.handleHashChange());
+      // Initial check on load
+      this.handleHashChange();
+    } catch (e) {
+      console.error("Error in hash routing initialization:", e);
+    }
+
+    try {
+      this.setupEyeMovements();
+    } catch (e) {
+      console.error("Error in eye movement initialization:", e);
+    }
 
     // ── Mobile hamburger menu ──
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
