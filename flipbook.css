@@ -1,0 +1,490 @@
+/* =============================================
+   HERITAGESTREAM FLIPBOOK READER
+   3D Page-Turn Kindle-Style Experience
+   ============================================= */
+
+/* Overlay */
+#flipbook-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, rgba(10, 8, 4, 0.97) 60%, rgba(3, 2, 1, 1) 100%);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+#flipbook-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Close button */
+#flipbook-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.6);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+}
+#flipbook-close:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
+  color: #d4af37;
+  transform: scale(1.1);
+}
+
+/* Book title bar */
+#flipbook-title-bar {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  right: 72px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#flipbook-title-bar .book-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d4af37;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 3px 10px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+#flipbook-title-bar h1 {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Playfair Display', Georgia, serif;
+  color: rgba(255,255,255,0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── BOOK WRAPPER ── */
+#flipbook-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 60px 24px 80px;
+  perspective: 2000px;
+}
+
+/* The book container */
+.flipbook-book {
+  position: relative;
+  width: 680px;
+  height: 460px;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.9));
+}
+
+/* Pages sit inside a shared space */
+.flipbook-pages {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+/* ── SINGLE PAGE ── */
+.fb-page {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  backface-visibility: hidden;
+}
+
+/* Right side pages (start position) */
+.fb-page.right {
+  left: 50%;
+  transform-origin: left center;
+}
+
+/* Left side pages */
+.fb-page.left {
+  left: 0;
+  transform-origin: right center;
+}
+
+/* Page face (front/back) */
+.fb-page-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 2px 8px 8px 2px;
+  overflow: hidden;
+}
+
+.fb-page-face.back {
+  transform: rotateY(180deg);
+  border-radius: 8px 2px 2px 8px;
+}
+
+/* Page flipping animations */
+.fb-page.flipping-forward {
+  transform: rotateY(-180deg);
+}
+.fb-page.flipping-back {
+  transform: rotateY(0deg);
+}
+
+/* ── PAPER TEXTURE ── */
+.paper-light {
+  background:
+    linear-gradient(135deg, #fdf6e3 0%, #f5ead0 50%, #ede0c4 100%);
+  position: relative;
+}
+.paper-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 28px,
+    rgba(139, 110, 60, 0.06) 28px,
+    rgba(139, 110, 60, 0.06) 29px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── BOOK COVER ── */
+.fb-cover {
+  background: linear-gradient(160deg, #1a0e02 0%, #0d0702 60%, #201205 100%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px 10px 10px 2px;
+}
+.fb-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60L60 0M-10 10L10-10M50 70L70 50' stroke='rgba(212,175,55,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+  opacity: 1;
+}
+.fb-cover-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+}
+.fb-cover-ornament {
+  font-size: 48px;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.5));
+}
+.fb-cover-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #d4af37;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.fb-cover-subtitle {
+  font-size: 10px;
+  color: rgba(212, 175, 55, 0.5);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.fb-cover-divider {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d4af37, transparent);
+  margin: 10px auto;
+}
+
+/* ── BOOK SPINE ── */
+.fb-spine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #1a0e02, #3d2405, #1a0e02);
+  z-index: 20;
+  box-shadow: 0 0 12px rgba(0,0,0,0.8);
+}
+
+/* ── PAGE CONTENT ── */
+.fb-page-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Left page (even pages) — inner margin right */
+.fb-page-content.left-side {
+  padding-right: 20px;
+  border-right: 1px solid rgba(139, 110, 60, 0.15);
+}
+
+/* Right page (odd pages) — inner margin left */
+.fb-page-content.right-side {
+  padding-left: 20px;
+  border-left: 1px solid rgba(139, 110, 60, 0.15);
+}
+
+/* Chapter heading style */
+.fb-chapter-num {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #8b6e3c;
+  margin-bottom: 6px;
+}
+.fb-chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #2c1a08;
+  margin-bottom: 14px;
+  line-height: 1.35;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(139, 110, 60, 0.2);
+}
+.fb-chapter-visual {
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.fb-chapter-body {
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: #3d2405;
+  font-family: 'Crimson Text', Georgia, serif;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Page number footer */
+.fb-page-num {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(139, 110, 60, 0.15);
+  font-size: 9px;
+  color: rgba(139, 110, 60, 0.5);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.fb-page-num .book-mark {
+  font-size: 10px;
+  color: #d4af37;
+}
+
+/* Page curl shadow effect */
+.fb-page-face::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.06));
+  pointer-events: none;
+}
+.fb-page-face.back::after {
+  right: auto;
+  left: 0;
+  background: linear-gradient(to left, transparent, rgba(0,0,0,0.06));
+}
+
+/* ── NAVIGATION CONTROLS ── */
+#flipbook-controls {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.fb-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: rgba(212, 175, 55, 0.06);
+  color: #d4af37;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.fb-nav-btn:hover:not(:disabled) {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: scale(1.1);
+}
+.fb-nav-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+.fb-nav-btn.primary {
+  width: auto;
+  padding: 0 22px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #d4af37;
+  border-color: #d4af37;
+  color: #0d0702;
+}
+.fb-nav-btn.primary:hover:not(:disabled) {
+  background: #e8c84a;
+  transform: scale(1.05);
+}
+
+#flipbook-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fb-progress-bar {
+  width: 120px;
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.fb-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #8b6e3c, #d4af37);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+.fb-progress-text {
+  font-size: 10px;
+  color: rgba(255,255,255,0.35);
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  min-width: 44px;
+  text-align: center;
+}
+
+/* TOC page */
+.fb-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+.fb-toc-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px dotted rgba(139, 110, 60, 0.2);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.fb-toc-list li:hover {
+  color: #8b4513;
+}
+.fb-toc-list .toc-num {
+  font-size: 9px;
+  color: #8b6e3c;
+  font-weight: 700;
+  width: 18px;
+  flex-shrink: 0;
+}
+.fb-toc-list .toc-title {
+  font-size: 12px;
+  color: #3d2405;
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.3;
+}
+.fb-toc-list .toc-dots {
+  flex: 1;
+  border-bottom: 1px dotted rgba(139, 110, 60, 0.3);
+  height: 1px;
+  margin: 0 4px;
+}
+.fb-toc-list .toc-page {
+  font-size: 10px;
+  color: #8b6e3c;
+  font-weight: 600;
+}
+
+/* Keyboard hint */
+#flipbook-keyboard-hint {
+  position: absolute;
+  top: 64px;
+  right: 24px;
+  font-size: 9px;
+  color: rgba(255,255,255,0.2);
+  text-align: right;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+/* Mobile and Tablet responsive */
+@media (max-width: 1024px) {
+  #flipbook-stage {
+    padding: 60px 12px 80px;
+  }
+  .flipbook-book {
+    width: 90vw !important;
+    max-width: 440px !important;
+    height: 72vh !important;
+  }
+  .fb-spine {
+    display: none !important;
+  }
+  .fb-page-content {
+    border-radius: 12px !important;
+  }
+  #flipbook-keyboard-hint {
+    display: none !important;
+  }
+}
