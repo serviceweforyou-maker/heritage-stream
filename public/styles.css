@@ -470,3 +470,26 @@ section[id] { scroll-margin-top: 110px; }
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
   color: #fff !important;
 }
+
+/* Secondary Nav Link Hover Glow */
+.sec-nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+.sec-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #d4af37;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom right;
+  box-shadow: 0 0 8px #d4af37;
+}
+.sec-nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
