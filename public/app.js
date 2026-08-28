@@ -260,6 +260,7 @@ class AppController {
     window.addEventListener('hashchange', () => this.handleHashChange());
     // Initial check on load
     this.handleHashChange();
+    this.setupEyeMovements();
 
     // ── Mobile hamburger menu ──
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -2928,6 +2929,46 @@ const bindSlideNavigation = () => {
         this.renderCatalogGrid();
       });
     });
+  }
+
+  setupEyeMovements() {
+    const pupilGroups = document.querySelectorAll('#eye-pupil-group');
+    if (!pupilGroups.length) return;
+
+    window.addEventListener('mousemove', (e) => {
+      pupilGroups.forEach(pupil => {
+        const rect = pupil.getBoundingClientRect();
+        // Center coordinates of the pupil
+        const eyeX = rect.left + rect.width / 2;
+        const eyeY = rect.top + rect.height / 2;
+        
+        // Distance between cursor and eye center
+        const dx = e.clientX - eyeX;
+        const dy = e.clientY - eyeY;
+        
+        // Calculate angle
+        const angle = Math.atan2(dy, dx);
+        
+        // Limit movement radius (max 7px translation)
+        const distance = Math.min(7, Math.hypot(dx, dy) / 40);
+        
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance;
+        
+        pupil.style.transform = `translate(${tx}px, ${ty}px)`;
+      });
+    });
+    
+    // Add occasional random blinks for extreme realism!
+    setInterval(() => {
+      const eyes = document.querySelectorAll('#human-eye');
+      eyes.forEach(eye => {
+        eye.style.transform = 'scaleY(0.1)';
+        setTimeout(() => {
+          eye.style.transform = 'scaleY(1.0)';
+        }, 150);
+      });
+    }, 4000 + Math.random() * 3000);
   }
 }
 // Instantiate core application controller
