@@ -374,7 +374,7 @@ class AppController {
             <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}" data-index="${idx}">
               <img src="${item.imageUrl || '/images/hampi.jpg'}" ${idx > 0 ? 'loading="lazy"' : ''} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000" alt="${item.title}">
               <div class="absolute inset-0 bg-gradient-to-t from-[#0a0b10] via-transparent to-[#0a0b10]/60 z-10 pointer-events-none"></div>
-              <div class="max-w-4xl pt-24 pb-8 px-6 md:px-12 h-full flex flex-col justify-end relative z-20">
+              <div class="max-w-4xl pt-[140px] pb-8 px-6 md:px-12 h-full flex flex-col justify-end relative z-20">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-gold/15 text-gold text-xs font-bold uppercase tracking-wider mb-3 border border-gold/20 self-start">
                   🏆 FEATURED MASTERPIECE
                 </span>
