@@ -92,25 +92,31 @@
     </div>
   </div>
 
-  <!-- ── MAIN NAVBAR ── -->
-  <header class="fixed left-0 right-0 z-50 transition-all duration-300 border-b border-white/5" style="top: 36px;" id="main-header">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-3">
-      <a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity flex-shrink-0">
-        <span class="text-xl leading-none">⚜️</span>
-        <span class="text-base md:text-xl font-bold font-serif tracking-wider text-gradient-gold leading-none">HeritageStream</span>
-      </a>
-      
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold text-white/80">
-        <a href="#library" class="hover:text-gold transition-colors">Library</a>
-        <a href="#explorer" class="hover:text-gold transition-colors">Map Explorer</a>
-        <a href="#divya-darshana" class="hover:text-gold transition-colors font-bold text-gold flex items-center gap-1">✨ Divya Darshana</a>
-        <a href="#play-zone" class="hover:text-gold transition-colors">Play Zone</a>
-        <a href="#dashboard" class="hover:text-gold transition-colors">Dashboard</a>
-        
+  <!-- ── MAIN NAVBAR & DUAL HEADER ── -->
+  <header class="fixed left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 flex flex-col" style="top: 36px;" id="main-header">
+    <!-- Row 1: Primary Header -->
+    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <!-- Logo + SEO Tagline -->
+      <div class="flex items-center gap-4 flex-shrink-0">
+        <a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity">
+          <span class="text-xl leading-none">⚜️</span>
+          <span class="text-base md:text-xl font-bold font-serif tracking-wider text-gradient-gold leading-none">HeritageStream</span>
+        </a>
+        <span class="w-px h-5 bg-white/10 hidden md:block"></span>
+        <h1 class="text-[9px] tracking-[0.25em] font-black text-gold/85 uppercase hidden lg:block select-none font-mono">Heritage Knowledge OTT</h1>
+      </div>
+
+      <!-- Center / Right Search & Actions -->
+      <div class="flex items-center gap-3 ml-auto">
+        <!-- Search -->
+        <div class="relative">
+          <input type="text" id="search-input" placeholder="Search Sagas..." class="w-32 sm:w-44 focus:w-56 bg-white/5 border border-white/10 hover:border-white/20 focus:border-gold/50 rounded-full px-3 py-1.5 pl-8 text-xs text-white placeholder-white/40 focus:outline-none transition-all">
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
+        </div>
+
         <!-- Glowing Explore All Eye Button -->
-        <a href="#catalog-explorer" id="nav-eye-btn" class="hover:text-gold transition-colors flex items-center gap-1.5 text-gold font-bold relative group" title="All 200+ Catalog Explorer">
-          <span class="relative flex h-6 w-6 items-center justify-center">
+        <a href="#catalog-explorer" id="nav-eye-btn" class="hover:text-gold transition-colors flex items-center gap-1.5 text-gold font-bold relative group px-2 py-1 rounded-xl hover:bg-white/5 transition-all" title="All 200+ Catalog Explorer">
+          <span class="relative flex h-7 w-7 items-center justify-center">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/15 opacity-75"></span>
             <svg id="human-eye" class="w-8 h-8 text-gold relative z-10 transition-all duration-300 ease-out origin-center" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Eyelid Shadow / Outer Border -->
@@ -161,17 +167,9 @@
               </defs>
             </svg>
           </span>
-          <span>Explore All</span>
+          <span class="text-xs uppercase tracking-wider font-extrabold hidden md:inline">Explore All</span>
         </a>
-      </nav>
 
-      <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Search -->
-        <div class="relative">
-          <input type="text" id="search-input" placeholder="Search..." class="w-28 sm:w-36 focus:w-44 sm:focus:w-52 bg-white/5 border border-white/10 hover:border-white/20 focus:border-gold/50 rounded-full px-3 py-1.5 pl-8 text-xs text-white placeholder-white/40 focus:outline-none transition-all">
-          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
-        </div>
-        
         <!-- User Profile avatar drop -->
         <div class="relative group ml-1 hidden md:block" id="header-profile-dropdown">
           <button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 hover:border-gold/30 transition-all text-xs font-bold text-white/90">
@@ -195,8 +193,29 @@
       </div>
     </div>
 
+    <!-- Row 2: Secondary Header (Spacious, Beautiful Submenu) -->
+    <div class="hidden md:flex w-full bg-black/30 backdrop-blur-md border-t border-white/5 flex-shrink-0 h-11 items-center justify-center">
+      <nav class="flex items-center justify-center gap-12 text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-white/70">
+        <a href="#library" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-white transition-all text-white/90">
+          <span>📚</span> Library
+        </a>
+        <a href="#explorer" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-white transition-all">
+          <span>🗺️</span> Map Explorer
+        </a>
+        <a href="#divya-darshana" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-white transition-all text-gold">
+          <span>✨</span> Divya Darshana
+        </a>
+        <a href="#play-zone" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-white transition-all">
+          <span>🎮</span> Play Zone
+        </a>
+        <a href="#dashboard" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-white transition-all">
+          <span>📊</span> Dashboard
+        </a>
+      </nav>
+    </div>
+
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-nav-menu" class="hidden md:hidden border-t border-white/5 px-4 py-4 space-y-1" style="background: rgba(5,6,10,0.97); backdrop-filter: blur(20px);">
+    <div id="mobile-nav-menu" class="hidden md:hidden border-t border-white/5 px-4 py-4 space-y-1" style="background: rgba(5,6,10,0.98); backdrop-filter: blur(24px);">
       <a href="#library" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-gold transition-all">📚 Library</a>
       <a href="#explorer" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-gold transition-all">🗺️ Map Explorer</a>
       <a href="#divya-darshana" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-bold text-gold hover:bg-white/5 transition-all">✨ Divya Darshana</a>
@@ -206,44 +225,28 @@
         <span class="relative flex h-6 w-6 items-center justify-center">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/15 opacity-75"></span>
           <svg id="human-eye" class="w-8 h-8 text-gold relative z-10 transition-all duration-300 ease-out origin-center" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Eyelid Shadow / Outer Border -->
             <path d="M5 50C18 20, 82 20, 95 50C82 80, 18 80, 5 50Z" fill="#0d0e12" stroke="#222530" stroke-width="1.5"/>
-            <!-- Sclera (White of the eye, with a soft pinkish gradient for corner realism) -->
             <path d="M8 50C20 23, 80 23, 92 50C80 77, 20 77, 8 50Z" fill="url(#sclera-grad-mob)" stroke="#1a1c23" stroke-width="1"/>
-            <!-- Lacrimal Caruncle (Pink inner corner) -->
             <path d="M8 50C10 47, 15 48, 17 50C15 52, 10 53, 8 50Z" fill="#ff7f7f" opacity="0.8"/>
-            
-            <!-- Pupil and Iris container (masked to keep it inside the sclera) -->
             <g mask="url(#sclera-mask-mob)">
-              <!-- Pupil & Iris group that tracks the mouse -->
               <g id="eye-pupil-group" class="transition-transform duration-100 ease-out" style="transform: translate(0, 0);">
-                <!-- Iris (Golden-hazel realistic gradient with detailed overlay rings) -->
                 <circle cx="50" cy="50" r="20" fill="url(#iris-pattern-grad-mob)" stroke="#684c0c" stroke-width="1" />
                 <circle cx="50" cy="50" r="17" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
                 <circle cx="50" cy="50" r="14" fill="none" stroke="#aa7c11" stroke-width="1" stroke-dasharray="1,3" opacity="0.8"/>
-                
-                <!-- Pupil (Black center, dynamic scaling via CSS transition!) -->
                 <circle id="eye-pupil" cx="50" cy="50" r="9" fill="#000000" class="transition-all duration-300 ease-out" />
-                
-                <!-- Shiny cornea reflections (give it that wet 3D liquid look) -->
                 <ellipse cx="44" cy="44" rx="4" ry="3" fill="#ffffff" opacity="0.9" transform="rotate(-15 44 44)" />
                 <circle cx="56" cy="55" r="1.5" fill="#ffffff" opacity="0.6" />
               </g>
             </g>
-            
-            <!-- Definitions for masks, gradients and effects -->
             <defs>
-              <!-- Sclera Mask to restrict iris movement within the eyelids -->
               <mask id="sclera-mask-mob">
                 <path d="M8 50C20 23, 80 23, 92 50C80 77, 20 77, 8 50Z" fill="#ffffff"/>
               </mask>
-              <!-- Sclera Pinkish gradient for natural bloodshot corners -->
               <radialGradient id="sclera-grad-mob" cx="50%" cy="50%" r="50%">
                 <stop offset="70%" stop-color="#ffffff" />
                 <stop offset="90%" stop-color="#ffebeb" />
                 <stop offset="100%" stop-color="#ffcccc" />
               </radialGradient>
-              <!-- Multi-stop gold/hazel iris gradient -->
               <radialGradient id="iris-pattern-grad-mob" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stop-color="#000000" />
                 <stop offset="25%" stop-color="#3b2d07" />
