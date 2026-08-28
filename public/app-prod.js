@@ -907,7 +907,7 @@ class AppController {
     });
   }
 
-  createContentCardHTML(item, isAudio = false) {
+  createContentCardHTML(item, isAudio = false, widthClass = 'w-72 flex-shrink-0') {
     const itemIsAudio = isAudio || !!item.audioUrl || item.category === "Audiobooks & Legends" || item.category === "Ebook & Audio Series";
     const isLocked = item.isPremium && !this.isSubscribed;
     const comingSoon = !itemIsAudio && !item.videoUrl;
@@ -937,7 +937,7 @@ class AppController {
     const tintColor = overlayColors[sum % overlayColors.length];
 
     return `
-      <div class="content-card flex-shrink-0 w-72 rounded-2xl overflow-hidden bg-white/5 border border-white/5 cursor-pointer relative group transition-all duration-500 hover:border-gold/30 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gold/5" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
+      <div class="content-card ${widthClass} rounded-2xl overflow-hidden bg-white/5 border border-white/5 cursor-pointer relative group transition-all duration-500 hover:border-gold/30 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gold/5" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
         <!-- Watchlist Overlay Toggle Button -->
         <button class="watchlist-toggle-btn absolute top-3 left-3 w-7 h-7 rounded-full bg-black/60 border border-white/10 hover:border-gold hover:scale-105 text-white flex items-center justify-center text-xs backdrop-blur-md transition-all z-20" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
           ${isOnWatchlist ? '✓' : '＋'}
@@ -1951,8 +1951,8 @@ const bindSlideNavigation = () => {
           const matchingAudios = this.contentData.audioStories.filter(x => x.personas && x.personas.includes(persona));
 
           // Combine and map to HTML cards
-          const docHTML = matchingDocs.map(item => this.createContentCardHTML(item, false));
-          const audioHTML = matchingAudios.map(item => this.createContentCardHTML(item, true));
+          const docHTML = matchingDocs.map(item => this.createContentCardHTML(item, false, 'w-full'));
+          const audioHTML = matchingAudios.map(item => this.createContentCardHTML(item, true, 'w-full'));
           const combinedHTML = [...docHTML, ...audioHTML].join('');
 
           if (combinedHTML.length > 0) {
@@ -2018,8 +2018,8 @@ const bindSlideNavigation = () => {
         (x.category && x.category.toLowerCase().includes(query))
       );
 
-      const docHTML = matchingDocs.map(item => this.createContentCardHTML(item, false));
-      const audioHTML = matchingAudios.map(item => this.createContentCardHTML(item, true));
+      const docHTML = matchingDocs.map(item => this.createContentCardHTML(item, false, 'w-full'));
+      const audioHTML = matchingAudios.map(item => this.createContentCardHTML(item, true, 'w-full'));
       const combinedHTML = [...docHTML, ...audioHTML].join('');
 
       if (combinedHTML.length > 0) {
@@ -2986,7 +2986,7 @@ const bindSlideNavigation = () => {
       return;
     }
 
-    grid.innerHTML = filtered.map(item => this.createContentCardHTML(item)).join('');
+    grid.innerHTML = filtered.map(item => this.createContentCardHTML(item, item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series', 'w-full')).join('');
 
     // Bind card clicks in grid
     grid.querySelectorAll('.content-card').forEach(card => {
