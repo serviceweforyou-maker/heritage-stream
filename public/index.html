@@ -108,17 +108,28 @@
         <a href="#play-zone" class="hover:text-gold transition-colors">Play Zone</a>
         <a href="#dashboard" class="hover:text-gold transition-colors">Dashboard</a>
         
-        <!-- Glowing Watch Live Eye Button -->
-        <a href="#catalog-explorer" id="nav-eye-btn" class="hover:text-gold transition-colors flex items-center gap-1.5 text-gold font-bold relative group" title="All 200+ Content Explorer">
-          <span class="relative flex h-5 w-5 items-center justify-center">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/20 opacity-75"></span>
-            <svg class="w-4 h-4 text-gold relative z-10 hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="12" r="3"/>
-              <circle cx="12" cy="12" r="0.5" fill="currentColor"/>
+        <!-- Glowing Explore All Eye Button -->
+        <a href="#catalog-explorer" id="nav-eye-btn" class="hover:text-gold transition-colors flex items-center gap-1.5 text-gold font-bold relative group" title="All 200+ Catalog Explorer">
+          <span class="relative flex h-6 w-6 items-center justify-center">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/15 opacity-75"></span>
+            <svg id="human-eye" class="w-6 h-6 text-gold relative z-10 transition-transform duration-100 ease-out origin-center" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 50C10 50 30 25 50 25C70 25 90 50 90 50C90 50 70 75 50 75C30 75 10 50 10 50Z" fill="#14151a" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+              <g id="eye-pupil-group" style="transform: translate(0, 0);">
+                <circle cx="50" cy="50" r="16" fill="url(#iris-grad)" stroke="#d4af37" stroke-width="1.5" />
+                <circle cx="50" cy="50" r="8" fill="#000000" />
+                <circle cx="45" cy="45" r="3.5" fill="#ffffff" opacity="0.9" />
+                <circle cx="54" cy="54" r="1.5" fill="#ffffff" opacity="0.7" />
+              </g>
+              <defs>
+                <radialGradient id="iris-grad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#000000" />
+                  <stop offset="70%" stop-color="#a0781a" />
+                  <stop offset="100%" stop-color="#d4af37" />
+                </radialGradient>
+              </defs>
             </svg>
           </span>
-          <span>Watch Live</span>
+          <span>Explore All</span>
         </a>
       </nav>
 
@@ -158,16 +169,28 @@
       <a href="#explorer" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-gold transition-all">🗺️ Map Explorer</a>
       <a href="#divya-darshana" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-bold text-gold hover:bg-white/5 transition-all">✨ Divya Darshana</a>
       
-      <!-- Mobile Watch Live Eye Button -->
+      <!-- Mobile Explore All Eye Button -->
       <a href="#catalog-explorer" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-bold text-gold hover:bg-white/5 transition-all flex items-center gap-2">
-        <span class="relative flex h-4.5 w-4.5 items-center justify-center">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/20 opacity-75"></span>
-          <svg class="w-4 h-4 text-gold relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-            <circle cx="12" cy="12" r="3"/>
+        <span class="relative flex h-6 w-6 items-center justify-center">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/15 opacity-75"></span>
+          <svg id="human-eye" class="w-6 h-6 text-gold relative z-10 transition-transform duration-100 ease-out origin-center" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 50C10 50 30 25 50 25C70 25 90 50 90 50C90 50 70 75 50 75C30 75 10 50 10 50Z" fill="#14151a" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+            <g id="eye-pupil-group" style="transform: translate(0, 0);">
+              <circle cx="50" cy="50" r="16" fill="url(#iris-grad-mob)" stroke="#d4af37" stroke-width="1.5" />
+              <circle cx="50" cy="50" r="8" fill="#000000" />
+              <circle cx="45" cy="45" r="3.5" fill="#ffffff" opacity="0.9" />
+              <circle cx="54" cy="54" r="1.5" fill="#ffffff" opacity="0.7" />
+            </g>
+            <defs>
+              <radialGradient id="iris-grad-mob" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#000000" />
+                <stop offset="70%" stop-color="#a0781a" />
+                <stop offset="100%" stop-color="#d4af37" />
+              </radialGradient>
+            </defs>
           </svg>
         </span>
-        Watch Live Catalog
+        Explore All Catalog
       </a>
       
       <a href="#play-zone" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-gold transition-all">🎮 Play Zone</a>
