@@ -348,155 +348,148 @@
         </div>
       </div>
     </section>
-
     <!-- ── DIVYA DARSHANA (SPIRITUAL COMPANION) ── -->
-    <section id="divya-darshana" class="scroll-mt-24 space-y-12">
-      <div class="text-center max-w-2xl mx-auto">
+    <section id="divya-darshana" class="scroll-mt-24 space-y-14">
+      <div class="text-center max-w-2xl mx-auto mb-10">
         <span class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-2">Spiritual &amp; Wellness Companion</span>
         <h2 class="text-3xl md:text-4xl font-bold font-serif text-white mb-4">ದಿವ್ಯ ದರ್ಶನ | Divya Darshana</h2>
         <p class="text-sm text-white/60">Your guide to Daily Panchang, Ayurvedic home wellness, and meditative breath control.</p>
       </div>
 
-      <div class="grid lg:grid-cols-5 gap-8 items-start">
+      <!-- Sleek Glassmorphic Panchang Banner -->
+      <div class="bg-gradient-to-r from-amber-950/20 via-black/40 to-amber-950/20 border border-gold/15 rounded-3xl p-6 relative overflow-hidden max-w-5xl mx-auto shadow-2xl backdrop-blur-md">
+        <div class="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <span class="text-4xl">📅</span>
+            <div>
+              <h3 class="font-serif font-bold text-white text-lg">Daily Panchang</h3>
+              <p class="text-xs text-white/50 font-sans">Calculated dynamically based on Vedic solar cycles.</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 flex-grow max-w-3xl text-center">
+            <div class="bg-white/5 border border-white/5 p-3 rounded-xl">
+              <span class="text-[10px] text-white/40 block mb-0.5">LUNAR MONTH</span>
+              <span class="text-xs font-bold text-white" id="panchang-month">-</span>
+            </div>
+            <div class="bg-white/5 border border-white/5 p-3 rounded-xl">
+              <span class="text-[10px] text-white/40 block mb-0.5">TITHI</span>
+              <span class="text-xs font-bold text-gold" id="panchang-tithi">-</span>
+            </div>
+            <div class="bg-white/5 border border-white/5 p-3 rounded-xl">
+              <span class="text-[10px] text-white/40 block mb-0.5">NAKSHATRA</span>
+              <span class="text-xs font-bold text-white" id="panchang-nakshatra">-</span>
+            </div>
+            <div class="bg-white/5 border border-white/5 p-3 rounded-xl">
+              <span class="text-[10px] text-white/40 block mb-0.5">ABHIJIT MUHURTA</span>
+              <span class="text-xs font-bold text-emerald-400" id="panchang-abhijit">-</span>
+            </div>
+            <div class="bg-white/5 border border-white/5 p-3 rounded-xl">
+              <span class="text-[10px] text-white/40 block mb-0.5">RAHU KALA</span>
+              <span class="text-xs font-bold text-rose-400" id="panchang-rahu">-</span>
+            </div>
+          </div>
+          <div class="flex-shrink-0 text-center">
+            <span class="text-[10px] bg-gold/15 text-gold border border-gold/25 px-3 py-1.5 rounded-full font-mono font-bold block" id="panchang-today-date">Loading...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pranayama Sadhana & Ayurveda / Temple Rows in OTT Formats -->
+      <div class="space-y-14">
         
-        <!-- Left Side: Panchang & Guided Breathing -->
-        <div class="lg:col-span-2 space-y-8">
+        <!-- ROW 1: Pranayama Player Spotlight -->
+        <div class="bg-[#121318] border border-white/5 rounded-3xl p-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 relative overflow-hidden shadow-xl">
+          <div class="absolute -top-12 -left-12 w-64 h-64 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
           
-          <!-- Panchang Widget -->
-          <div class="bg-white/5 border border-white/5 rounded-3xl p-6 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-2xl pointer-events-none"></div>
-            
-            <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
-              <h3 class="font-serif font-bold text-white text-lg flex items-center gap-2">
-                <span>📅</span> Daily Panchang
-              </h3>
-              <span class="text-[10px] bg-gold/15 text-gold border border-gold/25 px-2.5 py-1 rounded-full font-mono font-bold" id="panchang-today-date">Loading...</span>
-            </div>
-
-            <div class="space-y-3.5 text-sm" id="panchang-widget-body">
-              <!-- Rendered dynamically by app.js -->
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-white/50">Lunar Month</span>
-                <span class="font-bold text-white" id="panchang-month">-</span>
-              </div>
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-white/50">Tithi</span>
-                <span class="font-bold text-gold" id="panchang-tithi">-</span>
-              </div>
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-white/50">Nakshatra</span>
-                <span class="font-bold text-white" id="panchang-nakshatra">-</span>
-              </div>
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-white/50">Auspicious (Abhijit)</span>
-                <span class="font-bold text-emerald-400" id="panchang-abhijit">-</span>
-              </div>
-              <div class="flex justify-between py-2">
-                <span class="text-white/50">Rahu Kala</span>
-                <span class="font-bold text-rose-400" id="panchang-rahu">-</span>
+          <!-- Animated Circle (LHS) -->
+          <div class="flex-shrink-0 flex flex-col items-center">
+            <div class="w-40 h-40 rounded-full border border-gold/20 flex items-center justify-center relative mb-4" id="pranayama-circle-outer" style="background: rgba(212,175,55,0.02); transition: all 0.5s ease;">
+              <div class="w-24 h-24 rounded-full bg-gold/10 border border-gold/45 flex items-center justify-center text-black font-extrabold text-sm transition-all duration-1000 shadow-xl shadow-gold/5" id="pranayama-circle-inner" style="transform: scale(1.0);">
+                <span class="text-white font-serif tracking-widest text-base" id="pranayama-state-text">Ready</span>
               </div>
             </div>
           </div>
-
-          <!-- Guided Breathing Widget -->
-          <div class="bg-white/5 border border-white/5 rounded-3xl p-6 flex flex-col items-center text-center relative overflow-hidden">
-            <h3 class="font-serif font-bold text-white text-lg flex items-center gap-2 mb-4 self-start">
-              <span>🧘</span> Pranayama Guide
+          
+          <!-- Guide Text & Control (RHS) -->
+          <div class="space-y-4 text-left flex-grow">
+            <span class="text-[10px] bg-gold/15 text-gold border border-gold/25 px-2.5 py-0.5 rounded-md uppercase font-extrabold tracking-wider">Breathing Sadhana</span>
+            <h3 class="text-2xl font-bold font-serif text-white flex items-center gap-2">
+              🧘 Prana Vayu: Nostril Box Breathing
             </h3>
+            <p class="text-xs text-white/60 leading-relaxed max-w-2xl font-sans" id="pranayama-instruction">
+              An ancient yogic technique (Nadi Shodhana) to balance your energy fields, calm the nervous system, and improve blood oxygen levels. Click start to follow the visual inhale/hold/exhale breathing guide.
+            </p>
             
-            <!-- Breathing Visual Circle -->
-            <div class="w-40 h-40 rounded-full border border-gold/25 flex flex-col items-center justify-center relative mb-6" id="pranayama-circle-outer" style="background: rgba(212,175,55,0.02); transition: all 0.5s ease;">
-              <div class="w-24 h-24 rounded-full bg-gold/10 border border-gold flex items-center justify-center text-black font-extrabold text-sm transition-all duration-1000 shadow-lg shadow-gold/10" id="pranayama-circle-inner" style="transform: scale(1.0);">
-                <span class="text-white font-serif tracking-wider" id="pranayama-state-text">Ready</span>
-              </div>
-            </div>
-
-            <p class="text-xs text-white/60 mb-6 max-w-xs leading-relaxed" id="pranayama-instruction">Click Start to begin alternate nostril box breathing. Balance your vital energy (Prana).</p>
-            
-            <div class="flex items-center gap-4">
-              <button id="pranayama-toggle-btn" class="px-6 py-2 bg-gold hover:bg-gold/90 text-black text-xs font-black uppercase tracking-widest rounded-xl transition-all">Start Sadhana</button>
-              <span id="pranayama-timer" class="text-sm font-bold text-white/50 font-mono">00:00</span>
+            <div class="flex items-center gap-4 pt-2">
+              <button id="pranayama-toggle-btn" class="px-8 py-3 bg-gold hover:bg-gold/90 text-black text-xs font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-gold/15">Start Sadhana</button>
+              <span id="pranayama-timer" class="text-base font-bold text-white/50 font-mono tracking-widest">00:00</span>
             </div>
           </div>
-
         </div>
 
-        <!-- Right Side: Ayurveda Remedies Finder -->
-        <!-- Right Side: Interactive Spiritual Guides -->
-        <div class="lg:col-span-3 bg-white/5 border border-white/5 rounded-3xl p-6 space-y-6 flex flex-col justify-between min-h-[500px]">
-          <!-- Sub-Tab Header buttons -->
-          <div class="flex border border-white/10 p-1 bg-white/5 rounded-xl">
-            <button id="divya-tab-ayur" class="flex-1 py-2 text-xs font-extrabold rounded-lg bg-gold text-black transition-all">🌿 Ayurveda Wellness</button>
-            <button id="divya-tab-temple" class="flex-1 py-2 text-xs font-bold text-white/60 hover:text-white transition-all">🛕 Karnataka Darshana</button>
-          </div>
-
-          <!-- Tab Content 1: Ayurveda Remedies Finder -->
-          <div id="divya-panel-ayur" class="space-y-6 flex-grow flex flex-col justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
-              <div>
-                <h3 class="font-serif font-bold text-white text-lg flex items-center gap-2">
-                  <span>🌿</span> Ayurveda Home Remedies
-                </h3>
-                <p class="text-[10px] text-white/50">Natural herb cures &amp; recipes for everyday health conditions.</p>
-              </div>
-              <!-- Search bar -->
-              <div class="relative w-full sm:w-60">
-                <input type="text" id="ayurveda-search" placeholder="Search remedies..." class="w-full bg-white/5 border border-white/10 hover:border-white/20 focus:border-gold/50 rounded-xl px-3.5 py-1.5 pl-9 text-xs text-white placeholder-white/40 focus:outline-none transition-all">
-                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
-              </div>
+        <!-- ROW 2: Ayurveda Wellness (OTT Row format!) -->
+        <div class="netflix-row border-b border-white/5 pb-10">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-4">
+            <div>
+              <span class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-1 font-mono">Natural Herb Recipes</span>
+              <h2 class="text-2xl md:text-3xl font-bold font-serif text-white">🌿 Ayurveda Home Wellness</h2>
             </div>
-
-            <!-- Category filter tabs -->
-            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
-              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-gold bg-gold text-black shadow-lg" data-category="all">✨ All Remedies</button>
-              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Cold &amp; Cough">🍲 Cold &amp; Cough</button>
-              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Immunity">💪 Immunity</button>
-              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Sleep &amp; Mind">🧠 Sleep &amp; Mind</button>
-              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Digestion">🥗 Digestion</button>
-              <button class="ayur-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Skin &amp; Hair">💅 Skin &amp; Hair</button>
-            </div>
-
-            <!-- Remedies Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[360px] overflow-y-auto pr-1 no-scrollbar flex-grow" id="ayurveda-remedies-grid">
-              <!-- Rendered dynamically by app.js -->
+            <!-- Filters & Search -->
+            <div class="flex items-center gap-4 flex-wrap sm:flex-nowrap">
+              <div class="relative w-full sm:w-56">
+                <input type="text" id="ayurveda-search" placeholder="Search remedies..." class="w-full bg-white/5 border border-white/10 hover:border-white/20 focus:border-gold/50 rounded-xl px-3 py-1.5 pl-8 text-xs text-white focus:outline-none transition-all">
+                <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
+              </div>
+              <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar max-w-md text-[10px]">
+                <button class="ayur-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-gold bg-gold text-black shadow-lg" data-category="all">All</button>
+                <button class="ayur-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-white/10 text-white/70 hover:border-gold/30" data-category="Cold &amp; Cough">Cough</button>
+                <button class="ayur-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-white/10 text-white/70 hover:border-gold/30" data-category="Immunity">Immunity</button>
+                <button class="ayur-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-white/10 text-white/70 hover:border-gold/30" data-category="Sleep &amp; Mind">Mind</button>
+                <button class="ayur-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-white/10 text-white/70 hover:border-gold/30" data-category="Digestion">Digestion</button>
+              </div>
             </div>
           </div>
+          <div class="relative overflow-hidden">
+            <div class="flex gap-6 overflow-x-auto pb-4 pt-2 -mx-4 px-4 no-scrollbar scroll-smooth" id="ayurveda-remedies-grid">
+              <!-- Rendered dynamically as OTT cards by app.js -->
+            </div>
+          </div>
+        </div>
 
-          <!-- Tab Content 2: Karnataka Temple Darshana -->
-          <div id="divya-panel-temple" class="space-y-6 flex-grow flex flex-col justify-between hidden">
-            <!-- Search & Nearby Button -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
-              <div class="relative flex-grow max-w-md">
-                <input type="text" id="temple-search" placeholder="Search temple, city, deity..." class="w-full bg-white/5 border border-white/10 hover:border-white/20 focus:border-gold/50 rounded-xl px-4 py-2 pl-10 text-xs text-white placeholder-white/40 focus:outline-none transition-all">
-                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
+        <!-- ROW 3: Karnataka Darshana (OTT Row format!) -->
+        <div class="netflix-row border-b border-white/5 pb-10">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-4">
+            <div>
+              <span class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-1 font-mono">Sacred Architecture Guide</span>
+              <h2 class="text-2xl md:text-3xl font-bold font-serif text-white">🛕 Karnataka Temple Darshana</h2>
+            </div>
+            <!-- Search & Filters -->
+            <div class="flex items-center gap-4 flex-wrap sm:flex-nowrap">
+              <div class="relative w-full sm:w-56">
+                <input type="text" id="temple-search" placeholder="Search temples..." class="w-full bg-white/5 border border-white/10 hover:border-white/20 focus:border-gold/50 rounded-xl px-3 py-1.5 pl-8 text-xs text-white focus:outline-none transition-all">
+                <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
               </div>
-              <button id="nearby-temples-btn" class="flex-shrink-0 flex items-center justify-center gap-1.5 px-4 py-2 bg-gold hover:bg-gold/90 text-black text-xs font-black rounded-xl transition-all shadow-lg shadow-gold/10">
-                📍 Nearby Temples
+              <button id="nearby-temples-btn" class="flex-shrink-0 px-3.5 py-1.5 bg-gold hover:bg-gold/90 text-black text-xs font-black rounded-xl transition-all shadow-md">
+                📍 Nearby
               </button>
-            </div>
-
-            <!-- Deity/Category Filter Buttons from Screenshot -->
-            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 text-[10px]">
-              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-gold bg-gold text-black shadow-lg" data-category="all">All</button>
-              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Shakti Peetha">Shakti Peetha</button>
-              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="UNESCO Heritage">UNESCO Heritage</button>
-              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Major Pilgrimage">Major Pilgrimage</button>
-              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Hoysala Heritage">Hoysala Heritage</button>
-              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Dvaita Matha">Dvaita Matha</button>
-              <button class="temple-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70" data-category="Adi Shankara Peetha">Adi Shankara Peetha</button>
-            </div>
-
-            <!-- Temples Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[360px] overflow-y-auto pr-1 no-scrollbar flex-grow animate-fade-in" id="karnataka-temples-grid">
-              <!-- Injected dynamically by app.js -->
+              <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar max-w-xs text-[10px]">
+                <button class="temple-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-gold bg-gold text-black shadow-lg" data-category="all">All</button>
+                <button class="temple-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-white/10 text-white/70 hover:border-gold/30" data-category="Shakti Peetha">Shakti</button>
+                <button class="temple-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-white/10 text-white/70 hover:border-gold/30" data-category="UNESCO Heritage">UNESCO</button>
+                <button class="temple-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-white/10 text-white/70 hover:border-gold/30" data-category="Major Pilgrimage">Pilgrimage</button>
+              </div>
             </div>
           </div>
-
+          <div class="relative overflow-hidden">
+            <div class="flex gap-6 overflow-x-auto pb-4 pt-2 -mx-4 px-4 no-scrollbar scroll-smooth" id="karnataka-temples-grid">
+              <!-- Rendered dynamically as OTT cards by app.js -->
+            </div>
+          </div>
         </div>
 
       </div>
     </section>
-
     <!-- Play Zone (Learning Games Arena) -->
     <section id="play-zone" class="scroll-mt-24 space-y-12">
       <div class="text-center max-w-2xl mx-auto">
