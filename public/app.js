@@ -70,6 +70,27 @@ export class DatabaseService {
         }
       }
       
+      // Ensure Ebook Page Content is populated
+      if (!item.content || !item.content.length) {
+        item.content = [
+          {
+            title: "Chapter I: Historical Prologue",
+            text: `${item.description || item.tagline || 'Explore the deep roots and historical significance of this heritage masterpiece.'} Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.`,
+            visual: isAudio ? "🪕" : "🏛️"
+          },
+          {
+            title: "Chapter II: Astronomical & Philosophical Marvels",
+            text: "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+            visual: "⚜️"
+          },
+          {
+            title: "Chapter III: The Living Legacy",
+            text: "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+            visual: "✨"
+          }
+        ];
+      }
+      
       if (!item.duration) item.duration = "30 Mins";
       if (!item.rating) item.rating = "9.8 ★";
       if (!item.year) item.year = "2026";
