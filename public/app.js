@@ -2257,7 +2257,6 @@ const bindSlideNavigation = () => {
     if (abhiEl) abhiEl.textContent = "11:46 AM - 12:38 PM";
     if (rahuEl) rahuEl.textContent = rahuTable[dayOfWeek];
   }
-
   renderAyurvedaGrid() {
     const grid = document.getElementById('ayurveda-remedies-grid');
     if (!grid) return;
@@ -2272,19 +2271,26 @@ const bindSlideNavigation = () => {
     });
 
     if (!filtered.length) {
-      grid.innerHTML = `<div class="col-span-2 text-center text-white/40 py-8 text-xs">No remedies found. Try a different search!</div>`;
+      grid.innerHTML = `<div class="text-white/40 py-8 text-xs pl-4">No remedies found. Try a different search/filter!</div>`;
       return;
     }
 
     grid.innerHTML = filtered.map(rem => `
-      <div class="ayur-card relative overflow-hidden" data-rem-id="${rem.id}">
-        <span class="text-3xl mb-3 block">${rem.icon}</span>
-        <span class="text-[9px] font-bold text-gold uppercase tracking-wider bg-gold/10 border border-gold/25 px-2 py-0.5 rounded-full mb-2 inline-block">${rem.category}</span>
-        <h4 class="font-bold text-white text-sm font-serif mb-1">${rem.title}</h4>
-        <p class="text-[11px] text-white/60 line-clamp-2 leading-relaxed mb-3">${rem.description}</p>
-        <span class="text-[10px] text-gold font-bold flex items-center gap-1 hover:underline">
-          <span>📖 View Recipe</span> &rarr;
-        </span>
+      <div class="ayur-card flex-shrink-0 w-72 rounded-2xl overflow-hidden bg-white/5 border border-white/5 cursor-pointer relative group transition-all duration-500 hover:border-gold/30 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gold/5 p-5 flex flex-col justify-between" data-rem-id="${rem.id}">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-3xl">${rem.icon}</span>
+            <span class="text-[9px] font-bold text-gold bg-gold/10 border border-gold/25 px-2.5 py-0.5 rounded-full uppercase tracking-wider">${rem.category}</span>
+          </div>
+          <h4 class="font-bold text-white text-base font-serif mb-1 leading-snug">${rem.title}</h4>
+          <p class="text-xs text-white/60 line-clamp-3 leading-relaxed mb-4">${rem.description}</p>
+        </div>
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-white/40 uppercase font-mono">${rem.dosha.split(';')[0]}</span>
+          <span class="text-xs text-gold font-bold flex items-center gap-1 hover:underline">
+            <span>📖 View Recipe</span> &rarr;
+          </span>
+        </div>
       </div>
     `).join('');
 
@@ -2297,7 +2303,6 @@ const bindSlideNavigation = () => {
       });
     });
   }
-
   setupAyurvedaListeners() {
     const searchInput = document.getElementById('ayurveda-search');
     if (searchInput) {
@@ -2320,14 +2325,12 @@ const bindSlideNavigation = () => {
       });
     });
   }
-
   renderKarnatakaTemplesGrid() {
     const grid = document.getElementById('karnataka-temples-grid');
     if (!grid) return;
 
     // Filter temples
     let filtered = KARNATAKA_TEMPLES.filter(temp => {
-      // Filter by category selection (e.g. Hoysala, Shakti Peetha, Dvaita Matha)
       const matchesCategory = !this.selectedTempleCategory || this.selectedTempleCategory === 'all' || 
                               temp.categories.includes(this.selectedTempleCategory);
       
@@ -2338,75 +2341,57 @@ const bindSlideNavigation = () => {
       return matchesCategory && matchesSearch;
     });
 
-    // If Nearby sorting is active, sort by distance ascending
     if (this.sortByDistanceActive) {
       filtered.sort((a, b) => (a.distance || 9999) - (b.distance || 9999));
     }
 
     if (!filtered.length) {
-      grid.innerHTML = `<div class="col-span-2 text-center text-white/40 py-12 text-xs font-sans">No temples found. Try a different search/filter!</div>`;
+      grid.innerHTML = `<div class="text-white/40 py-8 text-xs pl-4">No temples found. Try a different search/filter!</div>`;
       return;
     }
 
     grid.innerHTML = filtered.map(temp => {
-      // Dynamic rendering matching user screenshot details
       const distanceBadge = temp.distance !== undefined
-        ? `<span class="text-[9px] font-bold text-emerald-400 bg-emerald-400/10 border border-emerald-400/25 px-2 py-0.5 rounded-full">📍 ${temp.distance.toFixed(1)} km away</span>`
+        ? `<span class="text-[9px] font-bold text-emerald-400 bg-emerald-400/10 border border-emerald-400/25 px-2 py-0.5 rounded-full">📍 ${temp.distance.toFixed(1)} km</span>`
         : '';
         
       return `
-        <div class="ayur-card relative overflow-hidden flex flex-col justify-between border border-white/5 bg-[#16171d] hover:border-gold/30 transition-all p-5 rounded-2xl" data-temp-id="${temp.id}">
-          <div>
-            <!-- Header: Title, rating, icon, and location -->
-            <div class="flex items-start justify-between mb-3.5">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-lg select-none">
-                  ${temp.icon || '🛕'}
-                </div>
-                <div>
-                  <h4 class="font-bold text-white text-base font-serif leading-tight">${temp.title}</h4>
-                  <span class="text-xs text-gold/80 font-sans">${temp.location}</span>
-                </div>
-              </div>
-              
-              <div class="flex flex-col items-end gap-1.5">
-                <span class="text-xs font-bold text-gold flex items-center gap-1">
-                  ⭐ ${temp.rating}
-                </span>
-                ${distanceBadge}
-              </div>
+        <div class="ayur-card flex-shrink-0 w-80 rounded-2xl overflow-hidden bg-white/5 border border-white/5 cursor-pointer relative group transition-all duration-500 hover:border-gold/30 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gold/5 flex flex-col justify-between" data-temp-id="${temp.id}">
+          <!-- Thumbnail cover -->
+          <div class="h-40 w-full relative flex flex-col justify-between p-4 overflow-hidden">
+            <img src="${temp.image}" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" alt="${temp.title}">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-15 pointer-events-none"></div>
+            
+            <div class="flex justify-between items-start w-full relative z-20">
+              <span class="text-[9px] font-bold text-white/90 bg-black/40 px-2 py-0.8 rounded-md uppercase tracking-wider border border-white/5 backdrop-blur-md ml-auto">
+                ${temp.deityTag}
+              </span>
             </div>
 
-            <!-- Pill Badges -->
-            <div class="flex items-center gap-2 mb-3.5 flex-wrap">
-              ${temp.categories.map(c => `
-                <span class="text-[9px] font-bold text-white/60 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider">${c}</span>
-              `).join('')}
-              <span class="text-[9px] font-bold text-gold bg-gold/10 border border-gold/25 px-2.5 py-0.5 rounded-full uppercase tracking-wider">🙏 ${temp.deityTag}</span>
+            <div class="text-white z-20 relative">
+              <h4 class="font-bold text-base font-serif line-clamp-1 leading-snug drop-shadow-md text-white/95">${temp.title}</h4>
+              <p class="text-[10px] text-white/70 line-clamp-1">${temp.location} • ${temp.era}</p>
             </div>
-
-            <!-- Short description -->
-            <p class="text-xs text-white/60 leading-relaxed mb-4 font-sans pr-1">
-              ${temp.description}
-            </p>
-
-            <!-- Timings & Phone -->
-            <div class="space-y-1.5 text-[10px] text-white/40 font-mono mb-5 border-t border-white/5 pt-3">
-              <div class="flex items-center gap-1.5">
-                <span>⏰</span>
-                <span>${temp.timings}</span>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <span>📞</span>
-                <span>${temp.phone}</span>
-              </div>
+            
+            <!-- Hover Overlay Maps Button -->
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
+              <button class="open-maps-btn px-4 py-2 bg-gold text-black font-black rounded-lg text-[10px] uppercase tracking-wider transform scale-75 group-hover:scale-100 transition-transform duration-300 shadow-md flex items-center gap-1">
+                🗺️ Directions
+              </button>
             </div>
           </div>
 
-          <!-- Open in Maps Button (high priority maps link) -->
-          <button class="open-maps-btn w-full py-2.5 bg-gold hover:bg-gold/90 text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5" data-lat="${temp.coords.lat}" data-lng="${temp.coords.lng}" data-title="${temp.title}">
-            🗺️ Open in Maps
-          </button>
+          <!-- Description and info -->
+          <div class="p-4 flex-grow flex flex-col justify-between">
+            <p class="text-xs text-white/60 line-clamp-2 leading-relaxed mb-4">
+              ${temp.description}
+            </p>
+            
+            <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+              <span class="text-xs font-bold text-gold flex items-center gap-1">⭐ ${temp.rating}</span>
+              ${distanceBadge}
+            </div>
+          </div>
         </div>
       `;
     }).join('');
@@ -2414,7 +2399,6 @@ const bindSlideNavigation = () => {
     // Bind card clicks
     grid.querySelectorAll('.ayur-card').forEach(card => {
       card.addEventListener('click', (e) => {
-        // Prevent click trigger if they clicked maps button
         if (e.target.closest('.open-maps-btn')) return;
         const id = card.getAttribute('data-temp-id');
         const temple = KARNATAKA_TEMPLES.find(t => t.id === id);
@@ -2427,12 +2411,13 @@ const bindSlideNavigation = () => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         e.preventDefault();
-        const lat = btn.getAttribute('data-lat');
-        const lng = btn.getAttribute('data-lng');
-        const title = btn.getAttribute('data-title');
-        // Open google maps directions
-        const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
-        window.open(mapsUrl, '_blank');
+        const card = btn.closest('.ayur-card');
+        const id = card.getAttribute('data-temp-id');
+        const temple = KARNATAKA_TEMPLES.find(t => t.id === id);
+        if (temple) {
+          const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${temple.coords.lat},${temple.coords.lng}`;
+          window.open(mapsUrl, '_blank');
+        }
       });
     });
   }
