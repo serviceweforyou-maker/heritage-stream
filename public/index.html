@@ -112,19 +112,51 @@
         <a href="#catalog-explorer" id="nav-eye-btn" class="hover:text-gold transition-colors flex items-center gap-1.5 text-gold font-bold relative group" title="All 200+ Catalog Explorer">
           <span class="relative flex h-6 w-6 items-center justify-center">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/15 opacity-75"></span>
-            <svg id="human-eye" class="w-6 h-6 text-gold relative z-10 transition-transform duration-100 ease-out origin-center" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 50C10 50 30 25 50 25C70 25 90 50 90 50C90 50 70 75 50 75C30 75 10 50 10 50Z" fill="#14151a" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
-              <g id="eye-pupil-group" style="transform: translate(0, 0);">
-                <circle cx="50" cy="50" r="16" fill="url(#iris-grad)" stroke="#d4af37" stroke-width="1.5" />
-                <circle cx="50" cy="50" r="8" fill="#000000" />
-                <circle cx="45" cy="45" r="3.5" fill="#ffffff" opacity="0.9" />
-                <circle cx="54" cy="54" r="1.5" fill="#ffffff" opacity="0.7" />
+            <svg id="human-eye" class="w-8 h-8 text-gold relative z-10 transition-all duration-300 ease-out origin-center" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Eyelid Shadow / Outer Border -->
+              <path d="M5 50C18 20, 82 20, 95 50C82 80, 18 80, 5 50Z" fill="#0d0e12" stroke="#222530" stroke-width="1.5"/>
+              <!-- Sclera (White of the eye, with a soft pinkish gradient for corner realism) -->
+              <path d="M8 50C20 23, 80 23, 92 50C80 77, 20 77, 8 50Z" fill="url(#sclera-grad)" stroke="#1a1c23" stroke-width="1"/>
+              <!-- Lacrimal Caruncle (Pink inner corner) -->
+              <path d="M8 50C10 47, 15 48, 17 50C15 52, 10 53, 8 50Z" fill="#ff7f7f" opacity="0.8"/>
+              
+              <!-- Pupil and Iris container (masked to keep it inside the sclera) -->
+              <g mask="url(#sclera-mask)">
+                <!-- Pupil & Iris group that tracks the mouse -->
+                <g id="eye-pupil-group" class="transition-transform duration-100 ease-out" style="transform: translate(0, 0);">
+                  <!-- Iris (Golden-hazel realistic gradient with detailed overlay rings) -->
+                  <circle cx="50" cy="50" r="20" fill="url(#iris-pattern-grad)" stroke="#684c0c" stroke-width="1" />
+                  <circle cx="50" cy="50" r="17" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+                  <circle cx="50" cy="50" r="14" fill="none" stroke="#aa7c11" stroke-width="1" stroke-dasharray="1,3" opacity="0.8"/>
+                  
+                  <!-- Pupil (Black center, dynamic scaling via CSS transition!) -->
+                  <circle id="eye-pupil" cx="50" cy="50" r="9" fill="#000000" class="transition-all duration-300 ease-out" />
+                  
+                  <!-- Shiny cornea reflections (give it that wet 3D liquid look) -->
+                  <ellipse cx="44" cy="44" rx="4" ry="3" fill="#ffffff" opacity="0.9" transform="rotate(-15 44 44)" />
+                  <circle cx="56" cy="55" r="1.5" fill="#ffffff" opacity="0.6" />
+                </g>
               </g>
+              
+              <!-- Definitions for masks, gradients and effects -->
               <defs>
-                <radialGradient id="iris-grad" cx="50%" cy="50%" r="50%">
+                <!-- Sclera Mask to restrict iris movement within the eyelids -->
+                <mask id="sclera-mask">
+                  <path d="M8 50C20 23, 80 23, 92 50C80 77, 20 77, 8 50Z" fill="#ffffff"/>
+                </mask>
+                <!-- Sclera Pinkish gradient for natural bloodshot corners -->
+                <radialGradient id="sclera-grad" cx="50%" cy="50%" r="50%">
+                  <stop offset="70%" stop-color="#ffffff" />
+                  <stop offset="90%" stop-color="#ffebeb" />
+                  <stop offset="100%" stop-color="#ffcccc" />
+                </radialGradient>
+                <!-- Multi-stop gold/hazel iris gradient -->
+                <radialGradient id="iris-pattern-grad" cx="50%" cy="50%" r="50%">
                   <stop offset="0%" stop-color="#000000" />
-                  <stop offset="70%" stop-color="#a0781a" />
-                  <stop offset="100%" stop-color="#d4af37" />
+                  <stop offset="25%" stop-color="#3b2d07" />
+                  <stop offset="55%" stop-color="#946f13" />
+                  <stop offset="85%" stop-color="#d4af37" />
+                  <stop offset="100%" stop-color="#553f0b" />
                 </radialGradient>
               </defs>
             </svg>
@@ -173,19 +205,51 @@
       <a href="#catalog-explorer" class="mobile-nav-link block py-3 px-4 rounded-xl text-sm font-bold text-gold hover:bg-white/5 transition-all flex items-center gap-2">
         <span class="relative flex h-6 w-6 items-center justify-center">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/15 opacity-75"></span>
-          <svg id="human-eye" class="w-6 h-6 text-gold relative z-10 transition-transform duration-100 ease-out origin-center" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 50C10 50 30 25 50 25C70 25 90 50 90 50C90 50 70 75 50 75C30 75 10 50 10 50Z" fill="#14151a" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
-            <g id="eye-pupil-group" style="transform: translate(0, 0);">
-              <circle cx="50" cy="50" r="16" fill="url(#iris-grad-mob)" stroke="#d4af37" stroke-width="1.5" />
-              <circle cx="50" cy="50" r="8" fill="#000000" />
-              <circle cx="45" cy="45" r="3.5" fill="#ffffff" opacity="0.9" />
-              <circle cx="54" cy="54" r="1.5" fill="#ffffff" opacity="0.7" />
+          <svg id="human-eye" class="w-8 h-8 text-gold relative z-10 transition-all duration-300 ease-out origin-center" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Eyelid Shadow / Outer Border -->
+            <path d="M5 50C18 20, 82 20, 95 50C82 80, 18 80, 5 50Z" fill="#0d0e12" stroke="#222530" stroke-width="1.5"/>
+            <!-- Sclera (White of the eye, with a soft pinkish gradient for corner realism) -->
+            <path d="M8 50C20 23, 80 23, 92 50C80 77, 20 77, 8 50Z" fill="url(#sclera-grad-mob)" stroke="#1a1c23" stroke-width="1"/>
+            <!-- Lacrimal Caruncle (Pink inner corner) -->
+            <path d="M8 50C10 47, 15 48, 17 50C15 52, 10 53, 8 50Z" fill="#ff7f7f" opacity="0.8"/>
+            
+            <!-- Pupil and Iris container (masked to keep it inside the sclera) -->
+            <g mask="url(#sclera-mask-mob)">
+              <!-- Pupil & Iris group that tracks the mouse -->
+              <g id="eye-pupil-group" class="transition-transform duration-100 ease-out" style="transform: translate(0, 0);">
+                <!-- Iris (Golden-hazel realistic gradient with detailed overlay rings) -->
+                <circle cx="50" cy="50" r="20" fill="url(#iris-pattern-grad-mob)" stroke="#684c0c" stroke-width="1" />
+                <circle cx="50" cy="50" r="17" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+                <circle cx="50" cy="50" r="14" fill="none" stroke="#aa7c11" stroke-width="1" stroke-dasharray="1,3" opacity="0.8"/>
+                
+                <!-- Pupil (Black center, dynamic scaling via CSS transition!) -->
+                <circle id="eye-pupil" cx="50" cy="50" r="9" fill="#000000" class="transition-all duration-300 ease-out" />
+                
+                <!-- Shiny cornea reflections (give it that wet 3D liquid look) -->
+                <ellipse cx="44" cy="44" rx="4" ry="3" fill="#ffffff" opacity="0.9" transform="rotate(-15 44 44)" />
+                <circle cx="56" cy="55" r="1.5" fill="#ffffff" opacity="0.6" />
+              </g>
             </g>
+            
+            <!-- Definitions for masks, gradients and effects -->
             <defs>
-              <radialGradient id="iris-grad-mob" cx="50%" cy="50%" r="50%">
+              <!-- Sclera Mask to restrict iris movement within the eyelids -->
+              <mask id="sclera-mask-mob">
+                <path d="M8 50C20 23, 80 23, 92 50C80 77, 20 77, 8 50Z" fill="#ffffff"/>
+              </mask>
+              <!-- Sclera Pinkish gradient for natural bloodshot corners -->
+              <radialGradient id="sclera-grad-mob" cx="50%" cy="50%" r="50%">
+                <stop offset="70%" stop-color="#ffffff" />
+                <stop offset="90%" stop-color="#ffebeb" />
+                <stop offset="100%" stop-color="#ffcccc" />
+              </radialGradient>
+              <!-- Multi-stop gold/hazel iris gradient -->
+              <radialGradient id="iris-pattern-grad-mob" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stop-color="#000000" />
-                <stop offset="70%" stop-color="#a0781a" />
-                <stop offset="100%" stop-color="#d4af37" />
+                <stop offset="25%" stop-color="#3b2d07" />
+                <stop offset="55%" stop-color="#946f13" />
+                <stop offset="85%" stop-color="#d4af37" />
+                <stop offset="100%" stop-color="#553f0b" />
               </radialGradient>
             </defs>
           </svg>
