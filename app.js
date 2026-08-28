@@ -2933,42 +2933,71 @@ const bindSlideNavigation = () => {
 
   setupEyeMovements() {
     const pupilGroups = document.querySelectorAll('#eye-pupil-group');
+    const pupils = document.querySelectorAll('#eye-pupil');
+    const eyeSvgs = document.querySelectorAll('#human-eye');
+
     if (!pupilGroups.length) return;
 
     window.addEventListener('mousemove', (e) => {
-      pupilGroups.forEach(pupil => {
-        const rect = pupil.getBoundingClientRect();
-        // Center coordinates of the pupil
-        const eyeX = rect.left + rect.width / 2;
-        const eyeY = rect.top + rect.height / 2;
-        
-        // Distance between cursor and eye center
-        const dx = e.clientX - eyeX;
-        const dy = e.clientY - eyeY;
-        
-        // Calculate angle
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      pupilGroups.forEach((pupilGroup, idx) => {
+        const eyeSvg = eyeSvgs[idx];
+        const pupil = pupils[idx];
+        if (!eyeSvg) return;
+
+        const rect = eyeSvg.getBoundingClientRect();
+        const eyeCenterX = rect.left + rect.width / 2;
+        const eyeCenterY = rect.top + rect.height / 2;
+
+        // Calculate delta
+        const dx = mouseX - eyeCenterX;
+        const dy = mouseY - eyeCenterY;
+        const dist = Math.hypot(dx, dy);
+
+        // Sense mouse direction
         const angle = Math.atan2(dy, dx);
-        
-        // Limit movement radius (max 7px translation)
-        const distance = Math.min(7, Math.hypot(dx, dy) / 40);
-        
-        const tx = Math.cos(angle) * distance;
-        const ty = Math.sin(angle) * distance;
-        
-        pupil.style.transform = `translate(${tx}px, ${ty}px)`;
+
+        // Limit maximum eyeball deflection radius to 8px so it stays inside masked sclera bounds
+        const maxDeflection = 8;
+        const deflection = Math.min(maxDeflection, dist / 35);
+
+        const tx = Math.cos(angle) * deflection;
+        const ty = Math.sin(angle) * deflection;
+
+        // Apply transformation to eyeball pupil-group
+        pupilGroup.style.transform = `translate(${tx}px, ${ty}px)`;
+
+        // Interactive Sensing:
+        // Dilate pupil when mouse is far (relaxed eye), constrict when mouse is hovering close (focused eye)
+        if (pupil) {
+          if (dist < 120) {
+            // Focus response (constrict pupil)
+            pupil.setAttribute('r', '6.5');
+            // Squinting response (narrow eyelids slightly)
+            eyeSvg.style.transform = 'scaleY(0.82) scaleX(1.02)';
+          } else {
+            // Relax response (dilate pupil to normal)
+            pupil.setAttribute('r', '9');
+            eyeSvg.style.transform = 'scaleY(1.0) scaleX(1.0)';
+          }
+        }
       });
     });
-    
-    // Add occasional random blinks for extreme realism!
+
+    // Natural blink simulation cycle
     setInterval(() => {
-      const eyes = document.querySelectorAll('#human-eye');
-      eyes.forEach(eye => {
-        eye.style.transform = 'scaleY(0.1)';
+      eyeSvgs.forEach(eyeSvg => {
+        const originalTransform = eyeSvg.style.transform;
+        // Close eyelids briefly
+        eyeSvg.style.transform = 'scaleY(0.05) scaleX(1.0)';
         setTimeout(() => {
-          eye.style.transform = 'scaleY(1.0)';
-        }, 150);
+          // Restore eyelids
+          eyeSvg.style.transform = originalTransform;
+        }, 130);
       });
-    }, 4000 + Math.random() * 3000);
+    }, 4500 + Math.random() * 3000);
   }
 }
 // Instantiate core application controller
