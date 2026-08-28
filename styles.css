@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* CSS Variables for design system */
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --bg-color: #07080c;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(212, 175, 55, 0.3);
+
+  --gold: #d4af37;
+  --gold-glow: rgba(212, 175, 55, 0.25);
+  --amber: #f59e0b;
+  --crimson: #e63946;
+  --crimson-glow: rgba(230, 57, 70, 0.25);
+  --dark-gold: #856404;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+}
+
+/* Base resets & styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Glassmorphism Header */
+header {
+  background: rgba(7, 8, 12, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Text Gradients */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #f3e5ab 0%, var(--gold) 50%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Content card animations */
+.content-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--gold-glow);
+}
+
+.content-card:hover h4 {
+  color: var(--gold);
+}
+
+/* Scrolling Rows setup */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Simulated Audio Player Animations */
+@keyframes soundwave {
+  0% {
+    height: 10%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.visualizer-bar {
+  transform-origin: bottom;
+}
+
+/* Game elements and structures */
+.active-game-tab {
+  background: rgba(212, 175, 55, 0.08);
+  border-bottom: 2px solid var(--gold) !important;
+}
+
+/* Custom CSS for memory card flipping */
+.memory-card {
+  perspective: 1000px;
+}
+
+.memory-card .absolute {
+  backface-visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Custom Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.payment-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Modal styles with Backdrop Blur */
+.modal-overlay {
+  background: rgba(3, 4, 6, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: opacity 0.3s ease;
+}
+
+/* Buttons style */
+.btn-gold {
+  background: linear-gradient(135deg, #f5d061 0%, var(--gold) 60%, #b38f1d 100%);
+  color: #07080c;
+  transition: all 0.3s ease;
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.glass-panel:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+}
+
+/* Tailoring specific classes for CSS modules inside JS */
+.trivia-option-btn:hover {
+  border-color: var(--gold);
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+  transform: scale(1.01);
+}
+
+.chrono-item {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.chrono-item:active {
+  transform: scale(0.98);
+}
+
+/* 3D Tilt Card Effect */
+.tilt-card {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+}
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-4deg);
+}
+
+/* Gyan Shop Specific Cards */
+.reward-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.reward-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.08);
+}
+
+/* User Streak Animation */
+.streak-active {
+  animation: streakGlow 1.5s infinite alternate;
+}
+@keyframes streakGlow {
+  0% { text-shadow: 0 0 4px rgba(245, 158, 11, 0.2); }
+  100% { text-shadow: 0 0 12px rgba(245, 158, 11, 0.8), 0 0 20px rgba(245, 158, 11, 0.4); }
+}
+
+/* Custom Alert Banner */
+.redeem-alert {
+  animation: slideInDown 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+@keyframes slideInDown {
+  0% { transform: translate(-50%, -20px); opacity: 0; }
+  100% { transform: translate(-50%, 0); opacity: 1; }
+}
+
+/* =============================================
+   NETFLIX-STYLE ROW SLIDERS
+   ============================================= */
+
+/* Content cards — consistent width for slider rows */
+.content-card {
+  flex: 0 0 210px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s ease,
+              z-index 0s 0.15s;
+}
+
+.content-card:hover {
+  transform: scale(1.07) translateY(-5px);
+  z-index: 10;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s ease;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.75), 0 0 30px rgba(212, 175, 55, 0.12);
+}
+
+.netflix-row {
+  position: relative;
+  overflow: visible;
+}
+
+.row-prev-btn, .row-next-btn {
+  transition: all 0.2s ease;
+}
+
+.row-prev-btn:hover, .row-next-btn:hover {
+  transform: scale(1.15);
+}
+
+/* =============================================
+   TOP UTILITY BAR TICKER ANIMATION
+   ============================================= */
+
+@keyframes tickerScroll {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+#top-utility-bar {
+  font-family: var(--font-sans);
+}
+
+/* Top-bar Ambient Music button active state */
+#ambient-music-btn.active-ambient {
+  color: var(--gold);
+}
+
+/* Shrink main content below double header */
+body > main, body > section:first-of-type {
+  padding-top: 100px;
+}
+
+
+/* ==============================================
+   FULL MOBILE RESPONSIVE SYSTEM
+   Breakpoints: 480px | 640px | 768px | 1024px
+   ============================================== */
+
+/* ---- Hamburger menu animation ---- */
+#mobile-menu-btn.open .mobile-bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+#mobile-menu-btn.open .mobile-bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+#mobile-menu-btn.open .mobile-bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ---- Content cards – mobile size ---- */
+@media (max-width: 640px) {
+  .netflix-row .content-card { flex: 0 0 172px !important; }
+  .content-card .h-40 { height: 130px !important; }
+}
+
+/* Grids should expand cards to full width */
+#persona-filtered-grid .content-card {
+  width: 100% !important;
+}
+
+/* ---- Hero section  mobile ---- */
+@media (max-width: 768px) {
+  #hero-spotlight { height: 70vh !important; }
+  #hero-spotlight h1 { font-size: 1.6rem !important; line-height: 1.3 !important; }
+  #hero-spotlight p  { font-size: 0.78rem !important; }
+  #hero-spotlight .hero-actions { flex-direction: column; gap: 10px; }
+  #hero-spotlight .hero-actions a,
+  #hero-spotlight .hero-actions button { width: 100%; text-align: center; justify-content: center; }
+}
+
+/* ---- Top utility bar � mobile ---- */
+@media (max-width: 480px) {
+  #top-utility-bar { padding: 0 12px; height: 32px; }
+  #top-utility-bar #ambient-music-btn { font-size: 14px; }
+  #main-header { top: 32px !important; }
+  #hero-spotlight {  }
+}
+
+/* ---- Main container � mobile ---- */
+@media (max-width: 640px) {
+  main { padding-left: 12px !important; padding-right: 12px !important; }
+}
+
+/* ---- Modals � full screen on mobile ---- */
+@media (max-width: 640px) {
+  #media-modal > div,
+  #payment-modal > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    overflow-y: auto;
+  }
+  #media-modal,
+  #payment-modal {
+    align-items: flex-end !important;
+    padding: 0 !important;
+  }
+  /* Make modal slide up from bottom on mobile */
+  #media-modal > div {
+    border-radius: 20px 20px 0 0 !important;
+    max-height: 92dvh !important;
+    height: auto !important;
+  }
+}
+
+/* ---- Map Explorer � stack on mobile ---- */
+@media (max-width: 1024px) {
+  #explorer .grid { grid-template-columns: 1fr !important; }
+  #explorer .lg\:col-span-3 { min-height: 300px; }
+}
+
+/* ---- Netflix row arrow buttons � hide on mobile (touch swipe instead) ---- */
+@media (max-width: 640px) {
+  .row-prev-btn, .row-next-btn { display: none !important; }
+  .netflix-row > div[class*='-row'] { gap: 12px !important; }
+}
+
+/* ---- Flipbook � single page on mobile ---- */
+@media (max-width: 700px) {
+  #flipbook-stage { padding: 56px 10px 72px; }
+  .flipbook-book {
+    width: calc(100vw - 24px) !important;
+    max-width: 360px;
+    height: 500px !important;
+  }
+  /* Show only right page on mobile */
+  .flipbook-book > .flipbook-pages > div[style*="left:0"],
+  .flipbook-book > .flipbook-pages > div[style*="left: 0"] { display: none !important; }
+  .flipbook-book .fb-spine { display: none !important; }
+  .flipbook-book > .flipbook-pages > div[style*="right:0"],
+  .flipbook-book > .flipbook-pages > div[style*="right: 0"] {
+    width: 100% !important;
+    right: 0 !important;
+  }
+  #flipbook-keyboard-hint { display: none; }
+  #flipbook-title-bar h1 { font-size: 12px; }
+}
+
+/* ---- Audio player � mobile ---- */
+@media (max-width: 640px) {
+  .audio-visualizer-container { height: 48px !important; margin-bottom: 20px !important; }
+  #media-modal-body .flex.items-center.gap-6 { gap: 16px !important; }
+  .voice-lang-btn { padding: 4px 8px !important; font-size: 9px !important; }
+}
+
+/* ---- Dashboard / Quiz section � mobile ---- */
+@media (max-width: 768px) {
+  #dashboard .grid { grid-template-columns: 1fr !important; }
+  #play-zone .grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- Section headings � mobile ---- */
+@media (max-width: 640px) {
+  .netflix-row h2 { font-size: 1.2rem !important; }
+  section h2 { font-size: 1.4rem !important; }
+  section h3 { font-size: 1.1rem !important; }
+}
+
+/* ---- Scroll margin for anchor links � account for double header ---- */
+section[id] { scroll-margin-top: 110px; }
+@media (max-width: 480px) { section[id] { scroll-margin-top: 90px; } }
+
+/* ---- Touch improvements ---- */
+@media (pointer: coarse) {
+  .content-card:hover { transform: none !important; }
+  .content-card:active { transform: scale(0.97) !important; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+}
+
+
+/* =============================================
+   DIVYA DARSHANA (SPIRITUAL COMPANION) STYLES
+   ============================================= */
+
+/* Ayurveda Grid & Cards */
+#ayurveda-remedies-grid {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 175, 55, 0.2) transparent;
+}
+
+.ayur-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+.ayur-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(212, 175, 55, 0.05);
+}
+
+/* Breathing Visualizer Classes */
+#pranayama-circle-outer.inhale {
+  border-color: rgba(212, 175, 55, 0.6) !important;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
+  background: rgba(212, 175, 55, 0.05) !important;
+}
+
+#pranayama-circle-outer.hold {
+  border-color: rgba(230, 80, 20, 0.5) !important;
+  box-shadow: 0 0 50px rgba(230, 80, 20, 0.35);
+  background: rgba(230, 80, 20, 0.06) !important;
+}
+
+#pranayama-circle-outer.exhale {
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+  background: rgba(59, 130, 246, 0.03) !important;
+}
+
+#pranayama-circle-inner.inhale {
+  background-color: #d4af37 !important;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  color: #000 !important;
+}
+
+#pranayama-circle-inner.hold {
+  background-color: #e65c00 !important;
+  box-shadow: 0 0 35px rgba(230, 92, 0, 0.7);
+  color: #fff !important;
+}
+
+#pranayama-circle-inner.exhale {
+  background-color: #3b82f6 !important;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  color: #fff !important;
+}
