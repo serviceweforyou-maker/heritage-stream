@@ -572,12 +572,12 @@ app.post('/api/create-cashfree-order', async (req, res) => {
     cleanPhone = cleanPhone.slice(2);
   }
   if (cleanPhone.length !== 10) {
-    cleanPhone = "9035442904";
+    cleanPhone = "9876543210";
   }
 
   let cleanEmail = (email || "").trim();
   if (!cleanEmail || !cleanEmail.includes('@')) {
-    cleanEmail = "service.weforyou@gmail.com";
+    cleanEmail = "explorer@sanatana360.com";
   }
 
   let cleanName = (name || "").trim() || "Heritage Explorer";
