@@ -111,11 +111,28 @@ export class DatabaseService {
   }
 
   static isSubscribed() {
-    return localStorage.getItem('hs_subscribed') === 'true';
+    if (localStorage.getItem('hs_subscribed') !== 'true') return false;
+    
+    // Automatic Expiration Fallback Check (365 Days Validity)
+    const subTimestamp = parseInt(localStorage.getItem('hs_sub_timestamp') || '');
+    if (subTimestamp) {
+      const expiryTime = subTimestamp + (365 * 24 * 60 * 60 * 1000);
+      if (Date.now() >= expiryTime) {
+        console.warn("⚠️ Subscription has expired. Automatically downgraded to Free Explorer group.");
+        localStorage.removeItem('hs_subscribed');
+        localStorage.setItem('hs_sub_expired', 'true');
+        return false;
+      }
+    }
+    return true;
   }
 
   static async setSubscribed(status, name = "Anonymous Member", paymentMethod = "Mock Card/UPI") {
     localStorage.setItem('hs_subscribed', String(status));
+    if (status && !localStorage.getItem('hs_sub_timestamp')) {
+      localStorage.setItem('hs_sub_timestamp', String(Date.now()));
+      localStorage.setItem('hs_sub_date', new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }));
+    }
     if (status) {
       try {
         await fetch('/api/subscribe', {
@@ -801,10 +818,28 @@ class AppController {
         }
       }
 
-      // Populate Plan Details Card
+      // Populate Plan Details Card with Live Remaining Days Countdown
       const planCard = document.getElementById('plan-details-card');
       if (planCard) {
+        // Re-evaluate subscription status including expiration
+        this.isSubscribed = DatabaseService.isSubscribed();
+
         if (this.isSubscribed) {
+          const now = Date.now();
+          let subTimestamp = parseInt(localStorage.getItem('hs_sub_timestamp') || '');
+          if (!subTimestamp) {
+            subTimestamp = now;
+            localStorage.setItem('hs_sub_timestamp', String(now));
+          }
+
+          const expiryTime = subTimestamp + (365 * 24 * 60 * 60 * 1000);
+          const msLeft = expiryTime - now;
+          const daysLeft = Math.max(0, Math.ceil(msLeft / (1000 * 60 * 60 * 24)));
+          const daysPassed = Math.min(365, Math.max(0, 365 - daysLeft));
+          const progressPercent = Math.round((daysLeft / 365) * 100);
+          const expiryDateStr = new Date(expiryTime).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+          const activatedDateStr = new Date(subTimestamp).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+
           planCard.innerHTML = `
             <div class="flex items-center justify-between border-b border-gold/20 pb-3">
               <div>
@@ -813,8 +848,38 @@ class AppController {
               </div>
               <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">✓ ACTIVE</span>
             </div>
+
+            <!-- Live Days Countdown Badge -->
+            <div class="bg-gradient-to-r from-amber-500/15 via-gold/15 to-emerald-500/15 border border-gold/40 rounded-2xl p-4 space-y-2.5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-gold/20 border border-gold/40 flex items-center justify-center text-xl flex-shrink-0">
+                    ⏳
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase tracking-widest text-gold font-mono font-bold block">Live Pass Validity</span>
+                    <span class="text-base font-extrabold text-white font-mono">${daysLeft} Days Left</span>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="text-[9px] text-white/40 uppercase font-mono block">Expires On</span>
+                  <span class="text-xs font-bold text-white/90 font-mono">${expiryDateStr}</span>
+                </div>
+              </div>
+
+              <!-- Animated Validity Progress Bar -->
+              <div class="space-y-1 pt-1">
+                <div class="flex justify-between text-[9px] font-mono text-white/50">
+                  <span>Day ${daysPassed} of 365 elapsed</span>
+                  <span class="text-emerald-400 font-bold">${progressPercent}% validity remaining</span>
+                </div>
+                <div class="w-full h-2 bg-black/40 rounded-full overflow-hidden border border-white/10 p-0.5">
+                  <div class="h-full bg-gradient-to-r from-gold via-amber-400 to-emerald-400 rounded-full transition-all duration-500" style="width: ${Math.max(3, progressPercent)}%;"></div>
+                </div>
+              </div>
+            </div>
             
-            <div class="space-y-2.5 text-xs text-white/80">
+            <div class="space-y-2 text-xs text-white/80">
               <div class="flex items-center justify-between bg-black/30 p-2.5 rounded-xl border border-white/5 font-mono">
                 <span class="text-white/50 text-[11px]">Activation Order ID:</span>
                 <div class="flex items-center gap-2">
@@ -824,16 +889,12 @@ class AppController {
               </div>
 
               <div class="flex justify-between py-1 border-b border-white/5 text-[11px]">
-                <span class="text-white/50">Access Duration:</span>
-                <span class="font-bold text-white">365 Days Unrestricted</span>
-              </div>
-              <div class="flex justify-between py-1 border-b border-white/5 text-[11px]">
                 <span class="text-white/50">Billing Amount:</span>
-                <span class="font-bold text-gold">₹399 / Year</span>
+                <span class="font-bold text-gold font-mono">₹399 / Year (Annual Recurring)</span>
               </div>
               <div class="flex justify-between py-1 text-[11px]">
                 <span class="text-white/50">Activated On:</span>
-                <span class="font-bold text-white/80">${subDate}</span>
+                <span class="font-bold text-white/80 font-mono">${activatedDateStr}</span>
               </div>
             </div>
 
@@ -979,7 +1040,9 @@ class AppController {
             this.currentProfile = userInput;
           }
           if (pwdInput) localStorage.setItem('hs_user_pwd', pwdInput);
-          localStorage.setItem('hs_sub_date', new Date().toLocaleDateString());
+          localStorage.setItem('hs_sub_timestamp', String(Date.now()));
+        localStorage.setItem('hs_sub_date', new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }));
+        localStorage.removeItem('hs_sub_expired');
 
           renderHeaderProfile();
           this.renderSpotlight();
@@ -1010,6 +1073,9 @@ class AppController {
       localStorage.removeItem('hs_subscribed_name');
       localStorage.removeItem('hs_user_name');
       localStorage.removeItem('hs_order_id');
+      localStorage.removeItem('hs_sub_timestamp');
+      localStorage.removeItem('hs_sub_date');
+      localStorage.removeItem('hs_sub_expired');
 
       this.isSubscribed = false;
       this.currentProfile = 'Guest';
@@ -2079,7 +2145,11 @@ const bindSlideNavigation = () => {
         localStorage.setItem('hs_subscribed', 'true');
         localStorage.setItem('hs_subscribed_name', 'Premium Pass Member');
         localStorage.setItem('hs_order_id', orderId || ('order_' + Date.now()));
-        localStorage.setItem('hs_sub_date', new Date().toLocaleDateString());
+        if (!localStorage.getItem('hs_sub_timestamp')) {
+            localStorage.setItem('hs_sub_timestamp', String(Date.now()));
+          }
+          localStorage.setItem('hs_sub_date', new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }));
+          localStorage.removeItem('hs_sub_expired');
         localStorage.setItem('hs_sub_plan', 'Heritage Knowledge Annual Pass (₹399/yr)');
         
         this.renderHeader();
