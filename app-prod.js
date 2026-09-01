@@ -468,33 +468,38 @@ class AppController {
     if (!slides.length) return;
     let currentIdx = 0;
 
-    heroSection.innerHTML = `
+        heroSection.innerHTML = `
       <div class="relative w-full h-full overflow-hidden">
         <!-- Slide items -->
         <div id="spotlight-slides-container" class="relative w-full h-full">
           ${slides.map((item, idx) => `
             <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}" data-index="${idx}">
-              <img src="${item.imageUrl || '/images/hampi.jpg'}" ${idx > 0 ? 'loading="lazy"' : ''} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000" alt="${item.title}">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0b10] via-transparent to-[#0a0b10]/60 z-10 pointer-events-none"></div>
-              <div class="max-w-4xl pt-[140px] pb-8 px-6 md:px-12 h-full flex flex-col justify-end relative z-20">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-gold/15 text-gold text-xs font-bold uppercase tracking-wider mb-3 border border-gold/20 self-start">
-                  🏆 FEATURED MASTERPIECE
+              <img src="${item.imageUrl || '/images/hampi.jpg'}" ${idx > 0 ? 'loading="lazy"' : ''} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000" style="object-position: center 18%;" alt="${item.title}">
+              
+              <!-- Cinematic Vignette Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-r from-[#07080c] via-[#07080c]/80 md:via-[#07080c]/40 to-transparent z-10 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-transparent to-black/30 z-10 pointer-events-none"></div>
+              
+              <!-- Content Details -->
+              <div class="max-w-3xl pt-28 pb-8 px-6 md:px-14 h-full flex flex-col justify-end relative z-20">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 text-gold text-[10px] font-mono font-bold uppercase tracking-wider mb-2.5 border border-gold/30 self-start shadow-sm">
+                  🏆 FEATURED SAGA
                 </span>
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-serif mb-2 leading-tight tracking-wide drop-shadow-md">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-serif mb-2 leading-tight tracking-wide drop-shadow-lg">
                   ${item.title}
                 </h1>
-                <p class="text-sm md:text-base text-gold/90 font-medium mb-2.5 italic font-serif">
+                <p class="text-xs sm:text-sm text-gold font-medium mb-2 italic font-serif">
                   "${item.tagline}"
                 </p>
-                <p class="text-xs sm:text-sm text-white/70 max-w-2xl mb-5 leading-relaxed line-clamp-2 md:line-clamp-3">
+                <p class="text-xs sm:text-sm text-white/80 max-w-xl mb-5 leading-relaxed line-clamp-2 md:line-clamp-3 font-sans">
                   ${item.description}
                 </p>
-                <div class="hero-actions flex flex-wrap gap-3 items-center mb-5">
-                  <button class="hero-play-slide-btn px-8 py-3.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-gold/20 flex items-center gap-2" data-id="${item.id}">
+                <div class="hero-actions flex flex-wrap gap-3 items-center mb-4">
+                  <button class="hero-play-slide-btn px-7 py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-gold/25 flex items-center gap-2" data-id="${item.id}">
                     <span>▶ Play Episode</span>
-                    <span class="text-xs opacity-75">(${item.duration})</span>
+                    <span class="text-xs opacity-75 font-mono">(${item.duration})</span>
                   </button>
-                  <button class="hero-info-slide-btn px-6 py-3.5 bg-white/5 hover:bg-white/10 text-white border border-white/10 font-bold rounded-xl text-sm transition-all flex items-center gap-2" data-id="${item.id}">
+                  <button class="hero-info-slide-btn px-5 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/15 font-bold rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 backdrop-blur-sm" data-id="${item.id}">
                     <span>ℹ More Info</span>
                   </button>
                 </div>
@@ -504,8 +509,8 @@ class AppController {
         </div>
 
         <!-- Left/Right Arrows -->
-        <button id="spotlight-prev-btn" class="absolute left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 hover:bg-gold hover:text-black border border-white/10 hover:border-gold flex items-center justify-center text-white text-base transition-all select-none">◀</button>
-        <button id="spotlight-next-btn" class="absolute right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 hover:bg-gold hover:text-black border border-white/10 hover:border-gold flex items-center justify-center text-white text-base transition-all select-none">▶</button>
+        <button id="spotlight-prev-btn" class="absolute left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/50 hover:bg-gold hover:text-black border border-white/15 hover:border-gold flex items-center justify-center text-white text-sm transition-all select-none backdrop-blur-md">◀</button>
+        <button id="spotlight-next-btn" class="absolute right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/50 hover:bg-gold hover:text-black border border-white/15 hover:border-gold flex items-center justify-center text-white text-sm transition-all select-none backdrop-blur-md">▶</button>
 
         <!-- Bullet Indicators -->
         <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2.5">
