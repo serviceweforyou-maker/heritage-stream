@@ -1759,17 +1759,22 @@ const bindSlideNavigation = () => {
         body: JSON.stringify({ name, email, phone, frontendOrigin: window.location.origin })
       });
 
+      const resData = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error("Unable to create checkout order on the server.");
+        throw new Error(resData.error || resData.message || "Unable to create checkout order on the server.");
       }
 
-      const resData = await response.json();
       if (!resData.payment_session_id) {
         throw new Error(resData.error || "Failed to retrieve session ID from Cashfree.");
       }
 
       // Initialize Cashfree in production mode
-      const cashfreeInstance = window.Cashfree ? window.Cashfree({ mode: "production" }) : null;
+      if (typeof window.Cashfree === 'undefined') {
+        throw new Error("Cashfree payment gateway SDK is loading or blocked by your browser. Please disable ad-blockers and try again.");
+      }
+
+      const cashfreeInstance = window.Cashfree({ mode: "production" });
       if (!cashfreeInstance) {
         throw new Error("Cashfree SDK failed to initialize in your browser.");
       }
