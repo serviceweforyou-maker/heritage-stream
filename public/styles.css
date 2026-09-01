@@ -295,14 +295,46 @@ body > main, body > section:first-of-type {
   width: 100% !important;
 }
 
-/* ---- Hero section  mobile ---- */
+
+/* ── HERO SPOTLIGHT SLIDER IMAGE FIT FIX ── */
+#hero-spotlight {
+  height: 68vh !important;
+  min-height: 500px !important;
+  max-height: 680px !important;
+  position: relative;
+  background-color: #07080c;
+}
+
+.spotlight-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.spotlight-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 18% !important; /* Prevents top cropping of monuments & faces */
+  transform-origin: center top;
+}
+
 @media (max-width: 768px) {
-  #hero-spotlight { height: 70vh !important; }
-  #hero-spotlight h1 { font-size: 1.6rem !important; line-height: 1.3 !important; }
-  #hero-spotlight p  { font-size: 0.78rem !important; }
-  #hero-spotlight .hero-actions { flex-direction: column; gap: 10px; }
-  #hero-spotlight .hero-actions a,
-  #hero-spotlight .hero-actions button { width: 100%; text-align: center; justify-content: center; }
+  #hero-spotlight {
+    height: 62vh !important;
+    min-height: 460px !important;
+    max-height: 560px !important;
+  }
+  .spotlight-slide img {
+    object-position: center top !important;
+  }
+  #hero-spotlight h1 { font-size: 1.5rem !important; line-height: 1.25 !important; }
+  #hero-spotlight p { font-size: 0.75rem !important; }
+  #hero-spotlight .hero-actions { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  #hero-spotlight .hero-actions button { width: auto; flex: 1; padding: 10px 14px; }
+}
+
 }
 
 /* ---- Top utility bar � mobile ---- */
