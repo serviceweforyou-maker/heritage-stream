@@ -1700,15 +1700,15 @@ const bindSlideNavigation = () => {
         <form id="payment-form" class="max-w-sm mx-auto text-left grid gap-4 mb-6">
           <div>
             <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Your Full Name</label>
-            <input type="text" id="pay-name" placeholder="e.g. Manjunatha Prasanna" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:border-gold/50 focus:outline-none transition-colors" required>
+            <input type="text" id="pay-name" placeholder="e.g. Rahul Sharma" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:border-gold/50 focus:outline-none transition-colors" required>
           </div>
           <div>
             <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Email Address</label>
-            <input type="email" id="pay-email" placeholder="e.g. service.weforyou@gmail.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:border-gold/50 focus:outline-none transition-colors" required>
+            <input type="email" id="pay-email" placeholder="e.g. rahul.sharma@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:border-gold/50 focus:outline-none transition-colors" required>
           </div>
           <div>
             <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Phone Number</label>
-            <input type="tel" id="pay-phone" placeholder="e.g. 9035442904" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:border-gold/50 focus:outline-none transition-colors" required>
+            <input type="tel" id="pay-phone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:border-gold/50 focus:outline-none transition-colors" required>
           </div>
           
           <button type="submit" class="w-full py-4 mt-2 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-sm tracking-wider uppercase transition-all shadow-lg shadow-gold/20 flex items-center justify-center gap-2">
