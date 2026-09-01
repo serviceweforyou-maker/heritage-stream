@@ -1004,6 +1004,42 @@ class AppController {
     }
 
     const mobileProfBtn = document.getElementById('mobile-profile-btn');
+    const mobileKidsBtn = document.getElementById('mobile-kids-btn');
+    if (mobileKidsBtn) {
+      mobileKidsBtn.onclick = () => {
+        const headerKidsBtn = document.getElementById('header-kids-mode-btn');
+        if (headerKidsBtn) headerKidsBtn.click();
+        const mobMenu = document.getElementById('mobile-nav-menu');
+        if (mobMenu) mobMenu.classList.add('hidden');
+      };
+    }
+    const mobileRishiBtn = document.getElementById('mobile-rishi-btn');
+    if (mobileRishiBtn) {
+      mobileRishiBtn.onclick = () => {
+        const headerRishiBtn = document.getElementById('header-rishi-btn');
+        if (headerRishiBtn) headerRishiBtn.click();
+        const mobMenu = document.getElementById('mobile-nav-menu');
+        if (mobMenu) mobMenu.classList.add('hidden');
+      };
+    }
+    const mobileArchBtn = document.getElementById('mobile-archetype-btn');
+    if (mobileArchBtn) {
+      mobileArchBtn.onclick = () => {
+        const headerArchBtn = document.getElementById('header-archetype-btn');
+        if (headerArchBtn) headerArchBtn.click();
+        const mobMenu = document.getElementById('mobile-nav-menu');
+        if (mobMenu) mobMenu.classList.add('hidden');
+      };
+    }
+    const mobileRefBtn = document.getElementById('mobile-referral-btn');
+    if (mobileRefBtn) {
+      mobileRefBtn.onclick = () => {
+        const headerRefBtn = document.getElementById('header-referral-btn');
+        if (headerRefBtn) headerRefBtn.click();
+        const mobMenu = document.getElementById('mobile-nav-menu');
+        if (mobMenu) mobMenu.classList.add('hidden');
+      };
+    }
     if (mobileProfBtn) {
       mobileProfBtn.addEventListener('click', () => openAccountModal('profile'));
     }
