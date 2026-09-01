@@ -730,101 +730,362 @@ class AppController {
     `;
   }
 
-  setupProfileSelector() {
+    setupProfileSelector() {
     const modal = document.getElementById('profile-modal');
-    if (!modal) return;
+    const accountModal = document.getElementById('user-account-modal');
 
     const renderHeaderProfile = () => {
       const avatarEl = document.getElementById('active-profile-avatar');
       const nameEl = document.getElementById('active-profile-name');
       const greetingEl = document.getElementById('hero-sub-prompt');
+      const subBadge = document.getElementById('header-sub-badge');
 
-      if (this.currentProfile) {
-        if (avatarEl) avatarEl.textContent = this.currentProfileAvatar;
-        if (nameEl) nameEl.textContent = this.currentProfile;
+      const savedName = localStorage.getItem('hs_user_name') || this.currentProfile || 'Scholar';
+      const savedAvatar = localStorage.getItem('hs_avatar') || this.currentProfileAvatar || '📜';
 
-        if (greetingEl) {
-          if (this.currentProfile === "Yogi") {
-            greetingEl.textContent = "Pranam, Yogi! Cultivate inner peace and balance.";
-          } else if (this.currentProfile === "Kids") {
-            greetingEl.textContent = "Hey there! Ready to explore awesome animations and fables?";
-          } else if (this.currentProfile === "Warrior") {
-            greetingEl.textContent = "Salutations, Warrior! Explore royal dynastic chronicles.";
-          } else {
-            greetingEl.textContent = "Welcome back, Scholar! Unveil the secrets of antiquity.";
-          }
+      if (avatarEl) avatarEl.textContent = savedAvatar;
+      if (nameEl) nameEl.textContent = savedName;
+
+      if (subBadge) {
+        if (this.isSubscribed) {
+          subBadge.classList.remove('hidden');
+        } else {
+          subBadge.classList.add('hidden');
         }
-      } else {
-        if (avatarEl) avatarEl.textContent = '👤';
-        if (nameEl) nameEl.textContent = 'Guest';
-        if (greetingEl) {
-          greetingEl.textContent = "Welcome, Guest! Unveil the secrets of Indian heritage and antiquity.";
+      }
+
+      if (greetingEl) {
+        if (this.isSubscribed) {
+          greetingEl.textContent = `Pranam, ${savedName}! Your Premium Heritage Pass is active.`;
+        } else if (savedName === "Yogi") {
+          greetingEl.textContent = "Pranam, Yogi! Cultivate inner peace and balance.";
+        } else if (savedName === "Kids") {
+          greetingEl.textContent = "Hey there! Ready to explore awesome animations and fables?";
+        } else if (savedName === "Warrior") {
+          greetingEl.textContent = "Salutations, Warrior! Explore royal dynastic chronicles.";
+        } else {
+          greetingEl.textContent = `Welcome, ${savedName}! Unveil the secrets of antiquity.`;
         }
       }
     };
 
-    // If profile is set, load it immediately. Otherwise, show guest header and delay popup
-    if (this.currentProfile) {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      renderHeaderProfile();
-    } else {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      renderHeaderProfile();
+    renderHeaderProfile();
 
-      // Trigger pop-up after 12 seconds only if they haven't bypassed it yet
-      const alreadyPrompted = sessionStorage.getItem('hs_profile_prompted') === 'true';
-      if (!alreadyPrompted) {
-        setTimeout(() => {
-          if (!this.currentProfile && sessionStorage.getItem('hs_profile_prompted') !== 'true') {
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-          }
-        }, 12000); // 12-second delay
+    // ── Open Account Modal Helper ──
+    const openAccountModal = (initialTab = 'profile') => {
+      if (!accountModal) return;
+
+      // Populate current values
+      const currentName = localStorage.getItem('hs_user_name') || this.currentProfile || 'Scholar';
+      const currentAvatar = localStorage.getItem('hs_avatar') || this.currentProfileAvatar || '📜';
+      const currentPwd = localStorage.getItem('hs_user_pwd') || '';
+      const orderId = localStorage.getItem('hs_order_id') || '';
+      const subDate = localStorage.getItem('hs_sub_date') || 'Active';
+
+      const nameInput = document.getElementById('acc-name-input');
+      const pwdInput = document.getElementById('acc-password-input');
+      const avatarPreview = document.getElementById('account-modal-avatar-preview');
+      const displayName = document.getElementById('account-modal-display-name');
+      const subBadgeModal = document.getElementById('account-modal-sub-badge');
+
+      if (nameInput) nameInput.value = currentName === 'Guest' ? '' : currentName;
+      if (pwdInput) pwdInput.value = currentPwd;
+      if (avatarPreview) avatarPreview.textContent = currentAvatar;
+      if (displayName) displayName.textContent = currentName;
+
+      if (subBadgeModal) {
+        if (this.isSubscribed) {
+          subBadgeModal.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="text-emerald-400 font-bold">✨ Premium Pass Active</span>`;
+        } else {
+          subBadgeModal.innerHTML = `<span class="w-2 h-2 rounded-full bg-gold/60"></span><span class="text-gold/80">Free Explorer Access</span>`;
+        }
       }
+
+      // Populate Plan Details Card
+      const planCard = document.getElementById('plan-details-card');
+      if (planCard) {
+        if (this.isSubscribed) {
+          planCard.innerHTML = `
+            <div class="flex items-center justify-between border-b border-gold/20 pb-3">
+              <div>
+                <span class="text-[9px] uppercase tracking-widest text-gold font-mono font-bold block">Current Active Plan</span>
+                <h4 class="text-base font-bold text-white font-serif">HeritageStream Annual Pass</h4>
+              </div>
+              <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">✓ ACTIVE</span>
+            </div>
+            
+            <div class="space-y-2.5 text-xs text-white/80">
+              <div class="flex items-center justify-between bg-black/30 p-2.5 rounded-xl border border-white/5 font-mono">
+                <span class="text-white/50 text-[11px]">Activation Order ID:</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-gold font-bold text-[11px] select-all">${orderId || 'sub_heritage_pass'}</span>
+                  <button id="copy-order-id-btn" class="px-2 py-0.5 bg-white/10 hover:bg-gold hover:text-black rounded text-[10px] uppercase tracking-wider font-bold transition-all" title="Copy ID">Copy</button>
+                </div>
+              </div>
+
+              <div class="flex justify-between py-1 border-b border-white/5 text-[11px]">
+                <span class="text-white/50">Access Duration:</span>
+                <span class="font-bold text-white">365 Days Unrestricted</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-white/5 text-[11px]">
+                <span class="text-white/50">Billing Amount:</span>
+                <span class="font-bold text-gold">₹399 / Year</span>
+              </div>
+              <div class="flex justify-between py-1 text-[11px]">
+                <span class="text-white/50">Activated On:</span>
+                <span class="font-bold text-white/80">${subDate}</span>
+              </div>
+            </div>
+
+            <div class="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-[11px] text-emerald-300/90 leading-relaxed">
+              🎉 <strong>All 200+ Sagas Unlocked:</strong> Full access to docu-series, audiobooks, 3D interactive flipbooks, and learning scoreboards.
+            </div>
+          `;
+
+          const copyBtn = planCard.querySelector('#copy-order-id-btn');
+          if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+              navigator.clipboard.writeText(orderId || 'sub_heritage_pass');
+              copyBtn.textContent = 'Copied!';
+              setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+            });
+          }
+        } else {
+          planCard.innerHTML = `
+            <div class="text-center py-2 space-y-3">
+              <span class="text-3xl block">🏛️</span>
+              <h4 class="text-base font-bold text-white font-serif">Upgrade to Premium Heritage Pass</h4>
+              <p class="text-xs text-white/60 max-w-xs mx-auto">Get unrestricted access to all 200+ documentaries, audiobooks, and illustrated 3D FlipBooks for ₹399/year.</p>
+              <button id="modal-upgrade-btn" class="w-full py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/20">
+                Unlock Annual Pass (₹399)
+              </button>
+            </div>
+          `;
+
+          const upBtn = planCard.querySelector('#modal-upgrade-btn');
+          if (upBtn) {
+            upBtn.addEventListener('click', () => {
+              accountModal.classList.add('hidden');
+              accountModal.classList.remove('flex');
+              this.openPaymentModal();
+            });
+          }
+        }
+      }
+
+      // Switch Tab Handler
+      const switchAccTab = (tab) => {
+        ['profile', 'plan', 'restore'].forEach(t => {
+          const btn = document.getElementById(`acc-tab-${t}`);
+          const panel = document.getElementById(`acc-panel-${t}`);
+          if (btn && panel) {
+            if (t === tab) {
+              btn.className = "acc-nav-tab flex-1 py-2 rounded-xl bg-gold text-black transition-all font-bold";
+              panel.classList.remove('hidden');
+            } else {
+              btn.className = "acc-nav-tab flex-1 py-2 rounded-xl text-white/60 hover:text-white transition-all";
+              panel.classList.add('hidden');
+            }
+          }
+        });
+      };
+
+      switchAccTab(initialTab);
+
+      // Bind Tab Buttons
+      const tabProf = document.getElementById('acc-tab-profile');
+      const tabPlan = document.getElementById('acc-tab-plan');
+      const tabRest = document.getElementById('acc-tab-restore');
+
+      if (tabProf) tabProf.onclick = () => switchAccTab('profile');
+      if (tabPlan) tabPlan.onclick = () => switchAccTab('plan');
+      if (tabRest) tabRest.onclick = () => switchAccTab('restore');
+
+      // Bind Avatar Options inside modal
+      accountModal.querySelectorAll('.avatar-opt').forEach(btn => {
+        btn.onclick = () => {
+          const av = btn.getAttribute('data-avatar');
+          this.currentProfileAvatar = av;
+          localStorage.setItem('hs_avatar', av);
+          if (avatarPreview) avatarPreview.textContent = av;
+          renderHeaderProfile();
+        };
+      });
+
+      // Show Modal
+      accountModal.classList.remove('hidden');
+      accountModal.classList.add('flex');
+    };
+
+    // ── Bind Header Dropdown & Profile Clicks ──
+    const openProfBtn = document.getElementById('open-profile-btn');
+    if (openProfBtn) {
+      openProfBtn.addEventListener('click', () => openAccountModal('profile'));
     }
 
-    // Bind profile card clicks
-    modal.querySelectorAll('.profile-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const name = card.getAttribute('data-profile');
-        const avatar = card.getAttribute('data-avatar');
-        
-        this.currentProfile = name;
-        this.currentProfileAvatar = avatar;
-        
-        localStorage.setItem('hs_profile', name);
-        localStorage.setItem('hs_avatar', avatar);
-        sessionStorage.setItem('hs_profile_prompted', 'true');
-        
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        
-        this.isStandardRowsRendered = false; // Reset standard rows caching to re-sort
-        renderHeaderProfile();
-        this.renderContentRows();
-      });
-    });
-
-    // Bind Skip/Guest button click
-    const skipBtn = document.getElementById('skip-profile-btn');
-    if (skipBtn) {
-      skipBtn.addEventListener('click', () => {
-        sessionStorage.setItem('hs_profile_prompted', 'true');
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        renderHeaderProfile();
-      });
+    const menuAccBtn = document.getElementById('menu-account-btn');
+    if (menuAccBtn) {
+      menuAccBtn.addEventListener('click', () => openAccountModal('profile'));
     }
 
-    // Switch profile handler in navbar
+    const mobileProfBtn = document.getElementById('mobile-profile-btn');
+    if (mobileProfBtn) {
+      mobileProfBtn.addEventListener('click', () => openAccountModal('profile'));
+    }
+
+    // ── Bind Save Profile Button ──
+    const saveProfBtn = document.getElementById('save-account-profile-btn');
+    if (saveProfBtn) {
+      saveProfBtn.onclick = () => {
+        const nameInput = document.getElementById('acc-name-input');
+        const pwdInput = document.getElementById('acc-password-input');
+        const toast = document.getElementById('account-toast-msg');
+
+        const newName = (nameInput?.value || '').trim() || 'Scholar';
+        const newPwd = (pwdInput?.value || '').trim();
+
+        this.currentProfile = newName;
+        localStorage.setItem('hs_user_name', newName);
+        localStorage.setItem('hs_profile', newName);
+        if (newPwd) {
+          localStorage.setItem('hs_user_pwd', newPwd);
+        }
+
+        renderHeaderProfile();
+
+        if (toast) {
+          toast.textContent = "Profile Saved ✓";
+          toast.classList.remove('opacity-0');
+          setTimeout(() => toast.classList.add('opacity-0'), 2500);
+        }
+      };
+    }
+
+    // ── Bind Sign In / Restore Pass Button ──
+    const restoreBtn = document.getElementById('submit-restore-btn');
+    if (restoreBtn) {
+      restoreBtn.onclick = () => {
+        const userInput = (document.getElementById('restore-user-input')?.value || '').trim();
+        const pwdInput = (document.getElementById('restore-pwd-input')?.value || '').trim();
+        const orderInput = (document.getElementById('restore-order-input')?.value || '').trim();
+        const toast = document.getElementById('account-toast-msg');
+
+        if (orderInput || userInput) {
+          this.isSubscribed = true;
+          localStorage.setItem('hs_subscribed', 'true');
+          if (orderInput) localStorage.setItem('hs_order_id', orderInput);
+          if (userInput) {
+            localStorage.setItem('hs_user_name', userInput);
+            this.currentProfile = userInput;
+          }
+          if (pwdInput) localStorage.setItem('hs_user_pwd', pwdInput);
+          localStorage.setItem('hs_sub_date', new Date().toLocaleDateString());
+
+          renderHeaderProfile();
+          this.renderSpotlight();
+          this.renderContentRows();
+          this.setupSubscriptionUI();
+
+          if (toast) {
+            toast.textContent = "Pass Restored ✓";
+            toast.classList.remove('opacity-0');
+            setTimeout(() => {
+              toast.classList.add('opacity-0');
+              if (accountModal) {
+                accountModal.classList.add('hidden');
+                accountModal.classList.remove('flex');
+              }
+            }, 1200);
+          }
+        }
+      };
+    }
+
+    // ── Bind Sign Out Button ──
+    const logoutBtn = document.getElementById('account-logout-btn');
+    const menuLogoutBtn = document.getElementById('menu-logout-btn');
+
+    const handleLogout = () => {
+      localStorage.removeItem('hs_subscribed');
+      localStorage.removeItem('hs_subscribed_name');
+      localStorage.removeItem('hs_user_name');
+      localStorage.removeItem('hs_order_id');
+
+      this.isSubscribed = false;
+      this.currentProfile = 'Guest';
+      this.currentProfileAvatar = '👤';
+
+      localStorage.setItem('hs_profile', 'Guest');
+      localStorage.setItem('hs_avatar', '👤');
+
+      renderHeaderProfile();
+      this.renderSpotlight();
+      this.renderContentRows();
+      this.setupSubscriptionUI();
+
+      if (accountModal) {
+        accountModal.classList.add('hidden');
+        accountModal.classList.remove('flex');
+      }
+    };
+
+    if (logoutBtn) logoutBtn.onclick = handleLogout;
+    if (menuLogoutBtn) menuLogoutBtn.onclick = handleLogout;
+
+    // ── Close Account Modal ──
+    const closeAccBtn = document.getElementById('close-account-modal-btn');
+    if (closeAccBtn && accountModal) {
+      closeAccBtn.onclick = () => {
+        accountModal.classList.add('hidden');
+        accountModal.classList.remove('flex');
+      };
+    }
+
+    // ── Persona Switcher Modal ──
     const switchBtn = document.getElementById('switch-profile-btn');
-    if (switchBtn) {
+    if (switchBtn && modal) {
       switchBtn.addEventListener('click', () => {
+        if (accountModal) {
+          accountModal.classList.add('hidden');
+          accountModal.classList.remove('flex');
+        }
         modal.classList.remove('hidden');
         modal.classList.add('flex');
       });
+    }
+
+    if (modal) {
+      modal.querySelectorAll('.profile-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const name = card.getAttribute('data-profile');
+          const avatar = card.getAttribute('data-avatar');
+          
+          this.currentProfile = name;
+          this.currentProfileAvatar = avatar;
+          
+          localStorage.setItem('hs_profile', name);
+          localStorage.setItem('hs_user_name', name);
+          localStorage.setItem('hs_avatar', avatar);
+          sessionStorage.setItem('hs_profile_prompted', 'true');
+          
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          
+          this.isStandardRowsRendered = false;
+          renderHeaderProfile();
+          this.renderContentRows();
+        });
+      });
+
+      const skipBtn = document.getElementById('skip-profile-btn');
+      if (skipBtn) {
+        skipBtn.addEventListener('click', () => {
+          sessionStorage.setItem('hs_profile_prompted', 'true');
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          renderHeaderProfile();
+        });
+      }
     }
   }
 
@@ -1817,6 +2078,9 @@ const bindSlideNavigation = () => {
         this.isSubscribed = true;
         localStorage.setItem('hs_subscribed', 'true');
         localStorage.setItem('hs_subscribed_name', 'Premium Pass Member');
+        localStorage.setItem('hs_order_id', orderId || ('order_' + Date.now()));
+        localStorage.setItem('hs_sub_date', new Date().toLocaleDateString());
+        localStorage.setItem('hs_sub_plan', 'Heritage Knowledge Annual Pass (₹399/yr)');
         
         this.renderHeader();
         this.renderSpotlight();
