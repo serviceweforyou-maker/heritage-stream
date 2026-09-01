@@ -525,3 +525,27 @@ section[id] { scroll-margin-top: 110px; }
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+
+/* ── BEAUTIFIED HEADER & NAVIGATION STYLING ── */
+#main-header {
+  transition: all 0.3s ease;
+}
+
+.sec-nav-pill {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.sec-nav-pill:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  #main-header {
+    top: 32px !important;
+  }
+  #top-utility-bar {
+    height: 32px !important;
+  }
+}
