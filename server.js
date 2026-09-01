@@ -23,6 +23,7 @@ try {
 }
 
 const app = express();
+app.set('trust proxy', true);
 const PORT = process.env.PORT || 8080;
 
 app.use(express.json({ limit: '10mb' })); // support large base64 image payloads
@@ -512,7 +513,7 @@ function getCashfreeCredentials() {
   let secretKey = process.env.CASHFREE_SECRET_KEY;
   if (!appId || !secretKey) {
     try {
-      const config = JSON.parse(fs.readFileSync('config.json', 'utf8'));
+      const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), 'utf8'));
       appId = appId || config.CASHFREE_APP_ID;
       secretKey = secretKey || config.CASHFREE_SECRET_KEY;
     } catch (err) {
@@ -525,37 +526,61 @@ function getCashfreeCredentials() {
 // 4a. Create Live Cashfree Order
 app.post('/api/create-cashfree-order', async (req, res) => {
   const { name, email, phone, frontendOrigin } = req.body;
-  const orderId = `order_${Date.now()}`;
+  const orderId = `order_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
   
   const { appId: cashfreeAppId, secretKey: cashfreeSecretKey } = getCashfreeCredentials();
   if (!cashfreeAppId || !cashfreeSecretKey) {
     return res.status(500).json({ error: "Cashfree API credentials are not configured on the server." });
   }
   
-  // Production URL
+  // Production Cashfree PG URL
   const cashfreeUrl = "https://api.cashfree.com/pg/orders";
   const customerId = `cust_${Date.now()}`;
   
-  // Determine backend URL to route response checks back to this server
-  const backendHost = `${req.protocol}://${req.get('host')}`;
-  const origin = req.headers.origin || backendHost;
-  const targetFrontend = frontendOrigin || origin;
+  // Robust public base URL determination for reverse proxies (Hostinger / Cloudflare / Nginx / Render)
+  let clientOrigin = frontendOrigin;
+  if (!clientOrigin && req.headers.origin) {
+    clientOrigin = req.headers.origin;
+  }
+  if (!clientOrigin && req.headers.referer) {
+    try {
+      clientOrigin = new URL(req.headers.referer).origin;
+    } catch (e) {}
+  }
+
+  const hostHeader = req.headers['x-forwarded-host'] || req.get('host') || 'www.sanatana360.com';
+  const isLocal = hostHeader.includes('localhost') || hostHeader.includes('127.0.0.1');
+
+  let publicBaseUrl;
+  if (clientOrigin && clientOrigin.startsWith('https://')) {
+    publicBaseUrl = clientOrigin.replace(/\/+$/, '');
+  } else if (!isLocal) {
+    publicBaseUrl = `https://${hostHeader}`;
+  } else {
+    const proto = req.headers['x-forwarded-proto'] || req.protocol || 'http';
+    publicBaseUrl = `${proto}://${hostHeader}`;
+  }
+
+  const targetFrontend = clientOrigin || publicBaseUrl;
 
   // The return URL points to the backend /api/verify-payment route
-  const returnUrl = `${backendHost}/api/verify-payment?order_id=${orderId}&frontend_origin=${encodeURIComponent(targetFrontend)}`;
+  const returnUrl = `${publicBaseUrl}/api/verify-payment?order_id=${orderId}&frontend_origin=${encodeURIComponent(targetFrontend)}`;
 
-  // Cashfree Production credentials strictly require HTTPS return URLs
-  if (!returnUrl.startsWith('https://')) {
-    if (backendHost.includes('localhost')) {
-      return res.status(400).json({
-        error: "Cashfree Production API requires an HTTPS redirect return URL. Localhost testing is only supported if you tunnel your backend via HTTPS (e.g. ngrok) or switch Cashfree keys to Sandbox mode."
-      });
-    } else {
-      return res.status(400).json({
-        error: "Cashfree Production API requires an HTTPS redirect return URL. Please configure HTTPS/SSL on your backend server."
-      });
-    }
+  // Sanitize customer details for Cashfree API requirements
+  let cleanPhone = (phone || "").replace(/[^0-9]/g, '');
+  if (cleanPhone.length > 10 && cleanPhone.startsWith('91')) {
+    cleanPhone = cleanPhone.slice(2);
   }
+  if (cleanPhone.length !== 10) {
+    cleanPhone = "9035442904";
+  }
+
+  let cleanEmail = (email || "").trim();
+  if (!cleanEmail || !cleanEmail.includes('@')) {
+    cleanEmail = "service.weforyou@gmail.com";
+  }
+
+  let cleanName = (name || "").trim() || "Heritage Explorer";
 
   const payload = {
     order_amount: 399.00,
@@ -563,9 +588,9 @@ app.post('/api/create-cashfree-order', async (req, res) => {
     order_id: orderId,
     customer_details: {
       customer_id: customerId,
-      customer_name: name || "Anonymous Explorer",
-      customer_email: email || "service.weforyou@gmail.com",
-      customer_phone: phone || "9999999999"
+      customer_name: cleanName,
+      customer_email: cleanEmail,
+      customer_phone: cleanPhone
     },
     order_meta: {
       return_url: returnUrl
@@ -587,15 +612,17 @@ app.post('/api/create-cashfree-order', async (req, res) => {
 
     const data = await response.json();
     if (!response.ok) {
+      console.error("Cashfree Order API Rejection:", data);
       throw new Error(data.message || "Failed to create order on Cashfree");
     }
 
     const db = readDB();
+    if (!db.orders) db.orders = [];
     db.orders.push({
       orderId: data.order_id,
-      name: name || "Anonymous Explorer",
-      email: email || "",
-      phone: phone || "",
+      name: cleanName,
+      email: cleanEmail,
+      phone: cleanPhone,
       timestamp: Date.now(),
       status: "ACTIVE"
     });
