@@ -173,6 +173,7 @@
         <!-- User Profile avatar drop -->
         <div class="relative group ml-1" id="header-profile-dropdown">
           <button id="open-profile-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 hover:border-gold/30 transition-all text-xs font-bold text-white/90 cursor-pointer" title="Manage Account & Pass">
+            <span id="header-karma-badge" class="text-[9px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1.5 py-0.5 rounded-full mr-1 hidden sm:inline-block">🕉️ 120</span>
             <span id="active-profile-avatar">📜</span>
             <span id="active-profile-name">Scholar</span>
             <span id="header-sub-badge" class="text-[8px] font-black font-mono uppercase px-1.5 py-0.5 rounded bg-gold/20 text-gold border border-gold/30 hidden">PRO</span>
@@ -216,6 +217,15 @@
         <a href="#play-zone" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-white transition-all">
           <span>🎮</span> Play Zone
         </a>
+        <a href="#mystery-vault" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-gold transition-all text-amber-300">
+          <span>🔒</span> Mystery Vault
+        </a>
+        <button id="header-rishi-btn" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-gold transition-all cursor-pointer">
+          <span>🕉️</span> Ask Rishi AI
+        </button>
+        <button id="header-archetype-btn" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-gold transition-all cursor-pointer">
+          <span>👑</span> Heritage Archetype
+        </button>
         <a href="#dashboard" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-white transition-all">
           <span>📊</span> Dashboard
         </a>
@@ -757,7 +767,212 @@
     </section>
 
 
+    
+    <!-- ── FAMILY GURUKULA & PRINTABLE KIDS ACTIVITY KITS (Parent Magnet) ── -->
+    <section id="gurukula-kits" class="scroll-mt-24 max-w-7xl mx-auto my-16 px-4 sm:px-6">
+      <div class="bg-[#0e1017] border border-white/10 rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+        
+        <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 border-b border-white/10 pb-6">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
+              👨‍👩‍👧‍👦 Gurukula Family Learning Kit
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold font-serif text-white">
+              Printable Kids Heritage Kits & Activity Sheets
+            </h2>
+            <p class="text-xs sm:text-sm text-white/60 mt-1 max-w-2xl font-sans">
+              Screen-free cultural education for children. Download & print coloring pages, Sanskrit shloka flashcards, and Vedic Math worksheets.
+            </p>
+          </div>
+          <button id="open-print-sample-btn" class="px-5 py-2.5 bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-300 font-bold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center gap-2">
+            <span>🖨️</span> Print Free Sample Sheet
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <!-- Kit 1: Coloring Sheets -->
+          <div class="bg-black/30 border border-white/5 hover:border-gold/30 rounded-2xl p-4 flex flex-col justify-between transition-all">
+            <div class="space-y-2">
+              <span class="text-2xl block mb-2">🎨</span>
+              <h4 class="text-sm font-bold font-serif text-white">Heritage Temple & Monument Coloring</h4>
+              <p class="text-[11px] text-white/50 leading-relaxed font-sans">15 high-res printable line drawings of Hampi chariot, Kedarnath, and Chola temples.</p>
+            </div>
+            <div class="pt-4 mt-3 border-t border-white/5 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-emerald-400 font-bold">15 Printable Pages</span>
+              <span class="text-[10px] text-gold font-bold">Included in Pass</span>
+            </div>
+          </div>
+
+          <!-- Kit 2: Sanskrit Shloka Cards -->
+          <div class="bg-black/30 border border-white/5 hover:border-gold/30 rounded-2xl p-4 flex flex-col justify-between transition-all">
+            <div class="space-y-2">
+              <span class="text-2xl block mb-2">🎴</span>
+              <h4 class="text-sm font-bold font-serif text-white">Sanskrit Shloka & Meaning Flashcards</h4>
+              <p class="text-[11px] text-white/50 leading-relaxed font-sans">Printable pocket cards with Devanagari, English transliteration, and moral meanings.</p>
+            </div>
+            <div class="pt-4 mt-3 border-t border-white/5 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-emerald-400 font-bold">24 Flashcards</span>
+              <span class="text-[10px] text-gold font-bold">Included in Pass</span>
+            </div>
+          </div>
+
+          <!-- Kit 3: Panchatantra Comics -->
+          <div class="bg-black/30 border border-white/5 hover:border-gold/30 rounded-2xl p-4 flex flex-col justify-between transition-all">
+            <div class="space-y-2">
+              <span class="text-2xl block mb-2">📚</span>
+              <h4 class="text-sm font-bold font-serif text-white">Illustrated Panchatantra Story Panels</h4>
+              <p class="text-[11px] text-white/50 leading-relaxed font-sans">Moral fable coloring strips for bedtime storytelling and moral character building.</p>
+            </div>
+            <div class="pt-4 mt-3 border-t border-white/5 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-emerald-400 font-bold">12 Story Sets</span>
+              <span class="text-[10px] text-gold font-bold">Included in Pass</span>
+            </div>
+          </div>
+
+          <!-- Kit 4: Vedic Math Worksheets -->
+          <div class="bg-black/30 border border-white/5 hover:border-gold/30 rounded-2xl p-4 flex flex-col justify-between transition-all">
+            <div class="space-y-2">
+              <span class="text-2xl block mb-2">🧮</span>
+              <h4 class="text-sm font-bold font-serif text-white">Ancient Vedic Speed Math Tricks</h4>
+              <p class="text-[11px] text-white/50 leading-relaxed font-sans">Mental math Sutras (Ekadhikena Purvena, Nikhilam) with practice puzzles for students.</p>
+            </div>
+            <div class="pt-4 mt-3 border-t border-white/5 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-emerald-400 font-bold">10 Practice Sets</span>
+              <span class="text-[10px] text-gold font-bold">Included in Pass</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
     <!-- Pricing Section -->
+    
+    <!-- ── SECRET MYSTERY VAULT OF ANTIQUITY (Curiosity Magnet) ── -->
+    <section id="mystery-vault" class="scroll-mt-24 max-w-7xl mx-auto my-16 px-4 sm:px-6">
+      <div class="bg-gradient-to-b from-[#14120c] via-[#0d0f14] to-[#07080c] border border-gold/40 rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl shadow-gold/5">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 border-b border-gold/20 pb-6 relative z-10">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
+              <span class="w-2 h-2 rounded-full bg-gold animate-ping"></span>
+              🔒 Classified Antiquity Vault
+            </div>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-white tracking-wide">
+              The Secret Mystery Vaults of India
+            </h2>
+            <p class="text-xs sm:text-sm text-white/60 mt-1 max-w-2xl font-sans">
+              Explore legendary unsolved enigmas, forbidden temple chambers, and submerged ancient kingdoms. Listen to 60-second declassified audio clues or unlock the full decoded records.
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] font-mono text-gold bg-gold/10 px-3 py-1.5 rounded-xl border border-gold/20 font-bold">
+              3 Secret Vaults Active
+            </span>
+          </div>
+        </div>
+
+        <!-- 3 Vault Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+          
+          <!-- Vault 1: Padmanabhaswamy Vault B -->
+          <div class="vault-card bg-black/40 border border-gold/30 hover:border-gold rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 group relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">VAULT B • KERALA</span>
+                <span class="text-xl">🐍</span>
+              </div>
+              <h3 class="text-lg font-bold font-serif text-white group-hover:text-gold transition-colors">The Sealed Snake Door of Sri Padmanabhaswamy</h3>
+              <p class="text-xs text-white/60 leading-relaxed font-sans">
+                Chamber B remains sealed with solid iron cobra seals. Legend forewarns catastrophic floods if opened with worldly tools without the lost Garuda Mantra.
+              </p>
+            </div>
+            
+            <div class="pt-5 mt-4 border-t border-white/10 space-y-2.5">
+              <div class="flex items-center justify-between text-[10px] text-gold font-mono">
+                <span>Audio Leak: 60s Clue</span>
+                <span class="text-white/40">Full: 45m Docu</span>
+              </div>
+              <button class="play-vault-clue-btn w-full py-2.5 bg-white/5 hover:bg-gold/20 text-gold border border-gold/30 hover:border-gold rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+                data-vault="padmanabha" data-title="Vault B: The Unopened Snake Door" data-audio="morning_birds.ogg">
+                <span>🔊</span> Listen 60s Clue
+              </button>
+            </div>
+          </div>
+
+          <!-- Vault 2: Submerged City of Dwarka -->
+          <div class="vault-card bg-black/40 border border-gold/30 hover:border-gold rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 group relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">MARINE RUINS • GUJARAT</span>
+                <span class="text-xl">🌊</span>
+              </div>
+              <h3 class="text-lg font-bold font-serif text-white group-hover:text-gold transition-colors">The Submerged Golden Kingdom of Dwarka</h3>
+              <p class="text-xs text-white/60 leading-relaxed font-sans">
+                Marine archaeologists discovered massive fortified sandstone bastions and anchors 70 feet under the Arabian Sea, matching Mahabharata chronicles.
+              </p>
+            </div>
+            
+            <div class="pt-5 mt-4 border-t border-white/10 space-y-2.5">
+              <div class="flex items-center justify-between text-[10px] text-gold font-mono">
+                <span>Audio Leak: 60s Clue</span>
+                <span class="text-white/40">Full: 52m Docu</span>
+              </div>
+              <button class="play-vault-clue-btn w-full py-2.5 bg-white/5 hover:bg-gold/20 text-gold border border-gold/30 hover:border-gold rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+                data-vault="dwarka" data-title="The Submerged Golden Kingdom of Dwarka" data-audio="morning_birds.ogg">
+                <span>🔊</span> Listen 60s Clue
+              </button>
+            </div>
+          </div>
+
+          <!-- Vault 3: The Inverted Hanging Pillar of Lepakshi -->
+          <div class="vault-card bg-black/40 border border-gold/30 hover:border-gold rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 group relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">LEVITATION • ANDHRA</span>
+                <span class="text-xl">🏛️</span>
+              </div>
+              <h3 class="text-lg font-bold font-serif text-white group-hover:text-gold transition-colors">The Floating Hanging Pillar of Lepakshi</h3>
+              <p class="text-xs text-white/60 leading-relaxed font-sans">
+                Among 70 granite pillars at Veerabhadra Temple, one monolithic pillar does not touch the ground. A cloth passes completely underneath without friction.
+              </p>
+            </div>
+            
+            <div class="pt-5 mt-4 border-t border-white/10 space-y-2.5">
+              <div class="flex items-center justify-between text-[10px] text-gold font-mono">
+                <span>Audio Leak: 60s Clue</span>
+                <span class="text-white/40">Full: 38m Docu</span>
+              </div>
+              <button class="play-vault-clue-btn w-full py-2.5 bg-white/5 hover:bg-gold/20 text-gold border border-gold/30 hover:border-gold rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+                data-vault="lepakshi" data-title="The Hanging Pillar of Lepakshi" data-audio="morning_birds.ogg">
+                <span>🔊</span> Listen 60s Clue
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mystery Vault Cliffhanger Footer Banner -->
+        <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🗝️</span>
+            <div>
+              <span class="text-xs font-bold text-white block">Want full decoded declassified manuscripts & documentaries?</span>
+              <span class="text-[11px] text-white/50">Unlocked for all Heritage Annual Pass holders.</span>
+            </div>
+          </div>
+          <button class="trigger-checkout px-6 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-gold/20">
+            Unseal All Vaults (₹399/yr)
+          </button>
+        </div>
+      </div>
+    </section>
+
+
     <section id="pricing" class="scroll-mt-24 max-w-4xl mx-auto my-16">
       <div class="text-center max-w-2xl mx-auto mb-10">
         <span class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-2">Membership Plans</span>
@@ -793,6 +1008,7 @@
             <div class="mb-6">
               <span class="text-4xl font-extrabold text-gold font-mono">₹399</span>
               <span class="text-sm text-white/60"> / Year</span>
+              <div class="inline-block my-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold font-mono">⚡ Just ₹1.09 / Day (Less than a cup of chai)</div>
               <span class="text-[10px] text-white/40 block mt-1">Billed annually in Indian Rupees (INR)</span>
             </div>
             <ul class="space-y-3 text-xs text-white/80 font-sans mb-8">
@@ -875,7 +1091,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=33"></script>
+  <script type="module" src="app-prod.js?v=34"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1566,6 +1782,145 @@
         </button>
         <span id="account-toast-msg" class="text-xs font-bold text-emerald-400 opacity-0 transition-opacity">Saved!</span>
       </div>
+    </div>
+  </div>
+
+
+  <!-- ── ASK RISHI AI ANCIENT WISDOM MODAL ── -->
+  <div id="ask-rishi-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="bg-[#101116] border border-gold/40 rounded-3xl w-full max-w-xl shadow-2xl relative p-6 max-h-[90vh] flex flex-col font-sans">
+      <button id="close-rishi-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      
+      <!-- Modal Header -->
+      <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
+        <span class="text-2xl p-2 rounded-2xl bg-gold/10 border border-gold/30">🕉️</span>
+        <div>
+          <h3 class="text-lg font-bold font-serif text-white">Ask Rishi AI • Ancient Wisdom</h3>
+          <p class="text-[10px] font-mono text-gold flex items-center gap-2">
+            <span>Client-side Vedic Knowledge Core</span>
+            <span>•</span>
+            <span id="rishi-quota-badge" class="text-emerald-400">1 Free Query Left Today</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Sage Persona Selector -->
+      <div class="mb-4">
+        <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-2 font-mono">Select Ancient Guide:</label>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="rishi-persona-selector">
+          <button class="rishi-persona-btn p-2 rounded-xl border border-gold bg-gold/15 text-gold text-xs font-bold flex flex-col items-center gap-1 transition-all" data-persona="chanakya">
+            <span class="text-lg">📜</span>
+            <span>Chanakya</span>
+            <span class="text-[8px] opacity-70">Strategy & Career</span>
+          </button>
+          <button class="rishi-persona-btn p-2 rounded-xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all" data-persona="patanjali">
+            <span class="text-lg">🧘</span>
+            <span>Patanjali</span>
+            <span class="text-[8px] opacity-70">Mind & Peace</span>
+          </button>
+          <button class="rishi-persona-btn p-2 rounded-xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all" data-persona="charaka">
+            <span class="text-lg">🌿</span>
+            <span>Charaka</span>
+            <span class="text-[8px] opacity-70">Ayurveda Health</span>
+          </button>
+          <button class="rishi-persona-btn p-2 rounded-xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all" data-persona="krishna">
+            <span class="text-lg">🕉️</span>
+            <span>Gita Wisdom</span>
+            <span class="text-[8px] opacity-70">Duty & Karma</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dialogue History / Output Box -->
+      <div class="flex-grow bg-black/40 border border-white/10 rounded-2xl p-4 overflow-y-auto max-h-[300px] mb-4 space-y-3 no-scrollbar" id="rishi-chat-history">
+        <div class="flex items-start gap-3">
+          <span class="w-8 h-8 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center text-sm flex-shrink-0">📜</span>
+          <div class="bg-white/5 border border-white/5 rounded-2xl p-3 text-xs text-white/90 leading-relaxed font-sans">
+            Pranam! I am <strong>Acharya Chanakya</strong>. Ask me regarding leadership, strategic decision-making, discipline, or overcoming obstacles. What guidance do you seek?
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Bar -->
+      <form id="rishi-chat-form" class="flex gap-2">
+        <input type="text" id="rishi-user-input" placeholder="Ask guidance on strategy, health, mind, or life..." class="flex-grow bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-xs focus:border-gold/50 focus:outline-none transition-colors" required>
+        <button type="submit" class="px-5 py-2.5 bg-gold hover:bg-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all flex-shrink-0">
+          Ask
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ── ROYAL ARCHETYPE & CERTIFICATE GENERATOR MODAL ── -->
+  <div id="archetype-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="bg-[#101116] border border-gold/40 rounded-3xl w-full max-w-lg shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans">
+      <button id="close-archetype-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      
+      <!-- Header -->
+      <div class="text-center mb-6 border-b border-white/10 pb-4">
+        <span class="text-3xl block mb-2">👑</span>
+        <h3 class="text-xl font-bold font-serif text-white">Vedic Heritage Archetype Discovery</h3>
+        <p class="text-xs text-white/60">Discover your ancestral mindset archetype & generate your Official Royal Gold Certificate.</p>
+      </div>
+
+      <!-- Quiz Step Container -->
+      <div id="archetype-quiz-container" class="space-y-4">
+        <div id="archetype-question-card" class="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-4">
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+
+      <!-- Result & Certificate Container -->
+      <div id="archetype-result-container" class="space-y-4 hidden">
+        <div id="royal-certificate-card" class="bg-gradient-to-b from-[#18140b] via-[#101116] to-[#0a0b0e] border-2 border-gold/60 rounded-3xl p-6 text-center space-y-4 shadow-2xl shadow-gold/20 relative overflow-hidden">
+          <div class="text-gold text-2xl">⚜️ SANATANA 360 OFFICIAL SEAL ⚜️</div>
+          <h4 class="text-xs uppercase tracking-widest text-gold/80 font-mono font-bold">Certificate of Cultural Heritage</h4>
+          <h2 id="cert-user-name" class="text-2xl font-serif font-bold text-white">Explorer Rahul Sharma</h2>
+          <p class="text-xs text-white/60">Has been officially recognized with the Heritage Archetype of</p>
+          <div id="cert-archetype-badge" class="inline-block px-4 py-1.5 rounded-full bg-gold/20 border border-gold text-gold font-serif font-bold text-base">
+            🏛️ The Architectural Sage
+          </div>
+          <p id="cert-archetype-desc" class="text-xs text-white/70 italic px-4 font-sans leading-relaxed">
+            Possessing deep discernment for timeless structural beauty, Vedic design harmony, and civilizational preservation.
+          </p>
+          <div class="pt-4 border-t border-gold/20 flex justify-between items-center text-[9px] font-mono text-white/40">
+            <span>ISSUED: SEPTEMBER 2026</span>
+            <span>VERIFIED AUTHENTIC</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <button id="whatsapp-share-cert-btn" class="flex-1 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/20">
+            <span>💬</span> Share on WhatsApp
+          </button>
+          <button id="retake-archetype-btn" class="px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all">
+            Retake Quiz
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── FLOATING LIVE SOCIAL PROOF NOTIFICATION WIDGET ── -->
+  <div id="live-social-proof" class="fixed bottom-6 left-6 z-[80] hidden transition-all duration-500 transform translate-y-12 opacity-0 pointer-events-auto">
+    <div class="bg-[#101116]/95 border border-gold/40 backdrop-blur-xl rounded-2xl p-3.5 shadow-2xl shadow-black/80 flex items-center gap-3.5 max-w-sm">
+      <div class="w-10 h-10 rounded-xl bg-gold/15 border border-gold/30 flex items-center justify-center text-xl flex-shrink-0" id="social-proof-avatar">
+        ✨
+      </div>
+      <div class="space-y-0.5">
+        <p class="text-xs font-bold text-white font-sans leading-snug" id="social-proof-text">
+          Karthik from Bengaluru activated Annual Pass
+        </p>
+        <div class="flex items-center gap-2 text-[10px] font-mono text-gold/80">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          <span id="social-proof-time">3 mins ago</span>
+          <span>•</span>
+          <span class="text-white/40">Verified Member</span>
+        </div>
+      </div>
+      <button onclick="document.getElementById('live-social-proof').classList.add('hidden')" class="text-white/30 hover:text-white text-xs ml-1 font-bold">&times;</button>
     </div>
   </div>
 
