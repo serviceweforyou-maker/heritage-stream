@@ -818,7 +818,7 @@ class AppController {
         }
       }
 
-      // Populate Plan Details Card with Live Remaining Days Countdown
+      // Populate Plan Details Card with Live Remaining Days Countdown, Start Date & End Date
       const planCard = document.getElementById('plan-details-card');
       if (planCard) {
         // Re-evaluate subscription status including expiration
@@ -837,8 +837,8 @@ class AppController {
           const daysLeft = Math.max(0, Math.ceil(msLeft / (1000 * 60 * 60 * 24)));
           const daysPassed = Math.min(365, Math.max(0, 365 - daysLeft));
           const progressPercent = Math.round((daysLeft / 365) * 100);
-          const expiryDateStr = new Date(expiryTime).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
-          const activatedDateStr = new Date(subTimestamp).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+          const startDateStr = new Date(subTimestamp).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+          const endDateStr = new Date(expiryTime).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
 
           planCard.innerHTML = `
             <div class="flex items-center justify-between border-b border-gold/20 pb-3">
@@ -850,7 +850,7 @@ class AppController {
             </div>
 
             <!-- Live Days Countdown Badge -->
-            <div class="bg-gradient-to-r from-amber-500/15 via-gold/15 to-emerald-500/15 border border-gold/40 rounded-2xl p-4 space-y-2.5">
+            <div class="bg-gradient-to-r from-amber-500/15 via-gold/15 to-emerald-500/15 border border-gold/40 rounded-2xl p-4 space-y-3">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
                   <div class="w-10 h-10 rounded-xl bg-gold/20 border border-gold/40 flex items-center justify-center text-xl flex-shrink-0">
@@ -862,8 +862,20 @@ class AppController {
                   </div>
                 </div>
                 <div class="text-right">
-                  <span class="text-[9px] text-white/40 uppercase font-mono block">Expires On</span>
-                  <span class="text-xs font-bold text-white/90 font-mono">${expiryDateStr}</span>
+                  <span class="text-[9px] text-emerald-400 uppercase font-mono font-bold block">Status</span>
+                  <span class="text-xs font-bold text-white/90 font-mono">365 Days Pass</span>
+                </div>
+              </div>
+
+              <!-- Start Date & End Date Grid -->
+              <div class="grid grid-cols-2 gap-2 pt-1 border-t border-white/10">
+                <div class="bg-black/30 p-2 rounded-xl border border-white/5">
+                  <span class="text-[9px] text-white/40 uppercase tracking-wider font-mono block">📅 Start Date</span>
+                  <span class="text-xs font-bold text-white font-mono">${startDateStr}</span>
+                </div>
+                <div class="bg-black/30 p-2 rounded-xl border border-white/5">
+                  <span class="text-[9px] text-gold/60 uppercase tracking-wider font-mono block">🏁 End Date (Expiry)</span>
+                  <span class="text-xs font-bold text-gold font-mono">${endDateStr}</span>
                 </div>
               </div>
 
@@ -879,6 +891,7 @@ class AppController {
               </div>
             </div>
             
+            <!-- Activation Order Details -->
             <div class="space-y-2 text-xs text-white/80">
               <div class="flex items-center justify-between bg-black/30 p-2.5 rounded-xl border border-white/5 font-mono">
                 <span class="text-white/50 text-[11px]">Activation Order ID:</span>
@@ -889,12 +902,8 @@ class AppController {
               </div>
 
               <div class="flex justify-between py-1 border-b border-white/5 text-[11px]">
-                <span class="text-white/50">Billing Amount:</span>
-                <span class="font-bold text-gold font-mono">₹399 / Year (Annual Recurring)</span>
-              </div>
-              <div class="flex justify-between py-1 text-[11px]">
-                <span class="text-white/50">Activated On:</span>
-                <span class="font-bold text-white/80 font-mono">${activatedDateStr}</span>
+                <span class="text-white/50">Billing Fee:</span>
+                <span class="font-bold text-gold font-mono">₹399 / Year (All Sagas Included)</span>
               </div>
             </div>
 
