@@ -23,28 +23,75 @@
     });
   </script>
   <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
-  <title>HeritageStream | Explore Heritage, Play & Learn</title>
-  <meta name="description" content="Discover ancient empires, listen to legendary sagas, and play educational games on HeritageStream. Access all content for ₹399/year.">
+    <title>Sanatana360 | Indian Heritage Knowledge OTT & Bal Sanskara Gurukula</title>
+  <meta name="description" content="Explore 200+ ancient Indian documentaries, 5-language bedtime audio fables, 3D interactive flipbooks, and Vedic mental math for ₹1.09/day. Safe screen-free learning for family & children.">
+  <meta name="keywords" content="Indian Heritage OTT, Vedic Math for Kids, Sanskrit Shlokas, Panchatantra Audio Stories Kannada Tamil Telugu, Indian History Documentaries, Temple Architecture, Sanatana Dharma Knowledge, Indian Kids Learning, Hampi Chariot, Chola Navy, Ramayana Science, Shivaji Maharaj">
+  <meta name="author" content="MANJUNATH ENTERPRISE">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://www.sanatana360.com/">
+
+  <!-- Open Graph / WhatsApp / Facebook Preview Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sanatana360.com/">
+  <meta property="og:site_name" content="Sanatana360 | HeritageStream">
+  <meta property="og:title" content="Sanatana360 — Heritage Knowledge OTT & Vedic Kids Gurukula">
+  <meta property="og:description" content="Discover 200+ ancient Indian docu-series, 5-language bedtime audio stories, and Vedic math tricks. 100% ad-free safe screen time for ₹1.09/day.">
+  <meta property="og:image" content="https://www.sanatana360.com/images/hampi.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sanatana360 — Heritage Knowledge OTT & Vedic Kids Gurukula">
+  <meta name="twitter:description" content="Discover 200+ ancient Indian docu-series, 5-language bedtime audio stories, and Vedic math tricks for ₹1.09/day.">
+  <meta name="twitter:image" content="https://www.sanatana360.com/images/hampi.jpg">
+
+  <!-- Rich Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "HeritageStream",
-    "url": "https://heritage-stream.onrender.com",
-    "description": "Premium Indian cultural OTT streaming platform featuring 100+ docu-series, audiobooks, and interactive games under Manjunath Enterprise.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "MANJUNATH ENTERPRISE",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://heritage-stream.onrender.com/images/ganesha.jpg"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.sanatana360.com/#website",
+        "url": "https://www.sanatana360.com/",
+        "name": "Sanatana360 | HeritageStream",
+        "description": "Premium Indian cultural OTT streaming platform featuring 200+ docu-series, audiobooks, 3D flipbooks, and Vedic math learning under Manjunath Enterprise.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "MANJUNATH ENTERPRISE",
+          "url": "https://www.sanatana360.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.sanatana360.com/images/ganesha.jpg"
+          }
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.sanatana360.com/?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://www.sanatana360.com/#organization",
+        "name": "Sanatana360 Gurukula",
+        "url": "https://www.sanatana360.com/",
+        "logo": "https://www.sanatana360.com/images/ganesha.jpg",
+        "sameAs": [
+          "https://www.sanatana360.com"
+        ]
+      },
+      {
+        "@type": "Offer",
+        "name": "HeritageStream Annual Pass",
+        "price": "399",
+        "priceCurrency": "INR",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.sanatana360.com/#pricing"
       }
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://heritage-stream.onrender.com/index.html?search={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    ]
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -228,6 +275,9 @@
         </button>
         <button id="header-archetype-btn" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-gold transition-all cursor-pointer">
           <span>👑</span> Heritage Archetype
+        </button>
+        <button id="header-referral-btn" class="sec-nav-link py-2 flex items-center gap-1.5 text-amber-300 hover:text-gold transition-all cursor-pointer font-bold">
+          <span>🎁</span> Get ₹50 OFF
         </button>
         <a href="#dashboard" class="sec-nav-link py-2 flex items-center gap-1.5 hover:text-white transition-all">
           <span>📊</span> Dashboard
@@ -1144,7 +1194,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=35"></script>
+  <script type="module" src="app-prod.js?v=36"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -2101,6 +2151,33 @@
           Unlock Annual Pass (₹399)
         </button>
       </div>
+    </div>
+  </div>
+
+
+  <!-- ── VIRAL WHATSAPP REFERRAL MODAL ── -->
+  <div id="viral-referral-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="bg-[#101116] border border-gold/40 rounded-3xl w-full max-w-md shadow-2xl relative p-6 font-sans text-center">
+      <button id="close-referral-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      
+      <div class="w-16 h-16 rounded-full bg-[#25D366]/15 border border-[#25D366]/40 flex items-center justify-center text-3xl mx-auto mb-4">
+        🎁
+      </div>
+
+      <h3 class="text-xl font-bold font-serif text-white mb-1">Invite Friends & Get ₹50 OFF</h3>
+      <p class="text-xs text-white/60 leading-relaxed max-w-xs mx-auto mb-5 font-sans">
+        Share Sanatana360 with your family & friends on WhatsApp to unlock an instant <strong>₹50 Discount Voucher</strong> on the Annual Pass (₹349 instead of ₹399)!
+      </p>
+
+      <div class="bg-black/40 border border-white/10 rounded-2xl p-4 mb-5 space-y-2">
+        <span class="text-[10px] font-mono uppercase text-gold font-bold block">Your VIP Unlock Code</span>
+        <div class="text-xl font-mono font-black text-emerald-400 tracking-wider">GURUKULA50</div>
+        <p class="text-[10px] text-white/40">Applies instantly upon sharing</p>
+      </div>
+
+      <button id="submit-whatsapp-share-btn" class="w-full py-3.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/20">
+        <span>💬</span> Share with Friends on WhatsApp
+      </button>
     </div>
   </div>
 
