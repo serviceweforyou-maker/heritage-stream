@@ -348,6 +348,17 @@ class AppController {
     safeInit("initDivyaDarshana", this.initDivyaDarshana);
     safeInit("setupProfileSelector", this.setupProfileSelector);
     safeInit("checkPaymentStatus", this.checkPaymentStatus);
+    safeInit("initVirtualDarshana", this.initVirtualDarshana);
+    safeInit("initGitaCompass", this.initGitaCompass);
+    safeInit("initDoshaAnalyzer", this.initDoshaAnalyzer);
+    safeInit("initRagaTherapy", this.initRagaTherapy);
+    safeInit("initVedicMathCalculator", this.initVedicMathCalculator);
+    safeInit("initGurukulaKits", this.initGurukulaKits);
+    safeInit("initMysteryVault", this.initMysteryVault);
+    safeInit("initAskRishiAI", this.initAskRishiAI);
+    safeInit("initArchetypeCertificate", this.initArchetypeCertificate);
+    safeInit("initViralReferral", this.initViralReferral);
+    safeInit("initKidsModeToggle", this.initKidsModeToggle);
     
     // Listen to hash changes for catalog navigation explorer
     try {
@@ -3474,6 +3485,954 @@ const bindSlideNavigation = () => {
       });
     }, 4500 + Math.random() * 3000);
   }
+
+
+  // ─────────────────────────────────────────────────────────────
+  // ── ALL MASTER INTERACTIVE ENGINES & FEATURES ────────────────
+  // ─────────────────────────────────────────────────────────────
+
+  // 1. 360 Virtual Darshana & Daily Digital Aarti
+  initVirtualDarshana() {
+    const modal = document.getElementById('virtual-darshana-modal');
+    const openBtn = document.getElementById('header-darshana-btn');
+    const closeBtn = document.getElementById('close-darshana-modal-btn');
+
+    if (openBtn && modal) {
+      openBtn.onclick = (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+    }
+    if (closeBtn && modal) {
+      closeBtn.onclick = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        if (this.darshanaAudio) {
+          this.darshanaAudio.pause();
+          this.darshanaAudio = null;
+        }
+      };
+    }
+
+    const temples = {
+      kashi: {
+        name: "Kashi Vishwanath Jyotirlinga",
+        loc: "Varanasi, Uttar Pradesh",
+        img: "/images/shiva.jpg",
+        shloka: "कर्पूरगौरं करुणावतारं संसारसारम् भुजगेन्द्रहारम् । सदावसन्तं हृदयारविन्दे भवं भवानीसहितं नमामि ॥"
+      },
+      kedarnath: {
+        name: "Kedarnath Himalayan Sanctum",
+        loc: "Rudraprayag, Uttarakhand",
+        img: "/images/shiva_neelkanth.jpg",
+        shloka: "महादेवं महात्मानं महाध्यानं परायणम् । महापाप हरं देवं मकाराय नमो नमः ॥"
+      },
+      tirupati: {
+        name: "Tirumala Sri Venkateswara Swamy",
+        loc: "Tirupati, Andhra Pradesh",
+        img: "/images/vishnu.jpg",
+        shloka: "कौसल्या सुप्रजा राम पूर्वा संध्या प्रवर्तते । उत्तिष्ठ नरशार्दूल कर्तव्यं दैवनिह्निकम् ॥"
+      },
+      udupi: {
+        name: "Udupi Sri Krishna Matha",
+        loc: "Udupi, Karnataka",
+        img: "/images/krishna_cover.jpg",
+        shloka: "वसुदेवसुतं देवं कंसचाणूरमर्दनम् । देवकीपरमानन्दं कृष्णं वन्दे जगद्गुरुम् ॥"
+      },
+      meenakshi: {
+        name: "Arulmigu Meenakshi Sundareswarar",
+        loc: "Madurai, Tamil Nadu",
+        img: "/images/meenakshi.jpg",
+        shloka: "सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके । शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते ॥"
+      }
+    };
+
+    // Temple Switcher
+    document.querySelectorAll('.darshana-tab-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.darshana-tab-btn').forEach(b => {
+          b.className = "darshana-tab-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 transition-all cursor-pointer";
+        });
+        btn.className = "darshana-tab-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border border-gold bg-gold text-black transition-all cursor-pointer";
+
+        const tKey = btn.getAttribute('data-temple');
+        const t = temples[tKey] || temples.kashi;
+
+        const bgImg = document.getElementById('darshana-bg-img');
+        const tName = document.getElementById('darshana-temple-name');
+        const tLoc = document.getElementById('darshana-temple-loc');
+        const tShloka = document.getElementById('darshana-shloka-text');
+
+        if (bgImg) bgImg.src = t.img;
+        if (tName) tName.textContent = t.name;
+        if (tLoc) tLoc.textContent = t.loc;
+        if (tShloka) tShloka.textContent = '"' + t.shloka + '"';
+      };
+    });
+
+    // Ring Bell Action
+    const bellBtn = document.getElementById('darshana-ring-bell-btn');
+    if (bellBtn) {
+      bellBtn.onclick = () => {
+        bellBtn.classList.add('scale-125');
+        setTimeout(() => bellBtn.classList.remove('scale-125'), 300);
+
+        try {
+          const ctx = new (window.AudioContext || window.webkitAudioContext)();
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(880, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(440, ctx.currentTime + 1.2);
+          gain.gain.setValueAtTime(0.6, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.2);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start();
+          osc.stop(ctx.currentTime + 1.2);
+        } catch (e) {}
+
+        if (window.awardKarmaPoints) window.awardKarmaPoints(5, "Morning Bell Ring");
+      };
+    }
+
+    // Light Diya Action
+    const diyaBtn = document.getElementById('darshana-light-diya-btn');
+    const diyaFlame = document.getElementById('darshana-diya-flame');
+    if (diyaBtn && diyaFlame) {
+      diyaBtn.onclick = () => {
+        diyaFlame.classList.remove('hidden');
+        diyaFlame.classList.add('flex');
+        diyaBtn.classList.add('border-gold', 'bg-gold/20');
+        if (window.awardKarmaPoints) window.awardKarmaPoints(5, "Diya Lighting");
+      };
+    }
+
+    // Offer Flowers Action
+    const flowerBtn = document.getElementById('darshana-offer-flowers-btn');
+    const petalsCont = document.getElementById('darshana-petals-container');
+    if (flowerBtn && petalsCont) {
+      flowerBtn.onclick = () => {
+        petalsCont.innerHTML = '';
+        petalsCont.classList.remove('hidden');
+
+        const flowerEmojis = ['🌸', '🌺', '🌼', '🪷', '✨'];
+        for (let i = 0; i < 16; i++) {
+          const petal = document.createElement('span');
+          petal.textContent = flowerEmojis[Math.floor(Math.random() * flowerEmojis.length)];
+          petal.className = "absolute text-lg sm:text-2xl transition-all duration-1000 ease-out";
+          petal.style.left = (Math.random() * 85 + 5) + '%';
+          petal.style.top = '-20px';
+          petal.style.opacity = '1';
+          petalsCont.appendChild(petal);
+
+          setTimeout(() => {
+            petal.style.top = (Math.random() * 60 + 35) + '%';
+            petal.style.transform = 'rotate(' + (Math.random() * 360) + 'deg) scale(' + (Math.random() * 0.5 + 0.8) + ')';
+          }, 50);
+        }
+
+        if (window.awardKarmaPoints) window.awardKarmaPoints(5, "Flower Offering");
+      };
+    }
+
+    // Aarti Chants Action
+    const chantBtn = document.getElementById('darshana-chant-btn');
+    const chantLabel = document.getElementById('darshana-chant-label');
+    if (chantBtn) {
+      chantBtn.onclick = () => {
+        if (!this.darshanaAudio) {
+          this.darshanaAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=meditation-flute-112197.mp3');
+          this.darshanaAudio.loop = true;
+          this.darshanaAudio.volume = 0.4;
+          this.darshanaAudio.play().catch(() => {});
+          if (chantLabel) chantLabel.textContent = "Chants Playing ⏸";
+          chantBtn.classList.add('border-gold', 'bg-gold/20');
+        } else {
+          this.darshanaAudio.pause();
+          this.darshanaAudio = null;
+          if (chantLabel) chantLabel.textContent = "Aarti Chants";
+          chantBtn.classList.remove('border-gold', 'bg-gold/20');
+        }
+      };
+    }
+  }
+
+  // 2. Gita Life Compass & Shloka of the Day
+  initGitaCompass() {
+    const modal = document.getElementById('gita-compass-modal');
+    const openBtn = document.getElementById('header-gita-btn');
+    const closeBtn = document.getElementById('close-gita-modal-btn');
+    const shareBtn = document.getElementById('whatsapp-share-gita-btn');
+
+    if (openBtn && modal) {
+      openBtn.onclick = (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+    }
+    if (closeBtn && modal) {
+      closeBtn.onclick = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+    }
+
+    const gitaVerses = {
+      anxiety: {
+        ref: "BHAGAVAD GITA 2.14",
+        sanskrit: "मात्रास्पर्शास्तु कौन्तेय शीतोष्णसुखदुःखदाः ।<br>आगमापायिनोऽनित्यास्तांस्तितिक्षस्व भारत ॥",
+        translit: '"Matra-sparshas tu kaunteya sheetoshna-sukha-duhkha-dah..."',
+        meaning: "O son of Kunti, the contact between senses and sensory objects gives rise to fleeting perceptions of cold and heat, pleasure and pain. They come and go; learn to endure them without losing your equilibrium.",
+        action: "⚡ Practical Action: Realize that this phase of stress is temporary like passing weather. Ground your mind in stillness and continue your duty with calm courage."
+      },
+      confusion: {
+        ref: "BHAGAVAD GITA 2.47",
+        sanskrit: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥",
+        translit: '"Karmanye vadhikaraste ma phaleshu kadachana..."',
+        meaning: "You have a right solely to perform your righteous duty, but never to the fruits of action. Never consider yourself the cause of results, nor let your mind attach to inaction.",
+        action: "⚡ Practical Action: Stop over-analyzing 10 different futures. Pick the single most righteous, productive step you can take today and execute it with 100% devotion."
+      },
+      anger: {
+        ref: "BHAGAVAD GITA 2.62-63",
+        sanskrit: "क्रोधाद्भवति संमोहः संमोहात्स्मृतिविभ्रमः ।<br>स्मृतिभ्रंशाद् बुद्धिनाशो बुद्धिनाशात्प्रणश्यति ॥",
+        translit: '"Krodhad bhavati sammohah sammohat smriti-vibhramah..."',
+        meaning: "From anger arises delusion; from delusion comes loss of memory; from loss of memory, the intellect is destroyed; and when intellect is destroyed, a person is ruined.",
+        action: "⚡ Practical Action: Pause before reacting. Take 5 deep belly breaths. Anger clouds strategic intellect—respond with calculated wisdom rather than impulsive emotion."
+      },
+      career: {
+        ref: "BHAGAVAD GITA 3.19",
+        sanskrit: "तस्मादसक्तः सततं कार्यं कर्म समाचर ।<br>असक्तो ह्याचरन्कर्म परमाप्नोति पूरुषः ॥",
+        translit: '"Tasmad asaktah satatam karyam karma samachara..."',
+        meaning: "Therefore, without being attached to the fruits of activities, constantly perform your duty with excellence, for by working without attachment one attains the highest state.",
+        action: "⚡ Practical Action: Focus on mastering your craftsmanship and delivering immense value. Recognition and wealth naturally follow supreme competence."
+      },
+      grief: {
+        ref: "BHAGAVAD GITA 2.20",
+        sanskrit: "न जायते म्रियते वा कदाचिन् नायं भूत्वा भविता वा न भूयः ।<br>अजो नित्यः शाश्वतोऽयं पुराणो न हन्यते हन्यमाने शरीरे ॥",
+        translit: '"Na jayate mriyate va kadachin..."',
+        meaning: "The soul is never born, nor does it die at any time. It is unborn, eternal, ever-existing, and primeval. It is not destroyed when the body is slain.",
+        action: "⚡ Practical Action: Honor the memories of loved ones by embodying their noble qualities. True love and the immortal spirit transcend physical form."
+      },
+      focus: {
+        ref: "BHAGAVAD GITA 6.5",
+        sanskrit: "उद्धरेदात्मनात्मानं नात्मानमवसादयेत् ।<br>आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ॥",
+        translit: '"Uddhared atmanatmanam natmanam avasadayet..."',
+        meaning: "Elevate yourself through your own mind; do not degrade yourself. For the mind alone is the greatest friend of the self, and the mind alone can be the greatest enemy.",
+        action: "⚡ Practical Action: Eliminate phone distractions for the next 45 minutes. Take command of your own focus—your mind is your instrument of greatness."
+      }
+    };
+
+    const updateGitaDisplay = (moodKey) => {
+      const v = gitaVerses[moodKey] || gitaVerses.confusion;
+      const refEl = document.getElementById('gita-verse-ref');
+      const sanskritEl = document.getElementById('gita-shloka-sanskrit');
+      const translitEl = document.getElementById('gita-shloka-translit');
+      const meaningEl = document.getElementById('gita-shloka-meaning');
+      const actionEl = document.getElementById('gita-shloka-action');
+
+      if (refEl) refEl.textContent = v.ref;
+      if (sanskritEl) sanskritEl.innerHTML = v.sanskrit;
+      if (translitEl) translitEl.textContent = v.translit;
+      if (meaningEl) meaningEl.innerHTML = '<strong>Meaning:</strong> ' + v.meaning;
+      if (actionEl) actionEl.innerHTML = v.action;
+
+      if (shareBtn) {
+        const cleanSanskrit = v.sanskrit.replace(/<br>/g, ' ');
+        const shareMsg = encodeURIComponent('⚜️ *Gita Wisdom of the Day* (' + v.ref + ')\n\n"' + cleanSanskrit + '"\n\n📖 *Meaning:* ' + v.meaning + '\n\n✨ Explore 200+ ancient Indian sagas on Sanatana360: https://www.sanatana360.com');
+        shareBtn.onclick = () => {
+          window.open('https://api.whatsapp.com/send?text=' + shareMsg, '_blank');
+        };
+      }
+    };
+
+    document.querySelectorAll('.gita-emotion-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.gita-emotion-btn').forEach(b => {
+          b.className = "gita-emotion-btn p-2 rounded-xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer";
+        });
+        btn.className = "gita-emotion-btn p-2 rounded-xl border border-gold bg-gold/15 text-gold text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer";
+
+        const mood = btn.getAttribute('data-mood');
+        updateGitaDisplay(mood);
+      };
+    });
+
+    updateGitaDisplay('confusion');
+  }
+
+  // 3. Ayurvedic Prakriti (Dosha) Body-Type Analyzer
+  initDoshaAnalyzer() {
+    const modal = document.getElementById('dosha-analyzer-modal');
+    const openBtn = document.getElementById('header-dosha-btn');
+    const closeBtn = document.getElementById('close-dosha-modal-btn');
+    const quizCont = document.getElementById('dosha-quiz-container');
+    const resCont = document.getElementById('dosha-result-container');
+    const qCard = document.getElementById('dosha-question-card');
+    const retakeBtn = document.getElementById('retake-dosha-btn');
+
+    let currentStep = 0;
+    let scores = { vata: 0, pitta: 0, kapha: 0 };
+
+    const questions = [
+      {
+        q: "What best describes your natural body frame & weight tendency?",
+        options: [
+          { text: "Lean, slim, prominent joints, finds it hard to gain weight.", type: "vata" },
+          { text: "Medium, athletic build, maintains steady balanced weight.", type: "pitta" },
+          { text: "Solid, broad shoulders, strong build, gains weight easily.", type: "kapha" },
+        ]
+      },
+      {
+        q: "How is your typical digestion and hunger pattern?",
+        options: [
+          { text: "Irregular: Sometimes very hungry, other times forgets to eat.", type: "vata" },
+          { text: "Sharp & Strong: Gets irritable if meals are delayed, fast digestion.", type: "pitta" },
+          { text: "Slow & Steady: Can easily skip meals without feeling irritated.", type: "kapha" },
+        ]
+      },
+      {
+        q: "When under pressure or stress, your first emotional response is:",
+        options: [
+          { text: "Anxiety, overthinking, restlessness, and worry.", type: "vata" },
+          { text: "Impatience, irritability, or fiery frustration.", type: "pitta" },
+          { text: "Calm resistance, withdrawing quietly, or seeking comfort food.", type: "kapha" },
+        ]
+      },
+      {
+        q: "How would you describe your sleep quality?",
+        options: [
+          { text: "Light, easily awakened by small noises, active dreams.", type: "vata" },
+          { text: "Moderate (6-7 hrs), falls asleep fast, wakes up energized.", type: "pitta" },
+          { text: "Deep, heavy (8+ hrs), loves sleeping in and morning warmth.", type: "kapha" },
+        ]
+      },
+      {
+        q: "Which climate and weather makes you feel most comfortable?",
+        options: [
+          { text: "Warm, sunny, humid weather (dislikes dry cold winds).", type: "vata" },
+          { text: "Cool, breezy, shade (dislikes intense humid summer heat).", type: "pitta" },
+          { text: "Warm, dry, sunny weather (dislikes cold damp monsoon).", type: "kapha" },
+        ]
+      }
+    ];
+
+    const renderStep = () => {
+      if (!qCard) return;
+      const q = questions[currentStep];
+
+      let optsHtml = '';
+      q.options.forEach(opt => {
+        optsHtml += '<button class="dosha-option-btn w-full p-3 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/60 text-left text-xs text-white/80 hover:text-white flex items-center gap-3 transition-all cursor-pointer" data-type="' + opt.type + '"><span class="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-[10px] text-emerald-300 font-bold flex-shrink-0">&bull;</span><span class="flex-grow font-sans">' + opt.text + '</span></button>';
+      });
+
+      qCard.innerHTML = '<div class="flex justify-between items-center text-[10px] font-mono text-emerald-400 font-bold mb-2"><span>STEP ' + (currentStep + 1) + ' OF ' + questions.length + '</span><span>PRAKRITI ASSESSMENT</span></div><h4 class="text-sm sm:text-base font-bold font-serif text-white">' + q.q + '</h4><div class="space-y-2 pt-2">' + optsHtml + '</div>';
+
+      qCard.querySelectorAll('.dosha-option-btn').forEach(btn => {
+        btn.onclick = () => {
+          const type = btn.getAttribute('data-type');
+          scores[type] = (scores[type] || 0) + 1;
+          currentStep++;
+
+          if (currentStep < questions.length) {
+            renderStep();
+          } else {
+            showDoshaResult();
+          }
+        };
+      });
+    };
+
+    const showDoshaResult = () => {
+      quizCont?.classList.add('hidden');
+      resCont?.classList.remove('hidden');
+
+      let winner = 'pitta';
+      let maxScore = -1;
+      for (const [k, v] of Object.entries(scores)) {
+        if (v > maxScore) {
+          maxScore = v;
+          winner = k;
+        }
+      }
+
+      const doshaData = {
+        vata: {
+          title: "💨 Vata Constitution (Air & Space)",
+          desc: "You are creative, quick-thinking, and enthusiastic. Your energy operates in bursts and thrives on warmth, grounding routines, and nourishing warm foods.",
+          favor: "Warm soups, cooked grains, ghee, nuts, ginger tea, sweet ripe fruits.",
+          reduce: "Cold salads, iced drinks, raw dry snacks, irregular late meals."
+        },
+        pitta: {
+          title: "🔥 Pitta Constitution (Fire & Water)",
+          desc: "You are purposeful, articulate, and have strong digestion and sharp intellect. Your energy thrives on cooling foods, moderation, and peaceful nature walks.",
+          favor: "Cooling coconut water, cucumbers, sweet fruits, coriander, mint, ghee.",
+          reduce: "Excess spicy chilies, fermented sour foods, deep-fried snacks, skipping meals."
+        },
+        kapha: {
+          title: "🌿 Kapha Constitution (Earth & Water)",
+          desc: "You are calm, loyal, strong, and enduring with high immunity. Your energy thrives on active morning exercise, light warm spices, and invigorating routines.",
+          favor: "Light warm soups, black pepper, turmeric, honey, steamed veggies, legumes.",
+          reduce: "Heavy dairy creams, excess cold sweets, oily snacks, daytime naps."
+        }
+      };
+
+      const res = doshaData[winner] || doshaData.pitta;
+      const wTitle = document.getElementById('dosha-winner-title');
+      const wDesc = document.getElementById('dosha-winner-desc');
+      const wFavor = document.getElementById('dosha-foods-favor');
+      const wReduce = document.getElementById('dosha-foods-reduce');
+
+      if (wTitle) wTitle.textContent = res.title;
+      if (wDesc) wDesc.textContent = res.desc;
+      if (wFavor) wFavor.textContent = res.favor;
+      if (wReduce) wReduce.textContent = res.reduce;
+    };
+
+    if (openBtn && modal) {
+      openBtn.onclick = (e) => {
+        e.preventDefault();
+        currentStep = 0;
+        scores = { vata: 0, pitta: 0, kapha: 0 };
+        quizCont?.classList.remove('hidden');
+        resCont?.classList.add('hidden');
+        renderStep();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+    }
+    if (closeBtn && modal) {
+      closeBtn.onclick = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+    }
+    if (retakeBtn) {
+      retakeBtn.onclick = () => {
+        currentStep = 0;
+        scores = { vata: 0, pitta: 0, kapha: 0 };
+        quizCont?.classList.remove('hidden');
+        resCont?.classList.add('hidden');
+        renderStep();
+      };
+    }
+  }
+
+  // 4. Vedic Raga Sound Therapy & Meditation Harmonizer
+  initRagaTherapy() {
+    const modal = document.getElementById('raga-therapy-modal');
+    const openBtn = document.getElementById('header-raga-btn');
+    const closeBtn = document.getElementById('close-raga-modal-btn');
+    const playBtn = document.getElementById('raga-play-toggle-btn');
+    const playIcon = document.getElementById('raga-play-icon');
+    const playText = document.getElementById('raga-play-text');
+    const breathCircle = document.getElementById('pranayama-circle');
+    const breathLabel = document.getElementById('pranayama-breath-label');
+
+    const ragas = {
+      bhairav: {
+        title: "🌅 Raga Bhairav: Morning Awakening",
+        effect: "Alpha Brainwaves • Mental Clarity • Focus",
+        audio: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=meditation-flute-112197.mp3"
+      },
+      sarang: {
+        title: "☀️ Raga Sarang: Midday Vitality",
+        effect: "Energy Flow • Alertness • Productivity",
+        audio: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=meditation-flute-112197.mp3"
+      },
+      yaman: {
+        title: "🌆 Raga Yaman: Sunset Tranquility",
+        effect: "Stress Release • Emotional Balance • Peace",
+        audio: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=meditation-flute-112197.mp3"
+      },
+      darbari: {
+        title: "🌙 Raga Darbari: Deep Delta Sleep",
+        effect: "Soothing Flute • Deep Relaxation • Delta Sleep Waves",
+        audio: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=meditation-flute-112197.mp3"
+      }
+    };
+
+    let selectedRaga = 'bhairav';
+    let isRagaPlaying = false;
+    let breathInterval = null;
+
+    const startBreathCycle = () => {
+      stopBreathCycle();
+      let phase = 0;
+
+      const runPhase = () => {
+        if (!breathCircle || !breathLabel) return;
+        if (phase === 0) {
+          breathLabel.textContent = "Inhale (4s)";
+          breathCircle.style.transform = "scale(1.4)";
+          breathCircle.style.opacity = "1";
+          breathInterval = setTimeout(() => { phase = 1; runPhase(); }, 4000);
+        } else if (phase === 1) {
+          breathLabel.textContent = "Hold (7s)";
+          breathCircle.style.transform = "scale(1.4)";
+          breathCircle.style.opacity = "0.85";
+          breathInterval = setTimeout(() => { phase = 2; runPhase(); }, 7000);
+        } else {
+          breathLabel.textContent = "Exhale (8s)";
+          breathCircle.style.transform = "scale(0.9)";
+          breathCircle.style.opacity = "0.5";
+          breathInterval = setTimeout(() => { phase = 0; runPhase(); }, 8000);
+        }
+      };
+      runPhase();
+    };
+
+    const stopBreathCycle = () => {
+      if (breathInterval) {
+        clearTimeout(breathInterval);
+        breathInterval = null;
+      }
+    };
+
+    const stopRagaAudio = () => {
+      if (this.ragaAudio) {
+        this.ragaAudio.pause();
+        this.ragaAudio = null;
+      }
+      isRagaPlaying = false;
+      if (playIcon) playIcon.textContent = "▶";
+      if (playText) playText.textContent = "Play Therapy Audio";
+    };
+
+    const playRagaAudio = () => {
+      const r = ragas[selectedRaga] || ragas.bhairav;
+      this.ragaAudio = new Audio(r.audio);
+      this.ragaAudio.loop = true;
+      this.ragaAudio.volume = 0.35;
+      this.ragaAudio.play().catch(() => {});
+      isRagaPlaying = true;
+      if (playIcon) playIcon.textContent = "⏸";
+      if (playText) playText.textContent = "Pause Therapy Audio";
+    };
+
+    document.querySelectorAll('.raga-track-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.raga-track-btn').forEach(b => {
+          b.className = "raga-track-btn p-3 rounded-2xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer";
+        });
+        btn.className = "raga-track-btn p-3 rounded-2xl border border-gold bg-gold/15 text-gold text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer";
+
+        selectedRaga = btn.getAttribute('data-raga');
+        const r = ragas[selectedRaga] || ragas.bhairav;
+
+        const curTitle = document.getElementById('raga-current-title');
+        const curEffect = document.getElementById('raga-current-effect');
+
+        if (curTitle) curTitle.textContent = r.title;
+        if (curEffect) curEffect.textContent = r.effect;
+
+        if (isRagaPlaying) {
+          stopRagaAudio();
+          playRagaAudio();
+        }
+      };
+    });
+
+    if (openBtn && modal) {
+      openBtn.onclick = (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        startBreathCycle();
+      };
+    }
+    if (closeBtn && modal) {
+      closeBtn.onclick = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        stopRagaAudio();
+        stopBreathCycle();
+      };
+    }
+    if (playBtn) {
+      playBtn.onclick = () => {
+        if (!isRagaPlaying) {
+          playRagaAudio();
+        } else {
+          stopRagaAudio();
+        }
+      };
+    }
+  }
+
+  // 5. Interactive Vedic Math Speed Calculator
+  initVedicMathCalculator() {
+    const modal = document.getElementById('vedic-math-modal');
+    const openBtn = document.getElementById('try-vedic-math-btn');
+    const closeBtn = document.getElementById('close-vedic-math-modal-btn');
+
+    if (openBtn && modal) {
+      openBtn.onclick = (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+    }
+
+    if (closeBtn && modal) {
+      closeBtn.onclick = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+    }
+
+    // Tabs switching
+    const switchTab = (tabNum) => {
+      [1, 2, 3].forEach(n => {
+        const btn = document.getElementById('vmath-tab-' + n);
+        const panel = document.getElementById('vmath-panel-' + n);
+        if (btn && panel) {
+          if (n === tabNum) {
+            btn.className = "vmath-nav-tab flex-1 py-2 rounded-xl bg-gold text-black transition-all font-bold";
+            panel.classList.remove('hidden');
+          } else {
+            btn.className = "vmath-nav-tab flex-1 py-2 rounded-xl text-white/60 hover:text-white transition-all";
+            panel.classList.add('hidden');
+          }
+        }
+      });
+    };
+
+    [1, 2, 3].forEach(n => {
+      const btn = document.getElementById('vmath-tab-' + n);
+      if (btn) btn.onclick = () => switchTab(n);
+    });
+
+    // Trick 1: Square of 5s
+    const calcBtn1 = document.getElementById('vmath-calc-btn-1');
+    if (calcBtn1) {
+      calcBtn1.onclick = () => {
+        const val = parseInt(document.getElementById('vmath-input-1')?.value || '65');
+        const resEl = document.getElementById('vmath-result-1');
+        if (isNaN(val) || val % 10 !== 5) {
+          if (resEl) resEl.textContent = "Please enter a number ending in 5 (e.g. 25, 45, 85)!";
+          return;
+        }
+        const front = Math.floor(val / 10);
+        const frontProd = front * (front + 1);
+        const ans = frontProd * 100 + 25;
+        if (resEl) {
+          resEl.innerHTML = '<strong>' + val + '²</strong> = (' + front + ' × ' + (front + 1) + ' = ' + frontProd + ') followed by 25 = <span class="text-gold font-bold text-base">' + ans + '</span> ⚡';
+        }
+      };
+    }
+
+    // Trick 2: Multiply by 11
+    const calcBtn2 = document.getElementById('vmath-calc-btn-2');
+    if (calcBtn2) {
+      calcBtn2.onclick = () => {
+        const val = parseInt(document.getElementById('vmath-input-2')?.value || '52');
+        const resEl = document.getElementById('vmath-result-2');
+        if (isNaN(val) || val < 10 || val > 99) {
+          if (resEl) resEl.textContent = "Please enter a 2-digit number (10 to 99)!";
+          return;
+        }
+        const d1 = Math.floor(val / 10);
+        const d2 = val % 10;
+        const sum = d1 + d2;
+        const ans = val * 11;
+        if (resEl) {
+          resEl.innerHTML = '<strong>' + val + ' × 11</strong> = ' + d1 + ' (' + d1 + '+' + d2 + '=' + sum + ') ' + d2 + ' = <span class="text-gold font-bold text-base">' + ans + '</span> ⚡';
+        }
+      };
+    }
+
+    // Trick 3: Fast Base 100
+    const calcBtn3 = document.getElementById('vmath-calc-btn-3');
+    if (calcBtn3) {
+      calcBtn3.onclick = () => {
+        const n1 = parseInt(document.getElementById('vmath-input-3a')?.value || '94');
+        const n2 = parseInt(document.getElementById('vmath-input-3b')?.value || '98');
+        const resEl = document.getElementById('vmath-result-3');
+        if (isNaN(n1) || isNaN(n2)) return;
+        const ans = n1 * n2;
+        if (resEl) {
+          resEl.innerHTML = '<strong>' + n1 + ' × ' + n2 + '</strong> = <span class="text-gold font-bold text-base">' + ans + '</span> ⚡ (Calculated via Nikhilam Sutra)';
+        }
+      };
+    }
+  }
+
+  // 6. Gurukula Kids Activity Kit & Printable Sample Sheet
+  initGurukulaKits() {
+    const printBtn = document.getElementById('open-print-sample-btn');
+    if (printBtn) {
+      printBtn.onclick = (e) => {
+        e.preventDefault();
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) {
+          alert("Please allow popups to print the Gurukula Activity Sheet!");
+          return;
+        }
+
+        printWindow.document.write(`
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Gurukula Free Heritage Activity Sheet - Sanatana360</title>
+            <style>
+              body { font-family: 'Georgia', serif; padding: 40px; color: #111; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+              .header { text-align: center; border-bottom: 2px solid #d4af37; padding-bottom: 20px; margin-bottom: 30px; }
+              .header h1 { margin: 0; color: #8b6508; font-size: 24px; }
+              .header p { margin: 5px 0 0 0; font-size: 12px; color: #666; font-family: sans-serif; }
+              .section { margin-bottom: 30px; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; }
+              .section-title { font-size: 16px; font-weight: bold; color: #8b6508; margin-top: 0; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px; }
+              .shloka-box { background: #fdfbf7; border: 1px dashed #d4af37; padding: 15px; border-radius: 8px; text-align: center; font-size: 14px; font-weight: bold; }
+              .math-challenge { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-family: monospace; font-size: 14px; margin-top: 10px; }
+              .math-item { border: 1px solid #cbd5e1; padding: 10px; border-radius: 6px; }
+              .footer { text-align: center; margin-top: 40px; font-size: 11px; color: #888; border-top: 1px solid #eee; padding-top: 15px; }
+              @media print { button { display: none; } }
+            </style>
+          </head>
+          <body>
+            <div class="header">
+              <h1>🕉️ GURUKULA BAL SANSKARA LEARNING KIT</h1>
+              <p>Sanatana360 Heritage Education &bull; Screen-Free Daily Family Practice</p>
+            </div>
+
+            <div class="section">
+              <h3 class="section-title">🪷 Part 1: Gayatri Shloka Chanting &amp; Memory Practice</h3>
+              <div class="shloka-box">
+                ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं ।<br>
+                भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात् ॥
+              </div>
+              <p style="font-size: 12px; color: #444; margin-top: 10px;">
+                <strong>Daily Practice:</strong> Recite 3 times every morning. Enhances focus, memory retention, and pronunciation.
+              </p>
+            </div>
+
+            <div class="section">
+              <h3 class="section-title">🧮 Part 2: Vedic Math 3-Second Mental Calculation</h3>
+              <p style="font-size: 12px; color: #555;">Solve these 4 problems in your head using the <em>Ekadhikena Purvena</em> and <em>Antyayoreva</em> Sutras:</p>
+              <div class="math-challenge">
+                <div class="math-item">1) 25 × 25 = ______</div>
+                <div class="math-item">2) 45 × 45 = ______</div>
+                <div class="math-item">3) 34 × 11 = ______</div>
+                <div class="math-item">4) 62 × 11 = ______</div>
+              </div>
+            </div>
+
+            <div class="section">
+              <h3 class="section-title">🎨 Part 3: Temple Architecture Knowledge Check</h3>
+              <p style="font-size: 12px; color: #444;">
+                1. Which medieval Indian empire built the iconic Stone Chariot in Hampi?<br>
+                <strong>Answer:</strong> ____________________________________________<br><br>
+                2. Which temple has 56 pillars that produce musical notes when gently tapped?<br>
+                <strong>Answer:</strong> ____________________________________________
+              </p>
+            </div>
+
+            <div class="footer">
+              <p>© 2026 Sanatana360 &bull; Discover 200+ Documentaries, Bedtime Audiobooks &amp; Vedic Math at www.sanatana360.com</p>
+            </div>
+
+            <script>
+              window.onload = function() { window.print(); };
+            </script>
+          </body>
+          </html>
+        `);
+        printWindow.document.close();
+      };
+    }
+  }
+
+  // 7. Secret Mystery Vaults Audio Clues
+  initMysteryVault() {
+    const clueBtns = document.querySelectorAll('.play-vault-clue-btn');
+    if (!clueBtns.length) return;
+
+    let activeVaultAudio = null;
+    let currentPlayingBtn = null;
+
+    clueBtns.forEach(btn => {
+      btn.onclick = (e) => {
+        e.preventDefault();
+
+        if (currentPlayingBtn === btn && activeVaultAudio) {
+          activeVaultAudio.pause();
+          activeVaultAudio = null;
+          currentPlayingBtn = null;
+          btn.innerHTML = '<span>🔊</span> Listen 60s Clue';
+          btn.classList.remove('bg-gold', 'text-black');
+          return;
+        }
+
+        if (activeVaultAudio) {
+          activeVaultAudio.pause();
+          if (currentPlayingBtn) {
+            currentPlayingBtn.innerHTML = '<span>🔊</span> Listen 60s Clue';
+            currentPlayingBtn.classList.remove('bg-gold', 'text-black');
+          }
+        }
+
+        activeVaultAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=meditation-flute-112197.mp3');
+        activeVaultAudio.volume = 0.5;
+        activeVaultAudio.play().catch(() => {});
+        currentPlayingBtn = btn;
+        btn.innerHTML = '<span class="animate-pulse">⏸</span> Playing Clue (60s)';
+        btn.classList.add('bg-gold', 'text-black');
+
+        if (window.awardKarmaPoints) window.awardKarmaPoints(5, "Secret Clue Declassified");
+
+        setTimeout(() => {
+          if (activeVaultAudio) {
+            activeVaultAudio.pause();
+            activeVaultAudio = null;
+          }
+          btn.innerHTML = '<span>🔊</span> Listen 60s Clue';
+          btn.classList.remove('bg-gold', 'text-black');
+        }, 60000);
+      };
+    });
+  }
+
+  // 8. Ask Rishi AI Consultation
+  initAskRishiAI() {
+    const modal = document.getElementById('rishi-modal');
+    const openBtn = document.getElementById('header-rishi-btn');
+    const closeBtn = document.getElementById('close-rishi-modal-btn');
+    const askBtn = document.getElementById('submit-rishi-btn');
+    const queryInput = document.getElementById('rishi-query-input');
+    const responseBox = document.getElementById('rishi-response-box');
+    const answerText = document.getElementById('rishi-answer-text');
+
+    if (openBtn && modal) {
+      openBtn.onclick = (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+    }
+    if (closeBtn && modal) {
+      closeBtn.onclick = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+    }
+
+    if (askBtn && queryInput) {
+      askBtn.onclick = () => {
+        const q = queryInput.value.trim();
+        if (!q) return;
+
+        if (responseBox) responseBox.classList.remove('hidden');
+        if (answerText) answerText.textContent = "Consulting ancient palm-leaf scriptures and wisdom treatises...";
+
+        setTimeout(() => {
+          const answers = [
+            "Acharya Chanakya dictates: 'Do not be very upright in your dealings; straight trees are cut down first, while crooked ones remain standing.' Apply strategic patience and evaluate hidden intentions before making commitments.",
+            "Maharishi Patanjali guides in Yoga Sutras: 'Yogas Chitta Vritti Nirodha' (Yoga is the stilling of mental fluctuations). When the mind ceases to grasp at past regrets or future anxiety, supreme focus arises.",
+            "Bhagavan Sri Krishna counsels: 'You have a right solely to the performance of duty, never to the fruits thereof.' Direct your boundless energy into craftsmanship and righteousness; success will follow naturally as a shadow."
+          ];
+          const choice = answers[Math.floor(Math.random() * answers.length)];
+          if (answerText) answerText.textContent = choice;
+          if (window.awardKarmaPoints) window.awardKarmaPoints(10, "Rishi Wisdom Inquiry");
+        }, 800);
+      };
+    }
+  }
+
+  // 9. Royal Heritage Archetype & Certificate
+  initArchetypeCertificate() {
+    const modal = document.getElementById('archetype-modal');
+    const openBtn = document.getElementById('header-archetype-btn');
+    const closeBtn = document.getElementById('close-archetype-modal-btn');
+
+    if (openBtn && modal) {
+      openBtn.onclick = (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+    }
+    if (closeBtn && modal) {
+      closeBtn.onclick = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+    }
+  }
+
+  // 10. Viral WhatsApp Referral
+  initViralReferral() {
+    const modal = document.getElementById('viral-referral-modal');
+    const openBtn = document.getElementById('header-referral-btn');
+    const closeBtn = document.getElementById('close-referral-modal-btn');
+    const shareBtn = document.getElementById('submit-whatsapp-share-btn');
+
+    if (openBtn && modal) {
+      openBtn.onclick = (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+    }
+    if (closeBtn && modal) {
+      closeBtn.onclick = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+    }
+
+    if (shareBtn && modal) {
+      shareBtn.onclick = () => {
+        const shareText = encodeURIComponent("⚜️ Namaste! Discover 200+ ancient Indian documentaries, 5-language bedtime audiobooks (Kannada/Tamil/Telugu), and Vedic Math for kids on Sanatana360. 100% ad-free safe screen time! Check it out: https://www.sanatana360.com");
+        window.open('https://api.whatsapp.com/send?text=' + shareText, '_blank');
+
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+
+        setTimeout(() => {
+          this.openPaymentModal();
+        }, 500);
+      };
+    }
+  }
+
+  // 11. Kids Mode Quick Switcher
+  initKidsModeToggle() {
+    const kidsBtn = document.getElementById('header-kids-mode-btn');
+    if (kidsBtn) {
+      kidsBtn.onclick = (e) => {
+        e.preventDefault();
+        this.currentProfile = 'Kids';
+        this.currentProfileAvatar = '🧒';
+        localStorage.setItem('hs_profile', 'Kids');
+        localStorage.setItem('hs_avatar', '🧒');
+
+        const avatarEl = document.getElementById('active-profile-avatar');
+        const nameEl = document.getElementById('active-profile-name');
+        const greetingEl = document.getElementById('hero-sub-prompt');
+        if (avatarEl) avatarEl.textContent = '🧒';
+        if (nameEl) nameEl.textContent = 'Kids Mode';
+        if (greetingEl) {
+          greetingEl.textContent = "Hey there! Ready to explore awesome animations, moral fables, and Vedic Math?";
+        }
+
+        this.isStandardRowsRendered = false;
+        this.renderContentRows();
+
+        const lib = document.getElementById('library');
+        if (lib) lib.scrollIntoView({ behavior: 'smooth' });
+
+        const toast = document.getElementById('account-toast-msg');
+        if (toast) {
+          toast.textContent = "🧒 Kids Safe Mode Active ✓";
+          toast.classList.remove('opacity-0');
+          setTimeout(() => toast.classList.add('opacity-0'), 2500);
+        }
+      };
+    }
+  }
+
 }
 // Instantiate core application controller
 if (document.readyState === 'loading') {
