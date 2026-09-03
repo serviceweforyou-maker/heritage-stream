@@ -717,3 +717,18 @@ body {
   color: #d4af37;
   transform: translateX(3px);
 }
+
+/* ── HIGH PERFORMANCE PAGE RENDERING ENGINE ── */
+#mystery-vault,
+#gurukula-kits,
+#explorer,
+#divya-darshana,
+#play-zone,
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 400px;
+}
+
+img {
+  content-visibility: auto;
+}
