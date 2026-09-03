@@ -277,6 +277,18 @@
         <a href="#divya-darshana" class="sec-nav-pill px-3 py-1 rounded-full hover:text-gold hover:bg-gold/10 transition-all flex items-center gap-1.5 text-gold">
           <span>✨</span> Divya Darshana
         </a>
+        <button id="header-darshana-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-gold hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer text-amber-200">
+          <span>🛕</span> Virtual Darshana
+        </button>
+        <button id="header-gita-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-gold hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
+          <span>📜</span> Gita Compass
+        </button>
+        <button id="header-dosha-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-emerald-300 hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
+          <span>🌿</span> Ayurveda Dosha
+        </button>
+        <button id="header-raga-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-purple-300 hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
+          <span>🪕</span> Raga Therapy
+        </button>
 
         <a href="#explorer" class="sec-nav-pill px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-all flex items-center gap-1.5">
           <span>🗺️</span> Map Explorer
@@ -1200,7 +1212,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=38"></script>
+  <script type="module" src="app-prod.js?v=39"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -2184,6 +2196,302 @@
       <button id="submit-whatsapp-share-btn" class="w-full py-3.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/20">
         <span>💬</span> Share with Friends on WhatsApp
       </button>
+    </div>
+  </div>
+
+
+  <!-- ── 360 VIRTUAL DARSHANA & DIGITAL AARTI MODAL ── -->
+  <div id="virtual-darshana-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="bg-[#0e1017] border-2 border-gold/50 rounded-3xl w-full max-w-xl shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans">
+      <button id="close-darshana-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      
+      <!-- Header -->
+      <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
+        <span class="text-2xl p-2 rounded-2xl bg-gold/15 border border-gold/30">🛕</span>
+        <div>
+          <h3 class="text-lg font-bold font-serif text-white">Daily Virtual Darshana &amp; Aarti</h3>
+          <p class="text-[10px] font-mono text-gold">Sacred Sanctum Ritual &bull; Ring Bell &bull; Light Diya &bull; Offer Flowers</p>
+        </div>
+      </div>
+
+      <!-- Temple Sanctum Selector -->
+      <div class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-4" id="darshana-temple-tabs">
+        <button class="darshana-tab-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border border-gold bg-gold text-black transition-all cursor-pointer" data-temple="kashi">
+          🕉️ Kashi Vishwanath
+        </button>
+        <button class="darshana-tab-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 transition-all cursor-pointer" data-temple="kedarnath">
+          🏔️ Kedarnath
+        </button>
+        <button class="darshana-tab-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 transition-all cursor-pointer" data-temple="tirupati">
+          👑 Tirupati Balaji
+        </button>
+        <button class="darshana-tab-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 transition-all cursor-pointer" data-temple="udupi">
+          🦚 Udupi Krishna
+        </button>
+        <button class="darshana-tab-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 transition-all cursor-pointer" data-temple="meenakshi">
+          🌺 Meenakshi Amman
+        </button>
+      </div>
+
+      <!-- Sanctum Visual Stage -->
+      <div class="relative w-full aspect-video rounded-2xl overflow-hidden border border-gold/30 bg-black mb-5 shadow-inner" id="darshana-sanctum-stage">
+        <img id="darshana-bg-img" src="/images/shiva.jpg" class="w-full h-full object-cover transition-all duration-700 brightness-90" alt="Temple Sanctum">
+        
+        <!-- Ambient Temple Glow Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
+
+        <!-- Animated Diya Flame Container -->
+        <div id="darshana-diya-flame" class="absolute bottom-4 left-1/2 -translate-x-1/2 hidden flex-col items-center pointer-events-none transition-all duration-500">
+          <div class="w-6 h-8 bg-gradient-to-t from-amber-500 via-yellow-300 to-white rounded-full blur-[1px] animate-pulse shadow-lg shadow-yellow-500/80"></div>
+          <span class="text-3xl mt-[-8px]">🪔</span>
+        </div>
+
+        <!-- Flower Petal Shower Canvas / Container -->
+        <div id="darshana-petals-container" class="absolute inset-0 pointer-events-none overflow-hidden hidden"></div>
+
+        <!-- Temple Title Badge on Stage -->
+        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-left">
+          <h4 id="darshana-temple-name" class="text-xs font-serif font-bold text-white">Kashi Vishwanath Jyotirlinga</h4>
+          <span id="darshana-temple-loc" class="text-[9px] font-mono text-gold">Varanasi, Uttar Pradesh</span>
+        </div>
+      </div>
+
+      <!-- Interactive Puja Action Bar -->
+      <div class="grid grid-cols-4 gap-2 mb-4">
+        <button id="darshana-ring-bell-btn" class="p-2.5 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-center transition-all cursor-pointer flex flex-col items-center gap-1 group">
+          <span class="text-xl group-hover:scale-110 transition-transform">🔔</span>
+          <span class="text-[10px] font-bold text-white/90 uppercase font-mono">Ring Bell</span>
+        </button>
+
+        <button id="darshana-light-diya-btn" class="p-2.5 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-center transition-all cursor-pointer flex flex-col items-center gap-1 group">
+          <span class="text-xl group-hover:scale-110 transition-transform">🪔</span>
+          <span class="text-[10px] font-bold text-white/90 uppercase font-mono">Light Diya</span>
+        </button>
+
+        <button id="darshana-offer-flowers-btn" class="p-2.5 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-center transition-all cursor-pointer flex flex-col items-center gap-1 group">
+          <span class="text-xl group-hover:scale-110 transition-transform">🌸</span>
+          <span class="text-[10px] font-bold text-white/90 uppercase font-mono">Offer Flowers</span>
+        </button>
+
+        <button id="darshana-chant-btn" class="p-2.5 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-center transition-all cursor-pointer flex flex-col items-center gap-1 group">
+          <span class="text-xl group-hover:scale-110 transition-transform">🪕</span>
+          <span class="text-[10px] font-bold text-white/90 uppercase font-mono" id="darshana-chant-label">Aarti Chants</span>
+        </button>
+      </div>
+
+      <!-- Morning Sankalpa & Shloka Card -->
+      <div class="bg-black/30 border border-white/5 rounded-2xl p-4 text-center space-y-1.5">
+        <span class="text-[9px] uppercase tracking-widest text-gold font-mono font-bold block">Daily Sanctum Blessing &amp; Shloka</span>
+        <p id="darshana-shloka-text" class="text-xs font-serif font-bold text-white/90 leading-relaxed">
+          "कर्पूरगौरं करुणावतारं संसारसारम् भुजगेन्द्रहारम् । सदावसन्तं हृदयारविन्दे भवं भवानीसहितं नमामि ॥"
+        </p>
+        <p class="text-[10px] text-white/50 font-sans italic">
+          May the divine grace bestow health, clarity of intellect, and peace upon your family today.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── GITA LIFE COMPASS & SHLOKA OF THE DAY MODAL ── -->
+  <div id="gita-compass-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="bg-[#101116] border-2 border-gold/50 rounded-3xl w-full max-w-xl shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans">
+      <button id="close-gita-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      
+      <!-- Header -->
+      <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
+        <span class="text-2xl p-2 rounded-2xl bg-gold/15 border border-gold/30">📜</span>
+        <div>
+          <h3 class="text-lg font-bold font-serif text-white">Gita Life Compass &amp; Shloka of the Day</h3>
+          <p class="text-[10px] font-mono text-gold">Ancient Decision-Making &bull; Emotional Clarity &bull; Daily Guidance</p>
+        </div>
+      </div>
+
+      <!-- Emotion Selector Prompt -->
+      <div class="mb-5">
+        <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-2 font-mono">How are you feeling right now?</label>
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-2" id="gita-emotion-grid">
+          <button class="gita-emotion-btn p-2 rounded-xl border border-gold bg-gold/15 text-gold text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer" data-mood="anxiety">
+            <span class="text-lg">😰</span>
+            <span>Anxiety</span>
+          </button>
+          <button class="gita-emotion-btn p-2 rounded-xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer" data-mood="confusion">
+            <span class="text-lg">🤔</span>
+            <span>Confusion</span>
+          </button>
+          <button class="gita-emotion-btn p-2 rounded-xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer" data-mood="anger">
+            <span class="text-lg">😡</span>
+            <span>Anger</span>
+          </button>
+          <button class="gita-emotion-btn p-2 rounded-xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer" data-mood="career">
+            <span class="text-lg">💼</span>
+            <span>Career</span>
+          </button>
+          <button class="gita-emotion-btn p-2 rounded-xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer" data-mood="grief">
+            <span class="text-lg">😢</span>
+            <span>Grief</span>
+          </button>
+          <button class="gita-emotion-btn p-2 rounded-xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer" data-mood="focus">
+            <span class="text-lg">🎯</span>
+            <span>Focus</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Shloka Display Card -->
+      <div id="gita-shloka-display-card" class="bg-gradient-to-b from-[#18140c] via-[#101116] to-[#0a0b0e] border-2 border-gold/40 rounded-3xl p-6 text-center space-y-4 shadow-xl shadow-gold/10 mb-5 relative overflow-hidden">
+        <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-[10px] font-mono font-bold" id="gita-verse-ref">
+          BHAGAVAD GITA 2.47
+        </div>
+
+        <h3 class="text-lg sm:text-xl font-bold font-serif text-white leading-relaxed" id="gita-shloka-sanskrit">
+          कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥
+        </h3>
+
+        <p class="text-xs text-gold/90 font-mono italic" id="gita-shloka-translit">
+          "Karmanye vadhikaraste ma phaleshu kadachana..."
+        </p>
+
+        <div class="p-3 bg-white/5 rounded-2xl border border-white/5 text-xs text-white/80 leading-relaxed font-sans text-left" id="gita-shloka-meaning">
+          <strong>Meaning:</strong> You have a right solely to perform your duty, but never to the fruits of action. Never consider yourself the cause of results, nor let your mind attach to inaction.
+        </div>
+
+        <div class="p-3 bg-emerald-500/10 rounded-2xl border border-emerald-500/20 text-xs text-emerald-300 leading-relaxed font-sans text-left" id="gita-shloka-action">
+          <strong>⚡ Practical Action Today:</strong> Channel 100% of your focus into the quality of your work right now. Release the anxiety about outcomes, promotions, or judgment.
+        </div>
+      </div>
+
+      <!-- WhatsApp Share Button -->
+      <button id="whatsapp-share-gita-btn" class="w-full py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/20 cursor-pointer">
+        <span>📲</span> Share Shloka of the Day on WhatsApp Status
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ── AYURVEDIC PRAKRITI (DOSHA) ANALYZER MODAL ── -->
+  <div id="dosha-analyzer-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="bg-[#101116] border-2 border-emerald-500/40 rounded-3xl w-full max-w-xl shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans">
+      <button id="close-dosha-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      
+      <!-- Header -->
+      <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
+        <span class="text-2xl p-2 rounded-2xl bg-emerald-500/15 border border-emerald-500/30">🌿</span>
+        <div>
+          <h3 class="text-lg font-bold font-serif text-white">Ayurvedic Prakriti (Dosha) Analyzer</h3>
+          <p class="text-[10px] font-mono text-emerald-400">Charaka Samhita 5-Step Body-Mind Diagnostic</p>
+        </div>
+      </div>
+
+      <!-- Quiz Stage -->
+      <div id="dosha-quiz-container" class="space-y-4">
+        <div id="dosha-question-card" class="bg-black/40 border border-white/10 rounded-2xl p-5 space-y-4">
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+
+      <!-- Result Stage -->
+      <div id="dosha-result-container" class="space-y-4 hidden">
+        <div class="bg-gradient-to-b from-[#0c1811] via-[#101116] to-[#0a0b0e] border-2 border-emerald-500/50 rounded-3xl p-6 text-center space-y-4 shadow-xl">
+          <span class="text-3xl block mb-1">🌿</span>
+          <h4 class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold">Your Dominant Ayurvedic Constitution</h4>
+          <h2 id="dosha-winner-title" class="text-2xl font-serif font-bold text-white">Pitta-Vata Dynamic Balance</h2>
+          
+          <p id="dosha-winner-desc" class="text-xs text-white/70 italic px-4 leading-relaxed">
+            Governed by Fire &amp; Air. You possess high mental drive, sharp digestion, and creative enthusiasm.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left pt-2">
+            <div class="bg-black/40 p-3 rounded-2xl border border-white/5 text-xs space-y-1">
+              <span class="text-emerald-400 font-bold block text-[11px]">🥗 Foods to Favor:</span>
+              <p id="dosha-foods-favor" class="text-white/70 text-[11px]">Cooling foods, ghee, sweet fruits, coconut water, coriander.</p>
+            </div>
+            <div class="bg-black/40 p-3 rounded-2xl border border-white/5 text-xs space-y-1">
+              <span class="text-amber-400 font-bold block text-[11px]">⚠️ Foods to Reduce:</span>
+              <p id="dosha-foods-reduce" class="text-white/70 text-[11px]">Excess spicy chilis, deep-fried snacks, excess caffeine.</p>
+            </div>
+          </div>
+
+          <div class="p-3 bg-emerald-500/10 rounded-2xl border border-emerald-500/20 text-xs text-emerald-300 text-left">
+            <strong>🌅 Ideal Morning Routine (Dinacharya):</strong> Wake up at Brahma Muhurta (5:30 AM), practice 10 mins Anulom Vilom pranayama, hydrate with warm copper water.
+          </div>
+        </div>
+
+        <button id="retake-dosha-btn" class="w-full py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all">
+          Retake Health Assessment
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── VEDIC RAGA SOUND THERAPY & PRANAYAMA MODAL ── -->
+  <div id="raga-therapy-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="bg-[#101116] border-2 border-purple-500/40 rounded-3xl w-full max-w-xl shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans text-center">
+      <button id="close-raga-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      
+      <!-- Header -->
+      <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4 text-left">
+        <span class="text-2xl p-2 rounded-2xl bg-purple-500/15 border border-purple-500/30">🪕</span>
+        <div>
+          <h3 class="text-lg font-bold font-serif text-white">Vedic Raga Sound Therapy &amp; Pranayama</h3>
+          <p class="text-[10px] font-mono text-purple-300">4 Time-of-Day Ragas (Prahar) &bull; 4-7-8 Breathing Harmonizer</p>
+        </div>
+      </div>
+
+      <!-- 4 Raga Selector Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6" id="raga-track-selector">
+        <button class="raga-track-btn p-3 rounded-2xl border border-gold bg-gold/15 text-gold text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer" data-raga="bhairav">
+          <span class="text-xl">🌅</span>
+          <span>Morning</span>
+          <span class="text-[9px] opacity-70">Raga Bhairav</span>
+        </button>
+
+        <button class="raga-track-btn p-3 rounded-2xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer" data-raga="sarang">
+          <span class="text-xl">☀️</span>
+          <span>Afternoon</span>
+          <span class="text-[9px] opacity-70">Raga Sarang</span>
+        </button>
+
+        <button class="raga-track-btn p-3 rounded-2xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer" data-raga="yaman">
+          <span class="text-xl">🌆</span>
+          <span>Sunset</span>
+          <span class="text-[9px] opacity-70">Raga Yaman</span>
+        </button>
+
+        <button class="raga-track-btn p-3 rounded-2xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer" data-raga="darbari">
+          <span class="text-xl">🌙</span>
+          <span>Deep Sleep</span>
+          <span class="text-[9px] opacity-70">Raga Darbari</span>
+        </button>
+      </div>
+
+      <!-- Interactive Pranayama 4-7-8 Breathing Harmonizer Circle -->
+      <div class="bg-black/40 border border-white/10 rounded-3xl p-6 mb-5 flex flex-col items-center justify-center relative overflow-hidden">
+        <div class="mb-4">
+          <h4 id="raga-current-title" class="text-base font-serif font-bold text-white">🌅 Raga Bhairav: Morning Awakening</h4>
+          <p id="raga-current-effect" class="text-xs text-gold/80 font-mono">Alpha Brainwaves &bull; Mental Clarity &bull; Focus</p>
+        </div>
+
+        <!-- Breathing Visualizer Circle -->
+        <div class="relative w-36 h-36 flex items-center justify-center my-3">
+          <div id="pranayama-circle" class="w-24 h-24 rounded-full bg-gradient-to-tr from-purple-500 via-indigo-400 to-gold opacity-80 transition-all duration-1000 shadow-xl shadow-purple-500/30 flex items-center justify-center">
+            <span id="pranayama-breath-label" class="text-xs font-bold font-mono text-black uppercase">Inhale</span>
+          </div>
+        </div>
+
+        <p class="text-[11px] text-white/50 mt-2 font-mono" id="pranayama-timer-guide">
+          Inhale (4s) &bull; Hold (7s) &bull; Exhale (8s)
+        </p>
+      </div>
+
+      <!-- Audio Controls -->
+      <div class="flex items-center justify-center gap-4">
+        <button id="raga-play-toggle-btn" class="px-8 py-3 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-purple-500/30 flex items-center gap-2 cursor-pointer">
+          <span id="raga-play-icon">▶</span>
+          <span id="raga-play-text">Play Therapy Audio</span>
+        </button>
+      </div>
     </div>
   </div>
 
