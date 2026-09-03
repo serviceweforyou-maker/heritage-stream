@@ -741,8 +741,8 @@ class AppController {
             <h2 class="text-2xl md:text-3xl font-bold font-serif text-white">${title}</h2>
           </div>
           <div class="flex gap-2">
-            <button class="row-prev-btn w-9 h-9 rounded-full border border-white/10 bg-white/5 hover:bg-gold hover:border-gold hover:text-black text-white flex items-center justify-center text-sm transition-all" data-row="${rowId}">◀</button>
-            <button class="row-next-btn w-9 h-9 rounded-full border border-white/10 bg-white/5 hover:bg-gold hover:border-gold hover:text-black text-white flex items-center justify-center text-sm transition-all" data-row="${rowId}">▶</button>
+            <button class="row-prev-btn carousel-nav-btn" data-row="${rowId}" aria-label="Previous">◀</button>
+            <button class="row-next-btn carousel-nav-btn" data-row="${rowId}" aria-label="Next">▶</button>
           </div>
         </div>
         <div id="${rowId}" class="flex gap-5 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth">
@@ -1314,7 +1314,7 @@ class AppController {
     const tintColor = overlayColors[sum % overlayColors.length];
 
     return `
-      <div class="content-card ${widthClass} rounded-2xl overflow-hidden bg-white/5 border border-white/5 cursor-pointer relative group transition-all duration-500 hover:border-gold/30 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gold/5" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
+      <div class="content-card ${widthClass} rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-gold/10" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
         <!-- Watchlist Overlay Toggle Button -->
         <button class="watchlist-toggle-btn absolute top-3 left-3 w-7 h-7 rounded-full bg-black/60 border border-white/10 hover:border-gold hover:scale-105 text-white flex items-center justify-center text-xs backdrop-blur-md transition-all z-20" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
           ${isOnWatchlist ? '✓' : '＋'}
