@@ -361,6 +361,7 @@ class AppController {
     safeInit("initKidsModeToggle", this.initKidsModeToggle);
     safeInit("initPWA", this.initPWA);
     safeInit("initSocialProofTicker", this.initSocialProofTicker);
+    safeInit("initGrandGranthalaya", this.initGrandGranthalaya);
     
     // Listen to hash changes for catalog navigation explorer
     try {
@@ -2272,34 +2273,50 @@ const bindSlideNavigation = () => {
   }
 
   // Handle premium locked prompts inside games/features
+  // Handle premium locked prompts & dynamic buy button visibility
   setupSubscriptionUI() {
     const promoCard = document.getElementById('premium-promo-card');
-    if (!promoCard) return;
+    const headerGetPassBtn = document.getElementById('header-get-pass-btn');
+    const floatingPromoBar = document.getElementById('floating-promo-bar');
+    const subBadge = document.getElementById('header-sub-badge');
 
     if (this.isSubscribed) {
-      promoCard.innerHTML = `
-        <div class="bg-gradient-to-r from-emerald-600/10 to-teal-600/10 border border-emerald-500/30 rounded-2xl p-6 text-center">
-          <h4 class="text-lg font-bold text-emerald-400 mb-1 font-serif">✨ Premium Pass Active</h4>
-          <p class="text-xs text-white/70">Thank you for supporting the preservation and education of our cultural heritage.</p>
-        </div>
-      `;
-    } else {
-      promoCard.innerHTML = `
-        <div class="bg-gradient-to-br from-gold/10 to-amber-700/15 border border-gold/30 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-          <div class="absolute -right-16 -bottom-16 w-48 h-48 rounded-full bg-gold/5 blur-3xl"></div>
-          <div>
-            <h4 class="text-xl font-bold text-gold mb-2 font-serif">Unlock Unlimited Heritage Knowledge</h4>
-            <p class="text-sm text-white/70 max-w-xl">Support our research and unlock access to all premium documentaries, exclusive historical audiobooks, and score tracking dashboards for ₹399/year.</p>
+      // HIDE BUY OPTIONS FOR SUBSCRIBED USERS
+      if (headerGetPassBtn) headerGetPassBtn.style.display = 'none';
+      if (floatingPromoBar) floatingPromoBar.style.display = 'none';
+      if (subBadge) subBadge.classList.remove('hidden');
+
+      if (promoCard) {
+        promoCard.innerHTML = `
+          <div class="bg-gradient-to-r from-emerald-600/10 to-teal-600/10 border border-emerald-500/30 rounded-2xl p-6 text-center">
+            <h4 class="text-lg font-bold text-emerald-400 mb-1 font-serif">✨ Premium Pass Active</h4>
+            <p class="text-xs text-white/70">Thank you for supporting the preservation and education of our cultural heritage.</p>
           </div>
-          <button class="trigger-checkout px-8 py-4 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-sm tracking-wider uppercase whitespace-nowrap transition-all shadow-lg shadow-gold/20 flex items-center gap-2">
-            <span>Get Pass (₹399)</span>
-          </button>
-        </div>
-      `;
-      // Re-bind click event to checkout trigger
-      promoCard.querySelector('.trigger-checkout').addEventListener('click', () => {
-        this.openPaymentModal();
-      });
+        `;
+      }
+    } else {
+      // SHOW BUY OPTIONS FOR FREE USERS
+      if (headerGetPassBtn) headerGetPassBtn.style.display = 'inline-flex';
+      if (floatingPromoBar) floatingPromoBar.style.display = 'flex';
+      if (subBadge) subBadge.classList.add('hidden');
+
+      if (promoCard) {
+        promoCard.innerHTML = `
+          <div class="bg-gradient-to-br from-gold/10 to-amber-700/15 border border-gold/30 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+            <div class="absolute -right-16 -bottom-16 w-48 h-48 rounded-full bg-gold/5 blur-3xl"></div>
+            <div>
+              <h4 class="text-xl font-bold text-gold mb-2 font-serif">Unlock Unlimited Heritage Knowledge</h4>
+              <p class="text-sm text-white/70 max-w-xl">Support our research and unlock access to all premium documentaries, exclusive historical audiobooks, and score tracking dashboards for ₹399/year.</p>
+            </div>
+            <button class="trigger-checkout px-8 py-4 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-sm tracking-wider uppercase whitespace-nowrap transition-all shadow-lg shadow-gold/20 flex items-center gap-2">
+              <span>Get Pass (₹399)</span>
+            </button>
+          </div>
+        `;
+        promoCard.querySelector('.trigger-checkout')?.addEventListener('click', () => {
+          this.openPaymentModal();
+        });
+      }
     }
   }
 
