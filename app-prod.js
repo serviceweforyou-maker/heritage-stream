@@ -359,6 +359,8 @@ class AppController {
     safeInit("initArchetypeCertificate", this.initArchetypeCertificate);
     safeInit("initViralReferral", this.initViralReferral);
     safeInit("initKidsModeToggle", this.initKidsModeToggle);
+    safeInit("initPWA", this.initPWA);
+    safeInit("initSocialProofTicker", this.initSocialProofTicker);
     
     // Listen to hash changes for catalog navigation explorer
     try {
