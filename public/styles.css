@@ -296,13 +296,14 @@ body > main, body > section:first-of-type {
 }
 
 
-/* ── HERO SPOTLIGHT SLIDER IMAGE FIT FIX ── */
+/* ── HERO SPOTLIGHT SLIDER PROFESSIONAL NON-CROPPING RESPONSIVENESS ── */
 #hero-spotlight {
-  height: 68vh !important;
-  min-height: 500px !important;
-  max-height: 680px !important;
+  min-height: 560px !important;
+  height: 72vh !important;
+  max-height: 740px !important;
   position: relative;
-  background-color: #07080c;
+  background-color: #06070a;
+  overflow: hidden;
 }
 
 .spotlight-slide {
@@ -316,23 +317,37 @@ body > main, body > section:first-of-type {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  object-position: center 18% !important; /* Prevents top cropping of monuments & faces */
+  object-position: center 20% !important;
   transform-origin: center top;
 }
 
 @media (max-width: 768px) {
   #hero-spotlight {
-    height: 62vh !important;
-    min-height: 460px !important;
-    max-height: 560px !important;
+    min-height: 520px !important;
+    height: 76vh !important;
+    max-height: 640px !important;
   }
   .spotlight-slide img {
-    object-position: center top !important;
+    object-position: center 15% !important;
   }
-  #hero-spotlight h1 { font-size: 1.5rem !important; line-height: 1.25 !important; }
-  #hero-spotlight p { font-size: 0.75rem !important; }
-  #hero-spotlight .hero-actions { flex-direction: row; flex-wrap: wrap; gap: 8px; }
-  #hero-spotlight .hero-actions button { width: auto; flex: 1; padding: 10px 14px; }
+  #hero-spotlight h1 {
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
+  }
+  #hero-spotlight p {
+    font-size: 0.8rem !important;
+    line-height: 1.45 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-spotlight {
+    min-height: 500px !important;
+    height: 80vh !important;
+  }
+  #hero-spotlight h1 {
+    font-size: 1.4rem !important;
+  }
 }
 
 }
