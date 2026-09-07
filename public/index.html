@@ -95,7 +95,7 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=44">
+  <link rel="stylesheet" href="styles.css?v=45">
   <link rel="stylesheet" href="flipbook.css?v=25">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <script>
@@ -111,6 +111,11 @@
       }
     }
   </script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#d4af37">
 </head>
 <body class="bg-darkSlate text-gray-100 min-h-screen flex flex-col selection:bg-gold selection:text-black">
 
@@ -299,6 +304,9 @@
         </a>
 
         <!-- Kids Gurukula Highlight -->
+        <button id="header-install-app-btn" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border border-gold/40 bg-gold/10 text-gold hover:bg-gold hover:text-black transition-all cursor-pointer">
+          <span>📲</span> <span>Install App</span>
+        </button>
         <button id="header-kids-mode-btn" class="sec-nav-pill px-3 py-1 rounded-full text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 transition-all flex items-center gap-1.5 cursor-pointer">
           <span>🧒</span> Kids Gurukula
         </button>
@@ -1470,7 +1478,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=44"></script>
+  <script type="module" src="app-prod.js?v=45"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
