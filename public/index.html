@@ -95,7 +95,7 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=45">
+  <link rel="stylesheet" href="styles.css?v=46">
   <link rel="stylesheet" href="flipbook.css?v=25">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <script>
@@ -232,7 +232,7 @@
         </a>
 
         <!-- Fast Get Pass CTA Button -->
-        <button onclick="window.appInstance.openPaymentModal()" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-gold/20 hover:scale-105 cursor-pointer">
+        <button id="header-get-pass-btn" onclick="window.appInstance.openPaymentModal()" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-gold/20 hover:scale-105 cursor-pointer">
           <span>⚡</span>
           <span>Get Pass</span>
           <span class="text-[10px] font-mono font-bold bg-black/20 px-1.5 py-0.2 rounded-full">₹399</span>
@@ -847,6 +847,110 @@
 
 
     
+    <!-- ── 📖 GRAND DIGITAL GRANTHALAYA (150+ Page Illustrated E-Books & Sacred Chronicles) ── -->
+    <section id="granthalaya-library" class="scroll-mt-24 max-w-7xl mx-auto my-16 px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-[10px] font-mono font-bold uppercase tracking-widest">
+          <span>📖</span> Complete Illustrated Digital Granths &bull; 150+ Pages Each
+        </div>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-white">
+          Grand Digital Granthalaya
+        </h2>
+        <p class="text-xs sm:text-sm text-white/70 font-sans leading-relaxed">
+          Deep-read comprehensive, 150+ page illustrated sacred chronicles: from fierce <strong>Asura &amp; Celestial Battles</strong> to <strong>Cosmic Yuga Cycles</strong>, <strong>Enlightened Gurujis</strong>, and timeless <strong>Moral Panchatantra Epics</strong>.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center justify-center gap-2 overflow-x-auto no-scrollbar pb-6 max-w-3xl mx-auto">
+        <button class="granth-tab-btn px-4 py-2 rounded-full text-xs font-bold border border-gold bg-gold text-black transition-all cursor-pointer whitespace-nowrap shadow-lg shadow-gold/20" data-cat="all">
+          📚 All Granths (16)
+        </button>
+        <button class="granth-tab-btn px-4 py-2 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="asuras">
+          👹 Devils &amp; Asuras
+        </button>
+        <button class="granth-tab-btn px-4 py-2 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="sanatana">
+          🕉️ Cosmic Sanatana
+        </button>
+        <button class="granth-tab-btn px-4 py-2 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="gurujis">
+          🧘 Miracle Gurujis
+        </button>
+        <button class="granth-tab-btn px-4 py-2 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="morals">
+          🧒 Moral &amp; Kids Epics
+        </button>
+      </div>
+
+      <!-- Books Grid Container -->
+      <div id="granthalaya-books-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Injected dynamically by app.js -->
+      </div>
+
+    </section>
+
+    <!-- ── 📖 ULTRA-LUXURY 150+ PAGE DIGITAL GRANTH READER MODAL ── -->
+    <div id="granth-reader-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-2xl hidden items-center justify-center p-2 sm:p-6 overflow-y-auto">
+      <div class="relative w-full max-w-5xl bg-[#0d0f15] border-2 border-gold/50 rounded-3xl overflow-hidden shadow-2xl shadow-gold/20 flex flex-col my-auto max-h-[92vh]">
+        
+        <!-- Reader Header Toolbar -->
+        <div class="px-5 py-3.5 bg-black/80 border-b border-white/10 flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="text-xl" id="reader-book-emoji">📖</span>
+            <div>
+              <h3 class="text-sm sm:text-base font-bold font-serif text-white line-clamp-1" id="reader-book-title">Granth Title</h3>
+              <p class="text-[10px] text-gold font-mono" id="reader-book-meta">165 Pages &bull; Chapter 1 of 8</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <!-- Paper / Dark Mode Toggle -->
+            <button id="reader-theme-toggle-btn" class="px-2.5 py-1 rounded-lg border border-white/20 bg-white/5 text-[11px] text-white hover:border-gold transition-all" title="Toggle Parchment / Dark Mode">
+              📜 Parchment
+            </button>
+            <!-- Font Sizer -->
+            <button id="reader-font-dec-btn" class="w-7 h-7 rounded-lg border border-white/20 bg-white/5 text-xs text-white hover:border-gold transition-all">A-</button>
+            <button id="reader-font-inc-btn" class="w-7 h-7 rounded-lg border border-white/20 bg-white/5 text-xs text-white hover:border-gold transition-all">A+</button>
+            <!-- Close Button -->
+            <button id="close-granth-reader-btn" class="w-8 h-8 rounded-full border border-white/20 bg-white/10 text-white hover:bg-gold hover:text-black flex items-center justify-center text-sm font-bold transition-all ml-2">
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- Reader Body Area -->
+        <div class="flex flex-col md:flex-row flex-grow overflow-hidden">
+          
+          <!-- Left Table of Contents Drawer (Collapsible on mobile) -->
+          <div class="w-full md:w-64 bg-black/40 border-r border-white/10 p-4 overflow-y-auto max-h-48 md:max-h-full flex-shrink-0 space-y-2" id="reader-toc-container">
+            <p class="text-[10px] font-mono font-bold text-white/40 uppercase tracking-widest mb-2">Chapters &bull; Index</p>
+            <div id="reader-toc-list" class="space-y-1"></div>
+          </div>
+
+          <!-- Right Manuscript Text Area -->
+          <div class="flex-grow p-6 sm:p-10 overflow-y-auto bg-[#090b10] transition-colors duration-300" id="reader-content-canvas">
+            <div class="max-w-2xl mx-auto space-y-6" id="reader-manuscript-body">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Reader Footer Controls -->
+        <div class="px-6 py-3 bg-black/80 border-t border-white/10 flex items-center justify-between">
+          <button id="reader-prev-chapter-btn" class="px-4 py-1.5 rounded-xl border border-white/20 text-xs font-bold text-white hover:border-gold transition-all cursor-pointer">
+            ◀ Previous Chapter
+          </button>
+          <div class="text-[11px] font-mono text-gold" id="reader-page-indicator">
+            Page 1 of 150+
+          </div>
+          <button id="reader-next-chapter-btn" class="px-4 py-1.5 rounded-xl bg-gold text-black font-extrabold text-xs hover:bg-gold/90 transition-all cursor-pointer">
+            Next Chapter ▶
+          </button>
+        </div>
+
+      </div>
+    </div>
+
     <!-- ── WHAT IS SANATANA & FAMILY WISDOM BLUEPRINT (Lifelong GK & Samskara) ── -->
     <section id="dharma-wisdom-mission" class="scroll-mt-24 max-w-7xl mx-auto my-14 px-4 sm:px-6">
       <div class="bg-gradient-to-b from-[#12110b] via-[#0d0f15] to-[#07080c] border-2 border-gold/40 rounded-3xl p-6 sm:p-12 relative overflow-hidden shadow-2xl shadow-gold/10">
@@ -1478,7 +1582,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=45"></script>
+  <script type="module" src="app-prod.js?v=46"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
