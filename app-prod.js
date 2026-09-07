@@ -495,17 +495,17 @@ class AppController {
               <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-transparent to-black/30 z-10 pointer-events-none"></div>
               
               <!-- Content Details -->
-              <div class="max-w-3xl pt-28 pb-8 px-6 md:px-14 h-full flex flex-col justify-end relative z-20">
+              <div class="max-w-3xl pt-36 sm:pt-40 md:pt-44 pb-14 px-5 sm:px-8 md:px-16 h-full flex flex-col justify-center sm:justify-end relative z-20">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 text-gold text-[10px] font-mono font-bold uppercase tracking-wider mb-2.5 border border-gold/30 self-start shadow-sm">
                   🏆 FEATURED SAGA
                 </span>
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-serif mb-2 leading-tight tracking-wide drop-shadow-lg">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-serif mb-2 leading-tight tracking-wide drop-shadow-xl break-words">
                   ${item.title}
                 </h1>
                 <p class="text-xs sm:text-sm text-gold font-medium mb-2 italic font-serif">
                   "${item.tagline}"
                 </p>
-                <p class="text-xs sm:text-sm text-white/80 max-w-xl mb-5 leading-relaxed line-clamp-2 md:line-clamp-3 font-sans">
+                <p class="text-xs sm:text-sm text-white/85 max-w-xl mb-5 leading-relaxed line-clamp-3 md:line-clamp-4 font-sans drop-shadow">
                   ${item.description}
                 </p>
                 <div class="hero-actions flex flex-wrap gap-3 items-center mb-4">
@@ -523,8 +523,8 @@ class AppController {
         </div>
 
         <!-- Left/Right Arrows -->
-        <button id="spotlight-prev-btn" class="absolute left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/50 hover:bg-gold hover:text-black border border-white/15 hover:border-gold flex items-center justify-center text-white text-sm transition-all select-none backdrop-blur-md">◀</button>
-        <button id="spotlight-next-btn" class="absolute right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/50 hover:bg-gold hover:text-black border border-white/15 hover:border-gold flex items-center justify-center text-white text-sm transition-all select-none backdrop-blur-md">▶</button>
+        <button id="spotlight-prev-btn" class="hidden sm:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-gold hover:text-black border border-white/20 hover:border-gold items-center justify-center text-white text-sm transition-all select-none backdrop-blur-md cursor-pointer shadow-lg">◀</button>
+        <button id="spotlight-next-btn" class="hidden sm:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-gold hover:text-black border border-white/20 hover:border-gold items-center justify-center text-white text-sm transition-all select-none backdrop-blur-md cursor-pointer shadow-lg">▶</button>
 
         <!-- Bullet Indicators -->
         <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2.5">
