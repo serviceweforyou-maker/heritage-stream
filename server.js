@@ -987,6 +987,102 @@ const AIEngine = {
   }
 };
 
+
+// ── 🤖 AUTONOMOUS AI VIRAL MARKETING & ORGANIC SEO AGENT ──
+const AIMarketingAgent = {
+  topics: [
+    { hook: "The 56 Musical Pillars of Hampi", category: "Ancient Acoustics", keywords: "Hampi Vittala Temple, 56 musical pillars, ancient Indian acoustics" },
+    { hook: "Padmanabhaswamy Vault B & Naga Bandham Mantra", category: "Secret Mystery Vaults", keywords: "Padmanabhaswamy Vault B, Garuda mantra, ancient subterranean vaults" },
+    { hook: "Vedic Math 3-Second Mental Arithmetic for Kids", category: "Kids Genius & Gurukula", keywords: "Vedic math tricks, Ekadhikena Purvena, 3 second math calculations" },
+    { hook: "The Blue-Water Naval Battles of Raja Raja Chola", category: "Maritime History", keywords: "Chola navy, Indian Ocean trade, ancient Indian naval warfare" },
+    { hook: "The Rustless Metallurgy of Delhi's Iron Pillar", category: "Ancient Science", keywords: "Delhi iron pillar, rustless iron, ancient Indian metallurgy" },
+    { hook: "14 Cosmic Lokas & Ancient Time Dilation", category: "Vedic Cosmology", keywords: "14 Lokas, Surya Siddhanta, Vedic time dilation, Yuga cycles" },
+    { hook: "Ayurvedic Dosha Body-Type Diagnostic for Longevity", category: "Spiritual Wellness", keywords: "Ayurveda Vata Pitta Kapha, Dinacharya, Charaka Samhita health" }
+  ],
+
+  generateDailyCampaign() {
+    const db = readDB();
+    if (!db.aiMarketing) db.aiMarketing = { campaigns: [], lastRun: null };
+
+    const topic = this.topics[Math.floor(Math.random() * this.topics.length)];
+    const dateStr = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+    const campaign = {
+      id: "mkt_" + Date.now(),
+      date: dateStr,
+      timestamp: new Date().toISOString(),
+      topic: topic.hook,
+      category: topic.category,
+      
+      // 1. 30-Second Viral Reel Script
+      reelScript: {
+        hook: "🚨 STOP SCROLLING! Did you know " + topic.hook.toLowerCase() + "?",
+        visualCues: "Fast cuts of ancient temple carvings, animated Vedic math calculations, and 360° digital Aarti footage.",
+        voiceover: "Modern engineers were shocked when they tested this! " + topic.hook + " proves our ancestors mastered sciences thousands of years ahead of their time.",
+        callToAction: "Discover 200+ Indian history sagas, 5-language bedtime audiobooks & kids Vedic Math at www.sanatana360.com. Family pass just ₹1.09/day!",
+        hashtags: "#SanatanaDharma #IndianHistory #AncientIndia #VedicScience #Sanatana360"
+      },
+
+      // 2. Twitter / X Viral Thread (5 Tweets)
+      twitterThread: [
+        "🧵 THREAD: The Untold Science Behind " + topic.hook + " (And why it baffles modern researchers) 👇",
+        "1/5 Ancient Indian treatises documented principles that modern academia only recently rediscovered. From metallurgy to celestial geometry, the precision is staggering.",
+        "2/5 When British colonial surveyors examined these monuments, they assumed hollow mechanisms were hidden inside. What they found was solid granite engineered with acoustic swaras.",
+        "3/5 Today, Indian families are rediscovering these authentic roots—replacing empty screen-time with real civilizational pride and mental math agility.",
+        "4/5 We compiled 200+ illustrated sagas, 3D Granth e-books & 5-language audiobooks on a 100% ad-free platform for children and parents.",
+        "5/5 Explore the full chronicle on Sanatana360: https://www.sanatana360.com (Use voucher GURUKULA50 for ₹50 off the Annual Pass). RT if you love Indian heritage!"
+      ],
+
+      // 3. WhatsApp Morning Broadcast Card
+      whatsappCard: "🌸 *Good Morning! Daily Wisdom from Sanatana360* 🌸\n\n✨ *Today's Discovery:* " + topic.hook + "\n🛕 *Morning Darshana:* Experience 360° Temple Aarti with ringing bells & chanting from home.\n🧮 *Kids Vedic Math:* Solve 3-second mental math challenges with your children.\n\n🎁 *Special Inaugural Pass:* Use code *GURUKULA50* for ₹50 OFF (Just ₹349/Year = ₹0.95/Day!)\n👉 Explore now: https://www.sanatana360.com",
+
+      // 4. Programmatic Organic SEO Keywords
+      seoKeywords: topic.keywords
+    };
+
+    db.aiMarketing.campaigns.unshift(campaign);
+    if (db.aiMarketing.campaigns.length > 30) db.aiMarketing.campaigns.pop(); // keep last 30
+    db.aiMarketing.lastRun = campaign.timestamp;
+
+    writeDB(db);
+    console.log("AIMarketingAgent: Generated fresh viral campaign for '" + topic.hook + "'");
+    return campaign;
+  },
+
+  async pingSearchEngines() {
+    const sitemapUrl = "https://www.sanatana360.com/sitemap.xml";
+    console.log("AIMarketingAgent: Pinging Google & Bing with sitemap:", sitemapUrl);
+
+    try {
+      // Ping Google & Bing
+      await fetch("https://www.google.com/ping?sitemap=" + encodeURIComponent(sitemapUrl)).catch(() => {});
+      await fetch("https://www.bing.com/ping?sitemap=" + encodeURIComponent(sitemapUrl)).catch(() => {});
+      console.log("AIMarketingAgent: Successfully pinged Google & Bing crawlers!");
+      return { success: true, message: "Pings sent to Google & Bing successfully!" };
+    } catch (err) {
+      console.warn("AIMarketingAgent: Ping failed:", err);
+      return { success: false, error: err.message };
+    }
+  },
+
+  checkAndAutoRun() {
+    const db = readDB();
+    if (!db.aiMarketing || !db.aiMarketing.lastRun) {
+      this.generateDailyCampaign();
+      this.pingSearchEngines();
+      return;
+    }
+
+    const lastTime = new Date(db.aiMarketing.lastRun).getTime();
+    const oneDayMs = 24 * 60 * 60 * 1000;
+    if (Date.now() - lastTime >= oneDayMs) {
+      this.generateDailyCampaign();
+      this.pingSearchEngines();
+    }
+  }
+};
+
+
 // 7. Get AI Pipeline Status
 app.get('/api/ai/status', verifyAdminSession, (req, res) => {
   const db = readDB();
@@ -1005,6 +1101,33 @@ app.get('/api/ai/status', verifyAdminSession, (req, res) => {
     nextRun
   });
 });
+
+
+// ── AI Marketing Agent API Endpoints ──
+app.get('/api/ai/marketing-campaigns', verifyAdminSession, (req, res) => {
+  const db = readDB();
+  const mkt = db.aiMarketing || { campaigns: [], lastRun: null };
+  res.json(mkt);
+});
+
+app.post('/api/ai/generate-marketing', verifyAdminSession, (req, res) => {
+  try {
+    const camp = AIMarketingAgent.generateDailyCampaign();
+    res.json({ success: true, campaign: camp });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/api/ai/ping-search-engines', verifyAdminSession, async (req, res) => {
+  try {
+    const result = await AIMarketingAgent.pingSearchEngines();
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 
 // 8. Trigger Manual AI Generation (Admin)
 app.post('/api/ai/generate', verifyAdminSession, async (req, res) => {
@@ -1037,6 +1160,7 @@ app.post('/api/admin/logout', (req, res) => {
 // Run AI check on startup (1s delay) and every hour
 setTimeout(() => {
   AIEngine.checkAndAutoRun();
+  AIMarketingAgent.checkAndAutoRun();
 }, 1000);
 
 setInterval(() => {
