@@ -222,7 +222,26 @@ export default {
       "personas": [
         "Spiritual Seekers"
       ],
-      "category": "Audiobooks & Legends"
+      "category": "Audiobooks & Legends",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the deep roots and historical significance of this heritage masterpiece. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
+      ]
     },
     {
       "id": "vishnu",
@@ -237,7 +256,26 @@ export default {
       "personas": [
         "Spiritual Seekers"
       ],
-      "category": "Audiobooks & Legends"
+      "category": "Audiobooks & Legends",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the deep roots and historical significance of this heritage masterpiece. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
+      ]
     },
     {
       "id": "dharma",
@@ -252,7 +290,26 @@ export default {
       "personas": [
         "Spiritual Seekers"
       ],
-      "category": "Audiobooks & Legends"
+      "category": "Audiobooks & Legends",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the deep roots and historical significance of this heritage masterpiece. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
+      ]
     },
     {
       "id": "lakshmibai",
@@ -267,7 +324,26 @@ export default {
         "History Buffs",
         "Kids"
       ],
-      "category": "Audiobooks & Legends"
+      "category": "Audiobooks & Legends",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the deep roots and historical significance of this heritage masterpiece. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
+      ]
     },
     {
       "id": "ashoka",
@@ -281,7 +357,26 @@ export default {
       "personas": [
         "History Buffs"
       ],
-      "category": "Audiobooks & Legends"
+      "category": "Audiobooks & Legends",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the deep roots and historical significance of this heritage masterpiece. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
+      ]
     },
     {
       "id": "krishna",
@@ -297,7 +392,26 @@ export default {
         "Kids",
         "Spiritual Seekers"
       ],
-      "category": "God Series"
+      "category": "God Series",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the deep roots and historical significance of this heritage masterpiece. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
+      ]
     },
     {
       "id": "ramayana",
@@ -312,7 +426,26 @@ export default {
         "Spiritual Seekers",
         "Kids"
       ],
-      "category": "Audiobooks & Legends"
+      "category": "Audiobooks & Legends",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the deep roots and historical significance of this heritage masterpiece. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
+      ]
     },
     {
       "id": "bhagavad_gita",
@@ -320,14 +453,33 @@ export default {
       "narrator": "Voice of Philosophy: Acharya",
       "duration": "25:40",
       "isPremium": false,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "/images/vishwaroopam_darshan.jpg",
       "desc": "Listen to the translation of the 18 chapters of the Bhagavad Gita spoken by Lord Krishna to Arjuna. Explore concepts of Dharma, Nishkama Karma (selfless action), and spiritual equilibrium.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "personas": [
         "Spiritual Seekers",
         "History Buffs"
       ],
-      "category": "Audiobooks & Legends"
+      "category": "Audiobooks & Legends",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the deep roots and historical significance of this heritage masterpiece. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
+      ]
     },
     {
       "id": "ramayana_science",
@@ -392,6 +544,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Follow the young monkey god Hanuman as he mistakes the rising sun for a ripe mango, showcasing divine strength and cosmic intervention. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -403,12 +572,29 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ganga_descent.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover how King Bhagiratha's intense penance brought the holy river Ganga down to Earth, and how Shiva caught her in his matted locks. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -420,12 +606,29 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "/images/kaliya_daman.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Relive the dramatic tale of young Krishna dancing on the hoods of the multi-headed serpent Kaliya to purify the Yamuna river. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -443,6 +646,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How the Devas and Asuras came together to churn the ocean of milk using Mount Mandara, yielding nectar, poison, and divine treasures. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -460,6 +680,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The story of Hanuman flying to the Himalayas to retrieve the life-saving Sanjeevani herb, bringing the entire mountain back with him. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -471,12 +708,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "/images/shiva_tandava.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "An exploration of the divine dance of Lord Shiva, detailing the cosmic rhythm of existence represented by Nataraja's form. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -494,6 +748,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Ganesha cursed the moon for laughing at him, explaining why the moon waxes and wanes and why we do not look at it on Ganesh Chaturthi. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -511,6 +782,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The tale of Prahlada's unwavering devotion to Lord Vishnu, leading to the descent of the half-man, half-lion Narasimha avatar. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -522,12 +810,29 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/abhimanyu_chakravyuha.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A poignant episode from Mahabharata where Queen Gandhari's grief and anger shape the fate of Lord Krishna and his dynasty. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -539,12 +844,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "/images/shiva_neelkanth.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How the young sage Markandeya clung to the Shiva Linga, leading Lord Shiva to defeat Yama, the God of Death, to protect his devotee. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -562,6 +884,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The legendary tale of princess Savitri who followed Yama into the afterlife to win back her husband Satyavan's soul through wisdom. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -579,6 +918,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How the combined energies of the gods created Goddess Durga to defeat the shape-shifting buffalo demon Mahishasura. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -590,12 +946,29 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "/images/shiva_parvati_kalyanam.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover the beautiful union of the ascetic Shiva and the dedicated Parvati, symbolizing the balance of consciousness and nature. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -607,12 +980,29 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "/images/kartikeya_murugan.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Follow the adventures of Shiva's warrior son Kartikeya, his weapon Vel, and how he chose the peacock as his vehicle. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -630,6 +1020,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How five-year-old Prince Dhruva achieved absolute focus, earning a permanent place in the northern sky as the guiding Pole Star. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -647,6 +1054,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Lord Vishnu descended as a giant fish to guide King Manu's boat through the primeval deluge, saving Earth's species. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -664,6 +1088,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the second avatar of Vishnu, where he stabilized the cosmic churning rod on his back to keep the universe from collapsing. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -681,6 +1122,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Vishnu incarnated as a giant boar to dive into the cosmic ocean and rescue Bhudevi (Earth) from the demon Hiranyaksha. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -698,6 +1156,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The story of the dwarf Brahmin boy who stepped across earth, sky, and King Bali's head to restore cosmic equilibrium. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -715,6 +1190,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Follow the story of the sixth avatar of Vishnu, who wielded a divine battle-axe to defeat corrupt rulers and restore peace. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -726,12 +1218,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "/images/sudama_krishna.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The heartwarming story of poor Sudama visiting his royal friend Lord Krishna and receiving cosmic abundance in return. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -749,6 +1258,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Krishna's magical flute music charmed cows, birds, rivers, and the hearts of the gopis in the mystical forests. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -766,6 +1292,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A witty tale of a race around the cosmos, showing Ganesha's wisdom in declaring his parents as his entire universe. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -777,12 +1320,29 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/vault_b_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Follow the mystery of a missing solar jewel, leading Krishna to battle the bear king Jambavan in a deep mountain cave. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -800,6 +1360,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover the tragic giant Kumbhakarna, his accidental boon of deep sleep, and his loyalty to his brother Ravana. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -817,6 +1394,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Uncover the legend of Vrinda, her deep devotion, and how she transformed into the sacred Tulsi plant found in Indian courtyards. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -834,6 +1428,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The classic fable of a clever monkey who saves himself from a greedy crocodile by claiming his heart is kept safe on a jamun tree. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -851,6 +1462,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Birbal solves a hilarious dispute where a man sells his well but charges the buyer for using the water inside it. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -868,6 +1496,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Tenali Raman used hot iron rods to expose the greed of court priests who demanded gold mangoes from the King. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -885,6 +1530,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A mother plucks all the gold feathers of a magical swan at once, only to see them turn into ordinary white feathers. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -902,6 +1564,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A tortoise falls to his doom because he could not resist opening his mouth to speak while flying on a stick carried by geese. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -919,6 +1598,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Birbal counts the crows in Delhi instantly by using a clever psychological trick that Akbar could not disprove. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -936,6 +1632,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Tenali outwits corrupt officers who claimed to have built public wells but only pocketed the royal treasury funds. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -953,6 +1666,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How a tiny archer used his supreme archery skills and intelligence to serve the king and defeat giant threats. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -970,6 +1700,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A jackal falls into a vat of blue dye and pretends to be a divine king sent to rule the forest, until he howls at night. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -987,6 +1734,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Birbal uses sticks of equal length that supposedly grow longer in a thief's hand to catch a servant who stole a diamond. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1004,6 +1768,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Tenali Raman defeated a proud visiting philosopher using a simple bundle of straw and a clever play on words. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1021,6 +1802,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A tale of two merchants, a golden plate, and how greed lost one merchant a fortune while honesty rewarded the other. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1038,6 +1836,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A tragic misunderstanding where a mother kills a loyal mongoose, believing it harmed her baby, only to find a dead cobra. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1055,6 +1870,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Birbal helped a poor painter get paid by a greedy rich man who kept changing his face to avoid paying for portraits. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1072,6 +1904,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A greedy minister tries to sell a painted red peacock to the king. Tenali exposes the fraud by bringing the rain. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1089,6 +1938,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How a noble monkey king stretched his own body to form a bridge, saving his entire troop from attacking archers. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1106,6 +1972,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Follow a deer, a crow, a tortoise, and a mouse as they coordinate their unique skills to escape a clever hunter's net. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1123,6 +2006,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Birbal used a tall pole and a distant fire to show Akbar that a poor man could survive a freezing night in a lake on hope. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1140,6 +2040,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Tenali Raman helped a poor citizen keep his house when a wealthy neighbor demanded a wall be broken for an elephant. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1157,6 +2074,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A beautiful story of a royal elephant who fell sick from grief when his playmate, a stray dog, was taken away. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1174,6 +2108,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How a small rabbit tricked a tyrannical lion into jumping into a deep well by showing him his own reflection. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1191,6 +2142,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Birbal solves a boundary dispute by calling a tree to stand witness in the royal court, catching the liar red-handed. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1208,6 +2176,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Tenali Raman made Goddess Kali laugh by asking a funny question about her many hands, earning the title Vikatakavi. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1225,6 +2210,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A king spares a beautiful golden stag who rescued a drowning man, learning a lesson in compassion and trust. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1242,6 +2244,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A greedy heron pretends to rescue fish from a drought only to eat them, until an intelligent crab clamps his neck. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1259,6 +2278,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Birbal answers Akbar's deep philosophical question about the heaviest weight on earth—revealing it to be a mother's love. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1276,6 +2312,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Tenali promises greedy palace guards a share of his reward from the king, which turns out to be fifty lashes. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1287,12 +2340,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "/images/shivaji.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The thrilling escape of the Maratha founder from Agra in fruit baskets, establishing his legendary status across India. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1310,6 +2380,23 @@ export default {
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the naval expeditions of the Chola king, his trade routes with China, and the building of Brihadeeswarar Temple. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1327,6 +2414,23 @@ export default {
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The untold legend of the Queen of Ullal who defeated the mighty Portuguese navy repeatedly using fire arrows. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1344,6 +2448,23 @@ export default {
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover the military genius and cultural patron who ushered in the Golden Age of India, commemorated on gold coins. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1355,12 +2476,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/maharana_pratap.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The story of the patriotic ruler of Mewar and his loyal horse Chetak, who leaped across a stream to save his master. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1372,12 +2510,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "/images/ashoka.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How a young shepherd boy under the guidance of the mastermind Chanakya united the subcontinent and defeated Seleucus. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1389,12 +2544,29 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "/images/meenakshi.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Follow the Holkar queen who rebuilt Somnath, Kashi Vishwanath, and established law and prosperity across central India. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1406,12 +2578,29 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "/images/hampi.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The reign of the great southern emperor, his military campaigns, and how he transformed Hampi into a city of diamonds. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1423,12 +2612,29 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/shivaji.jpg",
+      "imageUrl": "/images/chola_navy.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How the Ahom general defeated the mighty Mughal army on the Brahmaputra river using clever naval guerrilla tactics. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1440,12 +2646,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shivaji.jpg",
+      "imageUrl": "/images/warrior_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The story of the military general who fought 41 major battles and remained undefeated, expanding Maratha borders to Delhi. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1457,12 +2680,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/prithviraj_chauhan.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Relive the legendary archer king, his romance with Sanyogita, and his ultimate stand against invaders. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1474,12 +2714,29 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "/images/rani_chennamma.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The heroic rebellion of Kittur Chennamma who fought the East India Company against the Doctrine of Lapse, decades before 1857. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1491,12 +2748,29 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "/images/ajanta.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover Harsha's transition from war to Buddhism, his patronage of Nalanda University, and his massive charity festivals. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1514,6 +2788,23 @@ export default {
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The Kolhapur king who introduced free education, reserved jobs for backward classes, and patronized Dr. B.R. Ambedkar. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1531,6 +2822,23 @@ export default {
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Follow the regency queen of Ahmednagar who stood in armor to defend her fort against the massive Mughal siege. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1542,12 +2850,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/chola.jpg",
+      "imageUrl": "/images/chola_navy.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Rajendra Chola carried Ganga water to his new capital and established an empire stretching across Indonesia and Malaysia. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1559,12 +2884,29 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/chola_navy.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How the King of Travancore defeated the Dutch East India Company navy in 1741, the first Asian power to defeat a European force. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1576,12 +2918,29 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/rani_chennamma.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The legend of Kittur's loyal general who continued the fight against the British using hit-and-run tactics until betrayed. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1593,12 +2952,29 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "/images/vikram_betal.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the reign of the Gupta king, his defeat of the Sakas, and his court of Navaratnas including Kalidasa. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1610,12 +2986,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "/images/lakshmibai.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The Sivaganga queen who formed the first human bomb to blow up British ammunition storehouses in 1780. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1627,12 +3020,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ellora_kailasa.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover the Western Chalukya ruler who stopped Harsha Vardhana's southern expansion at the banks of the Narmada river. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1650,6 +3060,23 @@ export default {
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The story of the Bundela chieftain who rose from a soldier to carve out an independent kingdom with the help of Shivaji. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1667,6 +3094,23 @@ export default {
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Follow the Gondwana queen who preferred death to surrender, leading her army against the Mughal general Asaf Khan. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1678,12 +3122,29 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/maurya_dynasty.jpg",
+      "imageUrl": "/images/prithviraj_chauhan.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The tragic general who won 22 consecutive battles, crowned himself at Delhi, and fought the Second Battle of Panipat. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1695,12 +3156,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "/images/bhangarh_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The legend of the Mewar queen, her beauty, and the ultimate sacrifice of Jauhar to protect honor from invaders. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1712,12 +3190,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ajanta.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover the great Satavahana emperor who defeated the Western Kshatrapas and consolidated power across central India. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1735,6 +3230,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the mysteries of the sealed subterranean vault of Trivandrum, said to be guarded by a cobra curse and steel doors without locks. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1752,6 +3264,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover the Veerabhadra temple's floating column, which does not touch the ground, allowing paper to pass completely underneath. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1769,6 +3298,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The dark history of Bhangarh Fort in Rajasthan, cursed by a wizard, where entry is legally prohibited between sunset and sunrise. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1786,6 +3332,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Investigate the bizarre phenomenon of Kodinhi village in Kerala, home to over 400 pairs of twins with a twinning rate 6x the global average. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1797,12 +3360,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/mysterious_ruins.jpg",
+      "imageUrl": "/images/bhangarh_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The mystery of 84 Paliwal Brahmin villages that were abandoned overnight in the 19th century to escape a cruel minister's tax. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1820,6 +3400,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the unique Maharashtrian village where houses have no doors or locks, protected by an unwavering belief in Lord Shani. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1837,6 +3434,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Investigate the glacial lake in Uttarakhand containing hundreds of human skeletons dating back to the 9th century CE. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1854,6 +3468,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Uncover the secret of the 56 stone pillars that produce distinct musical notes when gently tapped, carved from single granite blocks. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1871,6 +3502,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How a solid iron column erected by Chandragupta II has stood exposed to rain and sun for centuries without rusting. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1882,12 +3530,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ramayana_science.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover the volcanic, low-density pumice stones found at the tip of Tamil Nadu that float on water, linked to the epic Ramayana. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1899,12 +3564,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/fourteen_lokas_cosmos.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The mystery of the mountain road in Ladakh where vehicles appear to roll uphill when placed in neutral gear. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1916,12 +3598,29 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ellora_kailasa.jpg",
+      "imageUrl": "/images/maharana_pratap.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover the massive 36km perimeter wall of Kumbhalgarh Fort in Rajasthan, wide enough for eight horses to gallop abreast. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1933,12 +3632,29 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/taj_cover.jpg",
+      "imageUrl": "/images/meenakshi.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How the massive marble dome of Taj Mahal relies on a subterranean wooden ebony grid that must remain moist from the Yamuna river. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1956,6 +3672,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the second-largest dome in the world, where a single whisper echoes eleven times across the massive hall. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1973,6 +3706,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The engineering feat of the Kailasa Temple, which was carved top-down from a basalt cliff, removing 200,000 tons of rock. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -1990,6 +3740,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How the Khasi tribes train the roots of rubber trees over decades to form living suspension bridges across roaring jungle streams. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2007,6 +3774,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Investigate the Assam village where local and migratory birds drop from the sky during late monsoon nights under specific weather conditions. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2024,6 +3808,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Uncover the legend of the 52-ton magnet atop the Sun Temple that supposedly threw off European ships' magnetic compasses. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2035,12 +3836,29 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/mysterious_ruins.jpg",
+      "imageUrl": "/images/bhangarh_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The haunting ruins of Rameswaram's twin town, swallowed by a massive tidal wave, leaving behind a church, railway station, and post office. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2052,12 +3870,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/fourteen_lokas_cosmos.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The strange blade-like snow formations (Nieves Penitentes) found in the high altitude passes, resembling white-robed monks. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2069,12 +3904,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ajanta.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover the oldest amphitheater in Chhattisgarh, featuring cave wall acoustics designed to amplify stage performances. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2086,12 +3938,29 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/patala_naga_kingdom.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The prehistoric long-snouted crocodile Chambal sanctuary, a species that survived from the age of dinosaurs. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2109,6 +3978,23 @@ export default {
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the complex medieval terracotta and stone pipeline grid that supplied running water to public baths and pools. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2120,12 +4006,29 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The science of the Maharashtra lake formed by a meteor strike, boasting unique alkaline microbes and surrounding temple ruins. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2137,12 +4040,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ashoka.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Investigate the ornate, spiral shell-like characters carved alongside Ashokan Brahmi inscriptions that remain undeciphered. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2154,12 +4074,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ellora_kailasa.jpg",
+      "imageUrl": "/images/patala_naga_kingdom.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The massive granite sculpture of a seven-hooded serpent shielding a Shiva Linga, carved in a single day by stone artisans. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2177,6 +4114,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "When the cosmic ocean churned and produced deadly poison that threatened all creation, Shiva drank it, staining his neck blue. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2194,6 +4148,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover how Ganesha tamed the giant celestial mouse Krauncha, turning him into his humble, obstacle-crossing mount. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2211,6 +4182,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "To protect the villagers of Vrindavan from Lord Indra's torrential storms, young Krishna lifted the massive Govardhan Hill on his little finger. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2228,6 +4216,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The story of Queen Satyabhama trying to weigh Lord Krishna against gold, only to realize that a single leaf of devotion weighs more than all wealth. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2245,6 +4250,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Listen to the legend of Balarama using his divine ploughshare to drag the Yamuna river closer to the forests of Vrindavan. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2262,6 +4284,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Follow the dramatic prophecy fulfilling prophecy where Krishna defeats his evil uncle Kansa to restore justice and free his parents. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2279,6 +4318,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The romantic legend of Shakuntala, Sage Vishwamitra's daughter, her marriage to King Dushyanta, and the lost signet ring curse. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2290,12 +4346,29 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/shabari_rama.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The heart-touching Ramayana episode of the elderly tribal woman Shabari who tasted every berry to ensure she only fed sweet ones to Rama. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2313,6 +4386,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How a tiny squirrel helped build the bridge to Lanka by rolling in sand, earning three permanent stripes from Rama's caress. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2324,12 +4414,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "/images/kartikeya_murugan.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the magical birth of Lord Shiva's warrior son, created from sparks of his third eye to lead the army of the gods. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2341,12 +4448,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/kartikeya_murugan.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How the young commander Kartikeya fulfilled the prophecy by destroying the invincible demon Tarakasura using his divine spear. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2364,6 +4488,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The legendary tests of King Harishchandra, who gave up his throne, family, and wealth to remain absolute to the vow of truth. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2381,6 +4522,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The legend of the tribal hunter Kannappa, who plucked out his own eyes to stop the tears of blood on a Shiva Linga. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2392,12 +4550,29 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/vishwaroopam_darshan.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Step into the battlefield of Kurukshetra where Krishna reveals his cosmic, all-encompassing form to Arjuna, containing the entire universe. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2415,6 +4590,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Lord Krishna and Satyabhama defeated the tyrant Narakasura, liberating thousands of captive women and celebrating with oil lamps. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2426,12 +4618,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/venkateswara_tirumala.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Discover the descent of Lord Vishnu as Venkateswara, his marriage to Padmavathi, and the cosmic loan taken from Kubera. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2443,12 +4652,29 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/adi_shankara.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The story of the young boy bent in eight places who defeated the wisest scholars in King Janaka's court with his absolute knowledge. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2460,12 +4686,29 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/hiranyakashipu_narasimha.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The dramatic climax where Vishnu emerges as the half-man, half-lion Narasimha at twilight to destroy the demon king. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2483,6 +4726,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Lord Vishnu in his fish avatar swam the deep deluge waters to recover the stolen Vedas from the demon Hayagriva. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2494,12 +4754,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/shiva_neelkanth.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Explore the deep spiritual meaning behind Shiva holding the blue ocean poison in his throat to save the mortal cosmos. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2511,12 +4788,29 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ganesha_mouse.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Ganesha taught the wealthy god Kubera humility by eating all his food, gold plates, and still remaining hungry. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2534,6 +4828,23 @@ export default {
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The Mahabharata story of Bhima replacing a villager to deliver a cartload of food to the demon Bakasura, defeating him in combat. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2545,12 +4856,29 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/meenakshi.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Follow the life of Meerabai, who gave up her royal status to sing ecstatic bhajans for Giridhara Gopal, surviving poison cups. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2562,12 +4890,29 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "/images/sudama_krishna.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How a small bag of beaten rice offered with pure love by a poor classmate earned him grand castles and abundance. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2579,12 +4924,29 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ravana_lanka.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "The epic final arrow of Rama that pierced the navel of the ten-headed demon king, representing the victory of good over ego. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2602,6 +4964,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A hungry jackal finds a loud noise in the forest, only to discover it was a dry tree branch hitting an old abandoned war drum. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2619,6 +4998,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Three fish react differently to a fisherman's nets—one plans ahead, one acts fast, while the lazy one waits and gets caught. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2636,6 +5032,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A curious monkey pulls a half-split wedge out of a log at a carpenter's yard, trapping himself in the process. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2653,6 +5066,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Akbar asks what the sweetest thing on earth is, and Birbal proves it is not honey or sugar, but the sweet words of a child. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2670,6 +5100,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Birbal sits in the bazaar mending shoes and compiles a list of the blind, showing Akbar that even the king joins the list. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2687,6 +5134,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Birbal used a clever trick about a magical stake to rescue a greedy disciple from an illogical king's execution. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2704,6 +5168,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "A courtier claims he can find a servant wiser than Birbal. Birbal tests the courtier using a simple brass plate. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2721,6 +5202,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Tenali Raman calculates the weight of the royal elephant using a boat and water displacement, saving the state funds. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2738,6 +5236,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Tenali creates mock miniature gold wells in the royal garden to expose corrupt officers who built fake public wells. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2755,6 +5270,23 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "How Tenali exposed a court artist who painted normal forest peahens red and sold them to King Krishnadevaraya. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
@@ -2772,763 +5304,1572 @@ export default {
       "category": "Kids Stories",
       "personas": [
         "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Prologue",
+          "text": "Tenali promises greedy palace guards a share of his reward from the king, resulting in them receiving lashes. Passed down through generations, this chronicle captures the essence of Indian art, science, and consciousness.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: Astronomical & Philosophical Marvels",
+          "text": "Detailed archaeological telemetry reveals deep structural and mathematical alignments. The layout and iconography represent a high level of ancient engineering and deep spiritual devotion.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: The Living Legacy",
+          "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_37",
-      "title": "The Legend of God Series Chronicle 37",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "10:00",
+      "title": "Kumbhakarna's Slumber & The Awakening of Lanka",
+      "tagline": "The Giant Brother of Ravana and the Six-Month Sleep",
+      "description": "The cosmic boon of Brahma turned into eternal slumber, and the thundering drums used by Ravana's army to awaken the colossal titan Kumbhakarna in defense of Golden Lanka.",
+      "duration": "14:20",
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ravana_lanka.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
-        "Spiritual Seekers"
+        "Mythology Lovers",
+        "Epic Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Boon of Nidravat",
+          "text": "When Kumbhakarna performed penance, Indra feared his strength and prayed to Devi Saraswati to twist his tongue. Instead of asking for 'Indrasana' (throne of Indra), he uttered 'Nidrasana' (eternal sleep), sealing his fate to wake only one day every six months.",
+          "visual": "💤"
+        },
+        {
+          "title": "Chapter II: The Thundering Wake-Up",
+          "text": "As Rama's Vanara army laid siege to Lanka, thousands of war elephants trampled across Kumbhakarna's chest, pots of boiling ghee were poured into his ears, and conches blew until the mountain-sized giant finally opened his glowing eyes.",
+          "visual": "🐘"
+        },
+        {
+          "title": "Chapter III: The Warrior's Dharma",
+          "text": "Though Kumbhakarna warned Ravana that fighting Rama was against Dharma, his unyielding fraternal loyalty led him to the battlefield, fighting honorably until attaining liberation at Rama's hands.",
+          "visual": "🏹"
+        }
       ]
     },
     {
       "id": "eb_extra_38",
-      "title": "The Legend of Kids Stories Chronicle 38",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "11:00",
+      "title": "Panchatantra: The Brahmin and the Three Rogues",
+      "tagline": "Perception vs Reality in the Forest of Deceit",
+      "description": "How three cunning rogues convinced a learned Brahmin that the pure sacrificial goat on his shoulders was actually an unclean dog, teaching the timeless lesson of independent critical thinking.",
+      "duration": "08:45",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/panchatantra_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
-      "narrator": "Voice of Philosophy: Acharya",
+      "narrator": "Panchatantra Storyteller",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "Young Seekers",
+        "Parents"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Sacred Gift",
+          "text": "A devout Brahmin named Mitra received a plump goat as a gift from a wealthy patron and happily carried it on his shoulders through the forest road toward his home.",
+          "visual": "🐐"
+        },
+        {
+          "title": "Chapter II: The Three Rogues' Plan",
+          "text": "Three thieves stationed themselves at separate turns in the road. Each approached the Brahmin in turn, feigning shock: 'O Panditji, why do you carry a dead dog upon your shoulders?'",
+          "visual": "🎭"
+        },
+        {
+          "title": "Chapter III: The Power of Suggestion",
+          "text": "Hearing the same falsehood repeated with utter confidence by three different strangers, the Brahmin doubted his own eyes and dropped the goat, allowing the rogues to feast.",
+          "visual": "💡"
+        }
       ]
     },
     {
       "id": "eb_extra_39",
-      "title": "The Legend of Audiobooks & Legends Chronicle 39",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "12:00",
+      "title": "Raja Raja Chola I: Architect of Brihadeeswara",
+      "tagline": "The Grand Chola Emperor and the 80-Ton Granite Monolith",
+      "description": "The vision of Great King Raja Raja Chola in Thanjavur, constructing the towering Rajarajeshwaram temple without binding cement, crowned by an 80-ton single granite dome atop a 216-foot vimana.",
+      "duration": "18:30",
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/chola.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
-      "narrator": "Voice of History: Vikram",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Architecture Lovers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Vision at Thanjavur",
+          "text": "Ascending the Chola throne in 985 CE, Arulmozhivarman unified South India and commissioned a temple that would endure earthquakes and millennia as an architectural testimony to Lord Shiva.",
+          "visual": "👑"
+        },
+        {
+          "title": "Chapter II: The 6-Kilometer Ramp",
+          "text": "To place the massive 80-ton Kumbam stone on the pinnacle, Chola engineers constructed a gentle 6-kilometer earthen ramp, pulled by hundreds of war elephants and master stonemasons.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Shadowless Marvel",
+          "text": "Engineered with interlocking granite blocks and precise acoustic sanctums, the Brihadeeswara temple stands today as a UNESCO World Heritage pinnacle of Dravidian genius.",
+          "visual": "⚜️"
+        }
       ]
     },
     {
       "id": "eb_extra_40",
-      "title": "The Legend of Unknown Knowledge Chronicle 40",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "13:00",
+      "title": "Surya Siddhanta: Lost Calculation of Earth's Diameter",
+      "tagline": "Ancient Indian Astronomical Treatises and Heliocentric Insights",
+      "description": "How ancient Indian astronomers calculated the circumference of Earth within 1% of modern satellite measurements and modeled planetary orbital speeds thousands of years before the telescope.",
+      "duration": "16:10",
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "narrator": "Voice of Wisdom: Aditi",
+      "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "Science Enthusiasts",
+        "Astronomy Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Solar Revelation",
+          "text": "The Surya Siddhanta records divine astronomical knowledge dictated by the Sun God's emissary to Asura Maya at the end of the Satya Yuga, establishing sidereal time calculations.",
+          "visual": "☀️"
+        },
+        {
+          "title": "Chapter II: The Trigonometry of Yojanas",
+          "text": "Using shadow sticks (Shanku) and equinox geometry, ancient sages measured Earth's diameter as 1,600 Yojanas (approx. 12,800 km), astonishingly close to modern geodesy's 12,742 km.",
+          "visual": "📐"
+        },
+        {
+          "title": "Chapter III: The Speed of Light Hymn",
+          "text": "Sayana's 14th-century commentary on Rigveda 1.50.4 calculates light traveling 2,202 Yojanas in half a Nimisha, translating precisely to ~300,000 km per second.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_41",
-      "title": "The Legend of God Series Chronicle 41",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "14:00",
+      "title": "The Mystery of Lord Jagannath: The Wooden Deities of Puri",
+      "tagline": "The Divine Heart of Brahma and the Sacred Neem Trees",
+      "description": "The esoteric traditions of Puri Jagannath temple, the unexplainable flag fluttering against the wind, the shadowless dome, and the secret Nabakalebara ritual of transferring the sacred soul substance.",
+      "duration": "15:40",
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/vishnu.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
-      "narrator": "Voice of Tales: Grandma",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
-        "Spiritual Seekers"
+        "Spiritual Seekers",
+        "Temple Explorers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: King Indradyumna & Daru Brahma",
+          "text": "Lord Jagannath manifested as a fragrant divine log washed ashore on the Puri coast, carved by the celestial architect Vishwakarma under strict conditions of privacy.",
+          "visual": "🪵"
+        },
+        {
+          "title": "Chapter II: Temple Aero-Acoustic Miracles",
+          "text": "Upon stepping inside the Singhadwara gate, the deafening roar of the ocean waves vanishes completely, and no birds or aircraft ever fly above the sacred Sudarshana Chakra.",
+          "visual": "🌊"
+        },
+        {
+          "title": "Chapter III: The Secret 'Brahma Padartha'",
+          "text": "During Nabakalebara every 12-19 years, blindfolded priests with cloth-wrapped hands transfer the divine pulsing relic from the old wooden idol into the newly carved Daru deity.",
+          "visual": "🪔"
+        }
       ]
     },
     {
       "id": "eb_extra_42",
-      "title": "The Legend of Kids Stories Chronicle 42",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "15:00",
+      "title": "Akbar & Birbal: The Secret Ring in the Straw",
+      "tagline": "Courtly Intellect and Psychological Deduction",
+      "description": "When Emperor Akbar misplaced his precious gemstone ring, Birbal used clever psychology to make the guilty courtier reveal himself in front of the entire imperial court.",
+      "duration": "07:50",
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/birbal.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
-      "narrator": "Voice of Heritage: Mahesh",
+      "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "Young Seekers",
+        "Parents"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Emperor's Distress",
+          "text": "Emperor Akbar lost an invaluable emerald ring inside his private chambers and asked Birbal to identify the thief among his eight closest personal attendants.",
+          "visual": "💍"
+        },
+        {
+          "title": "Chapter II: Birbal's Trick",
+          "text": "Birbal declared: 'The emperor's ring is safe in the beard of the thief!' The guilty courtier immediately reached up and touched his beard, betraying his guilt in an instant.",
+          "visual": "🧙‍♂️"
+        },
+        {
+          "title": "Chapter III: Justice at Court",
+          "text": "Akbar laughed with joy at Birbal's instant psychological trap, rewarding his minister and recovering the royal gem.",
+          "visual": "⚖️"
+        }
       ]
     },
     {
       "id": "eb_extra_43",
-      "title": "The Legend of Audiobooks & Legends Chronicle 43",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "16:00",
+      "title": "King Vikramaditya & The Nine Gems (Navaratnas)",
+      "tagline": "The Golden Court of Ujjain and the 9 Immortals of Scholarship",
+      "description": "The glorious reign of Maharaja Vikramaditya of Ujjain, whose royal assembly brought together Kalidasa, Varahamihira, Dhanvantari, Amarasimha, and five other intellectual titans.",
+      "duration": "17:15",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/vikram_betal.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "narrator": "Voice of Philosophy: Acharya",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Scholars"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Throne of Thirty-Two Angels",
+          "text": "The legendary Simhasana Battisi granted judicial impartiality and supreme wisdom to King Vikramaditya, creating the Vikrama Samvat calendar era in 57 BCE.",
+          "visual": "👑"
+        },
+        {
+          "title": "Chapter II: The Nine Gems of Ujjain",
+          "text": "From Kalidasa's timeless poetry (Meghaduta) to Varahamihira's astronomy and Dhanvantari's medicine, the court patronized unmatched arts and sciences.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter III: The Legacy of Righteous Rule",
+          "text": "Vikramaditya's standard of justice, courage, and nightly disguised walks among his citizens made him the benchmark of ideal Indian statecraft.",
+          "visual": "🛡️"
+        }
       ]
     },
     {
       "id": "eb_extra_44",
-      "title": "The Legend of Unknown Knowledge Chronicle 44",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "17:00",
+      "title": "Sushruta Samhita: Ancient Pioneer of Plastic Surgery",
+      "tagline": "The Father of Surgery along the Holy River Ganges in Kashi",
+      "description": "Written in Varanasi in 600 BCE, Maharishi Sushruta's surgical treatise detailed 121 surgical instruments, cataract surgery, rhinoplasty skin flaps, and bone fracture alignments.",
+      "duration": "15:00",
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/kundalini_chakras.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
-      "narrator": "Voice of History: Vikram",
+      "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "Science Enthusiasts",
+        "Medical Historians"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The School of Shalya Chikitsa",
+          "text": "At the medical university on the banks of the Ganga, Sushruta trained surgeons to practice incisions on watermelons, cucumbers, and animal skins before operating on humans.",
+          "visual": "🏥"
+        },
+        {
+          "title": "Chapter II: The Forehead Flap Rhinoplasty",
+          "text": "Sushruta's precise method of taking a pedicled flap of skin from the forehead to reconstruct amputated noses is recognized globally as the foundation of modern plastic surgery.",
+          "visual": "🩺"
+        },
+        {
+          "title": "Chapter III: Sterilization and Anesthesia",
+          "text": "Using heated bronze instruments, wine fumes for sedation, and medicinal herbal compresses, ancient Indian surgery operated with clinical precision millennia ahead of Europe.",
+          "visual": "🌿"
+        }
       ]
     },
     {
       "id": "eb_extra_45",
-      "title": "The Legend of God Series Chronicle 45",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "18:00",
+      "title": "Devi Annapurna: The Divine Feast of Kashi",
+      "tagline": "When Lord Shiva Begged Alms from the Mother of Nourishment",
+      "description": "Why the Supreme Ascetic Lord Shiva holds a begging bowl in Varanasi, receiving food directly from Devi Annapurna to prove that material nourishment and spiritual liberation must coexist.",
+      "duration": "13:40",
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/shiva_parvati_kalyanam.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
-      "narrator": "Voice of Wisdom: Aditi",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
-        "Spiritual Seekers"
+        "Spiritual Seekers",
+        "Devotees"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Maya & The Cosmic Famine",
+          "text": "When Shiva playfully remarked that food was mere Maya (illusion), Parvati vanished from the universe. Crops withered, famine struck, and all living beings cried out in hunger.",
+          "visual": "🌾"
+        },
+        {
+          "title": "Chapter II: The Golden Kitchen of Varanasi",
+          "text": "Moved by compassion, Devi Parvati appeared in Kashi as Annapurna Bhavani, serving sweet nectar and rice that never depleted from Her golden vessel.",
+          "visual": "🍲"
+        },
+        {
+          "title": "Chapter III: Shiva as the Humble Mendicant",
+          "text": "Lord Shiva approached Her with His Kapala begging bowl, acknowledging that nourishment is the divine embodiment of motherly grace and sustaining energy.",
+          "visual": "🙏"
+        }
       ]
     },
     {
       "id": "eb_extra_46",
-      "title": "The Legend of Kids Stories Chronicle 46",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "19:00",
+      "title": "Tenali Raman: The Pot of Boiling Milk",
+      "tagline": "Royal Court Humor & Witty Reversals in Vijayanagara",
+      "description": "How Tenali Raman taught a pretentious visiting scholar a lesson in humility by presenting an ordinary stone wrapped in silk as an insurmountable Vedic riddle.",
+      "duration": "08:15",
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/tenali.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "narrator": "Voice of Tales: Grandma",
+      "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "Young Seekers",
+        "Parents"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Arrogant Pundit",
+          "text": "A proud scholar named Vidyasagara visited the court of Krishnadevaraya, challenging all royal ministers to decipher his supreme philosophical treatise.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Tenali's Mystery Bundle",
+          "text": "Tenali Raman appeared the next day holding a bundle tied with horse dung strings and dried grass, naming it 'Tila Kashta Mahisham Bandhana'. The frightened scholar fled overnight.",
+          "visual": "🐴"
+        },
+        {
+          "title": "Chapter III: Unraveling the Joke",
+          "text": "Tenali revealed to the laughing emperor that the name simply meant 'Sesame sticks tied with buffalo tethering rope'—proving common sense over pretentious jargon.",
+          "visual": "🤣"
+        }
       ]
     },
     {
       "id": "eb_extra_47",
-      "title": "The Legend of Audiobooks & Legends Chronicle 47",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "20:00",
+      "title": "Acharya Chanakya: 10 Sutras of Royal Statecraft",
+      "tagline": "The Strategic Mind that Unified India under the Mauryas",
+      "description": "The geopolitical doctrines of Chanakya's Arthashastra: espionage networks, mandala diplomacy, economic fortification, and the unyielding vow to overthrow tyranny.",
+      "duration": "19:00",
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ashoka.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Leadership Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Vow at Pataliputra",
+          "text": "Humiliated by the corrupt Nanda emperor Dhanananda, Chanakya untied his Shikha topknot, swearing never to tie it until an ethical ruler was seated on India's throne.",
+          "visual": "🔥"
+        },
+        {
+          "title": "Chapter II: The Saptanga Theory of State",
+          "text": "Chanakya defined the state as an organic body of 7 limbs: King (Swami), Ministers (Amatya), Country (Janapada), Fort (Durga), Treasury (Kosha), Army (Bala), and Allies (Mitra).",
+          "visual": "🏰"
+        },
+        {
+          "title": "Chapter III: The Lion's Coronation",
+          "text": "Through tactical alliances and grassroots mobilization, Chanakya guided young Chandragupta to defeat Alexander's satraps and establish the Maurya Empire.",
+          "visual": "🦁"
+        }
       ]
     },
     {
       "id": "eb_extra_48",
-      "title": "The Legend of Unknown Knowledge Chronicle 48",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "21:00",
+      "title": "Aryabhata: Earth's Axial Rotation & Eclipse Geometry",
+      "tagline": "The Mathematical Masterpiece of Kusumpura in 499 CE",
+      "description": "How 23-year-old Aryabhata calculated Pi to 4 decimal places, proved that Earth rotates daily on its axis, and formulated the true shadow geometry of solar and lunar eclipses.",
+      "duration": "16:45",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
-      "narrator": "Voice of Philosophy: Acharya",
+      "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "Science Enthusiasts",
+        "Math Lovers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Aryabhatiya in Verse",
+          "text": "Writing in compact Sanskrit poetic meter, Aryabhata formulated table of sines, quadratic equations, and the value of Pi as 3.1416.",
+          "visual": "🔢"
+        },
+        {
+          "title": "Chapter II: The Boat Analogy of Planetary Motion",
+          "text": "'Just as a man in a boat moving forward sees stationary objects moving backwards, so people on Earth see fixed stars moving westward due to Earth's rotation.'",
+          "visual": "⛵"
+        },
+        {
+          "title": "Chapter III: Demystifying Eclipses",
+          "text": "Rejecting mythical dragon narratives, Aryabhata proved scientifically that lunar eclipses are caused by Earth's shadow falling upon the Moon.",
+          "visual": "🌘"
+        }
       ]
     },
     {
       "id": "eb_extra_49",
-      "title": "The Legend of God Series Chronicle 49",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "10:00",
+      "title": "The Mystery of Bhasmasura & The Illusion Dance of Mohini",
+      "tagline": "The Peril of Uncontrolled Power and Divine Aesthetic Balance",
+      "description": "The Asura who obtained the boon to turn anyone to ash by placing his hand on their head, and Lord Vishnu's enchanting dance of cosmic justice as Mohini.",
+      "duration": "14:10",
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/bhasmasura_mohini.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "narrator": "Voice of History: Vikram",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
+        "Mythology Lovers",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Ash Boon of Shiva",
+          "text": "Pleased by thousand-year penance, Lord Shiva granted Bhasmasura the terrifying power: whoever's head his palm touched would immediately burn to ashes.",
+          "visual": "🔥"
+        },
+        {
+          "title": "Chapter II: The Treacherous Pursuit",
+          "text": "Intoxicated with power, Bhasmasura tried to test the boon on Lord Shiva Himself, chasing the Mahadeva across Himalayan peaks.",
+          "visual": "⚡"
+        },
+        {
+          "title": "Chapter III: The Mirroring Dance of Mohini",
+          "text": "Lord Vishnu manifested as the enchanting dancer Mohini, leading Bhasmasura through intricate Bharatanatyam mudras until he placed his own hand on his head.",
+          "visual": "💃"
+        }
       ]
     },
     {
       "id": "eb_extra_50",
-      "title": "The Legend of Kids Stories Chronicle 50",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "11:00",
+      "title": "Jataka Tales: The Brave Little Partridge and the Elephant",
+      "tagline": "Respect for Seniority and Mutual Harmony in the Forest",
+      "description": "The Bodhisattva story of an elephant, a monkey, and a partridge who determined who was the eldest by recalling who first saw the giant Banyan tree as a tiny seed.",
+      "duration": "08:20",
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/jataka_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
-      "narrator": "Voice of Wisdom: Aditi",
+      "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "Young Seekers",
+        "Parents"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Dispute under the Banyan",
+          "text": "Three forest friends wanted to live in orderly harmony and sought to determine who held the wisdom of greatest age among them.",
+          "visual": "🌳"
+        },
+        {
+          "title": "Chapter II: The Memory of the Seed",
+          "text": "The elephant said he brushed the top branches when young; the monkey plucked its twigs; but the partridge had eaten the fruit and dropped the very seed that birthed the tree.",
+          "visual": "🕊️"
+        },
+        {
+          "title": "Chapter III: Forest of Peace",
+          "text": "Acknowledging the partridge as the eldest, the monkey carried the bird, and the elephant carried both, setting an example of community reverence.",
+          "visual": "🤝"
+        }
       ]
     },
     {
       "id": "eb_extra_51",
-      "title": "The Legend of Audiobooks & Legends Chronicle 51",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "12:00",
+      "title": "Adi Shankaracharya: The Four Amnaya Mathas",
+      "tagline": "Walking 2,000 Kilometers Barefoot to Rejuvenate Advaita Vedanta",
+      "description": "How an 8th-century monk from Kalady, Kerala, unified Indian spiritual thought, composed profound commentaries on the Upanishads, and founded the four quadrant monastic pillars.",
+      "duration": "20:00",
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/adi_shankara.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
-      "narrator": "Voice of Tales: Grandma",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "Spiritual Seekers",
+        "Philosophy Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Prodigy of Kalady",
+          "text": "Mastering all four Vedas by age eight, Shankara took Sanyasa and traveled across India debating leading philosophers in the spirit of open Shastrartha.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: The Four Cardinal Mathas",
+          "text": "To protect Sanatana Dharma, he established Sringeri in the South (Yajur Veda), Puri in the East (Rig Veda), Dwaraka in the West (Sama Veda), and Joshimath in the North (Atharva Veda).",
+          "visual": "🛕"
+        },
+        {
+          "title": "Chapter III: The Message of Non-Duality",
+          "text": "'Brahma Satyam Jagan Mithya, Jivo Brahmaiva Naaparah'—The supreme consciousness is the ultimate reality, and the individual soul is one with the divine.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_52",
-      "title": "The Legend of Unknown Knowledge Chronicle 52",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "13:00",
+      "title": "Belur Chennakeshava: The Gravity-Defying Architecture",
+      "tagline": "Soapstone Friezes and Star-Shaped Sanctuaries of the Hoysalas",
+      "description": "Built over 103 years by King Vishnuvardhana, the star-shaped temple of Belur showcases intricate soapstone sculptures with floating pillar brackets and rotating ceiling discs.",
+      "duration": "15:30",
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ellora_kailasa.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "narrator": "Voice of Heritage: Mahesh",
+      "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
+        "Architecture Lovers",
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The 103-Year Masterpiece",
+          "text": "Commissioned in 1117 CE to commemorate victory over the Cholas, master sculptors Ruvari Jakanachari and Dasoja carved lace-like filigree into soft chloritic schist stone.",
+          "visual": "🪨"
+        },
+        {
+          "title": "Chapter II: The 42 Madanikas (Dancing Bracket Figures)",
+          "text": "Each dancing maiden captures micro-details: individual beads of sweat, musical instruments with tuned frets, and birds plucking pearls from hair ornaments.",
+          "visual": "💃"
+        },
+        {
+          "title": "Chapter III: The Gravity Pillar of Chennakeshava",
+          "text": "The monolithic Mahasthamba pillar in the courtyard stands balanced entirely under its own center of gravity, with space underneath where paper can pass freely.",
+          "visual": "⚖️"
+        }
       ]
     },
     {
       "id": "eb_extra_53",
-      "title": "The Legend of God Series Chronicle 53",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "14:00",
+      "title": "Devi Shakambhari: The Goddess of Sustenance & Forests",
+      "tagline": "The Cosmic Manifestation of Green Herbs and Rain",
+      "description": "When the demon Durgamasura caused a hundred-year drought, Devi appeared with thousands of compassionate eyes, shedding tears that filled empty lakes and sprouted healing vegetation.",
+      "duration": "13:00",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/mahishasura_battle.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
-      "narrator": "Voice of Philosophy: Acharya",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
+        "Mythology Lovers",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Drought of Durgamasura",
+          "text": "The demon stole the knowledge of Vedic mantras, causing sacred rituals to cease and triggering a catastrophic drought across all three worlds.",
+          "visual": "🏜️"
+        },
+        {
+          "title": "Chapter II: The Tears of Shatakshi",
+          "text": "Hearing the prayers of starving sages, the Divine Mother manifested as Shatakshi (She of Hundred Eyes), weeping tears of pure rain that revived rivers and oceans.",
+          "visual": "💧"
+        },
+        {
+          "title": "Chapter III: The Green Provider",
+          "text": "Bearing nourishing tubers, herbs, fruits, and grains in Her hands, She assumed the name Shakambhari and slew the demon, returning the Vedas to humanity.",
+          "visual": "🌿"
+        }
       ]
     },
     {
       "id": "eb_extra_54",
-      "title": "The Legend of Kids Stories Chronicle 54",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "15:00",
+      "title": "Panchatantra: The Crane and the Clever Crab",
+      "tagline": "Wisdom and Survival against Deceptive Greed",
+      "description": "An old crane pretended to help fish relocate during a dry season while secretly devouring them on a rock, until a sharp-witted crab uncovered the deceit.",
+      "duration": "07:30",
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/panchatantra_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
-      "narrator": "Voice of History: Vikram",
+      "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "Young Seekers",
+        "Parents"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The False Savior",
+          "text": "An aging crane unable to hunt fish shed fake tears near a drying pond, offering to fly the fish one by one to a pristine mountain lake.",
+          "visual": "🪶"
+        },
+        {
+          "title": "Chapter II: The Pile of Bones",
+          "text": "When the crab asked for a ride, he looked down from the sky and saw mountains of fish bones on a barren boulder.",
+          "visual": "💀"
+        },
+        {
+          "title": "Chapter III: The Crab's Defense",
+          "text": "Realizing the crane's treacherous plan, the clever crab clamped his strong pincers around the crane's neck, saving himself and returning to warn the pond.",
+          "visual": "🦀"
+        }
       ]
     },
     {
       "id": "eb_extra_55",
-      "title": "The Legend of Audiobooks & Legends Chronicle 55",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "16:00",
+      "title": "Kanaka Dasa & The Turning of Udupi Krishna",
+      "tagline": "The Devotion that Cracked Temple Walls and Turned the Deity",
+      "description": "When lower-caste warrior-poet Kanaka Dasa was barred entry into the Udupi Sri Krishna temple, his unyielding singing caused the stone wall to crack and Lord Krishna's idol to turn around 180 degrees.",
+      "duration": "16:20",
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/krishna_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "narrator": "Voice of Wisdom: Aditi",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
+        "Spiritual Seekers",
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Warrior Turned Mystic",
+          "text": "After surviving a battlefield wound through divine vision, Kuruba chieftain Thimmappa Nayaka renounced wealth to become the Haridasa saint Kanaka Dasa.",
+          "visual": "🪕"
+        },
+        {
+          "title": "Chapter II: The Barrier at Udupi",
+          "text": "Orthodox priests denied him entry into the sanctum. Kanaka stood outside behind the western wall, pouring his soul into devotional songs of divine love.",
+          "visual": "🧱"
+        },
+        {
+          "title": "Chapter III: Kanakana Kindi (The Window of Grace)",
+          "text": "Moved by genuine Bhakti, the stone wall cracked open, and the idol of Lord Krishna turned west to give His beloved devotee direct Darshan.",
+          "visual": "🪟"
+        }
       ]
     },
     {
       "id": "eb_extra_56",
-      "title": "The Legend of Unknown Knowledge Chronicle 56",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
+      "title": "Rani ki Vav: The Inverted Stepwell Cathedral of Patan",
+      "tagline": "7 Levels of Subterranean Sacred Art Honoring Water and Vishnu",
+      "description": "Commissioned by Queen Udayamati in 1063 CE, this UNESCO World Heritage subterranean stepwell features over 500 principal stone sculptures designed as an inverted temple honoring sacred groundwater.",
       "duration": "17:00",
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/vault_b_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
-      "narrator": "Voice of Tales: Grandma",
+      "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
+        "Architecture Lovers",
         "History Buffs"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: An Inverted Temple of Water",
+          "text": "Unlike conventional temples rising toward the sky, Rani ki Vav steps down 27 meters into Mother Earth, sanctifying water as the primordial life force.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter II: The 10 Avatars and Sheshashayi Vishnu",
+          "text": "At the deepest water level lies a magnificent sculpture of Lord Vishnu reclining on the thousand-hooded serpent Sheshanaga amidst cooling subterranean currents.",
+          "visual": "🐍"
+        },
+        {
+          "title": "Chapter III: Centuries Preserved Beneath Silt",
+          "text": "Buried under flood silt for centuries until excavated by the ASI in the 1980s, the intricate marble-like sandstone carvings remain in pristine condition.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_57",
-      "title": "The Legend of God Series Chronicle 57",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "18:00",
+      "title": "Matsya Avatar & The Cosmic Deluge (Pralaya)",
+      "tagline": "The Golden Fish Horn, King Satyavrata, and the Ark of Seeds",
+      "description": "The first cosmic incarnation of Lord Vishnu as a horned golden fish who saved the Seven Sages, the Vedas, and all plant seeds during the apocalyptic dissolution of the cosmos.",
+      "duration": "14:50",
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/dashavatara.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
-        "Spiritual Seekers"
+        "Mythology Lovers",
+        "Epic Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Tiny Fish in the Palm",
+          "text": "While performing morning oblations in river Kritamala, pious King Satyavrata scooped up a tiny glowing fish that pleaded for protection.",
+          "visual": "🐟"
+        },
+        {
+          "title": "Chapter II: The Colossal Golden Fish",
+          "text": "Outgrowing water jars, ponds, and rivers within hours, the divine fish filled the ocean, revealing Himself as Lord Vishnu and warning of the coming cosmic deluge.",
+          "visual": "🌊"
+        },
+        {
+          "title": "Chapter III: Sailing the Dissolving Yuga",
+          "text": "Fastening the giant vessel carrying the Saptarishis and the seeds of life to His dorsal horn using serpent Vasuki, Matsya navigated through raging cosmic waters to the dawn of a new cycle.",
+          "visual": "🚢"
+        }
       ]
     },
     {
       "id": "eb_extra_58",
-      "title": "The Legend of Kids Stories Chronicle 58",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "19:00",
+      "title": "Akbar & Birbal: The Footprints of the Elephant",
+      "tagline": "Statecraft and Quick-Witted Observation at Court",
+      "description": "When rivals tried to trap Birbal into declaring whose footprint could encompass the whole kingdom, Birbal's philosophical reply won the emperor's highest admiration.",
+      "duration": "08:00",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/birbal.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "narrator": "Voice of Philosophy: Acharya",
+      "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "Young Seekers",
+        "Parents"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Impossible Riddle",
+          "text": "Court rivals asked Akbar to challenge Birbal: 'Which single creature's footprint can fit the tracks of all other beasts in the jungle?'",
+          "visual": "🐾"
+        },
+        {
+          "title": "Chapter II: The Elephant's Foot",
+          "text": "Birbal calmly answered: 'The footprint of an elephant, Jahapanah, for within its broad stride all small animals find protection, just as your imperial justice protects all citizens.'",
+          "visual": "🐘"
+        },
+        {
+          "title": "Chapter III: Emperor's Praise",
+          "text": "Akbar smiled and presented Birbal with a royal diamond necklace, applauding how he turned an intellectual trap into courtly wisdom.",
+          "visual": "💎"
+        }
       ]
     },
     {
       "id": "eb_extra_59",
-      "title": "The Legend of Audiobooks & Legends Chronicle 59",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "20:00",
+      "title": "Purandara Dasa: The Father of Carnatic Music",
+      "tagline": "From Wealthy Miser to Wandering Mystic of Vijayanagara",
+      "description": "How Srinivasa Nayaka, the wealthiest gem merchant of Vijayanagara, gave away all his fortune to become Purandara Dasa, codifying the foundational Raga system (Mayamalavagowla) and composing 475,000 Keerthanas.",
+      "duration": "18:00",
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/dharma.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
-      "narrator": "Voice of History: Vikram",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "Music Lovers",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Diamond Nose-Ring Miracle",
+          "text": "When a poor Brahmin asked for alms for his son's sacred thread ceremony, Nayaka's pious wife secretly gave her diamond nose-ring, sparking a divine revelation in Nayaka's heart.",
+          "visual": "💍"
+        },
+        {
+          "title": "Chapter II: The Pedagogy of Carnatic Music",
+          "text": "He structured the entire syllabus of Indian classical music—from Sarali Varisai to Alankaras and Gitams—which remains the universal foundation taught across the globe today.",
+          "visual": "🎼"
+        },
+        {
+          "title": "Chapter III: 'Dasa Shrestha' (The Foremost Devotee)",
+          "text": "Honored by his Guru Vyasathirtha as the greatest among Haridasas, his songs blended profound Upanishadic philosophy with melodious Kannada poetry.",
+          "visual": "🪕"
+        }
       ]
     },
     {
       "id": "eb_extra_60",
-      "title": "The Legend of Unknown Knowledge Chronicle 60",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "21:00",
+      "title": "Chand Baori Abhaneri: 3,500 Step Symmetrical Geometry",
+      "tagline": "8th-Century Fractal Engineering in the Arid Heart of Rajasthan",
+      "description": "Built by King Chanda of the Nikumbha dynasty in the 8th century, Chand Baori is 13 stories deep, featuring 3,500 perfectly symmetrical narrow steps arranged in mesmerizing optical triangles.",
+      "duration": "14:40",
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/mysterious_ruins.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
-      "narrator": "Voice of Wisdom: Aditi",
+      "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "Architecture Lovers",
+        "Science Enthusiasts"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Geometrical Precision of Rajasthan",
+          "text": "Extending 30 meters into the desert ground, the stepwell acts as an architectural air cooler, keeping the bottom platform 5-6 degrees cooler than the surface.",
+          "visual": "📐"
+        },
+        {
+          "title": "Chapter II: Fractal Staircase Design",
+          "text": "The triangular interlocking staircases ensure that even during monsoon flooding, water can be safely reached from any angle without clogging or crowding.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Harshat Mata Temple Complex",
+          "text": "Adjacent to the well stands the carved shrine of Harshat Mata (Goddess of Joy), blessing the community with festive gatherings and water security.",
+          "visual": "🛕"
+        }
       ]
     },
     {
       "id": "eb_extra_61",
-      "title": "The Legend of God Series Chronicle 61",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "10:00",
+      "title": "Kurma Avatar & The Support of Mount Mandara",
+      "tagline": "The Giant Tortoise who Anchored the Ocean Churning",
+      "description": "When Mount Mandara sank into the ocean floor during the churning for Amrita, Lord Vishnu manifested as the cosmic tortoise Kurma, providing His indestructible carapace as the pivot.",
+      "duration": "13:50",
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/samudra_manthan.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "narrator": "Voice of Tales: Grandma",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
-        "Spiritual Seekers"
+        "Mythology Lovers",
+        "Epic Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Sinking Mountain",
+          "text": "As Devas and Asuras pulled serpent Vasuki to churn the Milk Ocean, the massive golden mountain Mandara lacked a solid foundation and began sinking into the cosmic seabed.",
+          "visual": "⛰️"
+        },
+        {
+          "title": "Chapter II: The Cosmic Shell of Kurma",
+          "text": "Assuming the colossal form of a tortoise spanning thousands of Yojanas, Lord Vishnu swam beneath the mountain and supported it effortlessly on His shell.",
+          "visual": "🐢"
+        },
+        {
+          "title": "Chapter III: The Emergence of Treasures",
+          "text": "With the churning stabilized, fourteen celestial treasures emerged from the ocean depths, including Kamadhenu, Kalpavriksha, Goddess Lakshmi, and the nectar of immortality.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_62",
-      "title": "The Legend of Kids Stories Chronicle 62",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "11:00",
+      "title": "Tenali Raman: The Cat That Feared Milk",
+      "tagline": "Outsmarting Bureaucratic Royal Mandates with Wit",
+      "description": "When King Krishnadevaraya ordered every house to feed a cat on royal cow's milk to catch rats, Tenali Raman found a clever way to keep the milk for his own family.",
+      "duration": "08:10",
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/tenali.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
-      "narrator": "Voice of Heritage: Mahesh",
+      "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "Young Seekers",
+        "Parents"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Royal Cat Decree",
+          "text": "To control rodent menace, the king gave each courtier a cat and a cow with instructions to feed the cat warm milk daily.",
+          "visual": "🐱"
+        },
+        {
+          "title": "Chapter II: The Scalding Lesson",
+          "text": "On day one, Tenali gave his cat boiling hot milk in a bronze bowl. The cat burned its tongue and refused to go near milk ever again.",
+          "visual": "🥛"
+        },
+        {
+          "title": "Chapter III: The Court Demonstration",
+          "text": "When inspected, Tenali's cat ran away from milk before the shocked emperor, prompting Tenali to explain how useless forced mandates are compared to practical thinking.",
+          "visual": "🤣"
+        }
       ]
     },
     {
       "id": "eb_extra_63",
-      "title": "The Legend of Audiobooks & Legends Chronicle 63",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "12:00",
+      "title": "Sant Kabir Das: The Mystic of Sacred Loom and Harmony",
+      "tagline": "Timeless Couplets of Self-Realization on the Ghats of Varanasi",
+      "description": "The life and profound Bijak poetry of 15th-century weaver-saint Kabir, who challenged religious dogma and taught that the divine dwells within the heart of every living being.",
+      "duration": "17:40",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/dharma.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
-      "narrator": "Voice of Philosophy: Acharya",
+      "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "Spiritual Seekers",
+        "Poetry Lovers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Weaver of Panchganga Ghat",
+          "text": "Initiated by Swami Ramananda on the steps of Kashi, Kabir wove threads of cotton while singing couplets of universal oneness and moral clarity.",
+          "visual": "🧵"
+        },
+        {
+          "title": "Chapter II: The Bijak and Dohas",
+          "text": "'Bura Jo Dekhan Main Chala, Bura Na Milya Koy / Jo Dil Khoja Aapna, Mujhse Bura Na Koy'—When I searched for evil in the world, I found none, but looking within my own mind, I saw my own faults.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter III: The Miraculous Departure at Maghar",
+          "text": "Defying superstition that dying in Maghar brought rebirth as a donkey, Kabir chose Maghar. Upon his passing, both Hindu and Muslim followers found only sweet fragrant flowers beneath his shroud.",
+          "visual": "🌸"
+        }
       ]
     },
     {
       "id": "eb_extra_64",
-      "title": "The Legend of Unknown Knowledge Chronicle 64",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "13:00",
+      "title": "Yaganti Temple: The Mystery of the Growing Nandi Bull",
+      "tagline": "The Geological Marvel of Sri Uma Maheshwara in Andhra Pradesh",
+      "description": "The stone Nandi statue at Yaganti temple carved from silica-rich rock that has continuously expanded in size over centuries, verified by geological and archaeological surveys.",
+      "duration": "15:20",
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ellora_kailasa.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
-      "narrator": "Voice of History: Vikram",
+      "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "Temple Explorers",
+        "Science Enthusiasts"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Agastya's Penance at Yaganti",
+          "text": "Constructed during the Vijayanagara Empire by King Harihara Bukka, the cave temple is nestled amidst dramatic limestone cliffs and fresh perennial springs.",
+          "visual": "🛕"
+        },
+        {
+          "title": "Chapter II: The Expanding Monolithic Nandi",
+          "text": "Archaeological records confirm that pillars surrounding the Nandi had to be relocated because the stone bull has grown by over an inch every two decades.",
+          "visual": "🐂"
+        },
+        {
+          "title": "Chapter III: The Curse of the Crows",
+          "text": "Due to Sage Agastya's ancient vow, no crows ever enter the Yaganti temple valley, preserving absolute silence and sanctity in the sanctum.",
+          "visual": "🕊️"
+        }
       ]
     },
     {
       "id": "eb_extra_65",
-      "title": "The Legend of God Series Chronicle 65",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "title": "Varaha Avatar: Rescuing Mother Earth from the Ocean Depths",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Varaha Avatar: Rescuing Mother Earth from the Ocean Depths.",
       "duration": "14:00",
-      "rating": "9.9 ★",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/dashavatara.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
+        "History Buffs",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Varaha Avatar: Rescuing Mother Earth from the Ocean Depths embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_66",
-      "title": "The Legend of Kids Stories Chronicle 66",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "15:00",
-      "rating": "9.5 ★",
+      "title": "Jataka Tales: The King of the Banyan Deer",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Jataka Tales: The King of the Banyan Deer.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/jataka_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Jataka Tales: The King of the Banyan Deer embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_67",
-      "title": "The Legend of Audiobooks & Legends Chronicle 67",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "16:00",
-      "rating": "9.6 ★",
+      "title": "Sant Dnyaneshwar & The Wall That Walked at Alandi",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Sant Dnyaneshwar & The Wall That Walked at Alandi.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/adi_shankara.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Sant Dnyaneshwar & The Wall That Walked at Alandi embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_68",
-      "title": "The Legend of Unknown Knowledge Chronicle 68",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "17:00",
+      "title": "Unakoti Rock Carvings: One Less Than a Crore Shiva Sculptures",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Unakoti Rock Carvings: One Less Than a Crore Shiva Sculptures.",
+      "duration": "14:00",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/mysterious_ruins.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Unakoti Rock Carvings: One Less Than a Crore Shiva Sculptures embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_69",
-      "title": "The Legend of God Series Chronicle 69",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "18:00",
-      "rating": "9.8 ★",
+      "title": "Vamana Avatar: The Three Cosmic Strides over King Bali",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Vamana Avatar: The Three Cosmic Strides over King Bali.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/patala_naga_kingdom.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
+        "History Buffs",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Vamana Avatar: The Three Cosmic Strides over King Bali embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_70",
-      "title": "The Legend of Kids Stories Chronicle 70",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "19:00",
-      "rating": "9.9 ★",
+      "title": "Panchatantra: The Blue Jackal's Midnight Howl",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Panchatantra: The Blue Jackal's Midnight Howl.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/panchatantra_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Panchatantra: The Blue Jackal's Midnight Howl embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_71",
-      "title": "The Legend of Audiobooks & Legends Chronicle 71",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "20:00",
-      "rating": "9.5 ★",
+      "title": "Sant Tukaram: The Varkari Movement & Pandharpur Vitthala",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Sant Tukaram: The Varkari Movement & Pandharpur Vitthala.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/vishnu.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Sant Tukaram: The Varkari Movement & Pandharpur Vitthala embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_72",
-      "title": "The Legend of Unknown Knowledge Chronicle 72",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "21:00",
-      "rating": "9.6 ★",
+      "title": "Bhimbetka Caves: 30,000-Year-Old Paleolithic Rock Art",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Bhimbetka Caves: 30,000-Year-Old Paleolithic Rock Art.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ajanta.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Bhimbetka Caves: 30,000-Year-Old Paleolithic Rock Art embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_73",
-      "title": "The Legend of God Series Chronicle 73",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "10:00",
+      "title": "Parashurama: The Axe of Justice & Reclaiming Coastal Kerala",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Parashurama: The Axe of Justice & Reclaiming Coastal Kerala.",
+      "duration": "14:00",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/dashavatara.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
+        "History Buffs",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Parashurama: The Axe of Justice & Reclaiming Coastal Kerala embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_74",
-      "title": "The Legend of Kids Stories Chronicle 74",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "11:00",
-      "rating": "9.8 ★",
+      "title": "Akbar & Birbal: The Painting of the Gentle Breeze",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Akbar & Birbal: The Painting of the Gentle Breeze.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/birbal.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Akbar & Birbal: The Painting of the Gentle Breeze embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_75",
-      "title": "The Legend of Audiobooks & Legends Chronicle 75",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "12:00",
-      "rating": "9.9 ★",
+      "title": "Basaveshwara & Anubhava Mantapa: The 12th Century Parliament",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Basaveshwara & Anubhava Mantapa: The 12th Century Parliament.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/dharma.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Basaveshwara & Anubhava Mantapa: The 12th Century Parliament embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_76",
-      "title": "The Legend of Unknown Knowledge Chronicle 76",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "13:00",
-      "rating": "9.5 ★",
+      "title": "Dholavira: 5,000-Year-Old Harappan Water Engineering",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Dholavira: 5,000-Year-Old Harappan Water Engineering.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/mysterious_ruins.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Dholavira: 5,000-Year-Old Harappan Water Engineering embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_77",
-      "title": "The Legend of God Series Chronicle 77",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "title": "Balarama: The Wielder of the Sacred Plough & Yamuna's Path",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Balarama: The Wielder of the Sacred Plough & Yamuna's Path.",
       "duration": "14:00",
-      "rating": "9.6 ★",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/krishna_govardhan.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
+        "History Buffs",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Balarama: The Wielder of the Sacred Plough & Yamuna's Path embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_78",
-      "title": "The Legend of Kids Stories Chronicle 78",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "15:00",
+      "title": "Tenali Raman: The Shadow of the Royal Horse",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Tenali Raman: The Shadow of the Royal Horse.",
+      "duration": "14:00",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/tenali.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Tenali Raman: The Shadow of the Royal Horse embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_79",
-      "title": "The Legend of Audiobooks & Legends Chronicle 79",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "16:00",
-      "rating": "9.8 ★",
+      "title": "Maharishi Patanjali: 196 Yoga Sutras of Mind Mastery",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Maharishi Patanjali: 196 Yoga Sutras of Mind Mastery.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/kundalini_chakras.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Maharishi Patanjali: 196 Yoga Sutras of Mind Mastery embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_80",
-      "title": "The Legend of Unknown Knowledge Chronicle 80",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "17:00",
-      "rating": "9.9 ★",
+      "title": "Lothal: World's Oldest Engineered Tidal Dockyard (2400 BCE)",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Lothal: World's Oldest Engineered Tidal Dockyard (2400 BCE).",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/chola_navy.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Lothal: World's Oldest Engineered Tidal Dockyard (2400 BCE) embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_81",
-      "title": "The Legend of God Series Chronicle 81",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "18:00",
-      "rating": "9.5 ★",
+      "title": "Kalki Avatar: The Prophesied Cleanser of the Dark Age",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Kalki Avatar: The Prophesied Cleanser of the Dark Age.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/warrior_cover.jpg",
@@ -3536,392 +6877,720 @@ export default {
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
+        "History Buffs",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Kalki Avatar: The Prophesied Cleanser of the Dark Age embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_82",
-      "title": "The Legend of Kids Stories Chronicle 82",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "19:00",
-      "rating": "9.6 ★",
+      "title": "Jataka Tales: The Clever Woodcutter & The Forest King",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Jataka Tales: The Clever Woodcutter & The Forest King.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/jataka_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Jataka Tales: The Clever Woodcutter & The Forest King embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_83",
-      "title": "The Legend of Audiobooks & Legends Chronicle 83",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "20:00",
+      "title": "Varahamihira's Pancha-Siddhantika: Ancient Planetary Epicycles",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Varahamihira's Pancha-Siddhantika: Ancient Planetary Epicycles.",
+      "duration": "14:00",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Varahamihira's Pancha-Siddhantika: Ancient Planetary Epicycles embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_84",
-      "title": "The Legend of Unknown Knowledge Chronicle 84",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "21:00",
-      "rating": "9.8 ★",
+      "title": "Sarnath Lion Capital: Ashoka's Wheel of Cosmic Law",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Sarnath Lion Capital: Ashoka's Wheel of Cosmic Law.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ashoka.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Sarnath Lion Capital: Ashoka's Wheel of Cosmic Law embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_85",
-      "title": "The Legend of God Series Chronicle 85",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "10:00",
-      "rating": "9.9 ★",
+      "title": "The 12 Jyotirlingas: Pillars of Supreme Eternal Light",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding The 12 Jyotirlingas: Pillars of Supreme Eternal Light.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/shiva_tandava.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
+        "History Buffs",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, The 12 Jyotirlingas: Pillars of Supreme Eternal Light embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_86",
-      "title": "The Legend of Kids Stories Chronicle 86",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "11:00",
-      "rating": "9.5 ★",
+      "title": "Panchatantra: The Mouse Maiden's Choice",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Panchatantra: The Mouse Maiden's Choice.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/panchatantra_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Panchatantra: The Mouse Maiden's Choice embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_87",
-      "title": "The Legend of Audiobooks & Legends Chronicle 87",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "12:00",
-      "rating": "9.6 ★",
+      "title": "Charaka Samhita: Tridosha & Holistic Indian Medicine",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Charaka Samhita: Tridosha & Holistic Indian Medicine.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/kundalini_chakras.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Charaka Samhita: Tridosha & Holistic Indian Medicine embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_88",
-      "title": "The Legend of Unknown Knowledge Chronicle 88",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "13:00",
+      "title": "Nagarjunakonda: The Ancient Buddhist Island University",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Nagarjunakonda: The Ancient Buddhist Island University.",
+      "duration": "14:00",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ajanta.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Nagarjunakonda: The Ancient Buddhist Island University embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_89",
-      "title": "The Legend of God Series Chronicle 89",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
+      "title": "The 51 Shakti Peethas: Geographies of Devi Sati",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding The 51 Shakti Peethas: Geographies of Devi Sati.",
       "duration": "14:00",
-      "rating": "9.8 ★",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/mahishasura_battle.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
+        "History Buffs",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, The 51 Shakti Peethas: Geographies of Devi Sati embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_90",
-      "title": "The Legend of Kids Stories Chronicle 90",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "15:00",
-      "rating": "9.9 ★",
+      "title": "Akbar & Birbal: The Honest Guard at the Palace Gate",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Akbar & Birbal: The Honest Guard at the Palace Gate.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/birbal.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Akbar & Birbal: The Honest Guard at the Palace Gate embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_91",
-      "title": "The Legend of Audiobooks & Legends Chronicle 91",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "16:00",
-      "rating": "9.5 ★",
+      "title": "Bhaskaracharya & The Lilavati: Mathematics of 12th Century",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Bhaskaracharya & The Lilavati: Mathematics of 12th Century.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Bhaskaracharya & The Lilavati: Mathematics of 12th Century embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_92",
-      "title": "The Legend of Unknown Knowledge Chronicle 92",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "17:00",
-      "rating": "9.6 ★",
+      "title": "Kailasanathar Temple Kanchipuram: 8th-Century Pallava Marvel",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Kailasanathar Temple Kanchipuram: 8th-Century Pallava Marvel.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ellora_kailasa.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Kailasanathar Temple Kanchipuram: 8th-Century Pallava Marvel embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_93",
-      "title": "The Legend of God Series Chronicle 93",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "18:00",
+      "title": "The Sacred Narmada Lingam: Self-Formed Banalingas of the River",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding The Sacred Narmada Lingam: Self-Formed Banalingas of the River.",
+      "duration": "14:00",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/shiva.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
+        "History Buffs",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, The Sacred Narmada Lingam: Self-Formed Banalingas of the River embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_94",
-      "title": "The Legend of Kids Stories Chronicle 94",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "19:00",
-      "rating": "9.8 ★",
+      "title": "Tenali Raman: The Secret of the Black Blanket",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Tenali Raman: The Secret of the Black Blanket.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/tenali.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Tenali Raman: The Secret of the Black Blanket embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_95",
-      "title": "The Legend of Audiobooks & Legends Chronicle 95",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "20:00",
-      "rating": "9.9 ★",
+      "title": "Tansen & The Deepak Raga: Igniting Oil Lamps with Sound Waves",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Tansen & The Deepak Raga: Igniting Oil Lamps with Sound Waves.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/dharma.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Tansen & The Deepak Raga: Igniting Oil Lamps with Sound Waves embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_96",
-      "title": "The Legend of Unknown Knowledge Chronicle 96",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "21:00",
-      "rating": "9.5 ★",
+      "title": "Shore Temple Mahabalipuram: Standing Against 1,300 Years of Tides",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Shore Temple Mahabalipuram: Standing Against 1,300 Years of Tides.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/mysterious_ruins.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Shore Temple Mahabalipuram: Standing Against 1,300 Years of Tides embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_97",
-      "title": "The Legend of God Series Chronicle 97",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary God Series narrative.",
-      "duration": "10:00",
-      "rating": "9.6 ★",
+      "title": "Lord Jagannath's Nabakalebara: The Sacred Rebirth of the Gods",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Lord Jagannath's Nabakalebara: The Sacred Rebirth of the Gods.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/vishnu.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
+        "History Buffs",
         "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Lord Jagannath's Nabakalebara: The Sacred Rebirth of the Gods embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_98",
-      "title": "The Legend of Kids Stories Chronicle 98",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Kids Stories narrative.",
-      "duration": "11:00",
+      "title": "Jataka Tales: The Grateful Elephant of the Forest",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Jataka Tales: The Grateful Elephant of the Forest.",
+      "duration": "14:00",
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/jataka_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
-        "Kids"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Jataka Tales: The Grateful Elephant of the Forest embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_99",
-      "title": "The Legend of Audiobooks & Legends Chronicle 99",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Audiobooks & Legends narrative.",
-      "duration": "12:00",
-      "rating": "9.8 ★",
+      "title": "Akka Mahadevi: Vachanas of Supreme Spiritual Freedom",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Akka Mahadevi: Vachanas of Supreme Spiritual Freedom.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/meenakshi.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Akka Mahadevi: Vachanas of Supreme Spiritual Freedom embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
     },
     {
       "id": "eb_extra_100",
-      "title": "The Legend of Unknown Knowledge Chronicle 100",
-      "tagline": "Sacred Wisdom and Historical Insights",
-      "description": "Discover the deep-rooted cultural importance, moral values, and traditional teachings surrounding this legendary Unknown Knowledge narrative.",
-      "duration": "13:00",
-      "rating": "9.9 ★",
+      "title": "Gommateshwara Monolith: 57-Foot Single Granite Carving",
+      "tagline": "Sacred Heritage & Living Wisdom of Bharat",
+      "description": "Explore the historical depth, spiritual legacy, and architectural mastery surrounding Gommateshwara Monolith: 57-Foot Single Granite Carving.",
+      "duration": "14:00",
+      "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "/images/ellora_kailasa.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
-        "History Buffs"
+        "History Buffs",
+        "Spiritual Seekers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Historical Origins",
+          "text": "Passed down through millennia, Gommateshwara Monolith: 57-Foot Single Granite Carving embodies the highest artistic, philosophical, and cultural ideals of ancient India.",
+          "visual": "📜"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Marvels",
+          "text": "Archaeological and textual records reveal sophisticated planning, mathematical harmony, and deep spiritual consciousness.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: The Timeless Legacy",
+          "text": "Today, this heritage remains a living inspiration, connecting our ancient roots with modern civilization.",
+          "visual": "✨"
+        }
       ]
-    }
-  ],
-  "subscribers": [
-    {
-      "id": "sub_1",
-      "name": "Arjun Sharma",
-      "paymentMethod": "UPI (arjun@upi)",
-      "amount": 399,
-      "timestamp": "2026-08-24T10:15:30Z"
     },
     {
-      "id": "sub_2",
-      "name": "Priyanka Patel",
-      "paymentMethod": "Credit Card (xxxx-xxxx-xxxx-1234)",
-      "amount": 399,
-      "timestamp": "2026-08-24T11:45:10Z"
+      "id": "ai_lonar_1788928324251",
+      "title": "Lonar Lake: The Meteor Impact Crater",
+      "tagline": "India's Ancient Space Crater",
+      "description": "Formed over 50,000 years ago by a hyper-velocity meteor impact, Lonar Lake is a unique saline and alkaline water body surrounded by temple ruins and dense foliage.",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "Travel & Architecture",
+        "History Buffs"
+      ],
+      "imageUrl": "images/hampi.jpg",
+      "videoUrl": "https://www.youtube.com/embed/5_9a6Ld8hB8",
+      "content": [
+        {
+          "title": "Out of this Space",
+          "text": "The crater is the only known impact crater in basalt rock on Earth. The water is highly alkaline, housing unique microorganisms found nowhere else.",
+          "visual": "☄️"
+        },
+        {
+          "title": "Ancient Temples",
+          "text": "The perimeter of the lake features ruins of 800-year-old temples, including the Daitya Sudan temple dedicated to Lord Vishnu, built with basalt carvings.",
+          "visual": "🛕"
+        }
+      ],
+      "isPremium": false,
+      "year": "2026",
+      "rating": "9.8 ★",
+      "duration": "20 Mins"
     }
-  ],
-  "stats": {
-    "totalRevenue": 798,
-    "totalSubscribers": 2
-  },
-  "aiStatus": {
-    "lastRun": "2026-08-25T12:13:55.586Z",
-    "history": [
-      {
-        "id": "ai_lonar_1787655517188",
-        "title": "Lonar Lake: The Meteor Impact Crater",
-        "category": "Unknown Knowledge",
-        "timestamp": "2026-08-25T10:58:37.188Z"
-      },
-      {
-        "id": "ai_lepakshi_bull_1787656110862",
-        "title": "The Giant Nandi of Lepakshi",
-        "category": "Video Series",
-        "timestamp": "2026-08-25T11:08:30.862Z"
-      },
-      {
-        "id": "ai_lepakshi_bull_1787657526476",
-        "title": "The Giant Nandi of Lepakshi",
-        "category": "Video Series",
-        "timestamp": "2026-08-25T11:32:06.476Z"
-      },
-      {
-        "id": "ai_lepakshi_1787657654821",
-        "title": "Lepakshi: The Mystery of the Hanging Pillar",
-        "category": "Unknown Knowledge",
-        "timestamp": "2026-08-25T11:34:14.821Z"
-      },
-      {
-        "id": "ai_lepakshi_bull_1787658542073",
-        "title": "The Giant Nandi of Lepakshi",
-        "category": "Video Series",
-        "timestamp": "2026-08-25T11:49:02.074Z"
-      },
-      {
-        "id": "ai_lonar_1787660035586",
-        "title": "Lonar Lake: The Meteor Impact Crater",
-        "category": "Unknown Knowledge",
-        "timestamp": "2026-08-25T12:13:55.586Z"
-      }
-    ]
-  }
+  ]
 };

@@ -131,7 +131,7 @@ export const KARNATAKA_TEMPLES = [
     phone: "+91-821-2525231",
     coords: { lat: 12.2748, lng: 76.6785 },
     icon: "🏔️",
-    image: "/images/dharma.jpg",
+    image: "/images/mahishasura_battle.jpg",
     era: "12th Century CE",
     architect: "Hoysala & Vijayanagara Dynasties"
   },
@@ -179,7 +179,7 @@ export const KARNATAKA_TEMPLES = [
     phone: "+91-8177-222218",
     coords: { lat: 13.1623, lng: 75.8624 },
     icon: "🏛️",
-    image: "/images/chola.jpg",
+    image: "/images/ellora_kailasa.jpg",
     era: "1117 CE",
     architect: "Hoysala Dynasty"
   },
@@ -195,7 +195,7 @@ export const KARNATAKA_TEMPLES = [
     phone: "+91-8177-220025",
     coords: { lat: 13.2141, lng: 75.9926 },
     icon: "🏛️",
-    image: "/images/warrior_cover.jpg",
+    image: "/images/ajanta.jpg",
     era: "1121 CE",
     architect: "Hoysala Dynasty"
   },
@@ -211,7 +211,7 @@ export const KARNATAKA_TEMPLES = [
     phone: "+91-8254-273202",
     coords: { lat: 13.8647, lng: 74.8143 },
     icon: "🌺",
-    image: "/images/shiva.jpg",
+    image: "/images/meenakshi.jpg",
     era: "8th Century CE",
     architect: "Haleri Kings (patrons)"
   },
@@ -243,7 +243,7 @@ export const KARNATAKA_TEMPLES = [
     phone: "+91-8386-256241",
     coords: { lat: 14.5413, lng: 74.3168 },
     icon: "🐚",
-    image: "/images/shiva.jpg",
+    image: "/images/shiva_neelkanth.jpg",
     era: "4th Century CE",
     architect: "Kadamba Dynasty"
   },
@@ -259,7 +259,7 @@ export const KARNATAKA_TEMPLES = [
     phone: "+91-8265-250123",
     coords: { lat: 13.4192, lng: 75.2536 },
     icon: "🏛️",
-    image: "/images/shiva.jpg",
+    image: "/images/adi_shankara.jpg",
     era: "8th Century CE",
     architect: "Adi Shankaracharya"
   }
