@@ -7498,6 +7498,35 @@
           "visual": "✨"
         }
       ]
+    },
+    {
+      "id": "ai_lonar_1788928324251",
+      "title": "Lonar Lake: The Meteor Impact Crater",
+      "tagline": "India's Ancient Space Crater",
+      "description": "Formed over 50,000 years ago by a hyper-velocity meteor impact, Lonar Lake is a unique saline and alkaline water body surrounded by temple ruins and dense foliage.",
+      "category": "Unknown Knowledge",
+      "personas": [
+        "Travel & Architecture",
+        "History Buffs"
+      ],
+      "imageUrl": "images/hampi.jpg",
+      "videoUrl": "https://www.youtube.com/embed/5_9a6Ld8hB8",
+      "content": [
+        {
+          "title": "Out of this Space",
+          "text": "The crater is the only known impact crater in basalt rock on Earth. The water is highly alkaline, housing unique microorganisms found nowhere else.",
+          "visual": "☄️"
+        },
+        {
+          "title": "Ancient Temples",
+          "text": "The perimeter of the lake features ruins of 800-year-old temples, including the Daitya Sudan temple dedicated to Lord Vishnu, built with basalt carvings.",
+          "visual": "🛕"
+        }
+      ],
+      "isPremium": false,
+      "year": "2026",
+      "rating": "9.8 ★",
+      "duration": "20 Mins"
     }
   ],
   "subscribers": [
@@ -7518,10 +7547,15 @@
   ],
   "stats": {
     "totalRevenue": 798,
-    "totalSubscribers": 2
+    "totalSubscribers": 2,
+    "totalVisits": 1,
+    "uniqueVisitors": [
+      "::1"
+    ],
+    "uniqueVisitorsCount": 1
   },
   "aiStatus": {
-    "lastRun": "2026-08-25T12:13:55.586Z",
+    "lastRun": "2026-09-09T04:32:04.251Z",
     "history": [
       {
         "id": "ai_lonar_1787655517188",
@@ -7558,7 +7592,14 @@
         "title": "Lonar Lake: The Meteor Impact Crater",
         "category": "Unknown Knowledge",
         "timestamp": "2026-08-25T12:13:55.586Z"
+      },
+      {
+        "id": "ai_lonar_1788928324251",
+        "title": "Lonar Lake: The Meteor Impact Crater",
+        "category": "Unknown Knowledge",
+        "timestamp": "2026-09-09T04:32:04.251Z"
       }
     ]
-  }
+  },
+  "orders": []
 }

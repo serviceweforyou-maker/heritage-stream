@@ -1,0 +1,9 @@
+config.json
+node_modules/
+.gemini/
+scratch/
+*.log
+*.txt
+scratch_*
+.env
+

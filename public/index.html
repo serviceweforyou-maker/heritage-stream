@@ -29,6 +29,7 @@
   <meta name="author" content="MANJUNATH ENTERPRISE">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://www.sanatana360.com/">
+  <link rel="alternate" type="application/rss+xml" title="Sanatana360 Heritage &amp; Gurukula Feed" href="https://www.sanatana360.com/rss.xml">
 
   <!-- Open Graph / WhatsApp / Facebook Preview Tags -->
   <meta property="og:type" content="website">
@@ -46,7 +47,7 @@
   <meta name="twitter:description" content="Discover 200+ ancient Indian docu-series, 5-language bedtime audio stories, and Vedic math tricks for ₹1.09/day.">
   <meta name="twitter:image" content="https://www.sanatana360.com/images/hampi.jpg">
 
-  <!-- Rich Schema.org JSON-LD -->
+    <!-- Rich Schema.org JSON-LD (WebSite, Org, Offer, FAQPage & Course) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,7 +57,7 @@
         "@id": "https://www.sanatana360.com/#website",
         "url": "https://www.sanatana360.com/",
         "name": "Sanatana360 | HeritageStream",
-        "description": "Premium Indian cultural OTT streaming platform featuring 200+ docu-series, audiobooks, 3D flipbooks, and Vedic math learning under Manjunath Enterprise.",
+        "description": "Premium Indian cultural OTT streaming platform featuring 200+ docu-series, 150-page Granth e-books, audiobooks, 3D flipbooks, and Vedic math learning under Manjunath Enterprise.",
         "publisher": {
           "@type": "Organization",
           "name": "MANJUNATH ENTERPRISE",
@@ -84,18 +85,48 @@
       },
       {
         "@type": "Offer",
-        "name": "HeritageStream Annual Pass",
+        "name": "Sanatana360 Annual All-Access Family Pass",
         "price": "399",
         "priceCurrency": "INR",
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
         "url": "https://www.sanatana360.com/#pricing"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.sanatana360.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Sanatana360?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sanatana360 is an Indian cultural OTT platform featuring 200+ docu-series, 16 150+ page illustrated Granthalaya e-books, 5-language bedtime audiobooks, and Vedic math for families and kids."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Sanatana360 help children build culture and brain agility?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Through authentic Sanskrit shloka audios, 3-second Vedic mental math games, Panchatantra moral fables, and deep historical chronicles of kings, saints, and scientific discoveries of ancient India."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does the Sanatana360 Family Pass cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The All-Access Annual Pass is ₹399/year (approx ₹1.09/day), and users can apply discount code GURUKULA50 to get it for just ₹349/year."
+            }
+          }
+        ]
       }
     ]
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=50">
+  <link rel="stylesheet" href="styles.css?v=54">
   <link rel="stylesheet" href="flipbook.css?v=25">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <script>
@@ -119,51 +150,16 @@
 </head>
 <body class="bg-darkSlate text-gray-100 min-h-screen flex flex-col selection:bg-gold selection:text-black">
 
-  <!-- ── TOP UTILITY BAR (Luxury Micro Bar) ── -->
-  <div id="top-utility-bar" class="fixed top-0 left-0 right-0 z-[60] h-8 flex items-center justify-between px-4 sm:px-8 border-b border-white/[0.06] bg-[#06070a]/90 backdrop-blur-md">
-    <!-- Left: Live Heritage Ticker -->
-    <div class="hidden md:flex items-center gap-2 overflow-hidden flex-1 mr-6">
-      <span class="inline-flex items-center gap-1.5 text-[9px] font-mono font-bold text-gold uppercase tracking-widest whitespace-nowrap flex-shrink-0 bg-gold/10 border border-gold/20 px-2 py-0.5 rounded-full">
-        <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-        Trending
-      </span>
-      <div class="overflow-hidden flex-1 relative h-full flex items-center">
-        <div id="ticker-text" class="text-[10px] text-white/60 whitespace-nowrap font-sans" style="animation: tickerScroll 30s linear infinite;">
-          Hampi Vitthala Temple &bull; Ajanta Cave Paintings &bull; Sri Padmanabhaswamy Vault B &bull; Submerged City of Dwarka &bull; Meenakshi Amman Temple &bull; Chola Maritime Navy &bull; Konark Sun Temple Wheel &bull; Vedic Speed Math for Kids &bull; Lepakshi Hanging Pillar &bull; Chhatrapati Shivaji Tactical Forts &bull;
-        </div>
-      </div>
-    </div>
-
-    <!-- Right: Utility Tools -->
-    <div class="flex items-center gap-3 flex-shrink-0 ml-auto text-[10px]">
-      <!-- Quick Micro-Pricing Tag -->
-      <a href="#pricing" class="hidden sm:inline-flex items-center gap-1 text-emerald-400 font-bold font-mono hover:text-emerald-300 transition-colors">
-        <span>⚡</span> Annual Pass: ₹1.09/Day
-      </a>
-      <span class="w-px h-3.5 bg-white/10 hidden sm:block"></span>
-
-      <!-- Ambient Soundscape Button -->
-      <button id="ambient-music-btn" class="flex items-center gap-1.5 text-white/60 hover:text-gold transition-colors font-medium select-none cursor-pointer">
-        <span id="ambient-music-icon">🪕</span>
-        <span id="ambient-music-text" class="hidden sm:inline">Temple Ambience</span>
-      </button>
-
-      <!-- Currency Badge -->
-      <span class="w-px h-3.5 bg-white/10"></span>
-      <span class="text-white/40 font-mono text-[9px] font-bold">🇮🇳 INR</span>
-    </div>
-  </div>
-
-  <!-- ── MAIN NAVBAR & DUAL HEADER (Professional Glassmorphism) ── -->
-  <header class="fixed left-0 right-0 z-50 transition-all duration-300 border-b border-white/[0.08] flex flex-col bg-[#07080c]/90 backdrop-blur-xl shadow-2xl shadow-black/60" style="top: 32px;" id="main-header">
+    <!-- ── 🌟 UNIFIED MASTER DUAL-HEADER (Flawless 2-Tier Glassmorphism) ── -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/[0.08] flex flex-col bg-[#07080c]/95 backdrop-blur-2xl shadow-2xl shadow-black/80" id="main-header">
     
-    <!-- Row 1: Primary Header -->
-    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <!-- ── HEADER ROW 1: PRIMARY MASTER NAVBAR (h-16) ── -->
+    <div class="max-w-7xl mx-auto w-full px-3 sm:px-6 h-16 flex items-center justify-between gap-2.5 sm:gap-3.5">
       
-      <!-- Brand Logo + Luxury Badge -->
-      <div class="flex items-center gap-3.5 flex-shrink-0">
+      <!-- Left: Brand Logo & Cultural Badges -->
+      <div class="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
         <a href="#" class="flex items-center gap-2.5 group">
-          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-gold/20 via-gold/10 to-transparent border border-gold/40 flex items-center justify-center text-lg shadow-sm shadow-gold/20 group-hover:scale-105 transition-transform">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-gold/25 via-gold/10 to-transparent border border-gold/40 flex items-center justify-center text-lg shadow-sm shadow-gold/20 group-hover:scale-105 transition-transform">
             ⚜️
           </div>
           <div class="flex flex-col">
@@ -176,26 +172,37 @@
           </div>
         </a>
 
-        <span class="w-px h-6 bg-white/10 hidden lg:block ml-1"></span>
-        <span class="text-[8px] font-mono font-bold uppercase tracking-[0.2em] text-gold/80 px-2 py-0.5 rounded-full bg-gold/10 border border-gold/20 hidden lg:inline-block">
-          Vedic OTT &amp; Gurukula
-        </span>
+        <!-- Fast Feature Shortcuts in Primary Header -->
+        <div class="hidden xl:flex items-center gap-1.5 ml-2 border-l border-white/10 pl-2.5">
+          <!-- Kids Gurukula Pill -->
+          <button id="header-kids-mode-btn" class="px-2.5 py-1 rounded-full text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 hover:bg-emerald-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm">
+            <span>🧒</span> <span>Kids Gurukula</span>
+          </button>
+          <!-- Ask Rishi AI Pill -->
+          <button id="header-rishi-btn" class="px-2.5 py-1 rounded-full text-purple-300 bg-purple-500/15 border border-purple-500/30 hover:bg-purple-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm">
+            <span>🕉️</span> <span>Ask Rishi AI</span>
+          </button>
+          <!-- Virtual Aarti Pill -->
+          <button id="header-darshana-btn" class="px-2.5 py-1 rounded-full text-amber-300 bg-amber-500/15 border border-amber-500/30 hover:bg-amber-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm">
+            <span>🛕</span> <span>Virtual Aarti</span>
+          </button>
+        </div>
       </div>
 
-      <!-- Right Action Toolbar -->
-      <div class="flex items-center gap-2.5 sm:gap-3.5 ml-auto">
+      <!-- Center & Right: Search, Explore, Actions & Profile -->
+      <div class="flex items-center gap-2 sm:gap-2.5 ml-auto">
         
         <!-- Search Input -->
         <div class="relative">
-          <input type="text" id="search-input" placeholder="Search 200+ sagas..." class="w-28 sm:w-44 md:w-52 focus:w-60 bg-white/[0.06] border border-white/10 hover:border-white/20 focus:border-gold/60 rounded-full px-3.5 py-1.5 pl-8 text-xs text-white placeholder-white/40 focus:outline-none transition-all duration-300 shadow-inner">
-          <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
+          <input type="text" id="search-input" placeholder="Search 200+ sagas..." class="w-24 sm:w-36 md:w-44 lg:w-52 focus:w-56 bg-white/[0.06] border border-white/10 hover:border-white/20 focus:border-gold/60 rounded-full px-3 py-1.5 pl-7 sm:pl-8 text-xs text-white placeholder-white/40 focus:outline-none transition-all duration-300 shadow-inner">
+          <span class="absolute left-2 sm:left-2.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
         </div>
 
         <!-- Glowing Explore All Eye Button -->
-        <a href="#catalog-explorer" id="nav-eye-btn" class="hover:text-gold transition-colors flex items-center gap-1.5 text-gold font-bold relative group px-2.5 py-1.5 rounded-full bg-gold/5 border border-gold/20 hover:border-gold/50 hover:bg-gold/10 transition-all duration-300" title="Explore all 200+ Sagas Catalog">
-          <span class="relative flex h-6 w-6 items-center justify-center">
+        <a href="#catalog-explorer" id="nav-eye-btn" class="hover:text-gold transition-colors flex items-center gap-1 text-gold font-bold relative group px-2 sm:px-2.5 py-1.5 rounded-full bg-gold/5 border border-gold/20 hover:border-gold/50 hover:bg-gold/10 transition-all duration-300" title="Explore all 200+ Sagas Catalog">
+          <span class="relative flex h-5 w-5 items-center justify-center">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/20 opacity-75"></span>
-            <svg id="human-eye" class="w-7 h-7 text-gold relative z-10 transition-all duration-300 ease-out origin-center" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id="human-eye" class="w-5 h-5 sm:w-6 sm:h-6 text-gold relative z-10 transition-all duration-300 ease-out origin-center" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 50C18 20, 82 20, 95 50C82 80, 18 80, 5 50Z" fill="#0d0e12" stroke="#222530" stroke-width="1.5"/>
               <path d="M8 50C20 23, 80 23, 92 50C80 77, 20 77, 8 50Z" fill="url(#sclera-grad)" stroke="#1a1c23" stroke-width="1"/>
               <path d="M8 50C10 47, 15 48, 17 50C15 52, 10 53, 8 50Z" fill="#ff7f7f" opacity="0.8"/>
@@ -228,35 +235,60 @@
               </defs>
             </svg>
           </span>
-          <span class="text-[11px] uppercase tracking-wider font-extrabold hidden md:inline">Explore All</span>
+          <span class="text-[11px] uppercase tracking-wider font-extrabold hidden md:inline">Explore</span>
         </a>
 
-        <!-- Fast Get Pass CTA Button -->
-        <button id="header-get-pass-btn" onclick="window.appInstance.openPaymentModal()" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-gold/20 hover:scale-105 cursor-pointer">
+        <!-- Ambient Soundscape Toggle Button -->
+        <button id="ambient-music-btn" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 hover:border-gold/40 hover:bg-gold/10 text-xs font-semibold text-white/80 transition-all cursor-pointer select-none" title="Play Temple Ambience Music">
+          <span id="ambient-music-icon">🪕</span>
+          <span id="ambient-music-text" class="hidden lg:inline">Ambience</span>
+        </button>
+
+        <!-- Install App Button -->
+        <button id="header-install-app-btn" class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-bold border border-gold/40 bg-gold/10 text-gold hover:bg-gold hover:text-black transition-all cursor-pointer" title="Install Web App on Homescreen">
+          <span>📲</span>
+          <span class="hidden lg:inline">App</span>
+        </button>
+
+        <!-- Get Pass CTA Button -->
+        <button id="header-get-pass-btn" onclick="window.appInstance.openPaymentModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-gold/20 hover:scale-105 cursor-pointer">
           <span>⚡</span>
-          <span>Get Pass</span>
+          <span>Pass</span>
           <span class="text-[10px] font-mono font-bold bg-black/20 px-1.5 py-0.2 rounded-full">₹399</span>
         </button>
 
         <!-- User Profile Dropdown -->
         <div class="relative group ml-0.5" id="header-profile-dropdown">
-          <button id="open-profile-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/10 hover:border-gold/40 transition-all text-xs font-bold text-white/90 cursor-pointer shadow-sm">
-            <span id="header-karma-badge" class="text-[9px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1.5 py-0.5 rounded-full mr-0.5 hidden sm:inline-block">🕉️ 120</span>
+          <button id="open-profile-btn" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/[0.06] border border-white/10 hover:border-gold/40 transition-all text-xs font-bold text-white/90 cursor-pointer shadow-sm">
+            <span id="header-karma-badge" class="text-[9px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1.5 py-0.5 rounded-full hidden sm:inline-block">🕉️ 120</span>
             <span id="active-profile-avatar" class="text-sm">📜</span>
-            <span id="active-profile-name" class="hidden sm:inline font-serif">Scholar</span>
+            <span id="active-profile-name" class="hidden md:inline font-serif">Scholar</span>
             <span id="header-sub-badge" class="text-[8px] font-black font-mono uppercase px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hidden">PRO</span>
             <span class="text-[9px] opacity-40">▼</span>
           </button>
           
-          <div class="absolute right-0 top-11 w-52 bg-[#0e1017]/95 border border-white/15 rounded-2xl overflow-hidden shadow-2xl hidden group-hover:block z-[90] p-1.5 space-y-1 backdrop-blur-2xl">
-            <button id="menu-account-btn" class="w-full text-left px-3.5 py-2.5 text-xs text-white/90 hover:text-gold hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 font-medium">
+          <div class="absolute right-0 top-11 w-60 bg-[#0e1017]/95 border border-white/15 rounded-2xl overflow-hidden shadow-2xl hidden group-hover:block z-[90] p-2 space-y-1.5 backdrop-blur-2xl">
+            <!-- Live Subscription & Days Remaining Status Card -->
+            <div id="dropdown-sub-status-card" class="p-2.5 rounded-xl bg-gradient-to-r from-gold/15 to-emerald-500/15 border border-gold/30 mb-1">
+              <div class="flex items-center justify-between">
+                <span class="text-[9px] font-mono font-bold text-gold uppercase tracking-wider">Pass Status</span>
+                <span id="dropdown-sub-pill" class="text-[8px] font-mono font-bold text-emerald-400 bg-emerald-500/20 px-1.5 py-0.5 rounded uppercase">PRO ACTIVE</span>
+              </div>
+              <div class="text-xs font-bold text-white font-serif mt-1 flex items-center justify-between">
+                <span id="dropdown-sub-days" class="text-emerald-300 font-mono font-bold">365 Days Left</span>
+                <span id="dropdown-sub-percent" class="text-[9px] font-mono text-white/50">100% left</span>
+              </div>
+              <div class="text-[8px] text-white/50 font-mono mt-0.5" id="dropdown-sub-expiry">Expires: 365 Days Validity</div>
+            </div>
+
+            <button id="menu-account-btn" class="w-full text-left px-3 py-2 text-xs text-white/90 hover:text-gold hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 font-medium cursor-pointer">
               👤 Manage Account &amp; Pass
             </button>
-            <button id="switch-profile-btn" class="w-full text-left px-3.5 py-2 text-xs text-white/70 hover:text-white hover:bg-white/5 rounded-xl transition-all flex items-center gap-2">
+            <button id="switch-profile-btn" class="w-full text-left px-3 py-2 text-xs text-white/70 hover:text-white hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 cursor-pointer">
               🎭 Switch Persona
             </button>
             <div class="border-t border-white/10 my-1"></div>
-            <button id="menu-logout-btn" class="w-full text-left px-3.5 py-2 text-xs text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-xl transition-all flex items-center gap-2 font-semibold">
+            <button id="menu-logout-btn" class="w-full text-left px-3 py-2 text-xs text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-xl transition-all flex items-center gap-2 font-semibold cursor-pointer">
               🚪 Sign Out
             </button>
           </div>
@@ -271,26 +303,30 @@
       </div>
     </div>
 
-    <!-- Row 2: Secondary Sub-Navbar (Spacious, Well-Spaced & Categorized) -->
-    <div class="hidden md:flex w-full bg-black/40 border-t border-white/[0.05] h-10 items-center justify-center px-4 overflow-x-auto no-scrollbar">
-      <nav class="flex items-center justify-center gap-1 lg:gap-2 text-[11px] font-bold text-white/70 whitespace-nowrap">
+    <!-- ── HEADER ROW 2: CLEAN & SPACIOUS CATEGORIZED SUB-NAVBAR (h-10) ── -->
+    <div class="hidden md:flex w-full bg-black/60 border-t border-white/[0.06] h-10 items-center justify-center px-4 overflow-x-auto no-scrollbar shadow-inner">
+      <nav class="flex items-center justify-center gap-1.5 lg:gap-2 text-[11px] font-bold text-white/75 whitespace-nowrap">
         
         <a href="#library" class="sec-nav-pill px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-all flex items-center gap-1.5 text-white/90">
           <span>📚</span> Library
         </a>
+
+        <a href="#granthalaya-library" class="sec-nav-pill px-3 py-1 rounded-full hover:text-gold hover:bg-gold/10 transition-all flex items-center gap-1.5 text-gold font-serif">
+          <span>📖</span> Granthalaya (16 Epics)
+        </a>
         
-        <a href="#divya-darshana" class="sec-nav-pill px-3 py-1 rounded-full hover:text-gold hover:bg-gold/10 transition-all flex items-center gap-1.5 text-gold">
+        <a href="#divya-darshana" class="sec-nav-pill px-3 py-1 rounded-full hover:text-amber-300 hover:bg-amber-500/10 transition-all flex items-center gap-1.5 text-amber-300">
           <span>✨</span> Divya Darshana
         </a>
-        <button id="header-darshana-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-gold hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer text-amber-200">
-          <span>🛕</span> Virtual Darshana
-        </button>
+
         <button id="header-gita-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-gold hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
           <span>📜</span> Gita Compass
         </button>
+
         <button id="header-dosha-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-emerald-300 hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
-          <span>🌿</span> Ayurveda Dosha
+          <span>🌿</span> Ayurveda
         </button>
+
         <button id="header-raga-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-purple-300 hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
           <span>🪕</span> Raga Therapy
         </button>
@@ -300,31 +336,19 @@
         </a>
 
         <a href="#mystery-vault" class="sec-nav-pill px-3 py-1 rounded-full hover:text-amber-300 hover:bg-amber-500/10 transition-all flex items-center gap-1.5 text-amber-300">
-          <span>🔒</span> Mystery Vault
+          <span>🔒</span> Mystery Vaults
         </a>
-
-        <!-- Kids Gurukula Highlight -->
-        <button id="header-install-app-btn" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border border-gold/40 bg-gold/10 text-gold hover:bg-gold hover:text-black transition-all cursor-pointer">
-          <span>📲</span> <span>Install App</span>
-        </button>
-        <button id="header-kids-mode-btn" class="sec-nav-pill px-3 py-1 rounded-full text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 transition-all flex items-center gap-1.5 cursor-pointer">
-          <span>🧒</span> Kids Gurukula
-        </button>
-
-        <button id="header-rishi-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-gold hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
-          <span>🕉️</span> Ask Rishi AI
-        </button>
-
-        <button id="header-archetype-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-gold hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
-          <span>👑</span> Heritage Archetype
-        </button>
 
         <a href="#play-zone" class="sec-nav-pill px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-all flex items-center gap-1.5">
           <span>🎮</span> Play Zone
         </a>
 
-        <button id="header-referral-btn" class="sec-nav-pill px-2.5 py-0.5 rounded-full text-amber-400 bg-amber-500/15 border border-amber-500/30 hover:bg-amber-500/25 transition-all flex items-center gap-1 cursor-pointer font-bold">
-          <span>🎁</span> ₹50 Voucher
+        <button id="header-archetype-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-gold hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
+          <span>👑</span> Archetype
+        </button>
+
+        <button id="header-referral-btn" class="sec-nav-pill px-3 py-0.5 rounded-full text-amber-400 bg-amber-500/20 border border-amber-500/40 hover:bg-amber-500/30 transition-all flex items-center gap-1.5 cursor-pointer font-bold">
+          <span>🎁</span> ₹50 Off Voucher
         </button>
 
         <a href="#dashboard" class="sec-nav-pill px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-all flex items-center gap-1.5">
@@ -333,12 +357,12 @@
       </nav>
     </div>
 
-    <!-- Mobile Dropdown Navigation Menu -->
+    <!-- ── MOBILE DROPDOWN NAVIGATION DRAWER ── -->
     <div id="mobile-nav-menu" class="hidden md:hidden border-t border-white/10 px-5 py-5 space-y-2.5 max-h-[80vh] overflow-y-auto" style="background: rgba(7,8,12,0.98); backdrop-filter: blur(24px);">
-      
       <div class="text-[9px] font-mono font-bold uppercase text-white/40 tracking-wider">Streaming &amp; Catalog</div>
       <a href="#library" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-semibold text-white/90 hover:bg-white/5 hover:text-gold transition-all">📚 Library &amp; Sagas</a>
-      <a href="#divya-darshana" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-bold text-gold hover:bg-white/5 transition-all">✨ Divya Darshana (Temples &amp; Panchang)</a>
+      <a href="#granthalaya-library" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-bold text-gold hover:bg-white/5 transition-all">📖 Grand Granthalaya (16 Epics)</a>
+      <a href="#divya-darshana" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-bold text-amber-300 hover:bg-white/5 transition-all">✨ Divya Darshana (Temples &amp; Panchang)</a>
       <a href="#catalog-explorer" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-bold text-amber-300 hover:bg-white/5 transition-all">👁️ Explore All 200+ Catalog</a>
       <a href="#mystery-vault" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 transition-all">🔒 Secret Mystery Vaults</a>
 
@@ -847,44 +871,57 @@
 
 
     
-    <!-- ── 📖 GRAND DIGITAL GRANTHALAYA (150+ Page Illustrated E-Books & Sacred Chronicles) ── -->
-    <section id="granthalaya-library" class="scroll-mt-24 max-w-7xl mx-auto my-16 px-4 sm:px-6">
+    <!-- ── 📖 GRAND DIGITAL GRANTHALAYA (16 Epic Chronicles Slider) ── -->
+    <section id="granthalaya-library" class="scroll-mt-24 max-w-7xl mx-auto my-12 px-3 sm:px-6">
       
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-[10px] font-mono font-bold uppercase tracking-widest">
-          <span>📖</span> Complete Illustrated Digital Granths &bull; 150+ Pages Each
+      <!-- Section Header with Slider Navigation Controls -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 border-b border-white/5 pb-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold/15 border border-gold/30 text-gold text-[10px] font-mono font-bold uppercase tracking-widest mb-2 shadow-sm">
+            <span>📖</span> 150+ Page Illustrated Digital Granths &bull; Deep-Read Manuscripts
+          </div>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-white flex items-center gap-3">
+            <span>Grand Digital Granthalaya</span>
+            <span class="text-xs font-mono font-bold text-gold px-2.5 py-0.5 rounded-full bg-gold/10 border border-gold/25 hidden sm:inline-block">16 Epics</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-white/70 font-sans mt-1 max-w-2xl leading-relaxed">
+            Read complete 150+ page illustrated sacred chronicles: from <strong>Asura &amp; Celestial Battles</strong> to <strong>Cosmic Yuga Cycles</strong>, <strong>Enlightened Gurujis</strong>, and timeless <strong>Moral Panchatantra Epics</strong>.
+          </p>
         </div>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-white">
-          Grand Digital Granthalaya
-        </h2>
-        <p class="text-xs sm:text-sm text-white/70 font-sans leading-relaxed">
-          Deep-read comprehensive, 150+ page illustrated sacred chronicles: from fierce <strong>Asura &amp; Celestial Battles</strong> to <strong>Cosmic Yuga Cycles</strong>, <strong>Enlightened Gurujis</strong>, and timeless <strong>Moral Panchatantra Epics</strong>.
-        </p>
+
+        <!-- Slider Arrow Navigation Buttons -->
+        <div class="flex items-center gap-2 flex-shrink-0 self-end md:self-auto">
+          <button id="granth-slider-prev-btn" class="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-gold hover:text-black text-white flex items-center justify-center text-sm font-bold transition-all shadow-md cursor-pointer hover:scale-105 active:scale-95" aria-label="Previous Granths">
+            ◀
+          </button>
+          <button id="granth-slider-next-btn" class="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-gold hover:text-black text-white flex items-center justify-center text-sm font-bold transition-all shadow-md cursor-pointer hover:scale-105 active:scale-95" aria-label="Next Granths">
+            ▶
+          </button>
+        </div>
       </div>
 
       <!-- Category Filter Tabs -->
-      <div class="flex items-center justify-center gap-2 overflow-x-auto no-scrollbar pb-6 max-w-3xl mx-auto">
-        <button class="granth-tab-btn px-4 py-2 rounded-full text-xs font-bold border border-gold bg-gold text-black transition-all cursor-pointer whitespace-nowrap shadow-lg shadow-gold/20" data-cat="all">
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-2" id="granth-category-filters">
+        <button class="granth-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold border border-gold bg-gold text-black transition-all cursor-pointer whitespace-nowrap shadow-md shadow-gold/20" data-cat="all">
           📚 All Granths (16)
         </button>
-        <button class="granth-tab-btn px-4 py-2 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="asuras">
-          👹 Devils &amp; Asuras
+        <button class="granth-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="asuras">
+          👹 Devils &amp; Asuras (4)
         </button>
-        <button class="granth-tab-btn px-4 py-2 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="sanatana">
-          🕉️ Cosmic Sanatana
+        <button class="granth-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="sanatana">
+          🕉️ Cosmic Sanatana (4)
         </button>
-        <button class="granth-tab-btn px-4 py-2 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="gurujis">
-          🧘 Miracle Gurujis
+        <button class="granth-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="gurujis">
+          🧘 Miracle Gurujis (4)
         </button>
-        <button class="granth-tab-btn px-4 py-2 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="morals">
-          🧒 Moral &amp; Kids Epics
+        <button class="granth-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-cat="morals">
+          🧒 Moral &amp; Kids Epics (4)
         </button>
       </div>
 
-      <!-- Books Grid Container -->
-      <div id="granthalaya-books-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Injected dynamically by app.js -->
+      <!-- Horizontal Granth Slider Track Container -->
+      <div id="granthalaya-slider-row" class="flex gap-5 overflow-x-auto pb-6 pt-2 no-scrollbar scroll-smooth">
+        <!-- Injected dynamically by app.js initGrandGranthalaya() -->
       </div>
 
     </section>
@@ -1582,7 +1619,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=50"></script>
+  <script type="module" src="app-prod.js?v=54"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {

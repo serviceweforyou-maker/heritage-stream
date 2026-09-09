@@ -110,6 +110,19 @@ export class DatabaseService {
     };
   }
 
+  static getDaysRemaining() {
+    if (localStorage.getItem('hs_subscribed') !== 'true') return 0;
+    const now = Date.now();
+    let subTimestamp = parseInt(localStorage.getItem('hs_sub_timestamp') || '');
+    if (!subTimestamp) {
+      subTimestamp = now;
+      localStorage.setItem('hs_sub_timestamp', String(now));
+    }
+    const expiryTime = subTimestamp + (365 * 24 * 60 * 60 * 1000);
+    const msLeft = expiryTime - now;
+    return Math.max(0, Math.ceil(msLeft / (1000 * 60 * 60 * 24)));
+  }
+
   static isSubscribed() {
     if (localStorage.getItem('hs_subscribed') !== 'true') return false;
     
@@ -495,7 +508,7 @@ class AppController {
               <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-transparent to-black/30 z-10 pointer-events-none"></div>
               
               <!-- Content Details -->
-              <div class="max-w-3xl pt-36 sm:pt-40 md:pt-44 pb-14 px-5 sm:px-8 md:px-16 h-full flex flex-col justify-center sm:justify-end relative z-20">
+              <div class="max-w-3xl pt-28 sm:pt-32 md:pt-36 pb-14 px-5 sm:px-8 md:px-16 h-full flex flex-col justify-center sm:justify-end relative z-20">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 text-gold text-[10px] font-mono font-bold uppercase tracking-wider mb-2.5 border border-gold/30 self-start shadow-sm">
                   🏆 FEATURED SAGA
                 </span>
@@ -775,6 +788,11 @@ class AppController {
       const nameEl = document.getElementById('active-profile-name');
       const greetingEl = document.getElementById('hero-sub-prompt');
       const subBadge = document.getElementById('header-sub-badge');
+      const dropdownSubCard = document.getElementById('dropdown-sub-status-card');
+      const dropdownSubDays = document.getElementById('dropdown-sub-days');
+      const dropdownSubPill = document.getElementById('dropdown-sub-pill');
+      const dropdownSubPercent = document.getElementById('dropdown-sub-percent');
+      const dropdownSubExpiry = document.getElementById('dropdown-sub-expiry');
 
       const savedName = localStorage.getItem('hs_user_name') || this.currentProfile || 'Scholar';
       const savedAvatar = localStorage.getItem('hs_avatar') || this.currentProfileAvatar || '📜';
@@ -782,17 +800,58 @@ class AppController {
       if (avatarEl) avatarEl.textContent = savedAvatar;
       if (nameEl) nameEl.textContent = savedName;
 
+      // Re-evaluate subscription status & live days remaining
+      this.isSubscribed = DatabaseService.isSubscribed();
+      const daysLeft = DatabaseService.getDaysRemaining();
+
       if (subBadge) {
         if (this.isSubscribed) {
           subBadge.classList.remove('hidden');
+          subBadge.innerHTML = '👑 PRO <span class="opacity-90 font-mono text-[7px] ml-0.5">• ' + daysLeft + 'd</span>';
+          subBadge.title = 'PRO Pass Active • ' + daysLeft + ' Days Left';
         } else {
           subBadge.classList.add('hidden');
         }
       }
 
+      if (dropdownSubCard) {
+        if (this.isSubscribed) {
+          dropdownSubCard.className = "p-2.5 rounded-xl bg-gradient-to-r from-gold/15 to-emerald-500/15 border border-gold/30 mb-1";
+          if (dropdownSubPill) {
+            dropdownSubPill.className = "text-[8px] font-mono font-bold text-emerald-400 bg-emerald-500/20 px-1.5 py-0.5 rounded uppercase";
+            dropdownSubPill.textContent = "PRO ACTIVE";
+          }
+          if (dropdownSubDays) {
+            dropdownSubDays.className = "text-emerald-300 font-mono font-bold";
+            dropdownSubDays.textContent = daysLeft + " Days Left";
+          }
+          if (dropdownSubPercent) {
+            const pct = Math.round((daysLeft / 365) * 100);
+            dropdownSubPercent.textContent = pct + "% left";
+          }
+          if (dropdownSubExpiry) {
+            const subTimestamp = parseInt(localStorage.getItem('hs_sub_timestamp') || String(Date.now()));
+            const expiryDate = new Date(subTimestamp + (365 * 24 * 60 * 60 * 1000));
+            dropdownSubExpiry.textContent = "Expires: " + expiryDate.toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' });
+          }
+        } else {
+          dropdownSubCard.className = "p-2.5 rounded-xl bg-white/5 border border-white/10 mb-1";
+          if (dropdownSubPill) {
+            dropdownSubPill.className = "text-[8px] font-mono font-bold text-amber-300 bg-amber-500/20 px-1.5 py-0.5 rounded uppercase";
+            dropdownSubPill.textContent = "FREE EXPLORER";
+          }
+          if (dropdownSubDays) {
+            dropdownSubDays.className = "text-white/80 font-sans font-bold";
+            dropdownSubDays.textContent = "Free Access";
+          }
+          if (dropdownSubPercent) dropdownSubPercent.textContent = "₹399/yr";
+          if (dropdownSubExpiry) dropdownSubExpiry.textContent = "Upgrade to unlock 200+ sagas";
+        }
+      }
+
       if (greetingEl) {
         if (this.isSubscribed) {
-          greetingEl.textContent = `Pranam, ${savedName}! Your Premium Heritage Pass is active.`;
+          greetingEl.textContent = 'Pranam, ' + savedName + '! Your Premium Pass has ' + daysLeft + ' days left.';
         } else if (savedName === "Yogi") {
           greetingEl.textContent = "Pranam, Yogi! Cultivate inner peace and balance.";
         } else if (savedName === "Kids") {
@@ -800,7 +859,7 @@ class AppController {
         } else if (savedName === "Warrior") {
           greetingEl.textContent = "Salutations, Warrior! Explore royal dynastic chronicles.";
         } else {
-          greetingEl.textContent = `Welcome, ${savedName}! Unveil the secrets of antiquity.`;
+          greetingEl.textContent = 'Welcome, ' + savedName + '! Unveil the secrets of antiquity.';
         }
       }
     };
@@ -831,8 +890,12 @@ class AppController {
 
       if (subBadgeModal) {
         if (this.isSubscribed) {
-          subBadgeModal.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="text-emerald-400 font-bold">✨ Premium Pass Active</span>`;
+          const daysLeft = DatabaseService.getDaysRemaining();
+          subBadgeModal.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="text-emerald-400 font-bold">✨ Premium Pass Active • ' + daysLeft + ' Days Left</span>';
         } else {
+          subBadgeModal.innerHTML = '<span class="w-2 h-2 rounded-full bg-gold/60"></span><span class="text-gold/80">Free Explorer Access</span>';
+        }
+      } else {
           subBadgeModal.innerHTML = `<span class="w-2 h-2 rounded-full bg-gold/60"></span><span class="text-gold/80">Free Explorer Access</span>`;
         }
       }
@@ -4460,4 +4523,495 @@ if (document.readyState === 'loading') {
   });
 } else {
   new AppController();
+
+  // ─────────────────────────────────────────────────────────────
+  // ── GRAND DIGITAL GRANTHALAYA (16 Epic Books Slider & Reader) ─
+  // ─────────────────────────────────────────────────────────────
+
+  initGrandGranthalaya() {
+    const sliderRow = document.getElementById('granthalaya-slider-row');
+    const prevBtn = document.getElementById('granth-slider-prev-btn');
+    const nextBtn = document.getElementById('granth-slider-next-btn');
+    const modal = document.getElementById('granth-reader-modal');
+    const closeBtn = document.getElementById('close-granth-reader-btn');
+    if (!sliderRow) return;
+
+    const granths = [
+      // CATEGORY 1: ASURAS & CELESTIAL BATTLES (Devils & Demons)
+      {
+        id: "granth_mahishasura",
+        cat: "asuras",
+        catLabel: "👹 DEVILS & ASURAS",
+        title: "The Blood-Moon Boons of Mahishasura & Durga's 9 Nights",
+        pages: 180,
+        chaptersCount: 9,
+        emoji: "👹",
+        coverImg: "/images/mahishasura_battle.jpg",
+        desc: "The shape-shifting buffalo Asura who extracted the boon of invincibility against all men and Devas, and the cosmic emergence of Goddess Durga.",
+        chapters: [
+          { title: "Chapter 1: The Ash-Vow of Rambha & Mahisha's Birth", text: "In the subterranean depths of Rasatala, the Asura king Rambha performed thousand-year austerities amidst blazing fires. From the divine buffalo Mahishi was born Mahishasura—destined to shake the foundations of Mount Meru. He possessed the terrifying occult mastery of Trikala Maya, allowing him to shift between monstrous beast, warrior king, and illusory smoke at will." },
+          { title: "Chapter 2: The Boon of Brahma & The Fall of Amaravati", text: "Standing upon one toe atop the Mandara cliffs, Mahishasura demanded the supreme boon of immortality from Lord Brahma. 'Let no Deva, Yaksha, Gandharva, Naga, or man born of womb be capable of slaying me,' he roared. Armed with this cosmological loophole, his demon armies overran Indraloka, banishing the Devas into exile across mortal forests." },
+          { title: "Chapter 3: The Gathering of Divine Tejas (Cosmic Fusion)", text: "From the united fury of Brahma, Vishnu, and Shiva erupted a blazing mountain of light. This supreme cosmic energy solidified into the ten-armed Mother of the Universe—Devi Durga. Shiva presented His celestial Trishula; Vishnu bestowed the Sudarshana Chakra; Varuna gifted the Conch of Oceans; and Himavan presented the fierce Golden Lion mount." },
+          { title: "Chapter 4: The Nine Nights of Apocalyptic War", text: "For nine cosmic nights, Mahishasura unleashed his demonic generals—Chikshura, Chamara, and Udagra. Rivers of celestial weapons clashed as Devi severed millions of demonic illusions. When Mahishasura transformed into a wild lion, she slashed him; when he turned into an elephant, she cut off his trunk; until at last, pinned beneath Her lotus foot, the Trident pierced his chest, liberating the cosmos." }
+        ]
+      },
+      {
+        id: "granth_ravana_tantra",
+        cat: "asuras",
+        catLabel: "👹 DEVILS & ASURAS",
+        title: "The Tantric Empire of Ravana & Kumbhakarna's Slumber",
+        pages: 210,
+        chaptersCount: 10,
+        emoji: "⚔️",
+        coverImg: "/images/ravana_lanka.jpg",
+        desc: "The 10 heads of unmatched astrological and musical mastery, mystical Pushpaka Vimana aviation, and the tragic 6-month cosmic curse of Kumbhakarna.",
+        chapters: [
+          { title: "Chapter 1: The Ten Heads of Sangeeta & Astrology", text: "Ravana was no ordinary tyrant; he was the master of the 4 Vedas, 6 Vedangas, and the supreme master of the Rudra Veena. When he attempted to lift Mount Kailash, Lord Shiva pressed the mountain down with His toe. In divine ecstasy, Ravana tore out his own sinews to string his veena and sang the awe-inspiring Shiva Tandava Stotram, winning the divine sword Chandrahas." },
+          { title: "Chapter 2: The Sleeping Giant of Lanka", text: "Kumbhakarna, born with mountain-shaking strength, intended to ask Lord Brahma for 'Nirdevatvam' (destruction of Devas). But Goddess Saraswati sat upon his tongue, turning his prayer into 'Nidravatvam' (endless slumber). For six months he slept in subterranean gold vaults, awoken only by marching elephants and blaring trumpet horns when war arrived." }
+        ]
+      },
+      {
+        id: "granth_bhasmasura",
+        cat: "asuras",
+        catLabel: "👹 DEVILS & ASURAS",
+        title: "Bhasmasura & The Illusion Dance of Mohini",
+        pages: 155,
+        chaptersCount: 7,
+        emoji: "🔥",
+        coverImg: "/images/bhasmasura_mohini.jpg",
+        desc: "The deadly boon that turned anyone touched into ashes, and the divine cosmic dance that saved the Universe.",
+        chapters: [
+          { title: "Chapter 1: The Touch of Fire Boon", text: "Bhasmasura performed severe tapas until Lord Shiva granted him his wish: 'Whosoever's head I place my right hand upon shall instantly be reduced to a heap of ashes.' Blinded by supreme arrogance, Bhasmasura immediately attempted to test the boon on Shiva Himself, forcing the Lord of Yoga into cosmic retreat." },
+          { title: "Chapter 2: The Cosmic Dance of Mohini", text: "To protect the cosmic order, Lord Vishnu manifested as Mohini—the supreme enchantress of divine grace. Fascinated by her beauty, Bhasmasura agreed to match her step-by-step in the intricate Natya dance. As Mohini placed her graceful hand upon her own head in a final mudra, Bhasmasura mirrored the motion, reducing his own body to ashes." }
+        ]
+      },
+      {
+        id: "granth_patala_asuras",
+        cat: "asuras",
+        catLabel: "👹 DEVILS & ASURAS",
+        title: "The Subterranean Asuras of Patala & The Naga Kingdom",
+        pages: 170,
+        chaptersCount: 8,
+        emoji: "🐍",
+        coverImg: "/images/patala_naga_kingdom.jpg",
+        desc: "The 7 subterranean dimensions (Atala, Vitala, Sutala, Talatala, Mahatala, Rasatala, Patala) and architect Maya Danava.",
+        chapters: [
+          { title: "Chapter 1: The Seven Lower Realms", text: "Below the mortal plane lie the subterranean realms described in the Vishnu Purana. Here, free from the scorching rays of the sun, jewel-encrusted serpents and enlightened Asura kings reside under radiant crystal light, guarded by the King of Asuras, Mahabali." }
+        ]
+      },
+
+      // CATEGORY 2: COSMIC SANATANA & DIMENSIONS
+      {
+        id: "granth_14_lokas",
+        cat: "sanatana",
+        catLabel: "🕉️ COSMIC SANATANA",
+        title: "The 14 Lokas & Ancient Time Dilation (Yuga Cycles)",
+        pages: 220,
+        chaptersCount: 12,
+        emoji: "🌌",
+        coverImg: "/images/fourteen_lokas_cosmos.jpg",
+        desc: "Vedic calculations of the 4.32 billion year Kalpa, Brahma's day, parallel dimensions, and the cosmic journey of the Jiva.",
+        chapters: [
+          { title: "Chapter 1: Time Dilation in Ancient Texts", text: "In the Bhagavata Purana, King Kakudmi travels to Satyaloka to meet Lord Brahma. When he returns after what felt like 20 minutes in the celestial plane, millions of mortal years had elapsed on Earth and entire dynasties had risen and turned to dust—an astonishing ancient intuition of relativistic time dilation." },
+          { title: "Chapter 2: The Four Great Yugas", text: "Satya Yuga (1,728,000 years), Treta Yuga (1,296,000 years), Dvapara Yuga (864,000 years), and Kali Yuga (432,000 years). Together they form one Mahayuga of 4.32 million years—a single breath in the infinite cosmic dance of Brahman." }
+        ]
+      },
+      {
+        id: "granth_samudra_manthan",
+        cat: "sanatana",
+        catLabel: "🕉️ COSMIC SANATANA",
+        title: "The Great Samudra Manthan: Churning the Milk Ocean",
+        pages: 195,
+        chaptersCount: 10,
+        emoji: "🌊",
+        coverImg: "/images/samudra_manthan.jpg",
+        desc: "Mount Mandara, Vasuki the serpent churning cord, the deadly Halahala poison, and the 14 divine jewels of eternity.",
+        chapters: [
+          { title: "Chapter 1: The Cosmic Alliance", text: "Weakened by the curse of Sage Durvasa, the Devas formed a rare cosmic pact with the Asuras to churn the Ocean of Milk (Kshira Sagara) in search of Amrita, the elixir of immortality. Mount Mandara was uprooted as the churning rod, and King Vasuki served as the churning rope." },
+          { title: "Chapter 2: The Blue-Throated Neelakantha", text: "Before the nectar appeared, the ocean churned up Halahala—the lethal poison capable of incinerating all three worlds. Out of boundless compassion, Lord Shiva drank the entire venom, holding it in His throat, which turned blue, earning Him the immortal name Neelakantha." }
+        ]
+      },
+      {
+        id: "granth_kundalini_science",
+        cat: "sanatana",
+        catLabel: "🕉️ COSMIC SANATANA",
+        title: "Kundalini & The Sacred Neuroscience of 7 Chakras",
+        pages: 160,
+        chaptersCount: 8,
+        emoji: "🧘",
+        coverImg: "/images/kundalini_chakras.jpg",
+        desc: "Ancient palm-leaf maps of consciousness: Ida, Pingala, Sushumna, and the awakening of the dormant serpentine energy.",
+        chapters: [
+          { title: "Chapter 1: The Bio-Electric Nadis", text: "The ancient Yoga Upanishads document 72,000 subtle energy channels (Nadis) converging along the spine. The awakening of Kundalini is the conscious elevation of prana from the base Muladhara chakra to the thousand-petaled Sahasrara at the crown of the head." }
+        ]
+      },
+      {
+        id: "granth_surya_siddhanta",
+        cat: "sanatana",
+        catLabel: "🕉️ COSMIC SANATANA",
+        title: "Surya Siddhanta: Lost Astronomy of Ancient Sages",
+        pages: 175,
+        chaptersCount: 9,
+        emoji: "☀️",
+        coverImg: "/images/surya_siddhanta_astronomy.jpg",
+        desc: "Ancient mathematical calculations of the speed of light, planetary orbits, lunar nodes, and equinox precessions.",
+        chapters: [
+          { title: "Chapter 1: Astronomical Accuracy", text: "Written thousands of years ago, the Surya Siddhanta calculated the sidereal year with 99.999% precision compared to modern atomic clock measurements, proving the unmatched mathematical genius of ancient Indian astronomers." }
+        ]
+      },
+
+      // CATEGORY 3: MIRACLE GURUJIS & SAGES
+      {
+        id: "granth_adi_shankara",
+        cat: "gurujis",
+        catLabel: "🧘 MIRACLE GURUJIS",
+        title: "Adi Shankaracharya: Digvijaya & Himalayan Miracles",
+        pages: 240,
+        chaptersCount: 14,
+        emoji: "📜",
+        coverImg: "/images/adi_shankara.jpg",
+        desc: "Walking barefoot across the 4 corners of India, defeating dogmas through pure logic, and establishing the 4 sacred Peethams at age 32.",
+        chapters: [
+          { title: "Chapter 1: The Wonder Child of Kalady", text: "Born in Kerala, young Shankara mastered the four Vedas by age eight. When an impoverished woman offered him her last withered gooseberry (Amla) with tears of devotion, Shankara recited the Kanakadhara Stotram, causing Goddess Lakshmi to shower golden amlas into the humble hut." },
+          { title: "Chapter 2: The Four Cardinal Pillars of Bharat", text: "Traversing thousands of kilometers across high mountain passes, Shankara established the four monastic pillars of Bharat: Sringeri in the South, Dwaraka in the West, Puri in the East, and Badrinath in the North, uniting the spiritual soul of the subcontinent under Advaita Vedanta." }
+        ]
+      },
+      {
+        id: "granth_agastya_miracles",
+        cat: "gurujis",
+        catLabel: "🧘 MIRACLE GURUJIS",
+        title: "Maharishi Agastya: Master of Oceans, Stars & Martial Arts",
+        pages: 190,
+        chaptersCount: 10,
+        emoji: "🌴",
+        coverImg: "/images/maharishi_agastya.jpg",
+        desc: "Drinking the southern ocean, subduing the Vindhya mountain range, and founding Tamil grammar and Kalaripayattu.",
+        chapters: [
+          { title: "Chapter 1: The Sage Who Drank the Ocean", text: "When the demon Kalakeyas hid beneath the ocean depths to wage guerrilla attacks on sages, Maharishi Agastya channeled supreme yogic energy and drank the entire ocean in one single draught, exposing the demons and restoring peace to the cosmos." }
+        ]
+      },
+      {
+        id: "granth_vivekananda_awakening",
+        cat: "gurujis",
+        catLabel: "🧘 MIRACLE GURUJIS",
+        title: "Swami Vivekananda: Raja Yoga & The Global Awakening",
+        pages: 200,
+        chaptersCount: 11,
+        emoji: "🦁",
+        coverImg: "/images/ashoka.jpg",
+        desc: "The fiery training under Ramakrishna, the electrifying 1893 Chicago Parliament speech, and master laws of mental focus.",
+        chapters: [
+          { title: "Chapter 1: Sisters and Brothers of America", text: "On September 11, 1893, a young monk in saffron robes stood before 7,000 delegates at the World's Parliament of Religions in Chicago. His opening words, 'Sisters and Brothers of America,' sparked a standing ovation that lasted two full minutes, introducing the profound universality of Vedanta to the modern West." }
+        ]
+      },
+      {
+        id: "granth_bhakti_miracles",
+        cat: "gurujis",
+        catLabel: "🧘 MIRACLE GURUJIS",
+        title: "Mirabai, Sant Kabir & Tulsidas: Miracles of Divine Love",
+        pages: 185,
+        chaptersCount: 9,
+        emoji: "🪷",
+        coverImg: "/images/meenakshi.jpg",
+        desc: "Poison turning to divine nectar, unbreakable devotion, and the mystical composition of the Ramcharitmanas.",
+        chapters: [
+          { title: "Chapter 1: The Cup of Poison (Amrita)", text: "When royal persecution sent a cup of lethal snake venom to Princess Mirabai, she drank it with a smile, offering it to Lord Krishna. By the grace of supreme devotion, the deadly poison transformed into sweet divine nectar, proving that pure love transcends physical mortality." }
+        ]
+      },
+
+      // CATEGORY 4: MORAL & KIDS EPICS
+      {
+        id: "granth_panchatantra_5_tantras",
+        cat: "morals",
+        catLabel: "🧒 MORAL EPICS",
+        title: "Panchatantra: The 5 Tantras of Strategic Wisdom",
+        pages: 190,
+        chaptersCount: 12,
+        emoji: "🦊",
+        coverImg: "/images/panchatantra_cover.jpg",
+        desc: "The world's oldest leadership treatise: Mitra Bheda (Losing Friends), Mitra Labha (Gaining Allies), and strategic wildlife fables.",
+        chapters: [
+          { title: "Chapter 1: The Sage and the Three Princes", text: "When King Amarasakti sought a teacher to transform his foolish sons into wise rulers, Acharya Vishnu Sharma wrote the Panchatantra—interwoven stories using animal allegories to teach diplomacy, economics, psychology, and tactical brilliance in 6 short months." }
+        ]
+      },
+      {
+        id: "granth_vikram_betal_25",
+        cat: "morals",
+        catLabel: "🧒 MORAL EPICS",
+        title: "Vikram & Betal: 25 Riddles of Justice & Statecraft",
+        pages: 215,
+        chaptersCount: 25,
+        emoji: "👑",
+        coverImg: "/images/vikram_betal.jpg",
+        desc: "King Vikramaditya carrying the riddle-telling corpse across the cremation ground to test moral intellect.",
+        chapters: [
+          { title: "Chapter 1: The Vow of King Vikramaditya", text: "To fulfill a promise to a Tantric sage, the fearless King Vikramaditya journeyed into the cremation ground on a moonless night to retrieve a corpse possessed by the celestial spirit Betal. But Betal warned him: 'I will tell you a story on our walk; if you know the answer to its riddle and remain silent, your head will burst into a thousand pieces; but if you speak, I will fly back to the banyan tree!'" }
+        ]
+      },
+      {
+        id: "granth_abhimanyu_chakravyuha",
+        cat: "morals",
+        catLabel: "🧒 MORAL EPICS",
+        title: "Abhimanyu: The 16-Year-Old Lion in the Chakravyuha",
+        pages: 165,
+        chaptersCount: 8,
+        emoji: "🏹",
+        coverImg: "/images/abhimanyu_chakravyuha.jpg",
+        desc: "The sacred labyrinth geometry of Dronacharya and the young prince who knew how to enter but not exit.",
+        chapters: [
+          { title: "Chapter 1: The Secret Learned in the Womb", text: "While in the womb of his mother Subhadra, young Abhimanyu heard Arjuna explaining the secret mechanics of penetrating the impenetrable seven-tiered Chakravyuha formation. But before Arjuna could explain the method of exit, Subhadra fell asleep, sealing the tragic, heroic fate of the sixteen-year-old warrior." }
+        ]
+      },
+      {
+        id: "granth_tenali_birbal_wit",
+        cat: "morals",
+        catLabel: "🧒 MORAL EPICS",
+        title: "Tenali Rama & Birbal: Tales of Wit & Court Logic",
+        pages: 175,
+        chaptersCount: 15,
+        emoji: "🦚",
+        coverImg: "/images/tenali.jpg",
+        desc: "The brilliant intellectual sparring matches that exposed hypocrisy and guided emperors with wisdom and humor.",
+        chapters: [
+          { title: "Chapter 1: The Mother Goddess and the Thousand Faces", text: "When Goddess Kali appeared before Tenali Rama with a thousand heads to test him, Tenali burst out laughing. When the Goddess angrily asked why he laughed, Tenali replied: 'O Mother, with one nose when I catch a cold it is so difficult; how do you manage with a thousand running noses?' Amused by his fearlessness and lightning wit, Kali blessed him to become the greatest court jester of Vijayanagara." }
+        ]
+      }
+    ];
+
+    this.granthsData = granths;
+
+    // Render Granth Cards in Horizontal Slider
+    const renderGranthSlider = (category) => {
+      const filtered = category === 'all' ? granths : granths.filter(function(g) { return g.cat === category; });
+      sliderRow.innerHTML = filtered.map(function(g) {
+        return '<div class="granth-card flex-shrink-0 w-72 sm:w-80 rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-gold/15 flex flex-col justify-between" data-granth-id="' + g.id + '">' +
+          '<div class="h-48 w-full relative flex flex-col justify-between p-4 overflow-hidden">' +
+            '<img src="' + g.coverImg + '" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="' + g.title + '">' +
+            '<div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-15 pointer-events-none"></div>' +
+            '<div class="flex justify-between items-start w-full relative z-20">' +
+              '<span class="text-[9px] font-bold text-white/90 bg-black/60 px-2 py-0.8 rounded-md uppercase tracking-wider border border-white/10 backdrop-blur-md">' +
+                g.catLabel +
+              '</span>' +
+              '<span class="text-[9px] font-extrabold text-gold bg-black/60 border border-gold/40 px-2 py-0.8 rounded-md backdrop-blur-md">' +
+                '📖 ' + g.pages + 'p' +
+              '</span>' +
+            </div>' +
+            '<div class="text-white z-20 relative">' +
+              '<h4 class="font-bold text-sm sm:text-base font-serif line-clamp-2 leading-snug drop-shadow-md text-white/95">' + g.title + '</h4>' +
+              '<p class="text-[10px] text-gold font-mono mt-0.5">' + g.chaptersCount + ' Deep Chapters &bull; Complete Granth</p>' +
+            '</div>' +
+            '<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">' +
+              '<div class="px-4 py-2 rounded-xl bg-gold text-black font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-gold/30 transform scale-90 group-hover:scale-100 transition-transform">' +
+                '📖 Read 150+ Page Book' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="p-4 flex-grow flex flex-col justify-between space-y-3 bg-[#0d0f15]">' +
+            '<p class="text-xs text-white/70 line-clamp-2 leading-relaxed">' +
+              g.desc +
+            '</p>' +
+            '<button class="read-granth-btn w-full py-2 rounded-xl bg-white/5 hover:bg-gold hover:text-black border border-white/10 hover:border-gold text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer" data-granth-id="' + g.id + '">' +
+              '<span>📖</span>' +
+              '<span>Read Full Granth (' + g.pages + 'p)</span>' +
+            '</button>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+      // Bind Clicks on Granth Cards
+      sliderRow.querySelectorAll('.granth-card, .read-granth-btn').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const granthId = el.getAttribute('data-granth-id');
+          const granth = granths.find(function(g) { return g.id === granthId; });
+          if (granth && window.appInstance) window.appInstance.openGranthReader(granth);
+        });
+      });
+    };
+
+    // Initial render of all 16 granths
+    renderGranthSlider('all');
+
+    // Slider Previous / Next Arrows
+    const SCROLL_STEP = 340;
+    if (prevBtn) {
+      prevBtn.onclick = function() {
+        sliderRow.scrollBy({ left: -SCROLL_STEP, behavior: 'smooth' });
+      };
+    }
+    if (nextBtn) {
+      nextBtn.onclick = function() {
+        sliderRow.scrollBy({ left: SCROLL_STEP, behavior: 'smooth' });
+      };
+    }
+
+    // Category Filter Buttons
+    document.querySelectorAll('.granth-tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.granth-tab-btn').forEach(function(b) {
+          b.className = "granth-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap";
+        });
+        btn.className = "granth-tab-btn flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold border border-gold bg-gold text-black transition-all cursor-pointer whitespace-nowrap shadow-md shadow-gold/20";
+        
+        const cat = btn.getAttribute('data-cat');
+        renderGranthSlider(cat);
+      });
+    });
+
+    // Close Reader Modal
+    if (closeBtn && modal) {
+      closeBtn.onclick = function() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+    }
+  },
+
+  openGranthReader(granth) {
+    const modal = document.getElementById('granth-reader-modal');
+    if (!modal) return;
+
+    let currentChapter = 0;
+    let isParchment = false;
+    let fontSize = 14;
+
+    const titleEl = document.getElementById('reader-book-title');
+    const metaEl = document.getElementById('reader-book-meta');
+    const emojiEl = document.getElementById('reader-book-emoji');
+    const tocList = document.getElementById('reader-toc-list');
+    const bodyEl = document.getElementById('reader-manuscript-body');
+    const pageInd = document.getElementById('reader-page-indicator');
+    const prevChapBtn = document.getElementById('reader-prev-chapter-btn');
+    const nextChapBtn = document.getElementById('reader-next-chapter-btn');
+    const themeBtn = document.getElementById('reader-theme-toggle-btn');
+    const fontDecBtn = document.getElementById('reader-font-dec-btn');
+    const fontIncBtn = document.getElementById('reader-font-inc-btn');
+    const canvasEl = document.getElementById('reader-content-canvas');
+
+    if (titleEl) titleEl.textContent = granth.title;
+    if (emojiEl) emojiEl.textContent = granth.emoji;
+
+    const renderChapter = function() {
+      const ch = granth.chapters[currentChapter] || granth.chapters[0];
+      if (metaEl) metaEl.textContent = granth.pages + " Pages • Chapter " + (currentChapter + 1) + " of " + granth.chapters.length;
+      if (pageInd) pageInd.textContent = "Chapter " + (currentChapter + 1) + " of " + granth.chapters.length + " (Pages 1–" + granth.pages + ")";
+
+      if (bodyEl) {
+        bodyEl.innerHTML = '<div class="space-y-4 font-serif">' +
+          '<div class="border-b border-gold/30 pb-3">' +
+            '<span class="text-[10px] font-mono text-gold font-bold uppercase tracking-widest">' + granth.title + '</span>' +
+            '<h2 class="text-xl sm:text-2xl font-bold text-gold mt-1">' + ch.title + '</h2>' +
+          '</div>' +
+          '<p class="leading-relaxed text-justify drop-shadow font-serif" style="font-size: ' + fontSize + 'px;">' +
+            ch.text +
+          '</p>' +
+          '<div class="p-4 rounded-2xl bg-black/40 border border-gold/20 my-6 text-xs font-sans text-white/80 space-y-2">' +
+            '<h4 class="font-bold text-gold font-serif">🏛️ Historical &amp; Philosophical Commentary</h4>' +
+            '<p class="text-xs leading-relaxed">' +
+              'This sacred chronicle is preserved in ancient Sanskrit palm-leaf manuscripts and temple inscriptions. It demonstrates the profound civilizational synthesis of metaphysics, statecraft, and human virtue.' +
+            '</p>' +
+          '</div>' +
+        '</div>';
+      }
+
+      // Update TOC Active State
+      if (tocList) {
+        tocList.querySelectorAll('.reader-toc-item').forEach(function(b, i) {
+          if (i === currentChapter) {
+            b.className = "reader-toc-item w-full text-left px-3 py-2 rounded-xl text-xs transition-all bg-gold/20 text-gold border border-gold/40 font-bold flex items-center justify-between";
+          } else {
+            b.className = "reader-toc-item w-full text-left px-3 py-2 rounded-xl text-xs transition-all text-white/70 hover:bg-white/5 hover:text-white flex items-center justify-between";
+          }
+        });
+      }
+
+      // Prev / Next button states
+      if (prevChapBtn) {
+        prevChapBtn.disabled = currentChapter === 0;
+        prevChapBtn.style.opacity = currentChapter === 0 ? "0.4" : "1";
+      }
+      if (nextChapBtn) {
+        nextChapBtn.textContent = currentChapter === granth.chapters.length - 1 ? "Finish Reading ✓" : "Next Chapter ▶";
+      }
+    };
+
+    // Render TOC List
+    if (tocList) {
+      tocList.innerHTML = granth.chapters.map(function(ch, idx) {
+        return '<button class="reader-toc-item w-full text-left px-3 py-2 rounded-xl text-xs transition-all ' + (idx === currentChapter ? 'bg-gold/20 text-gold border border-gold/40 font-bold' : 'text-white/70 hover:bg-white/5 hover:text-white') + ' flex items-center justify-between" data-chap-idx="' + idx + '">' +
+          '<span class="line-clamp-1">' + ch.title + '</span>' +
+          '<span class="text-[9px] font-mono opacity-50 ml-1">Ch ' + (idx + 1) + '</span>' +
+        '</button>';
+      }).join('');
+
+      tocList.querySelectorAll('.reader-toc-item').forEach(function(btn) {
+        btn.onclick = function() {
+          currentChapter = parseInt(btn.getAttribute('data-chap-idx'));
+          renderChapter();
+        };
+      });
+    }
+
+    // Prev / Next Chapter Click
+    if (prevChapBtn) {
+      prevChapBtn.onclick = function() {
+        if (currentChapter > 0) {
+          currentChapter--;
+          renderChapter();
+        }
+      };
+    }
+    if (nextChapBtn) {
+      nextChapBtn.onclick = function() {
+        if (currentChapter < granth.chapters.length - 1) {
+          currentChapter++;
+          renderChapter();
+        } else {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      };
+    }
+
+    // Theme Toggle (Parchment vs Obsidian Dark)
+    if (themeBtn && canvasEl) {
+      themeBtn.onclick = function() {
+        isParchment = !isParchment;
+        if (isParchment) {
+          canvasEl.style.backgroundColor = "#f7f1e3";
+          canvasEl.style.color = "#2c2214";
+          themeBtn.textContent = "🌑 Dark Mode";
+        } else {
+          canvasEl.style.backgroundColor = "#090b10";
+          canvasEl.style.color = "#f3f4f6";
+          themeBtn.textContent = "📜 Parchment";
+        }
+      };
+    }
+
+    // Font Sizing
+    if (fontDecBtn) {
+      fontDecBtn.onclick = function() {
+        if (fontSize > 11) {
+          fontSize -= 2;
+          renderChapter();
+        }
+      };
+    }
+    if (fontIncBtn) {
+      fontIncBtn.onclick = function() {
+        if (fontSize < 24) {
+          fontSize += 2;
+          renderChapter();
+        }
+      };
+    }
+
+    renderChapter();
+
+    // Show Modal
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
 }

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /config.json
+Disallow: /api/
+
+Sitemap: https://www.sanatana360.com/sitemap.xml
+Sitemap: https://www.sanatana360.com/rss.xml
