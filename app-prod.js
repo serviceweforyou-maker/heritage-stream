@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=57";
-import heritageData from "./data.js?v=57";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=57";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=58";
+import heritageData from "./data.js?v=58";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=58";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -901,9 +901,6 @@ class AppController {
           subBadgeModal.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="text-emerald-400 font-bold">✨ Premium Pass Active • ' + daysLeft + ' Days Left</span>';
         } else {
           subBadgeModal.innerHTML = '<span class="w-2 h-2 rounded-full bg-gold/60"></span><span class="text-gold/80">Free Explorer Access</span>';
-        }
-      } else {
-          subBadgeModal.innerHTML = `<span class="w-2 h-2 rounded-full bg-gold/60"></span><span class="text-gold/80">Free Explorer Access</span>`;
         }
       }
 
@@ -4522,15 +4519,6 @@ const bindSlideNavigation = () => {
     }
   }
 
-}
-// Instantiate core application controller
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    new AppController();
-  });
-} else {
-  new AppController();
-
   // ─────────────────────────────────────────────────────────────
   // ── GRAND DIGITAL GRANTHALAYA (16 Epic Books Slider & Reader) ─
   // ─────────────────────────────────────────────────────────────
@@ -4802,7 +4790,7 @@ if (document.readyState === 'loading') {
               '<span class="text-[9px] font-extrabold text-gold bg-black/60 border border-gold/40 px-2 py-0.8 rounded-md backdrop-blur-md">' +
                 '📖 ' + g.pages + 'p' +
               '</span>' +
-            </div>' +
+            '</div>' +
             '<div class="text-white z-20 relative">' +
               '<h4 class="font-bold text-sm sm:text-base font-serif line-clamp-2 leading-snug drop-shadow-md text-white/95">' + g.title + '</h4>' +
               '<p class="text-[10px] text-gold font-mono mt-0.5">' + g.chaptersCount + ' Deep Chapters &bull; Complete Granth</p>' +
@@ -4872,7 +4860,7 @@ if (document.readyState === 'loading') {
         modal.classList.remove('flex');
       };
     }
-  },
+  }
 
   openGranthReader(granth) {
     const modal = document.getElementById('granth-reader-modal');
@@ -5020,5 +5008,13 @@ if (document.readyState === 'loading') {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
   }
+}
 
+// Instantiate core application controller
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    new AppController();
+  });
+} else {
+  new AppController();
 }

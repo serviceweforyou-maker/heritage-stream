@@ -1,4 +1,4 @@
-import heritageData from './data.js?v=57';
+import heritageData from './data.js?v=58';
 
 export class TriviaGame {
   constructor(containerId, onGameOver) {
