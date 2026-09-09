@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=26";
-import heritageData from './data.js?v=26';
-import { TriviaGame, ChronologyGame, MemoryGame } from './games.js?v=26';
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=57";
+import heritageData from "./data.js?v=57";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=57";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -11,15 +11,22 @@ export const API_BASE = '';
 // ==========================================
 export class DatabaseService {
     static async fetchContent() {
-    let raw;
+    let raw = null;
     try {
-      const res = await fetch(API_BASE + '/api/content');
-      if (!res.ok) throw new Error("API content fetch error");
-      raw = await res.json();
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 800);
+      const res = await fetch((API_BASE || '') + '/api/content', { signal: controller.signal });
+      clearTimeout(timeoutId);
+      const contentType = res.headers.get('content-type') || '';
+      if (res.ok && contentType.includes('application/json')) {
+        raw = await res.json();
+      }
     } catch (err) {
-      console.warn("API load failed, using local database backup", err);
-      const module = await import('./data.js?v=26');
-      raw = module.default;
+      // Backend not running or static host, perfectly normal
+    }
+
+    if (!raw || !raw.content || !Array.isArray(raw.content) || raw.content.length === 0) {
+      raw = heritageData;
     }
 
     // Normalize schema to support both flat fallback array and split backend tables

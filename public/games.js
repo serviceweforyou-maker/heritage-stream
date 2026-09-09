@@ -1,10 +1,10 @@
-import heritageData from './data.js?v=25';
+import heritageData from './data.js?v=57';
 
 export class TriviaGame {
   constructor(containerId, onGameOver) {
     this.container = document.getElementById(containerId);
     this.onGameOver = onGameOver;
-    this.questions = [...heritageData.games.trivia];
+    this.questions = [...(heritageData?.games?.trivia || [])];
     this.currentIndex = 0;
     this.score = 0;
     this.timer = 15;
@@ -171,7 +171,7 @@ export class ChronologyGame {
 
   start() {
     // Select 4 random events from database
-    const pool = [...heritageData.games.chronology];
+    const pool = [...(heritageData?.games?.chronology || [])];
     this.events = pool.sort(() => Math.random() - 0.5).slice(0, 4);
     // Shuffle user order initially
     this.userOrder = [...this.events].sort(() => Math.random() - 0.5);

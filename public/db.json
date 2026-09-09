@@ -7665,5 +7665,159 @@
       }
     ]
   },
-  "orders": []
+  "orders": [],
+  "games": {
+    "trivia": [
+      {
+        "question": "Which weapon was used by Lord Shiva to sever the head of Ganesha before reviving him?",
+        "options": [
+          "Sudarshana Chakra",
+          "Trishula (Trident)",
+          "Pinaka Bow",
+          "Brahmastra"
+        ],
+        "answer": 1,
+        "explanation": "Lord Shiva severed Ganesha's head with his Trishula (Trident) in a state of fury before replacing it with an elephant head."
+      },
+      {
+        "question": "What is the literal translation and core meaning of the term 'Sanatana Dharma'?",
+        "options": [
+          "The Holy Rituals",
+          "The Way of Kings",
+          "The Eternal Order/Law",
+          "The Path of Ascetics"
+        ],
+        "answer": 2,
+        "explanation": "Sanatana Dharma translates to 'The Eternal Law' or 'The Eternal Order', signifying universal values, truth, and moral duty."
+      },
+      {
+        "question": "Which of the following is the first avatar (incarnation) in the Dashavatara of Lord Vishnu?",
+        "options": [
+          "Varaha the Boar",
+          "Matsya the Fish",
+          "Kurma the Tortoise",
+          "Narasimha"
+        ],
+        "answer": 1,
+        "explanation": "Matsya (the Fish) is the first avatar, representing Vishnu saving humanity and sacred scriptures from a cosmic deluge."
+      },
+      {
+        "question": "Which Chola emperor built the magnificent Brihadisvara Temple at Thanjavur in 1010 CE?",
+        "options": [
+          "Rajendra Chola I",
+          "Rajaraja Chola I",
+          "Aditya Chola I",
+          "Karikala Chola"
+        ],
+        "answer": 1,
+        "explanation": "Rajaraja Chola I commissioned this architectural marvel, which is built entirely of granite and is a UNESCO World Heritage site."
+      },
+      {
+        "question": "The musical pillars that produce classical notes when tapped are located in which Temple in Hampi?",
+        "options": [
+          "Virupaksha Temple",
+          "Hazara Rama Temple",
+          "Vitthala Temple",
+          "Achyutaraya Temple"
+        ],
+        "answer": 2,
+        "explanation": "The Vitthala Temple in Hampi features 56 musical pillars, also known as Saregama pillars, which resonate with notes when struck."
+      }
+    ],
+    "chronology": [
+      {
+        "id": "ev_matsya",
+        "title": "Matsya Avatar (Fish)",
+        "period": "Satya Yuga (Earliest)",
+        "timestamp": -10000,
+        "desc": "Vishnu manifests as a fish to save the king Satyavrata and earth's seeds from the great flood."
+      },
+      {
+        "id": "ev_kurma",
+        "title": "Kurma Avatar (Tortoise)",
+        "period": "Satya Yuga",
+        "timestamp": -9000,
+        "desc": "Vishnu supports the churning of the milk ocean on his shell to obtain the nectar of immortality."
+      },
+      {
+        "id": "ev_rama",
+        "title": "Rama Avatar (Treta Yuga)",
+        "period": "Treta Yuga",
+        "timestamp": -5000,
+        "desc": "Vishnu descends as the ideal prince and king of Ayodhya to establish justice and duty (Dharma)."
+      },
+      {
+        "id": "ev_krishna",
+        "title": "Krishna Avatar (Dvapara Yuga)",
+        "period": "Dvapara Yuga",
+        "timestamp": -3102,
+        "desc": "Vishnu acts as the divine statesman, delivering the Bhagavad Gita on the battlefield of Kurukshetra."
+      },
+      {
+        "id": "ev_rebellion",
+        "title": "Rebellion of 1857",
+        "period": "Modern History (1857 CE)",
+        "timestamp": 1857,
+        "desc": "The Indian rebellion led by Rani Lakshmibai, Mangal Pandey, and others."
+      }
+    ],
+    "memory": [
+      {
+        "id": 1,
+        "name": "Ganesha",
+        "icon": "🐘",
+        "matchId": "ganesha",
+        "fact": "Eldest son of Shiva & Parvati, Lord of new beginnings and intellect."
+      },
+      {
+        "id": 2,
+        "name": "Ganesha",
+        "icon": "🍭",
+        "matchId": "ganesha",
+        "fact": "Known for his single tusk and love for sweet Modak dumplings."
+      },
+      {
+        "id": 3,
+        "name": "Lord Shiva",
+        "icon": "🔱",
+        "matchId": "shiva",
+        "fact": "The Auspicious Destroyer in the Trimurti, carrying the Trishul."
+      },
+      {
+        "id": 4,
+        "name": "Lord Shiva",
+        "icon": "🌙",
+        "matchId": "shiva",
+        "fact": "Adorned with ash on his skin, a crescent moon, and the river Ganges in his locks."
+      },
+      {
+        "id": 5,
+        "name": "Lord Vishnu",
+        "icon": "🐚",
+        "matchId": "vishnu",
+        "fact": "The Preserver of the cosmos, holding the Shankha (Conch shell) and Lotus."
+      },
+      {
+        "id": 6,
+        "name": "Lord Vishnu",
+        "icon": "🌀",
+        "matchId": "vishnu",
+        "fact": "Wields the Sudarshana Chakra, a spinning disk of celestial energy."
+      },
+      {
+        "id": 7,
+        "name": "Taj Mahal",
+        "icon": "🏛️",
+        "matchId": "taj",
+        "fact": "Built by Shah Jahan as a mausoleum for Mumtaz Mahal."
+      },
+      {
+        "id": 8,
+        "name": "Taj Mahal",
+        "icon": "🕌",
+        "matchId": "taj",
+        "fact": "Constructed of white Makrana marble that changes color with daylight."
+      }
+    ]
+  }
 }
