@@ -356,6 +356,7 @@ class AppController {
     };
 
     safeInit("renderHeader", this.renderHeader);
+    safeInit("initMapExplorer", this.initMapExplorer);
     safeInit("renderSpotlight", this.renderSpotlight);
     safeInit("renderContentRows", this.renderContentRows);
     safeInit("setupSubscriptionUI", this.setupSubscriptionUI);
@@ -2457,30 +2458,105 @@ const bindSlideNavigation = () => {
   setupAmbientMusic() {
     const btn = document.getElementById('ambient-music-btn');
     if (!btn) return;
-    
-    // Serene nature ambient loop track
-    const trackUrl = "https://actions.google.com/sounds/v1/ambiences/wind_chimes_short.ogg";
-    this.ambientMusic = new Audio(trackUrl);
-    this.ambientMusic.loop = true;
-    this.ambientMusic.volume = 0.15; // low ambient background volume
-    
-    let isAmbientPlaying = false;
-    
-    btn.addEventListener('click', () => {
-      isAmbientPlaying = !isAmbientPlaying;
-      if (isAmbientPlaying) {
-        this.ambientMusic.play().catch(err => console.log("Ambient music delayed by gesture:", err));
-        btn.classList.add('border-gold', 'text-gold');
-        btn.innerHTML = `<span class="animate-bounce">🪕</span> <span>Playing Ambient</span>`;
+
+    let isPlaying = false;
+    let audioCtx = null;
+    let tanpuraTimer = null;
+    let fallbackAudio = null;
+
+    // Web Audio Indian Classical Tanpura Drone Generator (136.1 Hz Cosmic Om Tuning)
+    const startTanpuraEngine = () => {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) throw new Error("Web Audio not supported");
+        audioCtx = new AudioContext();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+
+        // 4 Tanpura Strings in C# (Sa-Pa-Sa-Kharja Sa):
+        // 1st String: Pa (204.15 Hz)
+        // 2nd String: Madhya Sa (272.2 Hz)
+        // 3rd String: Madhya Sa (272.2 Hz)
+        // 4th String: Kharja Sa (136.1 Hz)
+        const stringPitches = [204.15, 272.2, 272.2, 136.1];
+        let strIdx = 0;
+
+        const pluckString = () => {
+          if (!isPlaying || !audioCtx) return;
+          const freq = stringPitches[strIdx];
+          const now = audioCtx.currentTime;
+
+          // Main Oscillator with Rich Harmonics
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          const filter = audioCtx.createBiquadFilter();
+
+          osc.type = strIdx === 3 ? 'sawtooth' : 'triangle';
+          osc.frequency.setValueAtTime(freq, now);
+
+          // Warm Acoustic Resonance Filter
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(freq * 3.5, now);
+          filter.Q.setValueAtTime(4.0, now);
+
+          // Pluck Envelope with gentle decay
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.exponentialRampToValueAtTime(0.08, now + 0.04);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 3.2);
+
+          osc.connect(filter);
+          filter.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start(now);
+          osc.stop(now + 3.3);
+
+          strIdx = (strIdx + 1) % stringPitches.length;
+        };
+
+        // Pluck strings sequentially every 800ms
+        pluckString();
+        tanpuraTimer = setInterval(pluckString, 850);
+      } catch (err) {
+        console.warn("Using fallback ambient track:", err);
+        if (!fallbackAudio) {
+          fallbackAudio = new Audio("https://actions.google.com/sounds/v1/ambiences/wind_chimes_short.ogg");
+          fallbackAudio.loop = true;
+          fallbackAudio.volume = 0.25;
+        }
+        fallbackAudio.play().catch(() => {});
+      }
+    };
+
+    const stopTanpuraEngine = () => {
+      if (tanpuraTimer) {
+        clearInterval(tanpuraTimer);
+        tanpuraTimer = null;
+      }
+      if (audioCtx) {
+        audioCtx.close().catch(() => {});
+        audioCtx = null;
+      }
+      if (fallbackAudio) {
+        fallbackAudio.pause();
+      }
+    };
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        startTanpuraEngine();
+        btn.classList.add('border-gold', 'text-gold', 'bg-gold/20');
+        btn.innerHTML = '<span class="animate-bounce text-sm">🪕</span> <span class="hidden lg:inline text-gold font-bold">Playing Tanpura</span>';
       } else {
-        this.ambientMusic.pause();
-        btn.classList.remove('border-gold', 'text-gold');
-        btn.innerHTML = `<span>🪕</span> <span>Ambient Music</span>`;
+        stopTanpuraEngine();
+        btn.classList.remove('border-gold', 'text-gold', 'bg-gold/20');
+        btn.innerHTML = '<span>🪕</span> <span class="hidden lg:inline">Ambience</span>';
       }
     });
   }
 
-  setupPersonaFilters() {
+    setupPersonaFilters() {
     const tabBtns = document.querySelectorAll('.persona-tab-btn');
     const standardContainer = document.getElementById('standard-library-rows');
     const gridContainer = document.getElementById('persona-filtered-grid');
@@ -4397,197 +4473,683 @@ const bindSlideNavigation = () => {
     }
   }
 
-  // 7. Secret Mystery Vaults Audio Clues
+  // 7. Secret Mystery Vaults 60s Audio Clue Player
   initMysteryVault() {
     const clueBtns = document.querySelectorAll('.play-vault-clue-btn');
     if (!clueBtns.length) return;
 
-    let activeVaultAudio = null;
-    let currentPlayingBtn = null;
+    let activeAudioCtx = null;
+    let activeChimeInterval = null;
+    let activeBtn = null;
+    let countdownTimer = null;
+
+    const playMysticalSoundscape = (durationSec = 60, onFinish) => {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        activeAudioCtx = new AudioContext();
+        if (activeAudioCtx.state === 'suspended') activeAudioCtx.resume();
+
+        // Chimes chord: 528 Hz (Miracle Tone), 432 Hz, 639 Hz
+        const chords = [528, 432, 639, 396, 741];
+        let noteIdx = 0;
+
+        const chime = () => {
+          if (!activeAudioCtx) return;
+          const freq = chords[noteIdx % chords.length];
+          const now = activeAudioCtx.currentTime;
+
+          const osc = activeAudioCtx.createOscillator();
+          const gain = activeAudioCtx.createGain();
+          const panner = activeAudioCtx.createStereoPanner ? activeAudioCtx.createStereoPanner() : null;
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.linearRampToValueAtTime(0.06, now + 0.1);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 3.8);
+
+          if (panner) {
+            panner.pan.setValueAtTime((Math.random() * 2) - 1, now);
+            osc.connect(panner);
+            panner.connect(gain);
+          } else {
+            osc.connect(gain);
+          }
+          gain.connect(activeAudioCtx.destination);
+
+          osc.start(now);
+          osc.stop(now + 4.0);
+          noteIdx++;
+        };
+
+        chime();
+        activeChimeInterval = setInterval(chime, 1800);
+
+        countdownTimer = setTimeout(() => {
+          stopSoundscape();
+          if (onFinish) onFinish();
+        }, durationSec * 1000);
+      } catch (err) {
+        console.warn("Soundscape fallback:", err);
+        if (onFinish) onFinish();
+      }
+    };
+
+    const stopSoundscape = () => {
+      if (activeChimeInterval) clearInterval(activeChimeInterval);
+      if (countdownTimer) clearTimeout(countdownTimer);
+      if (activeAudioCtx) {
+        activeAudioCtx.close().catch(() => {});
+        activeAudioCtx = null;
+      }
+      activeChimeInterval = null;
+      countdownTimer = null;
+    };
 
     clueBtns.forEach(btn => {
       btn.onclick = (e) => {
         e.preventDefault();
+        e.stopPropagation();
 
-        if (currentPlayingBtn === btn && activeVaultAudio) {
-          activeVaultAudio.pause();
-          activeVaultAudio = null;
-          currentPlayingBtn = null;
+        if (activeBtn === btn) {
+          // Toggle Pause
+          stopSoundscape();
           btn.innerHTML = '<span>🔊</span> Listen 60s Clue';
           btn.classList.remove('bg-gold', 'text-black');
+          activeBtn = null;
           return;
         }
 
-        if (activeVaultAudio) {
-          activeVaultAudio.pause();
-          if (currentPlayingBtn) {
-            currentPlayingBtn.innerHTML = '<span>🔊</span> Listen 60s Clue';
-            currentPlayingBtn.classList.remove('bg-gold', 'text-black');
-          }
+        if (activeBtn) {
+          activeBtn.innerHTML = '<span>🔊</span> Listen 60s Clue';
+          activeBtn.classList.remove('bg-gold', 'text-black');
         }
 
-        activeVaultAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=meditation-flute-112197.mp3');
-        activeVaultAudio.volume = 0.5;
-        activeVaultAudio.play().catch(() => {});
-        currentPlayingBtn = btn;
-        btn.innerHTML = '<span class="animate-pulse">⏸</span> Playing Clue (60s)';
+        stopSoundscape();
+        activeBtn = btn;
         btn.classList.add('bg-gold', 'text-black');
 
-        if (window.awardKarmaPoints) window.awardKarmaPoints(5, "Secret Clue Declassified");
+        let remaining = 60;
+        btn.innerHTML = '<span class="animate-pulse">⏸</span> Playing Clue (' + remaining + 's)';
 
-        setTimeout(() => {
-          if (activeVaultAudio) {
-            activeVaultAudio.pause();
-            activeVaultAudio = null;
+        const ticker = setInterval(() => {
+          remaining--;
+          if (remaining > 0 && activeBtn === btn) {
+            btn.innerHTML = '<span class="animate-pulse">⏸</span> Playing Clue (' + remaining + 's)';
+          } else {
+            clearInterval(ticker);
           }
+        }, 1000);
+
+        playMysticalSoundscape(60, () => {
+          clearInterval(ticker);
           btn.innerHTML = '<span>🔊</span> Listen 60s Clue';
           btn.classList.remove('bg-gold', 'text-black');
-        }, 60000);
+          activeBtn = null;
+        });
+
+        if (window.awardKarmaPoints) window.awardKarmaPoints(5, "Secret Clue Declassified");
       };
     });
   }
 
-  // 8. Ask Rishi AI Consultation
+  // 8. Ask Rishi AI Consultation (Interactive Multi-Persona AI)
   initAskRishiAI() {
-    const modal = document.getElementById('rishi-modal');
-    const openBtn = document.getElementById('header-rishi-btn');
+    const modal = document.getElementById('ask-rishi-modal');
+    const openBtns = [
+      document.getElementById('header-rishi-btn'),
+      document.getElementById('mobile-rishi-btn'),
+      document.getElementById('open-rishi-btn')
+    ].filter(Boolean);
     const closeBtn = document.getElementById('close-rishi-modal-btn');
-    const askBtn = document.getElementById('submit-rishi-btn');
-    const queryInput = document.getElementById('rishi-query-input');
-    const responseBox = document.getElementById('rishi-response-box');
-    const answerText = document.getElementById('rishi-answer-text');
+    const chatForm = document.getElementById('rishi-chat-form');
+    const chatInput = document.getElementById('rishi-user-input');
+    const chatHistory = document.getElementById('rishi-chat-history');
+    const personaBtns = document.querySelectorAll('.rishi-persona-btn');
+    const quotaBadge = document.getElementById('rishi-quota-badge');
 
-    if (openBtn && modal) {
-      openBtn.onclick = (e) => {
+    if (!modal) return;
+
+    let selectedPersona = 'chanakya';
+    let userQueriesCount = 0;
+
+    const personaKnowledge = {
+      chanakya: {
+        name: "Acharya Chanakya",
+        title: "Master of Statecraft, Economics & Tactical Strategy",
+        avatar: "📜",
+        greeting: "Pranam, seeker of strategy. Ask me on building unstoppable discipline, winning negotiations, managing wealth (Artha), or overcoming deceit.",
+        responses: [
+          "In the Arthashastra, I declare: 'Before you embark on any venture, ask yourself three questions: Why am I doing this? What might the results be? Will I be successful?' When you think deeply and find satisfactory answers, proceed fearlessly without looking back.",
+          "A person should not be overly honest. Straight trees are chopped down first, and honest people are exploited first. Cultivate discreet wisdom and strategic patience.",
+          "Wealth is the root of all Dharma and purpose. Conserve your energy, build alliances with individuals of virtue, and master your senses before attempting to conquer enemies.",
+          "The biggest disease of the human mind is procrastination. What is to be done tomorrow, do today; what is to be done today, do this very moment."
+        ]
+      },
+      patanjali: {
+        name: "Maharishi Patanjali",
+        title: "Master of Mind Control, Meditation & Yoga Sutras",
+        avatar: "🧘",
+        greeting: "Om. I am Patanjali. Ask me on quieting mental turbulence, overcoming anxiety, mastering breath (Pranayama), or cultivating razor-sharp focus.",
+        responses: [
+          "Yoga is 'Chitta Vritti Nirodha'—the conscious stilling of the fluctuations of the mind. When thoughts cease to agitate you, the observer abides in its true luminous nature.",
+          "Practice becomes firmly grounded only when it is pursued with reverence, uninterruptedly, for a long period of time (Abhyasa and Vairagya). Detach from the outcome and focus wholly on the present breath.",
+          "Undisturbed calmness of mind is attained by cultivating friendliness toward the happy, compassion for the unhappy, delight in the virtuous, and indifference toward the wicked.",
+          "Your breath is the physical bridge to your subconscious mind. When breath is slow and rhythmic, the mind becomes tranquil and invincible."
+        ]
+      },
+      charaka: {
+        name: "Acharya Charaka",
+        title: "Father of Ayurvedic Medicine, Vitality & Dinacharya",
+        avatar: "🌿",
+        greeting: "Aayushmaan Bhava! Ask me regarding balancing your Doshas (Vata, Pitta, Kapha), natural immunity (Ojas), seasonal diets, or deep restorative sleep.",
+        responses: [
+          "Food is your first medicine. Eating warm, freshly prepared seasonal meals aligned with your digestive fire (Agni) prevents ninety percent of modern metabolic diseases.",
+          "A physician who fails to enter the body of a patient with the lamp of knowledge and compassion cannot treat disease. Maintain a balanced mind, for mental stress directly vitiates physical Ojas (vital immunity).",
+          "Align your daily routine (Dinacharya) with the sun. Wake during Brahma Muhurta (pre-dawn), drink warm water, practice moderate movement, and retire to sleep before 10 PM to nourish the nervous system.",
+          "Health is not merely the absence of disease, but a state of physiological balance, peaceful senses, and joyous consciousness (Prasanna Atma)."
+        ]
+      },
+      krishna: {
+        name: "Yogeshwara Sri Krishna",
+        title: "Supreme Teacher of the Bhagavad Gita & Karma Yoga",
+        avatar: "🪷",
+        greeting: "Jai Sri Krishna. Ask me on resolving moral dilemmas, overcoming fear and attachment, discovering your Swadharma, or finding inner peace in the battlefield of life.",
+        responses: [
+          "Karmanye Vadhikaraste Ma Phaleshu Kadachana: You have a sacred right to perform your prescribed duty, but never to the fruits of action. Act with supreme excellence without being enslaved by greed or fear of failure.",
+          "The mind is indeed restless and difficult to restrain, O Arjuna. But by sustained practice (Abhyasa) and non-attachment (Vairagya), it can be mastered completely.",
+          "There is neither this world, nor the world beyond, nor happiness for the one who doubts. Cultivate unshakeable faith in your inner divinity and rise to fulfill your destiny.",
+          "Whenever Dharma declines and righteousness is eclipsed, I manifest across every age to protect the good, transform negativity, and re-establish cosmic balance."
+        ]
+      }
+    };
+
+    const updatePersonaUI = (personaKey) => {
+      selectedPersona = personaKey;
+      personaBtns.forEach(b => {
+        if (b.getAttribute('data-persona') === personaKey) {
+          b.className = "rishi-persona-btn p-2 rounded-xl border border-gold bg-gold/20 text-gold text-xs font-bold flex flex-col items-center gap-1 transition-all shadow-md shadow-gold/15";
+        } else {
+          b.className = "rishi-persona-btn p-2 rounded-xl border border-white/10 bg-white/5 text-white/70 hover:border-gold/50 text-xs font-bold flex flex-col items-center gap-1 transition-all";
+        }
+      });
+
+      const p = personaKnowledge[personaKey];
+      if (chatHistory && p) {
+        chatHistory.innerHTML = `
+          <div class="flex gap-3 items-start p-3 rounded-xl bg-gold/10 border border-gold/25">
+            <span class="text-2xl">${p.avatar}</span>
+            <div class="space-y-1">
+              <span class="text-xs font-bold text-gold font-serif block">${p.name} (${p.title})</span>
+              <p class="text-xs text-white/85 leading-relaxed font-sans">${p.greeting}</p>
+            </div>
+          </div>
+        `;
+      }
+    };
+
+    personaBtns.forEach(btn => {
+      btn.onclick = (e) => {
+        e.preventDefault();
+        const p = btn.getAttribute('data-persona');
+        if (p && personaKnowledge[p]) updatePersonaUI(p);
+      };
+    });
+
+    openBtns.forEach(btn => {
+      btn.onclick = (e) => {
         e.preventDefault();
         modal.classList.remove('hidden');
         modal.classList.add('flex');
+        updatePersonaUI(selectedPersona);
+        if (chatInput) setTimeout(() => chatInput.focus(), 100);
       };
-    }
-    if (closeBtn && modal) {
+    });
+
+    if (closeBtn) {
       closeBtn.onclick = () => {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
       };
     }
 
-    if (askBtn && queryInput) {
-      askBtn.onclick = () => {
-        const q = queryInput.value.trim();
-        if (!q) return;
+    if (chatForm && chatInput && chatHistory) {
+      chatForm.onsubmit = (e) => {
+        e.preventDefault();
+        const query = chatInput.value.trim();
+        if (!query) return;
 
-        if (responseBox) responseBox.classList.remove('hidden');
-        if (answerText) answerText.textContent = "Consulting ancient palm-leaf scriptures and wisdom treatises...";
+        // Render User Message
+        const userMsgDiv = document.createElement('div');
+        userMsgDiv.className = "flex justify-end";
+        userMsgDiv.innerHTML = `
+          <div class="bg-white/10 border border-white/20 rounded-2xl px-4 py-2.5 max-w-[85%] text-xs text-white font-sans">
+            ${query}
+          </div>
+        `;
+        chatHistory.appendChild(userMsgDiv);
+        chatInput.value = '';
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+
+        // Render Thinking State
+        const thinkingDiv = document.createElement('div');
+        thinkingDiv.className = "flex gap-2 items-center text-xs text-gold/70 italic p-2";
+        thinkingDiv.innerHTML = `<span>🕉️</span> <span>${personaKnowledge[selectedPersona].name} is meditating on your inquiry...</span>`;
+        chatHistory.appendChild(thinkingDiv);
+        chatHistory.scrollTop = chatHistory.scrollHeight;
 
         setTimeout(() => {
-          const answers = [
-            "Acharya Chanakya dictates: 'Do not be very upright in your dealings; straight trees are cut down first, while crooked ones remain standing.' Apply strategic patience and evaluate hidden intentions before making commitments.",
-            "Maharishi Patanjali guides in Yoga Sutras: 'Yogas Chitta Vritti Nirodha' (Yoga is the stilling of mental fluctuations). When the mind ceases to grasp at past regrets or future anxiety, supreme focus arises.",
-            "Bhagavan Sri Krishna counsels: 'You have a right solely to the performance of duty, never to the fruits thereof.' Direct your boundless energy into craftsmanship and righteousness; success will follow naturally as a shadow."
-          ];
-          const choice = answers[Math.floor(Math.random() * answers.length)];
-          if (answerText) answerText.textContent = choice;
+          thinkingDiv.remove();
+          const p = personaKnowledge[selectedPersona];
+          const pool = p.responses;
+          const answer = pool[userQueriesCount % pool.length];
+          userQueriesCount++;
+
+          const rishiMsgDiv = document.createElement('div');
+          rishiMsgDiv.className = "flex gap-3 items-start p-3 rounded-xl bg-gold/15 border border-gold/30";
+          rishiMsgDiv.innerHTML = `
+            <span class="text-2xl flex-shrink-0">${p.avatar}</span>
+            <div class="space-y-1">
+              <span class="text-xs font-bold text-gold font-serif block">${p.name}</span>
+              <p class="text-xs text-white/90 leading-relaxed font-serif">${answer}</p>
+            </div>
+          `;
+          chatHistory.appendChild(rishiMsgDiv);
+          chatHistory.scrollTop = chatHistory.scrollHeight;
+
+          if (quotaBadge) {
+            quotaBadge.textContent = "Query Answered ✓ (Unlimited Pass Active)";
+          }
           if (window.awardKarmaPoints) window.awardKarmaPoints(10, "Rishi Wisdom Inquiry");
         }, 800);
       };
     }
   }
 
-  // 9. Royal Heritage Archetype & Certificate
+  // 9. Vedic Heritage Archetype Discovery (Interactive 3-Question Royal Quiz Engine)
   initArchetypeCertificate() {
     const modal = document.getElementById('archetype-modal');
     const openBtn = document.getElementById('header-archetype-btn');
+    const mobileBtn = document.getElementById('mobile-archetype-btn');
     const closeBtn = document.getElementById('close-archetype-modal-btn');
+    const quizContainer = document.getElementById('archetype-quiz-container');
+    const questionCard = document.getElementById('archetype-question-card');
+    const resultContainer = document.getElementById('archetype-result-container');
+    const certUserName = document.getElementById('cert-user-name');
+    const certBadge = document.getElementById('cert-archetype-badge');
+    const certDesc = document.getElementById('cert-archetype-desc');
+    const retakeBtn = document.getElementById('retake-archetype-btn');
+    const shareBtn = document.getElementById('whatsapp-share-cert-btn');
 
-    if (openBtn && modal) {
-      openBtn.onclick = (e) => {
-        e.preventDefault();
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      };
-    }
-    if (closeBtn && modal) {
+    if (!modal) return;
+
+    const quizData = [
+      {
+        q: "1. When you explore ancient India, what captivates your spirit most?",
+        options: [
+          { text: "Architectural engineering, sacred geometry, and musical pillars", archetype: "sage" },
+          { text: "Kshatriya valor, righteous kings, and defensive martial arts", archetype: "guardian" },
+          { text: "Upanishadic consciousness, meditation, and cosmic Yuga cycles", archetype: "philosopher" },
+          { text: "Devotional temple arts, saintly miracles, and universal love", archetype: "visionary" }
+        ]
+      },
+      {
+        q: "2. When facing an ethical dilemma, which compass guides your decisions?",
+        options: [
+          { text: "Objective logic, strategic mastery, and structural clarity", archetype: "sage" },
+          { text: "Fearless adherence to righteous duty (Dharma) at any cost", archetype: "guardian" },
+          { text: "Stillness, detached witnessing, and inner self-inquiry", archetype: "philosopher" },
+          { text: "Boundless empathy, seva (service), and surrender to God", archetype: "visionary" }
+        ]
+      },
+      {
+        q: "3. Which timeless Sanskrit aphorism resonates deepest with your soul?",
+        options: [
+          { text: "'Shilpa Vidya & Vastu Shastra' — The science of cosmic architecture", archetype: "sage" },
+          { text: "'Yato Dharmastato Jayah' — Where there is Dharma, there is victory", archetype: "guardian" },
+          { text: "'Aham Brahmasmi' — I am the infinite witness consciousness", archetype: "philosopher" },
+          { text: "'Vasudhaiva Kutumbakam' — The entire world is one loving family", archetype: "visionary" }
+        ]
+      }
+    ];
+
+    const archetypeResults = {
+      sage: {
+        badge: "🏛️ The Architectural Sage",
+        desc: "Possessing deep discernment for timeless structural beauty, temple acoustics, and civilizational preservation."
+      },
+      guardian: {
+        badge: "⚔️ The Dharmic Guardian",
+        desc: "Guided by unshakeable moral courage, tactical leadership, and an indomitable will to defend civilizational truth."
+      },
+      philosopher: {
+        badge: "🧘 The Mystic Philosopher",
+        desc: "Endowed with high intellectual curiosity, mastery over mental fluctuations, and profound intuition of cosmic Yugas."
+      },
+      visionary: {
+        badge: "🪷 The Devotional Visionary",
+        desc: "Radiating pure empathy, artistic grace, and an unwavering devotion that transforms life's struggles into divine nectar."
+      }
+    };
+
+    let currentQ = 0;
+    let scores = { sage: 0, guardian: 0, philosopher: 0, visionary: 0 };
+
+    const renderQuestion = () => {
+      if (!questionCard) return;
+      if (currentQ >= quizData.length) {
+        // Compute Winner
+        let winningKey = 'sage';
+        let maxScore = -1;
+        for (const k in scores) {
+          if (scores[k] > maxScore) {
+            maxScore = scores[k];
+            winningKey = k;
+          }
+        }
+
+        const res = archetypeResults[winningKey] || archetypeResults.sage;
+        const userName = localStorage.getItem('hs_user_name') || localStorage.getItem('hs_profile') || 'Scholar of Bharat';
+
+        if (certUserName) certUserName.textContent = userName;
+        if (certBadge) certBadge.textContent = res.badge;
+        if (certDesc) certDesc.textContent = res.desc;
+
+        if (quizContainer) quizContainer.classList.add('hidden');
+        if (resultContainer) resultContainer.classList.remove('hidden');
+
+        if (window.awardKarmaPoints) window.awardKarmaPoints(25, "Archetype Discovery Certified");
+        return;
+      }
+
+      const qObj = quizData[currentQ];
+      questionCard.innerHTML = `
+        <div class="space-y-1">
+          <div class="flex justify-between text-[10px] font-mono text-gold font-bold uppercase tracking-wider">
+            <span>Question ${currentQ + 1} of ${quizData.length}</span>
+            <span>Vedic Telemetry</span>
+          </div>
+          <h4 class="text-sm sm:text-base font-bold text-white font-serif">${qObj.q}</h4>
+        </div>
+        <div class="space-y-2.5 pt-2">
+          ${qObj.options.map((opt, idx) => `
+            <button class="archetype-opt-btn w-full text-left p-3.5 rounded-xl border border-white/10 bg-white/5 hover:border-gold hover:bg-gold/15 text-xs text-white/90 font-medium transition-all flex items-center justify-between group cursor-pointer" data-arch="${opt.archetype}">
+              <span>${opt.text}</span>
+              <span class="text-gold opacity-0 group-hover:opacity-100 transition-opacity font-bold">➔</span>
+            </button>
+          `).join('')}
+        </div>
+      `;
+
+      questionCard.querySelectorAll('.archetype-opt-btn').forEach(btn => {
+        btn.onclick = () => {
+          const arch = btn.getAttribute('data-arch');
+          if (arch && scores[arch] !== undefined) scores[arch]++;
+          currentQ++;
+          renderQuestion();
+        };
+      });
+    };
+
+    const openQuiz = (e) => {
+      if (e) e.preventDefault();
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      currentQ = 0;
+      scores = { sage: 0, guardian: 0, philosopher: 0, visionary: 0 };
+      if (quizContainer) quizContainer.classList.remove('hidden');
+      if (resultContainer) resultContainer.classList.add('hidden');
+      renderQuestion();
+    };
+
+    if (openBtn) openBtn.onclick = openQuiz;
+    if (mobileBtn) mobileBtn.onclick = openQuiz;
+
+    if (closeBtn) {
       closeBtn.onclick = () => {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
       };
     }
-  }
 
-  // 10. Viral WhatsApp Referral
-  initViralReferral() {
-    const modal = document.getElementById('viral-referral-modal');
-    const openBtn = document.getElementById('header-referral-btn');
-    const closeBtn = document.getElementById('close-referral-modal-btn');
-    const shareBtn = document.getElementById('submit-whatsapp-share-btn');
+    if (retakeBtn) retakeBtn.onclick = openQuiz;
 
-    if (openBtn && modal) {
-      openBtn.onclick = (e) => {
-        e.preventDefault();
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      };
-    }
-    if (closeBtn && modal) {
-      closeBtn.onclick = () => {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      };
-    }
-
-    if (shareBtn && modal) {
+    if (shareBtn) {
       shareBtn.onclick = () => {
-        const shareText = encodeURIComponent("⚜️ Namaste! Discover 200+ ancient Indian documentaries, 5-language bedtime audiobooks (Kannada/Tamil/Telugu), and Vedic Math for kids on Sanatana360. 100% ad-free safe screen time! Check it out: https://www.sanatana360.com");
-        window.open('https://api.whatsapp.com/send?text=' + shareText, '_blank');
-
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-
-        setTimeout(() => {
-          this.openPaymentModal();
-        }, 500);
+        const title = certBadge ? certBadge.textContent : 'Vedic Archetype';
+        const text = encodeURIComponent("👑 I just completed the Vedic Heritage Archetype Discovery on Sanatana360 and was certified as: " + title + "! Discover your ancestral mindset: https://www.sanatana360.com");
+        window.open('https://api.whatsapp.com/send?text=' + text, '_blank');
       };
     }
   }
 
-  // 11. Kids Mode Quick Switcher
-  initKidsModeToggle() {
-    const kidsBtn = document.getElementById('header-kids-mode-btn');
-    if (kidsBtn) {
-      kidsBtn.onclick = (e) => {
+  // 10. Interactive Temple & Geo-Spatial Map Explorer
+  initMapExplorer() {
+    const filterBtns = document.querySelectorAll('.region-filter-btn');
+    const mapPins = document.querySelectorAll('.map-pin');
+    const radarStatus = document.getElementById('map-radar-status');
+    const detailPanel = document.getElementById('map-detail-panel');
+    if (!mapPins.length) return;
+
+    const siteData = {
+      taj: {
+        name: "Taj Mahal & Agra Fort",
+        region: "North",
+        era: "1632 CE • Yamuna Riverbank",
+        img: "/images/hampi.jpg",
+        desc: "Masterpiece of symmetrical marble engineering, inlaid pietra dura lapis lazuli, and complex hydraulic waterworks along the sacred Yamuna."
+      },
+      kedarnath: {
+        name: "Kedarnath Jyotirlinga",
+        region: "North",
+        era: "8th Century CE • 3,583m Himalayas",
+        img: "/images/kedarnath.jpg",
+        desc: "High-altitude architectural miracle built of massive interlocking stone slabs that survived a 400-year glacial Ice Age and recent catastrophic floods."
+      },
+      varanasi: {
+        name: "Kashi Vishwanath & Ganga Ghats",
+        region: "North",
+        era: "Ancient Continuous • 5,000+ Years",
+        img: "/images/varanasi.jpg",
+        desc: "The spiritual heart of Sanatana Dharma. 84 sacred stone ghats, Jyotirlinga sanctum, and eternal solar cosmic alignment."
+      },
+      hampi: {
+        name: "Vijayanagara & Vitthala Temple",
+        region: "South",
+        era: "1336–1565 CE • Tungabhadra Valley",
+        img: "/images/hampi.jpg",
+        desc: "World's second-largest medieval city featuring the iconic Stone Chariot and 56 musical acoustic pillars that emit Sa-Re-Ga-Ma notes when struck."
+      },
+      meenakshi: {
+        name: "Madurai Meenakshi Sundareswarar",
+        region: "South",
+        era: "6th Century BCE / 16th Century CE",
+        img: "/images/meenakshi.jpg",
+        desc: "Dravidian masterwork featuring 14 soaring Gopurams containing 33,000 sculpted celestial deities in polychrome stone."
+      },
+      brihad: {
+        name: "Brihadeeswarar Temple (Thanjavur)",
+        region: "South",
+        era: "1010 CE • Chola Empire",
+        img: "/images/brihadisvara.jpg",
+        desc: "Granite architectural marvel topped with an 80-tonne monolithic stone dome, built entirely without binding cement."
+      },
+      konark: {
+        name: "Konark Sun Temple",
+        region: "East",
+        era: "1250 CE • Eastern Ganga Dynasty",
+        img: "/images/konark_sun.jpg",
+        desc: "Massive 24-wheeled colossal stone chariot dedicated to Surya Bhagavan, functioning as a high-precision solar sundial."
+      },
+      nalanda: {
+        name: "Nalanda Mahavihara Ruins",
+        region: "East",
+        era: "5th Century CE • Ancient University",
+        img: "/images/nalanda.jpg",
+        desc: "Ancient world's greatest residential university hosting 10,000 scholars and 2,000 professors with a 9-million manuscript library."
+      },
+      kamakhya: {
+        name: "Maa Kamakhya Temple",
+        region: "East",
+        era: "8th Century CE • Nilachal Hills",
+        img: "/images/kamakhya.jpg",
+        desc: "One of the 51 sacred Shakti Peethas celebrated for profound Tantric metaphysics and subterranean natural spring shrine."
+      },
+      ajanta: {
+        name: "Ajanta & Ellora Rock Caves",
+        region: "West",
+        era: "2nd Century BCE – 10th Century CE",
+        img: "/images/ajanta.jpg",
+        desc: "Monolithic Kailasa Temple carved top-down from a single solid basalt mountain cliff, removing 200,000 tonnes of rock."
+      },
+      jaisalmer: {
+        name: "Jaisalmer Golden Fort",
+        region: "West",
+        era: "1156 CE • Thar Desert",
+        img: "/images/jaisalmer.jpg",
+        desc: "The world's only living golden sandstone fort, glowing amber in desert sunlight with ancient water harvesting reservoirs."
+      },
+      dwarka: {
+        name: "Dwarkadhish & Submerged Dwarka",
+        region: "West",
+        era: "Ancient Marine Archaeology • Arabian Sea",
+        img: "/images/dwarka.jpg",
+        desc: "The legendary maritime kingdom of Lord Krishna, with underwater marine archaeological structures dating thousands of years."
+      },
+      khajuraho: {
+        name: "Khajuraho Monument Group",
+        region: "Central",
+        era: "950–1050 CE • Chandela Dynasty",
+        img: "/images/khajuraho.jpg",
+        desc: "UNESCO World Heritage pinnacle of Nagara temple architecture, celebrating Dharma, Artha, Kama, and Moksha."
+      }
+    };
+
+    const selectSite = (siteKey) => {
+      const site = siteData[siteKey] || siteData.hampi;
+      if (radarStatus) {
+        radarStatus.textContent = '📡 LOCKED: ' + site.name.toUpperCase();
+      }
+
+      if (detailPanel) {
+        detailPanel.innerHTML = `
+          <div class="h-full flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="h-44 w-full rounded-2xl overflow-hidden relative border border-white/10">
+                <img src="${site.img}" class="w-full h-full object-cover" alt="${site.name}">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                <span class="absolute bottom-2.5 left-3 text-[9px] font-mono font-bold text-gold bg-black/70 px-2 py-0.5 rounded border border-gold/30 uppercase">
+                  ${site.region} Region • ${site.era}
+                </span>
+              </div>
+              <h3 class="text-xl font-bold font-serif text-white">${site.name}</h3>
+              <p class="text-xs text-white/70 leading-relaxed font-sans">${site.desc}</p>
+            </div>
+            <div class="pt-3 border-t border-white/10 flex gap-2.5">
+              <a href="#library" class="flex-1 py-2.5 bg-gold text-black hover:bg-gold/90 font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-md">
+                <span>▶ Watch Saga</span>
+              </a>
+              <a href="#divya-darshana" class="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase rounded-xl transition-all flex items-center justify-center gap-1">
+                <span>🛕 Darshana</span>
+              </a>
+            </div>
+          </div>
+        `;
+      }
+    };
+
+    // Bind map pin clicks
+    mapPins.forEach(pin => {
+      pin.addEventListener('click', (e) => {
         e.preventDefault();
-        this.currentProfile = 'Kids';
-        this.currentProfileAvatar = '🧒';
-        localStorage.setItem('hs_profile', 'Kids');
-        localStorage.setItem('hs_avatar', '🧒');
+        const siteKey = pin.getAttribute('data-site');
+        if (siteKey) selectSite(siteKey);
+      });
+    });
 
-        const avatarEl = document.getElementById('active-profile-avatar');
-        const nameEl = document.getElementById('active-profile-name');
-        const greetingEl = document.getElementById('hero-sub-prompt');
-        if (avatarEl) avatarEl.textContent = '🧒';
-        if (nameEl) nameEl.textContent = 'Kids Mode';
-        if (greetingEl) {
-          greetingEl.textContent = "Hey there! Ready to explore awesome animations, moral fables, and Vedic Math?";
+    // Bind region filter buttons
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const reg = btn.getAttribute('data-region');
+
+        filterBtns.forEach(b => {
+          b.className = "region-filter-btn px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-white/10 hover:border-gold/30 text-white/70 cursor-pointer transition-all";
+        });
+        btn.className = "region-filter-btn px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-gold bg-gold text-black shadow-lg cursor-pointer transition-all";
+
+        mapPins.forEach(pin => {
+          const pinReg = pin.getAttribute('data-region');
+          if (reg === 'all' || pinReg === reg) {
+            pin.style.display = 'block';
+          } else {
+            pin.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Default select Hampi
+    selectSite('hampi');
+  }
+
+  // 11. Progressive Web App (PWA) Homescreen Install Engine
+  initPWA() {
+    let deferredPrompt = null;
+    const installBtns = [
+      document.getElementById('header-install-app-btn'),
+      document.getElementById('mobile-install-app-btn')
+    ].filter(Boolean);
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtns.forEach(b => {
+        b.classList.remove('hidden');
+        b.classList.add('inline-flex');
+      });
+    });
+
+    installBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          if (outcome === 'accepted') {
+            console.log('User installed Sanatana360 PWA app');
+          }
+          deferredPrompt = null;
+        } else {
+          // Show friendly mobile installation tooltip toast
+          const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+          const msg = isIOS 
+            ? "📲 Install on iOS: Tap 'Share' button in Safari, then select 'Add to Home Screen'."
+            : "📲 Install Sanatana360: Tap the 3-dots menu in Chrome and select 'Install app' or 'Add to Home screen'.";
+          
+          const toast = document.getElementById('account-toast-msg') || document.createElement('div');
+          toast.textContent = msg;
+          toast.className = "fixed top-20 left-1/2 -translate-x-1/2 z-[100] px-4 py-3 rounded-2xl bg-[#0e1017] border border-gold text-white text-xs font-bold shadow-2xl transition-opacity duration-300";
+          document.body.appendChild(toast);
+          setTimeout(() => toast.remove(), 5000);
         }
+      });
+    });
 
-        this.isStandardRowsRendered = false;
-        this.renderContentRows();
-
-        const lib = document.getElementById('library');
-        if (lib) lib.scrollIntoView({ behavior: 'smooth' });
-
-        const toast = document.getElementById('account-toast-msg');
-        if (toast) {
-          toast.textContent = "🧒 Kids Safe Mode Active ✓";
-          toast.classList.remove('opacity-0');
-          setTimeout(() => toast.classList.add('opacity-0'), 2500);
-        }
-      };
+    // Register Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(reg => {
+          console.log('Sanatana360 ServiceWorker registered:', reg.scope);
+        }).catch(err => {
+          console.log('ServiceWorker registration skipped:', err);
+        });
+      });
     }
   }
 
-
-  // 12. Real-Time Live Social Proof Ticker (Viral Conversions Engine)
+    // 12. Real-Time Live Social Proof Ticker (Viral Conversions Engine)
   initSocialProofTicker() {
     const ticker = document.getElementById('live-social-proof');
     const avatarEl = document.getElementById('social-proof-avatar');
