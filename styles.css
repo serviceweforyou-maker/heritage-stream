@@ -28,12 +28,17 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-color);
   color: var(--text-primary);
   overflow-x: hidden;
   line-height: 1.6;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 h1, h2, h3, h4, .font-serif {
@@ -42,111 +47,318 @@ h1, h2, h3, h4, .font-serif {
 
 /* Scrollbar customization */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #090a0f;
+  background: #07080c;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gold);
 }
 
-/* Glassmorphism Header */
-header {
-  background: rgba(7, 8, 12, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-color);
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+/* =============================================
+   GLASSMORPHISM DUAL HEADER & NAVIGATION
+   ============================================= */
+header#main-header {
+  background: rgba(7, 8, 12, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Sub-nav horizontal scroll wrapper with elegant edge fade masks */
+.sub-nav-mask-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.sub-nav-mask-container::before,
+.sub-nav-mask-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.sub-nav-mask-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(7, 8, 12, 0.95), transparent);
+}
+
+.sub-nav-mask-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(7, 8, 12, 0.95), transparent);
+}
+
+/* Secondary Navigation Pill Buttons */
+.sec-nav-pill {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.sec-nav-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+}
+
+.sec-nav-pill:active {
+  transform: translateY(0);
 }
 
 /* Text Gradients */
 .text-gradient-gold {
-  background: linear-gradient(135deg, #f3e5ab 0%, var(--gold) 50%, #b8860b 100%);
+  background: linear-gradient(135deg, #fef3c7 0%, var(--gold) 50%, #b45309 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Content card animations */
+.text-gradient-crimson {
+  background: linear-gradient(135deg, #fecaca 0%, var(--crimson) 50%, #991b1b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =============================================
+   CINEMA-GRADE HERO SPOTLIGHT SLIDER
+   ============================================= */
+#hero-spotlight {
+  position: relative;
+  width: 100%;
+  height: clamp(500px, 68vh, 720px);
+  min-height: 500px;
+  background: #07080c;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  #hero-spotlight {
+    height: clamp(480px, 62vh, 560px);
+    min-height: 480px;
+  }
+}
+
+.spotlight-slide {
+  will-change: opacity, transform;
+}
+
+.spotlight-slide img {
+  will-change: transform;
+}
+
+/* Spotlight Navigation Glass Buttons */
+.spotlight-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(7, 8, 12, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  z-index: 30;
+}
+
+.spotlight-arrow-btn:hover {
+  background: var(--gold);
+  color: #07080c;
+  border-color: var(--gold);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 0 20px var(--gold-glow);
+}
+
+/* Spotlight Bullet Dot Indicator */
+.spotlight-dot {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =============================================
+   NETFLIX-GRADE HORIZONTAL CAROUSEL ROWS
+   ============================================= */
+.netflix-row {
+  position: relative;
+}
+
+.carousel-scroll-container {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Carousel Navigation Arrows */
+.carousel-nav-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-nav-btn:hover {
+  background: var(--gold);
+  color: #07080c;
+  border-color: var(--gold);
+  transform: scale(1.1);
+  box-shadow: 0 0 16px var(--gold-glow);
+}
+
+/* Content card animations & OTT look */
+.content-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+  will-change: transform;
+}
+
 .content-card:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--gold-glow);
+  transform: translateY(-6px);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(212, 175, 55, 0.12);
 }
 
 .content-card:hover h4 {
   color: var(--gold);
 }
 
-/* Scrolling Rows setup */
-.no-scrollbar::-webkit-scrollbar {
+/* Grantha Card Polish */
+.granth-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.granth-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 28px rgba(212, 175, 55, 0.16);
+}
+
+/* =============================================
+   MOBILE FLOATING QUICK-DOCK (App Bar)
+   ============================================= */
+.mobile-bottom-dock {
   display: none;
 }
-.no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
 
-/* Simulated Audio Player Animations */
-@keyframes soundwave {
-  0% {
-    height: 10%;
+@media (max-width: 768px) {
+  .mobile-bottom-dock {
+    display: flex;
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    height: 56px;
+    background: rgba(14, 16, 23, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    z-index: 45;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8), 0 0 16px rgba(212, 175, 55, 0.1);
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 8px;
   }
-  100% {
-    height: 100%;
+
+  .mobile-dock-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 4px 8px;
+    border-radius: 12px;
+  }
+
+  .mobile-dock-btn span:first-child {
+    font-size: 16px;
+    margin-bottom: 1px;
+  }
+
+  .mobile-dock-btn:hover,
+  .mobile-dock-btn:active,
+  .mobile-dock-btn.active {
+    color: var(--gold);
+    transform: translateY(-2px);
   }
 }
 
-.visualizer-bar {
-  transform-origin: bottom;
-}
-
-/* Game elements and structures */
-.active-game-tab {
-  background: rgba(212, 175, 55, 0.08);
-  border-bottom: 2px solid var(--gold) !important;
-}
-
-/* Custom CSS for memory card flipping */
-.memory-card {
-  perspective: 1000px;
-}
-
-.memory-card .absolute {
-  backface-visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-/* Custom Spinner animation */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.payment-spinner {
-  animation: spin 1s linear infinite;
-}
-
-/* Modal styles with Backdrop Blur */
+/* =============================================
+   MODAL & FLIPBOOK STYLING
+   ============================================= */
 .modal-overlay {
-  background: rgba(3, 4, 6, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(3, 4, 6, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   transition: opacity 0.3s ease;
+}
+
+.modal-overlay > div {
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Buttons style */
 .btn-gold {
-  background: linear-gradient(135deg, #f5d061 0%, var(--gold) 60%, #b38f1d 100%);
+  background: linear-gradient(135deg, #fef08a 0%, var(--gold) 60%, #b45309 100%);
   color: #07080c;
-  transition: all 0.3s ease;
+  font-weight: 800;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 25px var(--gold-glow);
+}
+.btn-gold:active {
+  transform: translateY(0);
 }
 
 /* Utilities */
@@ -161,576 +373,12 @@ header {
   border-color: var(--border-hover);
 }
 
-/* Tailoring specific classes for CSS modules inside JS */
-.trivia-option-btn:hover {
-  border-color: var(--gold);
-  background: rgba(212, 175, 55, 0.05);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
-  transform: scale(1.01);
-}
-
-.chrono-item {
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.chrono-item:active {
-  transform: scale(0.98);
-}
-
-/* 3D Tilt Card Effect */
-.tilt-card {
-  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
-  transform-style: preserve-3d;
-}
-.tilt-card:hover {
-  transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-4deg);
-}
-
-/* Gyan Shop Specific Cards */
-.reward-card {
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-.reward-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.08);
-}
-
-/* User Streak Animation */
-.streak-active {
-  animation: streakGlow 1.5s infinite alternate;
-}
-@keyframes streakGlow {
-  0% { text-shadow: 0 0 4px rgba(245, 158, 11, 0.2); }
-  100% { text-shadow: 0 0 12px rgba(245, 158, 11, 0.8), 0 0 20px rgba(245, 158, 11, 0.4); }
-}
-
-/* Custom Alert Banner */
-.redeem-alert {
-  animation: slideInDown 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
-}
-@keyframes slideInDown {
-  0% { transform: translate(-50%, -20px); opacity: 0; }
-  100% { transform: translate(-50%, 0); opacity: 1; }
-}
-
-/* =============================================
-   NETFLIX-STYLE ROW SLIDERS
-   ============================================= */
-
-/* Content cards — consistent width for slider rows */
-.content-card {
-  flex: 0 0 210px;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.3s ease,
-              z-index 0s 0.15s;
-}
-
-.content-card:hover {
-  transform: scale(1.07) translateY(-5px);
-  z-index: 10;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.3s ease;
-  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.75), 0 0 30px rgba(212, 175, 55, 0.12);
-}
-
-.netflix-row {
-  position: relative;
-  overflow: visible;
-}
-
-.row-prev-btn, .row-next-btn {
-  transition: all 0.2s ease;
-}
-
-.row-prev-btn:hover, .row-next-btn:hover {
-  transform: scale(1.15);
-}
-
-/* =============================================
-   TOP UTILITY BAR TICKER ANIMATION
-   ============================================= */
-
-@keyframes tickerScroll {
-  0%   { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
-}
-
-#top-utility-bar {
-  font-family: var(--font-sans);
-}
-
-/* Top-bar Ambient Music button active state */
-#ambient-music-btn.active-ambient {
-  color: var(--gold);
-}
-
-/* Shrink main content below double header */
-body > main, body > section:first-of-type {
-  padding-top: 100px;
-}
-
-
-/* ==============================================
-   FULL MOBILE RESPONSIVE SYSTEM
-   Breakpoints: 480px | 640px | 768px | 1024px
-   ============================================== */
-
-/* ---- Hamburger menu animation ---- */
-#mobile-menu-btn.open .mobile-bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-#mobile-menu-btn.open .mobile-bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
-#mobile-menu-btn.open .mobile-bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-/* ---- Content cards – mobile size ---- */
-@media (max-width: 640px) {
-  .netflix-row .content-card { flex: 0 0 172px !important; }
-  .content-card .h-40 { height: 130px !important; }
-}
-
-/* Grids should expand cards to full width */
-#persona-filtered-grid .content-card {
-  width: 100% !important;
-}
-
-
-/* ── HERO SPOTLIGHT SLIDER PROFESSIONAL NON-CROPPING RESPONSIVENESS ── */
-#hero-spotlight {
-  min-height: 560px !important;
-  height: 72vh !important;
-  max-height: 740px !important;
-  position: relative;
-  background-color: #06070a;
-  overflow: hidden;
-}
-
-.spotlight-slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.spotlight-slide img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center 20% !important;
-  transform-origin: center top;
-}
-
-@media (max-width: 768px) {
-  #hero-spotlight {
-    min-height: 520px !important;
-    height: 76vh !important;
-    max-height: 640px !important;
-  }
-  .spotlight-slide img {
-    object-position: center 15% !important;
-  }
-  #hero-spotlight h1 {
-    font-size: 1.65rem !important;
-    line-height: 1.25 !important;
-  }
-  #hero-spotlight p {
-    font-size: 0.8rem !important;
-    line-height: 1.45 !important;
-  }
-}
-
-@media (max-width: 480px) {
-  #hero-spotlight {
-    min-height: 500px !important;
-    height: 80vh !important;
-  }
-  #hero-spotlight h1 {
-    font-size: 1.4rem !important;
-  }
-}
-
-}
-
-/* ---- Top utility bar � mobile ---- */
-@media (max-width: 480px) {
-  #top-utility-bar { padding: 0 12px; height: 32px; }
-  #top-utility-bar #ambient-music-btn { font-size: 14px; }
-  #main-header { top: 32px !important; }
-  #hero-spotlight {  }
-}
-
-/* ---- Main container � mobile ---- */
-@media (max-width: 640px) {
-  main { padding-left: 12px !important; padding-right: 12px !important; }
-}
-
-/* ---- Modals � full screen on mobile ---- */
-@media (max-width: 640px) {
-  #media-modal > div,
-  #payment-modal > div {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 100dvh !important;
-    max-height: 100dvh !important;
-    border-radius: 0 !important;
-    margin: 0 !important;
-    overflow-y: auto;
-  }
-  #media-modal,
-  #payment-modal {
-    align-items: flex-end !important;
-    padding: 0 !important;
-  }
-  /* Make modal slide up from bottom on mobile */
-  #media-modal > div {
-    border-radius: 20px 20px 0 0 !important;
-    max-height: 92dvh !important;
-    height: auto !important;
-  }
-}
-
-/* ---- Map Explorer � stack on mobile ---- */
-@media (max-width: 1024px) {
-  #explorer .grid { grid-template-columns: 1fr !important; }
-  #explorer .lg\:col-span-3 { min-height: 300px; }
-}
-
-/* ---- Netflix row arrow buttons � hide on mobile (touch swipe instead) ---- */
-@media (max-width: 640px) {
-  .row-prev-btn, .row-next-btn { display: none !important; }
-  .netflix-row > div[class*='-row'] { gap: 12px !important; }
-}
-
-/* ---- Flipbook � single page on mobile ---- */
-@media (max-width: 700px) {
-  #flipbook-stage { padding: 56px 10px 72px; }
-  .flipbook-book {
-    width: calc(100vw - 24px) !important;
-    max-width: 360px;
-    height: 500px !important;
-  }
-  /* Show only right page on mobile */
-  .flipbook-book > .flipbook-pages > div[style*="left:0"],
-  .flipbook-book > .flipbook-pages > div[style*="left: 0"] { display: none !important; }
-  .flipbook-book .fb-spine { display: none !important; }
-  .flipbook-book > .flipbook-pages > div[style*="right:0"],
-  .flipbook-book > .flipbook-pages > div[style*="right: 0"] {
-    width: 100% !important;
-    right: 0 !important;
-  }
-  #flipbook-keyboard-hint { display: none; }
-  #flipbook-title-bar h1 { font-size: 12px; }
-}
-
-/* ---- Audio player � mobile ---- */
-@media (max-width: 640px) {
-  .audio-visualizer-container { height: 48px !important; margin-bottom: 20px !important; }
-  #media-modal-body .flex.items-center.gap-6 { gap: 16px !important; }
-  .voice-lang-btn { padding: 4px 8px !important; font-size: 9px !important; }
-}
-
-/* ---- Dashboard / Quiz section � mobile ---- */
-@media (max-width: 768px) {
-  #dashboard .grid { grid-template-columns: 1fr !important; }
-  #play-zone .grid { grid-template-columns: 1fr !important; }
-}
-
-/* ---- Section headings � mobile ---- */
-@media (max-width: 640px) {
-  .netflix-row h2 { font-size: 1.2rem !important; }
-  section h2 { font-size: 1.4rem !important; }
-  section h3 { font-size: 1.1rem !important; }
-}
-
-/* ---- Scroll margin for anchor links � account for double header ---- */
-section[id] { scroll-margin-top: 110px; }
-@media (max-width: 480px) { section[id] { scroll-margin-top: 90px; } }
-
-/* ---- Touch improvements ---- */
-@media (pointer: coarse) {
-  .content-card:hover { transform: none !important; }
-  .content-card:active { transform: scale(0.97) !important; }
-  button, a { -webkit-tap-highlight-color: transparent; }
-}
-
-
-/* =============================================
-   DIVYA DARSHANA (SPIRITUAL COMPANION) STYLES
-   ============================================= */
-
-/* Ayurveda Grid & Cards */
-#ayurveda-remedies-grid {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(212, 175, 55, 0.2) transparent;
-}
-
-.ayur-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 20px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
-}
-
-.ayur-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(212, 175, 55, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(212, 175, 55, 0.05);
-}
-
-/* Breathing Visualizer Classes */
-#pranayama-circle-outer.inhale {
-  border-color: rgba(212, 175, 55, 0.6) !important;
-  box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
-  background: rgba(212, 175, 55, 0.05) !important;
-}
-
-#pranayama-circle-outer.hold {
-  border-color: rgba(230, 80, 20, 0.5) !important;
-  box-shadow: 0 0 50px rgba(230, 80, 20, 0.35);
-  background: rgba(230, 80, 20, 0.06) !important;
-}
-
-#pranayama-circle-outer.exhale {
-  border-color: rgba(59, 130, 246, 0.4) !important;
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
-  background: rgba(59, 130, 246, 0.03) !important;
-}
-
-#pranayama-circle-inner.inhale {
-  background-color: #d4af37 !important;
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
-  color: #000 !important;
-}
-
-#pranayama-circle-inner.hold {
-  background-color: #e65c00 !important;
-  box-shadow: 0 0 35px rgba(230, 92, 0, 0.7);
-  color: #fff !important;
-}
-
-#pranayama-circle-inner.exhale {
-  background-color: #3b82f6 !important;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-  color: #fff !important;
-}
-
-/* Secondary Nav Link Hover Glow */
-.sec-nav-link {
-  position: relative;
-  transition: all 0.3s ease;
-}
-.sec-nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #d4af37;
-  transform: scaleX(0);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: bottom right;
-  box-shadow: 0 0 8px #d4af37;
-}
-.sec-nav-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-
-/* ── BEAUTIFIED HEADER & NAVIGATION STYLING ── */
-#main-header {
-  transition: all 0.3s ease;
-}
-
-.sec-nav-pill {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.sec-nav-pill:hover {
-  transform: translateY(-1px);
-}
-
-@media (max-width: 768px) {
-  #main-header {
-    top: 32px !important;
-  }
-  #top-utility-bar {
-    height: 32px !important;
-  }
-}
-
-
-/* ══════════════════════════════════════════════════════════════════ */
-/* ── SANATANA360 LUXURY DESIGN SYSTEM & GLASSMORPHISM ───────────── */
-/* ══════════════════════════════════════════════════════════════════ */
-
-:root {
-  --bg-obsidian: #07080c;
-  --bg-card: #0e1017;
-  --bg-card-hover: #141722;
-  --gold-primary: #d4af37;
-  --gold-light: #f3e5ab;
-  --gold-dark: #aa7c11;
-  --gold-glow: rgba(212, 175, 55, 0.25);
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-gold: rgba(212, 175, 55, 0.35);
-}
-
-body {
-  background-color: var(--bg-obsidian);
-  color: #f1f2f6;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  overflow-x: hidden;
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 100% 30%, rgba(16, 185, 129, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 0% 70%, rgba(168, 85, 247, 0.03) 0%, transparent 40%);
-  background-attachment: fixed;
-}
-
-/* ── Typography & Gradients ── */
-.text-gradient-gold {
-  background: linear-gradient(135deg, #fcedb4 0%, #d4af37 50%, #aa7c11 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-emerald {
-  background: linear-gradient(135deg, #6ee7b7 0%, #10b981 50%, #047857 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* ── Glassmorphism Panels ── */
-.glass-panel {
-  background: rgba(14, 16, 23, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-glass);
-}
-
-.glass-card {
-  background: rgba(14, 16, 23, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-glass);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card:hover {
-  background: rgba(20, 23, 34, 0.85);
-  border-color: var(--border-gold);
-  transform: translateY(-3px);
-  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.6), 0 0 20px -4px var(--gold-glow);
-}
-
-/* ── Content Card Polish ── */
-.content-card {
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1rem;
-  overflow: hidden;
-  background: #0d0f16;
-}
-
-.content-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  border-color: rgba(212, 175, 55, 0.45);
-  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.7), 0 0 24px -6px rgba(212, 175, 55, 0.3);
-}
-
-.content-card img {
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.content-card:hover img {
-  transform: scale(1.06);
-}
-
-/* ── Sleek Horizontal Scrollbars ── */
-.custom-carousel-scrollbar::-webkit-scrollbar {
-  height: 4px;
-}
-.custom-carousel-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 4px;
-}
-.custom-carousel-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.3);
-  border-radius: 4px;
-}
-.custom-carousel-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 175, 55, 0.7);
-}
-
-/* ── Frosted Carousel Controls ── */
-.carousel-nav-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: rgba(7, 8, 12, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.25s ease;
-  cursor: pointer;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-.carousel-nav-btn:hover {
-  background: #d4af37;
-  color: #07080c;
-  border-color: #d4af37;
-  transform: scale(1.1);
-  box-shadow: 0 0 16px rgba(212, 175, 55, 0.5);
-}
-
-/* ── Modal Smooth Animation ── */
-.modal-overlay {
-  background: rgba(4, 5, 8, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: opacity 0.3s ease;
-}
-
-.modal-overlay > div {
-  animation: modalSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes modalSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* ── Footer Link Hover ── */
-.footer-link {
-  color: rgba(255, 255, 255, 0.55);
-  transition: all 0.2s ease;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.footer-link:hover {
-  color: #d4af37;
-  transform: translateX(3px);
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* ── HIGH PERFORMANCE PAGE RENDERING ENGINE ── */

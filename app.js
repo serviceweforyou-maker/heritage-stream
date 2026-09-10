@@ -487,7 +487,10 @@ class AppController {
 
   // Showcase highlighted items in an auto-playing slideshow Hero Spotlight
   renderSpotlight() {
-    if (!this.contentData || !this.contentData.docuSeries || !this.contentData.docuSeries.length) return;
+    if (!this.contentData) return;
+    const allContent = this.contentData.content || this.contentData.docuSeries || [];
+    if (!allContent.length) return;
+
     const heroSection = document.getElementById('hero-spotlight');
     if (!heroSection) return;
 
@@ -497,44 +500,71 @@ class AppController {
       this.spotlightInterval = null;
     }
 
-    // Select top video items to cycle in spotlight
-    const slides = (this.contentData.docuSeries || []).slice(0, 4);
+    // Select premier highlights with rich imagery
+    const premierIds = ['hampi', 'shiva_tandava', 'ajanta_ellora', 'brihadisvara', 'konark_sun', 'varanasi'];
+    let slides = allContent.filter(x => premierIds.includes(x.id));
+    if (slides.length < 4) {
+      slides = allContent.slice(0, 5);
+    }
     if (!slides.length) return;
     let currentIdx = 0;
 
-        heroSection.innerHTML = `
-      <div class="relative w-full h-full overflow-hidden">
+    heroSection.innerHTML = `
+      <div class="relative w-full h-full overflow-hidden select-none">
         <!-- Slide items -->
         <div id="spotlight-slides-container" class="relative w-full h-full">
           ${slides.map((item, idx) => `
             <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}" data-index="${idx}">
-              <img src="${item.imageUrl || '/images/hampi.jpg'}" ${idx > 0 ? 'loading="lazy"' : ''} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000" style="object-position: center 18%;" alt="${item.title}">
+              <img src="${item.imageUrl || '/images/hampi.jpg'}" ${idx > 0 ? 'loading="lazy"' : ''} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out ${idx === 0 ? 'scale-100' : 'scale-105'}" style="object-position: center 25%;" alt="${item.title}">
               
-              <!-- Cinematic Vignette Gradient Overlay -->
-              <div class="absolute inset-0 bg-gradient-to-r from-[#07080c] via-[#07080c]/80 md:via-[#07080c]/40 to-transparent z-10 pointer-events-none"></div>
-              <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-transparent to-black/30 z-10 pointer-events-none"></div>
+              <!-- Cinematic Vignette Gradient Overlays -->
+              <div class="absolute inset-0 bg-gradient-to-r from-[#07080c] via-[#07080c]/90 md:via-[#07080c]/50 to-transparent z-10 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/40 to-transparent z-10 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-10 pointer-events-none"></div>
               
-              <!-- Content Details -->
-              <div class="max-w-3xl pt-28 sm:pt-32 md:pt-36 pb-14 px-5 sm:px-8 md:px-16 h-full flex flex-col justify-center sm:justify-end relative z-20">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 text-gold text-[10px] font-mono font-bold uppercase tracking-wider mb-2.5 border border-gold/30 self-start shadow-sm">
-                  🏆 FEATURED SAGA
-                </span>
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-serif mb-2 leading-tight tracking-wide drop-shadow-xl break-words">
+              <!-- Content Details Container -->
+              <div class="max-w-4xl pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 px-4 sm:px-8 md:px-14 lg:px-16 h-full flex flex-col justify-center sm:justify-end relative z-20">
+                
+                <!-- Badge & Metadata -->
+                <div class="flex items-center gap-2 mb-2 sm:mb-2.5 flex-wrap">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 text-gold text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider border border-gold/30 shadow-sm backdrop-blur-md">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+                    🏆 FEATURED SAGA
+                  </span>
+                  <span class="text-[10px] sm:text-[11px] font-mono text-white/60 bg-white/10 px-2 py-0.5 rounded-full border border-white/10 backdrop-blur-sm">
+                    ${item.category || 'Docu-Series'}
+                  </span>
+                  <span class="text-[10px] sm:text-[11px] font-mono text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
+                    ${item.rating || '9.8 ★'}
+                  </span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white font-serif mb-1.5 sm:mb-2 leading-tight tracking-wide drop-shadow-2xl break-words">
                   ${item.title}
                 </h1>
-                <p class="text-xs sm:text-sm text-gold font-medium mb-2 italic font-serif">
+
+                <!-- Tagline -->
+                <p class="text-xs sm:text-sm md:text-base text-gold font-medium mb-2 italic font-serif line-clamp-1 drop-shadow">
                   "${item.tagline}"
                 </p>
-                <p class="text-xs sm:text-sm text-white/85 max-w-xl mb-5 leading-relaxed line-clamp-3 md:line-clamp-4 font-sans drop-shadow">
+
+                <!-- Description -->
+                <p class="text-xs sm:text-sm text-white/85 max-w-2xl mb-4 sm:mb-6 leading-relaxed line-clamp-2 sm:line-clamp-3 md:line-clamp-4 font-sans drop-shadow">
                   ${item.description}
                 </p>
-                <div class="hero-actions flex flex-wrap gap-3 items-center mb-4">
-                  <button class="hero-play-slide-btn px-7 py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-gold/25 flex items-center gap-2" data-id="${item.id}">
+
+                <!-- Action Buttons -->
+                <div class="hero-actions flex flex-wrap gap-2.5 sm:gap-3 items-center">
+                  <button class="hero-play-slide-btn px-6 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-full text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-gold/25 flex items-center gap-2 hover:scale-105 cursor-pointer" data-id="${item.id}">
                     <span>▶ Play Episode</span>
-                    <span class="text-xs opacity-75 font-mono">(${item.duration})</span>
+                    <span class="text-[11px] opacity-75 font-mono">(${item.duration})</span>
                   </button>
-                  <button class="hero-info-slide-btn px-5 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/15 font-bold rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 backdrop-blur-sm" data-id="${item.id}">
-                    <span>ℹ More Info</span>
+                  <button class="hero-info-slide-btn px-5 sm:px-6 py-2.5 sm:py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-gold/50 font-bold rounded-full text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 backdrop-blur-md hover:scale-105 cursor-pointer" data-id="${item.id}">
+                    <span>ℹ More Details</span>
+                  </button>
+                  <button class="hero-read-slide-btn px-4 sm:px-5 py-2.5 sm:py-3 bg-gold/10 hover:bg-gold/20 text-gold border border-gold/30 hover:border-gold font-bold rounded-full text-xs sm:text-sm transition-all duration-300 hidden sm:flex items-center gap-1.5 backdrop-blur-md cursor-pointer" data-id="${item.id}">
+                    <span>📖 3D Reader</span>
                   </button>
                 </div>
               </div>
@@ -542,14 +572,14 @@ class AppController {
           `).join('')}
         </div>
 
-        <!-- Left/Right Arrows -->
-        <button id="spotlight-prev-btn" class="hidden sm:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-gold hover:text-black border border-white/20 hover:border-gold items-center justify-center text-white text-sm transition-all select-none backdrop-blur-md cursor-pointer shadow-lg">◀</button>
-        <button id="spotlight-next-btn" class="hidden sm:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-gold hover:text-black border border-white/20 hover:border-gold items-center justify-center text-white text-sm transition-all select-none backdrop-blur-md cursor-pointer shadow-lg">▶</button>
+        <!-- Left/Right Arrows with OTT Glassmorphism -->
+        <button id="spotlight-prev-btn" class="spotlight-arrow-btn hidden sm:flex absolute left-3 md:left-6 top-1/2 -translate-y-1/2" aria-label="Previous Slide">◀</button>
+        <button id="spotlight-next-btn" class="spotlight-arrow-btn hidden sm:flex absolute right-3 md:right-6 top-1/2 -translate-y-1/2" aria-label="Next Slide">▶</button>
 
         <!-- Bullet Indicators -->
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2.5">
+        <div class="absolute bottom-5 sm:bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2">
           ${slides.map((_, idx) => `
-            <span class="spotlight-dot w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 ${idx === 0 ? 'bg-gold w-6' : 'bg-white/30 hover:bg-white/50'}" data-index="${idx}"></span>
+            <span class="spotlight-dot h-2 sm:h-2.5 rounded-full cursor-pointer transition-all duration-300 ${idx === 0 ? 'bg-gold w-6 sm:w-8' : 'w-2 sm:w-2.5 bg-white/30 hover:bg-white/50'}" data-index="${idx}"></span>
           `).join('')}
         </div>
       </div>
@@ -563,21 +593,24 @@ class AppController {
       
       // Update slides transition
       slideEls.forEach((slide, idx) => {
+        const img = slide.querySelector('img');
         if (idx === currentIdx) {
           slide.classList.remove('opacity-0', 'z-0');
           slide.classList.add('opacity-100', 'z-10');
+          if (img) img.classList.replace('scale-105', 'scale-100');
         } else {
           slide.classList.remove('opacity-100', 'z-10');
           slide.classList.add('opacity-0', 'z-0');
+          if (img) img.classList.replace('scale-100', 'scale-105');
         }
       });
 
       // Update dot styles
       dotEls.forEach((dot, idx) => {
         if (idx === currentIdx) {
-          dot.className = "spotlight-dot h-2.5 rounded-full cursor-pointer transition-all duration-300 bg-gold w-6";
+          dot.className = "spotlight-dot h-2 sm:h-2.5 rounded-full cursor-pointer transition-all duration-300 bg-gold w-6 sm:w-8";
         } else {
-          dot.className = "spotlight-dot w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 bg-white/30 hover:bg-white/50";
+          dot.className = "spotlight-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full cursor-pointer transition-all duration-300 bg-white/30 hover:bg-white/50";
         }
       });
     };
@@ -589,21 +622,27 @@ class AppController {
 
     const resetInterval = () => {
       clearInterval(this.spotlightInterval);
-      this.spotlightInterval = setInterval(advanceSlide, 6000);
+      this.spotlightInterval = setInterval(advanceSlide, 6500);
     };
 
-    // Bind manually triggered buttons
-    heroSection.querySelector('#spotlight-prev-btn').addEventListener('click', () => {
-      const prevIdx = (currentIdx - 1 + slides.length) % slides.length;
-      showSlide(prevIdx);
-      resetInterval();
-    });
+    // Bind navigation buttons
+    const prevBtn = heroSection.querySelector('#spotlight-prev-btn');
+    const nextBtn = heroSection.querySelector('#spotlight-next-btn');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const prevIdx = (currentIdx - 1 + slides.length) % slides.length;
+        showSlide(prevIdx);
+        resetInterval();
+      });
+    }
 
-    heroSection.querySelector('#spotlight-next-btn').addEventListener('click', () => {
-      const nextIdx = (currentIdx + 1) % slides.length;
-      showSlide(nextIdx);
-      resetInterval();
-    });
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const nextIdx = (currentIdx + 1) % slides.length;
+        showSlide(nextIdx);
+        resetInterval();
+      });
+    }
 
     dotEls.forEach(dot => {
       dot.addEventListener('click', () => {
@@ -613,23 +652,50 @@ class AppController {
       });
     });
 
-    // Bind internal play/info actions for slide items
+    // Touch Swipe Support for Mobile & Tablet Gesture Momentum
+    let touchStartX = 0;
+    let touchEndX = 0;
+    heroSection.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroSection.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if (diff > 50) {
+        // Swipe Right -> Prev
+        const prevIdx = (currentIdx - 1 + slides.length) % slides.length;
+        showSlide(prevIdx);
+        resetInterval();
+      } else if (diff < -50) {
+        // Swipe Left -> Next
+        const nextIdx = (currentIdx + 1) % slides.length;
+        showSlide(nextIdx);
+        resetInterval();
+      }
+    }, { passive: true });
+
+    // Bind action buttons for each slide
     slides.forEach((item, idx) => {
       const cardEl = heroSection.querySelector(`.spotlight-slide[data-index="${idx}"]`);
       if (cardEl) {
-        const playBtn = cardEl.querySelector(`.hero-play-slide-btn`);
-        const infoBtn = cardEl.querySelector(`.hero-info-slide-btn`);
+        const playBtn = cardEl.querySelector('.hero-play-slide-btn');
+        const infoBtn = cardEl.querySelector('.hero-info-slide-btn');
+        const readBtn = cardEl.querySelector('.hero-read-slide-btn');
         if (playBtn) {
-          playBtn.addEventListener(`click`, () => this.playContent(item, false));
+          playBtn.addEventListener('click', () => this.playContent(item, false));
         }
         if (infoBtn) {
-          infoBtn.addEventListener(`click`, () => this.playContent(item, false));
+          infoBtn.addEventListener('click', () => this.playContent(item, false));
+        }
+        if (readBtn) {
+          readBtn.addEventListener('click', () => this.openReader(item));
         }
       }
     });
 
     // Launch auto-slideshow
-    this.spotlightInterval = setInterval(advanceSlide, 6000);
+    this.spotlightInterval = setInterval(advanceSlide, 6500);
   }
 
   // Render Horizontal Carousel Lists
