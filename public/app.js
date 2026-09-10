@@ -4597,6 +4597,9 @@ const bindSlideNavigation = () => {
     const closeBtn = document.getElementById('close-granth-reader-btn');
     if (!sliderRow) return;
 
+    const self = this;
+    this.isSubscribed = (typeof DatabaseService !== 'undefined' && DatabaseService.isSubscribed()) || !!this.isSubscribed;
+
     const granths = [
       // CATEGORY 1: ASURAS & CELESTIAL BATTLES (Devils & Demons)
       {
@@ -4607,6 +4610,7 @@ const bindSlideNavigation = () => {
         pages: 180,
         chaptersCount: 9,
         emoji: "👹",
+        isPremium: false, // 1 of 6 FREE
         coverImg: "/images/mahishasura_battle.jpg",
         desc: "The shape-shifting buffalo Asura who extracted the boon of invincibility against all men and Devas, and the cosmic emergence of Goddess Durga.",
         chapters: [
@@ -4624,6 +4628,7 @@ const bindSlideNavigation = () => {
         pages: 210,
         chaptersCount: 10,
         emoji: "⚔️",
+        isPremium: true, // PREMIER PRO
         coverImg: "/images/ravana_lanka.jpg",
         desc: "The 10 heads of unmatched astrological and musical mastery, mystical Pushpaka Vimana aviation, and the tragic 6-month cosmic curse of Kumbhakarna.",
         chapters: [
@@ -4639,6 +4644,7 @@ const bindSlideNavigation = () => {
         pages: 155,
         chaptersCount: 7,
         emoji: "🔥",
+        isPremium: true, // PREMIER PRO
         coverImg: "/images/bhasmasura_mohini.jpg",
         desc: "The deadly boon that turned anyone touched into ashes, and the divine cosmic dance that saved the Universe.",
         chapters: [
@@ -4654,6 +4660,7 @@ const bindSlideNavigation = () => {
         pages: 170,
         chaptersCount: 8,
         emoji: "🐍",
+        isPremium: true, // PREMIER PRO
         coverImg: "/images/patala_naga_kingdom.jpg",
         desc: "The 7 subterranean dimensions (Atala, Vitala, Sutala, Talatala, Mahatala, Rasatala, Patala) and architect Maya Danava.",
         chapters: [
@@ -4670,6 +4677,7 @@ const bindSlideNavigation = () => {
         pages: 220,
         chaptersCount: 12,
         emoji: "🌌",
+        isPremium: false, // 2 of 6 FREE
         coverImg: "/images/fourteen_lokas_cosmos.jpg",
         desc: "Vedic calculations of the 4.32 billion year Kalpa, Brahma's day, parallel dimensions, and the cosmic journey of the Jiva.",
         chapters: [
@@ -4685,6 +4693,7 @@ const bindSlideNavigation = () => {
         pages: 195,
         chaptersCount: 10,
         emoji: "🌊",
+        isPremium: false, // 3 of 6 FREE
         coverImg: "/images/samudra_manthan.jpg",
         desc: "Mount Mandara, Vasuki the serpent churning cord, the deadly Halahala poison, and the 14 divine jewels of eternity.",
         chapters: [
@@ -4700,6 +4709,7 @@ const bindSlideNavigation = () => {
         pages: 160,
         chaptersCount: 8,
         emoji: "🧘",
+        isPremium: true, // PREMIER PRO
         coverImg: "/images/kundalini_chakras.jpg",
         desc: "Ancient palm-leaf maps of consciousness: Ida, Pingala, Sushumna, and the awakening of the dormant serpentine energy.",
         chapters: [
@@ -4714,6 +4724,7 @@ const bindSlideNavigation = () => {
         pages: 175,
         chaptersCount: 9,
         emoji: "☀️",
+        isPremium: true, // PREMIER PRO
         coverImg: "/images/surya_siddhanta_astronomy.jpg",
         desc: "Ancient mathematical calculations of the speed of light, planetary orbits, lunar nodes, and equinox precessions.",
         chapters: [
@@ -4730,6 +4741,7 @@ const bindSlideNavigation = () => {
         pages: 240,
         chaptersCount: 14,
         emoji: "📜",
+        isPremium: false, // 4 of 6 FREE
         coverImg: "/images/adi_shankara.jpg",
         desc: "Walking barefoot across the 4 corners of India, defeating dogmas through pure logic, and establishing the 4 sacred Peethams at age 32.",
         chapters: [
@@ -4745,6 +4757,7 @@ const bindSlideNavigation = () => {
         pages: 190,
         chaptersCount: 10,
         emoji: "🌴",
+        isPremium: true, // PREMIER PRO
         coverImg: "/images/maharishi_agastya.jpg",
         desc: "Drinking the southern ocean, subduing the Vindhya mountain range, and founding Tamil grammar and Kalaripayattu.",
         chapters: [
@@ -4759,6 +4772,7 @@ const bindSlideNavigation = () => {
         pages: 200,
         chaptersCount: 11,
         emoji: "🦁",
+        isPremium: true, // PREMIER PRO
         coverImg: "/images/ashoka.jpg",
         desc: "The fiery training under Ramakrishna, the electrifying 1893 Chicago Parliament speech, and master laws of mental focus.",
         chapters: [
@@ -4773,6 +4787,7 @@ const bindSlideNavigation = () => {
         pages: 185,
         chaptersCount: 9,
         emoji: "🪷",
+        isPremium: true, // PREMIER PRO
         coverImg: "/images/meenakshi.jpg",
         desc: "Poison turning to divine nectar, unbreakable devotion, and the mystical composition of the Ramcharitmanas.",
         chapters: [
@@ -4789,6 +4804,7 @@ const bindSlideNavigation = () => {
         pages: 190,
         chaptersCount: 12,
         emoji: "🦊",
+        isPremium: false, // 5 of 6 FREE
         coverImg: "/images/panchatantra_cover.jpg",
         desc: "The world's oldest leadership treatise: Mitra Bheda (Losing Friends), Mitra Labha (Gaining Allies), and strategic wildlife fables.",
         chapters: [
@@ -4803,6 +4819,7 @@ const bindSlideNavigation = () => {
         pages: 215,
         chaptersCount: 25,
         emoji: "👑",
+        isPremium: true, // PREMIER PRO
         coverImg: "/images/vikram_betal.jpg",
         desc: "King Vikramaditya carrying the riddle-telling corpse across the cremation ground to test moral intellect.",
         chapters: [
@@ -4817,6 +4834,7 @@ const bindSlideNavigation = () => {
         pages: 165,
         chaptersCount: 8,
         emoji: "🏹",
+        isPremium: true, // PREMIER PRO
         coverImg: "/images/abhimanyu_chakravyuha.jpg",
         desc: "The sacred labyrinth geometry of Dronacharya and the young prince who knew how to enter but not exit.",
         chapters: [
@@ -4831,6 +4849,7 @@ const bindSlideNavigation = () => {
         pages: 175,
         chaptersCount: 15,
         emoji: "🦚",
+        isPremium: false, // 6 of 6 FREE
         coverImg: "/images/tenali.jpg",
         desc: "The brilliant intellectual sparring matches that exposed hypocrisy and guided emperors with wisdom and humor.",
         chapters: [
@@ -4841,19 +4860,37 @@ const bindSlideNavigation = () => {
 
     this.granthsData = granths;
 
-    // Render Granth Cards in Horizontal Slider
+    // Render Granth Cards in Horizontal Slider with 6 Free & 10 Premier Badges
     const renderGranthSlider = (category) => {
+      self.isSubscribed = (typeof DatabaseService !== 'undefined' && DatabaseService.isSubscribed()) || !!self.isSubscribed;
       const filtered = category === 'all' ? granths : granths.filter(function(g) { return g.cat === category; });
       sliderRow.innerHTML = filtered.map(function(g) {
+        const isLocked = g.isPremium && !self.isSubscribed;
+        
+        let tierBadge = '';
+        if (!g.isPremium) {
+          tierBadge = '<span class="text-[9px] font-extrabold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.8 rounded-md backdrop-blur-md flex items-center gap-1 shadow-sm">✨ FREE CLASSIC</span>';
+        } else if (isLocked) {
+          tierBadge = '<span class="text-[9px] font-extrabold text-amber-300 bg-black/85 border border-amber-500/50 px-2 py-0.8 rounded-md backdrop-blur-md flex items-center gap-1 shadow-sm">🔒 PRO PREMIER</span>';
+        } else {
+          tierBadge = '<span class="text-[9px] font-extrabold text-gold bg-black/85 border border-gold/50 px-2 py-0.8 rounded-md backdrop-blur-md flex items-center gap-1 shadow-sm">👑 PRO UNLOCKED</span>';
+        }
+
+        const overlayCta = isLocked 
+          ? '<div class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider shadow-xl shadow-amber-500/30 transform scale-90 group-hover:scale-100 transition-transform flex items-center gap-1.5">🔒 Unlock with ₹399 Pass</div>'
+          : '<div class="px-4 py-2 rounded-xl bg-gold text-black font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-gold/30 transform scale-90 group-hover:scale-100 transition-transform flex items-center gap-1.5">📖 Read 150+ Page Book</div>';
+
+        const bottomBtn = isLocked
+          ? '<button class="read-granth-btn w-full py-2 rounded-xl bg-amber-500/15 hover:bg-gradient-to-r hover:from-gold hover:to-amber-500 hover:text-black border border-amber-500/40 hover:border-gold text-amber-300 font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm" data-granth-id="' + g.id + '"><span>🔒</span> <span>Unlock Premier Granth (₹399)</span></button>'
+          : '<button class="read-granth-btn w-full py-2 rounded-xl bg-white/5 hover:bg-gold hover:text-black border border-white/10 hover:border-gold text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm" data-granth-id="' + g.id + '"><span>📖</span> <span>Read Full Granth (' + g.pages + 'p)</span></button>';
+
         return '<div class="granth-card flex-shrink-0 w-72 sm:w-80 rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-gold/15 flex flex-col justify-between" data-granth-id="' + g.id + '">' +
           '<div class="h-48 w-full relative flex flex-col justify-between p-4 overflow-hidden">' +
             '<img src="' + g.coverImg + '" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="' + g.title + '">' +
             '<div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-15 pointer-events-none"></div>' +
-            '<div class="flex justify-between items-start w-full relative z-20">' +
-              '<span class="text-[9px] font-bold text-white/90 bg-black/60 px-2 py-0.8 rounded-md uppercase tracking-wider border border-white/10 backdrop-blur-md">' +
-                g.catLabel +
-              '</span>' +
-              '<span class="text-[9px] font-extrabold text-gold bg-black/60 border border-gold/40 px-2 py-0.8 rounded-md backdrop-blur-md">' +
+            '<div class="flex justify-between items-start w-full relative z-20 gap-1">' +
+              tierBadge +
+              '<span class="text-[9px] font-extrabold text-gold bg-black/70 border border-gold/40 px-2 py-0.8 rounded-md backdrop-blur-md flex-shrink-0">' +
                 '📖 ' + g.pages + 'p' +
               '</span>' +
             '</div>' +
@@ -4861,31 +4898,35 @@ const bindSlideNavigation = () => {
               '<h4 class="font-bold text-sm sm:text-base font-serif line-clamp-2 leading-snug drop-shadow-md text-white/95">' + g.title + '</h4>' +
               '<p class="text-[10px] text-gold font-mono mt-0.5">' + g.chaptersCount + ' Deep Chapters &bull; Complete Granth</p>' +
             '</div>' +
-            '<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">' +
-              '<div class="px-4 py-2 rounded-xl bg-gold text-black font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-gold/30 transform scale-90 group-hover:scale-100 transition-transform">' +
-                '📖 Read 150+ Page Book' +
-              '</div>' +
+            '<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20 backdrop-blur-[2px]">' +
+              overlayCta +
             '</div>' +
           '</div>' +
           '<div class="p-4 flex-grow flex flex-col justify-between space-y-3 bg-[#0d0f15]">' +
             '<p class="text-xs text-white/70 line-clamp-2 leading-relaxed">' +
               g.desc +
             '</p>' +
-            '<button class="read-granth-btn w-full py-2 rounded-xl bg-white/5 hover:bg-gold hover:text-black border border-white/10 hover:border-gold text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer" data-granth-id="' + g.id + '">' +
-              '<span>📖</span>' +
-              '<span>Read Full Granth (' + g.pages + 'p)</span>' +
-            '</button>' +
+            bottomBtn +
           '</div>' +
         '</div>';
       }).join('');
 
-      // Bind Clicks on Granth Cards
+      // Bind Clicks on Granth Cards (Locks vs Free Readers)
       sliderRow.querySelectorAll('.granth-card, .read-granth-btn').forEach(function(el) {
         el.addEventListener('click', function(e) {
           e.stopPropagation();
           const granthId = el.getAttribute('data-granth-id');
           const granth = granths.find(function(g) { return g.id === granthId; });
-          if (granth && window.appInstance) window.appInstance.openGranthReader(granth);
+          if (!granth) return;
+          
+          self.isSubscribed = (typeof DatabaseService !== 'undefined' && DatabaseService.isSubscribed()) || !!self.isSubscribed;
+          const isLocked = granth.isPremium && !self.isSubscribed;
+          
+          if (isLocked) {
+            if (window.appInstance) window.appInstance.openPaymentModal();
+          } else {
+            if (window.appInstance) window.appInstance.openGranthReader(granth);
+          }
         });
       });
     };
@@ -4929,6 +4970,12 @@ const bindSlideNavigation = () => {
   }
 
   openGranthReader(granth) {
+    this.isSubscribed = (typeof DatabaseService !== 'undefined' && DatabaseService.isSubscribed()) || !!this.isSubscribed;
+    if (granth.isPremium && !this.isSubscribed) {
+      this.openPaymentModal();
+      return;
+    }
+
     const modal = document.getElementById('granth-reader-modal');
     if (!modal) return;
 
