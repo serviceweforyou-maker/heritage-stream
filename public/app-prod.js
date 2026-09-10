@@ -381,6 +381,7 @@ class AppController {
     safeInit("initKidsModeToggle", this.initKidsModeToggle);
     safeInit("initPWA", this.initPWA);
     safeInit("initSocialProofTicker", this.initSocialProofTicker);
+    safeInit("initDynamicSEO", this.initDynamicSEO);
     safeInit("initGrandGranthalaya", this.initGrandGranthalaya);
     
     // Listen to hash changes for catalog navigation explorer
@@ -4585,6 +4586,89 @@ const bindSlideNavigation = () => {
     }
   }
 
+
+  // 12. Real-Time Live Social Proof Ticker (Viral Conversions Engine)
+  initSocialProofTicker() {
+    const ticker = document.getElementById('live-social-proof');
+    const avatarEl = document.getElementById('social-proof-avatar');
+    const textEl = document.getElementById('social-proof-text');
+    const timeEl = document.getElementById('social-proof-time');
+    if (!ticker || !textEl) return;
+
+    const events = [
+      { avatar: "⚡", user: "Rajesh S.", city: "Bengaluru", action: "unlocked the ₹399 Heritage Family Pass", time: "2m ago" },
+      { avatar: "📖", user: "Ananya M.", city: "Mumbai", action: "started reading 'The 14 Lokas & Time Dilation'", time: "4m ago" },
+      { avatar: "🕉️", user: "Vikram R.", city: "Delhi NCR", action: "completed Shiva Tandava Saga", time: "7m ago" },
+      { avatar: "👑", user: "Kavita D.", city: "Pune", action: "earned 'Dharmic Guardian' Archetype Certificate", time: "9m ago" },
+      { avatar: "🎁", user: "Siddharth K.", city: "Hyderabad", action: "claimed ₹50 Discount Voucher", time: "11m ago" },
+      { avatar: "🛕", user: "Meenakshi N.", city: "Chennai", action: "performed Virtual Aarti at Kashi Vishwanath", time: "14m ago" },
+      { avatar: "🧒", user: "Aarav (Grade 5)", city: "Ahmedabad", action: "scored 100% in Vedic Mental Math Challenge", time: "16m ago" }
+    ];
+
+    let currentEventIdx = 0;
+
+    const showTicker = () => {
+      const ev = events[currentEventIdx];
+      if (avatarEl) avatarEl.textContent = ev.avatar;
+      if (textEl) {
+        textEl.innerHTML = '<strong>' + ev.user + '</strong> from ' + ev.city + ' ' + ev.action;
+      }
+      if (timeEl) timeEl.textContent = ev.time;
+
+      ticker.classList.remove('hidden');
+      setTimeout(() => {
+        ticker.classList.remove('translate-y-12', 'opacity-0');
+      }, 50);
+
+      setTimeout(() => {
+        ticker.classList.add('translate-y-12', 'opacity-0');
+        setTimeout(() => {
+          ticker.classList.add('hidden');
+        }, 500);
+      }, 6000);
+
+      currentEventIdx = (currentEventIdx + 1) % events.length;
+    };
+
+    setTimeout(() => {
+      showTicker();
+      setInterval(showTicker, 18000);
+    }, 4000);
+  }
+
+  // 13. Dynamic SEO & Real-Time OpenGraph / Social Metadata Engine
+  initDynamicSEO() {
+    const metaMap = {
+      '#library': { title: "Streaming Library & Sagas | Sanatana360", desc: "Watch 200+ 4K docu-series on ancient Indian temple science, kings, astronomy, and Vedic sagas." },
+      '#granthalaya-library': { title: "Grand Digital Granthalaya (16 Epics) | Sanatana360", desc: "Read 150+ page illustrated sacred manuscripts: Asura battles, 14 Lokas time dilation, Advaita miracles, and Panchatantra." },
+      '#divya-darshana': { title: "Divya Darshana: Virtual Temple Aarti & Panchang | Sanatana360", desc: "Experience 360-degree virtual darshana and daily Hindu panchang for 108 consecrated temples." },
+      '#explorer': { title: "Interactive Heritage Map Explorer | Sanatana360", desc: "Explore ancient architectural sites across India on an interactive geo-spatial historical map." },
+      '#play-zone': { title: "Vedic Math & Heritage Trivia Play Zone | Sanatana360", desc: "Interactive 3-second mental math games, Ramayana trivia, and cultural knowledge challenges." },
+      '#mystery-vault': { title: "Ancient Mystery Vaults & Lost Knowledge | Sanatana360", desc: "Decipher mysterious temple vaults, subterranean tunnels, and unsolved archaeological secrets." }
+    };
+
+    const updateMeta = (title, desc) => {
+      if (title) document.title = title;
+      if (desc) {
+        const descMeta = document.querySelector('meta[name="description"]');
+        if (descMeta) descMeta.setAttribute('content', desc);
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', desc);
+      }
+    };
+
+    window.addEventListener('hashchange', () => {
+      const h = window.location.hash;
+      if (metaMap[h]) {
+        updateMeta(metaMap[h].title, metaMap[h].desc);
+      }
+    });
+
+    if (window.location.hash && metaMap[window.location.hash]) {
+      updateMeta(metaMap[window.location.hash].title, metaMap[window.location.hash].desc);
+    }
+  }
+
   // ─────────────────────────────────────────────────────────────
   // ── GRAND DIGITAL GRANTHALAYA (16 Epic Books Slider & Reader) ─
   // ─────────────────────────────────────────────────────────────
@@ -4994,6 +5078,7 @@ const bindSlideNavigation = () => {
     const themeBtn = document.getElementById('reader-theme-toggle-btn');
     const fontDecBtn = document.getElementById('reader-font-dec-btn');
     const fontIncBtn = document.getElementById('reader-font-inc-btn');
+    const shareBtn = document.getElementById('reader-share-btn');
     const canvasEl = document.getElementById('reader-content-canvas');
 
     if (titleEl) titleEl.textContent = granth.title;
