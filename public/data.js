@@ -11,8 +11,8 @@ export default {
     {
       "id": "hampi",
       "title": "Hampi: The Lost Empire of Vijaynagara",
-      "tagline": "Stones that Sing, Pillars that Breathe",
-      "description": "Step into the ruins of the world's second-largest medieval city. Explore the architectural marvel of the Vitthala Temple, the musical pillars, and the rise and fall of an empire that guarded the peninsula for over two centuries.",
+      "tagline": "Granite Symphony of the Vijayanagara Empire (1336–1565 CE)",
+      "description": "Explore the ruins of the world's second-largest medieval city. Founded in 1336 CE along the Tungabhadra River, Vijayanagara reached its golden zenith under Emperor Krishnadevaraya. Discover the architectural marvel of the Vitthala Temple, its 56 monolithic musical acoustic pillars, the iconic Stone Chariot of Garuda, and the grand bazaar streets that once traded rubies, diamonds, and silks by the measure.",
       "duration": "45 Mins",
       "rating": "9.8 ★",
       "year": "2026",
@@ -26,22 +26,27 @@ export default {
       "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
       "content": [
         {
-          "title": "The Golden Age",
-          "text": "At its peak under Emperor Krishnadevaraya, Hampi was a glittering metropolis of over half a million people, trading diamonds, spices, and silk on its grand streets.",
+          "title": "Chapter I: The Golden Age of Vijayanagara",
+          "text": "Founded in 1336 CE by the Sangama brothers Harihara I and Bukka Raya I, Vijayanagara grew into an empire guarding the southern peninsula for over two centuries. Under Emperor Krishnadevaraya (r. 1509–1529 CE), Hampi flourished as a cosmopolitan metropolis of half a million citizens, documented by Portuguese travelers Domingo Paes and Fernão Nunes as rivaling Rome in wealth and grandeur.",
           "visual": "🏛️"
         },
         {
-          "title": "The Architectural Symphony",
-          "text": "The Vitthala Temple's stone chariot is an iconic symbol of Indian craftsmanship. Most enigmatic are the 56 musical pillars that, when tapped gently, resonate with distinct musical notes.",
+          "title": "Chapter II: The 56 Musical Acoustic Pillars",
+          "text": "The Mahamandapa of the Vitthala Temple features 56 monolithic granite pillars known as the 'Sa-Re-Ga-Ma' musical pillars. Each main pillar is surrounded by seven slender sculpted sub-pillars of varying girth and density. When struck gently, these stone shafts resonate with the distinct musical frequencies of ancient Indian instruments—bell, mridangam, and veena—a metallurgical and acoustic triumph of 16th-century Dravidian stone masonry.",
           "visual": "🎼"
+        },
+        {
+          "title": "Chapter III: The Monolithic Stone Chariot & Living Legacy",
+          "text": "The iconic Garuda Chariot in the temple courtyard is one of India's three famous stone chariots (along with Konark and Mahabalipuram). Carved from multi-tiered granite blocks with revolving stone wheels, it showcases the pinnacle of Tuluva-dynasty craftsmanship. Today, Hampi stands as a UNESCO World Heritage treasure preserving the architectural genius of medieval Bharat.",
+          "visual": "✨"
         }
       ]
     },
     {
       "id": "ganesha",
       "title": "The Wisdom of Ganesha: The Elephant Head",
-      "tagline": "Symbol of New Beginnings & Intellect",
-      "description": "Discover the captivating story of how Ganesha, the remover of obstacles, received his elephant head. Uncover the philosophical meanings behind his form, representing high intellect, listening ability, and cosmic wisdom.",
+      "tagline": "Metaphysics of the Pranava Mantra & Remover of Obstacles",
+      "description": "Discover the deep philosophical and cosmological symbolism of Lord Ganesha. Beyond the popular mythological lore, learn how Ganesha represents the primordial sound Om (Pranava), the Muladhara root chakra of grounded consciousness, and the synthesis of microcosm and macrocosm.",
       "duration": "20 Mins",
       "rating": "9.9 ★",
       "year": "2026",
@@ -56,22 +61,27 @@ export default {
       ],
       "content": [
         {
-          "title": "The Loyal Sentry",
-          "text": "Created by Goddess Parvati from turmeric paste, Ganesha was stationed to guard her chambers. Possessing absolute loyalty, Ganesha refused entry even to Lord Shiva.",
-          "visual": "🛡️"
+          "title": "Chapter I: The Symbolism of the Elephant Head",
+          "text": "In Vedic metaphysics, Lord Ganesha's elephant head represents supreme wisdom, deep listening (large ears), and razor-sharp intellectual discernment (Viveka). The trunk symbolizes the adaptability to uproot giant trees of ignorance while possessing the delicate sensitivity to pluck a blade of grass.",
+          "visual": "🐘"
         },
         {
-          "title": "Shiva's Trident",
-          "text": "Unaware that the boy was his son, Shiva engaged in battle. In a fit of divine rage, Shiva severed Ganesha's head with his Trishula.",
-          "visual": "🔱"
+          "title": "Chapter II: Lord of the Muladhara Chakra",
+          "text": "In the Ganapati Atharvashirsha Upanishad, Lord Ganesha is celebrated as the presiding deity of the Muladhara chakra—the foundation of all physical and spiritual energy. Without grounding the root consciousness, higher spiritual ascension cannot take place; hence Ganesha is invoked before all sacred beginnings (Prathama Pujya).",
+          "visual": "🕉️"
+        },
+        {
+          "title": "Chapter III: Scribe of the Mahabharata",
+          "text": "According to ancient tradition, when Sage Vyasa composed the 100,000-verse Mahabharata, Lord Ganesha agreed to be the divine scribe on one condition: that Vyasa dictate continuously without pause. When Ganesha's stylus broke under the torrent of wisdom, He broke His own tusk (Ekadanta) to continue writing without interrupting the flow of cosmic truth.",
+          "visual": "📜"
         }
       ]
     },
     {
       "id": "dashavatara",
       "title": "Dashavatara: Evolution of the Cosmos",
-      "tagline": "The Ten Incarnations of Lord Vishnu",
-      "description": "Travel through the ten divine descents (Avatars) of Lord Vishnu, starting from aquatic life to humanity. Discover how this sequence mirrors geological evolutionary timelines and human societal development.",
+      "tagline": "Cosmic Evolution & The 10 Incarnations of Lord Vishnu",
+      "description": "Explore the profound evolutionary continuum encoded within the Dashavatara of Lord Vishnu: from aquatic life (Matsya) and amphibian (Kurma) to terrestrial animal (Varaha), half-human (Narasimha), dwarf (Vamana), warrior (Parashurama), righteous king (Rama), cosmic statesman (Krishna), meditative teacher (Buddha), and future avatar (Kalki).",
       "duration": "40 Mins",
       "rating": "9.9 ★",
       "year": "2026",
@@ -86,17 +96,27 @@ export default {
       ],
       "content": [
         {
-          "title": "The Aquatic & Amphibian Age",
-          "text": "First is Matsya (the Fish) saving life from the Great Deluge, followed by Kurma (the Tortoise) supporting the churn of the ocean.",
-          "visual": "🐟"
+          "title": "Chapter I: Biological Evolution in Ancient Metaphysics",
+          "text": "Centuries before Darwinian evolutionary biology, the Dashavatara documented the progression of conscious life on Earth: Matsya (aquatic fish), Kurma (amphibious turtle), Varaha (terrestrial mammal), Narasimha (transition from beast to human), and Vamana (early human), mirroring the cosmological development of consciousness.",
+          "visual": "🌊"
+        },
+        {
+          "title": "Chapter II: Societal & Ethical Evolution",
+          "text": "The later avatars trace the evolution of human society: Parashurama (agrarian warrior), Rama (establishment of righteous legal statecraft and moral duty / Maryada Purushottama), Krishna (mastery of philosophical diplomacy, statecraft, and detachment in the Gita), and the Buddha (mastery over mental desires and universal compassion).",
+          "visual": "🏹"
+        },
+        {
+          "title": "Chapter III: The Principle of Avatarana",
+          "text": "The Bhagavad Gita (Chapter 4, Verse 7–8) articulates the timeless law of Avatarana: 'Yada yada hi dharmasya glanir bhavati bharata...' Whenever cosmic order and moral harmony decline, the supreme consciousness descends into the material matrix to protect the virtuous, dismantle tyranny, and re-establish Dharma across cosmic Yugas.",
+          "visual": "✨"
         }
       ]
     },
     {
       "id": "ajanta",
       "title": "Ajanta & Ellora: Sculpting the Divine",
-      "tagline": "Monasteries Carved out of Living Stone",
-      "description": "Journey deep into the Sahyadri hills, where ancient monks carved 30 rock-cut cave monuments from a sheer cliff. Uncover the Jataka tales painted with pigments that have survived two millennia.",
+      "tagline": "30 Rock-Cut Buddhist Caves & Monolithic Kailasa Engineering",
+      "description": "Journey into the Sahyadri basalt cliffs of Maharashtra. Explore the 30 rock-cut Buddhist cave monasteries of Ajanta dating from 2nd Century BCE to 5th Century CE with world-renowned fresco murals, and the colossal Kailasa Temple of Ellora (Cave 16)—the world's largest monolithic rock-cut structure chiseled top-down from a single volcanic mountain.",
       "duration": "30 Mins",
       "rating": "9.5 ★",
       "year": "2025",
@@ -110,17 +130,27 @@ export default {
       "videoUrl": "https://www.youtube.com/embed/3n4-HxIXJQI",
       "content": [
         {
-          "title": "Hidden for Centuries",
-          "text": "Discovered accidentally by a British officer in 1819 while hunting tigers, the Ajanta caves are a UNESCO World Heritage site representing Buddhist religious art.",
+          "title": "Chapter I: The Rediscovery of Ajanta's Frescoes",
+          "text": "Hidden for centuries behind dense forest vegetation in a horseshoe bend of the Waghur River, Ajanta's 30 rock-cut caves were built in two phases under the Satavahana (2nd BCE) and Vakataka (5th CE) dynasties. Rediscovered in 1819 by British officer John Smith, the caves house masterpieces of classical Buddhist art, including the iconic murals of Bodhisattvas Padmapani and Vajrapani painted with natural lapis lazuli and ochre pigments.",
+          "visual": "🎨"
+        },
+        {
+          "title": "Chapter II: Kailasa Temple (Cave 16) — Top-Down Mountain Carving",
+          "text": "Commissioned in the 8th Century CE by Rashtrakuta King Krishna I, the Kailasa Temple at Ellora is a marvel of rock excavation engineering. Over 200,000 tonnes of solid basalt rock were chiseled away starting from the mountain summit downwards. Without cranes or mortar, sculptors carved multi-story pillared mandapas, life-sized elephants, and soaring Shikhara towers out of living rock with zero margin for error.",
           "visual": "⛰️"
+        },
+        {
+          "title": "Chapter III: The Synthesis of Three Faiths",
+          "text": "Ellora features 34 major cave monuments representing Hindu, Buddhist, and Jain traditions side-by-side along a 2-kilometer cliff. This peaceful coexistence symbolizes the pluralistic civilizational ethos of ancient India, where competing philosophical schools engaged in rigorous logic and sacred art under royal patronage.",
+          "visual": "🕉️"
         }
       ]
     },
     {
       "id": "chola",
       "title": "Chola Dynasty: Masters of the Oceans",
-      "tagline": "The Maritime Empire and Living Temples",
-      "description": "How did a dynasty in southern India establish a maritime trade empire stretching to Southeast Asia? Discover the engineering behind Brihadisvara Temple, the Chola Navy, and their bronze casting secrets.",
+      "tagline": "Maritime Armada & The 80-Tonne Monolith Dome (848–1279 CE)",
+      "description": "Discover the naval superpower of ancient India. Under Emperor Raja Raja Chola I and Rajendra Chola I, the Chola dynasty commanded a formidable war fleet across the Bay of Bengal, establishing trade routes to Southeast Asia, while constructing the architectural wonder of Thanjavur's Brihadeeswarar Temple crowned by an 80-tonne monolithic granite dome.",
       "duration": "50 Mins",
       "rating": "9.9 ★",
       "year": "2026",
@@ -133,17 +163,27 @@ export default {
       "videoUrl": "https://www.youtube.com/embed/Ys0c3ZxJOsM",
       "content": [
         {
-          "title": "The Super Navy",
-          "text": "Rajaraja Chola I and his son Rajendra Chola I built a formidable navy, capturing parts of Sri Lanka, the Maldives, and dominating trade with the Srivijaya Empire.",
-          "visual": "⛵"
+          "title": "Chapter I: The Blue-Water Navy of the Chola Empire",
+          "text": "By the 11th century CE, Emperor Rajendra Chola I commanded the largest naval armada in Asian history. Chola multi-tiered warships (Galbats and Gurabs) secured maritime trade routes across the Palk Strait, the Andaman Sea, and the Malacca Strait, establishing diplomatic and cultural embassies in Sri Lanka, the Srivijaya Empire (Sumatra/Java), and Song Dynasty China.",
+          "visual": "⚓"
+        },
+        {
+          "title": "Chapter II: Brihadeeswarar Temple — The Granite Masterpiece",
+          "text": "Consecrated in 1010 CE in Thanjavur by Raja Raja Chola I, the Brihadeeswarar Temple (Peruvudaiyar Kovil) features a 216-foot granite Vimana tower built entirely without binding cement. Atop this colossal tower sits the Kumbam—an 80-tonne single block of granite hauled up an engineered 6-kilometer inclined earthen ramp by royal work elephants and thousands of skilled artisans.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Bronze Casting & Lost-Wax Mastery",
+          "text": "Chola bronze sculptures, created through the ancient 'Madhuchishtavidhana' (lost-wax casting) method, are globally revered as the pinnacle of metal sculpture. The iconic cosmic dance of Shiva Nataraja encapsulates five fundamental activities: creation (Srishti), preservation (Sthiti), destruction (Samhara), illusion (Tirobhava), and liberation (Moksha).",
+          "visual": "🔥"
         }
       ]
     },
     {
       "id": "meenakshi",
       "title": "Meenakshi Temple: The Tower of Colors",
-      "tagline": "Spire of the Divine Mother",
-      "description": "Tour the breathtaking halls of the Meenakshi Amman Temple in Madurai. Learn the engineering behind its 14 towering gopurams decorated with thousands of colorful mythological figures.",
+      "tagline": "The Living Temple City of 14 Soaring Polychrome Gopurams",
+      "description": "Tour the historic Meenakshi Sundareswarar Temple in Madurai—one of the oldest continuously active temple complexes in the world. Explore its 14 towering Gopurams adorned with 33,000 sculpted deities, the Hall of 1,000 Pillars, and the sacred Golden Lotus Tank (Porthamarai Kulam).",
       "duration": "25 Mins",
       "rating": "9.7 ★",
       "year": "2026",
@@ -156,17 +196,27 @@ export default {
       "videoUrl": "https://www.youtube.com/embed/YBJ-4-MBVVY",
       "content": [
         {
-          "title": "Introduction to Madurai",
-          "text": "Meenakshi Temple is the heart of the ancient city of Madurai, built in Dravidian architectural style with massive stone towers.",
+          "title": "Chapter I: The Ancient Heart of Pandya Kingdom",
+          "text": "Mentioned in early Tamil Sangam literature dating back over 2,500 years, Madurai was designed as a lotus-shaped urban mandala with the Meenakshi Temple at its core. Expanded during the Nayaka dynasty under King Tirumala Nayaka (1623–1659 CE), the temple spans 14 acres with concentric stone enclosures.",
           "visual": "🛕"
+        },
+        {
+          "title": "Chapter II: The 14 Soaring Gopurams & 33,000 Sculptures",
+          "text": "The temple's 14 majestic Gopuram entrance towers soar up to 170 feet in height, adorned with over 33,000 intricately painted stone and stucco sculptures depicting celestial deities, Puranic epics, and celestial musicians. The southern Gopuram is the tallest, featuring a graceful concave curve that commands the Madurai skyline.",
+          "visual": "🎨"
+        },
+        {
+          "title": "Chapter III: The Hall of 1,000 Pillars & Acoustic Marvels",
+          "text": "Built in 1569 CE by Ariyanatha Mudaliar, the Thousand Pillar Hall (Aayiram Kaal Mandapam) contains 985 exquisitely sculpted monolithic pillars arranged in flawless geometric perspective. Near the northern tower stand five musical stone pillars carved from single granite blocks that ring with distinct tonal frequencies when tapped.",
+          "visual": "🎼"
         }
       ]
     },
     {
       "id": "shivaji",
       "title": "Shivaji Maharaj: Father of Indian Navy",
-      "tagline": "Ruler of Forts & Oceans",
-      "description": "How a visionary leader pioneered guerrilla warfare tactics, built invincible sea forts like Sindhudurg, and established a formidable naval force along the Konkan coast.",
+      "tagline": "Architect of Indigenous Naval Power & Mountain Fortresses",
+      "description": "Learn how Chhatrapati Shivaji Maharaj (1630–1680 CE) founded the Maratha Empire, pioneered Ganimi Kava (guerrilla tactics), built invincible island sea fortresses like Sindhudurg, and established the first modern indigenous Indian naval fleet to protect coastal trade and sovereignty.",
       "duration": "35 Mins",
       "rating": "9.9 ★",
       "year": "2026",
@@ -179,17 +229,27 @@ export default {
       "videoUrl": "https://www.youtube.com/embed/GqzNAkOG6mg",
       "content": [
         {
-          "title": "The Naval Genesis",
-          "text": "Shivaji realized that a strong navy was essential to defend the coast from foreign merchants. He built ships out of local teak wood and established naval yards.",
-          "visual": "⛵"
+          "title": "Chapter I: The Genesis of the Maratha Navy (1657 CE)",
+          "text": "Recognizing that 'Jalyukta to Jagat' (He who rules the sea rules the land), Shivaji Maharaj established an indigenous naval force along the Konkan coast in 1657 CE. Under Admiral Kanhoji Angre and Commander Maynak Bhandari, the Maratha Navy built over 400 war vessels (Gurabs, Galbats, and Machwas) to defend Indian waters against Portuguese, Dutch, and British naval incursions.",
+          "visual": "🚩"
+        },
+        {
+          "title": "Chapter II: The Engineering of Sindhudurg Sea Fortress",
+          "text": "Built on an isolated rocky island off Malvan in 1664 CE, Sindhudurg Fortress spans 48 acres with massive 30-foot-high stone ramparts. Over 4,000 pounds of molten lead were poured into the foundation stones to withstand the relentless pounding of the Arabian Sea waves, creating an impenetrable maritime naval bastion.",
+          "visual": "🏰"
+        },
+        {
+          "title": "Chapter III: Ganimi Kava & Chhatrapati's Legacy",
+          "text": "Shivaji Maharaj revolutionized military strategy through 'Ganimi Kava'—lightning-fast guerrilla ambushes utilizing the rugged Sahyadri terrain and mountain fortresses (Rajgad, Raigad, Torna). His administrative genius included strict ecological forest conservation, equitable agricultural taxation, and unwavering respect for women and religious sanctums.",
+          "visual": "⚔️"
         }
       ]
     },
     {
       "id": "sundials",
       "title": "Konark's Wheels: Telling Time by Shadows",
-      "tagline": "The Astronomical Calculations of Sun Temple",
-      "description": "How did 13th-century Odia engineers carve stone wheels that calculate time down to the minute using shadows? Learn the mathematical secrets behind the chariot of Konark.",
+      "tagline": "Astronomical Time Calculations of the 13th Century Sun Temple",
+      "description": "Discover how 13th-century Odia master architects under King Narasimhadeva I carved 24 colossal stone wheels at Konark Sun Temple that function as high-precision sundials measuring time down to minutes and seconds using solar shadow trigonometry.",
       "duration": "22 Mins",
       "rating": "9.9 ★",
       "year": "2026",
@@ -203,9 +263,19 @@ export default {
       "videoUrl": "https://www.youtube.com/embed/yY6qP7s9YJ8",
       "content": [
         {
-          "title": "The Solar Clock",
-          "text": "The temple features 24 wheels representing the hours of the day. The spoke placement tells time based on the sun's exact declination angle.",
+          "title": "Chapter I: The Architecture of Surya's Chariot",
+          "text": "Built around 1250 CE by King Narasimhadeva I of the Eastern Ganga Dynasty on the shores of the Bay of Bengal, the Konark Sun Temple is designed as a colossal 24-wheeled stone chariot drawn by seven galloping stone horses, symbolizing the seven days of the week and the seven colors of sunlight.",
           "visual": "☀️"
+        },
+        {
+          "title": "Chapter II: The Mathematical Mechanics of the 24 Wheels",
+          "text": "Each 9.9-foot stone wheel features 8 major spokes (representing the 8 Praharas of a 24-hour day, each equal to 3 hours) and 8 minor spokes. The rim is adorned with 30 bead carvings between spokes. By observing where the axle pin's shadow falls along the inner beads, observers calculated the exact time of day down to minutes and seconds with astronomical accuracy.",
+          "visual": "⏱️"
+        },
+        {
+          "title": "Chapter III: Solar Alignments & Magnetic Legends",
+          "text": "The main sanctum was oriented with pinpoint precision so that the first rays of the dawn sun on the spring and autumn equinoxes passed through the Natya Mandapa directly onto the diamond jewel in the crown of the presiding Surya deity.",
+          "visual": "🧭"
         }
       ]
     },
@@ -499,9 +569,19 @@ export default {
       "videoUrl": "https://www.youtube.com/embed/9B8h48Z6_b8",
       "content": [
         {
-          "title": "Ram Setu Bridge",
-          "text": "Satellite imagery reveals a chain of limestone shoals between India and Sri Lanka that carbon dating places matching the epic's timeline.",
-          "visual": "🌉"
+          "title": "Chapter I: Historical Context & Scriptural Genesis",
+          "text": "Explore the astronomical dating of Ramayana matching planetary configurations, the geological research surrounding Rama's Bridge (Ram Setu), and the botany of Sanjeevani herbs. Preserved across Sanskrit manuscripts, temple inscriptions, and regional chronicles, this work embodies the timeless wisdom of Sanatana Dharma.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter II: Architectural, Scientific & Philosophical Dimensions",
+          "text": "Deep analysis of Scientific Mysteries of Ramayana reveals profound synthesis of metaphysics, statecraft, and scientific observation. Ancient masters integrated mathematical geometry and spiritual symbolism to elevate human consciousness and preserve cultural memory.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: Living Legacy & Modern Relevance",
+          "text": "Today, the heritage of Scientific Mysteries of Ramayana stands as a bridge connecting ancestral insight with contemporary life. By understanding these chronicles, students, scholars, and families discover moral clarity, mental resilience, and civilizational pride.",
+          "visual": "✨"
         }
       ]
     },
@@ -519,9 +599,19 @@ export default {
       "videoUrl": "https://www.youtube.com/embed/H68jZ2Gv19w",
       "content": [
         {
-          "title": "Monolithic Wonder",
-          "text": "Measuring 15 feet high and 27 feet long, it is the largest monolithic statue of Nandi (Shiva's mount) in India. Its proportions are perfectly balanced.",
-          "visual": "🐂"
+          "title": "Chapter I: Historical Context & Scriptural Genesis",
+          "text": "Located just a mile from the Lepakshi temple, this colossal Nandi is carved from a single granite stone block. It stands as a peak of Vijayanagara stone craftsmanship. Preserved across Sanskrit manuscripts, temple inscriptions, and regional chronicles, this work embodies the timeless wisdom of Sanatana Dharma.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter II: Architectural, Scientific & Philosophical Dimensions",
+          "text": "Deep analysis of The Giant Nandi of Lepakshi reveals profound synthesis of metaphysics, statecraft, and scientific observation. Ancient masters integrated mathematical geometry and spiritual symbolism to elevate human consciousness and preserve cultural memory.",
+          "visual": "⚜️"
+        },
+        {
+          "title": "Chapter III: Living Legacy & Modern Relevance",
+          "text": "Today, the heritage of The Giant Nandi of Lepakshi stands as a bridge connecting ancestral insight with contemporary life. By understanding these chronicles, students, scholars, and families discover moral clarity, mental resilience, and civilizational pride.",
+          "visual": "✨"
         }
       ],
       "isPremium": false,
