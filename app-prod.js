@@ -5260,6 +5260,7 @@ const bindSlideNavigation = () => {
         coverImg: "/images/mahishasura_battle.jpg",
         desc: "The shape-shifting buffalo Asura who extracted the boon of invincibility against all men and Devas, and the cosmic emergence of Goddess Durga.",
         videoUrl: "https://www.youtube.com/embed/05P75OPzies",
+        videoUrl: "https://www.youtube.com/embed/05P75OPzies",
         chapters: [
           { title: "Chapter 1: The Ash-Vow of Rambha & Mahisha's Birth", text: "In the subterranean depths of Rasatala, the Asura king Rambha performed thousand-year austerities amidst blazing fires. From the divine buffalo Mahishi was born Mahishasura—destined to shake the foundations of Mount Meru. He possessed the terrifying occult mastery of Trikala Maya, allowing him to shift between monstrous beast, warrior king, and illusory smoke at will." },
           { title: "Chapter 2: The Boon of Brahma & The Fall of Amaravati", text: "Standing upon one toe atop the Mandara cliffs, Mahishasura demanded the supreme boon of immortality from Lord Brahma. 'Let no Deva, Yaksha, Gandharva, Naga, or man born of womb be capable of slaying me,' he roared. Armed with this cosmological loophole, his demon armies overran Indraloka, banishing the Devas into exile across mortal forests." },
@@ -5279,6 +5280,7 @@ const bindSlideNavigation = () => {
         coverImg: "/images/ravana_lanka.jpg",
         desc: "The 10 heads of unmatched astrological and musical mastery, mystical Pushpaka Vimana aviation, and the tragic 6-month cosmic curse of Kumbhakarna.",
         videoUrl: "https://www.youtube.com/embed/otVAudER9dU",
+        videoUrl: "https://www.youtube.com/embed/otVAudER9dU",
         chapters: [
           { title: "Chapter 1: The Ten Heads of Sangeeta & Astrology", text: "Ravana was no ordinary tyrant; he was the master of the 4 Vedas, 6 Vedangas, and the supreme master of the Rudra Veena. When he attempted to lift Mount Kailash, Lord Shiva pressed the mountain down with His toe. In divine ecstasy, Ravana tore out his own sinews to string his veena and sang the awe-inspiring Shiva Tandava Stotram, winning the divine sword Chandrahas." },
           { title: "Chapter 2: The Sleeping Giant of Lanka", text: "Kumbhakarna, born with mountain-shaking strength, intended to ask Lord Brahma for 'Nirdevatvam' (destruction of Devas). But Goddess Saraswati sat upon his tongue, turning his prayer into 'Nidravatvam' (endless slumber). For six months he slept in subterranean gold vaults, awoken only by marching elephants and blaring trumpet horns when war arrived." }
@@ -5295,6 +5297,7 @@ const bindSlideNavigation = () => {
         isPremium: true, // PREMIER PRO
         coverImg: "/images/bhasmasura_mohini.jpg",
         desc: "The deadly boon that turned anyone touched into ashes, and the divine cosmic dance that saved the Universe.",
+        videoUrl: "https://www.youtube.com/embed/XEQFAcbMkWI",
         chapters: [
           { title: "Chapter 1: The Touch of Fire Boon", text: "Bhasmasura performed severe tapas until Lord Shiva granted him his wish: 'Whosoever's head I place my right hand upon shall instantly be reduced to a heap of ashes.' Blinded by supreme arrogance, Bhasmasura immediately attempted to test the boon on Shiva Himself, forcing the Lord of Yoga into cosmic retreat." },
           { title: "Chapter 2: The Cosmic Dance of Mohini", text: "To protect the cosmic order, Lord Vishnu manifested as Mohini—the supreme enchantress of divine grace. Fascinated by her beauty, Bhasmasura agreed to match her step-by-step in the intricate Natya dance. As Mohini placed her graceful hand upon her own head in a final mudra, Bhasmasura mirrored the motion, reducing his own body to ashes." }
@@ -5311,6 +5314,7 @@ const bindSlideNavigation = () => {
         isPremium: true, // PREMIER PRO
         coverImg: "/images/patala_naga_kingdom.jpg",
         desc: "The 7 subterranean dimensions (Atala, Vitala, Sutala, Talatala, Mahatala, Rasatala, Patala) and architect Maya Danava.",
+        videoUrl: "https://www.youtube.com/embed/yr2OWiEz7VE",
         videoUrl: "https://www.youtube.com/embed/yr2OWiEz7VE",
         chapters: [
           { title: "Chapter 1: The Seven Lower Realms", text: "Below the mortal plane lie the subterranean realms described in the Vishnu Purana. Here, free from the scorching rays of the sun, jewel-encrusted serpents and enlightened Asura kings reside under radiant crystal light, guarded by the King of Asuras, Mahabali." }
@@ -5330,6 +5334,7 @@ const bindSlideNavigation = () => {
         coverImg: "/images/fourteen_lokas_cosmos.jpg",
         desc: "Vedic calculations of the 4.32 billion year Kalpa, Brahma's day, parallel dimensions, and the cosmic journey of the Jiva.",
         videoUrl: "https://www.youtube.com/embed/0g6gQNukRKA",
+        videoUrl: "https://www.youtube.com/embed/0g6gQNukRKA",
         chapters: [
           { title: "Chapter 1: Time Dilation in Ancient Texts", text: "In the Bhagavata Purana, King Kakudmi travels to Satyaloka to meet Lord Brahma. When he returns after what felt like 20 minutes in the celestial plane, millions of mortal years had elapsed on Earth and entire dynasties had risen and turned to dust—an astonishing ancient intuition of relativistic time dilation." },
           { title: "Chapter 2: The Four Great Yugas", text: "Satya Yuga (1,728,000 years), Treta Yuga (1,296,000 years), Dvapara Yuga (864,000 years), and Kali Yuga (432,000 years). Together they form one Mahayuga of 4.32 million years—a single breath in the infinite cosmic dance of Brahman." }
@@ -5346,6 +5351,7 @@ const bindSlideNavigation = () => {
         isPremium: false, // 3 of 6 FREE
         coverImg: "/images/samudra_manthan.jpg",
         desc: "Mount Mandara, Vasuki the serpent churning cord, the deadly Halahala poison, and the 14 divine jewels of eternity.",
+        videoUrl: "https://www.youtube.com/embed/eE8paZuuigA",
         videoUrl: "https://www.youtube.com/embed/eE8paZuuigA",
         chapters: [
           { title: "Chapter 1: The Cosmic Alliance", text: "Weakened by the curse of Sage Durvasa, the Devas formed a rare cosmic pact with the Asuras to churn the Ocean of Milk (Kshira Sagara) in search of Amrita, the elixir of immortality. Mount Mandara was uprooted as the churning rod, and King Vasuki served as the churning rope." },
@@ -5364,6 +5370,7 @@ const bindSlideNavigation = () => {
         coverImg: "/images/kundalini_chakras.jpg",
         desc: "Ancient palm-leaf maps of consciousness: Ida, Pingala, Sushumna, and the awakening of the dormant serpentine energy.",
         videoUrl: "https://www.youtube.com/embed/JA0P7okWXA4",
+        videoUrl: "https://www.youtube.com/embed/JA0P7okWXA4",
         chapters: [
           { title: "Chapter 1: The Bio-Electric Nadis", text: "The ancient Yoga Upanishads document 72,000 subtle energy channels (Nadis) converging along the spine. The awakening of Kundalini is the conscious elevation of prana from the base Muladhara chakra to the thousand-petaled Sahasrara at the crown of the head." }
         ]
@@ -5379,6 +5386,7 @@ const bindSlideNavigation = () => {
         isPremium: true, // PREMIER PRO
         coverImg: "/images/surya_siddhanta_astronomy.jpg",
         desc: "Ancient mathematical calculations of the speed of light, planetary orbits, lunar nodes, and equinox precessions.",
+        videoUrl: "https://www.youtube.com/embed/J6T7UjSRs0A",
         videoUrl: "https://www.youtube.com/embed/J6T7UjSRs0A",
         chapters: [
           { title: "Chapter 1: Astronomical Accuracy", text: "Written thousands of years ago, the Surya Siddhanta calculated the sidereal year with 99.999% precision compared to modern atomic clock measurements, proving the unmatched mathematical genius of ancient Indian astronomers." }
@@ -5398,6 +5406,7 @@ const bindSlideNavigation = () => {
         coverImg: "/images/adi_shankara.jpg",
         desc: "Walking barefoot across the 4 corners of India, defeating dogmas through pure logic, and establishing the 4 sacred Peethams at age 32.",
         videoUrl: "https://www.youtube.com/embed/xgAA5C-niCk",
+        videoUrl: "https://www.youtube.com/embed/xgAA5C-niCk",
         chapters: [
           { title: "Chapter 1: The Wonder Child of Kalady", text: "Born in Kerala, young Shankara mastered the four Vedas by age eight. When an impoverished woman offered him her last withered gooseberry (Amla) with tears of devotion, Shankara recited the Kanakadhara Stotram, causing Goddess Lakshmi to shower golden amlas into the humble hut." },
           { title: "Chapter 2: The Four Cardinal Pillars of Bharat", text: "Traversing thousands of kilometers across high mountain passes, Shankara established the four monastic pillars of Bharat: Sringeri in the South, Dwaraka in the West, Puri in the East, and Badrinath in the North, uniting the spiritual soul of the subcontinent under Advaita Vedanta." }
@@ -5415,6 +5424,7 @@ const bindSlideNavigation = () => {
         coverImg: "/images/maharishi_agastya.jpg",
         desc: "Drinking the southern ocean, subduing the Vindhya mountain range, and founding Tamil grammar and Kalaripayattu.",
         videoUrl: "https://www.youtube.com/embed/Z4XLf9w9Bc8",
+        videoUrl: "https://www.youtube.com/embed/Z4XLf9w9Bc8",
         chapters: [
           { title: "Chapter 1: The Sage Who Drank the Ocean", text: "When the demon Kalakeyas hid beneath the ocean depths to wage guerrilla attacks on sages, Maharishi Agastya channeled supreme yogic energy and drank the entire ocean in one single draught, exposing the demons and restoring peace to the cosmos." }
         ]
@@ -5431,6 +5441,7 @@ const bindSlideNavigation = () => {
         coverImg: "/images/ashoka.jpg",
         desc: "The fiery training under Ramakrishna, the electrifying 1893 Chicago Parliament speech, and master laws of mental focus.",
         videoUrl: "https://www.youtube.com/embed/ul34M_LQmhg",
+        videoUrl: "https://www.youtube.com/embed/ul34M_LQmhg",
         chapters: [
           { title: "Chapter 1: Sisters and Brothers of America", text: "On September 11, 1893, a young monk in saffron robes stood before 7,000 delegates at the World's Parliament of Religions in Chicago. His opening words, 'Sisters and Brothers of America,' sparked a standing ovation that lasted two full minutes, introducing the profound universality of Vedanta to the modern West." }
         ]
@@ -5446,6 +5457,7 @@ const bindSlideNavigation = () => {
         isPremium: true, // PREMIER PRO
         coverImg: "/images/meenakshi.jpg",
         desc: "Poison turning to divine nectar, unbreakable devotion, and the mystical composition of the Ramcharitmanas.",
+        videoUrl: "https://www.youtube.com/embed/ftOa_ncLY6Q",
         chapters: [
           { title: "Chapter 1: The Cup of Poison (Amrita)", text: "When royal persecution sent a cup of lethal snake venom to Princess Mirabai, she drank it with a smile, offering it to Lord Krishna. By the grace of supreme devotion, the deadly poison transformed into sweet divine nectar, proving that pure love transcends physical mortality." }
         ]
@@ -5464,6 +5476,7 @@ const bindSlideNavigation = () => {
         coverImg: "/images/panchatantra_cover.jpg",
         desc: "The world's oldest leadership treatise: Mitra Bheda (Losing Friends), Mitra Labha (Gaining Allies), and strategic wildlife fables.",
         videoUrl: "https://www.youtube.com/embed/CpbiCHF0Jco",
+        videoUrl: "https://www.youtube.com/embed/CpbiCHF0Jco",
         chapters: [
           { title: "Chapter 1: The Sage and the Three Princes", text: "When King Amarasakti sought a teacher to transform his foolish sons into wise rulers, Acharya Vishnu Sharma wrote the Panchatantra—interwoven stories using animal allegories to teach diplomacy, economics, psychology, and tactical brilliance in 6 short months." }
         ]
@@ -5479,6 +5492,7 @@ const bindSlideNavigation = () => {
         isPremium: true, // PREMIER PRO
         coverImg: "/images/vikram_betal.jpg",
         desc: "King Vikramaditya carrying the riddle-telling corpse across the cremation ground to test moral intellect.",
+        videoUrl: "https://www.youtube.com/embed/piwghp31zvo",
         videoUrl: "https://www.youtube.com/embed/piwghp31zvo",
         chapters: [
           { title: "Chapter 1: The Vow of King Vikramaditya", text: "To fulfill a promise to a Tantric sage, the fearless King Vikramaditya journeyed into the cremation ground on a moonless night to retrieve a corpse possessed by the celestial spirit Betal. But Betal warned him: 'I will tell you a story on our walk; if you know the answer to its riddle and remain silent, your head will burst into a thousand pieces; but if you speak, I will fly back to the banyan tree!'" }
@@ -5496,6 +5510,7 @@ const bindSlideNavigation = () => {
         coverImg: "/images/abhimanyu_chakravyuha.jpg",
         desc: "The sacred labyrinth geometry of Dronacharya and the young prince who knew how to enter but not exit.",
         videoUrl: "https://www.youtube.com/embed/dgwcRqWK9ps",
+        videoUrl: "https://www.youtube.com/embed/dgwcRqWK9ps",
         chapters: [
           { title: "Chapter 1: The Secret Learned in the Womb", text: "While in the womb of his mother Subhadra, young Abhimanyu heard Arjuna explaining the secret mechanics of penetrating the impenetrable seven-tiered Chakravyuha formation. But before Arjuna could explain the method of exit, Subhadra fell asleep, sealing the tragic, heroic fate of the sixteen-year-old warrior." }
         ]
@@ -5511,6 +5526,7 @@ const bindSlideNavigation = () => {
         isPremium: false, // 6 of 6 FREE
         coverImg: "/images/tenali.jpg",
         desc: "The brilliant intellectual sparring matches that exposed hypocrisy and guided emperors with wisdom and humor.",
+        videoUrl: "https://www.youtube.com/embed/TnMt8tLfK-o",
         chapters: [
           { title: "Chapter 1: The Mother Goddess and the Thousand Faces", text: "When Goddess Kali appeared before Tenali Rama with a thousand heads to test him, Tenali burst out laughing. When the Goddess angrily asked why he laughed, Tenali replied: 'O Mother, with one nose when I catch a cold it is so difficult; how do you manage with a thousand running noses?' Amused by his fearlessness and lightning wit, Kali blessed him to become the greatest court jester of Vijayanagara." }
         ]

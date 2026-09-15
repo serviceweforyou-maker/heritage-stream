@@ -22,8 +22,8 @@ export default {
         "History Buffs",
         "Travel Enthusiasts"
       ],
-      "imageUrl": "/images/hampi.jpg",
-      "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
+      "imageUrl": "https://i.ytimg.com/vi/59YYd1rkZRQ/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ",
       "content": [
         {
           "title": "Chapter I: The Golden Age of Vijayanagara",
@@ -52,7 +52,7 @@ export default {
       "year": "2026",
       "isPremium": false,
       "isGodSeries": true,
-      "imageUrl": "/images/ganesha.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/GdU7vdSe6aU/hqdefault.jpg",
       "videoUrl": "https://www.youtube.com/embed/GdU7vdSe6aU",
       "category": "God Series",
       "personas": [
@@ -87,8 +87,8 @@ export default {
       "year": "2026",
       "isPremium": true,
       "isGodSeries": true,
-      "imageUrl": "/images/vishnu.jpg",
-      "videoUrl": "https://www.youtube.com/embed/9B8h48Z6_b8",
+      "imageUrl": "https://i.ytimg.com/vi/QQfMp1Fe24I/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/QQfMp1Fe24I",
       "category": "God Series",
       "personas": [
         "Spiritual Seekers",
@@ -126,8 +126,8 @@ export default {
         "Travel Enthusiasts",
         "History Buffs"
       ],
-      "imageUrl": "/images/ajanta.jpg",
-      "videoUrl": "https://www.youtube.com/embed/3n4-HxIXJQI",
+      "imageUrl": "https://i.ytimg.com/vi/4cjEAxPaq4I/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/4cjEAxPaq4I",
       "content": [
         {
           "title": "Chapter I: The Rediscovery of Ajanta's Frescoes",
@@ -159,8 +159,8 @@ export default {
       "personas": [
         "History Buffs"
       ],
-      "imageUrl": "/images/chola.jpg",
-      "videoUrl": "https://www.youtube.com/embed/Ys0c3ZxJOsM",
+      "imageUrl": "https://i.ytimg.com/vi/u0HI0Fa1Svs/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/u0HI0Fa1Svs",
       "content": [
         {
           "title": "Chapter I: The Blue-Water Navy of the Chola Empire",
@@ -192,8 +192,8 @@ export default {
       "personas": [
         "Travel Enthusiasts"
       ],
-      "imageUrl": "/images/meenakshi.jpg",
-      "videoUrl": "https://www.youtube.com/embed/YBJ-4-MBVVY",
+      "imageUrl": "https://i.ytimg.com/vi/r1PQXBUjpqM/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/r1PQXBUjpqM",
       "content": [
         {
           "title": "Chapter I: The Ancient Heart of Pandya Kingdom",
@@ -225,8 +225,8 @@ export default {
       "personas": [
         "History Buffs"
       ],
-      "imageUrl": "/images/shivaji.jpg",
-      "videoUrl": "https://www.youtube.com/embed/GqzNAkOG6mg",
+      "imageUrl": "https://i.ytimg.com/vi/1jwZ-iVRi44/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/1jwZ-iVRi44",
       "content": [
         {
           "title": "Chapter I: The Genesis of the Maratha Navy (1657 CE)",
@@ -259,8 +259,8 @@ export default {
         "Travel Enthusiasts",
         "History Buffs"
       ],
-      "imageUrl": "/images/sundials.jpg",
-      "videoUrl": "https://www.youtube.com/embed/yY6qP7s9YJ8",
+      "imageUrl": "https://i.ytimg.com/vi/EewjQ06HqtE/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
       "content": [
         {
           "title": "Chapter I: The Architecture of Surya's Chariot",
@@ -286,7 +286,7 @@ export default {
       "duration": "14:10",
       "isPremium": false,
       "isGodSeries": true,
-      "imageUrl": "/images/shiva.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/QvwWU2iDxkQ/hqdefault.jpg",
       "desc": "Delve into the mythology and philosophy of Mahadeva, the destroyer and transformer of the Hindu trinity. Understand the significance of the crescent moon, his third eye, and the Tandava dance.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "personas": [
@@ -311,7 +311,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/QvwWU2iDxkQ"
     },
     {
       "id": "vishnu",
@@ -354,7 +355,7 @@ export default {
       "duration": "11:20",
       "isPremium": false,
       "isGodSeries": true,
-      "imageUrl": "/images/dharma.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/Vg3XIfzoN6w/hqdefault.jpg",
       "desc": "What does Dharma truly mean? Demystify Sanatana Dharma, the cosmic framework of moral duties, truth, and universal laws that sustain order in the human experience.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "personas": [
@@ -379,7 +380,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/Vg3XIfzoN6w"
     },
     {
       "id": "lakshmibai",
@@ -387,7 +389,7 @@ export default {
       "narrator": "Voice of Heritage: Aditi",
       "duration": "12:45",
       "isPremium": false,
-      "imageUrl": "/images/lakshmibai.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/0s0Ef_9AOVg/hqdefault.jpg",
       "desc": "Relive the legendary tale of the Queen of Jhansi, who rode into battle with her child strapped to her back, refusing to yield her kingdom to the British empire during the rebellion of 1857.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "personas": [
@@ -413,7 +415,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/0s0Ef_9AOVg"
     },
     {
       "id": "ashoka",
@@ -421,7 +424,7 @@ export default {
       "narrator": "Voice of Heritage: Vikram",
       "duration": "18:20",
       "isPremium": true,
-      "imageUrl": "/images/ashoka.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/aVw4vWCGdBE/hqdefault.jpg",
       "desc": "How did a ruthless conqueror who bathed in blood at the Battle of Kalinga transform into a beloved messenger of peace and non-violence? Listen to the epic transformation of Ashoka the Great.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "personas": [
@@ -446,7 +449,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/aVw4vWCGdBE"
     },
     {
       "id": "krishna",
@@ -455,7 +459,7 @@ export default {
       "duration": "18:15",
       "isPremium": false,
       "isGodSeries": true,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/o48PvG182gk/hqdefault.jpg",
       "desc": "Explore the life of the eighth avatar of Lord Vishnu, from his childhood escapades in Gokul to the recitation of the Bhagavad Gita on the battlefield of Kurukshetra.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "personas": [
@@ -481,7 +485,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/o48PvG182gk"
     },
     {
       "id": "ramayana",
@@ -489,7 +494,7 @@ export default {
       "narrator": "Voice of Philosophy: Acharya",
       "duration": "22:40",
       "isPremium": true,
-      "imageUrl": "/images/ramayana_science.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/yEVfRGF-rRY/hqdefault.jpg",
       "desc": "Delve into the ancient Sanskrit epic charting the exile, battles, and virtues of Prince Rama. Understand the moral framework of Ramayana and its impact on Southeast Asian architecture.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "personas": [
@@ -515,7 +520,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/yEVfRGF-rRY"
     },
     {
       "id": "bhagavad_gita",
@@ -523,7 +529,7 @@ export default {
       "narrator": "Voice of Philosophy: Acharya",
       "duration": "25:40",
       "isPremium": false,
-      "imageUrl": "/images/vishwaroopam_darshan.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/nEMdPjM0ahU/hqdefault.jpg",
       "desc": "Listen to the translation of the 18 chapters of the Bhagavad Gita spoken by Lord Krishna to Arjuna. Explore concepts of Dharma, Nishkama Karma (selfless action), and spiritual equilibrium.",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "personas": [
@@ -549,7 +555,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/nEMdPjM0ahU"
     },
     {
       "id": "ramayana_science",
@@ -565,8 +572,8 @@ export default {
         "History Buffs",
         "Travel Enthusiasts"
       ],
-      "imageUrl": "/images/ramayana_science.jpg",
-      "videoUrl": "https://www.youtube.com/embed/9B8h48Z6_b8",
+      "imageUrl": "https://i.ytimg.com/vi/UIsx3BbeVpU/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/UIsx3BbeVpU",
       "content": [
         {
           "title": "Chapter I: Historical Context & Scriptural Genesis",
@@ -595,8 +602,8 @@ export default {
         "Travel & Architecture",
         "Spiritual Seekers"
       ],
-      "imageUrl": "/images/ellora_kailasa.jpg",
-      "videoUrl": "https://www.youtube.com/embed/3hmz995sruE",
+      "imageUrl": "https://i.ytimg.com/vi/7yPIZsyDrz8/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/7yPIZsyDrz8",
       "content": [
         {
           "title": "Chapter I: Historical Context & Scriptural Genesis",
@@ -628,7 +635,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/hanuman_leap.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/7A58o1ygvBQ/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -651,7 +658,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/7A58o1ygvBQ"
     },
     {
       "id": "eb_god_series_2",
@@ -662,7 +670,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ganga_descent.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/rQf6Fkh-Y70/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -685,7 +693,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/rQf6Fkh-Y70"
     },
     {
       "id": "eb_god_series_3",
@@ -696,7 +705,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/kaliya_daman.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/FEFWOTGWLoo/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
@@ -719,7 +728,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/FEFWOTGWLoo"
     },
     {
       "id": "eb_god_series_4",
@@ -730,7 +740,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/UiWLSqkjEl8/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
@@ -754,7 +764,7 @@ export default {
           "visual": "✨"
         }
       ],
-      "videoUrl": "https://www.youtube.com/embed/eE8paZuuigA"
+      "videoUrl": "https://www.youtube.com/embed/UiWLSqkjEl8"
     },
     {
       "id": "eb_god_series_5",
@@ -765,7 +775,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/hanuman_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/Pdm_IactCXM/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -788,7 +798,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/Pdm_IactCXM"
     },
     {
       "id": "eb_god_series_6",
@@ -799,7 +810,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/shiva_tandava.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/07QHqemxoqk/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -822,7 +833,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/07QHqemxoqk"
     },
     {
       "id": "eb_god_series_7",
@@ -833,7 +845,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/ganesha.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/UyUvXEGJaR4/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -856,7 +868,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/UyUvXEGJaR4"
     },
     {
       "id": "eb_god_series_8",
@@ -901,7 +914,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/abhimanyu_chakravyuha.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/XBWWN19gob4/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
@@ -924,7 +937,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/XBWWN19gob4"
     },
     {
       "id": "eb_god_series_10",
@@ -935,7 +949,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shiva_neelkanth.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/iaW4C8Laif4/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -958,7 +972,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/iaW4C8Laif4"
     },
     {
       "id": "eb_god_series_11",
@@ -1003,7 +1018,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/dharma.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/DSH7KtndujY/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -1027,7 +1042,7 @@ export default {
           "visual": "✨"
         }
       ],
-      "videoUrl": "https://www.youtube.com/embed/05P75OPzies"
+      "videoUrl": "https://www.youtube.com/embed/DSH7KtndujY"
     },
     {
       "id": "eb_god_series_13",
@@ -1038,7 +1053,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shiva_parvati_kalyanam.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/5Nf1GLRi7Ws/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
@@ -1061,7 +1076,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/5Nf1GLRi7Ws"
     },
     {
       "id": "eb_god_series_14",
@@ -1072,7 +1088,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/kartikeya_murugan.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/6SMgqYVBAwQ/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
@@ -1095,7 +1111,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/6SMgqYVBAwQ"
     },
     {
       "id": "eb_god_series_15",
@@ -1106,7 +1123,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/XV35l5MV4Hc/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -1129,7 +1146,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/XV35l5MV4Hc"
     },
     {
       "id": "eb_god_series_16",
@@ -1140,7 +1158,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/b8t3GR3uDPo/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -1163,7 +1181,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/b8t3GR3uDPo"
     },
     {
       "id": "eb_god_series_17",
@@ -1174,7 +1193,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/2r7xzxukqkM/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -1197,7 +1216,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/2r7xzxukqkM"
     },
     {
       "id": "eb_god_series_18",
@@ -1208,7 +1228,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/dpQwPOxKk4I/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
@@ -1231,7 +1251,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/dpQwPOxKk4I"
     },
     {
       "id": "eb_god_series_19",
@@ -1242,7 +1263,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/OcqVe-X5MlM/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
@@ -1265,7 +1286,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/OcqVe-X5MlM"
     },
     {
       "id": "eb_god_series_20",
@@ -1276,7 +1298,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/ZVGPwTUICMw/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -1299,7 +1321,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/ZVGPwTUICMw"
     },
     {
       "id": "eb_god_series_21",
@@ -1310,7 +1333,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/sudama_krishna.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/LVg4KThiiSM/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -1333,7 +1356,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/LVg4KThiiSM"
     },
     {
       "id": "eb_god_series_22",
@@ -1344,7 +1368,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/krishna_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/nB0rT0BSV-g/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -1367,7 +1391,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/nB0rT0BSV-g"
     },
     {
       "id": "eb_god_series_23",
@@ -1378,7 +1403,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ganesha.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/QsCDBreULF8/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
@@ -1402,7 +1427,7 @@ export default {
           "visual": "✨"
         }
       ],
-      "videoUrl": "https://www.youtube.com/embed/GdU7vdSe6aU"
+      "videoUrl": "https://www.youtube.com/embed/QsCDBreULF8"
     },
     {
       "id": "eb_god_series_24",
@@ -1413,7 +1438,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vault_b_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/E-j5PuexH7s/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
@@ -1436,7 +1461,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/E-j5PuexH7s"
     },
     {
       "id": "eb_god_series_25",
@@ -1447,7 +1473,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/axALS7gSkkU/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -1470,7 +1496,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/axALS7gSkkU"
     },
     {
       "id": "eb_god_series_26",
@@ -1481,7 +1508,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/vishnu.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/3wOkMZ07C5I/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -1504,7 +1531,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/3wOkMZ07C5I"
     },
     {
       "id": "eb_kids_stories_1",
@@ -1515,7 +1543,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/jxSN98pqX8I/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -1539,7 +1567,7 @@ export default {
           "visual": "✨"
         }
       ],
-      "videoUrl": "https://www.youtube.com/embed/CpbiCHF0Jco"
+      "videoUrl": "https://www.youtube.com/embed/jxSN98pqX8I"
     },
     {
       "id": "eb_kids_stories_2",
@@ -1550,7 +1578,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/vpKB_63DbWQ/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -1573,7 +1601,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/vpKB_63DbWQ"
     },
     {
       "id": "eb_kids_stories_3",
@@ -1584,7 +1613,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/IBGKHoGG-8Y/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
@@ -1607,7 +1636,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/IBGKHoGG-8Y"
     },
     {
       "id": "eb_kids_stories_4",
@@ -1618,7 +1648,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/MK1iBkAimQI/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
@@ -1641,7 +1671,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/MK1iBkAimQI"
     },
     {
       "id": "eb_kids_stories_5",
@@ -1652,7 +1683,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/eYzdoAaHwSI/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
@@ -1675,7 +1706,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/eYzdoAaHwSI"
     },
     {
       "id": "eb_kids_stories_6",
@@ -1686,7 +1718,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/tSFvO6_EuGU/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -1709,7 +1741,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/tSFvO6_EuGU"
     },
     {
       "id": "eb_kids_stories_7",
@@ -1720,7 +1753,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/KfFhj758trk/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -1743,7 +1776,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/KfFhj758trk"
     },
     {
       "id": "eb_kids_stories_8",
@@ -1754,7 +1788,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/dOT8oWhzZCA/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
@@ -1777,7 +1811,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/dOT8oWhzZCA"
     },
     {
       "id": "eb_kids_stories_9",
@@ -1788,7 +1823,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/mcIgCapjg8Q/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
@@ -1811,7 +1846,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/mcIgCapjg8Q"
     },
     {
       "id": "eb_kids_stories_10",
@@ -1822,7 +1858,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/rZBubVxcCGA/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
@@ -1845,7 +1881,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/rZBubVxcCGA"
     },
     {
       "id": "eb_kids_stories_11",
@@ -1856,7 +1893,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/A80UPXEQz5Y/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -1879,7 +1916,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/A80UPXEQz5Y"
     },
     {
       "id": "eb_kids_stories_12",
@@ -1890,7 +1928,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/1wEy6iGxnPk/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -1913,7 +1951,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/1wEy6iGxnPk"
     },
     {
       "id": "eb_kids_stories_13",
@@ -1958,7 +1997,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/-kcn54vgFUY/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
@@ -1981,7 +2020,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/-kcn54vgFUY"
     },
     {
       "id": "eb_kids_stories_15",
@@ -1992,7 +2032,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/tenali.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/KpSBsH5z1HU/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
@@ -2015,7 +2055,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/KpSBsH5z1HU"
     },
     {
       "id": "eb_kids_stories_16",
@@ -2026,7 +2067,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/4di4u0xS3Pk/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -2049,7 +2090,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/4di4u0xS3Pk"
     },
     {
       "id": "eb_kids_stories_17",
@@ -2060,7 +2102,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/HZqp3fDgoz4/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -2083,7 +2125,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/HZqp3fDgoz4"
     },
     {
       "id": "eb_kids_stories_18",
@@ -2094,7 +2137,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/QAmNEDZFjug/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
@@ -2117,7 +2160,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/QAmNEDZFjug"
     },
     {
       "id": "eb_kids_stories_19",
@@ -2196,7 +2240,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/QtHRca9zm5Q/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -2219,7 +2263,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/QtHRca9zm5Q"
     },
     {
       "id": "eb_kids_stories_22",
@@ -2298,7 +2343,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/jataka_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/PmIgIhJJJns/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
@@ -2321,7 +2366,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/PmIgIhJJJns"
     },
     {
       "id": "eb_kids_stories_25",
@@ -2332,7 +2378,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/nP-9VQpH8cY/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
@@ -2355,7 +2401,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/nP-9VQpH8cY"
     },
     {
       "id": "eb_kids_stories_26",
@@ -2366,7 +2413,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/birbal.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/_-HshundRN0/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
@@ -2389,7 +2436,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/_-HshundRN0"
     },
     {
       "id": "eb_kids_stories_27",
@@ -2434,7 +2482,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shivaji.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/qrgQiB1-nUY/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
@@ -2457,7 +2505,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/qrgQiB1-nUY"
     },
     {
       "id": "eb_audiobooks___legends_2",
@@ -2468,7 +2517,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/chola_navy.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/pQYoFibsgUM/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -2491,7 +2540,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/pQYoFibsgUM"
     },
     {
       "id": "eb_audiobooks___legends_3",
@@ -2502,7 +2552,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/queen_abbakka.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/UChSeTaI2n8/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
@@ -2525,7 +2575,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/UChSeTaI2n8"
     },
     {
       "id": "eb_audiobooks___legends_4",
@@ -2570,7 +2621,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/maharana_pratap.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/EVeucX1W2Rc/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
@@ -2593,7 +2644,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/EVeucX1W2Rc"
     },
     {
       "id": "eb_audiobooks___legends_6",
@@ -2604,7 +2656,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ashoka.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/4QSgKPtlsMI/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
@@ -2627,7 +2679,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/4QSgKPtlsMI"
     },
     {
       "id": "eb_audiobooks___legends_7",
@@ -2638,7 +2691,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/meenakshi.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/AWTi9th_s2I/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -2673,7 +2726,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/hampi.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/C5WdYqvTO6U/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
@@ -2696,7 +2749,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/C5WdYqvTO6U"
     },
     {
       "id": "eb_audiobooks___legends_9",
@@ -2707,7 +2761,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/chola_navy.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/mUXHY5iL-hY/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
@@ -2730,7 +2784,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/mUXHY5iL-hY"
     },
     {
       "id": "eb_audiobooks___legends_10",
@@ -2741,7 +2796,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/warrior_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/ZvvCO26M2dc/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
@@ -2764,7 +2819,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/ZvvCO26M2dc"
     },
     {
       "id": "eb_audiobooks___legends_11",
@@ -2809,7 +2865,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/rani_chennamma.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/TQdgu-FXz0Q/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -2832,7 +2888,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/TQdgu-FXz0Q"
     },
     {
       "id": "eb_audiobooks___legends_13",
@@ -2843,7 +2900,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/ajanta.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/O7VEG7vJ4rA/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
@@ -2866,7 +2923,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/O7VEG7vJ4rA"
     },
     {
       "id": "eb_audiobooks___legends_14",
@@ -3047,7 +3105,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vikram_betal.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/piwghp31zvo/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
@@ -5088,7 +5146,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/panchatantra_cover.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/CpbiCHF0Jco/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -5111,7 +5169,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/CpbiCHF0Jco"
     },
     {
       "id": "eb_extra_28",
@@ -5428,7 +5487,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/ravana_lanka.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/otVAudER9dU/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -5534,7 +5593,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/J6T7UjSRs0A/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
@@ -5640,7 +5699,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/vikram_betal.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/41uNVDHxmms/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -5664,7 +5723,8 @@ export default {
           "text": "Vikramaditya's standard of justice, courage, and nightly disguised walks among his citizens made him the benchmark of ideal Indian statecraft.",
           "visual": "🛡️"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/41uNVDHxmms"
     },
     {
       "id": "eb_extra_44",
@@ -5850,7 +5910,7 @@ export default {
       "rating": "9.8 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/bhasmasura_mohini.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/XEQFAcbMkWI/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -5874,7 +5934,8 @@ export default {
           "text": "Lord Vishnu manifested as the enchanting dancer Mohini, leading Bhasmasura through intricate Bharatanatyam mudras until he placed his own hand on his head.",
           "visual": "💃"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/XEQFAcbMkWI"
     },
     {
       "id": "eb_extra_50",
@@ -5920,7 +5981,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/adi_shankara.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/xgAA5C-niCk/hqdefault.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -7672,7 +7733,7 @@ export default {
         "Travel & Architecture",
         "History Buffs"
       ],
-      "imageUrl": "images/hampi.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/5_9a6Ld8hB8/hqdefault.jpg",
       "videoUrl": "https://www.youtube.com/embed/5_9a6Ld8hB8",
       "content": [
         {
@@ -7695,6 +7756,426 @@ export default {
       "year": "2026",
       "rating": "9.8 ★",
       "duration": "20 Mins"
+    },
+    {
+      "id": "yt_ul34M_LQmhg",
+      "title": "Monk speaking at podium",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Monk speaking at podium. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/ul34M_LQmhg/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/ul34M_LQmhg",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Monk speaking at podium—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_3hmz995sruE",
+      "title": "Giant Nandi of Lepakshi",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Giant Nandi of Lepakshi. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/3hmz995sruE/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/3hmz995sruE",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Giant Nandi of Lepakshi—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_JA0P7okWXA4",
+      "title": "Kundalini energy ascending spine",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Kundalini energy ascending spine. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/JA0P7okWXA4/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/JA0P7okWXA4",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Kundalini energy ascending spine—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_05P75OPzies",
+      "title": "Goddess Durga battling demon Mah…",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Goddess Durga battling demon Mah…. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/05P75OPzies/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/05P75OPzies",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Goddess Durga battling demon Mah…—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_dgwcRqWK9ps",
+      "title": "Prince Abhimanyu in Chakravyuha …",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Prince Abhimanyu in Chakravyuha …. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/dgwcRqWK9ps/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/dgwcRqWK9ps",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Prince Abhimanyu in Chakravyuha …—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_Z4XLf9w9Bc8",
+      "title": "Sage Agastya miracles and teachings",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Sage Agastya miracles and teachings. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/Z4XLf9w9Bc8/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Z4XLf9w9Bc8",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Sage Agastya miracles and teachings—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_eE8paZuuigA",
+      "title": "Samudra Manthan churning milk ocean",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Samudra Manthan churning milk ocean. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/eE8paZuuigA/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/eE8paZuuigA",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Samudra Manthan churning milk ocean—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_0g6gQNukRKA",
+      "title": "Vedic cosmology and time dilation",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Vedic cosmology and time dilation. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/0g6gQNukRKA/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/0g6gQNukRKA",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Vedic cosmology and time dilation—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_yr2OWiEz7VE",
+      "title": "Subterranean Asuras and Naga Kin…",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Subterranean Asuras and Naga Kin…. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/yr2OWiEz7VE/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/yr2OWiEz7VE",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Subterranean Asuras and Naga Kin…—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_9oAdKcKL0lo",
+      "title": "Dashavatara show all avataras",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Dashavatara show all avataras. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/9oAdKcKL0lo/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/9oAdKcKL0lo",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Dashavatara show all avataras—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_Z5hVquIxFX8",
+      "title": "Elephant and dog story",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Elephant and dog story. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/Z5hVquIxFX8/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Z5hVquIxFX8",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Elephant and dog story—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_MqMGQNDi80I",
+      "title": "Historical emperor  profile",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Historical emperor  profile. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/MqMGQNDi80I/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/MqMGQNDi80I",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Historical emperor  profile—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_6cVFKL0VBto",
+      "title": "Exploring the ruins of Hampi",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Exploring the ruins of Hampi. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/6cVFKL0VBto/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/6cVFKL0VBto",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Exploring the ruins of Hampi—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "yt_ftOa_ncLY6Q",
+      "title": "Devotional saints performing",
+      "tagline": "Vedic Shorts & Micro-Learning Reel",
+      "description": "Explore this cinematic episode on Devotional saints performing. Preserving authentic scriptural narratives, archaeological discoveries, and spiritual wisdom.",
+      "category": "Video Series",
+      "imageUrl": "https://i.ytimg.com/vi/ftOa_ncLY6Q/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/ftOa_ncLY6Q",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "duration": "0:60",
+      "isPremium": true,
+      "content": [
+        {
+          "title": "Chapter I: Historical & Scriptural Narrative",
+          "text": "This sacred chronicle explores Devotional saints performing—capturing the timeless spirit and civilizational heritage of Bharat.",
+          "visual": "🎬"
+        },
+        {
+          "title": "Chapter II: Architectural & Philosophical Wisdom",
+          "text": "A deep dive into the archaeological evidence, epigraphical inscriptions, and philosophical traditions preserved in ancient Sanskrit texts.",
+          "visual": "🏛️"
+        },
+        {
+          "title": "Chapter III: Living Cultural Heritage",
+          "text": "Understanding how these sacred traditions and stories continue to inspire dharma, virtue, and knowledge in contemporary life.",
+          "visual": "✨"
+        }
+      ]
     }
   ],
   "games": {
