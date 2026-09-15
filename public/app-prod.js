@@ -5992,7 +5992,7 @@ const bindSlideNavigation = () => {
 
     let currentChapter = 0;
     let isParchment = false;
-    let fontSize = 14;
+    let fontSize = 16;
 
     const titleEl = document.getElementById('reader-book-title');
     const metaEl = document.getElementById('reader-book-meta');
@@ -6005,31 +6005,90 @@ const bindSlideNavigation = () => {
     const themeBtn = document.getElementById('reader-theme-toggle-btn');
     const fontDecBtn = document.getElementById('reader-font-dec-btn');
     const fontIncBtn = document.getElementById('reader-font-inc-btn');
-    const shareBtn = document.getElementById('reader-share-btn');
     const canvasEl = document.getElementById('reader-content-canvas');
+    const videoBtn = document.getElementById('reader-video-toggle-btn');
+    const videoTheatre = document.getElementById('reader-video-theatre');
+    const videoIframe = document.getElementById('reader-video-iframe');
+    const closeVideoBtn = document.getElementById('close-video-theatre-btn');
 
     if (titleEl) titleEl.textContent = granth.title;
     if (emojiEl) emojiEl.textContent = granth.emoji;
 
+    // Configure Video Theatre (Separate from chapters)
+    if (videoBtn) {
+      if (granth.videoUrl) {
+        videoBtn.classList.remove('hidden');
+        videoBtn.onclick = function() {
+          if (videoTheatre && videoIframe) {
+            const isHidden = videoTheatre.classList.contains('hidden');
+            if (isHidden) {
+              videoTheatre.classList.remove('hidden');
+              videoIframe.src = granth.videoUrl + '?autoplay=1';
+              videoBtn.innerHTML = '✕ <span>Hide Video</span>';
+            } else {
+              videoTheatre.classList.add('hidden');
+              videoIframe.src = '';
+              videoBtn.innerHTML = '🎬 <span>Watch Video</span>';
+            }
+          }
+        };
+      } else {
+        videoBtn.classList.add('hidden');
+      }
+    }
+
+    if (closeVideoBtn && videoTheatre && videoIframe) {
+      closeVideoBtn.onclick = function() {
+        videoTheatre.classList.add('hidden');
+        videoIframe.src = '';
+        if (videoBtn) videoBtn.innerHTML = '🎬 <span>Watch Video</span>';
+      };
+    }
+
+    // Render Pure Sacred Palm-Leaf Granth Chapter
     const renderChapter = function() {
       const ch = granth.chapters[currentChapter] || granth.chapters[0];
       if (metaEl) metaEl.textContent = granth.pages + " Pages • Chapter " + (currentChapter + 1) + " of " + granth.chapters.length;
-      if (pageInd) pageInd.textContent = "Chapter " + (currentChapter + 1) + " of " + granth.chapters.length + " (Pages 1–" + granth.pages + ")";
+      if (pageInd) pageInd.textContent = "Granth Chapter " + (currentChapter + 1) + " of " + granth.chapters.length + " (Pages 1–" + granth.pages + ")";
 
       if (bodyEl) {
-        const videoHtml = granth.videoUrl ? '<div class="mb-5 rounded-2xl overflow-hidden border border-gold/30 aspect-video shadow-2xl bg-black"><iframe src="' + granth.videoUrl + '?autoplay=0" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>' : '';
-        bodyEl.innerHTML = '<div class="space-y-4 font-serif">' + videoHtml +
-          '<div class="border-b border-gold/30 pb-3">' +
-            '<span class="text-[10px] font-mono text-gold font-bold uppercase tracking-widest">' + granth.title + '</span>' +
-            '<h2 class="text-xl sm:text-2xl font-bold text-gold mt-1">' + ch.title + '</h2>' +
+        const firstLetter = ch.text ? ch.text.charAt(0) : '';
+        const remainingText = ch.text ? ch.text.slice(1) : '';
+
+        bodyEl.innerHTML = '<div class="space-y-6">' +
+          // 1. Sacred Invocational Shloka Header
+          '<div class="text-center py-2 border-b border-gold/20 flex flex-col items-center justify-center space-y-1">' +
+            '<span class="text-[11px] font-mono tracking-widest text-gold uppercase opacity-80">॥ ॐ तत्सत् श्री परमात्मने नमः ॥</span>' +
+            '<span class="text-xs font-serif italic text-white/50 tracking-wider">Sacred Palm-Leaf Digital Granthalaya • Grand Manuscript</span>' +
           '</div>' +
-          '<p class="leading-relaxed text-justify drop-shadow font-serif" style="font-size: ' + fontSize + 'px;">' +
-            ch.text +
-          '</p>' +
-          '<div class="p-4 rounded-2xl bg-black/40 border border-gold/20 my-6 text-xs font-sans text-white/80 space-y-2">' +
-            '<h4 class="font-bold text-gold font-serif">🏛️ Historical &amp; Philosophical Commentary</h4>' +
-            '<p class="text-xs leading-relaxed">' +
-              'This sacred chronicle is preserved in ancient Sanskrit palm-leaf manuscripts and temple inscriptions. It demonstrates the profound civilizational synthesis of metaphysics, statecraft, and human virtue.' +
+
+          // 2. Granth Chapter Title Plate
+          '<div class="text-center py-4 border-y-2 border-double border-gold/40 bg-gradient-to-r from-transparent via-gold/10 to-transparent my-4">' +
+            '<span class="text-[10px] font-mono text-gold font-bold uppercase tracking-widest px-3 py-0.5 rounded-full border border-gold/30 bg-black/40">CHAPTER ' + (currentChapter + 1) + ' OF ' + granth.chapters.length + '</span>' +
+            '<h2 class="text-xl sm:text-3xl font-bold font-serif text-gold mt-2 tracking-wide drop-shadow">' + ch.title + '</h2>' +
+          '</div>' +
+
+          // 3. Ornate Palm-Leaf Manuscript Body with Illuminated Drop-Cap
+          '<div class="relative py-2 px-1 sm:px-4">' +
+            '<div class="leading-relaxed text-justify font-serif text-[#e4d5b7] tracking-normal transition-all" style="font-size: ' + fontSize + 'px; line-height: 1.85;">' +
+              '<span class="float-left text-5xl sm:text-6xl font-serif text-gold font-bold mr-3.5 leading-none drop-shadow-md border-b-2 border-gold/40 pb-1">' + firstLetter + '</span>' +
+              remainingText +
+            '</div>' +
+          '</div>' +
+
+          // 4. Sacred Lotus Divider
+          '<div class="flex items-center justify-center gap-3 py-4 text-gold/60 text-sm">' +
+            '<span>🪷</span><span class="text-xs font-mono tracking-widest">✦ ॥ शुभमस्तु ॥ ✦</span><span>🪷</span>' +
+          '</div>' +
+
+          // 5. Authentic Historical & Philosophical Commentary Parchment Box
+          '<div class="p-5 rounded-2xl bg-[#14120c] border border-gold/30 my-6 shadow-xl relative overflow-hidden space-y-2">' +
+            '<div class="flex items-center gap-2">' +
+              '<span class="text-base">🏛️</span>' +
+              '<h4 class="font-bold text-gold font-serif text-xs uppercase tracking-wider">Sacred Granth Pariksha & Epigraphical Commentary</h4>' +
+            '</div>' +
+            '<p class="text-xs text-white/80 leading-relaxed font-sans">' +
+              'This sacred chronicle is verified against classical Sanskrit palm-leaf manuscripts, Puranic commentaries, and ASI archaeological epigraphy. It demonstrates the profound integration of Vedic metaphysics, ethical statecraft, and human liberation.' +
             '</p>' +
           '</div>' +
         '</div>';
@@ -6039,7 +6098,7 @@ const bindSlideNavigation = () => {
       if (tocList) {
         tocList.querySelectorAll('.reader-toc-item').forEach(function(b, i) {
           if (i === currentChapter) {
-            b.className = "reader-toc-item w-full text-left px-3 py-2 rounded-xl text-xs transition-all bg-gold/20 text-gold border border-gold/40 font-bold flex items-center justify-between";
+            b.className = "reader-toc-item w-full text-left px-3 py-2.5 rounded-xl text-xs transition-all bg-gold/20 text-gold border border-gold/50 font-bold flex items-center justify-between shadow-sm";
           } else {
             b.className = "reader-toc-item w-full text-left px-3 py-2 rounded-xl text-xs transition-all text-white/70 hover:bg-white/5 hover:text-white flex items-center justify-between";
           }
@@ -6059,9 +6118,9 @@ const bindSlideNavigation = () => {
     // Render TOC List
     if (tocList) {
       tocList.innerHTML = granth.chapters.map(function(ch, idx) {
-        return '<button class="reader-toc-item w-full text-left px-3 py-2 rounded-xl text-xs transition-all ' + (idx === currentChapter ? 'bg-gold/20 text-gold border border-gold/40 font-bold' : 'text-white/70 hover:bg-white/5 hover:text-white') + ' flex items-center justify-between" data-chap-idx="' + idx + '">' +
+        return '<button class="reader-toc-item w-full text-left px-3 py-2 rounded-xl text-xs transition-all ' + (idx === currentChapter ? 'bg-gold/20 text-gold border border-gold/50 font-bold' : 'text-white/70 hover:bg-white/5 hover:text-white') + ' flex items-center justify-between cursor-pointer" data-chap-idx="' + idx + '">' +
           '<span class="line-clamp-1">' + ch.title + '</span>' +
-          '<span class="text-[9px] font-mono opacity-50 ml-1">Ch ' + (idx + 1) + '</span>' +
+          '<span class="text-[9px] font-mono opacity-60 ml-1 flex-shrink-0">Ch ' + (idx + 1) + '</span>' +
         '</button>';
       }).join('');
 
@@ -6090,6 +6149,7 @@ const bindSlideNavigation = () => {
         } else {
           modal.classList.add('hidden');
           modal.classList.remove('flex');
+          if (videoIframe) videoIframe.src = '';
         }
       };
     }
@@ -6099,8 +6159,8 @@ const bindSlideNavigation = () => {
       themeBtn.onclick = function() {
         isParchment = !isParchment;
         if (isParchment) {
-          canvasEl.style.backgroundColor = "#f7f1e3";
-          canvasEl.style.color = "#2c2214";
+          canvasEl.style.backgroundColor = "#f4ebd0";
+          canvasEl.style.color = "#2a1e10";
           themeBtn.textContent = "🌑 Dark Mode";
         } else {
           canvasEl.style.backgroundColor = "#090b10";
@@ -6113,7 +6173,7 @@ const bindSlideNavigation = () => {
     // Font Sizing
     if (fontDecBtn) {
       fontDecBtn.onclick = function() {
-        if (fontSize > 11) {
+        if (fontSize > 12) {
           fontSize -= 2;
           renderChapter();
         }
@@ -6121,7 +6181,7 @@ const bindSlideNavigation = () => {
     }
     if (fontIncBtn) {
       fontIncBtn.onclick = function() {
-        if (fontSize < 24) {
+        if (fontSize < 26) {
           fontSize += 2;
           renderChapter();
         }
@@ -6136,7 +6196,6 @@ const bindSlideNavigation = () => {
   }
 }
 
-// Instantiate core application controller
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     new AppController();

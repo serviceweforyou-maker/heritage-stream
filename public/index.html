@@ -126,8 +126,8 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=68">
-  <link rel="stylesheet" href="flipbook.css?v=68">
+  <link rel="stylesheet" href="styles.css?v=69">
+  <link rel="stylesheet" href="flipbook.css?v=69">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
@@ -965,6 +965,7 @@
           </div>
           <div class="flex items-center gap-2">
             <!-- Paper / Dark Mode Toggle -->
+            <button id="reader-video-toggle-btn" class="px-3 py-1 rounded-lg border border-red-500/40 bg-red-600/20 text-red-300 hover:bg-red-600 hover:text-white text-[11px] font-bold transition-all flex items-center gap-1.5 shadow-sm" title="Watch 4K Video Episode">🎬 <span class="hidden sm:inline">Watch Video</span></button>
             <button id="reader-theme-toggle-btn" class="px-2.5 py-1 rounded-lg border border-white/20 bg-white/5 text-[11px] text-white hover:border-gold transition-all" title="Toggle Parchment / Dark Mode">
               📜 Parchment
             </button>
@@ -985,6 +986,19 @@
           <div class="w-full md:w-64 bg-black/40 border-r border-white/10 p-4 overflow-y-auto max-h-48 md:max-h-full flex-shrink-0 space-y-2" id="reader-toc-container">
             <p class="text-[10px] font-mono font-bold text-white/40 uppercase tracking-widest mb-2">Chapters &bull; Index</p>
             <div id="reader-toc-list" class="space-y-1"></div>
+          </div>
+
+          <!-- Dedicated 4K Video Episode Theatre (Collapsible / Separate from Manuscript) -->
+          <div id="reader-video-theatre" class="hidden w-full bg-black border-b border-gold/30 p-4 transition-all duration-300">
+            <div class="max-w-3xl mx-auto">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono font-bold text-gold flex items-center gap-1.5">🎬 4K CINEMATIC VIDEO EPISODE</span>
+                <button id="close-video-theatre-btn" class="text-xs text-white/50 hover:text-white px-2 py-0.5 rounded bg-white/10">✕ Close Video</button>
+              </div>
+              <div class="rounded-2xl overflow-hidden border border-gold/40 aspect-video shadow-2xl bg-black">
+                <iframe id="reader-video-iframe" src="" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
           </div>
 
           <!-- Right Manuscript Text Area -->
@@ -1643,7 +1657,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=68"></script>
+  <script type="module" src="app-prod.js?v=69"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -2220,7 +2234,7 @@
     </div>
   </div>
 
-  <script src="flipbook.js?v=68"></script>
+  <script src="flipbook.js?v=69"></script>
 
   <!-- ── USER ACCOUNT & MEMBERSHIP MODAL ── -->
   <div id="user-account-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
