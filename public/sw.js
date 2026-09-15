@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sanatana360-cache-v67';
+const CACHE_NAME = 'sanatana360-cache-v68';
 const ASSETS = [
   '/',
   '/index.html',
