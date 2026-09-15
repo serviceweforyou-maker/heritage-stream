@@ -45,7 +45,7 @@ export default {
     {
       "id": "ganesha",
       "title": "The Wisdom of Ganesha: The Elephant Head",
-      "tagline": "Metaphysics of the Pranava Mantra & Remover of Obstacles",
+      "tagline": "Lord Ganesha's Real Metaphysical Form & Shankaracharya's Secret",
       "description": "Discover the deep philosophical and cosmological symbolism of Lord Ganesha. Beyond the popular mythological lore, learn how Ganesha represents the primordial sound Om (Pranava), the Muladhara root chakra of grounded consciousness, and the synthesis of microcosm and macrocosm.",
       "duration": "20 Mins",
       "rating": "9.9 ★",
@@ -53,7 +53,7 @@ export default {
       "isPremium": false,
       "isGodSeries": true,
       "imageUrl": "/images/ganesha.jpg",
-      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "videoUrl": "https://www.youtube.com/embed/GdU7vdSe6aU",
       "category": "God Series",
       "personas": [
         "Kids",
@@ -1401,7 +1401,8 @@ export default {
           "text": "Today, this heritage stands as a monument to human creativity and spiritual resilience. By preserving these chronicles, we maintain the eternal connection between past wisdom and future evolution.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/GdU7vdSe6aU"
     },
     {
       "id": "eb_god_series_24",
