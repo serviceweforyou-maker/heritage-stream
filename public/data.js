@@ -7667,14 +7667,19 @@ export default {
       "videoUrl": "https://www.youtube.com/embed/5_9a6Ld8hB8",
       "content": [
         {
-          "title": "Out of this Space",
-          "text": "The crater is the only known impact crater in basalt rock on Earth. The water is highly alkaline, housing unique microorganisms found nowhere else.",
+          "title": "Chapter I: Hyper-Velocity Meteor Impact",
+          "text": "Formed over 50,000 years ago when a 2-million-tonne hyper-velocity cosmic chondrite collided with the Deccan Traps basalt plateau, creating a 1.8-kilometer wide, 150-meter deep crater—the only hyper-velocity impact crater in basaltic rock on Earth.",
           "visual": "☄️"
         },
         {
-          "title": "Ancient Temples",
-          "text": "The perimeter of the lake features ruins of 800-year-old temples, including the Daitya Sudan temple dedicated to Lord Vishnu, built with basalt carvings.",
+          "title": "Chapter II: 800-Year-Old Daitya Sudan Hemadpanthi Temple",
+          "text": "Along the perimeter of the crater stand 8th to 12th-century Hemadpanthi stone temples, most notably the Daitya Sudan Temple dedicated to Lord Vishnu, built with interlocking basalt masonry depicting intricate astronomical constellations.",
           "visual": "🛕"
+        },
+        {
+          "title": "Chapter III: Geochemical & Geomagnetic Anomalies",
+          "text": "Lonar Lake's water exhibits dual hyper-saline and alkaline properties (pH 10.5) hosting unique extremophile nitrogen-fixing cyanobacteria. Studies by GSI and NASA revealed presence of Maskelynite (shocked plagioclase feldspar) found only in extraterrestrial meteorite impact zones.",
+          "visual": "🔬"
         }
       ],
       "isPremium": false,
