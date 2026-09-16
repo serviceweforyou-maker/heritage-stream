@@ -5492,627 +5492,1018 @@ class AppController {
     this.isSubscribed = (typeof DatabaseService !== 'undefined' && DatabaseService.isSubscribed()) || !!this.isSubscribed;
 
     const granths = [
+  {
+    "id": "granth_mahishasura",
+    "cat": "asuras",
+    "catLabel": "👹 DEVILS & ASURAS",
+    "title": "The Blood-Moon Boons of Mahishasura & Durga's 9 Nights",
+    "pages": 180,
+    "chaptersCount": 6,
+    "emoji": "👹",
+    "isPremium": false,
+    "coverImg": "https://i.ytimg.com/vi/05P75OPzies/hqdefault.jpg",
+    "desc": "The shape-shifting buffalo Asura who extracted the boon of invincibility against all men and Devas, and the cosmic emergence of Goddess Durga.",
+    "videoUrl": "https://www.youtube.com/embed/05P75OPzies",
+    "chapters": [
       {
-            "id": "granth_mahishasura",
-            "cat": "asuras",
-            "catLabel": "👹 DEVILS & ASURAS",
-            "title": "The Blood-Moon Boons of Mahishasura & Durga's 9 Nights",
-            "pages": 180,
-            "chaptersCount": 6,
-            "emoji": "👹",
-            "isPremium": false,
-            "coverImg": "https://i.ytimg.com/vi/05P75OPzies/hqdefault.jpg",
-            "desc": "The shape-shifting buffalo Asura who extracted the boon of invincibility against all men and Devas, and the cosmic emergence of Goddess Durga.",
-            "videoUrl": "https://www.youtube.com/embed/05P75OPzies",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Ash-Vow of Rambha & Mahisha's Birth",
-                        "text": "In the subterranean depths of Rasatala, the Asura king Rambha performed thousand-year austerities amidst blazing fires. From the divine buffalo Mahishi was born Mahishasura—destined to shake the foundations of Mount Meru. He possessed the terrifying occult mastery of Trikala Maya, allowing him to shift between monstrous beast, warrior king, and illusory smoke at will."
-                  },
-                  {
-                        "title": "Chapter 2: The Boon of Brahma & The Fall of Amaravati",
-                        "text": "Standing upon one toe atop the Mandara cliffs, Mahishasura demanded the supreme boon of immortality from Lord Brahma. 'Let no Deva, Yaksha, Gandharva, Naga, or man born of womb be capable of slaying me,' he roared. Armed with this cosmological loophole, his demon armies overran Indraloka, banishing the Devas into exile across mortal forests."
-                  },
-                  {
-                        "title": "Chapter 3: The Gathering of Divine Tejas (Cosmic Fusion)",
-                        "text": "From the united fury of Brahma, Vishnu, and Shiva erupted a blazing mountain of light. This supreme cosmic energy solidified into the ten-armed Mother of the Universe—Devi Durga. Shiva presented His celestial Trishula; Vishnu bestowed the Sudarshana Chakra; Varuna gifted the Conch of Oceans; and Himavan presented the fierce Golden Lion mount."
-                  },
-                  {
-                        "title": "Chapter 4: The Nine Nights of Apocalyptic War",
-                        "text": "For nine cosmic nights, Mahishasura unleashed his demonic generals—Chikshura, Chamara, and Udagra. Rivers of celestial weapons clashed as Devi severed millions of demonic illusions. When Mahishasura transformed into a wild lion, she slashed him; when he turned into an elephant, she cut off his trunk; until at last, pinned beneath Her lotus foot, the Trident pierced his chest, liberating the cosmos."
-                  },
-                  {
-                        "title": "Chapter 5: The Secret Metaphysics of Mahishasura Mardini",
-                        "text": "In the Markandeya Purana, Mahishasura represents 'Ahamkara'—the rigid ego that assumes false permanence. The buffalo signifies tamasic ignorance and stubborn inertia. Devi Durga represents 'Chiti' (pure dynamic cosmic consciousness). The slaying is not merely a mythological victory, but the spiritual dissolution of ignorance through the ten weapons of spiritual discipline."
-                  },
-                  {
-                        "title": "Chapter 6: Navaratri & Living Devotional Rituals",
-                        "text": "For thousands of years, across every corner of Bharat, the victory of Devi is celebrated through the nine nights of Navaratri. From the Chandi Patha recitation in Bengal to the Garba circular cosmos dance of Gujarat and the royal Mysore Dasara procession of Karnataka, this sacred chronicle remains the beating heart of Indian spiritual resilience."
-                  }
-            ]
+        "title": "Chapter 1: The Ash-Vow of Rambha & Mahisha's Birth",
+        "text": "In the subterranean depths of Rasatala, the Asura king Rambha performed thousand-year austerities amidst blazing fires. From the divine buffalo Mahishi was born Mahishasura—destined to shake the foundations of Mount Meru. He possessed the terrifying occult mastery of Trikala Maya, allowing him to shift between monstrous beast, warrior king, and illusory smoke at will."
       },
       {
-            "id": "granth_ravana_tantra",
-            "cat": "asuras",
-            "catLabel": "👹 DEVILS & ASURAS",
-            "title": "The Tantric Empire of Ravana & Kumbhakarna's Slumber",
-            "pages": 210,
-            "chaptersCount": 6,
-            "emoji": "⚔️",
-            "isPremium": true,
-            "coverImg": "https://i.ytimg.com/vi/otVAudER9dU/hqdefault.jpg",
-            "desc": "The 10 heads of unmatched astrological and musical mastery, mystical Pushpaka Vimana aviation, and the tragic 6-month cosmic curse of Kumbhakarna.",
-            "videoUrl": "https://www.youtube.com/embed/otVAudER9dU",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Ten Heads of Sangeeta & Astrology",
-                        "text": "Ravana was no ordinary tyrant; he was the master of the 4 Vedas, 6 Vedangas, and the supreme master of the Rudra Veena. Born of Sage Vishrava and Asura princess Kaikesi, he performed immense penance to Brahma, cutting off nine of his heads as sacrificial offerings. Each head represented profound command over a branch of knowledge, intellect, and occult statecraft."
-                  },
-                  {
-                        "title": "Chapter 2: Shiva Tandava Stotram at Mount Kailash",
-                        "text": "Intoxicated by his invincible power, Ravana attempted to uproot Mount Kailash, the sacred abode of Shiva. As the mountain shook, Lord Mahadeva pressed down His big toe, trapping Ravana beneath the immense granite massif. In agonizing ecstasy, Ravana tore the sinews from his arm to string his veena and sang the awe-inspiring 14 verses of the Shiva Tandava Stotram, winning the divine sword Chandrahas."
-                  },
-                  {
-                        "title": "Chapter 3: The Sleeping Giant of Lanka",
-                        "text": "Kumbhakarna, born with mountain-shaking strength, intended to ask Lord Brahma for 'Nirdevatvam' (destruction of Devas). But Goddess Saraswati sat upon his tongue, turning his prayer into 'Nidravatvam' (endless slumber). For six months he slept in subterranean gold vaults, awoken only by marching elephants and blaring trumpet horns when war arrived."
-                  },
-                  {
-                        "title": "Chapter 4: Pushpaka Vimana & The Architecture of Lanka",
-                        "text": "Designed by the celestial architect Vishwakarma and expanded under Maya Danava, Lanka was a city of pure gold surrounded by triple moats and magnetic gates. The Pushpaka Vimana, an aerodynamic celestial craft powered by mercury vortex and mantric resonance, could travel at the speed of thought, responding directly to the pilot's psychic intent."
-                  },
-                  {
-                        "title": "Chapter 5: Ravana Samhita: Lost Ayurvedic & Astrological Treatises",
-                        "text": "Beyond war, Ravana authored seminal occult treatises: the Ravana Samhita on predictive astrology, Arka Prakasha on medicinal alchemy, and Nadi Pariksha on pulse diagnostics. His scientific understanding of planetary alignments and botanical extracts influenced medieval Indian medicine and esoteric tantra."
-                  },
-                  {
-                        "title": "Chapter 6: The Fall of Lanka & The Final Liberation",
-                        "text": "Despite his unmatched brilliance, Ravana's unbridled desire and defiance of Dharma led to his doom. In the final apocalyptic duel on the plains of Lanka, Lord Rama released the Brahmastra weapon, piercing Ravana's navel where the nectar of immortality was stored. As he lay dying, Rama sent Lakshmana to sit at Ravana's feet to learn the ultimate principles of statecraft and kingship."
-                  }
-            ]
+        "title": "Chapter 2: The Boon of Brahma & The Fall of Amaravati",
+        "text": "Standing upon one toe atop the Mandara cliffs, Mahishasura demanded the supreme boon of immortality from Lord Brahma. 'Let no Deva, Yaksha, Gandharva, Naga, or man born of womb be capable of slaying me,' he roared. Armed with this cosmological loophole, his demon armies overran Indraloka, banishing the Devas into exile across mortal forests."
       },
       {
-            "id": "granth_bhasmasura",
-            "cat": "asuras",
-            "catLabel": "👹 DEVILS & ASURAS",
-            "title": "Bhasmasura & The Illusion Dance of Mohini",
-            "pages": 155,
-            "chaptersCount": 5,
-            "emoji": "🔥",
-            "isPremium": true,
-            "coverImg": "https://i.ytimg.com/vi/XEQFAcbMkWI/hqdefault.jpg",
-            "desc": "The deadly boon that turned anyone touched into ashes, and the divine cosmic dance that saved the Universe.",
-            "videoUrl": "https://www.youtube.com/embed/XEQFAcbMkWI",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Touch of Fire Boon",
-                        "text": "Bhasmasura performed severe tapas until Lord Shiva granted him his wish: 'Whosoever's head I place my right hand upon shall instantly be reduced to a heap of ashes.' Blinded by supreme arrogance, Bhasmasura immediately attempted to test the boon on Shiva Himself, forcing the Lord of Yoga into cosmic retreat."
-                  },
-                  {
-                        "title": "Chapter 2: The Flight of Mahadeva & The Cry for Dharma",
-                        "text": "Pursued across mountains and celestial realms by the demon whose touch was instant destruction, Shiva entered deep meditative stillness in the dense groves of the Sahyadri mountains. To protect the cosmic fabric and uphold the inviolability of boons without violating universal law, Lord Vishnu stepped forth to manifest divine illusion (Maya)."
-                  },
-                  {
-                        "title": "Chapter 3: The Manifestation of Mohini",
-                        "text": "To protect the cosmic order, Lord Vishnu manifested as Mohini—the supreme enchantress of divine grace. Fascinated by her beauty, Bhasmasura agreed to match her step-by-step in the intricate Natya dance. Stunned by her celestial grace, Bhasmasura forgot his murderous quest, willing to surrender his pride to win her approval."
-                  },
-                  {
-                        "title": "Chapter 4: The Cosmic Dance of Mirroring",
-                        "text": "Mohini initiated the intricate Karanas of the Natya Shastra, weaving rhythms of grace and symmetry. Step by step, posture by posture, Bhasmasura mirrored every mudra. When Mohini raised her hand and placed it upon her own crown in the delicate 'Katyavalambita' pose, Bhasmasura placed his own right hand upon his head, instantly reducing his own physical body to a heap of glowing ash."
-                  },
-                  {
-                        "title": "Chapter 5: Metaphysical Meaning: The Fire of Uncontrolled Desire",
-                        "text": "The allegory of Bhasmasura teaches that power gained without inner wisdom and restraint ultimately destroys the bearer. Uncontrolled ego consumes itself with the very fire it attempts to inflict upon the world. The dance of Mohini represents the subtle laws of nature mirroring our actions back upon ourselves—the immutable law of Karma."
-                  }
-            ]
+        "title": "Chapter 3: The Gathering of Divine Tejas (Cosmic Fusion)",
+        "text": "From the united fury of Brahma, Vishnu, and Shiva erupted a blazing mountain of light. This supreme cosmic energy solidified into the ten-armed Mother of the Universe—Devi Durga. Shiva presented His celestial Trishula; Vishnu bestowed the Sudarshana Chakra; Varuna gifted the Conch of Oceans; and Himavan presented the fierce Golden Lion mount."
       },
       {
-            "id": "granth_patala_asuras",
-            "cat": "asuras",
-            "catLabel": "👹 DEVILS & ASURAS",
-            "title": "The Subterranean Asuras of Patala & The Naga Kingdom",
-            "pages": 170,
-            "chaptersCount": 6,
-            "emoji": "🐍",
-            "isPremium": true,
-            "coverImg": "https://i.ytimg.com/vi/yr2OWiEz7VE/hqdefault.jpg",
-            "desc": "The 7 subterranean dimensions (Atala, Vitala, Sutala, Talatala, Mahatala, Rasatala, Patala) and architect Maya Danava.",
-            "videoUrl": "https://www.youtube.com/embed/yr2OWiEz7VE",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Seven Lower Realms",
-                        "text": "Below the mortal plane lie the seven subterranean dimensions described in the Vishnu Purana and Bhagavata Purana: Atala, Vitala, Sutala, Talatala, Mahatala, Rasatala, and Patala. Free from the scorching rays of the mortal sun, these realms are illuminated by glowing subterranean crystal geodes and jewel-encrusted serpent crowns."
-                  },
-                  {
-                        "title": "Chapter 2: Architect Maya Danava & The Subterranean Cities",
-                        "text": "In the lower realm of Talatala resides Maya Danava, the supreme master of illusion, geometry, and mechanical automata. He constructed towering crystal palaces, perpetual waterways, and subterranean fortresses with interlocking basalt walls that could pivot to trap invading armies in optical mazes."
-                  },
-                  {
-                        "title": "Chapter 3: The Naga Kingdom of Ananta Shesha & Vasuki",
-                        "text": "At the deepest base lies Patala, the domain of the celestial Nagas ruled by King Vasuki, Shankha, and Mahapadma. Beneath all realms rests the primordial serpent Ananta Shesha, whose thousand hoods support the planetary systems, remaining undisturbed during cosmic dissolution (Pralaya)."
-                  },
-                  {
-                        "title": "Chapter 4: Emperor Mahabali & The Golden Age of Sutala",
-                        "text": "In the realm of Sutala reigns King Mahabali, blessed by Lord Vamana. The Puranas state that Sutala is far more opulent than Svargaloka (heaven), devoid of disease, anxiety, or aging. Lord Vishnu Himself stands guard at Mahabali's golden gate with His Gada (mace) to ensure the Asura king's eternal peace."
-                  },
-                  {
-                        "title": "Chapter 5: The Secret Gems and Alchemy of Rasatala",
-                        "text": "In Rasatala, powerful Danavas and Daityas harness subterranean geothermal energies and extract 'Rasayana'—elemental mercury, mica, and sulfur alloys capable of transmuting metals and prolonging life for yugas, forming the legendary roots of Indian alchemical Rasashastra."
-                  },
-                  {
-                        "title": "Chapter 6: Inner Subconscious Dimensions",
-                        "text": "In yogic philosophy, the seven subterranean realms correspond to the subtle neurological layers below the Muladhara chakra—the instinctual, subconscious, and primal reservoirs of life force. Mastering the lower realms is the foundation of spiritual ascent into superconscious light."
-                  }
-            ]
+        "title": "Chapter 4: The Nine Nights of Apocalyptic War",
+        "text": "For nine cosmic nights, Mahishasura unleashed his demonic generals—Chikshura, Chamara, and Udagra. Rivers of celestial weapons clashed as Devi severed millions of demonic illusions. When Mahishasura transformed into a wild lion, she slashed him; when he turned into an elephant, she cut off his trunk; until at last, pinned beneath Her lotus foot, the Trident pierced his chest, liberating the cosmos."
       },
       {
-            "id": "granth_14_lokas",
-            "cat": "sanatana",
-            "catLabel": "🕉️ COSMIC SANATANA",
-            "title": "The 14 Lokas & Ancient Time Dilation (Yuga Cycles)",
-            "pages": 220,
-            "chaptersCount": 6,
-            "emoji": "🌌",
-            "isPremium": false,
-            "coverImg": "https://i.ytimg.com/vi/0g6gQNukRKA/hqdefault.jpg",
-            "desc": "Vedic calculations of the 4.32 billion year Kalpa, Brahma's day, parallel dimensions, and the cosmic journey of the Jiva.",
-            "videoUrl": "https://www.youtube.com/embed/0g6gQNukRKA",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: Time Dilation in Ancient Texts",
-                        "text": "In the Bhagavata Purana, King Kakudmi travels to Satyaloka with his daughter Revati to meet Lord Brahma. When he returns after what felt like 20 minutes in the celestial plane, millions of mortal years had elapsed on Earth, entire civilizations had risen and turned to dust, and Lord Krishna had descended in Dvapara Yuga—an astonishing ancient intuition of relativistic time dilation."
-                  },
-                  {
-                        "title": "Chapter 2: The Seven Upper & Seven Lower Lokas",
-                        "text": "Vedic cosmology maps 14 planetary planes arranged in a multi-dimensional torus: the 7 upper worlds (Bhur, Bhuvar, Svar, Mahar, Jana, Tapas, Satyaloka) and the 7 lower worlds (Atala to Patala). Earth (Bhurloka) is the pivotal Karmabhumi—the unique plane where conscious spiritual evolution occurs."
-                  },
-                  {
-                        "title": "Chapter 3: The Four Great Yugas & The Mahayuga",
-                        "text": "Time flows in cyclic cosmic epochs: Satya Yuga (1,728,000 human years, 100% Dharma), Treta Yuga (1,296,000 years, 75% Dharma), Dvapara Yuga (864,000 years, 50% Dharma), and Kali Yuga (432,000 years, 25% Dharma). Together they form one Mahayuga of 4.32 million years."
-                  },
-                  {
-                        "title": "Chapter 4: The Day of Brahma (Kalpa: 4.32 Billion Years)",
-                        "text": "One single daytime of Lord Brahma comprises 1,000 Mahayugas—exactly 4.32 billion human solar years, remarkably close to modern astrophysics estimates of the Earth's geological age (4.54 billion years). At the end of Brahma's day, universal dissolution (Naimittika Pralaya) takes place, followed by a night of equal length."
-                  },
-                  {
-                        "title": "Chapter 5: The Cosmic Cycles of Brahma (Srishti, Sthiti, Laya)",
-                        "text": "Brahma lives for 100 cosmic years (311.04 trillion solar years, known as a Maha Kalpa). At the conclusion of this vast lifespan, Mahapralaya occurs: all elements dissolve back into the unmanifest Prakriti, until the supreme Parabrahman breathes forth the next cycle of infinite universes."
-                  },
-                  {
-                        "title": "Chapter 6: The Journey of the Jiva Through Dimensional Planes",
-                        "text": "The Jiva (individual soul), bound by the threads of Vasana (subconscious impressions) and Karma, migrates across these 14 dimensions through birth and rebirth. Liberation (Moksha) is the transcendent exit from this cosmic wheel of cyclic time into timeless, non-dual realization."
-                  }
-            ]
+        "title": "Chapter 5: The Secret Metaphysics of Mahishasura Mardini",
+        "text": "In the Markandeya Purana, Mahishasura represents 'Ahamkara'—the rigid ego that assumes false permanence. The buffalo signifies tamasic ignorance and stubborn inertia. Devi Durga represents 'Chiti' (pure dynamic cosmic consciousness). The slaying is not merely a mythological victory, but the spiritual dissolution of ignorance through the ten weapons of spiritual discipline."
       },
       {
-            "id": "granth_samudra_manthan",
-            "cat": "sanatana",
-            "catLabel": "🕉️ COSMIC SANATANA",
-            "title": "The Great Samudra Manthan: Churning the Milk Ocean",
-            "pages": 195,
-            "chaptersCount": 6,
-            "emoji": "🌊",
-            "isPremium": false,
-            "coverImg": "https://i.ytimg.com/vi/eE8paZuuigA/hqdefault.jpg",
-            "desc": "Mount Mandara, Vasuki the serpent churning cord, the deadly Halahala poison, and the 14 divine jewels of eternity.",
-            "videoUrl": "https://www.youtube.com/embed/eE8paZuuigA",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Cosmic Alliance",
-                        "text": "Weakened by the curse of Sage Durvasa, the Devas formed a rare cosmic pact with the Asuras to churn the Ocean of Milk (Kshira Sagara) in search of Amrita, the elixir of immortality. Mount Mandara was uprooted as the churning rod, and King Vasuki served as the churning rope."
-                  },
-                  {
-                        "title": "Chapter 2: Kurma Avatar: The Cosmic Foundation",
-                        "text": "As Mount Mandara began sinking into the ocean floor under its colossal weight, Lord Vishnu manifested as the giant tortoise Kurma Avatar, diving to the ocean bed and supporting the entire mountain on His hard carapace, serving as the stable fulcrum for the cosmic churning."
-                  },
-                  {
-                        "title": "Chapter 3: The Blue-Throated Neelakantha",
-                        "text": "Before the nectar appeared, the ocean churned up Halahala—the lethal poison capable of incinerating all three worlds. Out of boundless compassion, Lord Shiva drank the entire venom, holding it in His throat, which turned blue, earning Him the immortal name Neelakantha."
-                  },
-                  {
-                        "title": "Chapter 4: The 14 Divine Treasures of Eternity",
-                        "text": "As the churning continued, 14 cosmic treasures emerged: Kamadhenu (the wish-granting cow), Airavata (the multi-tusked white elephant), Uchhaishravas (the seven-headed horse), Kaustubha (the supreme jewel), Parijata (the celestial tree), and Goddess Lakshmi, who chose Lord Vishnu as Her eternal consort."
-                  },
-                  {
-                        "title": "Chapter 5: Dhanvantari & The Golden Urn of Amrita",
-                        "text": "Finally, Lord Dhanvantari, the primordial father of Ayurveda and divine medicine, emerged holding the golden pot of Amrita. The ensuing struggle between Devas and Asuras led to the manifestation of Mohini, who ensured the nectar was distributed to preserve universal balance."
-                  },
-                  {
-                        "title": "Chapter 6: Rahu-Ketu & The Solar-Lunar Eclipse Cosmology",
-                        "text": "When the Asura Swarbhanu disguised himself among the Devas to drink the nectar, the Sun and Moon exposed him. Vishnu's Sudarshana Chakra severed his head. Having touched Amrita, his immortal head became Rahu and his serpent torso Ketu, periodically obscuring the sun and moon in cosmic eclipses."
-                  }
-            ]
-      },
-      {
-            "id": "granth_kundalini_science",
-            "cat": "sanatana",
-            "catLabel": "🕉️ COSMIC SANATANA",
-            "title": "Kundalini & The Sacred Neuroscience of 7 Chakras",
-            "pages": 160,
-            "chaptersCount": 6,
-            "emoji": "🧘",
-            "isPremium": true,
-            "coverImg": "https://i.ytimg.com/vi/JA0P7okWXA4/hqdefault.jpg",
-            "desc": "Ancient palm-leaf maps of consciousness: Ida, Pingala, Sushumna, and the awakening of the dormant serpentine energy.",
-            "videoUrl": "https://www.youtube.com/embed/JA0P7okWXA4",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Bio-Electric Nadis",
-                        "text": "The ancient Yoga Upanishads document 72,000 subtle energy channels (Nadis) converging along the cerebrospinal axis. The central channel Sushumna is flanked by Ida (lunar, parasympathetic cooling current) and Pingala (solar, sympathetic heating current). Balancing these twin currents is the prerequisite for spiritual awakening."
-                  },
-                  {
-                        "title": "Chapter 2: The Muladhara Root & The Coiled Serpentine Fire",
-                        "text": "At the perineum base rests the Muladhara chakra, where the primordial evolutionary energy (Kundalini Shakti) lies coiled 3.5 times around the Svayambhu Linga in deep dormancy. Awakened through Pranayama, Mantra, and intense devotion, this dormant bio-electric fire ascends upward through the spinal cord."
-                  },
-                  {
-                        "title": "Chapter 3: The Ascent Through the Seven Chakras",
-                        "text": "As Kundalini pierces each energetic vortex—Swadhisthana (sacral/creativity), Manipura (navel/vital fire), Anahata (heart/unconditional love), Vishuddha (throat/etheric truth), and Ajna (third eye/intuitive mastery)—she dissolves psychological knots (Granthis: Brahma, Vishnu, Rudra) that bind human perception."
-                  },
-                  {
-                        "title": "Chapter 4: Bandhas, Mudras & Hatha Yoga Pradipika",
-                        "text": "Yogi Svatmarama's classic treatise details the neuro-muscular locks: Mula Bandha (perineal lift), Uddiyana Bandha (abdominal lift), and Jalandhara Bandha (throat lock). These mechanical bio-valves reverse descending Apana Vayu to fuse with ascending Prana, forcing energy into the central Sushumna cavity."
-                  },
-                  {
-                        "title": "Chapter 5: Modern Neuroscience of Kundalini Awakening",
-                        "text": "Contemporary neuro-theology studies reveal that Kundalini arousal stimulates the vagus nerve, synchronizes thalamocortical oscillations, activates the pineal gland to release endogenous DMT-like neuro-peptides, and induces sustained Gamma-band (40–100 Hz) brainwave coherence observed in Himalayan masters."
-                  },
-                  {
-                        "title": "Chapter 6: Sahasrara & The Non-Dual Union (Samadhi)",
-                        "text": "When Kundalini Shakti reaches the thousand-petaled Sahasrara lotus at the crown of the head, she merges with Shiva (pure transcendent consciousness). The illusion of individual separation dissolves completely, resulting in Nirvikalpa Samadhi—unbroken, luminous, blissful realization of the Infinite."
-                  }
-            ]
-      },
-      {
-            "id": "granth_surya_siddhanta",
-            "cat": "sanatana",
-            "catLabel": "🕉️ COSMIC SANATANA",
-            "title": "Surya Siddhanta: Lost Astronomy of Ancient Sages",
-            "pages": 175,
-            "chaptersCount": 6,
-            "emoji": "☀️",
-            "isPremium": true,
-            "coverImg": "https://i.ytimg.com/vi/J6T7UjSRs0A/hqdefault.jpg",
-            "desc": "Ancient mathematical calculations of the speed of light, planetary orbits, lunar nodes, and equinox precessions.",
-            "videoUrl": "https://www.youtube.com/embed/J6T7UjSRs0A",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: Revelation to Maya Danava in Treta Yuga",
-                        "text": "According to astronomical tradition, the Surya Siddhanta was revealed by the Sun God's envoy to the architect-astronomer Maya Danava at the close of Treta Yuga in Romaka city. It established the foundational trigonometric and computational framework for Indian astronomical calculations (Ganita Jyotisha)."
-                  },
-                  {
-                        "title": "Chapter 2: Sidereal Year & Planetary Orbit Computations",
-                        "text": "Written thousands of years ago, the Surya Siddhanta calculated the length of the sidereal year as 365 days, 6 hours, 12 minutes, and 36.56 seconds—differing by less than 1.4 seconds from modern atomic clock measurements! It also computed the orbital periods of Mercury, Venus, Mars, Jupiter, and Saturn with stunning accuracy."
-                  },
-                  {
-                        "title": "Chapter 3: Vedic Trigonometry & Earth's Diameter",
-                        "text": "Centuries before European calculus, the Surya Siddhanta introduced 'Jya' (sine tables in 24 intervals of 3°45'), 'Kojya' (cosine), and 'Utkramajya' (versine). It calculated the diameter of the Earth as 8,000 miles (modern value: 7,917.5 miles) and the circumference as 25,120 miles."
-                  },
-                  {
-                        "title": "Chapter 4: Precision Eclipse Forecasting (Grahana)",
-                        "text": "The treatise details the mathematical trigonometry of solar and lunar eclipses, calculating parallax (Lambana in longitude, Nati in latitude), the exact diameter of the Earth's shadow cone, and the precise moments of eclipse contact, totality, and clearance down to the 'Nadi' (24 minutes) and 'Vinadi' (24 seconds)."
-                  },
-                  {
-                        "title": "Chapter 5: Precession of Equinoxes (Ayanamsha)",
-                        "text": "The Surya Siddhanta was among the first planetary treatises to quantify the precession of the equinoxes, documenting the oscillating motion of the celestial sphere at a rate of 54 arcseconds per year, allowing Indian panchangas to maintain exact alignments between the tropical and sidereal zodiacs."
-                  },
-                  {
-                        "title": "Chapter 6: Modern Astrophysical Affirmations",
-                        "text": "From NASA astrophysicists analyzing ancient Indian astronomical tables to modern mathematicians studying Aryabhata and Bhaskara, the computational formulas in Surya Siddhanta remain a testament to the scientific rigor and astronomical genius of ancient Bharat."
-                  }
-            ]
-      },
-      {
-            "id": "granth_adi_shankara",
-            "cat": "gurujis",
-            "catLabel": "🧘 MIRACLE GURUJIS",
-            "title": "Adi Shankaracharya: Digvijaya & Himalayan Miracles",
-            "pages": 240,
-            "chaptersCount": 6,
-            "emoji": "📜",
-            "isPremium": false,
-            "coverImg": "https://i.ytimg.com/vi/xgAA5C-niCk/hqdefault.jpg",
-            "desc": "Walking barefoot across the 4 corners of India, defeating dogmas through pure logic, and establishing the 4 sacred Peethams at age 32.",
-            "videoUrl": "https://www.youtube.com/embed/xgAA5C-niCk",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Wonder Child of Kalady & The Kanakadhara Miracle",
-                        "text": "Born in Kalady, Kerala, young Shankara mastered the four Vedas by age eight. When an impoverished woman offered him her last withered gooseberry (Amla) with tears of devotion, Shankara recited the Kanakadhara Stotram, causing Goddess Lakshmi to shower golden amlas into the humble hut."
-                  },
-                  {
-                        "title": "Chapter 2: Sanyasa at Narmada & Govinda Bhagavatpada",
-                        "text": "Taking formal monastic vows after a crocodile grasped his foot in the Purna river, Shankara traveled to the banks of the Narmada to study under Sage Govinda Bhagavatpada. In a famous test, young Shankara contained the raging floodwaters of the Narmada inside his water pot (Kamandalu), earning his guru's blessing."
-                  },
-                  {
-                        "title": "Chapter 3: The Great Commentaries (Prasthana Traya Bhashya)",
-                        "text": "In the sacred Himalayan caves of Badrinath and Uttarkashi, Shankara wrote monumental commentaries on the Upanishads, the Bhagavad Gita, and Badarayana's Brahma Sutras, rigorously proving that the ultimate truth is Advaita—the non-dual oneness of Atman and Brahman."
-                  },
-                  {
-                        "title": "Chapter 4: The Digvijaya & Debate with Mandana Mishra",
-                        "text": "Traveling barefoot across Bharat, Shankara engaged in historic philosophical debates with leading scholars of Mimamsa, Nyaya, and Buddhist schools. In Mahishmati, he debated the great ritualist Mandana Mishra, with Ubhaya Bharati as the impartial judge, bringing the entire subcontinent under the banner of Vedantic wisdom."
-                  },
-                  {
-                        "title": "Chapter 5: The Four Amnaya Mathas (Four Cardinal Pillars)",
-                        "text": "To preserve spiritual unity for generations, Shankara established the four monastic Peethams at the four corners of India: Sringeri Sharada Peetham in the South (Yajur Veda), Dwaraka Kalika Matha in the West (Sama Veda), Puri Govardhana Matha in the East (Rig Veda), and Badrikashrama Jyotirmath in the North (Atharva Veda)."
-                  },
-                  {
-                        "title": "Chapter 6: The Sarvajna Peetha & Timeless Advaita Legacy",
-                        "text": "Ascending the Throne of Omniscience (Sarvajna Peetha) in Kashmir at the age of thirty-two, Shankara synthesized ritual worship into the Panchayatana system. His philosophical legacy remains the ultimate pinnacle of Indian epistemology: 'Brahma Satyam Jagan Mithya, Jivo Brahmaiva Naparah' (Brahman alone is real, the world is transient, the soul is non-different from Brahman)."
-                  }
-            ]
-      },
-      {
-            "id": "granth_agastya_miracles",
-            "cat": "gurujis",
-            "catLabel": "🧘 MIRACLE GURUJIS",
-            "title": "Maharishi Agastya: Master of Oceans, Stars & Martial Arts",
-            "pages": 190,
-            "chaptersCount": 6,
-            "emoji": "🌴",
-            "isPremium": true,
-            "coverImg": "https://i.ytimg.com/vi/Z4XLf9w9Bc8/hqdefault.jpg",
-            "desc": "Drinking the southern ocean, subduing the Vindhya mountain range, and founding Tamil grammar and Kalaripayattu.",
-            "videoUrl": "https://www.youtube.com/embed/Z4XLf9w9Bc8",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Sage Who Drank the Ocean",
-                        "text": "When the demon Kalakeyas hid beneath the ocean depths to wage nocturnal guerrilla attacks against Vedic sages, Maharishi Agastya channeled supreme yogic energy and drank the entire southern ocean in one single draught, exposing the demon armies to the Devas and restoring cosmic order."
-                  },
-                  {
-                        "title": "Chapter 2: Subduing the Vindhya Mountains",
-                        "text": "When Mount Vindhya grew excessively tall out of pride, blocking the path of the sun, the Devas sought Agastya's aid. As the great sage approached heading south, the mountain bowed in reverence. Agastya commanded: 'Remain bowed until I return from the South.' The sage settled permanently in the South, keeping the mountain humbled forever."
-                  },
-                  {
-                        "title": "Chapter 3: Founding Tamil Grammar & Sangam Literature",
-                        "text": "In the southern kingdom of the Pandyas, Sage Agastya founded the First Tamil Sangam at Madurai and authored 'Agattiyam'—the primordial grammatical treatise of the Tamil language. He is revered as the eternal Father of Tamil literature and culture."
-                  },
-                  {
-                        "title": "Chapter 4: Siddha Medicine & The 108 Pulse Diagnostics",
-                        "text": "As head of the 18 Siddha masters (Siddhars), Agastya pioneered Siddha medicine in the herbal-rich Podhigai hills. He formulated alchemical preparations using herbs, minerals, and metals, and documented the 108 subtle pulse variations (Nadi Pariksha) to diagnose illness before physical symptoms appear."
-                  },
-                  {
-                        "title": "Chapter 5: Aditya Hridaya Stotram Bestowed Upon Lord Rama",
-                        "text": "On the battlefield of Lanka, when Lord Rama was fatigued after long battles against Ravana, Maharishi Agastya appeared on the warfront and initiated Rama into the sacred 'Aditya Hridaya Stotram'—the secret hymn to the Sun God that imparts invincible vitality, clarity, and victory."
-                  },
-                  {
-                        "title": "Chapter 6: The Founder of Marmam & Kalaripayattu",
-                        "text": "Agastya mapped the 108 lethal pressure points (Marma points) on the human body, establishing the foundation of Southern Kalaripayattu (Adimurai / Varma Kalai)—the world's oldest martial art, designed to disable attackers with minimal touch and heal injuries through energetic manipulation."
-                  }
-            ]
-      },
-      {
-            "id": "granth_vivekananda_awakening",
-            "cat": "gurujis",
-            "catLabel": "🧘 MIRACLE GURUJIS",
-            "title": "Swami Vivekananda: Raja Yoga & The Global Awakening",
-            "pages": 200,
-            "chaptersCount": 6,
-            "emoji": "🦁",
-            "isPremium": true,
-            "coverImg": "https://i.ytimg.com/vi/ul34M_LQmhg/hqdefault.jpg",
-            "desc": "The fiery training under Ramakrishna, the electrifying 1893 Chicago Parliament speech, and master laws of mental focus.",
-            "videoUrl": "https://www.youtube.com/embed/ul34M_LQmhg",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Sceptic Narendranath & Sri Ramakrishna",
-                        "text": "As a sharp intellectual student in Calcutta, young Narendranath Dutta questioned every religious teacher with one blunt challenge: 'Have you seen God?' None could answer until he met the mystic priest Sri Ramakrishna Paramahamsa at Dakshineswar, who smiled and said: 'Yes, I see Him just as I see you here, only in a much deeper sense.'"
-                  },
-                  {
-                        "title": "Chapter 2: The Wandering Monk & Kanyakumari Rock",
-                        "text": "Following Ramakrishna's Mahasamadhi, Vivekananda wandered barefoot across India for six years, witnessing the deep poverty and spiritual strength of the masses. In 1892, at Kanyakumari, he swam across shark-infested waters to the sacred rock, meditating for three days and nights to formulate his mission: the regeneration of India through spiritual education and selfless service."
-                  },
-                  {
-                        "title": "Chapter 3: The Thunder at Chicago (September 11, 1893)",
-                        "text": "Standing before 7,000 delegates at the World's Parliament of Religions in Chicago, a young monk in saffron robes began: 'Sisters and Brothers of America!' The hall erupted in a standing ovation that lasted two full minutes. In five speeches, he introduced the profound universality of Vedanta, proclaiming that all religions are paths to the one universal truth."
-                  },
-                  {
-                        "title": "Chapter 4: The Four Master Paths: Raja, Jnana, Bhakti, Karma Yoga",
-                        "text": "Vivekananda systematically translated and expounded the core yogic sciences for the modern world: Raja Yoga (meditation and mind control), Jnana Yoga (philosophical discernment), Bhakti Yoga (sublimation of emotional love), and Karma Yoga (selfless work without attachment to fruits)."
-                  },
-                  {
-                        "title": "Chapter 5: Founding the Ramakrishna Mission (Daridra Narayana)",
-                        "text": "In 1897, Vivekananda established the Ramakrishna Math and Mission with the motto 'Atmano Mokshartham Jagat Hitaya Cha' (For one's own liberation and for the welfare of the world). He elevated humanitarian service to the poor, sick, and marginalized into the highest form of spiritual worship."
-                  },
-                  {
-                        "title": "Chapter 6: Awakening the Youth of Bharat",
-                        "text": "Vivekananda's clarion call to the youth remains immortal: 'Arise, awake, and stop not till the goal is reached! You have to grow from the inside out. None can teach you, none can make you spiritual. There is no other teacher but your own soul.' His life sparked India's freedom movement and modern civilizational resurgence."
-                  }
-            ]
-      },
-      {
-            "id": "granth_bhakti_miracles",
-            "cat": "gurujis",
-            "catLabel": "🧘 MIRACLE GURUJIS",
-            "title": "Mirabai, Sant Kabir & Tulsidas: Miracles of Divine Love",
-            "pages": 185,
-            "chaptersCount": 6,
-            "emoji": "🪷",
-            "isPremium": true,
-            "coverImg": "https://i.ytimg.com/vi/ftOa_ncLY6Q/hqdefault.jpg",
-            "desc": "Poison turning to divine nectar, unbreakable devotion, and the mystical composition of the Ramcharitmanas.",
-            "videoUrl": "https://www.youtube.com/embed/ftOa_ncLY6Q",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: Princess Mirabai & The Cup of Poison",
-                        "text": "When royal persecution sent a cup of lethal snake venom to Princess Mirabai of Mewar because of her unwavering devotion to Lord Krishna (Girdhar Gopal), she drank it with a joyful smile, offering it as prasad. By the grace of supreme love, the deadly poison transformed into sweet divine nectar (Amrita)."
-                  },
-                  {
-                        "title": "Chapter 2: Sant Kabir: The Looms of Truth & Non-Duality",
-                        "text": "Weaving cloth in Varanasi, Sant Kabir composed immortal 'Dohe' (couplets) that shattered religious hypocrisy, caste rigidity, and dogmatic rituals. He taught that God resides not in stone temples or mosques, but within the clean lotus of the human heart: 'Moko Kahan Dhundhere Bande, Main To Tere Paas Mein.'"
-                  },
-                  {
-                        "title": "Chapter 3: Goswami Tulsidas & The Ramcharitmanas",
-                        "text": "Guided by a vision of Hanuman in Varanasi, Goswami Tulsidas composed the Ramcharitmanas in the vernacular Awadhi language, making the divine story of Rama accessible to millions of households across India. He also penned the immortal 40 verses of the Hanuman Chalisa while imprisoned in Delhi."
-                  },
-                  {
-                        "title": "Chapter 4: Sant Tukaram & The Floating Abhangas of Pandharpur",
-                        "text": "In Maharashtra, the grocer-saint Tukaram sang devotional Abhangas to Lord Vitthala of Pandharpur. When orthodox detractors threw his handwritten manuscript manuscripts into the Indrayani River, the sacred texts floated miraculously back to the riverbank dry and untouched after thirteen days of prayer."
-                  },
-                  {
-                        "title": "Chapter 5: Andal & The Tamil Alvars: Thiruppavai Songs",
-                        "text": "In Srivilliputhur, young Andal composed the 30 verses of the Thiruppavai, awakening the maidens of the village to the divine grace of Lord Ranganatha. Her bridal devotion (Madhurya Bhava) represents the pinnacle of Tamil Vaishnava Bhakti, inspiring temple chanting across South India every Margazhi month."
-                  },
-                  {
-                        "title": "Chapter 6: The Philosophy of Parabhakti: Love Beyond Fear",
-                        "text": "The Bhakti movement democratized spirituality across India during centuries of foreign invasion. By emphasizing that pure, guileless love transcends intellect, social status, and ritual perfection, these divine saints kept the living spiritual fire of Sanatana Dharma burning brightly."
-                  }
-            ]
-      },
-      {
-            "id": "granth_panchatantra_5_tantras",
-            "cat": "morals",
-            "catLabel": "🧒 MORAL EPICS",
-            "title": "Panchatantra: The 5 Tantras of Strategic Wisdom",
-            "pages": 190,
-            "chaptersCount": 6,
-            "emoji": "🦊",
-            "isPremium": false,
-            "coverImg": "https://i.ytimg.com/vi/CpbiCHF0Jco/hqdefault.jpg",
-            "desc": "The world's oldest leadership treatise: Mitra Bheda (Losing Friends), Mitra Labha (Gaining Allies), and strategic wildlife fables.",
-            "videoUrl": "https://www.youtube.com/embed/CpbiCHF0Jco",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Sage and the Three Foolish Princes",
-                        "text": "When King Amarasakti sought a master to transform his three foolish sons into wise rulers, Acharya Vishnu Sharma wrote the Panchatantra—interwoven animal allegories designed to teach diplomacy (Niti), psychology, statecraft, and human nature in just six months."
-                  },
-                  {
-                        "title": "Chapter 2: Tantra I: Mitra Bheda (The Separation of Friends)",
-                        "text": "The epic story of the friendship between Pingalaka the Lion and Sanjivaka the Bull, and how the jealous jackal Damanaka sowed seeds of suspicion and discord between them, teaching rulers the vital importance of verifying intelligence before trusting counselors."
-                  },
-                  {
-                        "title": "Chapter 3: Tantra II: Mitra Labha (The Gaining of Friends)",
-                        "text": "How four naturally incompatible creatures—Laghu-patanaka the Crow, Hiranyaka the Mouse, Mantharaka the Turtle, and Chitranga the Deer—united in deep loyalty, pooling their unique strengths to escape hunter's traps, demonstrating that cooperative alliance conquers impossible odds."
-                  },
-                  {
-                        "title": "Chapter 4: Tantra III: Kakolukiyam (War & Peace of Crows & Owls)",
-                        "text": "The ancient warfare between the diurnal Crows and nocturnal Owls, and how the wise minister crow Raktaksha used espionage, deceptive surrender, and tactical arson to defeat the owl fortress, illustrating Chanakya-style realpolitik and psychological warfare."
-                  },
-                  {
-                        "title": "Chapter 5: Tantra IV: Labdhapranasam (Loss of Hard-Earned Gains)",
-                        "text": "The famous fable of the Monkey and the Crocodile in the Rose-Apple tree: when the crocodile attempted to betray his friend to please his wife, the monkey used lightning wit to save his life, teaching that presence of mind preserves what hard work has built."
-                  },
-                  {
-                        "title": "Chapter 6: Tantra V: Aparikshitakarakam (Ill-Considered Action)",
-                        "text": "The tragic tale of the Brahmin woman and the loyal Mongoose who saved her infant from a black cobra, only to be struck down in haste. It serves as an eternal warning against impulsive anger and acting on unverified surface appearances without inquiry."
-                  }
-            ]
-      },
-      {
-            "id": "granth_vikram_betal_25",
-            "cat": "morals",
-            "catLabel": "🧒 MORAL EPICS",
-            "title": "Vikram & Betal: 25 Riddles of Justice & Statecraft",
-            "pages": 215,
-            "chaptersCount": 6,
-            "emoji": "👑",
-            "isPremium": true,
-            "coverImg": "https://i.ytimg.com/vi/piwghp31zvo/hqdefault.jpg",
-            "desc": "King Vikramaditya carrying the riddle-telling corpse across the cremation ground to test moral intellect.",
-            "videoUrl": "https://www.youtube.com/embed/piwghp31zvo",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Vow of King Vikramaditya",
-                        "text": "To fulfill a promise to a Tantric ascetic, the fearless King Vikramaditya of Ujjain journeyed into the haunted cremation ground on a moonless night to retrieve a corpse possessed by the celestial spirit Betal. But Betal warned him: 'I will tell you a story on our walk; if you know the answer to its riddle and remain silent, your head will burst into a thousand pieces; but if you speak, I will fly back to the banyan tree!'"
-                  },
-                  {
-                        "title": "Chapter 2: Riddle of the Three Noble Suitors",
-                        "text": "When a beautiful maiden died of snakebite, three suitors responded differently: one cremated himself on her pyre, one preserved her ashes at the riverbank, and the third learned the mantra of revival to bring her back to life. Betal asked: 'Who has the lawful right to marry her?' Vikram answered: 'The one who gave her life is her father; the one who burned is her son; the one who stayed with her ashes is her true husband!'"
-                  },
-                  {
-                        "title": "Chapter 3: Riddle of the Transposed Heads (Body vs Mind)",
-                        "text": "Two best friends decapitated themselves in a temple of Kali. When the wife was granted a boon to reattach their heads, in her haste she transposed the heads on the wrong bodies. Betal asked: 'Who is her husband?' Vikram replied: 'The head is the master of all senses and consciousness; the body with the husband's head is her husband.'"
-                  },
-                  {
-                        "title": "Chapter 4: Riddle of the King, Thief & The Courtesan",
-                        "text": "A complex tale of justice where a thief gave up his life to protect an oath, a merchant forgave an unfaithful bride, and a courtesan refused gold out of genuine virtue. Vikram analyzed the psychological motives of each character, judging the merchant as the most noble because he conquered the blinding instinct of possessive jealousy."
-                  },
-                  {
-                        "title": "Chapter 5: Riddle of the Father-Son and Mother-Daughter Marriages",
-                        "text": "A king married a young daughter while the king's son married the daughter's mother. Both couples had children. Betal posed the intricate genealogical paradox: 'What is the relationship between their children?' Vikram smiled in silence, recognizing an unanswerable logical loop, thus walking the required distance without breaking his vow of silence."
-                  },
-                  {
-                        "title": "Chapter 6: The 25th Silent Riddle & Thwarting the Sorcerer",
-                        "text": "Pleased with Vikram's fearless wisdom and unshakeable virtue, Betal revealed the evil sorcerer's plot to sacrifice the King during the midnight ritual. Armed with Betal's warning, Vikramaditya outwitted the sorcerer, liberated the spirit Betal from his curse, and received the blessing of universal fame and divine prosperity."
-                  }
-            ]
-      },
-      {
-            "id": "granth_abhimanyu_chakravyuha",
-            "cat": "morals",
-            "catLabel": "🧒 MORAL EPICS",
-            "title": "Abhimanyu: The 16-Year-Old Lion in the Chakravyuha",
-            "pages": 165,
-            "chaptersCount": 6,
-            "emoji": "🏹",
-            "isPremium": true,
-            "coverImg": "https://i.ytimg.com/vi/dgwcRqWK9ps/hqdefault.jpg",
-            "desc": "The sacred labyrinth geometry of Dronacharya and the young prince who knew how to enter but not exit.",
-            "videoUrl": "https://www.youtube.com/embed/dgwcRqWK9ps",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: The Secret Learned in the Womb",
-                        "text": "While in the womb of his mother Subhadra, young Abhimanyu heard Arjuna explaining the secret mechanics of penetrating the impenetrable seven-tiered Chakravyuha formation. But before Arjuna could explain the method of exit, Subhadra fell asleep, sealing the tragic, heroic fate of the sixteen-year-old warrior."
-                  },
-                  {
-                        "title": "Chapter 2: The 13th Day: Dronacharya's Labyrinth",
-                        "text": "With Arjuna lured away to the southern battlefield by the Samsaptakas, Guru Dronacharya formed the dreaded Chakravyuha—a rotating multi-tiered wheel of death designed to capture Yudhishthira. Seeing the Pandava army in despair, young Abhimanyu volunteered to breach the formation, supported by Bhima and Satyaki."
-                  },
-                  {
-                        "title": "Chapter 3: Penetrating the Seven Gates",
-                        "text": "Charging like a golden eagle into the mouth of the formation, Abhimanyu pierced the outer concentric rings, shattering thousands of chariot divisions. However, Jayadratha, blessed by Shiva with a boon to hold back the Pandavas for one day, slammed the outer gate shut, trapping Abhimanyu entirely alone in the core of the labyrinth."
-                  },
-                  {
-                        "title": "Chapter 4: The 16-Year-Old Lion Against Veteran Maharathas",
-                        "text": "Surrounded by seven legendary veteran warriors—Drona, Kripa, Karna, Ashwatthama, Duryodhana, Dushasana, and Shakuni—Abhimanyu fought with supernatural brilliance, shattering weapons, cutting chariot flags, and single-handedly defeating Duryodhana's son Lakshmana."
-                  },
-                  {
-                        "title": "Chapter 5: The Chariot Wheel & The Broken War Code",
-                        "text": "When his bowstring was sliced from behind by Karna and his horses and chariot were destroyed, Abhimanyu did not yield. He lifted a massive wooden chariot wheel with his bare hands, whirling it like the Sudarshana Chakra against impossible odds until overwhelmed by the collective attack."
-                  },
-                  {
-                        "title": "Chapter 6: The Immortal Legacy of Courage",
-                        "text": "Abhimanyu's sacrifice on the 13th day of the Kurukshetra war remains the eternal symbol of unyielding courage and duty in the face of insurmountable odds. His son Parikshit was saved by Lord Krishna to carry forward the Pandava dynasty, ensuring the survival of the Pandava lineage and Dharma."
-                  }
-            ]
-      },
-      {
-            "id": "granth_tenali_birbal_wit",
-            "cat": "morals",
-            "catLabel": "🧒 MORAL EPICS",
-            "title": "Tenali Rama & Birbal: Tales of Wit & Court Logic",
-            "pages": 175,
-            "chaptersCount": 6,
-            "emoji": "🦚",
-            "isPremium": false,
-            "coverImg": "https://i.ytimg.com/vi/TnMt8tLfK-o/hqdefault.jpg",
-            "desc": "The brilliant intellectual sparring matches that exposed hypocrisy and guided emperors with wisdom and humor.",
-            "videoUrl": "https://www.youtube.com/embed/TnMt8tLfK-o",
-            "chapters": [
-                  {
-                        "title": "Chapter 1: Tenali Rama & The Thousand-Headed Goddess Kali",
-                        "text": "When Goddess Kali appeared before Tenali Rama with a thousand heads to test him, Tenali burst out laughing. When the Goddess angrily asked why he laughed, Tenali replied: 'O Mother, with one nose when I catch a cold it is so difficult; how do you manage with a thousand running noses?' Amused by his fearlessness and lightning wit, Kali blessed him to become the greatest court jester of Vijayanagara."
-                  },
-                  {
-                        "title": "Chapter 2: Birbal & Emperor Akbar: Counting Crows in Delhi",
-                        "text": "When Emperor Akbar tested his court by asking how many crows resided in Delhi, courtiers spent days calculating in confusion. Birbal stepped forward and declared: 'There are exactly 50,589 crows, Your Majesty. If there are more, they have come from neighboring cities to visit relatives; if fewer, they have gone on vacation!'"
-                  },
-                  {
-                        "title": "Chapter 3: Tenali Rama and the King's Impossible Dream Palace",
-                        "text": "When King Krishnadevaraya dreamed of a floating palace hanging in the sky and demanded his ministers construct it, Tenali dressed as an old farmer and claimed that the King had promised in a dream to give him 10,000 gold coins. The King realized the absurdity of enforcing dream visions in reality."
-                  },
-                  {
-                        "title": "Chapter 4: Birbal & The Pot of Wisdom (Gourds in the Jar)",
-                        "text": "When a neighboring ruler demanded a 'pot full of wisdom' from Akbar, Birbal placed small growing gourds inside narrow-necked clay pots until they grew to fill the vessel without cutting the gourd. He sent the pot with the message: 'Extract the wisdom without breaking the pot or damaging the gourd.'"
-                  },
-                  {
-                        "title": "Chapter 5: Tenali Rama and the Greedy Astrologers",
-                        "text": "When arrogant court astrologers convinced Krishnadevaraya that the city faced a grave omen that could only be cured by donating golden elephants, Tenali staged a hilarious public demonstration proving that authentic Dharma lies in moral virtue, truth, and charity to the needy rather than superstition."
-                  },
-                  {
-                        "title": "Chapter 6: The Legacy of Hasya Rasa in Statecraft",
-                        "text": "The legends of Tenali Rama and Birbal represent the sublime tradition of 'Hasya Rasa' in Indian governance—using humor, logic, and sharp psychological insight to speak truth to power, deflate royal vanity, and guide great emperors toward justice and compassion."
-                  }
-            ]
+        "title": "Chapter 6: Navaratri & Living Devotional Rituals",
+        "text": "For thousands of years, across every corner of Bharat, the victory of Devi is celebrated through the nine nights of Navaratri. From the Chandi Patha recitation in Bengal to the Garba circular cosmos dance of Gujarat and the royal Mysore Dasara procession of Karnataka, this sacred chronicle remains the beating heart of Indian spiritual resilience."
       }
+    ]
+  },
+  {
+    "id": "granth_ravana_tantra",
+    "cat": "asuras",
+    "catLabel": "👹 DEVILS & ASURAS",
+    "title": "The Tantric Empire of Ravana & Kumbhakarna's Slumber",
+    "pages": 210,
+    "chaptersCount": 6,
+    "emoji": "⚔️",
+    "isPremium": true,
+    "coverImg": "https://i.ytimg.com/vi/otVAudER9dU/hqdefault.jpg",
+    "desc": "The 10 heads of unmatched astrological and musical mastery, mystical Pushpaka Vimana aviation, and the tragic 6-month cosmic curse of Kumbhakarna.",
+    "videoUrl": "https://www.youtube.com/embed/otVAudER9dU",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Ten Heads of Sangeeta & Astrology",
+        "text": "Ravana was no ordinary tyrant; he was the master of the 4 Vedas, 6 Vedangas, and the supreme master of the Rudra Veena. Born of Sage Vishrava and Asura princess Kaikesi, he performed immense penance to Brahma, cutting off nine of his heads as sacrificial offerings. Each head represented profound command over a branch of knowledge, intellect, and occult statecraft."
+      },
+      {
+        "title": "Chapter 2: Shiva Tandava Stotram at Mount Kailash",
+        "text": "Intoxicated by his invincible power, Ravana attempted to uproot Mount Kailash, the sacred abode of Shiva. As the mountain shook, Lord Mahadeva pressed down His big toe, trapping Ravana beneath the immense granite massif. In agonizing ecstasy, Ravana tore the sinews from his arm to string his veena and sang the awe-inspiring 14 verses of the Shiva Tandava Stotram, winning the divine sword Chandrahas."
+      },
+      {
+        "title": "Chapter 3: The Sleeping Giant of Lanka",
+        "text": "Kumbhakarna, born with mountain-shaking strength, intended to ask Lord Brahma for 'Nirdevatvam' (destruction of Devas). But Goddess Saraswati sat upon his tongue, turning his prayer into 'Nidravatvam' (endless slumber). For six months he slept in subterranean gold vaults, awoken only by marching elephants and blaring trumpet horns when war arrived."
+      },
+      {
+        "title": "Chapter 4: Pushpaka Vimana & The Architecture of Lanka",
+        "text": "Designed by the celestial architect Vishwakarma and expanded under Maya Danava, Lanka was a city of pure gold surrounded by triple moats and magnetic gates. The Pushpaka Vimana, an aerodynamic celestial craft powered by mercury vortex and mantric resonance, could travel at the speed of thought, responding directly to the pilot's psychic intent."
+      },
+      {
+        "title": "Chapter 5: Ravana Samhita: Lost Ayurvedic & Astrological Treatises",
+        "text": "Beyond war, Ravana authored seminal occult treatises: the Ravana Samhita on predictive astrology, Arka Prakasha on medicinal alchemy, and Nadi Pariksha on pulse diagnostics. His scientific understanding of planetary alignments and botanical extracts influenced medieval Indian medicine and esoteric tantra."
+      },
+      {
+        "title": "Chapter 6: The Fall of Lanka & The Final Liberation",
+        "text": "Despite his unmatched brilliance, Ravana's unbridled desire and defiance of Dharma led to his doom. In the final apocalyptic duel on the plains of Lanka, Lord Rama released the Brahmastra weapon, piercing Ravana's navel where the nectar of immortality was stored. As he lay dying, Rama sent Lakshmana to sit at Ravana's feet to learn the ultimate principles of statecraft and kingship."
+      }
+    ]
+  },
+  {
+    "id": "granth_bhasmasura",
+    "cat": "asuras",
+    "catLabel": "👹 DEVILS & ASURAS",
+    "title": "Bhasmasura & The Illusion Dance of Mohini",
+    "pages": 155,
+    "chaptersCount": 5,
+    "emoji": "🔥",
+    "isPremium": true,
+    "coverImg": "https://i.ytimg.com/vi/XEQFAcbMkWI/hqdefault.jpg",
+    "desc": "The deadly boon that turned anyone touched into ashes, and the divine cosmic dance that saved the Universe.",
+    "videoUrl": "https://www.youtube.com/embed/XEQFAcbMkWI",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Touch of Fire Boon",
+        "text": "Bhasmasura performed severe tapas until Lord Shiva granted him his wish: 'Whosoever's head I place my right hand upon shall instantly be reduced to a heap of ashes.' Blinded by supreme arrogance, Bhasmasura immediately attempted to test the boon on Shiva Himself, forcing the Lord of Yoga into cosmic retreat."
+      },
+      {
+        "title": "Chapter 2: The Flight of Mahadeva & The Cry for Dharma",
+        "text": "Pursued across mountains and celestial realms by the demon whose touch was instant destruction, Shiva entered deep meditative stillness in the dense groves of the Sahyadri mountains. To protect the cosmic fabric and uphold the inviolability of boons without violating universal law, Lord Vishnu stepped forth to manifest divine illusion (Maya)."
+      },
+      {
+        "title": "Chapter 3: The Manifestation of Mohini",
+        "text": "To protect the cosmic order, Lord Vishnu manifested as Mohini—the supreme enchantress of divine grace. Fascinated by her beauty, Bhasmasura agreed to match her step-by-step in the intricate Natya dance. Stunned by her celestial grace, Bhasmasura forgot his murderous quest, willing to surrender his pride to win her approval."
+      },
+      {
+        "title": "Chapter 4: The Cosmic Dance of Mirroring",
+        "text": "Mohini initiated the intricate Karanas of the Natya Shastra, weaving rhythms of grace and symmetry. Step by step, posture by posture, Bhasmasura mirrored every mudra. When Mohini raised her hand and placed it upon her own crown in the delicate 'Katyavalambita' pose, Bhasmasura placed his own right hand upon his head, instantly reducing his own physical body to a heap of glowing ash."
+      },
+      {
+        "title": "Chapter 5: Metaphysical Meaning: The Fire of Uncontrolled Desire",
+        "text": "The allegory of Bhasmasura teaches that power gained without inner wisdom and restraint ultimately destroys the bearer. Uncontrolled ego consumes itself with the very fire it attempts to inflict upon the world. The dance of Mohini represents the subtle laws of nature mirroring our actions back upon ourselves—the immutable law of Karma."
+      }
+    ]
+  },
+  {
+    "id": "granth_patala_asuras",
+    "cat": "asuras",
+    "catLabel": "👹 DEVILS & ASURAS",
+    "title": "The Subterranean Asuras of Patala & The Naga Kingdom",
+    "pages": 170,
+    "chaptersCount": 6,
+    "emoji": "🐍",
+    "isPremium": true,
+    "coverImg": "https://i.ytimg.com/vi/yr2OWiEz7VE/hqdefault.jpg",
+    "desc": "The 7 subterranean dimensions (Atala, Vitala, Sutala, Talatala, Mahatala, Rasatala, Patala) and architect Maya Danava.",
+    "videoUrl": "https://www.youtube.com/embed/yr2OWiEz7VE",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Seven Lower Realms",
+        "text": "Below the mortal plane lie the seven subterranean dimensions described in the Vishnu Purana and Bhagavata Purana: Atala, Vitala, Sutala, Talatala, Mahatala, Rasatala, and Patala. Free from the scorching rays of the mortal sun, these realms are illuminated by glowing subterranean crystal geodes and jewel-encrusted serpent crowns."
+      },
+      {
+        "title": "Chapter 2: Architect Maya Danava & The Subterranean Cities",
+        "text": "In the lower realm of Talatala resides Maya Danava, the supreme master of illusion, geometry, and mechanical automata. He constructed towering crystal palaces, perpetual waterways, and subterranean fortresses with interlocking basalt walls that could pivot to trap invading armies in optical mazes."
+      },
+      {
+        "title": "Chapter 3: The Naga Kingdom of Ananta Shesha & Vasuki",
+        "text": "At the deepest base lies Patala, the domain of the celestial Nagas ruled by King Vasuki, Shankha, and Mahapadma. Beneath all realms rests the primordial serpent Ananta Shesha, whose thousand hoods support the planetary systems, remaining undisturbed during cosmic dissolution (Pralaya)."
+      },
+      {
+        "title": "Chapter 4: Emperor Mahabali & The Golden Age of Sutala",
+        "text": "In the realm of Sutala reigns King Mahabali, blessed by Lord Vamana. The Puranas state that Sutala is far more opulent than Svargaloka (heaven), devoid of disease, anxiety, or aging. Lord Vishnu Himself stands guard at Mahabali's golden gate with His Gada (mace) to ensure the Asura king's eternal peace."
+      },
+      {
+        "title": "Chapter 5: The Secret Gems and Alchemy of Rasatala",
+        "text": "In Rasatala, powerful Danavas and Daityas harness subterranean geothermal energies and extract 'Rasayana'—elemental mercury, mica, and sulfur alloys capable of transmuting metals and prolonging life for yugas, forming the legendary roots of Indian alchemical Rasashastra."
+      },
+      {
+        "title": "Chapter 6: Inner Subconscious Dimensions",
+        "text": "In yogic philosophy, the seven subterranean realms correspond to the subtle neurological layers below the Muladhara chakra—the instinctual, subconscious, and primal reservoirs of life force. Mastering the lower realms is the foundation of spiritual ascent into superconscious light."
+      }
+    ]
+  },
+  {
+    "id": "granth_14_lokas",
+    "cat": "sanatana",
+    "catLabel": "🕉️ COSMIC SANATANA",
+    "title": "The 14 Lokas & Ancient Time Dilation (Yuga Cycles)",
+    "pages": 220,
+    "chaptersCount": 6,
+    "emoji": "🌌",
+    "isPremium": false,
+    "coverImg": "https://i.ytimg.com/vi/0g6gQNukRKA/hqdefault.jpg",
+    "desc": "Vedic calculations of the 4.32 billion year Kalpa, Brahma's day, parallel dimensions, and the cosmic journey of the Jiva.",
+    "videoUrl": "https://www.youtube.com/embed/0g6gQNukRKA",
+    "chapters": [
+      {
+        "title": "Chapter 1: Time Dilation in Ancient Texts",
+        "text": "In the Bhagavata Purana, King Kakudmi travels to Satyaloka with his daughter Revati to meet Lord Brahma. When he returns after what felt like 20 minutes in the celestial plane, millions of mortal years had elapsed on Earth, entire civilizations had risen and turned to dust, and Lord Krishna had descended in Dvapara Yuga—an astonishing ancient intuition of relativistic time dilation."
+      },
+      {
+        "title": "Chapter 2: The Seven Upper & Seven Lower Lokas",
+        "text": "Vedic cosmology maps 14 planetary planes arranged in a multi-dimensional torus: the 7 upper worlds (Bhur, Bhuvar, Svar, Mahar, Jana, Tapas, Satyaloka) and the 7 lower worlds (Atala to Patala). Earth (Bhurloka) is the pivotal Karmabhumi—the unique plane where conscious spiritual evolution occurs."
+      },
+      {
+        "title": "Chapter 3: The Four Great Yugas & The Mahayuga",
+        "text": "Time flows in cyclic cosmic epochs: Satya Yuga (1,728,000 human years, 100% Dharma), Treta Yuga (1,296,000 years, 75% Dharma), Dvapara Yuga (864,000 years, 50% Dharma), and Kali Yuga (432,000 years, 25% Dharma). Together they form one Mahayuga of 4.32 million years."
+      },
+      {
+        "title": "Chapter 4: The Day of Brahma (Kalpa: 4.32 Billion Years)",
+        "text": "One single daytime of Lord Brahma comprises 1,000 Mahayugas—exactly 4.32 billion human solar years, remarkably close to modern astrophysics estimates of the Earth's geological age (4.54 billion years). At the end of Brahma's day, universal dissolution (Naimittika Pralaya) takes place, followed by a night of equal length."
+      },
+      {
+        "title": "Chapter 5: The Cosmic Cycles of Brahma (Srishti, Sthiti, Laya)",
+        "text": "Brahma lives for 100 cosmic years (311.04 trillion solar years, known as a Maha Kalpa). At the conclusion of this vast lifespan, Mahapralaya occurs: all elements dissolve back into the unmanifest Prakriti, until the supreme Parabrahman breathes forth the next cycle of infinite universes."
+      },
+      {
+        "title": "Chapter 6: The Journey of the Jiva Through Dimensional Planes",
+        "text": "The Jiva (individual soul), bound by the threads of Vasana (subconscious impressions) and Karma, migrates across these 14 dimensions through birth and rebirth. Liberation (Moksha) is the transcendent exit from this cosmic wheel of cyclic time into timeless, non-dual realization."
+      }
+    ]
+  },
+  {
+    "id": "granth_samudra_manthan",
+    "cat": "sanatana",
+    "catLabel": "🕉️ COSMIC SANATANA",
+    "title": "The Great Samudra Manthan: Churning the Milk Ocean",
+    "pages": 195,
+    "chaptersCount": 6,
+    "emoji": "🌊",
+    "isPremium": false,
+    "coverImg": "https://i.ytimg.com/vi/eE8paZuuigA/hqdefault.jpg",
+    "desc": "Mount Mandara, Vasuki the serpent churning cord, the deadly Halahala poison, and the 14 divine jewels of eternity.",
+    "videoUrl": "https://www.youtube.com/embed/eE8paZuuigA",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Cosmic Alliance",
+        "text": "Weakened by the curse of Sage Durvasa, the Devas formed a rare cosmic pact with the Asuras to churn the Ocean of Milk (Kshira Sagara) in search of Amrita, the elixir of immortality. Mount Mandara was uprooted as the churning rod, and King Vasuki served as the churning rope."
+      },
+      {
+        "title": "Chapter 2: Kurma Avatar: The Cosmic Foundation",
+        "text": "As Mount Mandara began sinking into the ocean floor under its colossal weight, Lord Vishnu manifested as the giant tortoise Kurma Avatar, diving to the ocean bed and supporting the entire mountain on His hard carapace, serving as the stable fulcrum for the cosmic churning."
+      },
+      {
+        "title": "Chapter 3: The Blue-Throated Neelakantha",
+        "text": "Before the nectar appeared, the ocean churned up Halahala—the lethal poison capable of incinerating all three worlds. Out of boundless compassion, Lord Shiva drank the entire venom, holding it in His throat, which turned blue, earning Him the immortal name Neelakantha."
+      },
+      {
+        "title": "Chapter 4: The 14 Divine Treasures of Eternity",
+        "text": "As the churning continued, 14 cosmic treasures emerged: Kamadhenu (the wish-granting cow), Airavata (the multi-tusked white elephant), Uchhaishravas (the seven-headed horse), Kaustubha (the supreme jewel), Parijata (the celestial tree), and Goddess Lakshmi, who chose Lord Vishnu as Her eternal consort."
+      },
+      {
+        "title": "Chapter 5: Dhanvantari & The Golden Urn of Amrita",
+        "text": "Finally, Lord Dhanvantari, the primordial father of Ayurveda and divine medicine, emerged holding the golden pot of Amrita. The ensuing struggle between Devas and Asuras led to the manifestation of Mohini, who ensured the nectar was distributed to preserve universal balance."
+      },
+      {
+        "title": "Chapter 6: Rahu-Ketu & The Solar-Lunar Eclipse Cosmology",
+        "text": "When the Asura Swarbhanu disguised himself among the Devas to drink the nectar, the Sun and Moon exposed him. Vishnu's Sudarshana Chakra severed his head. Having touched Amrita, his immortal head became Rahu and his serpent torso Ketu, periodically obscuring the sun and moon in cosmic eclipses."
+      }
+    ]
+  },
+  {
+    "id": "granth_kundalini_science",
+    "cat": "sanatana",
+    "catLabel": "🕉️ COSMIC SANATANA",
+    "title": "Kundalini & The Sacred Neuroscience of 7 Chakras",
+    "pages": 160,
+    "chaptersCount": 6,
+    "emoji": "🧘",
+    "isPremium": true,
+    "coverImg": "https://i.ytimg.com/vi/JA0P7okWXA4/hqdefault.jpg",
+    "desc": "Ancient palm-leaf maps of consciousness: Ida, Pingala, Sushumna, and the awakening of the dormant serpentine energy.",
+    "videoUrl": "https://www.youtube.com/embed/JA0P7okWXA4",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Bio-Electric Nadis",
+        "text": "The ancient Yoga Upanishads document 72,000 subtle energy channels (Nadis) converging along the cerebrospinal axis. The central channel Sushumna is flanked by Ida (lunar, parasympathetic cooling current) and Pingala (solar, sympathetic heating current). Balancing these twin currents is the prerequisite for spiritual awakening."
+      },
+      {
+        "title": "Chapter 2: The Muladhara Root & The Coiled Serpentine Fire",
+        "text": "At the perineum base rests the Muladhara chakra, where the primordial evolutionary energy (Kundalini Shakti) lies coiled 3.5 times around the Svayambhu Linga in deep dormancy. Awakened through Pranayama, Mantra, and intense devotion, this dormant bio-electric fire ascends upward through the spinal cord."
+      },
+      {
+        "title": "Chapter 3: The Ascent Through the Seven Chakras",
+        "text": "As Kundalini pierces each energetic vortex—Swadhisthana (sacral/creativity), Manipura (navel/vital fire), Anahata (heart/unconditional love), Vishuddha (throat/etheric truth), and Ajna (third eye/intuitive mastery)—she dissolves psychological knots (Granthis: Brahma, Vishnu, Rudra) that bind human perception."
+      },
+      {
+        "title": "Chapter 4: Bandhas, Mudras & Hatha Yoga Pradipika",
+        "text": "Yogi Svatmarama's classic treatise details the neuro-muscular locks: Mula Bandha (perineal lift), Uddiyana Bandha (abdominal lift), and Jalandhara Bandha (throat lock). These mechanical bio-valves reverse descending Apana Vayu to fuse with ascending Prana, forcing energy into the central Sushumna cavity."
+      },
+      {
+        "title": "Chapter 5: Modern Neuroscience of Kundalini Awakening",
+        "text": "Contemporary neuro-theology studies reveal that Kundalini arousal stimulates the vagus nerve, synchronizes thalamocortical oscillations, activates the pineal gland to release endogenous DMT-like neuro-peptides, and induces sustained Gamma-band (40–100 Hz) brainwave coherence observed in Himalayan masters."
+      },
+      {
+        "title": "Chapter 6: Sahasrara & The Non-Dual Union (Samadhi)",
+        "text": "When Kundalini Shakti reaches the thousand-petaled Sahasrara lotus at the crown of the head, she merges with Shiva (pure transcendent consciousness). The illusion of individual separation dissolves completely, resulting in Nirvikalpa Samadhi—unbroken, luminous, blissful realization of the Infinite."
+      }
+    ]
+  },
+  {
+    "id": "granth_surya_siddhanta",
+    "cat": "sanatana",
+    "catLabel": "🕉️ COSMIC SANATANA",
+    "title": "Surya Siddhanta: Lost Astronomy of Ancient Sages",
+    "pages": 175,
+    "chaptersCount": 6,
+    "emoji": "☀️",
+    "isPremium": true,
+    "coverImg": "https://i.ytimg.com/vi/J6T7UjSRs0A/hqdefault.jpg",
+    "desc": "Ancient mathematical calculations of the speed of light, planetary orbits, lunar nodes, and equinox precessions.",
+    "videoUrl": "https://www.youtube.com/embed/J6T7UjSRs0A",
+    "chapters": [
+      {
+        "title": "Chapter 1: Revelation to Maya Danava in Treta Yuga",
+        "text": "According to astronomical tradition, the Surya Siddhanta was revealed by the Sun God's envoy to the architect-astronomer Maya Danava at the close of Treta Yuga in Romaka city. It established the foundational trigonometric and computational framework for Indian astronomical calculations (Ganita Jyotisha)."
+      },
+      {
+        "title": "Chapter 2: Sidereal Year & Planetary Orbit Computations",
+        "text": "Written thousands of years ago, the Surya Siddhanta calculated the length of the sidereal year as 365 days, 6 hours, 12 minutes, and 36.56 seconds—differing by less than 1.4 seconds from modern atomic clock measurements! It also computed the orbital periods of Mercury, Venus, Mars, Jupiter, and Saturn with stunning accuracy."
+      },
+      {
+        "title": "Chapter 3: Vedic Trigonometry & Earth's Diameter",
+        "text": "Centuries before European calculus, the Surya Siddhanta introduced 'Jya' (sine tables in 24 intervals of 3°45'), 'Kojya' (cosine), and 'Utkramajya' (versine). It calculated the diameter of the Earth as 8,000 miles (modern value: 7,917.5 miles) and the circumference as 25,120 miles."
+      },
+      {
+        "title": "Chapter 4: Precision Eclipse Forecasting (Grahana)",
+        "text": "The treatise details the mathematical trigonometry of solar and lunar eclipses, calculating parallax (Lambana in longitude, Nati in latitude), the exact diameter of the Earth's shadow cone, and the precise moments of eclipse contact, totality, and clearance down to the 'Nadi' (24 minutes) and 'Vinadi' (24 seconds)."
+      },
+      {
+        "title": "Chapter 5: Precession of Equinoxes (Ayanamsha)",
+        "text": "The Surya Siddhanta was among the first planetary treatises to quantify the precession of the equinoxes, documenting the oscillating motion of the celestial sphere at a rate of 54 arcseconds per year, allowing Indian panchangas to maintain exact alignments between the tropical and sidereal zodiacs."
+      },
+      {
+        "title": "Chapter 6: Modern Astrophysical Affirmations",
+        "text": "From NASA astrophysicists analyzing ancient Indian astronomical tables to modern mathematicians studying Aryabhata and Bhaskara, the computational formulas in Surya Siddhanta remain a testament to the scientific rigor and astronomical genius of ancient Bharat."
+      }
+    ]
+  },
+  {
+    "id": "granth_adi_shankara",
+    "cat": "gurujis",
+    "catLabel": "🧘 MIRACLE GURUJIS",
+    "title": "Adi Shankaracharya: Digvijaya & Himalayan Miracles",
+    "pages": 240,
+    "chaptersCount": 6,
+    "emoji": "📜",
+    "isPremium": false,
+    "coverImg": "https://i.ytimg.com/vi/xgAA5C-niCk/hqdefault.jpg",
+    "desc": "Walking barefoot across the 4 corners of India, defeating dogmas through pure logic, and establishing the 4 sacred Peethams at age 32.",
+    "videoUrl": "https://www.youtube.com/embed/xgAA5C-niCk",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Wonder Child of Kalady & The Kanakadhara Miracle",
+        "text": "Born in Kalady, Kerala, young Shankara mastered the four Vedas by age eight. When an impoverished woman offered him her last withered gooseberry (Amla) with tears of devotion, Shankara recited the Kanakadhara Stotram, causing Goddess Lakshmi to shower golden amlas into the humble hut."
+      },
+      {
+        "title": "Chapter 2: Sanyasa at Narmada & Govinda Bhagavatpada",
+        "text": "Taking formal monastic vows after a crocodile grasped his foot in the Purna river, Shankara traveled to the banks of the Narmada to study under Sage Govinda Bhagavatpada. In a famous test, young Shankara contained the raging floodwaters of the Narmada inside his water pot (Kamandalu), earning his guru's blessing."
+      },
+      {
+        "title": "Chapter 3: The Great Commentaries (Prasthana Traya Bhashya)",
+        "text": "In the sacred Himalayan caves of Badrinath and Uttarkashi, Shankara wrote monumental commentaries on the Upanishads, the Bhagavad Gita, and Badarayana's Brahma Sutras, rigorously proving that the ultimate truth is Advaita—the non-dual oneness of Atman and Brahman."
+      },
+      {
+        "title": "Chapter 4: The Digvijaya & Debate with Mandana Mishra",
+        "text": "Traveling barefoot across Bharat, Shankara engaged in historic philosophical debates with leading scholars of Mimamsa, Nyaya, and Buddhist schools. In Mahishmati, he debated the great ritualist Mandana Mishra, with Ubhaya Bharati as the impartial judge, bringing the entire subcontinent under the banner of Vedantic wisdom."
+      },
+      {
+        "title": "Chapter 5: The Four Amnaya Mathas (Four Cardinal Pillars)",
+        "text": "To preserve spiritual unity for generations, Shankara established the four monastic Peethams at the four corners of India: Sringeri Sharada Peetham in the South (Yajur Veda), Dwaraka Kalika Matha in the West (Sama Veda), Puri Govardhana Matha in the East (Rig Veda), and Badrikashrama Jyotirmath in the North (Atharva Veda)."
+      },
+      {
+        "title": "Chapter 6: The Sarvajna Peetha & Timeless Advaita Legacy",
+        "text": "Ascending the Throne of Omniscience (Sarvajna Peetha) in Kashmir at the age of thirty-two, Shankara synthesized ritual worship into the Panchayatana system. His philosophical legacy remains the ultimate pinnacle of Indian epistemology: 'Brahma Satyam Jagan Mithya, Jivo Brahmaiva Naparah' (Brahman alone is real, the world is transient, the soul is non-different from Brahman)."
+      }
+    ]
+  },
+  {
+    "id": "granth_agastya_miracles",
+    "cat": "gurujis",
+    "catLabel": "🧘 MIRACLE GURUJIS",
+    "title": "Maharishi Agastya: Master of Oceans, Stars & Martial Arts",
+    "pages": 190,
+    "chaptersCount": 6,
+    "emoji": "🌴",
+    "isPremium": true,
+    "coverImg": "https://i.ytimg.com/vi/Z4XLf9w9Bc8/hqdefault.jpg",
+    "desc": "Drinking the southern ocean, subduing the Vindhya mountain range, and founding Tamil grammar and Kalaripayattu.",
+    "videoUrl": "https://www.youtube.com/embed/Z4XLf9w9Bc8",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Sage Who Drank the Ocean",
+        "text": "When the demon Kalakeyas hid beneath the ocean depths to wage nocturnal guerrilla attacks against Vedic sages, Maharishi Agastya channeled supreme yogic energy and drank the entire southern ocean in one single draught, exposing the demon armies to the Devas and restoring cosmic order."
+      },
+      {
+        "title": "Chapter 2: Subduing the Vindhya Mountains",
+        "text": "When Mount Vindhya grew excessively tall out of pride, blocking the path of the sun, the Devas sought Agastya's aid. As the great sage approached heading south, the mountain bowed in reverence. Agastya commanded: 'Remain bowed until I return from the South.' The sage settled permanently in the South, keeping the mountain humbled forever."
+      },
+      {
+        "title": "Chapter 3: Founding Tamil Grammar & Sangam Literature",
+        "text": "In the southern kingdom of the Pandyas, Sage Agastya founded the First Tamil Sangam at Madurai and authored 'Agattiyam'—the primordial grammatical treatise of the Tamil language. He is revered as the eternal Father of Tamil literature and culture."
+      },
+      {
+        "title": "Chapter 4: Siddha Medicine & The 108 Pulse Diagnostics",
+        "text": "As head of the 18 Siddha masters (Siddhars), Agastya pioneered Siddha medicine in the herbal-rich Podhigai hills. He formulated alchemical preparations using herbs, minerals, and metals, and documented the 108 subtle pulse variations (Nadi Pariksha) to diagnose illness before physical symptoms appear."
+      },
+      {
+        "title": "Chapter 5: Aditya Hridaya Stotram Bestowed Upon Lord Rama",
+        "text": "On the battlefield of Lanka, when Lord Rama was fatigued after long battles against Ravana, Maharishi Agastya appeared on the warfront and initiated Rama into the sacred 'Aditya Hridaya Stotram'—the secret hymn to the Sun God that imparts invincible vitality, clarity, and victory."
+      },
+      {
+        "title": "Chapter 6: The Founder of Marmam & Kalaripayattu",
+        "text": "Agastya mapped the 108 lethal pressure points (Marma points) on the human body, establishing the foundation of Southern Kalaripayattu (Adimurai / Varma Kalai)—the world's oldest martial art, designed to disable attackers with minimal touch and heal injuries through energetic manipulation."
+      }
+    ]
+  },
+  {
+    "id": "granth_vivekananda_awakening",
+    "cat": "gurujis",
+    "catLabel": "🧘 MIRACLE GURUJIS",
+    "title": "Swami Vivekananda: Raja Yoga & The Global Awakening",
+    "pages": 200,
+    "chaptersCount": 6,
+    "emoji": "🦁",
+    "isPremium": true,
+    "coverImg": "https://i.ytimg.com/vi/ul34M_LQmhg/hqdefault.jpg",
+    "desc": "The fiery training under Ramakrishna, the electrifying 1893 Chicago Parliament speech, and master laws of mental focus.",
+    "videoUrl": "https://www.youtube.com/embed/ul34M_LQmhg",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Sceptic Narendranath & Sri Ramakrishna",
+        "text": "As a sharp intellectual student in Calcutta, young Narendranath Dutta questioned every religious teacher with one blunt challenge: 'Have you seen God?' None could answer until he met the mystic priest Sri Ramakrishna Paramahamsa at Dakshineswar, who smiled and said: 'Yes, I see Him just as I see you here, only in a much deeper sense.'"
+      },
+      {
+        "title": "Chapter 2: The Wandering Monk & Kanyakumari Rock",
+        "text": "Following Ramakrishna's Mahasamadhi, Vivekananda wandered barefoot across India for six years, witnessing the deep poverty and spiritual strength of the masses. In 1892, at Kanyakumari, he swam across shark-infested waters to the sacred rock, meditating for three days and nights to formulate his mission: the regeneration of India through spiritual education and selfless service."
+      },
+      {
+        "title": "Chapter 3: The Thunder at Chicago (September 11, 1893)",
+        "text": "Standing before 7,000 delegates at the World's Parliament of Religions in Chicago, a young monk in saffron robes began: 'Sisters and Brothers of America!' The hall erupted in a standing ovation that lasted two full minutes. In five speeches, he introduced the profound universality of Vedanta, proclaiming that all religions are paths to the one universal truth."
+      },
+      {
+        "title": "Chapter 4: The Four Master Paths: Raja, Jnana, Bhakti, Karma Yoga",
+        "text": "Vivekananda systematically translated and expounded the core yogic sciences for the modern world: Raja Yoga (meditation and mind control), Jnana Yoga (philosophical discernment), Bhakti Yoga (sublimation of emotional love), and Karma Yoga (selfless work without attachment to fruits)."
+      },
+      {
+        "title": "Chapter 5: Founding the Ramakrishna Mission (Daridra Narayana)",
+        "text": "In 1897, Vivekananda established the Ramakrishna Math and Mission with the motto 'Atmano Mokshartham Jagat Hitaya Cha' (For one's own liberation and for the welfare of the world). He elevated humanitarian service to the poor, sick, and marginalized into the highest form of spiritual worship."
+      },
+      {
+        "title": "Chapter 6: Awakening the Youth of Bharat",
+        "text": "Vivekananda's clarion call to the youth remains immortal: 'Arise, awake, and stop not till the goal is reached! You have to grow from the inside out. None can teach you, none can make you spiritual. There is no other teacher but your own soul.' His life sparked India's freedom movement and modern civilizational resurgence."
+      }
+    ]
+  },
+  {
+    "id": "granth_bhakti_miracles",
+    "cat": "gurujis",
+    "catLabel": "🧘 MIRACLE GURUJIS",
+    "title": "Mirabai, Sant Kabir & Tulsidas: Miracles of Divine Love",
+    "pages": 185,
+    "chaptersCount": 6,
+    "emoji": "🪷",
+    "isPremium": true,
+    "coverImg": "https://i.ytimg.com/vi/ftOa_ncLY6Q/hqdefault.jpg",
+    "desc": "Poison turning to divine nectar, unbreakable devotion, and the mystical composition of the Ramcharitmanas.",
+    "videoUrl": "https://www.youtube.com/embed/ftOa_ncLY6Q",
+    "chapters": [
+      {
+        "title": "Chapter 1: Princess Mirabai & The Cup of Poison",
+        "text": "When royal persecution sent a cup of lethal snake venom to Princess Mirabai of Mewar because of her unwavering devotion to Lord Krishna (Girdhar Gopal), she drank it with a joyful smile, offering it as prasad. By the grace of supreme love, the deadly poison transformed into sweet divine nectar (Amrita)."
+      },
+      {
+        "title": "Chapter 2: Sant Kabir: The Looms of Truth & Non-Duality",
+        "text": "Weaving cloth in Varanasi, Sant Kabir composed immortal 'Dohe' (couplets) that shattered religious hypocrisy, caste rigidity, and dogmatic rituals. He taught that God resides not in stone temples or mosques, but within the clean lotus of the human heart: 'Moko Kahan Dhundhere Bande, Main To Tere Paas Mein.'"
+      },
+      {
+        "title": "Chapter 3: Goswami Tulsidas & The Ramcharitmanas",
+        "text": "Guided by a vision of Hanuman in Varanasi, Goswami Tulsidas composed the Ramcharitmanas in the vernacular Awadhi language, making the divine story of Rama accessible to millions of households across India. He also penned the immortal 40 verses of the Hanuman Chalisa while imprisoned in Delhi."
+      },
+      {
+        "title": "Chapter 4: Sant Tukaram & The Floating Abhangas of Pandharpur",
+        "text": "In Maharashtra, the grocer-saint Tukaram sang devotional Abhangas to Lord Vitthala of Pandharpur. When orthodox detractors threw his handwritten manuscript manuscripts into the Indrayani River, the sacred texts floated miraculously back to the riverbank dry and untouched after thirteen days of prayer."
+      },
+      {
+        "title": "Chapter 5: Andal & The Tamil Alvars: Thiruppavai Songs",
+        "text": "In Srivilliputhur, young Andal composed the 30 verses of the Thiruppavai, awakening the maidens of the village to the divine grace of Lord Ranganatha. Her bridal devotion (Madhurya Bhava) represents the pinnacle of Tamil Vaishnava Bhakti, inspiring temple chanting across South India every Margazhi month."
+      },
+      {
+        "title": "Chapter 6: The Philosophy of Parabhakti: Love Beyond Fear",
+        "text": "The Bhakti movement democratized spirituality across India during centuries of foreign invasion. By emphasizing that pure, guileless love transcends intellect, social status, and ritual perfection, these divine saints kept the living spiritual fire of Sanatana Dharma burning brightly."
+      }
+    ]
+  },
+  {
+    "id": "granth_panchatantra_5_tantras",
+    "cat": "morals",
+    "catLabel": "🧒 MORAL EPICS",
+    "title": "Panchatantra: The 5 Tantras of Strategic Wisdom",
+    "pages": 190,
+    "chaptersCount": 6,
+    "emoji": "🦊",
+    "isPremium": false,
+    "coverImg": "https://i.ytimg.com/vi/CpbiCHF0Jco/hqdefault.jpg",
+    "desc": "The world's oldest leadership treatise: Mitra Bheda (Losing Friends), Mitra Labha (Gaining Allies), and strategic wildlife fables.",
+    "videoUrl": "https://www.youtube.com/embed/CpbiCHF0Jco",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Sage and the Three Foolish Princes",
+        "text": "When King Amarasakti sought a master to transform his three foolish sons into wise rulers, Acharya Vishnu Sharma wrote the Panchatantra—interwoven animal allegories designed to teach diplomacy (Niti), psychology, statecraft, and human nature in just six months."
+      },
+      {
+        "title": "Chapter 2: Tantra I: Mitra Bheda (The Separation of Friends)",
+        "text": "The epic story of the friendship between Pingalaka the Lion and Sanjivaka the Bull, and how the jealous jackal Damanaka sowed seeds of suspicion and discord between them, teaching rulers the vital importance of verifying intelligence before trusting counselors."
+      },
+      {
+        "title": "Chapter 3: Tantra II: Mitra Labha (The Gaining of Friends)",
+        "text": "How four naturally incompatible creatures—Laghu-patanaka the Crow, Hiranyaka the Mouse, Mantharaka the Turtle, and Chitranga the Deer—united in deep loyalty, pooling their unique strengths to escape hunter's traps, demonstrating that cooperative alliance conquers impossible odds."
+      },
+      {
+        "title": "Chapter 4: Tantra III: Kakolukiyam (War & Peace of Crows & Owls)",
+        "text": "The ancient warfare between the diurnal Crows and nocturnal Owls, and how the wise minister crow Raktaksha used espionage, deceptive surrender, and tactical arson to defeat the owl fortress, illustrating Chanakya-style realpolitik and psychological warfare."
+      },
+      {
+        "title": "Chapter 5: Tantra IV: Labdhapranasam (Loss of Hard-Earned Gains)",
+        "text": "The famous fable of the Monkey and the Crocodile in the Rose-Apple tree: when the crocodile attempted to betray his friend to please his wife, the monkey used lightning wit to save his life, teaching that presence of mind preserves what hard work has built."
+      },
+      {
+        "title": "Chapter 6: Tantra V: Aparikshitakarakam (Ill-Considered Action)",
+        "text": "The tragic tale of the Brahmin woman and the loyal Mongoose who saved her infant from a black cobra, only to be struck down in haste. It serves as an eternal warning against impulsive anger and acting on unverified surface appearances without inquiry."
+      }
+    ]
+  },
+  {
+    "id": "granth_vikram_betal_25",
+    "cat": "morals",
+    "catLabel": "🧒 MORAL EPICS",
+    "title": "Vikram & Betal: 25 Riddles of Justice & Statecraft",
+    "pages": 215,
+    "chaptersCount": 6,
+    "emoji": "👑",
+    "isPremium": true,
+    "coverImg": "https://i.ytimg.com/vi/piwghp31zvo/hqdefault.jpg",
+    "desc": "King Vikramaditya carrying the riddle-telling corpse across the cremation ground to test moral intellect.",
+    "videoUrl": "https://www.youtube.com/embed/piwghp31zvo",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Vow of King Vikramaditya",
+        "text": "To fulfill a promise to a Tantric ascetic, the fearless King Vikramaditya of Ujjain journeyed into the haunted cremation ground on a moonless night to retrieve a corpse possessed by the celestial spirit Betal. But Betal warned him: 'I will tell you a story on our walk; if you know the answer to its riddle and remain silent, your head will burst into a thousand pieces; but if you speak, I will fly back to the banyan tree!'"
+      },
+      {
+        "title": "Chapter 2: Riddle of the Three Noble Suitors",
+        "text": "When a beautiful maiden died of snakebite, three suitors responded differently: one cremated himself on her pyre, one preserved her ashes at the riverbank, and the third learned the mantra of revival to bring her back to life. Betal asked: 'Who has the lawful right to marry her?' Vikram answered: 'The one who gave her life is her father; the one who burned is her son; the one who stayed with her ashes is her true husband!'"
+      },
+      {
+        "title": "Chapter 3: Riddle of the Transposed Heads (Body vs Mind)",
+        "text": "Two best friends decapitated themselves in a temple of Kali. When the wife was granted a boon to reattach their heads, in her haste she transposed the heads on the wrong bodies. Betal asked: 'Who is her husband?' Vikram replied: 'The head is the master of all senses and consciousness; the body with the husband's head is her husband.'"
+      },
+      {
+        "title": "Chapter 4: Riddle of the King, Thief & The Courtesan",
+        "text": "A complex tale of justice where a thief gave up his life to protect an oath, a merchant forgave an unfaithful bride, and a courtesan refused gold out of genuine virtue. Vikram analyzed the psychological motives of each character, judging the merchant as the most noble because he conquered the blinding instinct of possessive jealousy."
+      },
+      {
+        "title": "Chapter 5: Riddle of the Father-Son and Mother-Daughter Marriages",
+        "text": "A king married a young daughter while the king's son married the daughter's mother. Both couples had children. Betal posed the intricate genealogical paradox: 'What is the relationship between their children?' Vikram smiled in silence, recognizing an unanswerable logical loop, thus walking the required distance without breaking his vow of silence."
+      },
+      {
+        "title": "Chapter 6: The 25th Silent Riddle & Thwarting the Sorcerer",
+        "text": "Pleased with Vikram's fearless wisdom and unshakeable virtue, Betal revealed the evil sorcerer's plot to sacrifice the King during the midnight ritual. Armed with Betal's warning, Vikramaditya outwitted the sorcerer, liberated the spirit Betal from his curse, and received the blessing of universal fame and divine prosperity."
+      }
+    ]
+  },
+  {
+    "id": "granth_abhimanyu_chakravyuha",
+    "cat": "morals",
+    "catLabel": "🧒 MORAL EPICS",
+    "title": "Abhimanyu: The 16-Year-Old Lion in the Chakravyuha",
+    "pages": 165,
+    "chaptersCount": 6,
+    "emoji": "🏹",
+    "isPremium": true,
+    "coverImg": "https://i.ytimg.com/vi/dgwcRqWK9ps/hqdefault.jpg",
+    "desc": "The sacred labyrinth geometry of Dronacharya and the young prince who knew how to enter but not exit.",
+    "videoUrl": "https://www.youtube.com/embed/dgwcRqWK9ps",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Secret Learned in the Womb",
+        "text": "While in the womb of his mother Subhadra, young Abhimanyu heard Arjuna explaining the secret mechanics of penetrating the impenetrable seven-tiered Chakravyuha formation. But before Arjuna could explain the method of exit, Subhadra fell asleep, sealing the tragic, heroic fate of the sixteen-year-old warrior."
+      },
+      {
+        "title": "Chapter 2: The 13th Day: Dronacharya's Labyrinth",
+        "text": "With Arjuna lured away to the southern battlefield by the Samsaptakas, Guru Dronacharya formed the dreaded Chakravyuha—a rotating multi-tiered wheel of death designed to capture Yudhishthira. Seeing the Pandava army in despair, young Abhimanyu volunteered to breach the formation, supported by Bhima and Satyaki."
+      },
+      {
+        "title": "Chapter 3: Penetrating the Seven Gates",
+        "text": "Charging like a golden eagle into the mouth of the formation, Abhimanyu pierced the outer concentric rings, shattering thousands of chariot divisions. However, Jayadratha, blessed by Shiva with a boon to hold back the Pandavas for one day, slammed the outer gate shut, trapping Abhimanyu entirely alone in the core of the labyrinth."
+      },
+      {
+        "title": "Chapter 4: The 16-Year-Old Lion Against Veteran Maharathas",
+        "text": "Surrounded by seven legendary veteran warriors—Drona, Kripa, Karna, Ashwatthama, Duryodhana, Dushasana, and Shakuni—Abhimanyu fought with supernatural brilliance, shattering weapons, cutting chariot flags, and single-handedly defeating Duryodhana's son Lakshmana."
+      },
+      {
+        "title": "Chapter 5: The Chariot Wheel & The Broken War Code",
+        "text": "When his bowstring was sliced from behind by Karna and his horses and chariot were destroyed, Abhimanyu did not yield. He lifted a massive wooden chariot wheel with his bare hands, whirling it like the Sudarshana Chakra against impossible odds until overwhelmed by the collective attack."
+      },
+      {
+        "title": "Chapter 6: The Immortal Legacy of Courage",
+        "text": "Abhimanyu's sacrifice on the 13th day of the Kurukshetra war remains the eternal symbol of unyielding courage and duty in the face of insurmountable odds. His son Parikshit was saved by Lord Krishna to carry forward the Pandava dynasty, ensuring the survival of the Pandava lineage and Dharma."
+      }
+    ]
+  },
+  {
+    "id": "granth_tenali_birbal_wit",
+    "cat": "morals",
+    "catLabel": "🧒 MORAL EPICS",
+    "title": "Tenali Rama & Birbal: Tales of Wit & Court Logic",
+    "pages": 175,
+    "chaptersCount": 6,
+    "emoji": "🦚",
+    "isPremium": false,
+    "coverImg": "https://i.ytimg.com/vi/TnMt8tLfK-o/hqdefault.jpg",
+    "desc": "The brilliant intellectual sparring matches that exposed hypocrisy and guided emperors with wisdom and humor.",
+    "videoUrl": "https://www.youtube.com/embed/TnMt8tLfK-o",
+    "chapters": [
+      {
+        "title": "Chapter 1: Tenali Rama & The Thousand-Headed Goddess Kali",
+        "text": "When Goddess Kali appeared before Tenali Rama with a thousand heads to test him, Tenali burst out laughing. When the Goddess angrily asked why he laughed, Tenali replied: 'O Mother, with one nose when I catch a cold it is so difficult; how do you manage with a thousand running noses?' Amused by his fearlessness and lightning wit, Kali blessed him to become the greatest court jester of Vijayanagara."
+      },
+      {
+        "title": "Chapter 2: Birbal & Emperor Akbar: Counting Crows in Delhi",
+        "text": "When Emperor Akbar tested his court by asking how many crows resided in Delhi, courtiers spent days calculating in confusion. Birbal stepped forward and declared: 'There are exactly 50,589 crows, Your Majesty. If there are more, they have come from neighboring cities to visit relatives; if fewer, they have gone on vacation!'"
+      },
+      {
+        "title": "Chapter 3: Tenali Rama and the King's Impossible Dream Palace",
+        "text": "When King Krishnadevaraya dreamed of a floating palace hanging in the sky and demanded his ministers construct it, Tenali dressed as an old farmer and claimed that the King had promised in a dream to give him 10,000 gold coins. The King realized the absurdity of enforcing dream visions in reality."
+      },
+      {
+        "title": "Chapter 4: Birbal & The Pot of Wisdom (Gourds in the Jar)",
+        "text": "When a neighboring ruler demanded a 'pot full of wisdom' from Akbar, Birbal placed small growing gourds inside narrow-necked clay pots until they grew to fill the vessel without cutting the gourd. He sent the pot with the message: 'Extract the wisdom without breaking the pot or damaging the gourd.'"
+      },
+      {
+        "title": "Chapter 5: Tenali Rama and the Greedy Astrologers",
+        "text": "When arrogant court astrologers convinced Krishnadevaraya that the city faced a grave omen that could only be cured by donating golden elephants, Tenali staged a hilarious public demonstration proving that authentic Dharma lies in moral virtue, truth, and charity to the needy rather than superstition."
+      },
+      {
+        "title": "Chapter 6: The Legacy of Hasya Rasa in Statecraft",
+        "text": "The legends of Tenali Rama and Birbal represent the sublime tradition of 'Hasya Rasa' in Indian governance—using humor, logic, and sharp psychological insight to speak truth to power, deflate royal vanity, and guide great emperors toward justice and compassion."
+      }
+    ]
+  },
+  {
+    "id": "granth_veerabhadra",
+    "cat": "vedic",
+    "catLabel": "⚔️ DIVINE WARRIORS",
+    "title": "Who is Lord Veerabhadra? The Fierce Destroyer of Daksha's Pride",
+    "pages": 185,
+    "chaptersCount": 6,
+    "emoji": "⚔️",
+    "isPremium": false,
+    "coverImg": "/images/veerabhadra.jpg",
+    "desc": "The colossal warrior born from Shiva's matted lock who decimated the arrogant sacrifice of Daksha and restored cosmic humility.",
+    "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Sacrificial Fire & The Insult to Sati",
+        "text": "When King Daksha organized the greatest Brihaspatisava Yajna in Kanakhala, his supreme pride blinded him. He invited every Gandharva, Deva, and Rishi across the 14 Lokas, but deliberately excluded Lord Shiva. Devi Sati, unable to bear the public denigration of the Supreme Consciousness by her own father, entered the yogic fire of grief, dissolving her physical sheath in celestial agony."
+      },
+      {
+        "title": "Chapter 2: The Matted Lock & The Cosmic Avenger",
+        "text": "Hearing of Sati's dissolution, Lord Shiva performed the terrifying Rudra Tandava atop Mount Kailash. In divine fury, he plucked a single blazing dreadlock (Jata) and hurled it against the cosmic rocks. From the collision of fire and earth arose Lord Veerabhadra—tall as the sky, with a thousand muscular arms, wielding trishulas, flaming battle-axes, and blazing swords, accompanied by Mother Bhadrakali."
+      },
+      {
+        "title": "Chapter 3: The March of the Rudra Ganas upon Kanakhala",
+        "text": "With the earth shaking beneath their strides, the billions of Rudra Ganas and Yoginis descended upon Daksha's sacrificial arena. The celestial priests, guardians of the directions, and haughty attendees attempted to defend the sacrificial altar, but the elemental fury of Veerabhadra swept through like a supernova, extinguishing the polluted flames."
+      },
+      {
+        "title": "Chapter 4: The Slaying of Daksha & The Cleansed Fire",
+        "text": "Veerabhadra seized King Daksha by the altar and severed his head with a single stroke of his glowing celestial blade, casting it into the Homa fire to consume the root of pride. The arrogant gathering realized that rituals devoid of reverence to the Supreme Source are mere hollow ashes."
+      },
+      {
+        "title": "Chapter 5: The Goat-Headed Redemption & Shiva's Grace",
+        "text": "When Brahma and the Devas pleaded for mercy, Lord Shiva appeared upon the ruins. With boundless Karuna (compassion), Shiva placed the head of a sacrificial goat upon Daksha's torso, reviving him to life. Daksha wept in profound remorse, singing the Shiva Ashtakam as divine balance returned to the universe."
+      },
+      {
+        "title": "Chapter 6: The Living Temples: Lepakshi & The Thousand-Pillar Legacy",
+        "text": "Today, Lord Veerabhadra is worshipped across India as the supreme protector of dharma, health, and fearless courage. The 16th-century Lepakshi temple with its hanging pillar and giant monolithic Nandi stands as an architectural wonder dedicated to the eternal valor of Veerabhadra."
+      }
+    ]
+  },
+  {
+    "id": "granth_kalabhairava",
+    "cat": "vedic",
+    "catLabel": "⌛ COSMIC TIME & TANTRA",
+    "title": "Who is Lord Kalabhairava? The Lord of Sacred Time & Ruler of Kashi",
+    "pages": 190,
+    "chaptersCount": 6,
+    "emoji": "⌛",
+    "isPremium": false,
+    "coverImg": "/images/kalabhairava.jpg",
+    "desc": "The supreme master of Time (Kala) and ruler of Varanasi who burns away karmic debts and grants immediate spiritual fearlessness.",
+    "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Cosmic Debate of the Creator & The Fifth Head",
+        "text": "In the primordial era, Lord Brahma developed an inflated pride regarding his creative powers, causing a fifth head to sprout upon his crown that spoke boastful and divisive words against the formless Absolute. To sever the illusion of intellectual arrogance, Lord Shiva glanced into the void of eternity."
+      },
+      {
+        "title": "Chapter 2: The Emergence of Bhairava & The Kapalika Vow",
+        "text": "From Shiva's third eye of cosmic fire stepped forth Lord Kalabhairava—radiant with the glow of midnight sapphires, carrying a golden trident and damaru. With the sharp tip of his fingernail, Kalabhairava severed Brahma's fifth head, taking upon himself the sacred Kapalika vow to wander the universe until the skull found its resting place."
+      },
+      {
+        "title": "Chapter 3: The Holy Soil of Kashi & The Falling Skull",
+        "text": "Wandering through the fourteen Lokas, the skull remained firmly adhered to Bhairava's palm until his lotus feet stepped onto the holy ground of Anandavan (Varanasi). The moment he entered Kashi, the skull fell to the earth, marking the sacred site of Kapala Mochana Teertha where all ancestral and cosmic debts are instantly dissolved."
+      },
+      {
+        "title": "Chapter 4: Kotwal of Kashi: The Divine Chief Magistrate",
+        "text": "Lord Shiva appointed Kalabhairava as the eternal Kotwal (Chief Magistrate and Guardian) of Kashi. According to tradition, even time itself stops in Kashi, and no soul can enter or attain Moksha at Manikarnika Ghat without the benevolent sign-off and protective grace of Kalabhairava."
+      },
+      {
+        "title": "Chapter 5: The Black Dog Vahana & Yogic Time Transcendence",
+        "text": "Kalabhairava rides a divine black dog (Shvana), symbolizing unwavering loyalty, heightened sensory awareness, and the subversion of social dogma. In esoteric Kundalini yoga, Bhairava represents the piercing of Kala (linear time), transporting the meditator into the eternal timeless present (Akala)."
+      },
+      {
+        "title": "Chapter 6: Ashta Bhairava: The 8 Dimensional Guardians",
+        "text": "Across Varanasi, eight dimensional shrines guard the eight directions: Asitanga (East), Ruru (Southeast), Chanda (South), Krodha (Southwest), Unmatta (West), Kapala (Northwest), Bhishana (North), and Samhara (Northeast), creating a sacred geometric mandala of total psychic protection."
+      }
+    ]
+  },
+  {
+    "id": "granth_narasimha_fire",
+    "cat": "vedic",
+    "catLabel": "🦁 SUPREME AVATARS",
+    "title": "Who is Lord Narasimha? The Pillar of Cosmic Fire & The Shield of Faith",
+    "pages": 180,
+    "chaptersCount": 6,
+    "emoji": "🦁",
+    "isPremium": false,
+    "coverImg": "/images/hiranyakashipu_narasimha.jpg",
+    "desc": "The half-man half-lion avatar who shattered the crystal pillar at twilight to fulfill every cosmic law and protect young Prahlad.",
+    "videoUrl": "https://www.youtube.com/embed/3hmz995sruE",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Ironclad Boons of Hiranyakashipu",
+        "text": "King Hiranyakashipu extracted from Brahma the most intricate boon of immortality: he could not be killed by man or beast, by god or demon, inside a house or outside, by day or by night, on the ground or in the sky, with living weapons or non-living tools. Believing himself invincible, he proclaimed himself the sole god of the cosmos."
+      },
+      {
+        "title": "Chapter 2: The Unyielding Devotion of Young Prahlad",
+        "text": "Born in the ashram of Sage Narada, young Prahlad absorbed the unshakeable truth of Narayana. When tortured by his father with deadly snake pits, charging royal tuskers, mountain cliffs, and boiling cauldrons, the boy remained in blissful trance, reciting the sacred Om Namo Narayanaya mantra with absolute calm."
+      },
+      {
+        "title": "Chapter 3: The Shattering of the Crystal Pillar",
+        "text": "Enraged, Hiranyakashipu pointed his golden mace at a crystal pillar in the throne hall: 'If your god is everywhere, is he in this stone pillar?' Prahlad replied: 'He is in the pillar, and in the rust of your mace.' With a scornful blow, the king struck the column. The pillar exploded with a roar that made the cosmic galaxies tremble."
+      },
+      {
+        "title": "Chapter 4: The Twilight Slaying upon the Threshold",
+        "text": "From the burst pillar stepped Lord Narasimha—with the fierce visage of a lion, glowing golden mane, and the torso of a mighty warrior. He dragged the tyrant to the threshold of the palace doorway, placed him across his lap at the hour of twilight, and with his sharp lion claws, vanquished the demon without violating a single syllable of Brahma's boon."
+      },
+      {
+        "title": "Chapter 5: The Cooling of Ugra Narasimha: Lakshmi's Grace",
+        "text": "The gods and Devas trembled before the blazing Ugra Narasimha until little Prahlad walked fearlessly forward and placed a fresh garland at the Lord's feet. The lion-god melted in tender parental love, lifting the boy upon his lap and transforming into the tranquil, smiling Lakshmi Narasimha."
+      },
+      {
+        "title": "Chapter 6: The 9 Sanctuaries of Ahobilam",
+        "text": "Deep in the Nallamala forests of Andhra Pradesh lies Ahobilam—the sacred geographical amphitheater where all nine forms (Nava Narasimha) are venerated: Jwala, Ahobila, Malola, Kroda, Pavana, Yogananda, Chatravata, Bhargava, and Karanja."
+      }
+    ]
+  },
+  {
+    "id": "granth_kartikeya_vel",
+    "cat": "vedic",
+    "catLabel": "⚡ CELESTIAL WARRIORS",
+    "title": "Who is Lord Kartikeya? The Celestial General & Master of the Sacred Vel",
+    "pages": 175,
+    "chaptersCount": 6,
+    "emoji": "⚡",
+    "isPremium": false,
+    "coverImg": "/images/kartikeya_murugan.jpg",
+    "desc": "The commander-in-chief of the celestial hosts who wields the spear of supreme wisdom and vanquishes the three primal impurities.",
+    "videoUrl": "https://www.youtube.com/embed/FEFWOTGWLoo",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Six Sparks of Shiva's Third Eye",
+        "text": "To liberate the cosmos from the demonic dominance of Tarakasura, Lord Shiva opened his third eye, releasing six incandescent embers of pure consciousness. Agni and Vayu carried these divine sparks to the sacred reed lake Saravana, where the six Krittika sisters nursed the divine children before Mother Parvati embraced them into a single six-headed deity—Shanmukha."
+      },
+      {
+        "title": "Chapter 2: The Bestowal of the Sacred Vel (Spear of Wisdom)",
+        "text": "Goddess Parvati forged the invincible spear—the Vel—and handed it to her son. The broad blade represents vast wisdom (Agamya Jnana), the sharp point represents pinpoint intellect (Teekshna Buddhi), and the long shaft represents steadfast moral uprightness."
+      },
+      {
+        "title": "Chapter 3: The Slaying of Soorapadman at Tiruchendur",
+        "text": "On the seashore of Tiruchendur, Kartikeya led the Deva army against the shape-shifting titan Soorapadman. When the demon transformed into a giant mango tree in the ocean, Murugan hurled his Vel, splitting the tree into two halves: one became the magnificent peacock mount (Mayil), and the other became the triumphant rooster emblem on his flag."
+      },
+      {
+        "title": "Chapter 4: The Fruit of Wisdom & The Palani Renunciation",
+        "text": "When Sage Narada brought a divine mango of ultimate wisdom, Lord Shiva announced that whoever circled the world first would receive it. While Kartikeya flew around the earth on his peacock, Ganesha simply circled his parents, declaring them to be the entire cosmos. Murugan realized that true wisdom lies in detachment, taking up the ascetic staff atop the sacred Palani hill."
+      },
+      {
+        "title": "Chapter 5: The Arupadai Veedu: Six Sacred Abodes",
+        "text": "The six pilgrimage citadels of Murugan—Thiruparankundram (marriage), Tiruchendur (victory), Palani (renunciation), Swamimalai (teaching Shiva the Pranava OM), Thiruthani (inner peace), and Pazhamudircholai (grace)—form the spiritual spine of southern India."
+      },
+      {
+        "title": "Chapter 6: Subrahmanya & Kundalini Awakening",
+        "text": "In yogic philosophy, Lord Murugan represents the awakened Kundalini Shakti rising through the Sushumna Nadi. The six heads correspond to the six lower Chakras, and the sharp tip of the Vel represents the opening of the thousand-petaled Sahasrara crown of enlightenment."
+      }
+    ]
+  },
+  {
+    "id": "granth_parashurama_axe",
+    "cat": "vedic",
+    "catLabel": "🪓 IMMORTAL CHIRANJIVIS",
+    "title": "Who is Lord Parashurama? The 21 Cosmic Campaigns & The Sacred Western Coast",
+    "pages": 180,
+    "chaptersCount": 6,
+    "emoji": "🪓",
+    "isPremium": false,
+    "coverImg": "/images/parashurama.jpg",
+    "desc": "The immortal warrior sage who eradicated tyrannical monarchs, created the lush Western Ghats, and mentored Bhishma, Drona & Karna.",
+    "videoUrl": "https://www.youtube.com/embed/UiWLSqkjEl8",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Hermitage on the Narmada & The Sacred Kamadhenu",
+        "text": "Born as the fifth son of Sage Jamadagni and Renuka, Parashurama grew up in a tranquil Vedic hermitage on the banks of the Narmada river. The family guarded the divine wish-fulfilling cow Kamadhenu, which provided sacred oblations for all cosmic sacrifices."
+      },
+      {
+        "title": "Chapter 2: The Tyranny of Kartavirya Arjuna & The Martyrdom",
+        "text": "The thousand-armed monarch Kartavirya Arjuna visited the ashram and was fed sumptuously by Kamadhenu. In blind greed, the king stole the calf and ransacked the hermitage. When Jamadagni protested peacefully, the king's sons martyred the sage with twenty-one arrows."
+      },
+      {
+        "title": "Chapter 3: The 21 Earthly Purges of Tyranny",
+        "text": "Seeing the collapse of royal duty into brutal oppression, Parashurama took a vow before his father's funeral pyre: he would cleanse the earth of corrupt warlords twenty-one times. Wielding the divine battle-axe given by Lord Shiva, he restored moral equilibrium to the continent."
+      },
+      {
+        "title": "Chapter 4: The Reclamation of the Western Coast",
+        "text": "Having donated all conquered lands to Sage Kashyapa, Parashurama stood atop the cliffs of Gokarna with no place to rest. He flung his sacred battle-axe across the Arabian Sea, commanding the ocean waters to retreat back to the horizon. The fertile coastal paradise from Konkan to Kanyakumari emerged as Parashurama Kshetra."
+      },
+      {
+        "title": "Chapter 5: Guru to the Legends: Bhishma, Drona & Karna",
+        "text": "As the supreme master of Dhanurveda and Brahmastra warfare, Parashurama trained the greatest heroes of the Mahabharata. He granted the celestial bow Vijaya to Karna, divine missile secrets to Bhishma, and military treatises to Dronacharya."
+      },
+      {
+        "title": "Chapter 6: The Mountain of Eternal Tapas: Mahendragiri",
+        "text": "As one of the seven immortal Chiranjivis, Lord Parashurama resides in deep meditation atop the mist-shrouded Mahendragiri peaks in Odisha, awaiting the arrival of Kalki Avatar in the final age to serve as the divine martial preceptor."
+      }
+    ]
+  },
+  {
+    "id": "granth_10_mahavidyas_tantra",
+    "cat": "vedic",
+    "catLabel": "🌺 SACRED TANTRA & SHAKTI",
+    "title": "Who is Devi Mahakali? The 10 Mahavidyas & The Matrix of Cosmic Wisdom",
+    "pages": 195,
+    "chaptersCount": 6,
+    "emoji": "🌺",
+    "isPremium": false,
+    "coverImg": "/images/mahakali_mahavidya.jpg",
+    "desc": "The 10 cosmic wisdom goddesses of Shakti who govern time, cosmic space, speech, sound, destruction, and transcendental illumination.",
+    "videoUrl": "https://www.youtube.com/embed/nEMdPjM0ahU",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Manifestation of the Ten Directions",
+        "text": "When Lord Shiva attempted to stop Mother Sati from attending Daksha's sacrifice, the Goddess expanded her cosmic aura into ten radiant directions of space. Surrounding Mahadeva were the Ten Wisdom Goddesses (Dasha Mahavidyas), demonstrating that every aspect of the universe is pervaded by Shakti."
+      },
+      {
+        "title": "Chapter 2: Kali & Tara: Primordial Time & Cosmic Deliverance",
+        "text": "Kali represents the formless, all-consuming black fire of Time (Kala) that dissolves all material attachments. Tara represents the compassionate guiding star and sound vibration (Nadha) that ferries seekers across the ocean of worldly delusion."
+      },
+      {
+        "title": "Chapter 3: Tripura Sundari & Bhuvaneshwari: Supreme Beauty & Space",
+        "text": "Shodashi (Tripura Sundari) embodies the flawless geometric perfection of the Sri Yantra and cosmic bliss. Bhuvaneshwari represents the infinite curvature of cosmic space within which the 14 planetary spheres dance."
+      },
+      {
+        "title": "Chapter 4: Bhairavi & Chhinnamasta: Radiance & Ego Sacrifice",
+        "text": "Tripura Bhairavi is the blazing inner fire of Tapasya that burns impurities. Chhinnamasta, who holds her own severed head while feeding her attendants, symbolizes the radical yogic severance of the ego and mastery over Kundalini life-force."
+      },
+      {
+        "title": "Chapter 5: Dhumavati & Bagalamukhi: The Void & The Stunner",
+        "text": "Dhumavati, the smoke-shrouded grandmother goddess, reveals the hidden wisdom in loneliness, poverty, and void. Bagalamukhi possesses the supreme power of Stambhana—paralyzing all negative thoughts, gossip, and destructive forces."
+      },
+      {
+        "title": "Chapter 6: Matangi & Kamala: Sacred Speech & Golden Wealth",
+        "text": "Matangi is the master of spoken word, music, arts, and esoteric knowledge outside societal orthodoxies. Kamala, seated upon the blossoming lotus, is the golden Goddess of spiritual and material abundance, completing the 10-fold mandala of reality."
+      }
+    ]
+  },
+  {
+    "id": "granth_garuda_amrita_heist",
+    "cat": "vedic",
+    "catLabel": "🦅 SACRED CHRONICLES",
+    "title": "The Celestial Heist: Garuda's Epic Quest for the Amrita of Immortality",
+    "pages": 170,
+    "chaptersCount": 6,
+    "emoji": "🦅",
+    "isPremium": false,
+    "coverImg": "/images/garuda_amrita.jpg",
+    "desc": "How the king of birds challenged the Devas of Swarga to liberate his mother Vinata, establishing his eternal glory alongside Vishnu.",
+    "videoUrl": "https://www.youtube.com/embed/rQf6Fkh-Y70",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Deceit of Kadru & The Bondage of Vinata",
+        "text": "In the ancient celestial era, Kadru (mother of serpents) and Vinata (mother of birds) observed the white stallion Uchchaihshravas emerging from the ocean. Kadru wagered that the tail was black, forcing her snake children to cling to the tail to deceive Vinata, plunging her into cruel servitude."
+      },
+      {
+        "title": "Chapter 2: The Price of Liberty: The Pot of Celestial Nectar",
+        "text": "Garuda, born with golden wings that spanned mountains, asked the serpents what price would buy his mother's unconditional freedom. The Nagas demanded the sacred pot of Amrita (nectar of immortality) guarded in the impenetrable fortress of Indra's paradise."
+      },
+      {
+        "title": "Chapter 3: The Gathering of Cosmic Power & The Feast",
+        "text": "Following his father Kashyapa's guidance, Garuda gathered cosmic energy by devouring the giant fighting elephant and tortoise without touching the sacred branch where the microscopic Valakhilya sages were meditating, displaying immense restraint and reverence."
+      },
+      {
+        "title": "Chapter 4: Breaching the Fire-Walls & The Blade-Wheel",
+        "text": "Ascending into Swarga, Garuda extinguished the celestial flames of Agni with waters drawn from 8,100 rivers, smashed through the spinning wheel of razor blades, and blinded the two venomous guardian dragons with dust whipped up by his golden wings."
+      },
+      {
+        "title": "Chapter 5: The Pact with Lord Vishnu",
+        "text": "Carrying the glowing pot of nectar, Garuda encountered Lord Vishnu in mid-air. Impressed that Garuda had not tasted a single drop of the immortal elixir despite holding it in his beak, Vishnu granted him immortality without drinking Amrita, making him his supreme vehicle and emblem."
+      },
+      {
+        "title": "Chapter 6: The Kusha Grass & The Split Tongues of Serpents",
+        "text": "Garuda placed the Amrita pot on sharp Kusha (Darbha) grass before the Nagas, successfully securing his mother's immediate release. As the serpents rushed to bathe before drinking, Indra snatched the vessel away. The Nagas licked the sharp grass blades, causing their tongues to be split in two forever."
+      }
+    ]
+  },
+  {
+    "id": "granth_hanuman_rudra_avatar",
+    "cat": "vedic",
+    "catLabel": "🔱 RUDRA AVATARS",
+    "title": "Who is Lord Hanuman? The 11th Rudra Avatar & The 8 Supernatural Siddhis",
+    "pages": 185,
+    "chaptersCount": 6,
+    "emoji": "🔱",
+    "isPremium": false,
+    "coverImg": "/images/hanuman_cover.jpg",
+    "desc": "The embodiment of devotion, strength, and intellect who bridged the ocean, moved mountains, and commands the 8 mystical Siddhis.",
+    "videoUrl": "https://www.youtube.com/embed/iaW4C8Laif4",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Child of Anjana & The Leap for the Sun",
+        "text": "Born as the 11th Rudra manifestation through the blessings of Vayu, infant Hanuman saw the glowing morning sun and mistook it for a ripe golden fruit. He leaped across the sky, astonishing the celestial realm and out-speeding Rahu on the solar eclipse."
+      },
+      {
+        "title": "Chapter 2: The Thunderbolt of Indra & The Divine Boons",
+        "text": "When Indra struck the child's jaw (Hanu) with his Vajra, Vayu stopped all atmospheric breath in the cosmos. To appease the wind god, the Trimurti and all Devas endowed Hanuman with total immunity from fire, water, weapons, aging, and mortality."
+      },
+      {
+        "title": "Chapter 3: The 8 Siddhis: Mastery of Mind and Form",
+        "text": "Hanuman mastered the Ashta Siddhis under Surya Bhagavan: Anima (reducing size), Mahima (growing vast), Garima (becoming heavy as a mountain), Laghima (becoming light as air), Prapti (traversing anywhere), Prakamya (unmatched will), Ishitva (divine lordship), and Vashitva (harmonizing all beings)."
+      },
+      {
+        "title": "Chapter 4: The 100-Yojana Ocean Leap & The Rescue of Sita",
+        "text": "Expanding into his colossal Viswaroopa, Hanuman leaped across the 800-mile ocean, outsmarting Surasa and slaying Simhika. In the Ashoka Vatika, he delivered Rama's signet ring to Mother Sita, restoring celestial hope across the three worlds."
+      },
+      {
+        "title": "Chapter 5: Lifting the Sanjeevani Mountain (Dronagiri)",
+        "text": "When Lakshmana was struck by Indrajit's mystical spear, Hanuman flew across India to the Himalayas before sunrise. Unable to identify the exact herb among the glowing foliage, he lifted the entire Dronagiri peak upon his palm, flying across the night sky to save his beloved prince."
+      },
+      {
+        "title": "Chapter 6: Panchamukha Hanuman: The 5 Faces of Cosmic Shield",
+        "text": "To extinguish the 5 lamps of Ahiravana in the netherworld simultaneously, Hanuman revealed his 5-faced form: East (Anjaneya), South (Narasimha), West (Garuda), North (Varaha), and Sky (Hayagriva), creating the ultimate protective shield of Sanatana Dharma."
+      }
+    ]
+  },
+  {
+    "id": "granth_venkateswara_leela_balaji",
+    "cat": "vedic",
+    "catLabel": "✨ SACRED SANCTUARIES",
+    "title": "Who is Lord Venkateswara? The Tirumala Descent & The Eternal Debt of Love",
+    "pages": 180,
+    "chaptersCount": 6,
+    "emoji": "✨",
+    "isPremium": false,
+    "coverImg": "/images/venkateswara_tirumala.jpg",
+    "desc": "The Lord of the Seven Hills of Tirumala who descended to earth to protect devotees in the Kali Yuga and repay the golden debt of love.",
+    "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Test of Sage Bhrigu & Lakshmi's Departure",
+        "text": "When the Rishis on the banks of the Ganga sought to dedicate their great sacrifice to the most patient deity, Sage Bhrigu tested Brahma, Shiva, and Vishnu. Vishnu's calm hospitality pacified the sage, but Goddess Lakshmi departed Vaikuntha in righteous anger, descending to Kolhapur."
+      },
+      {
+        "title": "Chapter 2: The Seshachala Hills & The Anthill Tapas",
+        "text": "Longing for Lakshmi, Lord Narayana descended to the sacred Seshachala mountain range (the seven hoods of Adisesha) as Srinivasa, sitting in deep meditation inside an anthill under a tamarind tree for thousands of years."
+      },
+      {
+        "title": "Chapter 3: The Cow of Chola & The Blood on the Crown",
+        "text": "A divine cow secretly poured milk into the anthill daily to sustain the Lord. When the royal cowherd struck the cow with an axe in frustration, Srinivasa emerged from the anthill to take the blow upon his own forehead, staining his sacred crown."
+      },
+      {
+        "title": "Chapter 4: The Marriage with Princess Padmavati",
+        "text": "Princess Padmavati (incarnation of Vedavati and Lakshmi) met Lord Srinivasa in the forest. King Akasa Raja arranged the magnificent wedding in Narayanavanam, bringing harmony between heaven and earth."
+      },
+      {
+        "title": "Chapter 5: The Golden Loan from Lord Kubera",
+        "text": "To host the grand wedding for the entire cosmos, Srinivasa borrowed fourteen million golden Ramamudra coins from Kubera. The sacred bond stipulated that the interest would be repaid through the voluntary offerings of devotees throughout the Kali Yuga."
+      },
+      {
+        "title": "Chapter 6: The Ananda Nilayam: Epicenter of Global Devotion",
+        "text": "Today, Tirumala stands as the spiritual jewel of India where millions of pilgrims shave their heads in humble surrender, receive the sacred Laddus, and witness the timeless majesty of the Lord of Seven Hills."
+      }
+    ]
+  },
+  {
+    "id": "granth_kailash_axis_mundi",
+    "cat": "vedic",
+    "catLabel": "🏔️ SACRED COSMOLOGY",
+    "title": "The Cosmic Secrets of Mount Kailash: The Axis Mundi of the Universe",
+    "pages": 190,
+    "chaptersCount": 6,
+    "emoji": "🏔️",
+    "isPremium": false,
+    "coverImg": "/images/ellora_kailasa.jpg",
+    "desc": "The unclimbed four-faced pyramid mountain that stands at the magnetic center of the world, housing the eternal abode of Shiva and Parvati.",
+    "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+    "chapters": [
+      {
+        "title": "Chapter 1: The Unclimbed Pyramid & Cardinal Geometry",
+        "text": "Rising 21,778 feet into the Tibetan sky, Mount Kailash possesses a unique four-sided pyramid shape precisely aligned with the four cardinal directions: North (Gold), South (Lapis Lazuli), East (Crystal), and West (Ruby)."
+      },
+      {
+        "title": "Chapter 2: Lake Mansarovar & Rakshastal: Light & Shadow",
+        "text": "At the base of Kailash lie two contrasting lakes: Mansarovar (circular, solar, sweet water representing consciousness and clarity) and Rakshastal (crescent, lunar, salty water representing the subconscious mind and raw elemental force)."
+      },
+      {
+        "title": "Chapter 3: The 4 Great Rivers of Asia",
+        "text": "From the four faces of Kailash emerge four life-giving river systems: the Indus (Lion mouth), the Sutlej (Elephant mouth), the Brahmaputra (Horse mouth), and the Karnali-Ganges (Peacock mouth), sustaining over 1.5 billion people across the continent."
+      },
+      {
+        "title": "Chapter 4: The Parikrama: The 52-Kilometer Cosmic Circuit",
+        "text": "Pilgrims from around the world perform the 52-kilometer circumambulation (Kora) around the peak, crossing the perilous 18,600-foot Dolma La pass where old karmic baggage is symbolically left behind."
+      },
+      {
+        "title": "Chapter 5: Time Anomalies & Sonic Resonance",
+        "text": "Travelers and mountaineers have documented strange electromagnetic and temporal phenomena near the peak, including accelerated growth of nails and hair, and acoustic resonances matching the primordial vibration of OM (AUM)."
+      },
+      {
+        "title": "Chapter 6: The Inner Kailash: Seat of Pure Consciousness",
+        "text": "In the highest teachings of Sanatana philosophy, Mount Kailash is not merely a geological mountain—it is the Sahasrara Chakra of planet Earth and the immovable center of inner stillness within every human heart."
+      }
+    ]
+  }
 ];
+
 
     this.granthsData = granths;
 

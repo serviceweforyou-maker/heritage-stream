@@ -8184,6 +8184,382 @@ export const CONTENT_DATA = {
           "visual": "✨"
         }
       ]
+    },
+    {
+      "id": "granth_veerabhadra",
+      "title": "Who is Lord Veerabhadra? The Destroyer of Daksha's Pride",
+      "category": "God Series",
+      "tagline": "The Thousand-Armed Celestial Avenger of Shiva",
+      "description": "The cosmic warrior born from Shiva's matted lock who decimated the arrogant sacrifice of Daksha and restored universal humility.",
+      "duration": "45 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/veerabhadra.jpg",
+      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Yogi",
+        "Warrior",
+        "Scholar"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Sacrificial Fire & Sati's Agony",
+          "text": "When King Daksha organized the greatest Brihaspatisava Yajna in Kanakhala, his supreme pride blinded him. He invited every Gandharva, Deva, and Rishi across the 14 Lokas, but deliberately excluded Lord Shiva. Devi Sati, unable to bear the public denigration of the Supreme Consciousness by her own father, entered the yogic fire of grief, dissolving her physical sheath in celestial agony.",
+          "visual": "🔥"
+        },
+        {
+          "title": "Chapter II: The Matted Lock & The Cosmic Avenger",
+          "text": "Hearing of Sati's dissolution, Lord Shiva performed the terrifying Rudra Tandava atop Mount Kailash. In divine fury, he plucked a single blazing dreadlock (Jata) and hurled it against the cosmic rocks. From the collision of fire and earth arose Lord Veerabhadra—tall as the sky, with a thousand muscular arms, wielding trishulas, flaming battle-axes, and blazing swords, accompanied by Mother Bhadrakali.",
+          "visual": "⚔️"
+        },
+        {
+          "title": "Chapter III: The March upon Kanakhala & The Slaying of Daksha",
+          "text": "With the earth shaking beneath their strides, the billions of Rudra Ganas and Yoginis descended upon Daksha's sacrificial arena. Veerabhadra seized King Daksha by the altar and severed his head with a single stroke of his glowing celestial blade, casting it into the Homa fire to consume the root of pride. Shiva subsequently revived Daksha with a sacrificial goat's head, restoring cosmic dharma.",
+          "visual": "⚡"
+        }
+      ]
+    },
+    {
+      "id": "granth_kalabhairava",
+      "title": "Who is Lord Kalabhairava? The Lord of Sacred Time & Ruler of Kashi",
+      "category": "God Series",
+      "tagline": "The Transcendent Master of Time and Protector of Varanasi",
+      "description": "The supreme master of Time (Kala) and ruler of Varanasi who burns away karmic debts and grants immediate spiritual fearlessness.",
+      "duration": "48 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/kalabhairava.jpg",
+      "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Yogi",
+        "Scholar"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Severing of the Fifth Head of Ego",
+          "text": "In the primordial era, Lord Brahma developed an inflated pride regarding his creative powers, causing a fifth head to sprout upon his crown that spoke boastful and divisive words against the formless Absolute. From Shiva's third eye of cosmic fire stepped forth Lord Kalabhairava—radiant with the glow of midnight sapphires, severing Brahma's fifth head to destroy egoic illusion.",
+          "visual": "⌛"
+        },
+        {
+          "title": "Chapter II: The Holy Soil of Kashi & The Falling Skull",
+          "text": "Wandering through the fourteen Lokas taking upon himself the sacred Kapalika vow, the skull remained firmly adhered to Bhairava's palm until his lotus feet stepped onto the holy ground of Anandavan (Varanasi). The moment he entered Kashi, the skull fell to the earth, marking the sacred site of Kapala Mochana Teertha where all ancestral and cosmic debts are instantly dissolved.",
+          "visual": "🕉️"
+        },
+        {
+          "title": "Chapter III: Kotwal of Kashi & The 8 Directional Guardians",
+          "text": "Lord Shiva appointed Kalabhairava as the eternal Kotwal (Chief Magistrate and Guardian) of Kashi. Across Varanasi, eight dimensional shrines (Ashta Bhairava) guard the directions, ensuring that every soul departing from Manikarnika Ghat receives immediate liberation (Moksha).",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "granth_narasimha_fire",
+      "title": "Who is Lord Narasimha? The Pillar of Cosmic Fire",
+      "category": "God Series",
+      "tagline": "The Half-Lion Avatar & Protector of Faith",
+      "description": "The half-man half-lion avatar who shattered the crystal pillar at twilight to fulfill every cosmic law and protect young Prahlad.",
+      "duration": "42 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/hiranyakashipu_narasimha.jpg",
+      "videoUrl": "https://www.youtube.com/embed/3hmz995sruE",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Yogi",
+        "Warrior",
+        "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Boons of Invincibility & Prahlad's Faith",
+          "text": "King Hiranyakashipu extracted from Brahma the most intricate boon of immortality: he could not be killed by man or beast, inside or outside, by day or night, on ground or sky. Yet young Prahlad remained in blissful trance, reciting the sacred Om Namo Narayanaya mantra amidst poisonous snakes, fire, and mad elephants.",
+          "visual": "🦁"
+        },
+        {
+          "title": "Chapter II: The Shattering of the Crystal Pillar",
+          "text": "When the tyrant struck the crystal pillar in the throne room asking if god was present in stone, the pillar exploded with a cosmic roar. From the pillar stepped Lord Narasimha—with the fierce visage of a lion and the torso of a mighty warrior, dragging the tyrant to the doorway threshold at sunset.",
+          "visual": "💥"
+        },
+        {
+          "title": "Chapter III: The Cooling of Wrath & The Ahobilam Legacy",
+          "text": "Placing the tyrant across his lap at twilight, Narasimha vanquished the demon with his claws without violating a single condition of Brahma's boon. Prahlad's garland calmed the terrifying Ugra Narasimha into the tender Lakshmi Narasimha, revered today across the 9 shrines of Ahobilam.",
+          "visual": "⚜️"
+        }
+      ]
+    },
+    {
+      "id": "granth_kartikeya_vel",
+      "title": "Who is Lord Kartikeya? The Celestial General & Master of the Vel",
+      "category": "God Series",
+      "tagline": "The Commander of Celestial Hosts & Slayer of Asuras",
+      "description": "The commander-in-chief of the celestial hosts who wields the spear of supreme wisdom and vanquishes the three primal impurities.",
+      "duration": "40 Mins",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/kartikeya_murugan.jpg",
+      "videoUrl": "https://www.youtube.com/embed/FEFWOTGWLoo",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Yogi",
+        "Warrior",
+        "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Six Sparks & The Reed Lake Saravana",
+          "text": "To liberate the cosmos from Tarakasura, Lord Shiva opened his third eye, releasing six incandescent embers of consciousness. Nurtured by the six Krittika sisters in the reed lake Saravana, Mother Parvati embraced them into Shanmukha, bestowing the invincible Spear of Wisdom (Vel).",
+          "visual": "⚡"
+        },
+        {
+          "title": "Chapter II: The Victory of Tiruchendur & The Cosmic Peacock",
+          "text": "At Tiruchendur, Murugan split the titan Soorapadman in two: one half became his magnificent peacock vehicle (Mayil), and the other became the victory rooster on his flag. At Palani, he renounced all worldly fruit to teach that the entire cosmos resides within one's own consciousness.",
+          "visual": "🦚"
+        },
+        {
+          "title": "Chapter III: The Arupadai Veedu & Kundalini Rising",
+          "text": "The six pilgrimage citadels across Tamil Nadu mark the six lower energy centers, while the sharp tip of the Vel represents the opening of the thousand-petaled Sahasrara crown of enlightenment.",
+          "visual": "🌟"
+        }
+      ]
+    },
+    {
+      "id": "granth_parashurama_axe",
+      "title": "Who is Lord Parashurama? The Warrior Sage of 21 Battles",
+      "category": "God Series",
+      "tagline": "The Immortal Chiranjivi & Creator of the Western Coast",
+      "description": "The immortal warrior sage who eradicated tyrannical monarchs, created the lush Western Ghats, and mentored Bhishma, Drona & Karna.",
+      "duration": "44 Mins",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/parashurama.jpg",
+      "videoUrl": "https://www.youtube.com/embed/UiWLSqkjEl8",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Warrior",
+        "Scholar"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Narmada Hermitage & The Martyrdom of Jamadagni",
+          "text": "Born to Sage Jamadagni and Renuka, Parashurama guarded the wish-fulfilling cow Kamadhenu. When the thousand-armed king Kartavirya Arjuna ransacked the hermitage and martyred his father, Parashurama took a vow to purge oppressive tyranny from the earth twenty-one times.",
+          "visual": "🪓"
+        },
+        {
+          "title": "Chapter II: Flinging the Axe & The Coast of Kerala",
+          "text": "Having donated all conquered lands to Sage Kashyapa, Parashurama flung his divine battle-axe from the cliffs of Gokarna across the Arabian Sea, commanding the waters to retreat and creating the lush coastal paradise of Parashurama Kshetra.",
+          "visual": "🌊"
+        },
+        {
+          "title": "Chapter III: Guru to the Legends & The Mahendragiri Tapas",
+          "text": "As master of Dhanurveda and Brahmastra warfare, Parashurama trained Bhishma, Dronacharya, and Karna. Today, the immortal Chiranjivi meditates atop the Mahendragiri peaks, awaiting the final age.",
+          "visual": "🏔️"
+        }
+      ]
+    },
+    {
+      "id": "granth_10_mahavidyas_tantra",
+      "title": "Who is Devi Mahakali? The 10 Mahavidyas of Cosmic Wisdom",
+      "category": "God Series",
+      "tagline": "The Matrix of Time, Space, Sound, and Enlightenment",
+      "description": "The 10 cosmic wisdom goddesses of Shakti who govern time, cosmic space, speech, sound, destruction, and transcendental illumination.",
+      "duration": "50 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/mahakali_mahavidya.jpg",
+      "videoUrl": "https://www.youtube.com/embed/nEMdPjM0ahU",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Yogi",
+        "Scholar"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Ten Directions of Space",
+          "text": "When Lord Shiva attempted to stop Mother Sati, the Goddess revealed her ten transcendent forms in the ten directions of space (Dasha Mahavidyas), proving that the entire universe is woven from the fabric of Shakti.",
+          "visual": "🌺"
+        },
+        {
+          "title": "Chapter II: Kali, Tara, Tripura Sundari & Bhuvaneshwari",
+          "text": "Kali represents the all-consuming black fire of Time; Tara is the guiding star of compassionate breath; Tripura Sundari embodies Sri Yantra sacred geometry; and Bhuvaneshwari is the sovereign curvature of cosmic space.",
+          "visual": "🌌"
+        },
+        {
+          "title": "Chapter III: Chhinnamasta, Bagalamukhi, Matangi & Kamala",
+          "text": "Chhinnamasta severs the illusion of ego; Bagalamukhi paralyzes negativity; Matangi governs art and divine speech; and Kamala brings spiritual and material abundance.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "granth_garuda_amrita_heist",
+      "title": "The Celestial Heist: Garuda's Epic Battle for the Amrita",
+      "category": "God Series",
+      "tagline": "How the King of Birds Conquered Swarga for His Mother",
+      "description": "How the king of birds challenged the Devas of Swarga to liberate his mother Vinata, establishing his eternal glory alongside Vishnu.",
+      "duration": "38 Mins",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/garuda_amrita.jpg",
+      "videoUrl": "https://www.youtube.com/embed/rQf6Fkh-Y70",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Warrior",
+        "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Deceit of Kadru & The Quest for Nectar",
+          "text": "To liberate his mother Vinata from the unfair servitude of the serpent mother Kadru, Garuda agreed to breach the impenetrable vaults of Swarga and bring the pot of celestial Amrita.",
+          "visual": "🦅"
+        },
+        {
+          "title": "Chapter II: Smashing the Razor-Blade Wheel & Vishnu's Pact",
+          "text": "Garuda extinguished the celestial fires with water from 8,100 rivers and smashed the spinning wheel of razor blades. Impressed that Garuda did not drink a single drop of the nectar, Lord Vishnu granted him immortality and made him his supreme emblem.",
+          "visual": "🏺"
+        },
+        {
+          "title": "Chapter III: The Kusha Grass & The Liberation of Vinata",
+          "text": "Garuda placed the Amrita vessel on sharp Kusha grass, securing his mother's unconditional release before Indra reclaimed the nectar. The serpents licked the grass, splitting their tongues forever.",
+          "visual": "🌿"
+        }
+      ]
+    },
+    {
+      "id": "granth_hanuman_rudra_avatar",
+      "title": "Who is Lord Hanuman? The 11th Rudra Avatar & 8 Siddhis",
+      "category": "God Series",
+      "tagline": "The Embodiment of Devotion, Strength, and Ashta Siddhis",
+      "description": "The embodiment of devotion, strength, and intellect who bridged the ocean, moved mountains, and commands the 8 mystical Siddhis.",
+      "duration": "46 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/hanuman_cover.jpg",
+      "videoUrl": "https://www.youtube.com/embed/iaW4C8Laif4",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Yogi",
+        "Warrior",
+        "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Sun Ingestion & The 8 Supernatural Siddhis",
+          "text": "Born as the 11th Rudra manifestation through Vayu, infant Hanuman leaped for the rising sun. Endowed with the Ashta Siddhis (Anima, Mahima, Garima, Laghima, Prapti, Prakamya, Ishitva, Vashitva), he mastered form and space.",
+          "visual": "🔱"
+        },
+        {
+          "title": "Chapter II: The Ocean Leap & The Sanjeevani Mountain",
+          "text": "Expanding into Viswaroopa, Hanuman leaped across the 800-mile ocean to find Mother Sita. Later, he lifted the entire Dronagiri peak to deliver the Sanjeevani herb before sunrise and revive Lakshmana.",
+          "visual": "🏔️"
+        },
+        {
+          "title": "Chapter III: Panchamukha Hanuman: The 5 Shields of Protection",
+          "text": "Revealing his 5-faced form (Anjaneya, Narasimha, Garuda, Varaha, Hayagriva), Hanuman extinguished Ahiravana's five lamps simultaneously, establishing universal protection for all devotees.",
+          "visual": "🛡️"
+        }
+      ]
+    },
+    {
+      "id": "granth_venkateswara_leela_balaji",
+      "title": "Who is Lord Venkateswara? The Tirumala Descent & Golden Debt",
+      "category": "God Series",
+      "tagline": "The Lord of Seven Hills & The Eternal Bond of Devotion",
+      "description": "The Lord of the Seven Hills of Tirumala who descended to earth to protect devotees in the Kali Yuga and repay the golden debt of love.",
+      "duration": "45 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": true,
+      "imageUrl": "/images/venkateswara_tirumala.jpg",
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Yogi",
+        "Scholar",
+        "Kids"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Seshachala Hills & The Anthill Tapas",
+          "text": "Following Sage Bhrigu's test, Lord Narayana descended to the sacred Seshachala seven hills as Srinivasa, sitting in deep meditation inside an anthill under a tamarind tree.",
+          "visual": "✨"
+        },
+        {
+          "title": "Chapter II: Princess Padmavati & The Wedding Loan of Kubera",
+          "text": "Srinivasa wed Princess Padmavati in Narayanavanam, borrowing 14 million golden Ramamudra coins from Kubera to be repaid through the voluntary offerings of devotees throughout the Kali Yuga.",
+          "visual": "💰"
+        },
+        {
+          "title": "Chapter III: Ananda Nilayam: The Epicenter of Faith",
+          "text": "Today, Tirumala stands as the spiritual jewel of India where millions surrender their hair in humility and experience the timeless presence of Venkateswara.",
+          "visual": "🛕"
+        }
+      ]
+    },
+    {
+      "id": "granth_kailash_axis_mundi",
+      "title": "The Cosmic Secrets of Mount Kailash: The Axis Mundi",
+      "category": "Unknown Knowledge",
+      "tagline": "The Unclimbed Four-Faced Pyramid & Abode of Shiva",
+      "description": "The unclimbed four-faced pyramid mountain that stands at the magnetic center of the world, housing the eternal abode of Shiva and Parvati.",
+      "duration": "48 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "isGodSeries": false,
+      "imageUrl": "/images/ellora_kailasa.jpg",
+      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Yogi",
+        "Scholar",
+        "Explorer"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The 4-Faced Pyramid & Cardinal Geometry",
+          "text": "Rising 21,778 feet into the sky, Mount Kailash possesses a unique four-sided pyramid shape aligned precisely with the four cardinal directions, serving as the geological Meru of our planet.",
+          "visual": "🏔️"
+        },
+        {
+          "title": "Chapter II: Mansarovar & Rakshastal: Dual Lakes of Consciousness",
+          "text": "At its base lie Lake Mansarovar (circular sweet water of creation) and Lake Rakshastal (crescent salty water of stillness), embodying the balance of solar and lunar forces.",
+          "visual": "🌊"
+        },
+        {
+          "title": "Chapter III: The Four Rivers & The Inner Stillness of Shiva",
+          "text": "From its four faces spring the Indus, Sutlej, Brahmaputra, and Karnali-Ganges. Beyond geography, Kailash represents the Sahasrara Chakra and the immutable stillness within every human heart.",
+          "visual": "🧘"
+        }
+      ]
     }
   ],
   "games": {
