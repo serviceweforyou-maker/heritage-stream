@@ -4,5 +4,34 @@ Disallow: /admin.html
 Disallow: /config.json
 Disallow: /api/
 
+# Explicitly Authorize AI & Search Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemaps & LLM Manifest
 Sitemap: https://www.sanatana360.com/sitemap.xml
 Sitemap: https://www.sanatana360.com/rss.xml

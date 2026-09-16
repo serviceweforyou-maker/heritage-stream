@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=79";
-import heritageData from "./data.js?v=79";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=79";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=80";
+import heritageData from "./data.js?v=80";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=80";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -3950,7 +3950,40 @@ class AppController {
     this.playContent(item, true);
   }
 
+  updateDynamicSEO(title, description, image, path) {
+    if (title) document.title = `${title} | Sanatana360`;
+    if (description) {
+      const descMeta = document.querySelector('meta[name="description"]');
+      if (descMeta) descMeta.setAttribute('content', description);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', description);
+    }
+    if (title) {
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', `${title} | Sanatana360`);
+      const twTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twTitle) twTitle.setAttribute('content', `${title} | Sanatana360`);
+    }
+    if (image) {
+      const fullImg = image.startsWith('http') ? image : `https://www.sanatana360.com${image.startsWith('/') ? '' : '/'}${image}`;
+      const ogImg = document.querySelector('meta[property="og:image"]');
+      if (ogImg) ogImg.setAttribute('content', fullImg);
+      const twImg = document.querySelector('meta[name="twitter:image"]');
+      if (twImg) twImg.setAttribute('content', fullImg);
+    }
+    if (path) {
+      const fullUrl = path.startsWith('http') ? path : `https://www.sanatana360.com/${path.replace(/^\/?/, '')}`;
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.setAttribute('content', fullUrl);
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute('href', fullUrl);
+    }
+  }
+
   openReader(item) {
+    if (item) {
+      this.updateDynamicSEO(item.title, item.description || item.tagline, item.imageUrl, `#course-${item.id}`);
+    }
     if (window.flipBook) {
       window.flipBook.open(item);
     } else {
@@ -6928,6 +6961,9 @@ class AppController {
   }
 
   openGranthReader(granth) {
+    if (granth) {
+      this.updateDynamicSEO(granth.title, granth.desc, granth.coverImg, `#granth-${granth.id}`);
+    }
     this.isSubscribed = (typeof DatabaseService !== 'undefined' && DatabaseService.isSubscribed()) || !!this.isSubscribed;
     if (granth.isPremium && !this.isSubscribed) {
       this.openPaymentModal();
