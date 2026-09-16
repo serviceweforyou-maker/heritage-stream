@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=58";
-import heritageData from "./data.js?v=58";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=58";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=76";
+import heritageData from "./data.js?v=76";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=76";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -26,7 +26,7 @@ export class DatabaseService {
     }
 
     if (!raw || !raw.content || !Array.isArray(raw.content) || raw.content.length === 0) {
-      raw = heritageData;
+      raw = heritageData || (typeof window !== "undefined" ? window.COURSES_DATA : null);
     }
 
     // Normalize schema to support both flat fallback array and split backend tables

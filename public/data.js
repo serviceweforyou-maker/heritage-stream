@@ -1,4 +1,4 @@
-window.COURSES_DATA = {
+const COURSES_DATA = {
   "categories": [
     "Docu-Series",
     "Audiobooks & Legends",
@@ -8725,3 +8725,9 @@ window.COURSES_DATA = {
     ]
   }
 };
+
+if (typeof window !== 'undefined') {
+  window.COURSES_DATA = COURSES_DATA;
+}
+
+export default COURSES_DATA;
