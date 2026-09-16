@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=77";
-import heritageData from "./data.js?v=77";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=77";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=78";
+import heritageData from "./data.js?v=78";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=78";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -6029,7 +6029,7 @@ class AppController {
   {
     "id": "granth_panchatantra_5_tantras",
     "cat": "morals",
-    "catLabel": "🧒 MORAL EPICS",
+    "catLabel": "🧒 MORAL & HEROIC EPICS",
     "title": "Panchatantra: The 5 Tantras of Strategic Wisdom",
     "pages": 190,
     "chaptersCount": 6,
@@ -6068,7 +6068,7 @@ class AppController {
   {
     "id": "granth_vikram_betal_25",
     "cat": "morals",
-    "catLabel": "🧒 MORAL EPICS",
+    "catLabel": "🧒 MORAL & HEROIC EPICS",
     "title": "Vikram & Betal: 25 Riddles of Justice & Statecraft",
     "pages": 215,
     "chaptersCount": 6,
@@ -6107,7 +6107,7 @@ class AppController {
   {
     "id": "granth_abhimanyu_chakravyuha",
     "cat": "morals",
-    "catLabel": "🧒 MORAL EPICS",
+    "catLabel": "🧒 MORAL & HEROIC EPICS",
     "title": "Abhimanyu: The 16-Year-Old Lion in the Chakravyuha",
     "pages": 165,
     "chaptersCount": 6,
@@ -6146,7 +6146,7 @@ class AppController {
   {
     "id": "granth_tenali_birbal_wit",
     "cat": "morals",
-    "catLabel": "🧒 MORAL EPICS",
+    "catLabel": "🧒 MORAL & HEROIC EPICS",
     "title": "Tenali Rama & Birbal: Tales of Wit & Court Logic",
     "pages": 175,
     "chaptersCount": 6,
@@ -6184,8 +6184,8 @@ class AppController {
   },
   {
     "id": "granth_veerabhadra",
-    "cat": "vedic",
-    "catLabel": "⚔️ DIVINE WARRIORS",
+    "cat": "sages",
+    "catLabel": "⚔️ SAGES & AVATARS",
     "title": "Who is Lord Veerabhadra? The Fierce Destroyer of Daksha's Pride",
     "pages": 185,
     "chaptersCount": 6,
@@ -6223,8 +6223,8 @@ class AppController {
   },
   {
     "id": "granth_kalabhairava",
-    "cat": "vedic",
-    "catLabel": "⌛ COSMIC TIME & TANTRA",
+    "cat": "sages",
+    "catLabel": "⚔️ SAGES & AVATARS",
     "title": "Who is Lord Kalabhairava? The Lord of Sacred Time & Ruler of Kashi",
     "pages": 190,
     "chaptersCount": 6,
@@ -6262,8 +6262,8 @@ class AppController {
   },
   {
     "id": "granth_narasimha_fire",
-    "cat": "vedic",
-    "catLabel": "🦁 SUPREME AVATARS",
+    "cat": "sages",
+    "catLabel": "⚔️ SAGES & AVATARS",
     "title": "Who is Lord Narasimha? The Pillar of Cosmic Fire & The Shield of Faith",
     "pages": 180,
     "chaptersCount": 6,
@@ -6301,8 +6301,8 @@ class AppController {
   },
   {
     "id": "granth_kartikeya_vel",
-    "cat": "vedic",
-    "catLabel": "⚡ CELESTIAL WARRIORS",
+    "cat": "sages",
+    "catLabel": "⚔️ SAGES & AVATARS",
     "title": "Who is Lord Kartikeya? The Celestial General & Master of the Sacred Vel",
     "pages": 175,
     "chaptersCount": 6,
@@ -6340,8 +6340,8 @@ class AppController {
   },
   {
     "id": "granth_parashurama_axe",
-    "cat": "vedic",
-    "catLabel": "🪓 IMMORTAL CHIRANJIVIS",
+    "cat": "sages",
+    "catLabel": "⚔️ SAGES & AVATARS",
     "title": "Who is Lord Parashurama? The 21 Cosmic Campaigns & The Sacred Western Coast",
     "pages": 180,
     "chaptersCount": 6,
@@ -6379,8 +6379,8 @@ class AppController {
   },
   {
     "id": "granth_10_mahavidyas_tantra",
-    "cat": "vedic",
-    "catLabel": "🌺 SACRED TANTRA & SHAKTI",
+    "cat": "sages",
+    "catLabel": "⚔️ SAGES & AVATARS",
     "title": "Who is Devi Mahakali? The 10 Mahavidyas & The Matrix of Cosmic Wisdom",
     "pages": 195,
     "chaptersCount": 6,
@@ -6418,8 +6418,8 @@ class AppController {
   },
   {
     "id": "granth_garuda_amrita_heist",
-    "cat": "vedic",
-    "catLabel": "🦅 SACRED CHRONICLES",
+    "cat": "morals",
+    "catLabel": "🧒 MORAL & HEROIC EPICS",
     "title": "The Celestial Heist: Garuda's Epic Quest for the Amrita of Immortality",
     "pages": 170,
     "chaptersCount": 6,
@@ -6457,8 +6457,8 @@ class AppController {
   },
   {
     "id": "granth_hanuman_rudra_avatar",
-    "cat": "vedic",
-    "catLabel": "🔱 RUDRA AVATARS",
+    "cat": "morals",
+    "catLabel": "🧒 MORAL & HEROIC EPICS",
     "title": "Who is Lord Hanuman? The 11th Rudra Avatar & The 8 Supernatural Siddhis",
     "pages": 185,
     "chaptersCount": 6,
@@ -6496,8 +6496,8 @@ class AppController {
   },
   {
     "id": "granth_venkateswara_leela_balaji",
-    "cat": "vedic",
-    "catLabel": "✨ SACRED SANCTUARIES",
+    "cat": "sanatana",
+    "catLabel": "🕉️ COSMIC SANATANA",
     "title": "Who is Lord Venkateswara? The Tirumala Descent & The Eternal Debt of Love",
     "pages": 180,
     "chaptersCount": 6,
@@ -6535,8 +6535,8 @@ class AppController {
   },
   {
     "id": "granth_kailash_axis_mundi",
-    "cat": "vedic",
-    "catLabel": "🏔️ SACRED COSMOLOGY",
+    "cat": "sanatana",
+    "catLabel": "🕉️ COSMIC SANATANA",
     "title": "The Cosmic Secrets of Mount Kailash: The Axis Mundi of the Universe",
     "pages": 190,
     "chaptersCount": 6,
@@ -6648,7 +6648,7 @@ class AppController {
       });
     };
 
-    // Initial render of all 16 granths
+    // Initial render of all 26 granths
     renderGranthSlider('all');
 
     // Slider Previous / Next Arrows
