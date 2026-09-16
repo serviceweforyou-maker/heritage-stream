@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=76";
-import heritageData from "./data.js?v=76";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=76";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=77";
+import heritageData from "./data.js?v=77";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=77";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -850,8 +850,13 @@ class AppController {
 
       standardRows.sort((a, b) => a.weight - b.weight);
 
-      standardRows.forEach(row => {
-        standardHTML += this.createRowHTML(
+      // Progressive chunked rendering: Render first 2 primary rows immediately, defer remaining for zero TBT
+      const primaryRows = standardRows.slice(0, 2);
+      const secondaryRows = standardRows.slice(2);
+
+      let primaryHTML = '';
+      primaryRows.forEach(row => {
+        primaryHTML += this.createRowHTML(
           row.parentId,
           row.id,
           row.subheading,
@@ -860,9 +865,34 @@ class AppController {
           row.isAudio
         );
       });
+      standardContainer.innerHTML = primaryHTML;
+      this.bindCardInteractions();
+      this.bindRowSliders();
 
-      standardContainer.innerHTML = standardHTML;
-      this.isStandardRowsRendered = true;
+      // Defer remaining rows to idle frame for ultra-fast initial paint
+      const renderSecondary = () => {
+        let secondaryHTML = '';
+        secondaryRows.forEach(row => {
+          secondaryHTML += this.createRowHTML(
+            row.parentId,
+            row.id,
+            row.subheading,
+            row.title,
+            row.items,
+            row.isAudio
+          );
+        });
+        standardContainer.insertAdjacentHTML('beforeend', secondaryHTML);
+        this.bindCardInteractions();
+        this.bindRowSliders();
+        this.isStandardRowsRendered = true;
+      };
+
+      if (typeof requestIdleCallback !== 'undefined') {
+        requestIdleCallback(renderSecondary, { timeout: 150 });
+      } else {
+        setTimeout(renderSecondary, 50);
+      }
     }
 
     // Bind card click triggers & 3D tilt effects
@@ -1510,7 +1540,7 @@ class AppController {
         <!-- Thumbnail Cover with beautiful Gradient & lazy-loaded image -->
         <div class="h-40 w-full relative flex flex-col justify-between p-4 overflow-hidden">
           ${item.imageUrl ? `
-            <img src="${item.imageUrl}" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" alt="${item.title}">
+            <img src="${item.imageUrl}" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" alt="${item.title}">
             <div class="absolute inset-0 z-10 pointer-events-none" style="background-color: ${tintColor}; mix-blend-mode: overlay; opacity: 0.85;"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-15 pointer-events-none"></div>
           ` : `
