@@ -132,49 +132,59 @@ header#main-header {
 }
 
 /* =============================================
-   CINEMA-GRADE HERO SPOTLIGHT SLIDER
+   CINEMA-GRADE HERO SPOTLIGHT SLIDER (Perfect Pro Fitting)
    ============================================= */
 #hero-spotlight {
   position: relative;
   width: 100%;
-  height: clamp(500px, 68vh, 720px);
-  min-height: 500px;
+  height: clamp(620px, 82vh, 880px);
+  min-height: 580px;
   background: #07080c;
   overflow: hidden;
 }
 
 @media (max-width: 640px) {
   #hero-spotlight {
-    height: clamp(480px, 62vh, 560px);
-    min-height: 480px;
+    height: clamp(560px, 78vh, 680px);
+    min-height: 530px;
   }
 }
 
 .spotlight-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   will-change: opacity, transform;
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .spotlight-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   will-change: transform;
+  transition: transform 7.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Spotlight Navigation Glass Buttons */
 .spotlight-arrow-btn {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 9999px;
-  background: rgba(7, 8, 12, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(7, 8, 12, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
-  transition: all 0.25s ease;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   z-index: 30;
 }
 
@@ -182,13 +192,13 @@ header#main-header {
   background: var(--gold);
   color: #07080c;
   border-color: var(--gold);
-  transform: translateY(-50%) scale(1.08);
-  box-shadow: 0 0 20px var(--gold-glow);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
 }
 
 /* Spotlight Bullet Dot Indicator */
 .spotlight-dot {
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* =============================================

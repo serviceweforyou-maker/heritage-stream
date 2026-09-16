@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=82";
-import heritageData from "./data.js?v=82";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=82";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=83";
+import heritageData from "./data.js?v=83";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=83";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -543,11 +543,22 @@ class AppController {
       this.spotlightInterval = null;
     }
 
-    // Select premier highlights with rich imagery
-    const premierIds = ['hampi', 'shiva_tandava', 'ajanta_ellora', 'brihadisvara', 'konark_sun', 'varanasi'];
-    let slides = allContent.filter(x => premierIds.includes(x.id));
+    // Premier Highlights with high-definition curated imagery and epic themes
+    const premierIds = [
+      'hampi',
+      'course_mudra_vigyan_stress',
+      'chola',
+      'dashavatara',
+      'sundials',
+      'ajanta'
+    ];
+    let slides = [];
+    premierIds.forEach(id => {
+      const found = allContent.find(x => x.id === id);
+      if (found) slides.push(found);
+    });
     if (slides.length < 4) {
-      slides = allContent.slice(0, 5);
+      slides = allContent.slice(0, 6);
     }
     if (!slides.length) return;
     let currentIdx = 0;
@@ -556,73 +567,81 @@ class AppController {
       <div class="relative w-full h-full overflow-hidden select-none">
         <!-- Slide items -->
         <div id="spotlight-slides-container" class="relative w-full h-full">
-          ${slides.map((item, idx) => `
+          ${slides.map((item, idx) => {
+            const badgeType = item.category === 'Wellness & Mudra Shastra' || (item.id && item.id.includes('mudra')) 
+              ? '🧘 SACRED WELLNESS' 
+              : (item.category === 'God Series' ? '🔱 DIVINE SAGA' : '🏆 PREMIER SAGA');
+            return `
             <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}" data-index="${idx}">
-              <img src="${item.imageUrl || '/images/hampi.jpg'}" ${idx > 0 ? 'loading="lazy"' : ''} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out ${idx === 0 ? 'scale-100' : 'scale-105'}" style="object-position: center 25%;" alt="${item.title}">
+              <img src="${item.imageUrl || '/images/hampi.jpg'}" ${idx > 0 ? 'loading="lazy"' : ''} class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[7500ms] ease-out ${idx === 0 ? 'scale-105' : 'scale-100'}" alt="${item.title}">
               
-              <!-- Cinematic Vignette Gradient Overlays -->
-              <div class="absolute inset-0 bg-gradient-to-r from-[#07080c] via-[#07080c]/90 md:via-[#07080c]/50 to-transparent z-10 pointer-events-none"></div>
+              <!-- Hollywood-Grade Multi-Layer Vignette Scrim Overlays -->
+              <div class="absolute inset-0 bg-gradient-to-r from-[#07080c]/95 via-[#07080c]/70 md:via-[#07080c]/35 to-transparent z-10 pointer-events-none md:w-3/4"></div>
               <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/40 to-transparent z-10 pointer-events-none"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-10 pointer-events-none"></div>
+              <div class="absolute top-0 left-0 right-0 h-44 bg-gradient-to-b from-black/85 via-black/40 to-transparent z-10 pointer-events-none"></div>
               
-              <!-- Content Details Container -->
-              <div class="max-w-4xl pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-10 sm:pb-14 px-4 sm:px-8 md:px-14 lg:px-16 h-full flex flex-col justify-center sm:justify-end relative z-20">
+              <!-- Content Details Container (Generously padded to clear 3-tier header) -->
+              <div class="max-w-4xl pt-36 sm:pt-40 md:pt-48 lg:pt-52 pb-14 sm:pb-16 px-4 sm:px-8 md:px-14 lg:px-20 h-full flex flex-col justify-end relative z-20">
                 
                 <!-- Badge & Metadata -->
-                <div class="flex items-center gap-2 mb-2 sm:mb-2.5 flex-wrap">
-                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 text-gold text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider border border-gold/30 shadow-sm backdrop-blur-md">
+                <div class="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 text-gold text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider border border-gold/40 shadow-sm backdrop-blur-md">
                     <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-                    🏆 FEATURED SAGA
+                    ${badgeType}
                   </span>
-                  <span class="text-[10px] sm:text-[11px] font-mono text-white/60 bg-white/10 px-2 py-0.5 rounded-full border border-white/10 backdrop-blur-sm">
+                  <span class="text-[10px] sm:text-[11px] font-mono text-white/80 bg-black/60 px-2.5 py-0.5 rounded-full border border-white/15 backdrop-blur-md">
                     ${item.category || 'Docu-Series'}
                   </span>
-                  <span class="text-[10px] sm:text-[11px] font-mono text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
-                    ${item.rating || '9.8 ★'}
+                  <span class="text-[10px] sm:text-[11px] font-mono text-amber-300 font-bold bg-amber-500/20 px-2.5 py-0.5 rounded-full border border-amber-500/30 backdrop-blur-md">
+                    ${item.rating || '9.9 ★'}
+                  </span>
+                  <span class="text-[10px] sm:text-[11px] font-mono text-emerald-400 font-bold bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30 backdrop-blur-md hidden sm:inline-block">
+                    4K Ultra HD
                   </span>
                 </div>
 
                 <!-- Title -->
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white font-serif mb-1.5 sm:mb-2 leading-tight tracking-wide drop-shadow-2xl break-words">
+                <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white font-serif mb-2 sm:mb-2.5 leading-tight tracking-wide drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] break-words max-w-3xl">
                   ${item.title}
                 </h1>
 
                 <!-- Tagline -->
-                <p class="text-xs sm:text-sm md:text-base text-gold font-medium mb-2 italic font-serif line-clamp-1 drop-shadow">
-                  "${item.tagline}"
+                <p class="text-xs sm:text-sm md:text-base text-gold font-medium mb-2.5 italic font-serif line-clamp-1 drop-shadow-md">
+                  "${item.tagline || ''}"
                 </p>
 
                 <!-- Description -->
-                <p class="text-xs sm:text-sm text-white/85 max-w-2xl mb-4 sm:mb-6 leading-relaxed line-clamp-2 sm:line-clamp-3 md:line-clamp-4 font-sans drop-shadow">
+                <p class="text-xs sm:text-sm md:text-base text-white/90 max-w-2xl mb-5 sm:mb-6 leading-relaxed line-clamp-2 sm:line-clamp-3 font-sans drop-shadow">
                   ${item.description}
                 </p>
 
                 <!-- Action Buttons -->
-                <div class="hero-actions flex flex-wrap gap-2.5 sm:gap-3 items-center">
-                  <button class="hero-play-slide-btn px-6 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-full text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-gold/25 flex items-center gap-2 hover:scale-105 cursor-pointer" data-id="${item.id}">
-                    <span>▶ Play Episode</span>
-                    <span class="text-[11px] opacity-75 font-mono">(${item.duration})</span>
+                <div class="hero-actions flex flex-wrap gap-2.5 sm:gap-3.5 items-center">
+                  <button class="hero-play-slide-btn px-6 sm:px-8 py-3 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-full text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-gold/30 flex items-center gap-2 hover:scale-105 cursor-pointer" data-id="${item.id}">
+                    <span>▶ Watch Episode</span>
+                    <span class="text-[11px] opacity-75 font-mono">(${item.duration || '45 Mins'})</span>
                   </button>
-                  <button class="hero-info-slide-btn px-5 sm:px-6 py-2.5 sm:py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-gold/50 font-bold rounded-full text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 backdrop-blur-md hover:scale-105 cursor-pointer" data-id="${item.id}">
-                    <span>ℹ More Details</span>
+                  <button class="hero-read-slide-btn px-5 sm:px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/25 hover:border-gold/60 font-bold rounded-full text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 backdrop-blur-md hover:scale-105 cursor-pointer" data-id="${item.id}">
+                    <span>📖 Sacred Book</span>
                   </button>
-                  <button class="hero-read-slide-btn px-4 sm:px-5 py-2.5 sm:py-3 bg-gold/10 hover:bg-gold/20 text-gold border border-gold/30 hover:border-gold font-bold rounded-full text-xs sm:text-sm transition-all duration-300 hidden sm:flex items-center gap-1.5 backdrop-blur-md cursor-pointer" data-id="${item.id}">
-                    <span>📖 3D Reader</span>
+                  <button class="hero-info-slide-btn px-5 sm:px-6 py-3 bg-gold/10 hover:bg-gold/20 text-gold border border-gold/40 hover:border-gold font-bold rounded-full text-xs sm:text-sm transition-all duration-300 hidden sm:flex items-center gap-1.5 backdrop-blur-md hover:scale-105 cursor-pointer" data-id="${item.id}">
+                    <span>ℹ Explore Saga</span>
                   </button>
                 </div>
               </div>
             </div>
-          `).join('')}
+            `;
+          }).join('')}
         </div>
 
-        <!-- Left/Right Arrows with OTT Glassmorphism -->
-        <button id="spotlight-prev-btn" class="spotlight-arrow-btn hidden sm:flex absolute left-3 md:left-6 top-1/2 -translate-y-1/2" aria-label="Previous Slide">◀</button>
-        <button id="spotlight-next-btn" class="spotlight-arrow-btn hidden sm:flex absolute right-3 md:right-6 top-1/2 -translate-y-1/2" aria-label="Next Slide">▶</button>
+        <!-- Left/Right Glass Arrows -->
+        <button id="spotlight-prev-btn" class="spotlight-arrow-btn hidden sm:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2" aria-label="Previous Slide">◀</button>
+        <button id="spotlight-next-btn" class="spotlight-arrow-btn hidden sm:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2" aria-label="Next Slide">▶</button>
 
         <!-- Bullet Indicators -->
-        <div class="absolute bottom-5 sm:bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+        <div class="absolute bottom-5 sm:bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 sm:gap-2.5">
           ${slides.map((_, idx) => `
-            <span class="spotlight-dot h-2 sm:h-2.5 rounded-full cursor-pointer transition-all duration-300 ${idx === 0 ? 'bg-gold w-6 sm:w-8' : 'w-2 sm:w-2.5 bg-white/30 hover:bg-white/50'}" data-index="${idx}"></span>
+            <span class="spotlight-dot h-2 sm:h-2.5 rounded-full cursor-pointer transition-all duration-300 ${idx === 0 ? 'bg-gold w-7 sm:w-9 shadow-[0_0_12px_rgba(212,175,55,0.6)]' : 'w-2 sm:w-2.5 bg-white/30 hover:bg-white/60'}" data-index="${idx}"></span>
           `).join('')}
         </div>
       </div>
@@ -634,26 +653,30 @@ class AppController {
     const showSlide = (targetIdx) => {
       currentIdx = targetIdx;
       
-      // Update slides transition
       slideEls.forEach((slide, idx) => {
         const img = slide.querySelector('img');
         if (idx === currentIdx) {
           slide.classList.remove('opacity-0', 'z-0');
           slide.classList.add('opacity-100', 'z-10');
-          if (img) img.classList.replace('scale-105', 'scale-100');
+          if (img) {
+            img.classList.remove('scale-100');
+            img.classList.add('scale-105');
+          }
         } else {
           slide.classList.remove('opacity-100', 'z-10');
           slide.classList.add('opacity-0', 'z-0');
-          if (img) img.classList.replace('scale-100', 'scale-105');
+          if (img) {
+            img.classList.remove('scale-105');
+            img.classList.add('scale-100');
+          }
         }
       });
 
-      // Update dot styles
       dotEls.forEach((dot, idx) => {
         if (idx === currentIdx) {
-          dot.className = "spotlight-dot h-2 sm:h-2.5 rounded-full cursor-pointer transition-all duration-300 bg-gold w-6 sm:w-8";
+          dot.className = "spotlight-dot h-2 sm:h-2.5 rounded-full cursor-pointer transition-all duration-300 bg-gold w-7 sm:w-9 shadow-[0_0_12px_rgba(212,175,55,0.6)]";
         } else {
-          dot.className = "spotlight-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full cursor-pointer transition-all duration-300 bg-white/30 hover:bg-white/50";
+          dot.className = "spotlight-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full cursor-pointer transition-all duration-300 bg-white/30 hover:bg-white/60";
         }
       });
     };
@@ -665,10 +688,9 @@ class AppController {
 
     const resetInterval = () => {
       clearInterval(this.spotlightInterval);
-      this.spotlightInterval = setInterval(advanceSlide, 6500);
+      this.spotlightInterval = setInterval(advanceSlide, 7000);
     };
 
-    // Bind navigation buttons
     const prevBtn = heroSection.querySelector('#spotlight-prev-btn');
     const nextBtn = heroSection.querySelector('#spotlight-next-btn');
     if (prevBtn) {
@@ -695,7 +717,6 @@ class AppController {
       });
     });
 
-    // Touch Swipe Support for Mobile & Tablet Gesture Momentum
     let touchStartX = 0;
     let touchEndX = 0;
     heroSection.addEventListener('touchstart', (e) => {
@@ -706,19 +727,16 @@ class AppController {
       touchEndX = e.changedTouches[0].screenX;
       const diff = touchEndX - touchStartX;
       if (diff > 50) {
-        // Swipe Right -> Prev
         const prevIdx = (currentIdx - 1 + slides.length) % slides.length;
         showSlide(prevIdx);
         resetInterval();
       } else if (diff < -50) {
-        // Swipe Left -> Next
         const nextIdx = (currentIdx + 1) % slides.length;
         showSlide(nextIdx);
         resetInterval();
       }
     }, { passive: true });
 
-    // Bind action buttons for each slide
     slides.forEach((item, idx) => {
       const cardEl = heroSection.querySelector(`.spotlight-slide[data-index="${idx}"]`);
       if (cardEl) {
@@ -732,13 +750,18 @@ class AppController {
           infoBtn.addEventListener('click', () => this.playContent(item, false));
         }
         if (readBtn) {
-          readBtn.addEventListener('click', () => this.openReader(item));
+          readBtn.addEventListener('click', () => {
+            if (window.flipBook) {
+              window.flipBook.open(item);
+            } else {
+              this.playContent(item, false);
+            }
+          });
         }
       }
     });
 
-    // Launch auto-slideshow
-    this.spotlightInterval = setInterval(advanceSlide, 6500);
+    resetInterval();
   }
 
   // Render Horizontal Carousel Lists
