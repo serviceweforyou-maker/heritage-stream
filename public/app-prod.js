@@ -106,8 +106,8 @@ export class DatabaseService {
     });
 
     // Re-split normalized arrays
-    docuSeries = content.filter(x => !x.audioUrl);
-    audioStories = content.filter(x => x.audioUrl);
+    docuSeries = content.filter(x => x.category === "Video Series" || x.category === "Docu-Series" || !!x.videoUrl);
+    audioStories = content.filter(x => x.category === "Audiobooks & Legends" || x.category === "Ebook & Audio Series" || (!x.videoUrl && !!x.audioUrl));
 
     return {
       categories,
@@ -755,7 +755,7 @@ class AppController {
           parentId: "docu-parent",
           subheading: "Heritage Video Catalogue",
           title: "Video Series",
-          items: all.filter(x => (x.category === "Video Series" || x.category === "Docu-Series") && !x.audioUrl),
+          items: all.filter(x => x.category === "Video Series" || x.category === "Docu-Series" || (!!x.videoUrl && x.category !== "Audiobooks & Legends")),
           isAudio: false,
           weight: 0
         },
@@ -817,7 +817,7 @@ class AppController {
           row.subheading,
           row.title,
           row.items,
-          row.isAudio || !!row.items.some(x => x.audioUrl)
+          row.isAudio
         );
       });
 
@@ -1398,12 +1398,10 @@ class AppController {
         const id = card.getAttribute('data-id');
         const isAudio = card.getAttribute('data-type') === 'audio';
         
-        let item;
-        if (isAudio) {
-          item = this.contentData.audioStories.find(x => x.id === id);
-        } else {
-          item = this.contentData.docuSeries.find(x => x.id === id);
-        }
+        const allList = (this.contentData && this.contentData.content) ? this.contentData.content : [];
+        let item = allList.find(x => x.id === id) || 
+                   (this.contentData?.docuSeries?.find(x => x.id === id)) || 
+                   (this.contentData?.audioStories?.find(x => x.id === id));
         
         if (item) {
           this.playContent(item, isAudio);
@@ -1538,7 +1536,7 @@ class AppController {
       return;
     }
 
-    if (isAudio) {
+    if (isAudio && !item.videoUrl) {
       this.openAudioPlayer(item);
     } else {
       this.openDocuReader(item);
@@ -1547,6 +1545,11 @@ class AppController {
 
   // Docu-Series slide player modal (supports video player & slides)
   openDocuReader(item) {
+    if (!item) {
+      console.warn("openDocuReader called with empty item");
+      return;
+    }
+
     // Save playtime tracking details
     this.activePlayItemId = item.id;
     this.activePlayStartTime = Date.now();
@@ -1565,11 +1568,12 @@ class AppController {
     const modal = document.getElementById('media-modal');
     const modalTitle = document.getElementById('media-modal-title');
     const modalBody = document.getElementById('media-modal-body');
+    if (!modal || !modalTitle || !modalBody) return;
 
     modalTitle.innerHTML = `
       <div class="flex items-center gap-3">
-        <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">VIDEO & MANUSCRIPT</span>
-        <h2 class="text-lg md:text-xl font-bold font-serif text-white">${item.title}</h2>
+        <span class="bg-red-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase tracking-wider">${item.videoUrl ? 'VIDEO & MANUSCRIPT' : 'SACRED MANUSCRIPT'}</span>
+        <h2 class="text-base md:text-xl font-bold font-serif text-white line-clamp-1">${item.title}</h2>
       </div>
     `;
 
@@ -1577,98 +1581,82 @@ class AppController {
 
     const renderVideoTabHTML = () => {
       if (!item.videoUrl) {
-        // ── Coming Soon Overlay ──
         return `
           <div class="p-6">
             <div class="aspect-video w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg shadow-black/40 relative flex flex-col items-center justify-center"
-              style="background: radial-gradient(ellipse at 60% 30%, rgba(212,175,55,0.08) 0%, rgba(5,6,10,0.95) 70%), url('${item.imageUrl}') center/cover no-repeat;">
-              <!-- Dark overlay -->
+              style="background: radial-gradient(ellipse at 60% 30%, rgba(212,175,55,0.08) 0%, rgba(5,6,10,0.95) 70%), url('${item.imageUrl || '/images/hampi.jpg'}') center/cover no-repeat;">
               <div class="absolute inset-0 bg-black/70 backdrop-blur-sm rounded-2xl"></div>
-              <!-- Content -->
-              <div class="relative z-10 text-center px-8 space-y-5">
-                <div class="w-20 h-20 mx-auto rounded-full border-2 border-gold/40 flex items-center justify-center" style="background: rgba(212,175,55,0.08);">
-                  <span class="text-4xl">🎬</span>
+              <div class="relative z-10 text-center px-8 space-y-4">
+                <div class="w-16 h-16 mx-auto rounded-full border border-gold/40 flex items-center justify-center bg-gold/10">
+                  <span class="text-3xl">🎬</span>
                 </div>
                 <div>
-                  <span class="inline-block bg-gold/10 border border-gold/30 text-gold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Video Coming Soon</span>
-                  <h3 class="text-xl font-bold font-serif text-white mb-2">${item.title}</h3>
-                  <p class="text-xs text-white/50 leading-relaxed max-w-sm mx-auto">${item.description ? item.description.substring(0, 120) + '…' : 'This documentary is currently in production.'}</p>
-                </div>
-                <div class="flex items-center justify-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-gold animate-pulse"></div>
-                  <span class="text-[10px] text-white/40 font-semibold uppercase tracking-widest">In Production</span>
-                  <div class="w-2 h-2 rounded-full bg-gold animate-pulse" style="animation-delay:0.4s"></div>
+                  <span class="inline-block bg-gold/10 border border-gold/30 text-gold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">Video In Production</span>
+                  <h3 class="text-lg font-bold font-serif text-white mb-1">${item.title}</h3>
+                  <p class="text-xs text-white/60 leading-relaxed max-w-sm mx-auto">${item.description ? item.description.substring(0, 120) + '…' : 'Explore the full illustrated sacred manuscript.'}</p>
                 </div>
               </div>
             </div>
             <div class="mt-4 p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between gap-3">
               <div class="text-[10px] text-white/60 leading-normal">
-                <strong>While you wait</strong> — read the full illustrated manuscript in the FlipBook reader!
+                <strong>Read Manuscript</strong> — explore full illustrated chapters in the 3D FlipBook reader!
               </div>
-              <button onclick="document.getElementById('media-modal').classList.add('hidden'); document.getElementById('media-modal').classList.remove('flex'); setTimeout(()=>window.flipBook&&window.flipBook.open(${JSON.stringify(item).replace(/</g,'\\u003c')}),100);"
-                class="flex-shrink-0 text-[10px] font-black uppercase tracking-wider bg-gold text-black px-3 py-1.5 rounded-lg hover:bg-gold/80 transition-all whitespace-nowrap">
+              <button id="docu-open-flipbook-btn" class="flex-shrink-0 text-[10px] font-black uppercase tracking-wider bg-gold text-black px-4 py-2 rounded-lg hover:bg-gold/80 transition-all whitespace-nowrap shadow-md">
                 📖 Open FlipBook
               </button>
             </div>
           </div>
         `;
       }
-      // ── Normal video player ──
+
+      // Normal video player
       return `
-        <div class="p-6 space-y-4">
+        <div class="p-4 md:p-6 space-y-4">
           <div class="aspect-video w-full rounded-2xl overflow-hidden bg-black border border-white/10 shadow-lg shadow-black/40">
-            <iframe id="video-iframe-player" src="${item.videoUrl}?autoplay=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="video-iframe-player" src="${item.videoUrl}?autoplay=1&enablejsapi=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           
-          <!-- Cinema video speed and theatre controls -->
-          <div class="flex items-center justify-between px-2 py-3 bg-white/5 border border-white/5 rounded-xl text-xs text-white/70 font-sans">
+          <div class="flex items-center justify-between px-3 py-2.5 bg-white/5 border border-white/5 rounded-xl text-xs text-white/70 font-sans">
             <div class="flex items-center gap-3 font-mono text-[9px]">
-              <span>🎛️ SYSTEM CONTROLS</span>
+              <span class="text-gold font-bold">🎬 HD DOCUMENTARY</span>
+              <span class="text-white/40">|</span>
+              <span class="text-white/60">${item.duration || 'Full Feature'}</span>
             </div>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
               <button id="theatre-mode-btn" class="hover:text-gold transition-colors font-bold text-[9px] bg-white/5 border border-white/10 rounded px-2.5 py-1 uppercase tracking-wider">📺 Theatre Mode</button>
+              <button id="docu-switch-flipbook-btn" class="hover:text-gold transition-colors font-bold text-[9px] bg-gold/10 border border-gold/30 text-gold rounded px-2.5 py-1 uppercase tracking-wider">📖 Read Granth</button>
             </div>
           </div>
 
           <div class="space-y-2 px-1">
-            <h3 class="text-lg font-bold text-gold font-serif">${item.tagline || 'Visual Documentary'}</h3>
-            <p class="text-xs text-white/70 leading-relaxed">${item.description}</p>
-          </div>
-          <div class="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center gap-3">
-            <span class="text-lg">📖</span>
-            <div class="text-[10px] text-white/60 leading-normal">
-              <strong>Video unavailable?</strong> If YouTube is blocked or fails to load, toggle the <strong>📖 Read Manuscript</strong> tab at the top to read the illustrated chapters directly!
-            </div>
+            <h3 class="text-base md:text-lg font-bold text-gold font-serif">${item.tagline || item.title}</h3>
+            <p class="text-xs text-white/70 leading-relaxed max-h-24 overflow-y-auto no-scrollbar">${item.description || item.desc || ''}</p>
           </div>
         </div>
       `;
     };
 
     const renderSlidesTabHTML = () => `
-      <div class="flex flex-col items-center justify-center p-6 text-center min-h-[350px]" id="docu-slide-container">
-        <!-- Rendered dynamically by renderSlide() -->
+      <div class="flex flex-col items-center justify-center p-6 text-center min-h-[320px]" id="docu-slide-container">
       </div>
     `;
 
     modalBody.innerHTML = `
-      <div class="space-y-4">
-        ${hasVideo ? `
-          <div class="px-6 pt-6">
-            <div class="flex border border-white/10 rounded-xl p-1 bg-white/5">
-              <button id="tab-mode-video" class="flex-1 py-2 text-xs font-extrabold rounded-lg bg-gold text-black transition-all">📺 Watch Documentary</button>
-              <button id="tab-mode-slides" class="flex-1 py-2 text-xs font-bold text-white/60 hover:text-white transition-all">📖 Read FlipBook</button>
-            </div>
+      <div class="space-y-2">
+        <div class="px-4 md:px-6 pt-3">
+          <div class="flex border border-white/10 rounded-xl p-1 bg-white/5">
+            <button id="tab-mode-video" class="flex-1 py-2 text-xs font-extrabold rounded-lg ${hasVideo ? 'bg-gold text-black' : 'text-white/60 hover:text-white'} transition-all">📺 Watch Documentary</button>
+            <button id="tab-mode-slides" class="flex-1 py-2 text-xs font-bold ${!hasVideo ? 'bg-gold text-black' : 'text-white/60 hover:text-white'} transition-all">📖 Read FlipBook</button>
           </div>
-        ` : ''}
+        </div>
 
         <div id="docu-reader-content-area">
-          ${hasVideo ? renderVideoTabHTML() : renderSlidesTabHTML()}
+          ${renderVideoTabHTML()}
         </div>
       </div>
     `;
 
-    
-    // Bind Theatre Mode click
+    // Bind controls
     setTimeout(() => {
       const theatreBtn = document.getElementById('theatre-mode-btn');
       const modalContainer = document.getElementById('media-modal-container');
@@ -1686,82 +1674,53 @@ class AppController {
           }
         });
       }
-    }, 100);
 
-const bindSlideNavigation = () => {
-      let currentSlide = 0;
-      const container = document.getElementById('docu-slide-container') || document.getElementById('docu-reader-content-area');
-      if (!container) return;
-
-      const renderSlide = () => {
-        const slide = item.content[currentSlide];
-        container.innerHTML = `
-          <div class="flex flex-col items-center justify-center text-center p-4 min-h-[300px]">
-            <div class="text-7xl mb-6 select-none">${slide.visual || '📜'}</div>
-            <h3 class="text-2xl font-bold text-gold font-serif mb-3">${slide.title}</h3>
-            <p class="text-xs text-white/80 max-w-xl leading-relaxed mb-6 font-sans">${slide.text}</p>
-            
-            <div class="flex items-center gap-6 mt-auto">
-              <button id="prev-slide" class="w-10 h-10 rounded-full border border-white/10 hover:bg-white/5 transition-all text-white flex items-center justify-center text-sm disabled:opacity-30 disabled:pointer-events-none" ${currentSlide === 0 ? 'disabled' : ''}>◀</button>
-              <span class="text-xs font-bold text-white/50 tracking-widest font-mono">${currentSlide + 1} / ${item.content.length}</span>
-              <button id="next-slide" class="px-6 py-2 bg-gold hover:bg-gold/90 text-black font-extrabold rounded-lg text-xs uppercase tracking-wider transition-all">${currentSlide === item.content.length - 1 ? 'Finish' : 'Next'}</button>
-            </div>
-          </div>
-        `;
-
-        document.getElementById('prev-slide').addEventListener('click', () => {
-          if (currentSlide > 0) {
-            currentSlide--;
-            renderSlide();
-          }
+      const switchFlipbookBtn = document.getElementById('docu-switch-flipbook-btn');
+      if (switchFlipbookBtn) {
+        switchFlipbookBtn.addEventListener('click', () => {
+          this.closeAllModals();
+          setTimeout(() => {
+            if (window.flipBook) window.flipBook.open(item);
+          }, 100);
         });
+      }
 
-        document.getElementById('next-slide').addEventListener('click', () => {
-          if (currentSlide < item.content.length - 1) {
-            currentSlide++;
-            renderSlide();
-          } else {
-            this.closeAllModals();
-          }
+      const openFlipbookBtn = document.getElementById('docu-open-flipbook-btn');
+      if (openFlipbookBtn) {
+        openFlipbookBtn.addEventListener('click', () => {
+          this.closeAllModals();
+          setTimeout(() => {
+            if (window.flipBook) window.flipBook.open(item);
+          }, 100);
         });
-      };
+      }
 
-      renderSlide();
-    };
-
-    if (hasVideo) {
       const tabVideo = document.getElementById('tab-mode-video');
       const tabSlides = document.getElementById('tab-mode-slides');
       const contentArea = document.getElementById('docu-reader-content-area');
 
-      tabVideo.addEventListener('click', () => {
-        tabVideo.className = "flex-1 py-2 text-xs font-extrabold rounded-lg bg-gold text-black transition-all";
-        tabSlides.className = "flex-1 py-2 text-xs font-bold text-white/60 hover:text-white transition-all";
-        contentArea.innerHTML = renderVideoTabHTML();
-      });
+      if (tabVideo && tabSlides && contentArea) {
+        tabVideo.addEventListener('click', () => {
+          tabVideo.className = "flex-1 py-2 text-xs font-extrabold rounded-lg bg-gold text-black transition-all";
+          tabSlides.className = "flex-1 py-2 text-xs font-bold text-white/60 hover:text-white transition-all";
+          contentArea.innerHTML = renderVideoTabHTML();
+        });
 
-      tabSlides.addEventListener('click', () => {
-        tabSlides.className = "flex-1 py-2 text-xs font-extrabold rounded-lg bg-gold text-black transition-all";
-        tabVideo.className = "flex-1 py-2 text-xs font-bold text-white/60 hover:text-white transition-all";
-        // Close the parent modal and open the immersive flipbook
-        this.closeAllModals();
-        setTimeout(() => window.flipBook && window.flipBook.open(item), 150);
-      });
-    } else {
-      // No video — open flipbook directly (or show coming soon + flipbook button)
-      if (item.content && item.content.length) {
-        this.closeAllModals();
-        setTimeout(() => window.flipBook && window.flipBook.open(item), 50);
-      } else {
-        // No content at all — just show coming-soon screen
-        bindSlideNavigation();
+        tabSlides.addEventListener('click', () => {
+          tabSlides.className = "flex-1 py-2 text-xs font-extrabold rounded-lg bg-gold text-black transition-all";
+          tabVideo.className = "flex-1 py-2 text-xs font-bold text-white/60 hover:text-white transition-all";
+          this.closeAllModals();
+          setTimeout(() => {
+            if (window.flipBook) window.flipBook.open(item);
+          }, 100);
+        });
       }
-    }
+    }, 50);
 
     modal.classList.remove('hidden');
     modal.classList.add('flex');
 
-    // Bulletproof close binder
+    // Close button
     const closeBtn = modal.querySelector('.modal-close');
     if (closeBtn) {
       closeBtn.onclick = (e) => {
@@ -2575,14 +2534,10 @@ const bindSlideNavigation = () => {
           gridContainer.classList.add('hidden');
           standardContainer.classList.remove('hidden');
         } else {
-          // Filter matching content from docuSeries & audioStories
-          const matchingDocs = this.contentData.docuSeries.filter(x => x.personas && x.personas.includes(persona));
-          const matchingAudios = this.contentData.audioStories.filter(x => x.personas && x.personas.includes(persona));
-
-          // Combine and map to HTML cards
-          const docHTML = matchingDocs.map(item => this.createContentCardHTML(item, false, 'w-full'));
-          const audioHTML = matchingAudios.map(item => this.createContentCardHTML(item, true, 'w-full'));
-          const combinedHTML = [...docHTML, ...audioHTML].join('');
+          // Filter matching content from all catalog items
+          const allItems = this.contentData.content || [];
+          const matching = allItems.filter(x => x.personas && x.personas.includes(persona));
+          const combinedHTML = matching.map(item => this.createContentCardHTML(item, !item.videoUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series'), 'w-full')).join('');
 
           if (combinedHTML.length > 0) {
             gridContainer.innerHTML = combinedHTML;
@@ -2633,23 +2588,15 @@ const bindSlideNavigation = () => {
         b.className = "persona-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all border border-white/10 hover:border-gold/30 text-white/70";
       });
 
-      const matchingDocs = this.contentData.docuSeries.filter(x => 
+      const allItems = this.contentData.content || [];
+      const matching = allItems.filter(x => 
         (x.title && x.title.toLowerCase().includes(query)) ||
         (x.tagline && x.tagline.toLowerCase().includes(query)) ||
         (x.description && x.description.toLowerCase().includes(query)) ||
+        (x.desc && x.desc.toLowerCase().includes(query)) ||
         (x.category && x.category.toLowerCase().includes(query))
       );
-      
-      const matchingAudios = this.contentData.audioStories.filter(x => 
-        (x.title && x.title.toLowerCase().includes(query)) ||
-        (x.tagline && x.tagline.toLowerCase().includes(query)) ||
-        (x.description && x.description.toLowerCase().includes(query)) ||
-        (x.category && x.category.toLowerCase().includes(query))
-      );
-
-      const docHTML = matchingDocs.map(item => this.createContentCardHTML(item, false, 'w-full'));
-      const audioHTML = matchingAudios.map(item => this.createContentCardHTML(item, true, 'w-full'));
-      const combinedHTML = [...docHTML, ...audioHTML].join('');
+      const combinedHTML = matching.map(item => this.createContentCardHTML(item, !item.videoUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series'), 'w-full')).join('');
 
       if (combinedHTML.length > 0) {
         gridContainer.innerHTML = combinedHTML;
@@ -3625,11 +3572,7 @@ const bindSlideNavigation = () => {
         const type = card.getAttribute('data-type');
         const item = all.find(x => x.id === id);
         if (item) {
-          if (type === 'audio') {
-            this.playAudioStory(item);
-          } else {
-            this.playVideoStory(item);
-          }
+          this.playContent(item, type === 'audio');
         }
       });
     });
@@ -3644,6 +3587,39 @@ const bindSlideNavigation = () => {
         this.renderCatalogGrid();
       });
     });
+  }
+
+
+  // Helper methods for watchlist, readers, and video/audio story triggers
+  toggleWatchlist(id) {
+    if (this.watchlist.includes(id)) {
+      this.watchlist = this.watchlist.filter(x => x !== id);
+    } else {
+      this.watchlist.push(id);
+    }
+    localStorage.setItem('hs_watchlist', JSON.stringify(this.watchlist));
+    SoundEffects.playClick();
+    this.renderContentRows();
+  }
+
+  playVideoStory(item) {
+    this.playContent(item, false);
+  }
+
+  playAudioStory(item) {
+    this.playContent(item, true);
+  }
+
+  openReader(item) {
+    if (window.flipBook) {
+      window.flipBook.open(item);
+    } else {
+      this.openDocuReader(item);
+    }
+  }
+
+  getUserScores() {
+    return DatabaseService.getUserScores();
   }
 
   setupEyeMovements() {

@@ -1,4 +1,4 @@
-export default {
+export const CONTENT_DATA = {
   "categories": [
     "Docu-Series",
     "Audiobooks & Legends",
@@ -4270,7 +4270,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shiva_neelkanth.jpg",
+      "imageUrl": "/images/shiva.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
@@ -4304,7 +4304,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/ganesha_mouse.jpg",
+      "imageUrl": "/images/ganesha.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
@@ -4338,7 +4338,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/krishna_govardhan.jpg",
+      "imageUrl": "/images/krishna_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
@@ -5154,7 +5154,7 @@ export default {
       "rating": "9.6 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "https://i.ytimg.com/vi/CpbiCHF0Jco/hqdefault.jpg",
+      "imageUrl": "/images/panchatantra_cover.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
@@ -5601,7 +5601,7 @@ export default {
       "rating": "9.9 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "https://i.ytimg.com/vi/J6T7UjSRs0A/hqdefault.jpg",
+      "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
@@ -5989,7 +5989,7 @@ export default {
       "rating": "9.5 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "https://i.ytimg.com/vi/xgAA5C-niCk/hqdefault.jpg",
+      "imageUrl": "/images/adi_shankara.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
@@ -6585,7 +6585,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": false,
-      "imageUrl": "/images/mysterious_ruins.jpg",
+      "imageUrl": "/images/shiva.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
@@ -7180,7 +7180,7 @@ export default {
       "rating": "9.7 ★",
       "year": "2026",
       "isPremium": true,
-      "imageUrl": "/images/shiva_tandava.jpg",
+      "imageUrl": "/images/shiva.jpg",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
@@ -8341,3 +8341,4 @@ export default {
     ]
   }
 };
+export default CONTENT_DATA;
