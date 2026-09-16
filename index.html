@@ -132,8 +132,8 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=78">
-  <link rel="stylesheet" href="flipbook.css?v=78">
+  <link rel="stylesheet" href="styles.css?v=79">
+  <link rel="stylesheet" href="flipbook.css?v=79">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
@@ -336,6 +336,9 @@
         <button onclick="document.getElementById('header-dosha-btn')?.click() || window.appInstance?.openDoshaModal()" class="sec-nav-pill px-2.5 py-1 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white/80 flex items-center gap-1">
           <span>🌿</span> Ayurveda
         </button>
+        <button onclick="document.getElementById('header-mudra-btn')?.click() || window.appInstance?.openMudraModal()" class="flex-shrink-0 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold flex items-center gap-1">
+          <span>🧘</span> Mudras
+        </button>
       </nav>
     </div>
 
@@ -365,6 +368,10 @@
 
         <button id="header-raga-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-purple-300 hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
           <span>🪕</span> Raga Therapy
+        </button>
+
+        <button id="header-mudra-btn" class="sec-nav-pill px-3 py-1 rounded-full hover:text-amber-300 hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer">
+          <span>🧘</span> Mudra Studio
         </button>
 
         <a href="#explorer" class="sec-nav-pill px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-all flex items-center gap-1.5">
@@ -410,7 +417,10 @@
       <a href="#play-zone" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 transition-all">🎮 Play Zone &amp; Trivia</a>
 
       <div class="text-[9px] font-mono font-bold uppercase text-white/40 tracking-wider pt-2">AI Tools &amp; Perks</div>
-      <button id="mobile-rishi-btn" class="w-full text-left py-2.5 px-3.5 rounded-xl text-sm font-semibold text-gold hover:bg-white/5 transition-all flex items-center gap-2">
+      <button id="mobile-mudra-btn" class="w-full text-left py-2.5 px-3.5 rounded-xl text-sm font-semibold text-amber-300 hover:bg-white/5 transition-all flex items-center gap-2">
+          <span>🧘</span> Sacred Mudra Studio
+        </button>
+        <button id="mobile-rishi-btn" class="w-full text-left py-2.5 px-3.5 rounded-xl text-sm font-semibold text-gold hover:bg-white/5 transition-all flex items-center gap-2">
         <span>🕉️</span> Ask Rishi AI (Ancient Wisdom)
       </button>
       <button id="mobile-archetype-btn" class="w-full text-left py-2.5 px-3.5 rounded-xl text-sm font-semibold text-white/90 hover:bg-white/5 transition-all flex items-center gap-2">
@@ -1625,6 +1635,7 @@
             <li><button onclick="document.getElementById('header-gita-btn')?.click() || window.appInstance?.openGitaModal()" class="footer-link text-left">Gita Life Compass</button></li>
             <li><button onclick="document.getElementById('header-dosha-btn')?.click() || window.appInstance?.openDoshaModal()" class="footer-link text-left">Ayurvedic Dosha Test</button></li>
             <li><button onclick="document.getElementById('header-raga-btn')?.click() || window.appInstance?.openRagaModal()" class="footer-link text-left">Vedic Raga Therapy</button></li>
+            <li><button onclick="document.getElementById('header-mudra-btn')?.click() || window.appInstance?.openMudraModal()" class="footer-link text-left">🧘 Sacred Mudra Studio</button></li>
             <li><button onclick="document.getElementById('header-rishi-btn')?.click() || window.appInstance?.openRishiModal()" class="footer-link text-left">Ask Rishi AI</button></li>
           </ul>
         </div>
@@ -1696,7 +1707,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=78"></script>
+  <script type="module" src="app-prod.js?v=79"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -2273,7 +2284,7 @@
     </div>
   </div>
 
-  <script src="flipbook.js?v=78"></script>
+  <script src="flipbook.js?v=79"></script>
 
   <!-- ── USER ACCOUNT & MEMBERSHIP MODAL ── -->
   <div id="user-account-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
@@ -2975,6 +2986,120 @@
           <span id="raga-play-icon">▶</span>
           <span id="raga-play-text">Play Therapy Audio</span>
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 🧘 SACRED MUDRA VIGYAN & STRESS RELIEF STUDIO MODAL ── -->
+  <div id="mudra-studio-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-[#0f1118] border-2 border-amber-500/40 rounded-3xl w-full max-w-2xl shadow-2xl relative p-5 sm:p-7 max-h-[92vh] overflow-y-auto no-scrollbar font-sans">
+      <button id="close-mudra-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      
+      <!-- Header -->
+      <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-5">
+        <span class="text-2xl p-2.5 rounded-2xl bg-amber-500/15 border border-amber-500/30 text-amber-400">🧘</span>
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg sm:text-xl font-bold font-serif text-white">Sacred Mudra Vigyan Studio</h3>
+            <span class="text-[9px] font-mono font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-2 py-0.5 rounded-full">5-Element Bio-Locks</span>
+          </div>
+          <p class="text-[11px] font-sans text-white/70 mt-0.5">Select a stress symptom for instant neuro-pranic relief &amp; guided timer</p>
+        </div>
+      </div>
+
+      <!-- Symptom Selector Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-5" id="mudra-symptom-selector">
+        <button class="mudra-sym-btn flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold border border-gold bg-gold text-black transition-all cursor-pointer whitespace-nowrap shadow-md shadow-gold/20" data-mudra="apana_vayu">
+          🔥 Acute Panic &amp; Heart Calm
+        </button>
+        <button class="mudra-sym-btn flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-mudra="gyan">
+          🧠 Overthinking &amp; Burnout
+        </button>
+        <button class="mudra-sym-btn flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-mudra="prana">
+          🔋 Fatigue &amp; Vitality
+        </button>
+        <button class="mudra-sym-btn flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-mudra="shunya">
+          🌌 Restlessness &amp; Insomnia
+        </button>
+        <button class="mudra-sym-btn flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap" data-mudra="hakini">
+          ⚡ Brain Fog &amp; Focus
+        </button>
+      </div>
+
+      <!-- Interactive Mudra Content Card -->
+      <div id="mudra-active-display" class="space-y-5">
+        <!-- Display Card with Artwork & Instructions -->
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-5 bg-black/40 border border-white/10 rounded-2xl p-4 sm:p-5 items-center">
+          <div class="sm:col-span-5 relative rounded-xl overflow-hidden border border-white/15 aspect-video sm:aspect-square bg-[#07080c] shadow-lg group">
+            <img id="mudra-card-img" src="/images/mudra_apana_vayu.jpg" alt="Mudra Posture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-black/80 border border-gold/40 text-[10px] font-mono font-bold text-gold" id="mudra-element-badge">
+              🔥 Fire + 💨 Air + 🌿 Earth
+            </div>
+          </div>
+          
+          <div class="sm:col-span-7 space-y-3">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold" id="mudra-sanskrit-name">Mrit-Sanjeevani Hastamudra</span>
+              <h4 class="text-lg sm:text-xl font-bold font-serif text-white" id="mudra-display-title">Apana Vayu Mudra (Emergency Heart &amp; Panic Calmer)</h4>
+            </div>
+
+            <!-- Step by Step Finger Placement -->
+            <div class="bg-white/5 p-3 rounded-xl border border-white/10 space-y-1.5 text-xs text-white/80">
+              <span class="text-gold font-bold text-[11px] block flex items-center gap-1">
+                <span>✋</span> Precise Finger Alignment:
+              </span>
+              <p id="mudra-finger-steps" class="leading-relaxed text-[11px] text-white/90">
+                1. Fold the index finger to touch the base (mount) of your thumb.<br>
+                2. Join the tips of your middle finger and ring finger to the tip of your thumb.<br>
+                3. Keep your little finger extended straight and relaxed.
+              </p>
+            </div>
+
+            <!-- Benefits -->
+            <div class="text-[11px] text-white/70 space-y-1">
+              <strong class="text-emerald-400 block text-[11px]">✨ Clinical &amp; Spiritual Benefits:</strong>
+              <p id="mudra-benefits-desc" class="leading-relaxed">
+                Stimulates the vagus nerve, lowers acute blood pressure spikes, regulates erratic heart rhythm, and halts panic attacks in 3–5 minutes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5-Minute Guided Breathwork & Practice Timer -->
+        <div class="bg-gradient-to-r from-amber-500/10 via-black/40 to-amber-500/10 border border-amber-500/30 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <div class="relative w-14 h-14 flex items-center justify-center">
+              <svg class="w-14 h-14 -rotate-90" viewBox="0 0 36 36">
+                <path class="text-white/10" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path id="mudra-timer-circle" class="text-amber-400 transition-all duration-1000" stroke-dasharray="100, 100" stroke-width="3" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+              <span id="mudra-timer-text" class="absolute text-xs font-mono font-bold text-white">05:00</span>
+            </div>
+            <div>
+              <h5 class="text-xs font-bold text-white flex items-center gap-1.5">
+                <span>🌬️</span> <span id="mudra-breath-phase">4-7-8 Breath Pace: Ready</span>
+              </h5>
+              <p class="text-[10px] text-white/50 font-mono" id="mudra-breath-sub">Inhale 4s &bull; Hold 7s &bull; Exhale 8s</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <button id="mudra-timer-start-btn" class="flex-1 sm:flex-none px-5 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-500/90 text-black font-extrabold text-xs rounded-xl uppercase tracking-wider transition-all shadow-md shadow-gold/20 flex items-center justify-center gap-1.5 cursor-pointer">
+              <span id="mudra-start-icon">▶</span>
+              <span id="mudra-start-label">Start Practice</span>
+            </button>
+            <button id="mudra-timer-reset-btn" class="px-3 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl transition-all cursor-pointer" title="Reset Timer">
+              ↺
+            </button>
+          </div>
+        </div>
+
+        <!-- Open Full Masterclass Link -->
+        <div class="flex items-center justify-between pt-1">
+          <button id="open-mudra-course-btn" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-gold hover:text-black border border-white/10 hover:border-gold text-white font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+            <span>📖</span> <span>Read Complete 6-Chapter Mudra Masterclass Course</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

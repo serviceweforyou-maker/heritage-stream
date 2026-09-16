@@ -5,9 +5,148 @@ const COURSES_DATA = {
     "God Series",
     "Virtual Tours",
     "Kids Stories",
-    "Unknown Knowledge"
+    "Unknown Knowledge",
+    "Wellness & Mudra Shastra"
   ],
   "content": [
+    {
+      "id": "course_mudra_sleep_clarity",
+      "title": "Mudra Therapy for Deep Sleep, Neuroplasticity & Cognitive Power",
+      "category": "Docu-Series",
+      "tagline": "Hakini, Brahma & Uttarabodhi Mudras for Brain Balancing and Insomnia Cure",
+      "description": "Master the sacred hand gestures that optimize brain connectivity and induce effortless delta-wave deep sleep. Discover Hakini Mudra for hemispheric memory recall, Uttarabodhi Mudra for conquering fear, and Yoni Mudra for tranquil sensory withdrawal before bed.",
+      "duration": "50 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/mudra_hakini_brain_sync.jpg",
+      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Sleep Seekers",
+        "Students",
+        "Executives",
+        "Researchers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Hakini Mudra: Uniting Left & Right Brain Hemispheres",
+          "text": "Named after the Hindu Goddess Hakini associated with the Third Eye (Ajna Chakra), Hakini Mudra is formed by gently pressing the tips of all five fingers of both hands together. Scientific electroencephalogram (EEG) research shows this posture instantly stimulates communication between the analytical left hemisphere and creative right hemisphere, vastly improving memory recall, logical clarity, and problem-solving speed.",
+          "visual": "🧠"
+        },
+        {
+          "title": "Chapter II: Uttarabodhi Mudra: The Gesture of Supreme Fearlessness",
+          "text": "Formed by interlocking the middle, ring, and little fingers while pressing the index fingers together straight upward and thumbs downward, Uttarabodhi Mudra channels cosmic Prana through the central Sushumna Nadi. It shatters self-doubt, stage fright, and fear of failure, restoring steady courage and supreme self-confidence.",
+          "visual": "⚡"
+        },
+        {
+          "title": "Chapter III: Yoni Mudra & Shambhavi: Sensory Withdrawal for Deep Sleep",
+          "text": "Yoni Mudra represents the return to the cosmic womb of pure unmanifest consciousness. By sealing the senses and focusing inward at the eyebrow center with Shambhavi Mudra, racing nocturnal thoughts cease completely. The brain seamlessly shifts from Beta into Theta and deep restorative Delta sleep cycles without pharmaceutical sleep aids.",
+          "visual": "🌙"
+        },
+        {
+          "title": "Chapter IV: Brahma Mudra & Neck Vagus Nerve Decompression",
+          "text": "Tucking the thumbs inside closed fists and gently rotating the neck in the four cardinal directions while chanting the sacred seeds A-U-M-Silence decompresses the cervical vertebrae and releases trapped tension in the carotid sheath. It optimizes cerebral spinal fluid (CSF) flow and relieves tension headaches in under 5 minutes.",
+          "visual": "👑"
+        }
+      ]
+    },
+    {
+      "id": "course_pranayama_neuro_somatic",
+      "title": "Pranayama & Neuro-Somatic Healing: Resetting the Vagus Nerve",
+      "category": "Docu-Series",
+      "tagline": "Ancient Breath Mastery for Deep Nervous System Healing",
+      "description": "Explore the neurobiology of Vedic breathwork. Learn how combining Nadi Shodhana (Alternate Nostril Breathing with Vishnu Mudra), Bhramari (Humming Bee Breath with Shanmukhi Mudra), and Ujjayi breathing directly stimulates the parasympathetic nervous system, improves Heart Rate Variability (HRV), and permanently lowers chronic stress.",
+      "duration": "48 Mins",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/mudra_apana_vayu.jpg",
+      "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Stress Relief",
+        "Breathwork Enthusiasts",
+        "Yogis"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Vagus Nerve & The Pranic Highway",
+          "text": "The 10th cranial nerve (Vagus) originates in the brainstem and innervates the heart, lungs, and gut microbiome, directly mapping to the ancient Ida and Pingala nadis. Slow, conscious yogic pranayama creates resonant baroreflex stimulation, sending immediate biochemical signals of safety to the amygdala and halting chronic cortisol production.",
+          "visual": "🫁"
+        },
+        {
+          "title": "Chapter II: Nadi Shodhana & Vishnu Mudra: Brain Hemisphere Balance",
+          "text": "Holding the right hand in Vishnu Mudra (index and middle fingers folded inward, using thumb and ring finger to alternate nostril occlusion) establishes bilateral synchronization across the cerebral cortex. Left nostril breathing (Chandra Nadi) activates parasympathetic cooling, while right nostril breathing (Surya Nadi) enhances digestive fire and cognitive alertness.",
+          "visual": "⚖️"
+        },
+        {
+          "title": "Chapter III: Bhramari with Shanmukhi Mudra: Nitric Oxide Sound Healing",
+          "text": "Closing the 6 gates of sensory perception with Shanmukhi Mudra (thumbs on ear tragi, index on eyelids, middle on nostrils, ring/little on lips) while vocalizing a smooth humming sound creates internal acoustic vibration. This humming increases nasal nitric oxide production by fifteen-fold, dilating cerebral micro-vessels and inducing instant mental tranquility.",
+          "visual": "🐝"
+        },
+        {
+          "title": "Chapter IV: Sheetali & Sheetkari: Cooling Irritability & Burning Stress",
+          "text": "Drawing breath across a curled tongue (Sheetali) or through gently closed teeth (Sheetkari) cools the blood in the lingual and carotid arteries. It pacifies aggravated Pitta dosha, eliminates stress-induced acid reflux and headaches, and brings immediate emotional composure during tense conflicts.",
+          "visual": "❄️"
+        }
+      ]
+    },
+    {
+      "id": "course_mudra_vigyan_stress",
+      "title": "Sacred Mudra Vigyan: 5-Element Science of Stress & Panic Relief",
+      "category": "Docu-Series",
+      "tagline": "The Neuro-Pranic Bio-Circuits of Ancient Hatha Yoga & Ayurveda",
+      "description": "Discover the ancient 5,000-year-old Vedic science of Hastamudras (sacred hand gestures) documented in the Gheranda Samhita and Shiva Samhita. Learn how connecting specific fingertip meridians balances the five cosmic elements (Pancha Bhootas), activates the vagus nerve, reduces acute cortisol, and dissolves anxiety, burnout, and panic within minutes.",
+      "duration": "55 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/mudra_stress_relief_mastery.jpg",
+      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya & Neuro-Vedic Scholar",
+      "personas": [
+        "Stress Relief",
+        "Yogic Healers",
+        "Mindfulness Seekers",
+        "High Performers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Pancha Bhootas in Your Hands & Bio-Circuits",
+          "text": "According to the Gheranda Samhita and Ayurvedic neurobiology, each finger acts as an elemental conductor: Thumb represents Agni (Fire/Metabolic will), Index finger represents Vayu (Air/Thought movement), Middle finger represents Akasha (Space/Open consciousness), Ring finger represents Prithvi (Earth/Grounding stability), and Little finger represents Jala (Water/Emotional fluidity). When specific fingertips touch, they close biological electromagnetic loops, redirecting subtle prana inward and resetting brainwaves from turbulent Beta (14–30 Hz) to calm Alpha (8–12 Hz).",
+          "visual": "⚡"
+        },
+        {
+          "title": "Chapter II: Mrit-Sanjeevani / Apana Vayu Mudra: Emergency Panic & Heart Calm",
+          "text": "Known anciently as the 'Life-Rescuing Gesture', Apana Vayu Mudra is performed by folding the index finger to the base of the thumb while joining the tips of the middle and ring fingers with the thumb tip (little finger extended). This powerful bio-lock regulates chaotic heart rhythms, lowers acute blood pressure surges, stimulates the vagus nerve, and dissolves sudden panic attacks and chest tightness within 3 to 5 minutes of steady diaphragmatic breathing.",
+          "visual": "💚"
+        },
+        {
+          "title": "Chapter III: Gyan & Chin Mudra: Banishing Overthinking & Burnout",
+          "text": "Gyan Mudra (touching the tip of the index finger to the tip of the thumb while resting palms upward) bridges individual soul consciousness (Jivatma) with universal cosmic wisdom (Paramatma). Physiologically, this pressure point stimulates the pituitary and pineal glands, boosts cerebral serotonin synthesis, calms racing thoughts, and improves concentration during intense mental work and meditation.",
+          "visual": "🧘"
+        },
+        {
+          "title": "Chapter IV: Shunya & Vayu Mudra: Eliminating Restlessness & Tinnitus",
+          "text": "By bending the middle finger flat against the mount of Venus and pressing it gently with the thumb (Shunya Mudra), the space element is systematically balanced, relieving ear pressure, nervous dizziness, and spatial restlessness. Vayu Mudra (pressing the index finger down) calms internal tremors, restless leg syndrome, and the whirlwind of anxious hyper-vigilance.",
+          "visual": "🌌"
+        },
+        {
+          "title": "Chapter V: Prana Mudra: Reviving Vitality & Root Grounding",
+          "text": "Joining the tips of the ring and little fingers with the thumb tip while keeping the index and middle fingers straight activates dormant Muladhara (Root Chakra) energy. It rekindles depleted Ojas (vital life essence), eliminates chronic fatigue syndrome, strengthens optical nerve vitality, and provides an unshakable energetic shield against environmental and psychological stress.",
+          "visual": "🔥"
+        },
+        {
+          "title": "Chapter VI: The 15-Minute Daily Anti-Stress Protocol & 4-7-8 Breathing",
+          "text": "Integrate this clinical Vedic routine: 5 minutes of Gyan Mudra at dawn for mental clarity, 5 minutes of Apana Vayu Mudra during afternoon workday stress spikes, and 5 minutes of Prana or Shunya Mudra with 4-7-8 rhythmic breathing (Inhale for 4 seconds, Hold for 7 seconds, Exhale slowly for 8 seconds) before bed for deep restorative sleep.",
+          "visual": "✨"
+        }
+      ]
+    },
     {
       "id": "hampi",
       "title": "Hampi: The Lost Empire of Vijaynagara",

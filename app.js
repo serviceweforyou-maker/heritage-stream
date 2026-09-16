@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=78";
-import heritageData from "./data.js?v=78";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=78";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=79";
+import heritageData from "./data.js?v=79";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=79";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -373,6 +373,7 @@ class AppController {
     safeInit("initGitaCompass", this.initGitaCompass);
     safeInit("initDoshaAnalyzer", this.initDoshaAnalyzer);
     safeInit("initRagaTherapy", this.initRagaTherapy);
+    safeInit("initMudraStudio", this.initMudraStudio);
     safeInit("initVedicMathCalculator", this.initVedicMathCalculator);
     safeInit("initGurukulaKits", this.initGurukulaKits);
     safeInit("initMysteryVault", this.initMysteryVault);
@@ -4465,6 +4466,246 @@ class AppController {
   }
 
   // 4. Vedic Raga Sound Therapy & Meditation Harmonizer
+
+  openMudraModal(symptomKey) {
+    const modal = document.getElementById('mudra-studio-modal');
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    if (symptomKey && this.setMudraSymptom) {
+      this.setMudraSymptom(symptomKey);
+    }
+  }
+
+  initMudraStudio() {
+    const modal = document.getElementById('mudra-studio-modal');
+    const openBtn = document.getElementById('header-mudra-btn');
+    const mobileBtn = document.getElementById('mobile-mudra-btn');
+    const closeBtn = document.getElementById('close-mudra-modal-btn');
+    const symptomBtns = document.querySelectorAll('.mudra-sym-btn');
+    const cardImg = document.getElementById('mudra-card-img');
+    const elementBadge = document.getElementById('mudra-element-badge');
+    const sanskritName = document.getElementById('mudra-sanskrit-name');
+    const displayTitle = document.getElementById('mudra-display-title');
+    const fingerSteps = document.getElementById('mudra-finger-steps');
+    const benefitsDesc = document.getElementById('mudra-benefits-desc');
+    const timerText = document.getElementById('mudra-timer-text');
+    const timerCircle = document.getElementById('mudra-timer-circle');
+    const timerStartBtn = document.getElementById('mudra-timer-start-btn');
+    const timerResetBtn = document.getElementById('mudra-timer-reset-btn');
+    const startIcon = document.getElementById('mudra-start-icon');
+    const startLabel = document.getElementById('mudra-start-label');
+    const breathPhase = document.getElementById('mudra-breath-phase');
+    const breathSub = document.getElementById('mudra-breath-sub');
+    const openCourseBtn = document.getElementById('open-mudra-course-btn');
+    if (!modal) return;
+
+    const mudras = {
+      apana_vayu: {
+        title: "Apana Vayu Mudra (Emergency Heart & Panic Calmer)",
+        sanskrit: "Mrit-Sanjeevani Hastamudra",
+        elements: "🔥 Fire + 💨 Air + 🌿 Earth",
+        img: "/images/mudra_apana_vayu.jpg",
+        steps: "1. Fold index finger touching the root (mount) of the thumb.<br>2. Touch tips of middle and ring fingers to the thumb tip.<br>3. Keep little finger extended straight and relaxed.",
+        benefits: "Stimulates the vagus nerve, lowers acute blood pressure spikes, regulates erratic heart rhythm, and halts panic attacks in 3–5 minutes.",
+        courseId: "course_mudra_vigyan_stress"
+      },
+      gyan: {
+        title: "Gyan & Chin Mudra (Gesture of Cosmic Consciousness & Focus)",
+        sanskrit: "Jnana / Chin Hastamudra",
+        elements: "🔥 Fire + 💨 Air (Consciousness)",
+        img: "/images/mudra_gyan_chin.jpg",
+        steps: "1. Join the tip of your index finger with the tip of your thumb.<br>2. Keep the other three fingers (middle, ring, little) relaxed and extended.<br>3. Rest palms facing upward on your knees.",
+        benefits: "Stimulates the pituitary and pineal glands, dispels racing overthinking, enhances memory retention, and melts chronic workday burnout.",
+        courseId: "course_mudra_vigyan_stress"
+      },
+      prana: {
+        title: "Prana Mudra (Gesture of Vital Life Force & Anti-Fatigue)",
+        sanskrit: "Prana Hastamudra",
+        elements: "🔥 Fire + 🌿 Earth + 💧 Water",
+        img: "/images/mudra_prana_vitality.jpg",
+        steps: "1. Join tips of ring finger and little finger to the tip of your thumb.<br>2. Keep index and middle fingers pointing straight upwards.<br>3. Rest hands comfortably on knees.",
+        benefits: "Activates Root Chakra (Muladhara), restores depleted Ojas, cures chronic fatigue, and builds an energetic shield against stress.",
+        courseId: "course_mudra_vigyan_stress"
+      },
+      shunya: {
+        title: "Shunya & Vayu Mudra (Gesture of Stillness & Insomnia Relief)",
+        sanskrit: "Shunya / Vayu Hastamudra",
+        elements: "🌌 Space + 💨 Air Neutralizer",
+        img: "/images/mudra_shunya_vayu.jpg",
+        steps: "1. Bend the middle finger flat against the base of the thumb.<br>2. Press thumb gently over the middle finger knuckle.<br>3. Keep remaining three fingers extended straight.",
+        benefits: "Reduces spatial dizziness and restlessness, pacifies erratic Vata dosha, and activates deep restorative delta sleep.",
+        courseId: "course_mudra_sleep_clarity"
+      },
+      hakini: {
+        title: "Hakini Mudra (Gesture of Hemispheric Brain Balance & Memory)",
+        sanskrit: "Hakini Hastamudra",
+        elements: "🧠 All 5 Elements Interconnected",
+        img: "/images/mudra_hakini_brain_sync.jpg",
+        steps: "1. Bring both hands in front of the solar plexus or heart.<br>2. Press tips of all 5 right fingers against corresponding 5 left fingertips.<br>3. Form a sacred open dome cage with palms apart.",
+        benefits: "Synchronizes left and right cerebral hemispheres, maximizes cognitive clarity, and banishes brain fog in 3 minutes.",
+        courseId: "course_mudra_sleep_clarity"
+      }
+    };
+
+    let activeKey = 'apana_vayu';
+    let timerInterval = null;
+    let breathTimeout = null;
+    const totalSeconds = 300;
+    let remainingSeconds = 300;
+    let isTimerRunning = false;
+
+    const setMudra = (key) => {
+      activeKey = key;
+      const m = mudras[key] || mudras.apana_vayu;
+      
+      if (cardImg) cardImg.src = m.img;
+      if (elementBadge) elementBadge.textContent = m.elements;
+      if (sanskritName) sanskritName.textContent = m.sanskrit;
+      if (displayTitle) displayTitle.textContent = m.title;
+      if (fingerSteps) fingerSteps.innerHTML = m.steps;
+      if (benefitsDesc) benefitsDesc.textContent = m.benefits;
+
+      symptomBtns.forEach(btn => {
+        if (btn.getAttribute('data-mudra') === key) {
+          btn.className = "mudra-sym-btn flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold border border-gold bg-gold text-black transition-all cursor-pointer whitespace-nowrap shadow-md shadow-gold/20";
+        } else {
+          btn.className = "mudra-sym-btn flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 bg-white/5 text-white/70 hover:border-gold/40 hover:text-white transition-all cursor-pointer whitespace-nowrap";
+        }
+      });
+    };
+
+    this.setMudraSymptom = setMudra;
+
+    symptomBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-mudra');
+        setMudra(key);
+      });
+    });
+
+    const updateTimerDisplay = () => {
+      const mins = Math.floor(remainingSeconds / 60);
+      const secs = remainingSeconds % 60;
+      if (timerText) timerText.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      if (timerCircle) {
+        const pct = (remainingSeconds / totalSeconds) * 100;
+        timerCircle.setAttribute('stroke-dasharray', `${pct}, 100`);
+      }
+    };
+
+    const runBreathAnimation = () => {
+      if (!isTimerRunning) return;
+      let phase = 0;
+      const loop = () => {
+        if (!isTimerRunning) return;
+        if (phase === 0) {
+          if (breathPhase) breathPhase.textContent = "🌬️ Inhale Slowly (4s)";
+          if (breathSub) breathSub.textContent = "Draw subtle prana through the nose";
+          breathTimeout = setTimeout(() => { phase = 1; loop(); }, 4000);
+        } else if (phase === 1) {
+          if (breathPhase) breathPhase.textContent = "🧘 Hold with Mudra (7s)";
+          if (breathSub) breathSub.textContent = "Channel prana into the heart and fingertips";
+          breathTimeout = setTimeout(() => { phase = 2; loop(); }, 7000);
+        } else {
+          if (breathPhase) breathPhase.textContent = "🍃 Exhale Completely (8s)";
+          if (breathSub) breathSub.textContent = "Release all mental tension and cortisol";
+          breathTimeout = setTimeout(() => { phase = 0; loop(); }, 8000);
+        }
+      };
+      loop();
+    };
+
+    const stopBreathAnimation = () => {
+      if (breathTimeout) {
+        clearTimeout(breathTimeout);
+        breathTimeout = null;
+      }
+      if (breathPhase) breathPhase.textContent = "4-7-8 Breath Pace: Paused";
+      if (breathSub) breathSub.textContent = "Inhale 4s • Hold 7s • Exhale 8s";
+    };
+
+    const startTimer = () => {
+      if (isTimerRunning) {
+        isTimerRunning = false;
+        clearInterval(timerInterval);
+        stopBreathAnimation();
+        if (startIcon) startIcon.textContent = "▶";
+        if (startLabel) startLabel.textContent = "Resume Practice";
+      } else {
+        isTimerRunning = true;
+        if (startIcon) startIcon.textContent = "⏸";
+        if (startLabel) startLabel.textContent = "Pause Timer";
+        runBreathAnimation();
+        timerInterval = setInterval(() => {
+          if (remainingSeconds > 0) {
+            remainingSeconds--;
+            updateTimerDisplay();
+          } else {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            stopBreathAnimation();
+            if (startIcon) startIcon.textContent = "✓";
+            if (startLabel) startLabel.textContent = "Completed (Namaste)";
+            if (breathPhase) breathPhase.textContent = "✨ Session Completed (Shanti)";
+          }
+        }, 1000);
+      }
+    };
+
+    const resetTimer = () => {
+      clearInterval(timerInterval);
+      stopBreathAnimation();
+      isTimerRunning = false;
+      remainingSeconds = totalSeconds;
+      updateTimerDisplay();
+      if (startIcon) startIcon.textContent = "▶";
+      if (startLabel) startLabel.textContent = "Start Practice";
+      if (breathPhase) breathPhase.textContent = "4-7-8 Breath Pace: Ready";
+    };
+
+    if (timerStartBtn) timerStartBtn.addEventListener('click', startTimer);
+    if (timerResetBtn) timerResetBtn.addEventListener('click', resetTimer);
+
+    if (openCourseBtn) {
+      openCourseBtn.addEventListener('click', () => {
+        const m = mudras[activeKey];
+        if (m && m.courseId) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          const allCourses = window.COURSES_DATA ? (window.COURSES_DATA.content || window.COURSES_DATA) : [];
+          const found = Array.isArray(allCourses) ? allCourses.find(c => c.id === m.courseId) : null;
+          if (found && window.appInstance) {
+            window.appInstance.openReader(found);
+          }
+        }
+      });
+    }
+
+    const openModal = () => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      setMudra(activeKey);
+    };
+
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      if (isTimerRunning) {
+        startTimer();
+      }
+    };
+
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (mobileBtn) mobileBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+  }
+
   initRagaTherapy() {
     const modal = document.getElementById('raga-therapy-modal');
     const openBtn = document.getElementById('header-raga-btn');
