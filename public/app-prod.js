@@ -5501,7 +5501,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "👹",
     "isPremium": false,
-    "coverImg": "https://i.ytimg.com/vi/05P75OPzies/hqdefault.jpg",
+    "coverImg": "/images/mahishasura_battle.jpg",
     "desc": "The shape-shifting buffalo Asura who extracted the boon of invincibility against all men and Devas, and the cosmic emergence of Goddess Durga.",
     "videoUrl": "https://www.youtube.com/embed/05P75OPzies",
     "chapters": [
@@ -5540,7 +5540,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "⚔️",
     "isPremium": true,
-    "coverImg": "https://i.ytimg.com/vi/otVAudER9dU/hqdefault.jpg",
+    "coverImg": "/images/ravana_lanka.jpg",
     "desc": "The 10 heads of unmatched astrological and musical mastery, mystical Pushpaka Vimana aviation, and the tragic 6-month cosmic curse of Kumbhakarna.",
     "videoUrl": "https://www.youtube.com/embed/otVAudER9dU",
     "chapters": [
@@ -5579,7 +5579,7 @@ class AppController {
     "chaptersCount": 5,
     "emoji": "🔥",
     "isPremium": true,
-    "coverImg": "https://i.ytimg.com/vi/XEQFAcbMkWI/hqdefault.jpg",
+    "coverImg": "/images/bhasmasura_mohini.jpg",
     "desc": "The deadly boon that turned anyone touched into ashes, and the divine cosmic dance that saved the Universe.",
     "videoUrl": "https://www.youtube.com/embed/XEQFAcbMkWI",
     "chapters": [
@@ -5614,7 +5614,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "🐍",
     "isPremium": true,
-    "coverImg": "https://i.ytimg.com/vi/yr2OWiEz7VE/hqdefault.jpg",
+    "coverImg": "/images/patala_naga_kingdom.jpg",
     "desc": "The 7 subterranean dimensions (Atala, Vitala, Sutala, Talatala, Mahatala, Rasatala, Patala) and architect Maya Danava.",
     "videoUrl": "https://www.youtube.com/embed/yr2OWiEz7VE",
     "chapters": [
@@ -5653,7 +5653,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "🌌",
     "isPremium": false,
-    "coverImg": "https://i.ytimg.com/vi/0g6gQNukRKA/hqdefault.jpg",
+    "coverImg": "/images/fourteen_lokas_cosmos.jpg",
     "desc": "Vedic calculations of the 4.32 billion year Kalpa, Brahma's day, parallel dimensions, and the cosmic journey of the Jiva.",
     "videoUrl": "https://www.youtube.com/embed/0g6gQNukRKA",
     "chapters": [
@@ -5692,7 +5692,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "🌊",
     "isPremium": false,
-    "coverImg": "https://i.ytimg.com/vi/eE8paZuuigA/hqdefault.jpg",
+    "coverImg": "/images/samudra_manthan.jpg",
     "desc": "Mount Mandara, Vasuki the serpent churning cord, the deadly Halahala poison, and the 14 divine jewels of eternity.",
     "videoUrl": "https://www.youtube.com/embed/eE8paZuuigA",
     "chapters": [
@@ -5731,7 +5731,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "🧘",
     "isPremium": true,
-    "coverImg": "https://i.ytimg.com/vi/JA0P7okWXA4/hqdefault.jpg",
+    "coverImg": "/images/kundalini_chakras.jpg",
     "desc": "Ancient palm-leaf maps of consciousness: Ida, Pingala, Sushumna, and the awakening of the dormant serpentine energy.",
     "videoUrl": "https://www.youtube.com/embed/JA0P7okWXA4",
     "chapters": [
@@ -5770,7 +5770,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "☀️",
     "isPremium": true,
-    "coverImg": "https://i.ytimg.com/vi/J6T7UjSRs0A/hqdefault.jpg",
+    "coverImg": "/images/surya_siddhanta_astronomy.jpg",
     "desc": "Ancient mathematical calculations of the speed of light, planetary orbits, lunar nodes, and equinox precessions.",
     "videoUrl": "https://www.youtube.com/embed/J6T7UjSRs0A",
     "chapters": [
@@ -5809,7 +5809,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "📜",
     "isPremium": false,
-    "coverImg": "https://i.ytimg.com/vi/xgAA5C-niCk/hqdefault.jpg",
+    "coverImg": "/images/adi_shankara.jpg",
     "desc": "Walking barefoot across the 4 corners of India, defeating dogmas through pure logic, and establishing the 4 sacred Peethams at age 32.",
     "videoUrl": "https://www.youtube.com/embed/xgAA5C-niCk",
     "chapters": [
@@ -5848,7 +5848,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "🌴",
     "isPremium": true,
-    "coverImg": "https://i.ytimg.com/vi/Z4XLf9w9Bc8/hqdefault.jpg",
+    "coverImg": "/images/maharishi_agastya.jpg",
     "desc": "Drinking the southern ocean, subduing the Vindhya mountain range, and founding Tamil grammar and Kalaripayattu.",
     "videoUrl": "https://www.youtube.com/embed/Z4XLf9w9Bc8",
     "chapters": [
@@ -5887,7 +5887,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "🦁",
     "isPremium": true,
-    "coverImg": "https://i.ytimg.com/vi/ul34M_LQmhg/hqdefault.jpg",
+    "coverImg": "/images/dharma.jpg",
     "desc": "The fiery training under Ramakrishna, the electrifying 1893 Chicago Parliament speech, and master laws of mental focus.",
     "videoUrl": "https://www.youtube.com/embed/ul34M_LQmhg",
     "chapters": [
@@ -5926,7 +5926,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "🪷",
     "isPremium": true,
-    "coverImg": "https://i.ytimg.com/vi/ftOa_ncLY6Q/hqdefault.jpg",
+    "coverImg": "/images/shiva_parvati_kalyanam.jpg",
     "desc": "Poison turning to divine nectar, unbreakable devotion, and the mystical composition of the Ramcharitmanas.",
     "videoUrl": "https://www.youtube.com/embed/ftOa_ncLY6Q",
     "chapters": [
@@ -5965,7 +5965,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "🦊",
     "isPremium": false,
-    "coverImg": "https://i.ytimg.com/vi/CpbiCHF0Jco/hqdefault.jpg",
+    "coverImg": "/images/panchatantra_cover.jpg",
     "desc": "The world's oldest leadership treatise: Mitra Bheda (Losing Friends), Mitra Labha (Gaining Allies), and strategic wildlife fables.",
     "videoUrl": "https://www.youtube.com/embed/CpbiCHF0Jco",
     "chapters": [
@@ -6004,7 +6004,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "👑",
     "isPremium": true,
-    "coverImg": "https://i.ytimg.com/vi/piwghp31zvo/hqdefault.jpg",
+    "coverImg": "/images/vikram_betal.jpg",
     "desc": "King Vikramaditya carrying the riddle-telling corpse across the cremation ground to test moral intellect.",
     "videoUrl": "https://www.youtube.com/embed/piwghp31zvo",
     "chapters": [
@@ -6043,7 +6043,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "🏹",
     "isPremium": true,
-    "coverImg": "https://i.ytimg.com/vi/dgwcRqWK9ps/hqdefault.jpg",
+    "coverImg": "/images/abhimanyu_chakravyuha.jpg",
     "desc": "The sacred labyrinth geometry of Dronacharya and the young prince who knew how to enter but not exit.",
     "videoUrl": "https://www.youtube.com/embed/dgwcRqWK9ps",
     "chapters": [
@@ -6082,7 +6082,7 @@ class AppController {
     "chaptersCount": 6,
     "emoji": "🦚",
     "isPremium": false,
-    "coverImg": "https://i.ytimg.com/vi/TnMt8tLfK-o/hqdefault.jpg",
+    "coverImg": "/images/tenali.jpg",
     "desc": "The brilliant intellectual sparring matches that exposed hypocrisy and guided emperors with wisdom and humor.",
     "videoUrl": "https://www.youtube.com/embed/TnMt8tLfK-o",
     "chapters": [
