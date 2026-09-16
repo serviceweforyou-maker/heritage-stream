@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=80";
-import heritageData from "./data.js?v=80";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=80";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=81";
+import heritageData from "./data.js?v=81";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=81";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -566,7 +566,7 @@ class AppController {
               <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-10 pointer-events-none"></div>
               
               <!-- Content Details Container -->
-              <div class="max-w-4xl pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 px-4 sm:px-8 md:px-14 lg:px-16 h-full flex flex-col justify-center sm:justify-end relative z-20">
+              <div class="max-w-4xl pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-10 sm:pb-14 px-4 sm:px-8 md:px-14 lg:px-16 h-full flex flex-col justify-center sm:justify-end relative z-20">
                 
                 <!-- Badge & Metadata -->
                 <div class="flex items-center gap-2 mb-2 sm:mb-2.5 flex-wrap">
