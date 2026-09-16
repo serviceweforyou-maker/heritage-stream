@@ -400,23 +400,63 @@ class AppController {
       console.error("Error in eye movement initialization:", e);
     }
 
-    // ── Mobile hamburger menu ──
+    // ── Mobile hamburger menu & drawer ──
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileNavMenu = document.getElementById('mobile-nav-menu');
     if (mobileMenuBtn && mobileNavMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const isOpen = !mobileNavMenu.classList.contains('hidden');
         mobileNavMenu.classList.toggle('hidden', isOpen);
         mobileMenuBtn.classList.toggle('open', !isOpen);
       });
-      // Close on nav link click
-      mobileNavMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
-        link.addEventListener('click', () => {
+      // Close on any button or link click inside drawer
+      mobileNavMenu.querySelectorAll('.mobile-nav-link, button').forEach(el => {
+        el.addEventListener('click', () => {
           mobileNavMenu.classList.add('hidden');
           mobileMenuBtn.classList.remove('open');
         });
       });
+      // Close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobileNavMenu.classList.contains('hidden') && !mobileNavMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          mobileNavMenu.classList.add('hidden');
+          mobileMenuBtn.classList.remove('open');
+        }
+      });
     }
+
+    // ── Floating Back-to-Top Button ──
+    const backToTopBtn = document.getElementById('back-to-top-btn');
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 320) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // ── Mobile Bottom Quick-Dock Active Route Highlighting ──
+    const updateMobileDockActive = () => {
+      const currentHash = window.location.hash || '#library';
+      const dockBtns = document.querySelectorAll('.mobile-bottom-dock .mobile-dock-btn');
+      dockBtns.forEach(btn => {
+        const href = btn.getAttribute('href');
+        if (href && href === currentHash) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    };
+    window.addEventListener('hashchange', updateMobileDockActive);
+    updateMobileDockActive();
 
     // Scroll event for header background shift (top 36px utility bar + 64px nav = 100px total)
     const header = document.querySelector('header');
@@ -847,7 +887,7 @@ class AppController {
             <button class="row-next-btn carousel-nav-btn" data-row="${rowId}" aria-label="Next">▶</button>
           </div>
         </div>
-        <div id="${rowId}" class="flex gap-5 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth">
+        <div id="${rowId}" class="flex gap-3 sm:gap-5 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth scroll-snap-x">
           ${cardsHTML}
         </div>
       </div>
@@ -1431,7 +1471,7 @@ class AppController {
     });
   }
 
-  createContentCardHTML(item, isAudio = false, widthClass = 'w-72 flex-shrink-0') {
+  createContentCardHTML(item, isAudio = false, widthClass = 'w-[185px] xs:w-[215px] sm:w-64 md:w-72 flex-shrink-0') {
     const itemIsAudio = isAudio || !!item.audioUrl || item.category === "Audiobooks & Legends" || item.category === "Ebook & Audio Series";
     const isLocked = item.isPremium && !this.isSubscribed;
     const comingSoon = !itemIsAudio && !item.videoUrl;
