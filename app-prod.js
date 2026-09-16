@@ -1732,14 +1732,16 @@ class AppController {
 
   // Audio Podcast player modal (with real HTML5 Ambient Loops & TTS Voice Narration)
   openAudioPlayer(item) {
+    if (!item) return;
+
     // Playtime details for saving progress
     this.activePlayItemId = item.id;
     this.activePlayStartTime = Date.now();
 
-    // Apply Apple TV dynamic ambient backdrop glow
+    // Dynamic Apple TV ambient backdrop glow
     const container = document.getElementById('media-modal-container');
     if (container) {
-      let glowColor = 'rgba(59,130,246,0.22)'; // Blue glow for audiobooks
+      let glowColor = 'rgba(59,130,246,0.22)';
       if (item.category === 'God Series') glowColor = 'rgba(249,115,22,0.22)';
       else if (item.category === 'Kids Stories') glowColor = 'rgba(16,185,129,0.22)';
       container.style.boxShadow = `0 25px 50px -12px rgba(0,0,0,0.5), 0 0 100px 10px ${glowColor}`;
@@ -1748,11 +1750,12 @@ class AppController {
     const modal = document.getElementById('media-modal');
     const modalTitle = document.getElementById('media-modal-title');
     const modalBody = document.getElementById('media-modal-body');
+    if (!modal || !modalTitle || !modalBody) return;
 
     modalTitle.innerHTML = `
       <div class="flex items-center gap-3">
-        <span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">AUDIO BOOK</span>
-        <h2 class="text-lg md:text-xl font-bold font-serif text-white">${item.title}</h2>
+        <span class="bg-blue-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase tracking-wider">AUDIOBOOK & KARAOKE</span>
+        <h2 class="text-base md:text-xl font-bold font-serif text-white line-clamp-1">${item.title}</h2>
       </div>
     `;
 
@@ -1768,26 +1771,42 @@ class AppController {
     }
 
     // Instantiate background ambient sound
-    this.activeAudio = new Audio(item.audioUrl);
+    this.activeAudio = new Audio(item.audioUrl || "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg");
     this.activeAudio.loop = true;
-    this.activeAudio.volume = 0.2; // Low background volume
+    this.activeAudio.volume = 0.2;
 
-    const textToSpeak = item.desc || item.description || "Welcome to HeritageStream audio chronicles.";
-    let currentTextToSpeak = textToSpeak;
+    // Chapters & Text handling
+    const chapters = (item.content && item.content.length) ? item.content : [
+      {
+        title: item.title,
+        text: item.desc || item.description || "Welcome to Sanatana360 sacred audio chronicles."
+      }
+    ];
+
+    let currentChapterIdx = 0;
+    let selectedLang = 'en-IN';
     let isTranslating = false;
+    let isPlaying = false;
+    let autoScrollEnabled = true;
+    let teleprompterFontSize = 15; // default px
+    let wordTokens = [];
+    let currentTextToSpeak = chapters[0].text;
+    let elapsedSeconds = 0;
+    let currentWordIdx = -1;
 
+    // Translation cache helper
     const getTranslation = async (text, langCode) => {
-      const target = langCode.split('-')[0]; // 'en', 'kn', 'hi', 'ta', 'te'
+      const target = langCode.split('-')[0];
       if (target === 'en') return text;
       
-      const cacheKey = `${item.id}_${target}`;
+      const cacheKey = `${item.id}_${currentChapterIdx}_${target}`;
       if (window.translationCache && window.translationCache[cacheKey]) {
         return window.translationCache[cacheKey];
       }
       if (!window.translationCache) window.translationCache = {};
 
       try {
-        const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${target}`);
+        const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text.substring(0, 500))}&langpair=en|${target}`);
         if (!res.ok) throw new Error("Translation API failed");
         const data = await res.json();
         const translated = data.responseData.translatedText;
@@ -1796,31 +1815,66 @@ class AppController {
           return translated;
         }
       } catch (err) {
-        console.warn("Translation failed, using original English text", err);
+        console.warn("Translation fallback to English", err);
       }
       return text;
     };
 
-    const totalWords = textToSpeak.split(/\s+/).length;
-    // Estimate speaking time: average speaking rate is ~140 words per minute (~2.3 words per second)
-    const totalDuration = Math.max(15, Math.ceil(totalWords / (2.3 * this.audioRateMultiplier))); 
-    let elapsedSeconds = 0;
-    let isPlaying = false;
-    let isSpeechInitiated = false;
-    let selectedLang = 'en-IN'; // Default: Indian English
-    
-    // Restore playback position if previously started
-    const savedAudioProgress = this.progress[item.id];
-    if (savedAudioProgress && savedAudioProgress.progress > 0.05 && savedAudioProgress.progress < 0.95) {
-      elapsedSeconds = Math.floor(savedAudioProgress.progress * totalDuration);
-    }
+    // Calculate total duration based on text words
+    const calculateDuration = (text) => {
+      const words = text.split(/\s+/).filter(Boolean).length;
+      return Math.max(15, Math.ceil(words / (2.2 * (this.audioRateMultiplier || 1.0))));
+    };
 
-    // ── Indian Voice Helper ──
-    // Picks the best available voice for the selected Indian language.
-    // Falls back gracefully: hi-IN → en-IN → any en voice.
+    let totalDuration = calculateDuration(currentTextToSpeak);
+
+    // ── Build Karaoke HTML & Token Mapping ──
+    const buildKaraokeHTML = (text) => {
+      wordTokens = [];
+      const sentenceRegex = /[^.!?]+[.!?]+|[^.!?]+$/g;
+      const sentences = text.match(sentenceRegex) || [text];
+
+      let globalWordIdx = 0;
+      let runningCharOffset = 0;
+
+      let html = '';
+      sentences.forEach((sentence, sIdx) => {
+        const trimmedSentence = sentence.trim();
+        if (!trimmedSentence) return;
+
+        const words = trimmedSentence.split(/(\s+)/);
+        let sentenceWordsHTML = '';
+
+        words.forEach(token => {
+          if (/^\s+$/.test(token)) {
+            sentenceWordsHTML += token;
+            runningCharOffset += token.length;
+          } else {
+            const charStart = runningCharOffset;
+            const charEnd = charStart + token.length;
+            wordTokens.push({
+              idx: globalWordIdx,
+              word: token,
+              charStart,
+              charEnd,
+              sentenceIdx: sIdx
+            });
+
+            sentenceWordsHTML += `<span class="karaoke-word karaoke-word-upcoming" id="kw-${globalWordIdx}" data-idx="${globalWordIdx}" data-start="${charStart}" data-end="${charEnd}">${token}</span>`;
+            globalWordIdx++;
+            runningCharOffset += token.length;
+          }
+        });
+
+        html += `<span class="karaoke-sentence" id="ks-${sIdx}" data-sentence-idx="${sIdx}">${sentenceWordsHTML}</span> `;
+      });
+
+      return html;
+    };
+
+    // Indian Voice settings
     const getIndianVoice = (lang) => {
       const voices = window.speechSynthesis.getVoices();
-      // Priority order for each language
       const priorities = {
         'en-IN': ['en-IN', 'en_IN'],
         'kn-IN': ['kn-IN', 'kn_IN'],
@@ -1829,143 +1883,256 @@ class AppController {
         'te-IN': ['te-IN', 'te_IN'],
       };
       const codes = priorities[lang] || ['en-IN'];
-      // 1. Exact locale match
       for (const code of codes) {
         const v = voices.find(v => v.lang === code || v.lang.replace('_','-') === code);
         if (v) return v;
       }
-      // 2. Google Indian English fallback
       const googleIN = voices.find(v => v.lang.startsWith('en') && v.name.toLowerCase().includes('india'));
       if (googleIN) return googleIN;
-      // 3. Any en-IN
-      const anyIN = voices.find(v => v.lang === 'en-IN');
-      if (anyIN) return anyIN;
-      // 4. Google English (closest natural)
-      return voices.find(v => v.lang.startsWith('en') && v.name.includes('Google')) || null;
+      return voices.find(v => v.lang.startsWith('en')) || null;
     };
 
-    // ── Indian Speech Cadence Settings ──
-    // Slower rate & slightly lower pitch gives the warm, measured
-    // storytelling pace common in Indian narration.
     const getIndianSpeechSettings = (lang) => {
       const settings = {
-        'en-IN': { rate: 0.88, pitch: 0.93 }, // measured Indian English pace
-        'kn-IN': { rate: 0.86, pitch: 0.94 }, // measured Kannada cadence
-        'hi-IN': { rate: 0.85, pitch: 0.90 }, // slightly slower for Hindi
-        'ta-IN': { rate: 0.84, pitch: 0.92 }, // Tamil cadence
-        'te-IN': { rate: 0.85, pitch: 0.91 }, // Telugu cadence
+        'en-IN': { rate: 0.88 * (this.audioRateMultiplier || 1.0), pitch: 0.94 },
+        'kn-IN': { rate: 0.85 * (this.audioRateMultiplier || 1.0), pitch: 0.94 },
+        'hi-IN': { rate: 0.85 * (this.audioRateMultiplier || 1.0), pitch: 0.91 },
+        'ta-IN': { rate: 0.84 * (this.audioRateMultiplier || 1.0), pitch: 0.92 },
+        'te-IN': { rate: 0.85 * (this.audioRateMultiplier || 1.0), pitch: 0.91 },
       };
-      return settings[lang] || { rate: 0.88, pitch: 0.93 };
+      return settings[lang] || { rate: 0.88 * (this.audioRateMultiplier || 1.0), pitch: 0.94 };
     };
 
-    // ── Unified speak helper ──
-    const speakWith = (text, onEnd) => {
+    // ── Live Karaoke Word & Sentence Synchronizer ──
+    const syncKaraokeToCharIndex = (charIndex) => {
+      if (!wordTokens.length) return;
+
+      let activeWord = wordTokens.find(w => charIndex >= w.charStart && charIndex <= w.charEnd);
+      if (!activeWord) {
+        for (let i = 0; i < wordTokens.length; i++) {
+          if (wordTokens[i].charStart > charIndex) {
+            activeWord = wordTokens[Math.max(0, i - 1)];
+            break;
+          }
+        }
+        if (!activeWord && wordTokens.length) activeWord = wordTokens[wordTokens.length - 1];
+      }
+
+      if (!activeWord) return;
+
+      const activeIdx = activeWord.idx;
+      if (activeIdx === currentWordIdx) return;
+      currentWordIdx = activeIdx;
+
+      // Update words
+      wordTokens.forEach(w => {
+        const el = document.getElementById('kw-' + w.idx);
+        if (!el) return;
+        if (w.idx < activeIdx) {
+          el.className = 'karaoke-word karaoke-word-passed';
+        } else if (w.idx === activeIdx) {
+          el.className = 'karaoke-word karaoke-word-active';
+        } else {
+          el.className = 'karaoke-word karaoke-word-upcoming';
+        }
+      });
+
+      // Update sentences
+      document.querySelectorAll('.karaoke-sentence').forEach(s => {
+        const sIdx = parseInt(s.getAttribute('data-sentence-idx') || '-1');
+        if (sIdx === activeWord.sentenceIdx) {
+          s.classList.add('karaoke-sentence-active');
+        } else {
+          s.classList.remove('karaoke-sentence-active');
+        }
+      });
+
+      // Auto scroll if enabled
+      if (autoScrollEnabled) {
+        const activeEl = document.getElementById('kw-' + activeIdx);
+        const containerBox = document.getElementById('karaoke-scroll-container');
+        if (activeEl && containerBox) {
+          const containerRect = containerBox.getBoundingClientRect();
+          const elRect = activeEl.getBoundingClientRect();
+          const relativeTop = elRect.top - containerRect.top;
+          if (relativeTop < 40 || relativeTop > containerRect.height - 80) {
+            activeEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      }
+    };
+
+    // ── Speech Narration Engine ──
+    const speakWith = (text, startChar = 0) => {
       window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
+      const textToSpeakNow = startChar > 0 ? text.substring(startChar) : text;
+      const utterance = new SpeechSynthesisUtterance(textToSpeakNow);
       const { rate, pitch } = getIndianSpeechSettings(selectedLang);
       utterance.rate = rate;
       utterance.pitch = pitch;
       utterance.lang = selectedLang;
       const voice = getIndianVoice(selectedLang);
       if (voice) utterance.voice = voice;
-      utterance.onend = onEnd || (() => {
+
+      utterance.onboundary = (event) => {
+        if (event.name === 'word' || event.name === 'sentence') {
+          const actualChar = startChar + event.charIndex;
+          syncKaraokeToCharIndex(actualChar);
+        }
+      };
+
+      utterance.onend = () => {
         isPlaying = false;
         if (this.activeAudio) this.activeAudio.pause();
-        clearInterval(this.audioProgressInterval);
-        this.audioProgressInterval = null;
+        if (this.audioProgressInterval) {
+          clearInterval(this.audioProgressInterval);
+          this.audioProgressInterval = null;
+        }
         drawPlayerUI();
-      });
+      };
+
+      utterance.onerror = (err) => {
+        console.warn("Speech synthesis notice:", err);
+      };
+
       window.speechSynthesis.speak(utterance);
     };
 
     const tickProgress = () => {
       if (!isPlaying) return;
-      
       elapsedSeconds++;
-      
+
+      // Teleprompter fallback sync if onboundary is delayed
+      const approxChar = Math.floor((elapsedSeconds / totalDuration) * currentTextToSpeak.length);
+      syncKaraokeToCharIndex(approxChar);
+
       // Save progress dynamically
       this.progress[item.id] = { progress: elapsedSeconds / totalDuration, timestamp: Date.now() };
       localStorage.setItem('hs_progress', JSON.stringify(this.progress));
 
       if (elapsedSeconds >= totalDuration) {
-        clearInterval(this.audioProgressInterval);
-        this.audioProgressInterval = null;
+        if (this.audioProgressInterval) {
+          clearInterval(this.audioProgressInterval);
+          this.audioProgressInterval = null;
+        }
         isPlaying = false;
         elapsedSeconds = totalDuration;
         if (this.activeAudio) this.activeAudio.pause();
         drawPlayerUI();
         return;
       }
-      
+
       const progressPercent = (elapsedSeconds / totalDuration) * 100;
       const progressFill = document.getElementById('audio-progress-fill');
       const elapsedEl = document.getElementById('audio-timer-elapsed');
-      
       if (progressFill) progressFill.style.width = `${progressPercent}%`;
       if (elapsedEl) elapsedEl.textContent = this.formatTime(elapsedSeconds);
     };
 
     const drawPlayerUI = () => {
       const progressPercent = (elapsedSeconds / totalDuration) * 100;
+      const currentChapter = chapters[currentChapterIdx] || chapters[0];
 
       modalBody.innerHTML = `
-        <div class="flex flex-col items-center justify-center p-6 text-center min-h-[350px]">
-          <!-- Audio visualizer animation -->
-          <div class="audio-visualizer-container flex items-end justify-center gap-1.5 h-16 mb-8 w-48">
-            ${Array.from({ length: 12 }).map((_, idx) => `
-              <span class="visualizer-bar w-1.5 rounded-full bg-gradient-to-t from-blue-500 to-indigo-400 block transition-all" style="height: 10%; animation: soundwave 1.2s ease-in-out infinite alternate; animation-delay: ${idx * 0.1}s; animation-play-state: ${isPlaying ? 'running' : 'paused'}"></span>
-            `).join('')}
+        <div class="flex flex-col items-center justify-center p-4 md:p-6 text-center max-w-2xl mx-auto">
+          <!-- Top Soundwave visualizer & title -->
+          <div class="flex items-center justify-between w-full mb-3 px-1">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full ${isPlaying ? 'bg-emerald-400 animate-pulse' : 'bg-white/30'}"></span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-white/70 font-bold">${isPlaying ? 'LIVE AUDIO & KARAOKE SYNC' : 'PAUSED'}</span>
+            </div>
+            <!-- Audio visualizer animation -->
+            <div class="audio-visualizer-container flex items-end justify-center gap-1 h-6">
+              ${Array.from({ length: 8 }).map((_, idx) => `
+                <span class="visualizer-bar w-1 rounded-full bg-gradient-to-t from-blue-500 to-indigo-400 block transition-all" style="height: 15%; animation: soundwave 1s ease-in-out infinite alternate; animation-delay: ${idx * 0.12}s; animation-play-state: ${isPlaying ? 'running' : 'paused'}"></span>
+              `).join('')}
+            </div>
           </div>
 
-          <h3 class="text-xl font-bold text-white mb-1 font-serif">${item.title}</h3>
-          <p class="text-xs text-white/50 mb-3">${item.narrator || 'AI Voice Narration · Indian English'}</p>
+          <!-- Chapter Selector (if multi-chapter) -->
+          ${chapters.length > 1 ? `
+            <div class="flex items-center gap-1.5 mb-3 overflow-x-auto w-full no-scrollbar py-1">
+              ${chapters.map((ch, idx) => `
+                <button class="audio-chapter-tab-btn flex-shrink-0 text-[10px] font-bold px-3 py-1 rounded-lg border transition-all ${idx === currentChapterIdx ? 'bg-blue-600 text-white border-blue-400 shadow-md shadow-blue-600/30' : 'bg-white/5 border-white/10 text-white/60 hover:text-white'}" data-ch-idx="${idx}">
+                  ${ch.title ? ch.title.substring(0, 22) : `Chapter ${idx + 1}`}
+                </button>
+              `).join('')}
+            </div>
+          ` : ''}
 
           <!-- Language / Voice Selector -->
-          <div class="flex items-center gap-2 mb-4 flex-wrap justify-center">
-            <span class="text-[9px] text-white/30 uppercase tracking-wider font-bold">Voice:</span>
-            ${[
-              { code: 'en-IN', label: '🇮🇳 English' },
-              { code: 'kn-IN', label: '✨ ಕನ್ನಡ' },
-              { code: 'hi-IN', label: '🕉 हिन्दी' },
-              { code: 'ta-IN', label: '🌺 தமிழ்' },
-              { code: 'te-IN', label: '🌸 తెలుగు' },
-            ].map(lang => `
-              <button class="voice-lang-btn text-[10px] font-bold px-2.5 py-1 rounded-full border transition-all
-                ${selectedLang === lang.code
-                  ? 'bg-gold text-black border-gold'
-                  : 'bg-white/5 text-white/50 border-white/10 hover:border-white/30'}"
-                data-lang="${lang.code}">${lang.label}</button>
-            `).join('')}
+          <div class="flex items-center justify-between w-full mb-3 flex-wrap gap-2 px-1">
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="text-[9px] text-white/40 uppercase tracking-wider font-bold">Voice:</span>
+              ${[
+                { code: 'en-IN', label: '🇮🇳 English' },
+                { code: 'kn-IN', label: '✨ ಕನ್ನಡ' },
+                { code: 'hi-IN', label: '🕉 हिन्दी' },
+                { code: 'ta-IN', label: '🌺 தமிழ்' },
+                { code: 'te-IN', label: '🌸 తెలుగు' },
+              ].map(lang => `
+                <button class="voice-lang-btn text-[9px] font-bold px-2 py-0.8 rounded-full border transition-all
+                  ${selectedLang === lang.code
+                    ? 'bg-gold text-black border-gold shadow-sm shadow-gold/30'
+                    : 'bg-white/5 text-white/50 border-white/10 hover:border-white/30'}"
+                  data-lang="${lang.code}">${lang.label}</button>
+              `).join('')}
+            </div>
+
+            <!-- Accessibility Font Size & Auto-scroll controls -->
+            <div class="flex items-center gap-2 text-xs">
+              <button id="karaoke-font-dec" class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white/60 hover:text-white text-[10px] font-bold" title="Decrease font size">A-</button>
+              <button id="karaoke-font-inc" class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white/60 hover:text-white text-[10px] font-bold" title="Increase font size">A+</button>
+              <button id="karaoke-autoscroll-toggle" class="px-2 py-0.5 rounded border text-[10px] font-bold ${autoScrollEnabled ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/40' : 'bg-white/5 text-white/40 border-white/10'}" title="Auto-scroll follow narrator">
+                📜 Auto-Scroll ${autoScrollEnabled ? 'ON' : 'OFF'}
+              </button>
+            </div>
           </div>
 
-          <div class="max-w-md bg-white/5 border border-white/5 rounded-xl p-3 mb-4 w-full">
-            <p class="text-[10px] text-white/70 italic leading-relaxed text-left line-clamp-3 font-sans">
+          <!-- ── REAL-TIME KARAOKE SYNCHRONIZED TELEPROMPTER VIEWPORT ── -->
+          <div class="w-full relative rounded-2xl overflow-hidden mb-4 border border-white/10 bg-[#0a0c12]/90 shadow-2xl">
+            <div class="px-4 py-2 bg-white/5 border-b border-white/5 flex items-center justify-between text-[10px] text-white/50">
+              <span class="flex items-center gap-1.5 font-mono">
+                <span class="text-gold">📖</span>
+                <span>Click any sentence to listen from there</span>
+              </span>
+              <span class="text-white/40">${item.narrator || 'Acharya Narration'}</span>
+            </div>
+            
+            <div id="karaoke-scroll-container" class="karaoke-teleprompter-box p-5 md:p-6 text-left max-h-[220px] md:max-h-[260px] overflow-y-auto leading-relaxed select-text font-serif transition-all" style="font-size: ${teleprompterFontSize}px; line-height: 1.8;">
               ${isTranslating ? `
-                <span class="flex items-center justify-center gap-2 py-4">
-                  <span class="w-3.5 h-3.5 border-2 border-gold border-t-transparent rounded-full animate-spin"></span>
-                  <span class="text-[10px] text-gold/80 font-bold uppercase tracking-wider">Translating...</span>
-                </span>
-              ` : `"${currentTextToSpeak}"`}
-            </p>
+                <div class="flex items-center justify-center gap-3 py-12">
+                  <span class="w-4 h-4 border-2 border-gold border-t-transparent rounded-full animate-spin"></span>
+                  <span class="text-xs text-gold font-bold uppercase tracking-wider font-sans">Translating lyrics...</span>
+                </div>
+              ` : buildKaraokeHTML(currentTextToSpeak)}
+            </div>
           </div>
 
-          <!-- Playback Speed dropdown -->
-          <div class="flex items-center gap-1.5 mb-4 text-[10px] text-white/50 font-sans">
-            <span>Narration Speed:</span>
-            <select id="audio-speed-select" class="bg-[#101116] border border-white/10 rounded px-2.5 py-1 text-white text-[10px] focus:outline-none">
-              <option value="0.75" ${this.audioRateMultiplier === 0.75 ? 'selected' : ''}>0.75x (Slower)</option>
-              <option value="1.0" ${this.audioRateMultiplier === 1.0 ? 'selected' : ''}>1.0x (Normal)</option>
-              <option value="1.25" ${this.audioRateMultiplier === 1.25 ? 'selected' : ''}>1.25x (Faster)</option>
-              <option value="1.5" ${this.audioRateMultiplier === 1.5 ? 'selected' : ''}>1.5x (Very Fast)</option>
-            </select>
+          <!-- Playback Speed and Ambient Audio Bar -->
+          <div class="flex items-center justify-between w-full mb-3 px-1 text-[10px] text-white/60 font-sans">
+            <div class="flex items-center gap-2">
+              <span>Speed:</span>
+              <select id="audio-speed-select" class="bg-[#14161f] border border-white/10 rounded px-2 py-0.5 text-white text-[10px] focus:outline-none">
+                <option value="0.75" ${(this.audioRateMultiplier || 1.0) === 0.75 ? 'selected' : ''}>0.75x</option>
+                <option value="1.0" ${(this.audioRateMultiplier || 1.0) === 1.0 ? 'selected' : ''}>1.0x</option>
+                <option value="1.25" ${(this.audioRateMultiplier || 1.0) === 1.25 ? 'selected' : ''}>1.25x</option>
+                <option value="1.5" ${(this.audioRateMultiplier || 1.0) === 1.5 ? 'selected' : ''}>1.5x</option>
+              </select>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span>🌿 Ambient Score:</span>
+              <input type="range" id="audio-ambient-vol" min="0" max="1" step="0.05" value="${this.activeAudio ? this.activeAudio.volume : 0.2}" class="w-16 accent-blue-500 cursor-pointer">
+            </div>
           </div>
 
           <!-- Audio Progress Bar -->
-          <div class="w-full max-w-md mb-6">
-            <div class="w-full bg-white/10 rounded-full h-1.5 relative cursor-pointer" id="audio-progress-track">
-              <div class="bg-gradient-to-r from-blue-500 to-indigo-500 h-1.5 rounded-full" id="audio-progress-fill" style="width: ${progressPercent}%"></div>
+          <div class="w-full mb-5">
+            <div class="w-full bg-white/10 rounded-full h-2 relative cursor-pointer group" id="audio-progress-track">
+              <div class="bg-gradient-to-r from-blue-500 via-indigo-500 to-amber-400 h-2 rounded-full transition-all" id="audio-progress-fill" style="width: ${progressPercent}%"></div>
             </div>
-            <div class="flex justify-between items-center mt-2 text-[10px] text-white/40 font-mono">
+            <div class="flex justify-between items-center mt-1.5 text-[10px] text-white/40 font-mono">
               <span id="audio-timer-elapsed">${this.formatTime(elapsedSeconds)}</span>
               <span>${this.formatTime(totalDuration)}</span>
             </div>
@@ -1973,120 +2140,222 @@ class AppController {
 
           <!-- Controls -->
           <div class="flex items-center gap-6">
-            <button id="audio-rewind" class="w-10 h-10 rounded-full bg-white/5 border border-white/5 hover:bg-white/10 text-white flex items-center justify-center text-xs">⏮ 10s</button>
-            <button id="audio-play-toggle" class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 hover:from-blue-500 hover:to-indigo-400 text-white flex items-center justify-center text-2xl shadow-lg shadow-blue-500/20">
+            <button id="audio-rewind" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:scale-105 transition-all text-white flex items-center justify-center text-xs" title="Rewind 10s">⏮ 10s</button>
+            <button id="audio-play-toggle" class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 hover:from-blue-500 hover:to-indigo-400 hover:scale-105 active:scale-95 transition-all text-white flex items-center justify-center text-2xl shadow-xl shadow-blue-500/30">
               ${isPlaying ? '⏸' : '▶'}
             </button>
-            <button id="audio-forward" class="w-10 h-10 rounded-full bg-white/5 border border-white/5 hover:bg-white/10 text-white flex items-center justify-center text-xs">10s ⏭</button>
+            <button id="audio-forward" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:scale-105 transition-all text-white flex items-center justify-center text-xs" title="Forward 10s">10s ⏭</button>
           </div>
         </div>
       `;
 
-      // Bind language switcher buttons
-      container.querySelectorAll('.voice-lang-btn').forEach(btn => {
+      // Chapter switches
+      modalBody.querySelectorAll('.audio-chapter-tab-btn').forEach(btn => {
         btn.addEventListener('click', async () => {
-          selectedLang = btn.getAttribute('data-lang');
-          
-          isTranslating = true;
-          drawPlayerUI();
-          
-          currentTextToSpeak = await getTranslation(textToSpeak, selectedLang);
-          isTranslating = false;
-          
+          const idx = parseInt(btn.getAttribute('data-ch-idx') || '0');
+          currentChapterIdx = idx;
+          currentTextToSpeak = chapters[currentChapterIdx].text;
+          totalDuration = calculateDuration(currentTextToSpeak);
+          elapsedSeconds = 0;
+          currentWordIdx = -1;
+
+          if (selectedLang !== 'en-IN') {
+            isTranslating = true;
+            drawPlayerUI();
+            currentTextToSpeak = await getTranslation(chapters[currentChapterIdx].text, selectedLang);
+            isTranslating = false;
+          }
+
           if (isPlaying) {
             window.speechSynthesis.cancel();
-            speakWith(currentTextToSpeak);
+            speakWith(currentTextToSpeak, 0);
           }
           drawPlayerUI();
         });
       });
 
+      // Language switcher
+      modalBody.querySelectorAll('.voice-lang-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          selectedLang = btn.getAttribute('data-lang');
+          isTranslating = true;
+          drawPlayerUI();
+
+          currentTextToSpeak = await getTranslation(chapters[currentChapterIdx].text, selectedLang);
+          totalDuration = calculateDuration(currentTextToSpeak);
+          elapsedSeconds = 0;
+          currentWordIdx = -1;
+          isTranslating = false;
+
+          if (isPlaying) {
+            window.speechSynthesis.cancel();
+            speakWith(currentTextToSpeak, 0);
+          }
+          drawPlayerUI();
+        });
+      });
+
+      // Font size buttons
+      const fontDec = document.getElementById('karaoke-font-dec');
+      const fontInc = document.getElementById('karaoke-font-inc');
+      const autoScrollToggle = document.getElementById('karaoke-autoscroll-toggle');
+
+      if (fontDec) {
+        fontDec.addEventListener('click', () => {
+          teleprompterFontSize = Math.max(12, teleprompterFontSize - 2);
+          const box = document.getElementById('karaoke-scroll-container');
+          if (box) box.style.fontSize = teleprompterFontSize + 'px';
+        });
+      }
+
+      if (fontInc) {
+        fontInc.addEventListener('click', () => {
+          teleprompterFontSize = Math.min(24, teleprompterFontSize + 2);
+          const box = document.getElementById('karaoke-scroll-container');
+          if (box) box.style.fontSize = teleprompterFontSize + 'px';
+        });
+      }
+
+      if (autoScrollToggle) {
+        autoScrollToggle.addEventListener('click', () => {
+          autoScrollEnabled = !autoScrollEnabled;
+          drawPlayerUI();
+        });
+      }
+
+      // Sentence jump click
+      modalBody.querySelectorAll('.karaoke-sentence').forEach(sentEl => {
+        sentEl.addEventListener('click', () => {
+          const firstWord = sentEl.querySelector('.karaoke-word');
+          if (firstWord) {
+            const charStart = parseInt(firstWord.getAttribute('data-start') || '0');
+            const ratio = charStart / currentTextToSpeak.length;
+            elapsedSeconds = Math.floor(ratio * totalDuration);
+
+            isPlaying = true;
+            if (this.activeAudio) this.activeAudio.play().catch(() => {});
+            speakWith(currentTextToSpeak, charStart);
+
+            if (!this.audioProgressInterval) {
+              this.audioProgressInterval = setInterval(tickProgress, 1000);
+            }
+            drawPlayerUI();
+          }
+        });
+      });
+
+      // Speed selector
       const speedSelect = document.getElementById('audio-speed-select');
       if (speedSelect) {
         speedSelect.addEventListener('change', (e) => {
           this.audioRateMultiplier = parseFloat(e.target.value);
           localStorage.setItem('hs_audio_rate', String(this.audioRateMultiplier));
+          totalDuration = calculateDuration(currentTextToSpeak);
           if (isPlaying) {
-            window.speechSynthesis.cancel();
-            speakWith(currentTextToSpeak);
+            const charStart = Math.floor((elapsedSeconds / totalDuration) * currentTextToSpeak.length);
+            speakWith(currentTextToSpeak, charStart);
           }
         });
       }
 
+      // Ambient slider
+      const ambientSlider = document.getElementById('audio-ambient-vol');
+      if (ambientSlider) {
+        ambientSlider.addEventListener('input', (e) => {
+          if (this.activeAudio) {
+            this.activeAudio.volume = parseFloat(e.target.value);
+          }
+        });
+      }
+
+      // Progress bar click
+      const progressTrack = document.getElementById('audio-progress-track');
+      if (progressTrack) {
+        progressTrack.addEventListener('click', (e) => {
+          const rect = progressTrack.getBoundingClientRect();
+          const clickX = e.clientX - rect.left;
+          const ratio = Math.max(0, Math.min(1, clickX / rect.width));
+          elapsedSeconds = Math.floor(ratio * totalDuration);
+          const charStart = Math.floor(ratio * currentTextToSpeak.length);
+
+          if (isPlaying) {
+            speakWith(currentTextToSpeak, charStart);
+          } else {
+            syncKaraokeToCharIndex(charStart);
+          }
+          drawPlayerUI();
+        });
+      }
+
+      // Play toggle
       const playToggle = document.getElementById('audio-play-toggle');
       const rewindBtn = document.getElementById('audio-rewind');
       const forwardBtn = document.getElementById('audio-forward');
 
-      playToggle.addEventListener('click', () => {
-        isPlaying = !isPlaying;
-        if (isPlaying) {
-          // 1. Play background ambient loop
-          if (this.activeAudio) {
-            this.activeAudio.play().catch(err => console.log("Ambient score pending user interaction:", err));
-          }
+      if (playToggle) {
+        playToggle.addEventListener('click', () => {
+          isPlaying = !isPlaying;
+          if (isPlaying) {
+            if (this.activeAudio) {
+              this.activeAudio.play().catch(err => console.log("Ambient score notice:", err));
+            }
+            const charStart = Math.floor((elapsedSeconds / totalDuration) * currentTextToSpeak.length);
+            speakWith(currentTextToSpeak, charStart);
 
-          // 2. Play or resume Text-to-Speech narration
-          if (window.speechSynthesis.paused) {
-            window.speechSynthesis.resume();
+            if (!this.audioProgressInterval) {
+              this.audioProgressInterval = setInterval(tickProgress, 1000);
+            }
           } else {
-            speakWith(currentTextToSpeak);
+            if (this.activeAudio) this.activeAudio.pause();
+            window.speechSynthesis.pause();
+            if (this.audioProgressInterval) {
+              clearInterval(this.audioProgressInterval);
+              this.audioProgressInterval = null;
+            }
           }
+          drawPlayerUI();
+        });
+      }
 
-          // 3. Start progress interval timer
-          if (!this.audioProgressInterval) {
-            this.audioProgressInterval = setInterval(tickProgress, 1000);
+      if (rewindBtn) {
+        rewindBtn.addEventListener('click', () => {
+          elapsedSeconds = Math.max(0, elapsedSeconds - 10);
+          const charStart = Math.floor((elapsedSeconds / totalDuration) * currentTextToSpeak.length);
+          if (isPlaying) {
+            speakWith(currentTextToSpeak, charStart);
+          } else {
+            syncKaraokeToCharIndex(charStart);
           }
-        } else {
-          // Pause ambient audio and TTS
-          if (this.activeAudio) this.activeAudio.pause();
-          window.speechSynthesis.pause();
-          clearInterval(this.audioProgressInterval);
-          this.audioProgressInterval = null;
-        }
-        drawPlayerUI();
-      });
+          drawPlayerUI();
+        });
+      }
 
-      rewindBtn.addEventListener('click', () => {
-        elapsedSeconds = Math.max(0, elapsedSeconds - 10);
-        // Sync Speech by restarting at appropriate approximate offset
-        window.speechSynthesis.cancel();
-        if (isPlaying) {
-          const approxCharIndex = Math.floor((elapsedSeconds / totalDuration) * currentTextToSpeak.length);
-          speakWith(currentTextToSpeak.substring(approxCharIndex));
-        }
-        drawPlayerUI();
-      });
-
-      forwardBtn.addEventListener('click', () => {
-        elapsedSeconds = Math.min(totalDuration, elapsedSeconds + 10);
-        window.speechSynthesis.cancel();
-        if (isPlaying && elapsedSeconds < totalDuration) {
-          const approxCharIndex = Math.floor((elapsedSeconds / totalDuration) * currentTextToSpeak.length);
-          speakWith(currentTextToSpeak.substring(approxCharIndex));
-        }
-        drawPlayerUI();
-      });
+      if (forwardBtn) {
+        forwardBtn.addEventListener('click', () => {
+          elapsedSeconds = Math.min(totalDuration, elapsedSeconds + 10);
+          const charStart = Math.floor((elapsedSeconds / totalDuration) * currentTextToSpeak.length);
+          if (isPlaying && elapsedSeconds < totalDuration) {
+            speakWith(currentTextToSpeak, charStart);
+          } else {
+            syncKaraokeToCharIndex(charStart);
+          }
+          drawPlayerUI();
+        });
+      }
     };
 
     drawPlayerUI();
+
     modal.classList.remove('hidden');
     modal.classList.add('flex');
-    
-    // Stop and cleanup audio and speech when closing modal
-    const originalClose = modal.querySelector('.modal-close');
-    const cleanup = () => {
-      window.speechSynthesis.cancel();
-      if (this.activeAudio) {
-        this.activeAudio.pause();
-        this.activeAudio = null;
-      }
-      if (this.audioProgressInterval) {
-        clearInterval(this.audioProgressInterval);
-        this.audioProgressInterval = null;
-      }
-      originalClose.removeEventListener('click', cleanup);
-    };
-    originalClose.addEventListener('click', cleanup);
+
+    const closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) {
+      closeBtn.onclick = (e) => {
+        e.stopPropagation();
+        this.closeAllModals();
+      };
+    }
   }
 
   // Help functions for Simulated Player
