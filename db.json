@@ -313,7 +313,8 @@
         }
       ],
       "videoUrl": "https://www.youtube.com/embed/QvwWU2iDxkQ",
-      "tagline": "Authentic Chronicle & Educational Docu-Series of Bharat"
+      "tagline": "Cosmic Consciousness, Nataraja Dance of Creation & Kailash Tapas",
+      "description": "Delve into the profound metaphysics of Mahadeva Shiva. Explore the Ananda Tandava—the cosmic dance of continuous creation, preservation, destruction, illusion, and grace. Discover the yogic science of Neelkantha, the descent of the sacred Ganga into His matted locks, and His abode atop Mount Kailash as the primordial Adi Yogi."
     },
     {
       "id": "vishnu",
@@ -348,7 +349,8 @@
           "visual": "✨"
         }
       ],
-      "tagline": "Authentic Chronicle & Educational Docu-Series of Bharat"
+      "tagline": "Cosmic Balance, Sheshanaga Slumber & The 10 Avatars of Preservation",
+      "description": "Journey across the celestial ocean of milk (Kshira Sagara) where Lord Vishnu rests upon the thousand-headed serpent Sheshanaga. Unveil the cosmological mechanism of Yuga cycles, the divine laws of Dharma preservation (Sthiti), and how the Supreme Sustainer manifests across time through the Dashavatara to restore universal harmony."
     },
     {
       "id": "dharma",
@@ -384,7 +386,8 @@
         }
       ],
       "videoUrl": "https://www.youtube.com/embed/Vg3XIfzoN6w",
-      "tagline": "Authentic Chronicle & Educational Docu-Series of Bharat"
+      "tagline": "The Cosmic Order, Moral Law & Vedic Wisdom of Righteous Living",
+      "description": "Understand the core philosophical pillar of Indian civilization: Sanatana Dharma (The Eternal Natural Order). Explore the four Purusharthas (Dharma, Artha, Kama, Moksha), the subtle laws of Karma, and how ancient Vedic seers mapped the harmonious interconnectedness of nature, cosmos, mind, and society."
     },
     {
       "id": "lakshmibai",
@@ -420,7 +423,8 @@
         }
       ],
       "videoUrl": "https://www.youtube.com/embed/0s0Ef_9AOVg",
-      "tagline": "Authentic Chronicle & Educational Docu-Series of Bharat"
+      "tagline": "Valour of Jhansi & The 1857 Flame of Indian Independence",
+      "description": "Experience the inspiring saga of Manikarnika Tambe, the legendary Rani of Jhansi. With her adopted son tied to her back and swords blazing in both hands, she led her troops against British colonial forces during the 1857 War of Independence, forever standing as the immortal embodiment of female courage (Veerangana)."
     },
     {
       "id": "ashoka",
@@ -455,11 +459,12 @@
         }
       ],
       "videoUrl": "https://www.youtube.com/embed/aVw4vWCGdBE",
-      "tagline": "Authentic Chronicle & Educational Docu-Series of Bharat"
+      "tagline": "From Kalinga Conquest to the Lion Capital of Peace & Dhamma",
+      "description": "Witness the monumental transformation of Emperor Ashoka the Great. Shattered by the bloodbath of the Kalinga War in 261 BCE, the fierce Mauryan conqueror embraced the teachings of the Buddha. Discover how he carved the timeless Ashoka Rock Edicts, spread Dhamma across Asia, and gave India the Lion Capital and Ashoka Chakra."
     },
     {
       "id": "krishna",
-      "title": "Lord Krishna: The Divine Flutist",
+      "title": "Lord Krishna: The Divine Flutist & Cosmic Guide",
       "narrator": "Voice of Heritage: Mahesh",
       "duration": "18:15",
       "isPremium": false,
@@ -492,7 +497,8 @@
         }
       ],
       "videoUrl": "https://www.youtube.com/embed/o48PvG182gk",
-      "tagline": "Authentic Chronicle & Educational Docu-Series of Bharat"
+      "tagline": "Leelas of Vrindavan, Govardhan Lift & Kurukshetra Statesmanship",
+      "description": "Immerse yourself in the multi-faceted leelas of Lord Krishna. From the playful childhood miracles of Gokul and subduing the venomous serpent Kaliya to lifting Mount Govardhan and orchestrating righteousness on the battlefield of Kurukshetra, uncover the timeless wisdom of the Supreme Purna Avatar."
     },
     {
       "id": "ramayana",
@@ -528,7 +534,8 @@
         }
       ],
       "videoUrl": "https://www.youtube.com/embed/yEVfRGF-rRY",
-      "tagline": "Authentic Chronicle & Educational Docu-Series of Bharat"
+      "tagline": "Maryada Purushottama, Ram Setu Engineering & Triumph of Truth",
+      "description": "Trace the timeless epic journey of Maryada Purushottama Shri Rama composed by Maharishi Valmiki. From the 14-year forest exile and devotion of Shabari to the oceanic engineering of Ram Setu and the liberation of Lanka, explore the supreme benchmark of filial duty, truth, and righteous governance (Ram Rajya)."
     },
     {
       "id": "bhagavad_gita",
@@ -564,7 +571,8 @@
         }
       ],
       "videoUrl": "https://www.youtube.com/embed/nEMdPjM0ahU",
-      "tagline": "Authentic Chronicle & Educational Docu-Series of Bharat"
+      "tagline": "700 Verses of Timeless Psychological & Spiritual Masterclass",
+      "description": "Uncover the universal song of divine wisdom spoken by Lord Krishna to Arjuna amidst the battlefield of Kurukshetra. Master the three great yogic paths: Karma Yoga (Selfless Action), Bhakti Yoga (Devotional Surrender), and Jnana Yoga (Direct Knowledge), delivering absolute emotional clarity for modern human life."
     },
     {
       "id": "ramayana_science",
