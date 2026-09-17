@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=83";
-import heritageData from "./data.js?v=83";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=83";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=84";
+import heritageData from "./data.js?v=84";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=84";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -382,7 +382,6 @@ class AppController {
     safeInit("initViralReferral", this.initViralReferral);
     safeInit("initKidsModeToggle", this.initKidsModeToggle);
     safeInit("initPWA", this.initPWA);
-    safeInit("initSocialProofTicker", this.initSocialProofTicker);
     safeInit("initDynamicSEO", this.initDynamicSEO);
     safeInit("initGrandGranthalaya", this.initGrandGranthalaya);
     
@@ -5759,55 +5758,6 @@ class AppController {
         });
       });
     }
-  }
-
-    // 12. Real-Time Live Social Proof Ticker (Viral Conversions Engine)
-  initSocialProofTicker() {
-    const ticker = document.getElementById('live-social-proof');
-    const avatarEl = document.getElementById('social-proof-avatar');
-    const textEl = document.getElementById('social-proof-text');
-    const timeEl = document.getElementById('social-proof-time');
-    if (!ticker || !textEl) return;
-
-    const events = [
-      { avatar: "⚡", user: "Rajesh S.", city: "Bengaluru", action: "unlocked the ₹399 Heritage Family Pass", time: "2m ago" },
-      { avatar: "📖", user: "Ananya M.", city: "Mumbai", action: "started reading 'The 14 Lokas & Time Dilation'", time: "4m ago" },
-      { avatar: "🕉️", user: "Vikram R.", city: "Delhi NCR", action: "completed Shiva Tandava Saga", time: "7m ago" },
-      { avatar: "👑", user: "Kavita D.", city: "Pune", action: "earned 'Dharmic Guardian' Archetype Certificate", time: "9m ago" },
-      { avatar: "🎁", user: "Siddharth K.", city: "Hyderabad", action: "claimed ₹50 Discount Voucher", time: "11m ago" },
-      { avatar: "🛕", user: "Meenakshi N.", city: "Chennai", action: "performed Virtual Aarti at Kashi Vishwanath", time: "14m ago" },
-      { avatar: "🧒", user: "Aarav (Grade 5)", city: "Ahmedabad", action: "scored 100% in Vedic Mental Math Challenge", time: "16m ago" }
-    ];
-
-    let currentEventIdx = 0;
-
-    const showTicker = () => {
-      const ev = events[currentEventIdx];
-      if (avatarEl) avatarEl.textContent = ev.avatar;
-      if (textEl) {
-        textEl.innerHTML = '<strong>' + ev.user + '</strong> from ' + ev.city + ' ' + ev.action;
-      }
-      if (timeEl) timeEl.textContent = ev.time;
-
-      ticker.classList.remove('hidden');
-      setTimeout(() => {
-        ticker.classList.remove('translate-y-12', 'opacity-0');
-      }, 50);
-
-      setTimeout(() => {
-        ticker.classList.add('translate-y-12', 'opacity-0');
-        setTimeout(() => {
-          ticker.classList.add('hidden');
-        }, 500);
-      }, 6000);
-
-      currentEventIdx = (currentEventIdx + 1) % events.length;
-    };
-
-    setTimeout(() => {
-      showTicker();
-      setInterval(showTicker, 18000);
-    }, 4000);
   }
 
   // 13. Dynamic SEO & Real-Time OpenGraph / Social Metadata Engine

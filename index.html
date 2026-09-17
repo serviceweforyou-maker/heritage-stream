@@ -275,8 +275,8 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=83">
-  <link rel="stylesheet" href="flipbook.css?v=83">
+  <link rel="stylesheet" href="styles.css?v=84">
+  <link rel="stylesheet" href="flipbook.css?v=84">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
@@ -2074,7 +2074,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=83"></script>
+  <script type="module" src="app-prod.js?v=84"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -2651,7 +2651,7 @@
     </div>
   </div>
 
-  <script src="flipbook.js?v=83"></script>
+  <script src="flipbook.js?v=84"></script>
 
   <!-- ── USER ACCOUNT & MEMBERSHIP MODAL ── -->
   <div id="user-account-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
@@ -2886,84 +2886,7 @@
   </div>
 
 
-  <!-- ── FLOATING LIVE SOCIAL PROOF NOTIFICATION WIDGET ── -->
-  <div id="live-social-proof" class="fixed bottom-6 left-6 z-[80] hidden transition-all duration-500 transform translate-y-12 opacity-0 pointer-events-auto">
-    <div class="bg-[#101116]/95 border border-gold/40 backdrop-blur-xl rounded-2xl p-3.5 shadow-2xl shadow-black/80 flex items-center gap-3.5 max-w-sm">
-      <div class="w-10 h-10 rounded-xl bg-gold/15 border border-gold/30 flex items-center justify-center text-xl flex-shrink-0" id="social-proof-avatar">
-        ✨
-      </div>
-      <div class="space-y-0.5">
-        <p class="text-xs font-bold text-white font-sans leading-snug" id="social-proof-text">
-          Karthik from Bengaluru activated Annual Pass
-        </p>
-        <div class="flex items-center gap-2 text-[10px] font-mono text-gold/80">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-          <span id="social-proof-time">3 mins ago</span>
-          <span>•</span>
-          <span class="text-white/40">Verified Member</span>
-        </div>
-      </div>
-      <button onclick="document.getElementById('live-social-proof').classList.add('hidden')" class="text-white/30 hover:text-white text-xs ml-1 font-bold">&times;</button>
-    </div>
-  </div>
-
-
-  <!-- ── VEDIC MATH SPEED CALCULATOR MODAL ── -->
-  <div id="vedic-math-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
-    <div class="bg-[#101116] border border-amber-500/40 rounded-3xl w-full max-w-lg shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans">
-      <button id="close-vedic-math-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
-      
-      <!-- Modal Header -->
-      <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-5">
-        <span class="text-2xl p-2 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-gold">🧮</span>
-        <div>
-          <h3 class="text-lg font-bold font-serif text-white">Vedic Math Speed Calculator</h3>
-          <p class="text-[10px] font-mono text-amber-400">Ancient Indian Mental Math Sutras</p>
-        </div>
-      </div>
-
-      <!-- Trick Selector Tabs -->
-      <div class="flex border border-white/10 rounded-2xl p-1 bg-white/5 mb-5 text-xs font-bold">
-        <button id="vmath-tab-1" class="vmath-nav-tab flex-1 py-2 rounded-xl bg-gold text-black transition-all">
-          Trick 1: Square of 5s
-        </button>
-        <button id="vmath-tab-2" class="vmath-nav-tab flex-1 py-2 rounded-xl text-white/60 hover:text-white transition-all">
-          Trick 2: Multiply by 11
-        </button>
-        <button id="vmath-tab-3" class="vmath-nav-tab flex-1 py-2 rounded-xl text-white/60 hover:text-white transition-all">
-          Trick 3: Fast Base 10
-        </button>
-      </div>
-
-      <!-- Panel 1: Ekadhikena Purvena (Squaring numbers ending in 5) -->
-      <div id="vmath-panel-1" class="space-y-4">
-        <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-3">
-          <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
-            <span>SUTRA: EKADHIKENA PURVENA</span>
-            <span>2-SECOND SQUARING</span>
-          </div>
-          <p class="text-xs text-white/80 leading-relaxed font-sans">
-            To square any number ending in 5 (e.g. <strong>35²</strong>, <strong>75²</strong>, <strong>95²</strong>): Multiply the first digit by (digit + 1) and attach <strong>25</strong> at the end!
-          </p>
-          <div class="bg-white/5 p-3 rounded-xl border border-white/5 text-xs font-mono text-center text-amber-300">
-            Example for 35²: (3 × 4) = 12 → Append 25 → <strong>1225</strong>! ⚡
-          </div>
-        </div>
-
-        <!-- Interactive Calculator -->
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
-          <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block font-mono">Test Any Number Ending in 5:</label>
-          <div class="flex gap-2">
-            <input type="number" id="vmath-input-1" placeholder="e.g. 65" value="65" class="flex-grow bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
-            <button id="vmath-calc-btn-1" class="px-5 py-2.5 bg-gold hover:bg-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all">
-              Square
-            </button>
-          </div>
-          <div id="vmath-result-1" class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center font-mono text-sm text-emerald-300 font-bold">
-            65² = (6 × 7) followed by 25 = 4225 ⚡
-          </div>
-        </div>
-      </div>
+  
 
       <!-- Panel 2: Multiply by 11 -->
       <div id="vmath-panel-2" class="space-y-4 hidden">
