@@ -547,3 +547,23 @@ img {
 .karaoke-live-indicator {
   animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+
+/* Enhanced Responsive Header Styling */
+.sub-nav-mask-container nav {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.sub-nav-mask-container nav::-webkit-scrollbar {
+  display: none;
+}
+
+#mobile-menu-btn.open .mobile-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+#mobile-menu-btn.open .mobile-bar:nth-child(2) {
+  opacity: 0;
+}
+#mobile-menu-btn.open .mobile-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
