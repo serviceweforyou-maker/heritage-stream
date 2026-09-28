@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=84";
-import heritageData from "./data.js?v=84";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=84";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=85";
+import heritageData from "./data.js?v=85";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=85";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -2522,6 +2522,247 @@ class AppController {
     } catch (err) {}
   }
 
+  // Checkout modal implementation (₹29 Trial & ₹399 Annual Pass using Cashfree PG)
+  openPaymentModal(defaultPlan = 'annual') {
+    const modal = document.getElementById('payment-modal');
+    if (!modal) return;
+    
+    let selectedPlan = defaultPlan; // 'trial' (₹29) or 'annual' (₹399)
+
+    const renderModalContent = () => {
+      const isTrial = selectedPlan === 'trial';
+      const price = isTrial ? '₹29' : '₹399';
+      const period = isTrial ? ' / 7 Days' : ' / Year';
+      const badge = isTrial ? '⚡ 7-DAY TRIAL' : '👑 ANNUAL ALL-ACCESS';
+
+      const body = modal.querySelector('#payment-modal-body');
+      body.innerHTML = `
+        <div class="text-center p-4">
+          <div class="w-14 h-14 rounded-full bg-gold/15 border border-gold/30 text-gold flex items-center justify-center text-2xl mx-auto mb-3 animate-pulse">✨</div>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-white font-serif mb-1">Sanatana360 All-Access Pass</h3>
+          <p class="text-xs text-white/60 mb-5">Unlock 250+ 4K Sagas, 26 Illustrated Granth E-Books &amp; Rishi AI.</p>
+          
+          <!-- Plan Selector Tabs -->
+          <div class="grid grid-cols-2 gap-2 max-w-sm mx-auto mb-4 p-1 rounded-2xl bg-white/5 border border-white/10">
+            <button type="button" id="plan-btn-trial" class="py-2.5 px-3 rounded-xl text-xs font-bold transition-all cursor-pointer ${isTrial ? 'bg-gradient-to-r from-gold to-amber-500 text-black shadow-md shadow-gold/20' : 'text-white/70 hover:text-white'}">
+              <div class="leading-tight">⚡ 7-Day Trial</div>
+              <div class="text-[10px] opacity-80 font-mono">₹29 total</div>
+            </button>
+            <button type="button" id="plan-btn-annual" class="py-2.5 px-3 rounded-xl text-xs font-bold transition-all cursor-pointer ${!isTrial ? 'bg-gradient-to-r from-gold to-amber-500 text-black shadow-md shadow-gold/20' : 'text-white/70 hover:text-white'}">
+              <div class="leading-tight">👑 Annual Pass</div>
+              <div class="text-[10px] opacity-80 font-mono">₹399 / ₹1.09 day</div>
+            </button>
+          </div>
+
+          <!-- Pricing Card Display -->
+          <div class="bg-gradient-to-r from-gold/10 to-amber-500/10 border border-gold/40 rounded-2xl p-4 sm:p-5 mb-5 max-w-sm mx-auto relative overflow-hidden text-left flex items-center justify-between">
+            <div>
+              <div class="text-[9px] font-extrabold uppercase tracking-wider text-gold mb-0.5">${badge}</div>
+              <div class="flex items-baseline gap-1.5">
+                <span class="text-3xl font-black text-gold font-mono">${price}</span>
+                <span class="text-xs text-white/60">${period}</span>
+              </div>
+              <div class="text-[10px] text-white/50 mt-1">100% Ad-Free &bull; Instant UPI &bull; Cancel Anytime</div>
+            </div>
+            <div class="text-3xl opacity-80">🛡️</div>
+          </div>
+
+          <!-- Payment Fields -->
+          <form id="payment-form" class="max-w-sm mx-auto text-left grid gap-3 mb-4">
+            <div>
+              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Your Full Name</label>
+              <input type="text" id="pay-name" placeholder="e.g. Rahul Sharma" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-white text-xs focus:border-gold/50 focus:outline-none transition-colors" required>
+            </div>
+            <div>
+              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Email Address</label>
+              <input type="email" id="pay-email" placeholder="e.g. rahul@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-white text-xs focus:border-gold/50 focus:outline-none transition-colors" required>
+            </div>
+            <div>
+              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Phone Number (UPI / WhatsApp)</label>
+              <input type="tel" id="pay-phone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-white text-xs focus:border-gold/50 focus:outline-none transition-colors" required>
+            </div>
+            
+            <button type="submit" class="w-full py-3.5 mt-1 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/20 flex items-center justify-center gap-2 cursor-pointer">
+              <span>Pay ${price} &amp; Start Instant Access</span>
+              <span class="text-[10px] opacity-75">🔒</span>
+            </button>
+          </form>
+
+          <!-- WhatsApp Help link -->
+          <div class="text-[11px] text-white/40 flex items-center justify-center gap-1.5 pt-1">
+            <span>Questions?</span>
+            <a href="https://wa.me/919900000000?text=Namaste!%20I%20have%20a%20question%20about%20Sanatana360%20Pass" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline font-bold">Chat on WhatsApp</a>
+          </div>
+        </div>
+      `;
+
+      // Bind plan switch buttons
+      body.querySelector('#plan-btn-trial')?.addEventListener('click', () => {
+        selectedPlan = 'trial';
+        renderModalContent();
+      });
+      body.querySelector('#plan-btn-annual')?.addEventListener('click', () => {
+        selectedPlan = 'annual';
+        renderModalContent();
+      });
+
+      const form = body.querySelector('#payment-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        this.processCashfreePayment(selectedPlan);
+      });
+    };
+
+    renderModalContent();
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+    const closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) {
+      closeBtn.onclick = (e) => {
+        e.stopPropagation();
+        this.closeAllModals();
+      };
+    }
+  }
+
+  async processCashfreePayment(plan = 'annual') {
+    const name = document.getElementById('pay-name')?.value || "";
+    const email = document.getElementById('pay-email')?.value || "";
+    const phone = document.getElementById('pay-phone')?.value || "";
+    const amount = plan === 'trial' ? 29 : 399;
+
+    const body = document.querySelector('#payment-modal-body');
+    body.innerHTML = `
+      <div class="text-center p-8 flex flex-col items-center justify-center min-h-[300px]">
+        <div class="payment-spinner w-12 h-12 rounded-full border-4 border-gold/30 border-t-gold animate-spin mb-6"></div>
+        <h4 class="text-lg font-bold text-white mb-2">Connecting to Cashfree Gateway...</h4>
+        <p class="text-xs text-white/50">Creating your secure ${plan === 'trial' ? '₹29 Trial' : '₹399 Annual'} billing session.</p>
+      </div>
+    `;
+
+    try {
+      const response = await fetch(API_BASE + '/api/create-cashfree-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, plan, amount, frontendOrigin: window.location.origin })
+      });
+
+      const resData = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(resData.error || resData.message || "Unable to create checkout order on the server.");
+      }
+
+      if (!resData.payment_session_id) {
+        throw new Error(resData.error || "Failed to retrieve session ID from Cashfree.");
+      }
+
+      if (typeof window.Cashfree === 'undefined') {
+        throw new Error("Cashfree payment gateway SDK is loading or blocked by your browser. Please disable ad-blockers and try again.");
+      }
+
+      const cashfreeInstance = window.Cashfree({ mode: "production" });
+      if (!cashfreeInstance) {
+        throw new Error("Cashfree SDK failed to initialize in your browser.");
+      }
+
+      await cashfreeInstance.checkout({
+        paymentSessionId: resData.payment_session_id,
+        redirectTarget: "_self"
+      });
+
+    } catch (err) {
+      console.warn("Cashfree PG Error:", err);
+      body.innerHTML = `
+        <div class="text-center p-6 flex flex-col items-center justify-center min-h-[300px]">
+          <div class="w-12 h-12 rounded-full bg-red-500/10 border border-red-500/40 text-red-500 flex items-center justify-center text-2xl mb-4">❌</div>
+          <h4 class="text-base font-bold text-white mb-2">Payment Gateway Error</h4>
+          <p class="text-xs text-white/60 mb-6 max-w-xs">${err.message || 'Unable to connect to checkout server. Please try again.'}</p>
+          <button id="fallback-retry-btn" class="w-full py-3.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all">Retry Payment</button>
+        </div>
+      `;
+      const retryBtn = document.getElementById('fallback-retry-btn');
+      if (retryBtn) {
+        retryBtn.addEventListener('click', () => {
+          this.openPaymentModal(plan);
+        });
+      }
+    }
+  }
+
+  // Help functions for Simulated Player
+  parseDurationToSeconds(durationStr) {
+    const parts = durationStr.split(':');
+    if (parts.length === 2) {
+      return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+    }
+    return 300; // default 5 mins
+  }
+
+  formatTime(totalSeconds) {
+    const mins = Math.floor(totalSeconds / 60);
+    const secs = totalSeconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  }
+
+  // Modal handlers
+  closeAllModals() {
+    try {
+      // Save playtime progress before clearing innerHTML
+      if (this.activePlayItemId) {
+        const elapsed = (Date.now() - this.activePlayStartTime) / 1000;
+        const total = this.activePlayDuration;
+        if (total && !isNaN(elapsed)) {
+          let ratio = elapsed / total;
+          if (ratio > 0.05) {
+            if (ratio > 0.92) ratio = 0.95;
+            this.progress[this.activePlayItemId] = { progress: ratio, timestamp: Date.now() };
+            localStorage.setItem('hs_progress', JSON.stringify(this.progress));
+            this.renderContentRows(); // Super fast render now
+          }
+        }
+        this.activePlayItemId = null;
+      }
+    } catch (err) {
+      console.warn("Error saving playtime progress:", err);
+    }
+
+    // ALWAYS close modals under all conditions
+    document.querySelectorAll('.modal-overlay').forEach(modal => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+    
+    // Reset modal container layout parameters
+    const container = document.getElementById('media-modal-container');
+    if (container) {
+      container.classList.remove('max-w-5xl');
+      container.classList.add('max-w-2xl');
+      container.style.boxShadow = '';
+    }
+
+    // Stop playing active video or audio when closing
+    const mediaBody = document.getElementById('media-modal-body');
+    if (mediaBody) mediaBody.innerHTML = "";
+    
+    try {
+      if (this.activeAudio) {
+        this.activeAudio.pause();
+        this.activeAudio = null;
+        clearInterval(this.audioProgressInterval);
+        this.audioProgressInterval = null;
+      }
+    } catch (err) {
+      console.warn("Error pausing active audio:", err);
+    }
+
+    try {
+      window.speechSynthesis.cancel();
+    } catch (err) {}
+  }
+
   // Checkout modal implementation (₹399 billing mock)
   // Checkout modal implementation (₹399 billing using Cashfree PG)
   openPaymentModal() {
@@ -3024,6 +3265,26 @@ class AppController {
       this.awardGyanCoins(coinsEarned, gameType);
     } else {
       this.renderScoresDashboard();
+
+    // Deep link query router for dedicated landing page CTAs (?open=mudra, ?open=vedic-math, etc.)
+    setTimeout(() => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const openTarget = urlParams.get('open');
+      if (openTarget === 'mudra') {
+        this.openMudraStudioModal ? this.openMudraStudioModal() : document.getElementById('header-mudra-btn')?.click();
+      } else if (openTarget === 'vedic-math') {
+        this.openVedicMathModal ? this.openVedicMathModal() : document.getElementById('open-vedic-math-modal-btn')?.click();
+      } else if (openTarget === 'granthalaya') {
+        const granthSection = document.getElementById('granthalaya-library');
+        if (granthSection) granthSection.scrollIntoView({ behavior: 'smooth' });
+      } else if (openTarget === 'darshana') {
+        const darshanaSection = document.getElementById('divya-darshana');
+        if (darshanaSection) darshanaSection.scrollIntoView({ behavior: 'smooth' });
+      } else if (openTarget === 'checkout') {
+        this.openPaymentModal('trial');
+      }
+    }, 400);
+
     }
   }
 

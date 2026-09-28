@@ -630,7 +630,7 @@ app.post('/api/create-cashfree-order', async (req, res) => {
   let cleanName = (name || "").trim() || "Heritage Explorer";
 
   const payload = {
-    order_amount: 399.00,
+    order_amount: (req.body.plan === 'trial' || req.body.amount === 29 ? 29.00 : 399.00),
     order_currency: "INR",
     order_id: orderId,
     customer_details: {
