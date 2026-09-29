@@ -217,36 +217,41 @@ function sendEmail(to, subject, html) {
     });
 }
 
-function sendWelcomeEmail(email, name) {
+function sendWelcomeEmail(email, name, amount = 29) {
+  const isTrial = Number(amount) === 29;
+  const planTitle = isTrial ? '7-Day All-Access Trial' : 'Annual Premium Pass';
+  const planPrice = isTrial ? '₹29' : '₹399 / Year';
+  const planValidity = isTrial ? 'Valid for 7 Days • Unrestricted Access' : 'Valid for 365 Days • Unrestricted Access';
+
   const html = `
     <div style="background-color: #0c0d12; color: #ffffff; font-family: 'Georgia', serif; padding: 40px; max-width: 600px; margin: 0 auto; border: 1px solid #d4af37; border-radius: 16px;">
       <div style="text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 20px;">
-        <h2 style="color: #d4af37; font-size: 24px; margin: 0;">⚜️ HERITAGE STREAM</h2>
+        <h2 style="color: #d4af37; font-size: 24px; margin: 0;">⚜️ SANATANA 360</h2>
         <p style="color: rgba(255,255,255,0.6); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin: 5px 0 0 0;">Preserving Culture, Inspiring Minds</p>
       </div>
       
-      <h3 style="font-size: 20px; font-weight: bold; margin-top: 30px; color: #ffffff;">Welcome to the Premium Circle!</h3>
+      <h3 style="font-size: 20px; font-weight: bold; margin-top: 30px; color: #ffffff;">Welcome to the Inner Circle!</h3>
       <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Dear <strong>${name}</strong>,</p>
-      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Your subscription has been successfully activated. Thank you for supporting the preservation and education of our cultural history through <strong>MANJUNATH ENTERPRISE</strong>.</p>
+      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Your ${planTitle} has been successfully activated. Thank you for supporting the preservation and education of our cultural history through <strong>MANJUNATH ENTERPRISE</strong>.</p>
       
       <div style="background-color: rgba(212, 175, 55, 0.05); border: 1px dashed rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 20px; margin: 25px 0; text-align: center;">
-        <p style="color: #d4af37; font-size: 12px; text-transform: uppercase; font-weight: bold; margin: 0 0 10px 0;">Premium Pass Details</p>
-        <span style="font-size: 22px; font-weight: 900; color: #ffffff;">₹399 / Year</span>
-        <p style="font-size: 11px; color: rgba(255,255,255,0.5); margin: 5px 0 0 0;">Valid for 365 Days • Unrestricted Access</p>
+        <p style="color: #d4af37; font-size: 12px; text-transform: uppercase; font-weight: bold; margin: 0 0 10px 0;">Pass Details</p>
+        <span style="font-size: 22px; font-weight: 900; color: #ffffff;">${planPrice}</span>
+        <p style="font-size: 11px; color: rgba(255,255,255,0.5); margin: 5px 0 0 0;">${planValidity}</p>
       </div>
 
       <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">You now have full access to:
         <ul style="padding-left: 20px; color: rgba(255,255,255,0.8); font-size: 13px; line-height: 1.8;">
-          <li>🎬 100+ high-fidelity Indian heritage docu-series</li>
-          <li>📚 Immersive audiobooks and historical chronicles</li>
+          <li>🎬 250+ high-fidelity Indian heritage docu-series & 4K Sagas</li>
+          <li>📚 26 Illustrated Granthalaya E-Books & Panchatantra Audiobooks</li>
           <li>🎙️ Native Kannada narration and speed cadences</li>
-          <li>🧩 Interactive history games (Trivia, Chronology, Memory Match)</li>
-          <li>🌿 Divya Darshana widgets (Panchang, Ayurveda remedies, breathing coach)</li>
+          <li>🧩 Interactive Vedic Math, Mudra Therapy & History games</li>
+          <li>🌿 Divya Darshana daily Panchanga & Rishi AI Guide</li>
         </ul>
       </p>
       
       <div style="text-align: center; margin-top: 35px; margin-bottom: 20px;">
-        <a href="https://heritage-stream.onrender.com" style="background: linear-gradient(to right, #d4af37, #f39c12); color: #000000; text-decoration: none; padding: 14px 30px; font-weight: bold; border-radius: 8px; font-size: 14px; text-transform: uppercase; display: inline-block;">Start Exploring Now</a>
+        <a href="https://www.sanatana360.com" style="background: linear-gradient(to right, #d4af37, #f39c12); color: #000000; text-decoration: none; padding: 14px 30px; font-weight: bold; border-radius: 8px; font-size: 14px; text-transform: uppercase; display: inline-block;">Start Exploring Now</a>
       </div>
 
       <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; margin-top: 40px; font-size: 10px; color: rgba(255,255,255,0.4); text-align: center; line-height: 1.5;">
@@ -256,7 +261,7 @@ function sendWelcomeEmail(email, name) {
       </div>
     </div>
   `;
-  return sendEmail(email, "✨ Welcome to HeritageStream Premium Pass!", html);
+  return sendEmail(email, `✨ Welcome to Sanatana360 Pass!`, html);
 }
 
 function sendRenewalReminderEmail(email, name, expiryDate) {
@@ -730,6 +735,7 @@ app.get('/api/verify-payment', async (req, res) => {
 
       // Check if order already processed in db to avoid duplicate credits
       const alreadySubscribed = db.subscribers.some(sub => sub.orderId === order_id);
+      const paidAmount = Number(data.order_amount) || (order_id.includes('trial') ? 29 : 399);
       
       if (!alreadySubscribed) {
         const newSub = {
@@ -739,19 +745,19 @@ app.get('/api/verify-payment', async (req, res) => {
           phone: customer.customer_phone || "",
           orderId: order_id,
           paymentMethod: "Cashfree Live PG",
-          amount: 399,
+          amount: paidAmount,
           timestamp: new Date().toISOString()
         };
 
         db.subscribers.push(newSub);
-        db.stats.totalRevenue += 399;
+        db.stats.totalRevenue += paidAmount;
         db.stats.totalSubscribers += 1;
         writeDB(db);
 
         // Send welcome email asynchronously to avoid blocking the redirect
         if (newSub.email) {
           console.log(`✉️ Sending welcome email to ${newSub.name} (${newSub.email})...`);
-          sendWelcomeEmail(newSub.email, newSub.name).catch(() => {});
+          sendWelcomeEmail(newSub.email, newSub.name, paidAmount).catch(() => {});
         }
       } else {
         writeDB(db);
