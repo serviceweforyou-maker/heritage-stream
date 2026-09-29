@@ -275,8 +275,8 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=88">
-  <link rel="stylesheet" href="flipbook.css?v=88">
+  <link rel="stylesheet" href="styles.css?v=89">
+  <link rel="stylesheet" href="flipbook.css?v=89">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
@@ -596,6 +596,21 @@
       <div id="persona-filtered-grid" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-4">
         <!-- Rendered dynamically by app.js -->
       </div>
+
+      <!-- ── 🏷️ PRIME VIDEO / NETFLIX OTT CATEGORY FILTER RIBBON ── -->
+      <div class="ott-genre-ribbon flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 pt-1 scroll-smooth">
+        <button class="ott-filter-pill active px-4 py-2 rounded-full text-xs font-bold transition-all border border-gold bg-gradient-to-r from-gold to-amber-500 text-black shadow-md shadow-gold/20 flex-shrink-0 cursor-pointer" data-category="all">✨ All Sagas</button>
+        <button class="ott-filter-pill px-4 py-2 rounded-full text-xs font-bold transition-all border border-white/10 hover:border-gold/40 text-white/80 bg-white/5 hover:bg-white/10 flex-shrink-0 cursor-pointer" data-category="top10">🏆 Top 10 in India</button>
+        <button class="ott-filter-pill px-4 py-2 rounded-full text-xs font-bold transition-all border border-white/10 hover:border-gold/40 text-white/80 bg-white/5 hover:bg-white/10 flex-shrink-0 cursor-pointer" data-category="docu">🎬 4K Docu-Series</button>
+        <button class="ott-filter-pill px-4 py-2 rounded-full text-xs font-bold transition-all border border-white/10 hover:border-gold/40 text-white/80 bg-white/5 hover:bg-white/10 flex-shrink-0 cursor-pointer" data-category="granthalaya">📖 26 Granthalaya Epics</button>
+        <button class="ott-filter-pill px-4 py-2 rounded-full text-xs font-bold transition-all border border-white/10 hover:border-gold/40 text-white/80 bg-white/5 hover:bg-white/10 flex-shrink-0 cursor-pointer" data-category="audio">🎧 Panchatantra Audio</button>
+        <button class="ott-filter-pill px-4 py-2 rounded-full text-xs font-bold transition-all border border-white/10 hover:border-gold/40 text-white/80 bg-white/5 hover:bg-white/10 flex-shrink-0 cursor-pointer" data-category="kids">🧒 Kids Gurukula</button>
+        <button class="ott-filter-pill px-4 py-2 rounded-full text-xs font-bold transition-all border border-white/10 hover:border-gold/40 text-white/80 bg-white/5 hover:bg-white/10 flex-shrink-0 cursor-pointer" data-category="god">🔱 Divine God Series</button>
+        <button class="ott-filter-pill px-4 py-2 rounded-full text-xs font-bold transition-all border border-white/10 hover:border-gold/40 text-white/80 bg-white/5 hover:bg-white/10 flex-shrink-0 cursor-pointer" data-category="unknown">🔒 Secret Vaults</button>
+      </div>
+
+      <!-- ── 🏆 TOP 10 IN INDIA TODAY (NETFLIX SIGNATURE 3D RANKED ROW) ── -->
+      <div id="top10-library-row" class="space-y-4"></div>
 
       <!-- Dynamic Rows (Continue Watching, My List) -->
       <div id="dynamic-library-rows" class="space-y-14"></div>
@@ -2029,6 +2044,17 @@
     </div>
   </div>
 
+  
+  <!-- ── 🔍 NETFLIX-STYLE QUICK PREVIEW MODAL ── -->
+  <div id="quick-preview-modal" class="modal-overlay fixed inset-0 z-[105] hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-[#0d0f16] border border-white/15 rounded-3xl w-full max-w-3xl shadow-[0_25px_60px_rgba(0,0,0,0.95)] relative overflow-hidden max-h-[92vh] overflow-y-auto no-scrollbar font-sans">
+      <button id="close-quick-preview-btn" class="modal-close absolute top-4 right-5 text-white/70 hover:text-white transition-colors text-2xl font-bold z-30 bg-black/60 w-9 h-9 rounded-full flex items-center justify-center border border-white/20">&times;</button>
+      <div id="quick-preview-modal-body">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
   <!-- Payment Modal -->
   <div id="payment-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <div class="bg-[#101116] border border-gold/20 rounded-3xl w-full max-w-md shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar">
@@ -2039,7 +2065,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=88"></script>
+  <script type="module" src="app-prod.js?v=89"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -2616,7 +2642,7 @@
     </div>
   </div>
 
-  <script src="flipbook.js?v=88"></script>
+  <script src="flipbook.js?v=89"></script>
 
   <!-- ── USER ACCOUNT & MEMBERSHIP MODAL ── -->
   <div id="user-account-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">

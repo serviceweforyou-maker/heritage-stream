@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=88";
-import heritageData from "./data.js?v=88";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=88";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=89";
+import heritageData from "./data.js?v=89";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=89";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -770,6 +770,10 @@ class AppController {
     // Core Fix: Use flat content array instead of missing docuSeries/audioStories keys
     const all = this.contentData.content || [];
     
+    // 0. RENDER TOP 10 IN INDIA TODAY & GENRE RIBBON
+    this.renderTop10Row();
+    this.bindGenreRibbon();
+
     // 1. RENDER DYNAMIC ROWS ONLY (Continue Watching & My List)
     const dynamicContainer = document.getElementById('dynamic-library-rows');
     if (dynamicContainer) {
@@ -1466,7 +1470,32 @@ class AppController {
   }
 
   bindCardInteractions(parent = document) {
-    // Bind My List (Watchlist) overlays
+    const allList = (this.contentData && this.contentData.content) ? this.contentData.content : [];
+
+    // 1. Bind Quick Preview buttons (ℹ icon)
+    parent.querySelectorAll('.quick-preview-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const id = btn.getAttribute('data-id');
+        const item = allList.find(x => x.id === id);
+        if (item) this.openQuickPreviewModal(item);
+      });
+    });
+
+    // 2. Bind Quick Play buttons (▶ icon)
+    parent.querySelectorAll('.quick-play-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const id = btn.getAttribute('data-id');
+        const isAudio = btn.closest('.content-card')?.getAttribute('data-type') === 'audio';
+        const item = allList.find(x => x.id === id);
+        if (item) this.playContent(item, isAudio);
+      });
+    });
+
+    // 3. Bind My List (Watchlist) overlays
     parent.querySelectorAll('.watchlist-toggle-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -1478,48 +1507,26 @@ class AppController {
           this.watchlist.push(id);
         }
         localStorage.setItem('hs_watchlist', JSON.stringify(this.watchlist));
-        SoundEffects.playClick();
+        if (typeof SoundEffects !== 'undefined' && SoundEffects.playClick) {
+          SoundEffects.playClick();
+        }
         this.renderContentRows();
       });
     });
 
+    // 4. Bind Whole Card clicks
     parent.querySelectorAll('.content-card').forEach(card => {
       if (card.dataset.bound) return;
       card.dataset.bound = "true";
 
-      card.addEventListener('click', () => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('button')) return;
         const id = card.getAttribute('data-id');
         const isAudio = card.getAttribute('data-type') === 'audio';
-        
-        const allList = (this.contentData && this.contentData.content) ? this.contentData.content : [];
-        let item = allList.find(x => x.id === id) || 
-                   (this.contentData?.docuSeries?.find(x => x.id === id)) || 
-                   (this.contentData?.audioStories?.find(x => x.id === id));
-        
+        const item = allList.find(x => x.id === id);
         if (item) {
-          this.playContent(item, isAudio);
+          this.openQuickPreviewModal(item);
         }
-      });
-
-      // 3D holographic hover tilt
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const xc = rect.width / 2;
-        const yc = rect.height / 2;
-        const dx = x - xc;
-        const dy = y - yc;
-        const tiltX = -(dy / yc) * 6; // max 6 deg
-        const tiltY = (dx / xc) * 6;
-        
-        card.style.transform = `perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
-        card.style.boxShadow = `0 12px 28px rgba(0,0,0,0.6), 0 0 20px rgba(212, 175, 55, 0.12)`;
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = `perspective(600px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-        card.style.boxShadow = `none`;
       });
     });
   }
@@ -1529,82 +1536,69 @@ class AppController {
     const isLocked = item.isPremium && !this.isSubscribed;
     const comingSoon = !itemIsAudio && !item.videoUrl;
     const badgeText = isAudio ? 'AUDIO STORY' : 'DOCU-SERIES';
-    const detailText = isAudio ? item.narrator : `${item.duration} • ${item.rating}`;
-    
-    // Check if item is in watchlist
+    const detailText = isAudio ? (item.narrator || 'Audio Chronicle') : `${item.duration || '30 Mins'} • ${item.rating || '9.9 ★'}`;
     const isOnWatchlist = this.watchlist.includes(item.id);
-    // Check if item has saved progress
     const progressVal = this.progress[item.id] ? this.progress[item.id].progress : 0;
-    // Generate a unique thematic overlay color wash based on the item ID to make shared covers look distinct
-    const overlayColors = [
-      'rgba(212, 175, 55, 0.22)',   // Gold
-      'rgba(16, 185, 129, 0.22)',   // Emerald
-      'rgba(59, 130, 246, 0.22)',   // Blue
-      'rgba(168, 85, 247, 0.22)',   // Purple
-      'rgba(249, 115, 22, 0.22)',   // Orange
-      'rgba(6, 182, 212, 0.22)',    // Cyan
-      'rgba(236, 72, 153, 0.22)',   // Pink
-      'rgba(239, 68, 68, 0.22)'     // Red
-    ];
-    let sum = 0;
-    const idStr = item.id || '';
-    for (let i = 0; i < idStr.length; i++) {
-      sum += idStr.charCodeAt(i);
-    }
-    const tintColor = overlayColors[sum % overlayColors.length];
+    const matchScore = 96 + (item.title.length % 4);
 
     return `
-      <div class="content-card ${widthClass} rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-gold/10" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
-        <!-- Watchlist Overlay Toggle Button -->
-        <button class="watchlist-toggle-btn absolute top-3 left-3 w-7 h-7 rounded-full bg-black/60 border border-white/10 hover:border-gold hover:scale-105 text-white flex items-center justify-center text-xs backdrop-blur-md transition-all z-20" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
-          ${isOnWatchlist ? '✓' : '＋'}
-        </button>
-
-        <!-- Thumbnail Cover with beautiful Gradient & lazy-loaded image -->
-        <div class="h-40 w-full relative flex flex-col justify-between p-4 overflow-hidden">
+      <div class="content-card ${widthClass} rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/60 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/15" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
+        
+        <!-- Thumbnail Cover with Widescreen Gradient & lazy-loaded image -->
+        <div class="h-40 sm:h-44 w-full relative flex flex-col justify-between p-3.5 overflow-hidden bg-black/60">
           ${item.imageUrl ? `
-            <img src="${item.imageUrl}" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" alt="${item.title}">
-            <div class="absolute inset-0 z-10 pointer-events-none" style="background-color: ${tintColor}; mix-blend-mode: overlay; opacity: 0.85;"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-15 pointer-events-none"></div>
+            <img src="${item.imageUrl}" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="${item.title}">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0e1017] via-[#0e1017]/30 to-black/40 z-10 pointer-events-none"></div>
           ` : `
-            <div class="absolute inset-0 bg-gradient-to-br from-amber-600 to-amber-950 transition-transform duration-500 group-hover:scale-[1.05]"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-15 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-amber-600 to-amber-950 transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0e1017] via-[#0e1017]/30 to-black/40 z-10 pointer-events-none"></div>
           `}
 
           <div class="flex justify-between items-start w-full relative z-20">
-            <span class="text-[9px] font-bold text-white/90 bg-black/40 px-2 py-0.8 rounded-md uppercase tracking-wider border border-white/5 backdrop-blur-md ml-auto">
+            <span class="text-[8.5px] font-bold text-white/90 bg-black/50 px-2 py-0.5 rounded uppercase tracking-wider border border-white/10 backdrop-blur-md">
               ${badgeText}
             </span>
             ${item.isPremium ? `
-              <span class="w-6 h-6 rounded-full ${isLocked ? 'bg-crimson/20 border-crimson/40 text-crimson' : 'bg-gold/20 border-gold/40 text-gold'} border flex items-center justify-center text-xs backdrop-blur-md ml-2 text-[10px]">
+              <span class="w-5 h-5 rounded-full ${isLocked ? 'bg-red-500/20 border-red-500/40 text-red-400' : 'bg-gold/20 border-gold/40 text-gold'} border flex items-center justify-center text-[9px] backdrop-blur-md ml-2">
                 ${isLocked ? '🔒' : '🔑'}
               </span>
             ` : `
-              <span class="text-[9px] font-extrabold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.8 rounded-md backdrop-blur-md ml-2">
+              <span class="text-[8.5px] font-extrabold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.5 rounded backdrop-blur-md ml-2">
                 FREE
               </span>
             `}
           </div>
 
+          <!-- Bottom Title & Meta in Thumbnail -->
           <div class="text-white z-20 relative">
-            <h4 class="font-bold text-base font-serif line-clamp-1 leading-snug drop-shadow-md text-white/95">${item.title}</h4>
-            <p class="text-[10px] text-white/70 line-clamp-1">${detailText}</p>
-          </div>
-          
-          <!-- Hover Overlay Play Button -->
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
-            <div class="w-12 h-12 rounded-full ${comingSoon ? 'bg-white/10 border border-gold/40' : 'bg-gold/90'} flex items-center justify-center text-black font-bold text-lg shadow-lg shadow-gold/20 transform scale-75 group-hover:scale-100 transition-transform duration-300">
-              ${isLocked ? '🔒' : comingSoon ? '🎬' : '▶'}
+            <h4 class="font-bold text-sm sm:text-base font-serif line-clamp-1 leading-snug drop-shadow-md text-white/95 group-hover:text-gold transition-colors">${item.title}</h4>
+            <div class="flex items-center justify-between text-[10px] text-white/70 mt-0.5">
+              <span class="text-emerald-400 font-bold font-mono">${matchScore}% Match</span>
+              <span>${detailText}</span>
             </div>
           </div>
-          <!-- Coming Soon ribbon -->
+          
+          <!-- Netflix Style Hover Micro-Action Tray -->
+          <div class="card-hover-actions absolute inset-0 bg-black/50 backdrop-blur-[2px] flex items-center justify-center gap-2 z-30 transition-all duration-300">
+            <button class="quick-play-btn w-10 h-10 rounded-full bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold flex items-center justify-center text-sm shadow-xl shadow-gold/30 hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="Play Now">
+              ${isLocked ? '🔒' : comingSoon ? '🎬' : '▶'}
+            </button>
+            <button class="watchlist-toggle-btn w-9 h-9 rounded-full bg-black/80 border border-white/30 hover:border-gold text-white flex items-center justify-center text-xs hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
+              ${isOnWatchlist ? '✓' : '＋'}
+            </button>
+            <button class="quick-preview-btn w-9 h-9 rounded-full bg-black/80 border border-white/30 hover:border-gold text-white flex items-center justify-center text-xs hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="More Details &amp; Episodes">
+              ℹ
+            </button>
+          </div>
+
+          <!-- Coming Soon Ribbon -->
           ${comingSoon ? `
             <div class="absolute top-3 right-0 z-20">
-              <div class="bg-gold text-black text-[8px] font-black uppercase tracking-widest px-2.5 py-1 shadow-lg" style="clip-path: polygon(6px 0%, 100% 0%, 100% 100%, 0% 100%); letter-spacing:0.12em;">Coming Soon</div>
+              <div class="bg-gold text-black text-[8px] font-black uppercase tracking-widest px-2.5 py-0.8 shadow-lg" style="clip-path: polygon(6px 0%, 100% 0%, 100% 100%, 0% 100%); letter-spacing:0.12em;">Coming Soon</div>
             </div>
           ` : ''}
 
-          <!-- Continue watching progress bar overlay -->
+          <!-- Video Progress Bar Scrubber -->
           ${progressVal > 0 ? `
             <div class="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-20 overflow-hidden">
               <div class="bg-gold h-full" style="width: ${progressVal * 100}%"></div>
@@ -1613,10 +1607,16 @@ class AppController {
         </div>
 
         <!-- Description Info block -->
-        <div class="p-4">
-          <p class="text-xs text-white/60 line-clamp-2 leading-relaxed">
-            ${item.desc || item.description}
+        <div class="p-3.5 space-y-2">
+          <p class="text-xs text-white/60 line-clamp-2 leading-relaxed font-sans">
+            ${item.desc || item.description || 'Ancient Indian heritage chronicle.'}
           </p>
+          <div class="flex items-center gap-1.5 pt-1 text-[8.5px] font-mono text-white/40">
+            <span class="border border-white/10 px-1 py-0.2 rounded">4K UHD</span>
+            <span class="border border-white/10 px-1 py-0.2 rounded">Spatial 5.1</span>
+            <span class="border border-white/10 px-1 py-0.2 rounded">CC</span>
+            <span class="text-gold/80 ml-auto font-bold">${item.category || 'Chronicle'}</span>
+          </div>
         </div>
       </div>
     `;
@@ -7212,6 +7212,387 @@ class AppController {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
   }
+
+  // ── 🏆 NETFLIX-STYLE "TOP 10 IN INDIA TODAY" RANKED ROW ──
+  renderTop10Row() {
+    const top10Container = document.getElementById('top10-library-row');
+    if (!top10Container || !this.contentData) return;
+
+    const all = this.contentData.content || [];
+    if (!all.length) return;
+
+    const top10Ids = [
+      'hampi',
+      'course_mudra_vigyan_stress',
+      'chola',
+      'dashavatara',
+      'sundials',
+      'ajanta',
+      'kailasa',
+      'nalanda',
+      'rigveda_astronomy',
+      'nataraja_cosmology'
+    ];
+
+    let top10Items = [];
+    top10Ids.forEach(id => {
+      const found = all.find(x => x.id === id);
+      if (found) top10Items.push(found);
+    });
+
+    if (top10Items.length < 10) {
+      all.forEach(x => {
+        if (!top10Items.some(item => item.id === x.id) && top10Items.length < 10) {
+          top10Items.push(x);
+        }
+      });
+    }
+
+    const cardsHTML = top10Items.map((item, idx) => {
+      const isAudio = !!item.audioUrl || item.category === "Audiobooks & Legends" || item.category === "Ebook & Audio Series";
+      const isLocked = item.isPremium && !this.isSubscribed;
+      const isOnWatchlist = this.watchlist.includes(item.id);
+      const matchScore = 99 - idx;
+
+      return `
+        <div class="top10-card-wrapper flex items-end">
+          <div class="top10-rank-num">${idx + 1}</div>
+          <div class="content-card w-[170px] xs:w-[195px] sm:w-[220px] md:w-[245px] flex-shrink-0 rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/60 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/15" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
+            
+            <!-- Top Badges -->
+            <div class="absolute top-2.5 right-2.5 z-20 flex items-center gap-1.5">
+              <span class="text-[8px] font-mono font-black text-amber-300 bg-amber-500/20 border border-amber-500/40 px-1.5 py-0.5 rounded backdrop-blur-md">
+                🔥 #${idx + 1}
+              </span>
+              ${item.isPremium ? `
+                <span class="w-5 h-5 rounded-full ${isLocked ? 'bg-red-500/20 border-red-500/40 text-red-400' : 'bg-gold/20 border-gold/40 text-gold'} border flex items-center justify-center text-[9px] backdrop-blur-md">
+                  ${isLocked ? '🔒' : '🔑'}
+                </span>
+              ` : `
+                <span class="text-[8px] font-extrabold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-1.5 py-0.5 rounded backdrop-blur-md">
+                  FREE
+                </span>
+              `}
+            </div>
+
+            <!-- Thumbnail Image -->
+            <div class="h-40 sm:h-44 w-full relative overflow-hidden bg-black/60">
+              <img src="${item.imageUrl || '/images/hampi.jpg'}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="${item.title}">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0e1017] via-transparent to-black/30 z-10 pointer-events-none"></div>
+              
+              <!-- Hover Micro-Action Tray -->
+              <div class="card-hover-actions absolute inset-x-0 bottom-2.5 px-3 flex items-center justify-between z-20">
+                <div class="flex items-center gap-1.5">
+                  <button class="quick-play-btn w-8 h-8 rounded-full bg-gold hover:bg-gold/90 text-black flex items-center justify-center text-xs font-bold shadow-lg shadow-gold/30 hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="Play Now">
+                    ${isLocked ? '🔒' : '▶'}
+                  </button>
+                  <button class="watchlist-toggle-btn w-8 h-8 rounded-full bg-black/70 border border-white/20 hover:border-gold text-white flex items-center justify-center text-xs hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
+                    ${isOnWatchlist ? '✓' : '＋'}
+                  </button>
+                </div>
+                <button class="quick-preview-btn w-8 h-8 rounded-full bg-black/70 border border-white/20 hover:border-gold text-white flex items-center justify-center text-xs hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="More Details &amp; Episodes">
+                  ℹ
+                </button>
+              </div>
+            </div>
+
+            <!-- Meta info -->
+            <div class="p-3 sm:p-3.5 space-y-1">
+              <div class="flex items-center justify-between text-[10px] text-white/60 font-mono">
+                <span class="text-emerald-400 font-bold">${matchScore}% Match</span>
+                <span>${item.duration || '40 Mins'}</span>
+              </div>
+              <h4 class="font-bold text-xs sm:text-sm font-serif text-white line-clamp-1 group-hover:text-gold transition-colors">${item.title}</h4>
+              <div class="flex items-center gap-1.5 pt-0.5">
+                <span class="text-[8px] font-mono text-white/50 border border-white/10 px-1 rounded">4K UHD</span>
+                <span class="text-[8px] font-mono text-white/50 border border-white/10 px-1 rounded">5.1</span>
+                <span class="text-[8px] font-mono text-gold/80 ml-auto">${item.rating || '9.9 ★'}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    top10Container.innerHTML = `
+      <div class="netflix-row pb-2">
+        <div class="flex items-end justify-between mb-4">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] font-extrabold text-gold uppercase tracking-widest bg-gold/10 border border-gold/30 px-2 py-0.5 rounded-full font-mono">
+                🔥 Trending in India
+              </span>
+              <span class="text-[10px] text-white/50 font-mono hidden sm:inline">Updated Today</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold font-serif text-white">Top 10 in India Today</h2>
+          </div>
+          <div class="flex gap-2">
+            <button class="row-prev-btn carousel-nav-btn" data-row="top10-scroll-row" aria-label="Previous">◀</button>
+            <button class="row-next-btn carousel-nav-btn" data-row="top10-scroll-row" aria-label="Next">▶</button>
+          </div>
+        </div>
+        <div id="top10-scroll-row" class="flex gap-4 sm:gap-6 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth scroll-snap-x">
+          ${cardsHTML}
+        </div>
+      </div>
+    `;
+  }
+
+  // ── 🏷️ PRIME VIDEO / NETFLIX GENRE FILTER RIBBON ENGINE ──
+  bindGenreRibbon() {
+    const ribbon = document.querySelector('.ott-genre-ribbon');
+    if (!ribbon) return;
+
+    const pills = ribbon.querySelectorAll('.ott-filter-pill');
+    pills.forEach(pill => {
+      pill.onclick = () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const cat = pill.getAttribute('data-category');
+        const rows = document.querySelectorAll('#standard-library-rows .netflix-row');
+        const top10Row = document.getElementById('top10-library-row');
+        const dynamicRow = document.getElementById('dynamic-library-rows');
+
+        if (cat === 'all') {
+          if (top10Row) top10Row.style.display = 'block';
+          if (dynamicRow) dynamicRow.style.display = 'block';
+          rows.forEach(r => r.style.display = 'block');
+        } else if (cat === 'top10') {
+          if (top10Row) {
+            top10Row.style.display = 'block';
+            top10Row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          if (dynamicRow) dynamicRow.style.display = 'none';
+          rows.forEach(r => r.style.display = 'none');
+        } else if (cat === 'docu') {
+          if (top10Row) top10Row.style.display = 'none';
+          if (dynamicRow) dynamicRow.style.display = 'none';
+          rows.forEach(r => {
+            r.style.display = r.id === 'docu-parent' || r.id === 'unknown-parent' ? 'block' : 'none';
+          });
+        } else if (cat === 'granthalaya') {
+          document.getElementById('granthalaya-library')?.scrollIntoView({ behavior: 'smooth' });
+        } else if (cat === 'audio') {
+          if (top10Row) top10Row.style.display = 'none';
+          if (dynamicRow) dynamicRow.style.display = 'none';
+          rows.forEach(r => {
+            r.style.display = r.id === 'audio-parent' ? 'block' : 'none';
+          });
+        } else if (cat === 'kids') {
+          if (top10Row) top10Row.style.display = 'none';
+          if (dynamicRow) dynamicRow.style.display = 'none';
+          rows.forEach(r => {
+            r.style.display = r.id === 'kids-parent' ? 'block' : 'none';
+          });
+        } else if (cat === 'god') {
+          if (top10Row) top10Row.style.display = 'none';
+          if (dynamicRow) dynamicRow.style.display = 'none';
+          rows.forEach(r => {
+            r.style.display = r.id === 'god-parent' ? 'block' : 'none';
+          });
+        } else if (cat === 'unknown') {
+          if (top10Row) top10Row.style.display = 'none';
+          if (dynamicRow) dynamicRow.style.display = 'none';
+          rows.forEach(r => {
+            r.style.display = r.id === 'unknown-parent' ? 'block' : 'none';
+          });
+        }
+      };
+    });
+  }
+
+  // ── 🔍 NETFLIX-STYLE QUICK PREVIEW MODAL ──
+  openQuickPreviewModal(item) {
+    const modal = document.getElementById('quick-preview-modal');
+    const body = document.getElementById('quick-preview-modal-body');
+    if (!modal || !body || !item) return;
+
+    const isAudio = !!item.audioUrl || item.category === "Audiobooks & Legends" || item.category === "Ebook & Audio Series";
+    const isLocked = item.isPremium && !this.isSubscribed;
+    const isOnWatchlist = this.watchlist.includes(item.id);
+    const matchScore = Math.floor(Math.random() * 5) + 95;
+
+    const chapters = item.content && item.content.length ? item.content : [
+      { title: "Episode 1: The Divine Genesis", text: item.description || "Introduction to the sacred roots and historical significance.", visual: "🎬", duration: "12:40" },
+      { title: "Episode 2: Architectural & Spiritual Revelations", text: "Deep dive into ancient masonry, cosmic alignment, and sacred geometry.", visual: "🛕", duration: "18:15" },
+      { title: "Episode 3: The Living Legacy", text: "Modern continuity, mantras, and cultural preservation across centuries.", visual: "✨", duration: "14:20" }
+    ];
+
+    const all = this.contentData?.content || [];
+    const related = all.filter(x => x.id !== item.id && (x.category === item.category || x.isGodSeries === item.isGodSeries)).slice(0, 3);
+
+    body.innerHTML = `
+      <!-- 16:9 Backdrop Hero with Vignette Overlay -->
+      <div class="relative w-full h-64 sm:h-80 bg-black overflow-hidden">
+        <img src="${item.imageUrl || '/images/hampi.jpg'}" class="w-full h-full object-cover object-center" alt="${item.title}">
+        <div class="preview-backdrop-gradient absolute inset-0 z-10 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0d0f16]/90 via-[#0d0f16]/40 to-transparent z-10 pointer-events-none"></div>
+        
+        <!-- Hero Details Overlay -->
+        <div class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-20 max-w-xl">
+          <div class="flex items-center gap-2 mb-2 flex-wrap">
+            <span class="text-[9px] font-mono font-bold uppercase tracking-wider text-gold bg-gold/20 border border-gold/40 px-2 py-0.5 rounded-full">
+              ${item.category || 'Cultural Chronicle'}
+            </span>
+            <span class="text-xs font-bold text-emerald-400 font-mono">${matchScore}% Match</span>
+            <span class="text-[10px] font-mono text-white/60 bg-white/10 px-1.5 py-0.5 rounded">U/A 7+</span>
+            <span class="text-[10px] font-mono text-white/60 bg-white/10 px-1.5 py-0.5 rounded">4K Ultra HD</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-black font-serif text-white drop-shadow-lg mb-3">${item.title}</h2>
+
+          <!-- Action Buttons -->
+          <div class="flex items-center gap-2.5 flex-wrap">
+            <button id="modal-play-action-btn" class="px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 text-black font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/25 hover:scale-105 flex items-center gap-2 cursor-pointer">
+              <span>${isLocked ? '🔒 Unlock with Pass' : '▶ Start Watching'}</span>
+            </button>
+            <button id="modal-watchlist-btn" class="w-9 h-9 rounded-full bg-white/10 border border-white/20 hover:border-gold text-white flex items-center justify-center text-sm hover:scale-105 transition-all cursor-pointer" title="Add to My List">
+              ${isOnWatchlist ? '✓' : '＋'}
+            </button>
+            ${window.flipBook ? `
+              <button id="modal-read-book-btn" class="px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all hover:scale-105 flex items-center gap-1.5 cursor-pointer">
+                <span>📖 Sacred Book</span>
+              </button>
+            ` : ''}
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div class="p-5 sm:p-7 space-y-6">
+        
+        <!-- Metadata & Synopsis Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="md:col-span-2 space-y-3">
+            <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-sans">
+              ${item.description || item.tagline || 'Experience the profound spiritual and historical depths of ancient Indian heritage through authentic high-definition chronicles.'}
+            </p>
+            <div class="flex items-center gap-4 text-[11px] text-white/60 pt-1 flex-wrap">
+              <span><strong>Duration:</strong> ${item.duration || '45 Mins'}</span>
+              <span><strong>Year:</strong> ${item.year || '2026'}</span>
+              <span><strong>Rating:</strong> ${item.rating || '9.9 ★'}</span>
+              <span><strong>Audio:</strong> Kannada, Sanskrit, Hindi, English</span>
+            </div>
+          </div>
+
+          <!-- Key Details Card -->
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-2 text-xs">
+            <div>
+              <span class="text-[10px] text-white/40 uppercase font-mono block">Curated By</span>
+              <span class="text-gold font-bold font-serif">Sanatana Gurukula Scholars</span>
+            </div>
+            <div>
+              <span class="text-[10px] text-white/40 uppercase font-mono block">Spiritual Tradition</span>
+              <span class="text-white/80">Vedic &bull; Itihasa &bull; Puranic</span>
+            </div>
+            <div>
+              <span class="text-[10px] text-white/40 uppercase font-mono block">Available Resolutions</span>
+              <span class="text-emerald-400 font-mono font-bold">4K HDR &bull; 1080p &bull; Spatial Audio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Episodes & Chapters List -->
+        <div class="space-y-3 border-t border-white/10 pt-5">
+          <div class="flex items-center justify-between">
+            <h4 class="text-base font-bold font-serif text-white">Episodes &amp; Chapters</h4>
+            <span class="text-xs text-white/50 font-mono">${chapters.length} Episodes</span>
+          </div>
+
+          <div class="space-y-2 max-h-56 overflow-y-auto pr-1 no-scrollbar">
+            ${chapters.map((ch, cIdx) => `
+              <div class="episode-row p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/5 hover:border-gold/30 transition-all flex items-center justify-between gap-3 cursor-pointer group" data-ep-idx="${cIdx}">
+                <div class="flex items-center gap-3 min-w-0">
+                  <span class="text-sm font-bold text-white/40 font-mono w-5">${cIdx + 1}</span>
+                  <div class="w-10 h-10 rounded-lg bg-gold/15 border border-gold/30 flex items-center justify-center text-base flex-shrink-0">
+                    ${ch.visual || '🎬'}
+                  </div>
+                  <div class="min-w-0">
+                    <h5 class="text-xs font-bold text-white group-hover:text-gold transition-colors truncate">${ch.title}</h5>
+                    <p class="text-[10px] text-white/50 truncate">${ch.text}</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 flex-shrink-0">
+                  <span class="text-[10px] font-mono text-white/40">${ch.duration || '15:00'}</span>
+                  <span class="w-6 h-6 rounded-full bg-white/10 group-hover:bg-gold group-hover:text-black flex items-center justify-center text-[10px] transition-all">▶</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- More Like This Recommendations -->
+        ${related.length ? `
+          <div class="space-y-3 border-t border-white/10 pt-5">
+            <h4 class="text-base font-bold font-serif text-white">More Like This</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              ${related.map(rel => `
+                <div class="related-card p-3 rounded-2xl bg-white/5 border border-white/10 hover:border-gold/40 transition-all cursor-pointer group" data-id="${rel.id}">
+                  <div class="h-24 w-full rounded-xl overflow-hidden relative mb-2">
+                    <img src="${rel.imageUrl || '/images/hampi.jpg'}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" alt="${rel.title}">
+                  </div>
+                  <h5 class="text-xs font-bold text-white font-serif line-clamp-1 group-hover:text-gold transition-colors">${rel.title}</h5>
+                  <p class="text-[10px] text-white/50 line-clamp-1">${rel.duration || '30 Mins'} &bull; ${rel.rating || '9.5 ★'}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+      </div>
+    `;
+
+    // Bind Preview Modal Actions
+    body.querySelector('#modal-play-action-btn')?.addEventListener('click', () => {
+      this.closeAllModals();
+      this.playContent(item, isAudio);
+    });
+
+    body.querySelector('#modal-watchlist-btn')?.addEventListener('click', () => {
+      this.toggleWatchlist(item.id);
+      const isNowOn = this.watchlist.includes(item.id);
+      const btn = body.querySelector('#modal-watchlist-btn');
+      if (btn) btn.textContent = isNowOn ? '✓' : '＋';
+    });
+
+    body.querySelector('#modal-read-book-btn')?.addEventListener('click', () => {
+      this.closeAllModals();
+      if (window.flipBook) {
+        window.flipBook.open(item);
+      } else {
+        this.playContent(item, false);
+      }
+    });
+
+    body.querySelectorAll('.episode-row').forEach(row => {
+      row.addEventListener('click', () => {
+        this.closeAllModals();
+        this.playContent(item, isAudio);
+      });
+    });
+
+    body.querySelectorAll('.related-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const rId = card.getAttribute('data-id');
+        const found = all.find(x => x.id === rId);
+        if (found) {
+          this.openQuickPreviewModal(found);
+        }
+      });
+    });
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+    const closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) {
+      closeBtn.onclick = (e) => {
+        e.stopPropagation();
+        this.closeAllModals();
+      };
+    }
+  }
+
 }
 
 if (document.readyState === 'loading') {
