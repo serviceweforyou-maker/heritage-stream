@@ -567,3 +567,31 @@ img {
 #mobile-menu-btn.open .mobile-bar:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
+
+/* Guaranteed Zero-Cutting Price & Pass Button Styling */
+#header-get-pass-btn {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 639px) {
+  #header-get-pass-btn {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+    gap: 4px !important;
+  }
+  #search-input {
+    min-width: 58px !important;
+    font-size: 11px !important;
+  }
+  .landing-pass-btn {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+}

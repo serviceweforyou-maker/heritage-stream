@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=87";
-import heritageData from "./data.js?v=87";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=87";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=88";
+import heritageData from "./data.js?v=88";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=88";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -2544,11 +2544,11 @@ class AppController {
           
           <!-- Plan Selector Tabs -->
           <div class="grid grid-cols-2 gap-2 max-w-sm mx-auto mb-4 p-1 rounded-2xl bg-white/5 border border-white/10">
-            <button type="button" id="plan-btn-trial" class="py-2.5 px-3 rounded-xl text-xs font-bold transition-all cursor-pointer ${isTrial ? 'bg-gradient-to-r from-gold to-amber-500 text-black shadow-md shadow-gold/20' : 'text-white/70 hover:text-white'}">
+            <button type="button" id="plan-btn-trial" class="py-2 px-1.5 sm:px-3 rounded-xl flex-1 whitespace-nowrap text-xs font-bold transition-all cursor-pointer ${isTrial ? 'bg-gradient-to-r from-gold to-amber-500 text-black shadow-md shadow-gold/20' : 'text-white/70 hover:text-white'}">
               <div class="leading-tight">⚡ 7-Day Trial</div>
               <div class="text-[10px] opacity-80 font-mono">₹29 total</div>
             </button>
-            <button type="button" id="plan-btn-annual" class="py-2.5 px-3 rounded-xl text-xs font-bold transition-all cursor-pointer ${!isTrial ? 'bg-gradient-to-r from-gold to-amber-500 text-black shadow-md shadow-gold/20' : 'text-white/70 hover:text-white'}">
+            <button type="button" id="plan-btn-annual" class="py-2 px-1.5 sm:px-3 rounded-xl flex-1 whitespace-nowrap text-xs font-bold transition-all cursor-pointer ${!isTrial ? 'bg-gradient-to-r from-gold to-amber-500 text-black shadow-md shadow-gold/20' : 'text-white/70 hover:text-white'}">
               <div class="leading-tight">👑 Annual Pass</div>
               <div class="text-[10px] opacity-80 font-mono">₹399 / ₹1.09 day</div>
             </button>
