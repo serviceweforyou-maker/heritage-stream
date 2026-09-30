@@ -816,7 +816,7 @@ app.get('/api/admin/seo/status', verifyAdminSession, (req, res) => {
   const db = readDB();
   if (!db.seoConfig) {
     db.seoConfig = {
-      ga4MeasurementId: 'G-SANATANA360',
+      ga4MeasurementId: 'G-ZKHEWYB53Q',
       gscPropertyUrl: 'https://www.sanatana360.com/',
       lookerStudioEmbedUrl: '',
       lastSitemapSync: new Date().toISOString()
@@ -830,7 +830,7 @@ app.get('/api/admin/seo/status', verifyAdminSession, (req, res) => {
     totalUrls: 6,
     status: 'Healthy & Synced (200 OK)',
     lastSync: db.seoConfig.lastSitemapSync || new Date().toISOString(),
-    ga4MeasurementId: db.seoConfig.ga4MeasurementId || 'G-SANATANA360',
+    ga4MeasurementId: db.seoConfig.ga4MeasurementId || 'G-ZKHEWYB53Q',
     gscPropertyUrl: db.seoConfig.gscPropertyUrl || 'https://www.sanatana360.com/',
     lookerStudioEmbedUrl: db.seoConfig.lookerStudioEmbedUrl || '',
     searchConsoleMetrics: {
