@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=89";
-import heritageData from "./data.js?v=89";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=89";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=90";
+import heritageData from "./data.js?v=90";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=90";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -7591,6 +7591,456 @@ class AppController {
         this.closeAllModals();
       };
     }
+  }
+
+
+
+  // ── ☀️ DAILY 5-MINUTE MORNING GURUKULA & CERTIFICATE ENGINE ──
+  initDailyGurukulaEngine() {
+    this.updateGurukulaStreakUI();
+
+    // Bind Header and Mobile Buttons
+    document.getElementById('header-daily-gurukula-btn')?.addEventListener('click', () => {
+      this.openDailyGurukulaModal();
+    });
+    document.getElementById('mobile-daily-gurukula-btn')?.addEventListener('click', () => {
+      this.openDailyGurukulaModal();
+    });
+  }
+
+  getGurukulaStreak() {
+    return parseInt(localStorage.getItem('hs_gurukula_streak') || '1');
+  }
+
+  updateGurukulaStreakUI() {
+    const streak = this.getGurukulaStreak();
+    const streakText = '🔥 ' + streak + 'd';
+
+    const headerBadge = document.getElementById('header-gurukula-streak-badge');
+    if (headerBadge) headerBadge.textContent = streakText;
+
+    const mobileBadge = document.getElementById('mobile-gurukula-streak-pill');
+    if (mobileBadge) mobileBadge.textContent = streakText;
+
+    const modalBadge = document.getElementById('gurukula-modal-streak-pill');
+    if (modalBadge) modalBadge.textContent = '🔥 ' + streak + ' Day Streak';
+  }
+
+  openDailyGurukulaModal() {
+    const modal = document.getElementById('daily-gurukula-modal');
+    if (!modal) return;
+
+    this.currentGurukulaStep = 1;
+    this.gurukulaScore = 0;
+    this.renderGurukulaStep(1);
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+    const closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) {
+      closeBtn.onclick = (e) => {
+        e.stopPropagation();
+        this.closeAllModals();
+      };
+    }
+  }
+
+  renderGurukulaStep(stepNum) {
+    this.currentGurukulaStep = stepNum;
+    const content = document.getElementById('gurukula-step-content');
+    if (!content) return;
+
+    // Update Step Indicators
+    document.querySelectorAll('#gurukula-step-indicators .step-dot').forEach(dot => {
+      const dotStep = parseInt(dot.getAttribute('data-step'));
+      if (dotStep === stepNum) {
+        dot.className = "step-dot px-2 py-0.5 rounded-full bg-gold text-black font-bold";
+      } else if (dotStep < stepNum) {
+        dot.className = "step-dot px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold";
+      } else {
+        dot.className = "step-dot px-2 py-0.5 rounded-full bg-white/10 text-white/50";
+      }
+    });
+
+    // ── STEP 1: SACRED SHLOKA OF THE DAY ──
+    if (stepNum === 1) {
+      const shlokas = [
+        {
+          name: "Saraswati Vandana (Knowledge & Memory)",
+          sanskrit: "सरस्वति नमस्तुभ्यं वरदे कामरूपिणि।\nविद्यारम्भं करिष्यामि सिद्धिर्भवतु मे सदा॥",
+          meaning: "Salutations to Devi Saraswati, giver of boons. As I commence my studies today, may there always be success and profound wisdom.",
+          benefit: "Activates speech clarity, learning agility, and cognitive focus.",
+          audioText: "Saraswati Namastubhyam Varade Kama Roopini, Vidyarambham Karishyami Siddhir Bhavatu Me Sada"
+        },
+        {
+          name: "Gayatri Mantra (Cosmic Intellect & Radiance)",
+          sanskrit: "ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं\nभर्गो देवस्य धीमहि धियो यो नः प्रचोदयात्॥",
+          meaning: "We meditate on the supreme divine light of the Sun that illuminates all realms. May it awaken our intellect and guide our thoughts toward truth.",
+          benefit: "Calms brainwaves, balances sympathetic nervous system, and builds photographic memory.",
+          audioText: "Om Bhur Bhuva Swaha Tat Savitur Varenyam Bhargo Devasya Dheemahi Dhiyo Yo Nah Prachodayat"
+        },
+        {
+          name: "Guru Vandana (Reverence & Moral Guidance)",
+          sanskrit: "गुरुर्ब्रह्मा गुरुर्विष्णुः गुरुर्देवो महेश्वरः।\nगुरुः साक्षात् परं ब्रह्म तस्मै श्रीगुरवे नमः॥",
+          meaning: "The Teacher is the Creator, the Sustainer, and the Transformer. The Guru is the living embodiment of Supreme Truth. Prostrations to the Guru.",
+          benefit: "Instills humility, emotional stability, and gratitude for mentors.",
+          audioText: "Gurur Brahma Gurur Vishnu Gurur Devo Maheshwarah, Guruh Sakshat Param Brahma Tasmai Shri Gurave Namah"
+        }
+      ];
+
+      const dayIdx = new Date().getDate() % shlokas.length;
+      const shloka = shlokas[dayIdx];
+
+      content.innerHTML = `
+        <div class="gurukula-card-gradient border border-gold/30 rounded-2xl p-5 sm:p-6 space-y-4 text-center">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/15 text-gold text-[10px] font-mono font-bold uppercase tracking-wider border border-gold/30">
+            <span>🪕 Step 1 of 4</span> &bull; <span>1-Min Morning Chanting</span>
+          </div>
+
+          <h4 class="text-lg sm:text-xl font-bold font-serif text-white">${shloka.name}</h4>
+
+          <div class="p-4 rounded-xl bg-black/40 border border-gold/20 space-y-2">
+            <p class="text-base sm:text-lg text-amber-200 font-serif leading-relaxed tracking-wide whitespace-pre-line">${shloka.sanskrit}</p>
+          </div>
+
+          <p class="text-xs text-white/80 leading-relaxed max-w-lg mx-auto font-sans italic">
+            &ldquo;${shloka.meaning}&rdquo;
+          </p>
+
+          <div class="flex items-center justify-center gap-3 pt-2">
+            <button id="shloka-listen-btn" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-xs font-bold text-white transition-all flex items-center gap-1.5 cursor-pointer">
+              <span>🔊</span> <span>Listen Pronunciation</span>
+            </button>
+            <button id="shloka-next-btn" class="px-6 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-full text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/20 flex items-center gap-1.5 cursor-pointer">
+              <span>✅ I Have Chanted</span> <span>➔ Next (Vedic Math)</span>
+            </button>
+          </div>
+        </div>
+      `;
+
+      content.querySelector('#shloka-listen-btn')?.addEventListener('click', () => {
+        if ('speechSynthesis' in window) {
+          const utterance = new SpeechSynthesisUtterance(shloka.audioText);
+          utterance.rate = 0.85;
+          utterance.pitch = 1.0;
+          utterance.lang = 'hi-IN';
+          window.speechSynthesis.speak(utterance);
+        }
+      });
+
+      content.querySelector('#shloka-next-btn')?.addEventListener('click', () => {
+        this.renderGurukulaStep(2);
+      });
+    }
+
+    // ── STEP 2: LIGHTNING VEDIC MATH SPEED TEST ──
+    else if (stepNum === 2) {
+      const mathQuestions = [
+        {
+          q: "What is 35 × 35?",
+          sutra: "Sutra: Ekadhikena Purvena (3 × (3+1) = 12, attach 25)",
+          options: ["1125", "1225", "1325", "1245"],
+          correct: "1225"
+        },
+        {
+          q: "What is 98 × 97?",
+          sutra: "Sutra: Nikhilam (Deficits: -2 and -3 ➔ 95 | 06)",
+          options: ["9506", "9606", "9406", "9516"],
+          correct: "9506"
+        },
+        {
+          q: "What is 43 × 11?",
+          sutra: "Sutra: Antyayoreva (Separate 4 and 3, insert sum 4+3=7 in middle)",
+          options: ["463", "473", "483", "493"],
+          correct: "473"
+        }
+      ];
+
+      let qIdx = 0;
+      const renderMathQ = () => {
+        const item = mathQuestions[qIdx];
+        content.innerHTML = `
+          <div class="gurukula-card-gradient border border-amber-500/30 rounded-2xl p-5 sm:p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 text-[10px] font-mono font-bold uppercase tracking-wider border border-amber-500/30">
+                <span>🧮 Step 2 of 4</span> &bull; <span>Speed Question ${qIdx + 1}/3</span>
+              </span>
+              <span class="text-xs font-mono text-emerald-400 font-bold">⚡ 3-Second Rule</span>
+            </div>
+
+            <div class="text-center py-3">
+              <h4 class="text-2xl sm:text-3xl font-black font-mono text-white mb-2">${item.q}</h4>
+              <p class="text-[11px] text-gold/80 font-mono italic">${item.sutra}</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 max-w-md mx-auto" id="math-options-grid">
+              ${item.options.map(opt => `
+                <button class="math-option-btn p-3.5 rounded-xl bg-white/5 border border-white/10 text-white font-mono font-bold text-sm hover:border-gold cursor-pointer" data-val="${opt}">
+                  ${opt}
+                </button>
+              `).join('')}
+            </div>
+
+            <div id="math-feedback" class="text-center text-xs min-h-[20px] font-bold"></div>
+          </div>
+        `;
+
+        content.querySelectorAll('.math-option-btn').forEach(btn => {
+          btn.onclick = () => {
+            const val = btn.getAttribute('data-val');
+            const feedback = content.querySelector('#math-feedback');
+            if (val === item.correct) {
+              btn.classList.add('correct');
+              feedback.innerHTML = '<span class="text-emerald-400">✨ Brilliant! Instant Vedic Calculation Correct (+50 Karma)</span>';
+              setTimeout(() => {
+                qIdx++;
+                if (qIdx < mathQuestions.length) {
+                  renderMathQ();
+                } else {
+                  this.renderGurukulaStep(3);
+                }
+              }, 700);
+            } else {
+              btn.classList.add('incorrect');
+              feedback.innerHTML = '<span class="text-red-400">Try again! Remember: apply the Vedic Sutra trick.</span>';
+            }
+          };
+        });
+      };
+
+      renderMathQ();
+    }
+
+    // ── STEP 3: PANCHATANTRA MORAL RIDDLE ──
+    else if (stepNum === 3) {
+      const riddle = {
+        title: "The Clever Merchant & The Weight of Iron",
+        story: "A poor merchant leaves an iron anvil with a friend for safekeeping. When he returns, the friend lies: 'A mouse ate all your iron!' The merchant calmly accepts this, and later takes the friend's son on a boat ride and hides him safely, telling the friend: 'A hawk flew away with your son!' The friend admits his lie. What is the eternal Dharma lesson?",
+        options: [
+          "Always deceive others before they deceive you.",
+          "Honesty and truthfulness preserve friendship; deceit only breeds equal retribution.",
+          "Never lend anything to friends under any circumstance.",
+          "Physical strength is more important than wisdom."
+        ],
+        correct: 1,
+        explanation: "Panchatantra teaches that trust is the foundation of society. One who cheats another will eventually be trapped by their own deception."
+      };
+
+      content.innerHTML = `
+        <div class="gurukula-card-gradient border border-purple-500/30 rounded-2xl p-5 sm:p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 text-[10px] font-mono font-bold uppercase tracking-wider border border-purple-500/30">
+              <span>📖 Step 3 of 4</span> &bull; <span>Panchatantra Moral Riddle</span>
+            </span>
+            <span class="text-xs font-mono text-purple-300 font-bold">🧠 Moral IQ Test</span>
+          </div>
+
+          <h4 class="text-base sm:text-lg font-bold font-serif text-white">${riddle.title}</h4>
+          <p class="text-xs text-white/80 leading-relaxed bg-black/40 p-3.5 rounded-xl border border-white/5">${riddle.story}</p>
+
+          <div class="space-y-2" id="riddle-options-list">
+            ${riddle.options.map((opt, oIdx) => `
+              <button class="riddle-btn w-full text-left p-3 rounded-xl bg-white/5 border border-white/10 hover:border-gold text-xs text-white/90 font-medium transition-all cursor-pointer flex items-center gap-2.5" data-idx="${oIdx}">
+                <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center font-mono text-[10px]">${String.fromCharCode(65 + oIdx)}</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+
+          <div id="riddle-feedback" class="text-xs font-medium text-center"></div>
+        </div>
+      `;
+
+      content.querySelectorAll('.riddle-btn').forEach(btn => {
+        btn.onclick = () => {
+          const idx = parseInt(btn.getAttribute('data-idx'));
+          const feedback = content.querySelector('#riddle-feedback');
+          if (idx === riddle.correct) {
+            btn.className = "riddle-btn w-full text-left p-3 rounded-xl bg-emerald-500/20 border border-emerald-500 text-xs text-emerald-300 font-bold flex items-center gap-2.5";
+            feedback.innerHTML = `<span class="text-emerald-400">✓ Correct! ${riddle.explanation}</span>`;
+            setTimeout(() => {
+              this.renderGurukulaStep(4);
+            }, 1200);
+          } else {
+            btn.className = "riddle-btn w-full text-left p-3 rounded-xl bg-red-500/20 border border-red-500 text-xs text-red-300 flex items-center gap-2.5";
+            feedback.innerHTML = '<span class="text-red-400">Reflect again on Chanakya’s principle of truth and karma.</span>';
+          }
+        };
+      });
+    }
+
+    // ── STEP 4: HAKINI FOCUS MUDRA & CELEBRATION ──
+    else if (stepNum === 4) {
+      content.innerHTML = `
+        <div class="gurukula-card-gradient border border-emerald-500/30 rounded-2xl p-5 sm:p-6 space-y-5 text-center">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 text-[10px] font-mono font-bold uppercase tracking-wider border border-emerald-500/30">
+            <span>🧠 Step 4 of 4</span> &bull; <span>60-Sec Memory Lock Mudra</span>
+          </div>
+
+          <h4 class="text-lg sm:text-xl font-bold font-serif text-white">Hakini Mudra (Hemisphere Brain Sync)</h4>
+          <p class="text-xs text-white/70 max-w-md mx-auto">
+            Join the tips of all five fingers of both hands together in front of your chest. Inhale deeply and hold for 30 seconds.
+          </p>
+
+          <!-- Interactive Breathing Visualizer -->
+          <div class="relative w-28 h-28 mx-auto flex items-center justify-center my-2">
+            <div id="hakini-pulse-circle" class="w-20 h-20 rounded-full bg-gradient-to-tr from-emerald-500 to-gold opacity-75 animate-ping"></div>
+            <span class="absolute font-mono font-bold text-lg text-white" id="hakini-timer">30s</span>
+          </div>
+
+          <button id="complete-gurukula-btn" class="w-full max-w-sm mx-auto py-3.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-xl shadow-gold/25 flex items-center justify-center gap-2 cursor-pointer">
+            <span>🎉 Complete Daily Routine &amp; Claim Certificate</span>
+          </button>
+        </div>
+      `;
+
+      let secLeft = 30;
+      const timerEl = content.querySelector('#hakini-timer');
+      const timerInt = setInterval(() => {
+        secLeft--;
+        if (timerEl) timerEl.textContent = secLeft + 's';
+        if (secLeft <= 0) {
+          clearInterval(timerInt);
+          if (timerEl) timerEl.textContent = "Done ✓";
+        }
+      }, 1000);
+
+      content.querySelector('#complete-gurukula-btn')?.addEventListener('click', () => {
+        clearInterval(timerInt);
+        this.completeDailyGurukulaRoutine();
+      });
+    }
+  }
+
+  completeDailyGurukulaRoutine() {
+    // Increment Streak
+    let currentStreak = this.getGurukulaStreak();
+    currentStreak += 1;
+    localStorage.setItem('hs_gurukula_streak', String(currentStreak));
+    localStorage.setItem('hs_last_completed_gurukula', String(Date.now()));
+    this.updateGurukulaStreakUI();
+
+    const content = document.getElementById('gurukula-step-content');
+    if (!content) return;
+
+    const childName = localStorage.getItem('hs_user_name') || this.currentProfile || 'Arnav Sharma';
+
+    content.innerHTML = `
+      <div class="text-center py-4 space-y-5">
+        <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-gold to-amber-500 text-black flex items-center justify-center text-3xl mx-auto shadow-2xl shadow-gold/40 animate-bounce">
+          👑
+        </div>
+
+        <div>
+          <span class="text-[10px] font-mono font-extrabold uppercase tracking-widest text-emerald-400 block mb-1">Daily Routine Completed!</span>
+          <h3 class="text-2xl sm:text-3xl font-black font-serif text-white">Pranam, ${childName}!</h3>
+          <p class="text-xs text-white/70 mt-1 max-w-md mx-auto">
+            You have unlocked today's Sanskara points and maintained a <strong class="text-gold font-mono">🔥 ${currentStreak}-Day Streak</strong>!
+          </p>
+        </div>
+
+        <!-- Certificate Preview Frame -->
+        <div class="relative max-w-lg mx-auto bg-[#07080c] border-2 border-gold/50 rounded-2xl p-6 shadow-2xl space-y-3 text-center">
+          <div class="text-[9px] font-mono tracking-[0.25em] text-gold uppercase font-bold">SANATANA GURUKULA ACADEMY</div>
+          <h4 class="text-lg font-bold font-serif text-white">Certificate of Vedic Sanskara &amp; Speed Math</h4>
+          <p class="text-[11px] text-white/80">Presented to <span class="text-gold font-bold underline font-serif">${childName}</span> for demonstrating exceptional daily discipline in Vedic Math, Shloka Recitation, and Moral Wisdom.</p>
+          <div class="flex items-center justify-between text-[9px] font-mono text-white/50 border-t border-white/10 pt-3">
+            <span>Verified: ${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+            <span class="text-gold font-bold">Seal: विद्या ददाति विनयं</span>
+          </div>
+        </div>
+
+        <!-- Download & WhatsApp Share Action Tray -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 max-w-md mx-auto">
+          <button id="download-cert-btn" class="w-full py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/20 flex items-center justify-center gap-2 cursor-pointer">
+            <span>📜 Download Certificate (PNG)</span>
+          </button>
+          
+          <a id="share-whatsapp-cert-btn" href="https://wa.me/?text=${encodeURIComponent('Proud moment! My child ' + childName + ' completed the 5-Minute Morning Gurukula Challenge on Sanatana360 with a ' + currentStreak + '-Day Streak! ☀️ 100% Speed Math Accuracy & Sanskrit Chanting. Try it free: https://www.sanatana360.com')}" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-[#25D366] hover:bg-[#20bd5a] text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+            <span>💬 Share on WhatsApp Status</span>
+          </a>
+        </div>
+      </div>
+    `;
+
+    content.querySelector('#download-cert-btn')?.addEventListener('click', () => {
+      this.generateCertificateCanvas(childName, currentStreak);
+    });
+  }
+
+  generateCertificateCanvas(name, streak) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1200;
+    canvas.height = 800;
+    const ctx = canvas.getContext('2d');
+
+    // Background Parchment with Royal Navy & Gold border
+    ctx.fillStyle = '#0a0c14';
+    ctx.fillRect(0, 0, 1200, 800);
+
+    // Inner Gold Gradient Border
+    const grad = ctx.createLinearGradient(0, 0, 1200, 800);
+    grad.addColorStop(0, '#d4af37');
+    grad.addColorStop(0.5, '#fef08a');
+    grad.addColorStop(1, '#b45309');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 14;
+    ctx.strokeRect(30, 30, 1140, 740);
+
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(45, 45, 1110, 710);
+
+    // Top Emblem
+    ctx.fillStyle = '#d4af37';
+    ctx.font = 'bold 38px Georgia, serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('⚜️ SANATANA GURUKULA ACADEMY ⚜️', 600, 120);
+
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+    ctx.font = '14px monospace';
+    ctx.fillText('NATIONAL VEDIC KNOWLEDGE & SANSKARA FOUNDATION', 600, 155);
+
+    // Title
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 44px Georgia, serif';
+    ctx.fillText('CERTIFICATE OF MERIT & EXCELLENCE', 600, 240);
+
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
+    ctx.font = '18px sans-serif';
+    ctx.fillText('This is proudly awarded to', 600, 300);
+
+    // Child's Name
+    ctx.fillStyle = '#fef08a';
+    ctx.font = 'bold 52px Georgia, serif';
+    ctx.fillText(name, 600, 375);
+
+    // Body Text
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+    ctx.font = '20px sans-serif';
+    ctx.fillText('For successfully mastering the 5-Minute Daily Morning Gurukula Routine,', 600, 440);
+    ctx.fillText('achieving a ' + streak + '-Day Streak in Mental Vedic Math, Sanskrit Chanting,', 600, 475);
+    ctx.fillText('& Panchatantra Moral Ethics.', 600, 510);
+
+    // Seal & Footer
+    ctx.fillStyle = '#d4af37';
+    ctx.font = 'italic 22px Georgia, serif';
+    ctx.fillText('"विद्या ददाति विनयं — Knowledge Bestows Humility"', 600, 590);
+
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.font = '16px monospace';
+    ctx.textAlign = 'left';
+    ctx.fillText('Date: ' + new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }), 80, 700);
+
+    ctx.textAlign = 'right';
+    ctx.fillText('Authorized: Sanatana360 Gurukula Council', 1120, 700);
+
+    // Export PNG download
+    const link = document.createElement('a');
+    link.download = 'Gurukula_Certificate_' + name.replace(/\s+/g, '_') + '.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
   }
 
 }

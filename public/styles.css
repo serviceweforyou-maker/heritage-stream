@@ -716,3 +716,30 @@ img {
   font-family: var(--font-mono, monospace);
   letter-spacing: 0.05em;
 }
+
+/* ── ☀️ DAILY GURUKULA STYLING ── */
+.gurukula-card-gradient {
+  background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.12) 0%, rgba(14, 16, 23, 0.95) 100%);
+}
+
+.math-option-btn {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.math-option-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 175, 55, 0.6);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.math-option-btn.correct {
+  background: rgba(16, 185, 129, 0.25) !important;
+  border-color: #10b981 !important;
+  color: #34d399 !important;
+}
+
+.math-option-btn.incorrect {
+  background: rgba(239, 68, 68, 0.25) !important;
+  border-color: #ef4444 !important;
+  color: #f87171 !important;
+}
