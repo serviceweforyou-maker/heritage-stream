@@ -904,11 +904,249 @@ app.post('/api/admin/seo/save-config', verifyAdminSession, (req, res) => {
   res.json({ success: true, message: 'Google Analytics & Search Console configuration saved successfully!' });
 });
 
+// Helper to normalize user registry
+function getUnifiedUsers(db) {
+  if (!db.users) db.users = [];
+  if (!db.subscribers) db.subscribers = [];
+  if (!db.orders) db.orders = [];
+
+  const userMap = new Map();
+
+  // 1. Load users from db.users
+  db.users.forEach(u => {
+    if (u && (u.email || u.id)) {
+      const key = (u.email || u.id).toLowerCase();
+      userMap.set(key, { ...u });
+    }
+  });
+
+  // 2. Merge/Sync from db.subscribers
+  db.subscribers.forEach(s => {
+    const key = (s.email || s.id || '').toLowerCase();
+    if (!key) return;
+    const isTrial = Number(s.amount) === 29 || (s.orderId && s.orderId.includes('trial'));
+    const plan = isTrial ? 'trial_29' : 'annual_399';
+    const planName = isTrial ? '₹29 7-Day Trial Pass' : '₹399 Annual Gurukula Pass';
+    const regDate = s.timestamp || new Date().toISOString();
+    const expiryDate = new Date(new Date(regDate).getTime() + (isTrial ? 7 : 365) * 24 * 60 * 60 * 1000).toISOString();
+    const isExpired = new Date(expiryDate).getTime() < Date.now();
+
+    if (!userMap.has(key)) {
+      userMap.set(key, {
+        id: s.id || `usr_${Date.now()}`,
+        name: s.name || 'Scholar Member',
+        email: s.email || '',
+        phone: s.phone || '',
+        plan: plan,
+        planName: planName,
+        amountPaid: Number(s.amount) || (isTrial ? 29 : 399),
+        status: isExpired ? 'EXPIRED' : (isTrial ? 'TRIAL_ACTIVE' : 'ACTIVE'),
+        registeredAt: regDate,
+        expiresAt: expiryDate,
+        lastLogin: regDate,
+        notes: s.paymentMethod ? `Payment via ${s.paymentMethod}` : 'Online Subscriber'
+      });
+    } else {
+      const existing = userMap.get(key);
+      existing.plan = plan;
+      existing.planName = planName;
+      existing.amountPaid = Number(s.amount) || existing.amountPaid;
+      existing.status = isExpired ? 'EXPIRED' : (isTrial ? 'TRIAL_ACTIVE' : 'ACTIVE');
+      existing.expiresAt = expiryDate;
+    }
+  });
+
+  // 3. Merge from db.orders (lead users / checkouts)
+  db.orders.forEach(o => {
+    const key = (o.email || '').toLowerCase();
+    if (!key) return;
+    if (!userMap.has(key)) {
+      userMap.set(key, {
+        id: `usr_${o.timestamp || Date.now()}`,
+        name: o.name || 'Guest Scholar',
+        email: o.email,
+        phone: o.phone || '',
+        plan: 'free',
+        planName: 'Free Standard Scholar',
+        amountPaid: 0,
+        status: 'ACTIVE',
+        registeredAt: new Date(o.timestamp || Date.now()).toISOString(),
+        expiresAt: 'Lifetime',
+        lastLogin: new Date(o.timestamp || Date.now()).toISOString(),
+        notes: 'Checkout Lead / Free Registered'
+      });
+    }
+  });
+
+  return Array.from(userMap.values());
+}
+
+// 6.4 User Directory Endpoints (Admin)
+app.get('/api/admin/users', verifyAdminSession, (req, res) => {
+  const db = readDB();
+  const users = getUnifiedUsers(db);
+  
+  const planCounts = {
+    total: users.length,
+    annual: users.filter(u => u.plan === 'annual_399').length,
+    trial: users.filter(u => u.plan === 'trial_29').length,
+    free: users.filter(u => u.plan === 'free' || !u.plan).length,
+    active: users.filter(u => u.status === 'ACTIVE' || u.status === 'TRIAL_ACTIVE').length
+  };
+
+  res.json({
+    users,
+    planCounts
+  });
+});
+
+app.post('/api/admin/users', verifyAdminSession, (req, res) => {
+  const db = readDB();
+  if (!db.users) db.users = [];
+
+  const { name, email, phone, plan, validityDays, notes } = req.body;
+  if (!email || !name) {
+    return res.status(400).json({ error: "Name and Email are required." });
+  }
+
+  const cleanEmail = email.trim().toLowerCase();
+  const days = Number(validityDays) || (plan === 'trial_29' ? 7 : (plan === 'annual_399' ? 365 : 3650));
+  const planName = plan === 'annual_399' ? '₹399 Annual Gurukula Pass' : (plan === 'trial_29' ? '₹29 7-Day Trial Pass' : 'Free Standard Scholar');
+  const amountPaid = plan === 'annual_399' ? 399 : (plan === 'trial_29' ? 29 : 0);
+
+  const newUser = {
+    id: `usr_${Date.now()}`,
+    name: name.trim(),
+    email: cleanEmail,
+    phone: (phone || '').trim(),
+    plan: plan || 'free',
+    planName,
+    amountPaid,
+    status: 'ACTIVE',
+    registeredAt: new Date().toISOString(),
+    expiresAt: new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString(),
+    lastLogin: new Date().toISOString(),
+    notes: notes || 'Manually added by Admin'
+  };
+
+  const idx = db.users.findIndex(u => (u.email || '').toLowerCase() === cleanEmail);
+  if (idx >= 0) {
+    db.users[idx] = { ...db.users[idx], ...newUser, id: db.users[idx].id };
+  } else {
+    db.users.unshift(newUser);
+  }
+
+  writeDB(db);
+  res.json({ success: true, user: newUser });
+});
+
+app.put('/api/admin/users/:id', verifyAdminSession, (req, res) => {
+  const db = readDB();
+  if (!db.users) db.users = [];
+
+  const userId = req.params.id;
+  let user = db.users.find(u => u.id === userId);
+
+  if (!user) {
+    const unified = getUnifiedUsers(db);
+    user = unified.find(u => u.id === userId);
+    if (user) {
+      db.users.push(user);
+    }
+  }
+
+  if (!user) {
+    return res.status(404).json({ error: "User not found in registry." });
+  }
+
+  const { name, email, phone, plan, status, validityDays, notes } = req.body;
+  if (name) user.name = name.trim();
+  if (email) user.email = email.trim();
+  if (phone !== undefined) user.phone = phone.trim();
+  if (notes !== undefined) user.notes = notes;
+  if (status) user.status = status;
+
+  if (plan) {
+    user.plan = plan;
+    if (plan === 'annual_399') {
+      user.planName = '₹399 Annual Gurukula Pass';
+      user.amountPaid = 399;
+      user.expiresAt = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString();
+    } else if (plan === 'trial_29') {
+      user.planName = '₹29 7-Day Trial Pass';
+      user.amountPaid = 29;
+      user.expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+    } else {
+      user.planName = 'Free Standard Scholar';
+      user.amountPaid = 0;
+      user.expiresAt = 'Lifetime';
+    }
+  }
+
+  if (validityDays) {
+    user.expiresAt = new Date(Date.now() + Number(validityDays) * 24 * 60 * 60 * 1000).toISOString();
+  }
+
+  writeDB(db);
+  res.json({ success: true, user });
+});
+
+app.delete('/api/admin/users/:id', verifyAdminSession, (req, res) => {
+  const db = readDB();
+  const userId = req.params.id;
+
+  if (db.users) {
+    db.users = db.users.filter(u => u.id !== userId);
+  }
+  if (db.subscribers) {
+    db.subscribers = db.subscribers.filter(s => s.id !== userId);
+  }
+
+  writeDB(db);
+  res.json({ success: true });
+});
+
+// Public User Registration Endpoint
+app.post('/api/user/register', (req, res) => {
+  const db = readDB();
+  if (!db.users) db.users = [];
+
+  const { name, email, phone } = req.body;
+  if (!email) {
+    return res.status(400).json({ error: "Email is required." });
+  }
+
+  const cleanEmail = email.trim().toLowerCase();
+  let user = db.users.find(u => (u.email || '').toLowerCase() === cleanEmail);
+
+  if (!user) {
+    user = {
+      id: `usr_${Date.now()}`,
+      name: (name || 'Scholar Member').trim(),
+      email: cleanEmail,
+      phone: (phone || '').trim(),
+      plan: 'free',
+      planName: 'Free Standard Scholar',
+      amountPaid: 0,
+      status: 'ACTIVE',
+      registeredAt: new Date().toISOString(),
+      expiresAt: 'Lifetime',
+      lastLogin: new Date().toISOString(),
+      notes: 'Self-registered via website'
+    };
+    db.users.push(user);
+    writeDB(db);
+  }
+
+  res.json({ success: true, user });
+});
 
 app.get('/api/admin/stats', verifyAdminSession, (req, res) => {
   const db = readDB();
+  const users = getUnifiedUsers(db);
   
   res.json({
+    totalUsers: users.length,
     totalSubscribers: db.stats.totalSubscribers || db.subscribers.length,
     totalRevenue: db.stats.totalRevenue || (db.subscribers.length * 399),
     totalContent: db.content.length,
