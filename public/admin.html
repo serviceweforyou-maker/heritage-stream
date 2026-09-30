@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKHEWYB53Q"></script>
@@ -7,941 +7,1406 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-ZKHEWYB53Q');
   </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HeritageStream | Admin Management Console</title>
+  <title>Sanatana360 LMS | Enterprise Admin Management Console</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=96">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <script>
     tailwind.config = {
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Crimson Text"', 'serif'],
+          },
           colors: {
             gold: '#d4af37',
             crimson: '#e63946',
             darkSlate: '#0a0b10',
+            sidebar: '#07080c',
+            surface: '#0f1118',
+            surfaceBorder: 'rgba(255, 255, 255, 0.08)'
           }
         }
       }
     }
   </script>
+
   <style>
     @media print {
-      body * {
-        visibility: hidden;
-      }
-      #invoice-print-area, #invoice-print-area * {
-        visibility: visible;
-      }
+      body * { visibility: hidden; }
+      #invoice-print-area, #invoice-print-area * { visibility: visible; }
       #invoice-print-area {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        background: #0f172a !important;
-        color: white !important;
-        padding: 0 !important;
-        margin: 0 !important;
+        position: absolute; left: 0; top: 0; width: 100%;
+        background: #0f172a !important; color: white !important;
+        padding: 0 !important; margin: 0 !important;
       }
       #invoice-print-area * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
     }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    .nav-item.active {
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.03) 100%);
+      border-left: 3px solid #d4af37;
+      color: #d4af37;
+      font-weight: 700;
+    }
+
+    .view-container {
+      animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
-<body class="bg-[#07080c] text-gray-100 min-h-screen flex flex-col selection:bg-gold selection:text-black">
 
-  <!-- Header -->
-  <header class="border-b border-white/5 bg-black/40 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2">
-        <span class="text-2xl">⚜️</span>
-        <span class="text-xl font-bold font-serif tracking-wider text-gradient-gold">HeritageStream Console</span>
+<body class="bg-[#06070a] text-gray-100 h-full flex overflow-hidden font-sans selection:bg-gold selection:text-black">
+
+  <!-- ── 1. FIXED LMS SIDEBAR NAVIGATION ── -->
+  <aside id="admin-sidebar" class="w-72 bg-sidebar border-r border-surfaceBorder flex flex-col flex-shrink-0 z-40 fixed inset-y-0 left-0 lg:static transform -translate-x-full lg:translate-x-0 transition-transform duration-300 shadow-2xl">
+    
+    <!-- Brand Header -->
+    <div class="h-20 px-6 border-b border-surfaceBorder flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-gold/30 via-gold/15 to-transparent border border-gold/40 flex items-center justify-center text-xl shadow-md shadow-gold/10 group-hover:scale-105 transition-transform">
+          ⚜️
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-black font-serif text-lg text-gradient-gold tracking-wide">Sanatana360</span>
+            <span class="text-[9px] font-mono font-bold bg-gold/20 text-gold px-1.5 py-0.2 rounded">LMS</span>
+          </div>
+          <span class="text-[9px] font-mono tracking-widest text-white/40 uppercase block -mt-0.5">Admin Management</span>
+        </div>
       </a>
-      <div class="flex items-center gap-3">
-        <a href="index.html" class="text-xs text-gold/80 hover:text-gold border border-gold/20 px-4 py-2 rounded-full transition-colors">
-          ← View Platform
+      <button id="close-mobile-sidebar-btn" class="lg:hidden text-white/50 hover:text-white text-2xl font-bold cursor-pointer">&times;</button>
+    </div>
+
+    <!-- Navigation Menu List -->
+    <nav class="flex-grow py-4 px-3 space-y-1 overflow-y-auto no-scrollbar" id="sidebar-nav">
+      
+      <div class="px-3 pb-2 text-[10px] font-mono font-bold uppercase tracking-wider text-white/30">Core Platform</div>
+      
+      <a href="#overview" class="nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs text-white/70 hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-view="overview">
+        <span class="text-base">📊</span>
+        <span>Dashboard Overview</span>
+      </a>
+
+      <a href="#seo" class="nav-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs text-white/70 hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-view="seo">
+        <div class="flex items-center gap-3">
+          <span class="text-base">🌐</span>
+          <span>Google SEO &amp; GA4</span>
+        </div>
+        <span class="text-[9px] font-mono font-bold bg-blue-500/20 text-blue-300 border border-blue-500/40 px-1.5 py-0.5 rounded-md">Live</span>
+      </a>
+
+      <a href="#content" class="nav-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs text-white/70 hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-view="content">
+        <div class="flex items-center gap-3">
+          <span class="text-base">📚</span>
+          <span>Courses &amp; Video Media</span>
+        </div>
+        <span class="text-[9px] font-mono font-bold bg-white/10 text-white/80 px-1.5 py-0.5 rounded-md" id="sidebar-content-badge">251+</span>
+      </a>
+
+      <a href="#vedic-math" class="nav-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs text-white/70 hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-view="vedic-math">
+        <div class="flex items-center gap-3">
+          <span class="text-base">🧮</span>
+          <span>Vedic Math &amp; Memory</span>
+        </div>
+        <span class="text-[9px] font-mono font-bold bg-amber-500/20 text-amber-400 px-1.5 py-0.5 rounded-md">6 Sutras</span>
+      </a>
+
+      <a href="#granthalaya" class="nav-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs text-white/70 hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-view="granthalaya">
+        <div class="flex items-center gap-3">
+          <span class="text-base">📖</span>
+          <span>26 Sacred Granthalaya</span>
+        </div>
+        <span class="text-[9px] font-mono font-bold bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded-md">26 Epics</span>
+      </a>
+
+      <div class="pt-4 px-3 pb-2 text-[10px] font-mono font-bold uppercase tracking-wider text-white/30">Growth &amp; CRM</div>
+
+      <a href="#subscribers" class="nav-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs text-white/70 hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-view="subscribers">
+        <div class="flex items-center gap-3">
+          <span class="text-base">👥</span>
+          <span>Subscribers &amp; Pass CRM</span>
+        </div>
+        <span class="text-[9px] font-mono font-bold bg-gold/20 text-gold px-1.5 py-0.5 rounded-md" id="sidebar-sub-badge">₹29/₹399</span>
+      </a>
+
+      <a href="#marketing" class="nav-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs text-white/70 hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-view="marketing">
+        <div class="flex items-center gap-3">
+          <span class="text-base">🤖</span>
+          <span>AI Viral Growth Agent</span>
+        </div>
+        <span class="text-[9px] font-mono font-bold bg-purple-500/20 text-purple-300 px-1.5 py-0.5 rounded-md">24/7</span>
+      </a>
+
+      <div class="pt-4 px-3 pb-2 text-[10px] font-mono font-bold uppercase tracking-wider text-white/30">System</div>
+
+      <a href="#settings" class="nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs text-white/70 hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-view="settings">
+        <span class="text-base">⚙️</span>
+        <span>Settings &amp; API Keys</span>
+      </a>
+
+    </nav>
+
+    <!-- Bottom User Profile Card -->
+    <div class="p-4 border-t border-surfaceBorder bg-black/40">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-gold to-amber-500 text-black font-extrabold flex items-center justify-center text-xs shadow-sm">
+            MP
+          </div>
+          <div class="min-w-0">
+            <span class="text-xs font-bold text-white block truncate">Manjunatha P.</span>
+            <span class="text-[10px] text-white/40 block truncate">prasanna.vyoma@gmail.com</span>
+          </div>
+        </div>
+        <span class="w-2 h-2 rounded-full bg-emerald-400" title="Server Online"></span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="/" target="_blank" class="flex-1 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-white/70 hover:text-white border border-white/10 text-[11px] font-bold text-center transition-all">
+          🌐 View Site
         </a>
-        <button id="logout-btn" class="text-xs text-crimson hover:text-red-400 border border-crimson/20 hover:border-crimson/40 px-4 py-2 rounded-full transition-colors font-bold">
+        <button id="logout-btn" class="py-1.5 px-3 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-[11px] font-bold transition-all cursor-pointer" title="Sign Out">
           Sign Out
         </button>
       </div>
     </div>
-  </header>
+  </aside>
 
-  <!-- Main Content -->
-  <main class="max-w-7xl mx-auto px-6 py-12 space-y-12 w-full flex-grow">
+  <!-- Mobile Backdrop -->
+  <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-black/80 z-30 hidden lg:hidden backdrop-blur-sm"></div>
 
-    <!-- Stats Dashboard Section -->
-    <section class="grid grid-cols-1 md:grid-cols-5 gap-6">
-      <div class="bg-white/5 border border-white/5 p-6 rounded-2xl relative overflow-hidden group hover:border-gold/30 transition-all flex flex-col justify-between">
-        <span class="text-xs text-white/50 font-bold uppercase tracking-wider block">Total Sales Revenue</span>
-        <span class="text-4xl font-extrabold text-gold font-mono my-4" id="stats-revenue">₹0</span>
-        <p class="text-[10px] text-emerald-400 font-medium">✓ Lifetime billing logs</p>
-      </div>
-
-      <div class="bg-white/5 border border-white/5 p-6 rounded-2xl relative overflow-hidden group hover:border-gold/30 transition-all flex flex-col justify-between">
-        <span class="text-xs text-white/50 font-bold uppercase tracking-wider block">Total Active Subscribers</span>
-        <span class="text-4xl font-extrabold text-gold font-mono my-4" id="stats-subscribers">0</span>
-        <p class="text-[10px] text-white/40">₹399 Annual Pass activations</p>
-      </div>
-
-      <div class="bg-white/5 border border-white/5 p-6 rounded-2xl relative overflow-hidden group hover:border-gold/30 transition-all flex flex-col justify-between">
-        <span class="text-xs text-white/50 font-bold uppercase tracking-wider block">Total Page Views</span>
-        <span class="text-4xl font-extrabold text-gold font-mono my-4" id="stats-visits">0</span>
-        <p class="text-[10px] text-white/40">Overall site hit counters</p>
-      </div>
-
-      <div class="bg-white/5 border border-white/5 p-6 rounded-2xl relative overflow-hidden group hover:border-gold/30 transition-all flex flex-col justify-between">
-        <span class="text-xs text-white/50 font-bold uppercase tracking-wider block">Unique Visitors</span>
-        <span class="text-4xl font-extrabold text-gold font-mono my-4" id="stats-unique">0</span>
-        <p class="text-[10px] text-white/40">Unique IP track logs</p>
-      </div>
-
-      <div class="bg-white/5 border border-white/5 p-6 rounded-2xl relative overflow-hidden group hover:border-emerald-500/30 transition-all flex flex-col justify-between">
-        <span class="text-xs text-white/50 font-bold uppercase tracking-wider block">System Status</span>
-        <span class="text-xl font-bold text-emerald-400 font-serif my-4 flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-          <span>Online</span>
-        </span>
-        <p class="text-[10px] text-white/40">Serving JSON Data API</p>
-      </div>
-    </section>
-
+  <!-- ── 2. MAIN LMS WORKSPACE ── -->
+  <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
     
-    <!-- ── 🌐 GOOGLE SEARCH CONSOLE & GA4 ANALYTICS COMMAND CENTER ── -->
-    <section class="bg-gradient-to-r from-blue-900/20 via-black/50 to-indigo-950/30 border border-blue-500/30 p-6 sm:p-8 rounded-3xl space-y-6 relative overflow-hidden shadow-2xl shadow-blue-500/5" id="seo-analytics-hub">
-      <div class="absolute top-0 right-0 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-[9px] font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-wider shadow-sm">
-        Google Search &amp; GA4 Live Intelligence
+    <!-- Top Master Navigation Bar -->
+    <header class="h-20 bg-sidebar/95 backdrop-blur-xl border-b border-surfaceBorder px-4 sm:px-8 flex items-center justify-between gap-4 flex-shrink-0 z-20">
+      
+      <!-- Left: Mobile Hamburger & Breadcrumbs -->
+      <div class="flex items-center gap-3 min-w-0">
+        <button id="open-mobile-sidebar-btn" class="lg:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-white/80 hover:text-white cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+        <div class="flex items-center gap-2 text-xs text-white/40 min-w-0">
+          <span class="hidden sm:inline">Admin LMS</span>
+          <span class="hidden sm:inline">/</span>
+          <span id="topbar-breadcrumb" class="font-bold text-gold text-sm truncate font-serif">Dashboard Overview</span>
+        </div>
       </div>
 
-      <!-- Header & Fast Action Bar -->
-      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
-        <div>
-          <div class="flex items-center gap-2.5">
-            <span class="text-2xl p-2 rounded-xl bg-blue-500/10 border border-blue-500/30">🌐</span>
-            <div>
-              <h3 class="text-xl sm:text-2xl font-bold font-serif text-white">Google Search Console &amp; GA4 Command Center</h3>
-              <p class="text-xs text-white/60 mt-0.5">Live sitemap health monitor, organic keyword ranks, GA4 traffic stream &amp; 1-click sync</p>
+      <!-- Center: Quick Global Search -->
+      <div class="hidden md:flex flex-1 max-w-md mx-4">
+        <div class="relative w-full">
+          <input type="text" id="global-admin-search" placeholder="Quick search courses, epics, subscribers..." class="w-full bg-surface border border-surfaceBorder rounded-2xl pl-10 pr-4 py-2 text-xs text-white placeholder:text-white/40 focus:border-gold/50 focus:outline-none transition-all">
+          <span class="absolute left-3.5 top-2.5 text-white/40 text-xs">🔍</span>
+        </div>
+      </div>
+
+      <!-- Right: Actions & Status -->
+      <div class="flex items-center gap-2.5 flex-shrink-0">
+        <button onclick="triggerSitemapSync()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/15 border border-blue-500/30 text-blue-300 hover:bg-blue-500/25 text-xs font-bold transition-all cursor-pointer" title="Instant Google &amp; Bing Sitemap Ping">
+          <span>🔄</span> <span>Sync Sitemap</span>
+        </button>
+        
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[11px]">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Live 200 OK</span>
+        </div>
+
+        <a href="/" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold text-xs uppercase tracking-wide transition-all shadow-sm shadow-gold/20 flex items-center gap-1">
+          <span>⚡</span> <span>Visit Site</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content Dynamic Stage -->
+    <main class="flex-1 overflow-y-auto p-4 sm:p-8 space-y-8 bg-[#06070a]" id="main-content-stage">
+      
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <!-- VIEW 1: 📊 DASHBOARD OVERVIEW -->
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <div id="view-overview" class="view-container space-y-8">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-gold/15 via-surface to-surface border border-gold/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden shadow-xl">
+          <div class="space-y-1.5">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-gold">Executive Command Center</span>
+            <h2 class="text-2xl sm:text-3xl font-bold font-serif text-white">Namaste, Manjunatha! ⚜️</h2>
+            <p class="text-xs text-white/60 max-w-xl">Welcome to the Sanatana360 LMS Enterprise portal. All systems are operational, GA4 streams are active, and 251+ courses are serving.</p>
+          </div>
+          <div class="flex flex-wrap gap-2.5">
+            <a href="#content" class="px-5 py-2.5 rounded-xl bg-gold text-black font-extrabold text-xs uppercase tracking-wider hover:bg-gold/90 transition-all shadow-md">
+              + Upload Content
+            </a>
+            <a href="#seo" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/15 text-xs font-bold transition-all">
+              Google SEO Hub
+            </a>
+          </div>
+        </div>
+
+        <!-- 5 KPI Metrics Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div class="bg-surface border border-surfaceBorder p-5 rounded-2xl flex flex-col justify-between hover:border-gold/30 transition-all">
+            <span class="text-[11px] text-white/50 font-bold uppercase tracking-wider block">Total Sales Revenue</span>
+            <span class="text-3xl font-extrabold text-gold font-mono my-3" id="stats-revenue">₹0</span>
+            <p class="text-[10px] text-emerald-400 font-medium">✓ Lifetime billing records</p>
+          </div>
+
+          <div class="bg-surface border border-surfaceBorder p-5 rounded-2xl flex flex-col justify-between hover:border-gold/30 transition-all">
+            <span class="text-[11px] text-white/50 font-bold uppercase tracking-wider block">Active Subscribers</span>
+            <span class="text-3xl font-extrabold text-white font-mono my-3" id="stats-subscribers">0</span>
+            <p class="text-[10px] text-white/40">₹399 &amp; ₹29 Pass holders</p>
+          </div>
+
+          <div class="bg-surface border border-surfaceBorder p-5 rounded-2xl flex flex-col justify-between hover:border-gold/30 transition-all">
+            <span class="text-[11px] text-white/50 font-bold uppercase tracking-wider block">Total Page Views</span>
+            <span class="text-3xl font-extrabold text-white font-mono my-3" id="stats-visits">0</span>
+            <p class="text-[10px] text-white/40">Overall platform hits</p>
+          </div>
+
+          <div class="bg-surface border border-surfaceBorder p-5 rounded-2xl flex flex-col justify-between hover:border-gold/30 transition-all">
+            <span class="text-[11px] text-white/50 font-bold uppercase tracking-wider block">Unique Visitors</span>
+            <span class="text-3xl font-extrabold text-white font-mono my-3" id="stats-unique">0</span>
+            <p class="text-[10px] text-white/40">Unique IP track logs</p>
+          </div>
+
+          <div class="bg-surface border border-surfaceBorder p-5 rounded-2xl flex flex-col justify-between hover:border-emerald-500/30 transition-all">
+            <span class="text-[11px] text-white/50 font-bold uppercase tracking-wider block">System Status</span>
+            <span class="text-xl font-bold text-emerald-400 font-serif my-3 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+              <span>Online 200 OK</span>
+            </span>
+            <p class="text-[10px] text-emerald-400 font-mono">GA4 Tag: G-ZKHEWYB53Q</p>
+          </div>
+        </div>
+
+        <!-- Quick AI Pipeline Status Bar -->
+        <div class="bg-surface border border-surfaceBorder p-6 rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-lg">🤖</span>
+              <h3 class="text-base font-bold font-serif text-white">Autonomous AI Content Generator</h3>
+              <span class="text-[9px] font-mono font-bold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full">Active</span>
+            </div>
+            <p class="text-xs text-white/50 mt-1">Publishes a fresh ancient chronicle every 72 hours automatically.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-gold/80 font-mono" id="ai-next-schedule">Pending first run</span>
+            <button id="trigger-ai-btn" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center gap-1.5 cursor-pointer">
+              <span>⚡ Trigger Now</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Recent Subscribers & Quick Links Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 bg-surface border border-surfaceBorder rounded-3xl p-6 space-y-4">
+            <div class="flex items-center justify-between border-b border-surfaceBorder pb-3">
+              <h3 class="text-base font-bold font-serif text-white flex items-center gap-2">
+                <span>👥</span> <span>Recent Pass Activations</span>
+              </h3>
+              <a href="#subscribers" class="text-xs text-gold hover:underline">View All CRM →</a>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs font-mono">
+                <thead>
+                  <tr class="text-white/40 border-b border-white/10 text-[10px] uppercase">
+                    <th class="py-2 px-3">Subscriber</th>
+                    <th class="py-2 px-3">Plan</th>
+                    <th class="py-2 px-3">Amount</th>
+                    <th class="py-2 px-3">Date</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5 text-white/80" id="recent-subscribers-list">
+                  <tr><td colspan="4" class="py-4 text-center text-white/40">Loading subscriber activity...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="bg-surface border border-surfaceBorder rounded-3xl p-6 space-y-4">
+            <h3 class="text-base font-bold font-serif text-white border-b border-surfaceBorder pb-3">⚡ Quick Navigation</h3>
+            <div class="grid grid-cols-2 gap-2.5">
+              <a href="#seo" class="p-3 rounded-2xl bg-white/5 hover:bg-gold/15 hover:border-gold/30 border border-white/10 text-center transition-all cursor-pointer">
+                <span class="text-2xl block mb-1">🌐</span>
+                <span class="text-xs font-bold text-white block">Google SEO</span>
+              </a>
+              <a href="#vedic-math" class="p-3 rounded-2xl bg-white/5 hover:bg-gold/15 hover:border-gold/30 border border-white/10 text-center transition-all cursor-pointer">
+                <span class="text-2xl block mb-1">🧮</span>
+                <span class="text-xs font-bold text-white block">Vedic Math</span>
+              </a>
+              <a href="#granthalaya" class="p-3 rounded-2xl bg-white/5 hover:bg-gold/15 hover:border-gold/30 border border-white/10 text-center transition-all cursor-pointer">
+                <span class="text-2xl block mb-1">📖</span>
+                <span class="text-xs font-bold text-white block">26 Granths</span>
+              </a>
+              <a href="#marketing" class="p-3 rounded-2xl bg-white/5 hover:bg-gold/15 hover:border-gold/30 border border-white/10 text-center transition-all cursor-pointer">
+                <span class="text-2xl block mb-1">🤖</span>
+                <span class="text-xs font-bold text-white block">AI Viral</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <div class="flex flex-wrap items-center gap-2">
-          <!-- 1-Click Sync Button -->
-          <button id="sync-sitemap-btn" class="px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md shadow-emerald-500/20 flex items-center gap-1.5 cursor-pointer">
-            <span id="sync-icon">🔄</span>
-            <span id="sync-btn-label">Sync Sitemap to Google</span>
-          </button>
-
-          <!-- 1-Click Login / Open GA4 -->
-          <a href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 hover:text-white border border-blue-500/40 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 cursor-pointer" title="Open Google Analytics GA4 Dashboard">
-            <span>📊</span> <span>Open GA4</span>
-          </a>
-
-          <!-- 1-Click Login / Open Google Search Console -->
-          <a href="https://search.google.com/search-console?resource_id=https://www.sanatana360.com/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 hover:text-white border border-indigo-500/40 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 cursor-pointer" title="Open Google Search Console">
-            <span>🔍</span> <span>Open Search Console</span>
-          </a>
-
-          <!-- Rich Results Tester -->
-          <a href="https://search.google.com/test/rich-results?url=https://www.sanatana360.com/" target="_blank" rel="noopener noreferrer" class="px-3 py-2.5 bg-white/5 hover:bg-white/10 text-white/70 hover:text-white border border-white/10 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 cursor-pointer" title="Test Live Schema Structured Data on Google">
-            <span>🧪</span> <span>Test Schema</span>
-          </a>
-        </div>
       </div>
 
-      <!-- Sync Feedback Notification Banner -->
-      <div id="seo-sync-banner" class="hidden p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-medium flex items-center justify-between">
-        <span id="seo-sync-msg">✓ Sitemap synced with Google &amp; Bing successfully!</span>
-        <span class="text-[10px] opacity-70" id="seo-sync-time">Just now</span>
-      </div>
 
-      <!-- 4 Live KPI Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
-        <!-- Card 1: Sitemap Health -->
-        <div class="bg-black/40 border border-white/10 p-4 rounded-2xl space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase">XML SITEMAP STATUS</span>
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          </div>
-          <div class="text-xl font-bold font-mono text-white" id="seo-sitemap-status">🟢 200 OK Synced</div>
-          <div class="text-[11px] text-white/50 flex justify-between">
-            <span>Indexed Routes:</span>
-            <span class="text-white font-mono font-bold" id="seo-indexed-count">6 Pages</span>
-          </div>
-          <div class="text-[10px] text-gold/80 font-mono truncate" id="seo-last-sync-label">Last Sync: 2026-09-30</div>
-        </div>
-
-        <!-- Card 2: Organic Search Metrics -->
-        <div class="bg-black/40 border border-white/10 p-4 rounded-2xl space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-[10px] font-mono text-blue-400 font-bold uppercase">GOOGLE SEARCH IMPRESSIONS</span>
-            <span class="text-[10px] font-mono text-emerald-400 font-bold">+18.4%</span>
-          </div>
-          <div class="text-xl font-bold font-mono text-white" id="seo-impressions">24,850</div>
-          <div class="text-[11px] text-white/50 flex justify-between">
-            <span>Organic Clicks:</span>
-            <span class="text-gold font-mono font-bold" id="seo-clicks">1,940 (7.8% CTR)</span>
-          </div>
-          <div class="text-[10px] text-white/40 font-mono">Avg Google Pos: 3.4</div>
-        </div>
-
-        <!-- Card 3: GA4 Live Visitors -->
-        <div class="bg-black/40 border border-white/10 p-4 rounded-2xl space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-[10px] font-mono text-amber-400 font-bold uppercase">GA4 REAL-TIME ACTIVE</span>
-            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-          </div>
-          <div class="text-xl font-bold font-mono text-amber-300" id="ga-realtime">42 Online</div>
-          <div class="text-[11px] text-white/50 flex justify-between">
-            <span>7-Day Visitors:</span>
-            <span class="text-white font-mono font-bold" id="ga-users-7d">8,420 users</span>
-          </div>
-          <div class="text-[10px] text-white/40 font-mono">Avg Session: 6m 45s</div>
-        </div>
-
-        <!-- Card 4: IndexNow & Crawler Access -->
-        <div class="bg-black/40 border border-white/10 p-4 rounded-2xl space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-[10px] font-mono text-purple-400 font-bold uppercase">SEARCH CRAWLER ACCESS</span>
-            <span class="text-[10px] font-mono text-emerald-400">100% OK</span>
-          </div>
-          <div class="text-xl font-bold font-mono text-purple-300">IndexNow &bull; Active</div>
-          <div class="text-[11px] text-white/50 flex justify-between">
-            <span>Robots.txt &amp; RSS:</span>
-            <span class="text-emerald-400 font-mono font-bold">Authorized</span>
-          </div>
-          <div class="text-[10px] text-white/40 font-mono truncate">Key: sanatana360indexnow2026</div>
-        </div>
-      </div>
-
-      <!-- Interactive Sub-Tabs for Google Hub -->
-      <div class="pt-4 border-t border-white/10">
-        <!-- Tab Buttons -->
-        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-4">
-          <button id="tab-btn-sitemap" class="seo-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-500 text-white transition-all cursor-pointer whitespace-nowrap shadow-sm">
-            🗺️ Live Sitemap URLs &amp; Index Status
-          </button>
-          <button id="tab-btn-queries" class="seo-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap">
-            📈 Top Google Search Queries &amp; CTR
-          </button>
-          <button id="tab-btn-embed" class="seo-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap">
-            ⚙️ GA4 &amp; Looker Studio Embed Settings
-          </button>
-        </div>
-
-        <!-- Tab 1: Live Sitemap Table -->
-        <div id="seo-tab-panel-sitemap" class="seo-tab-panel space-y-3">
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-xs font-mono">
-              <thead>
-                <tr class="text-white/40 border-b border-white/10 text-[10px] uppercase">
-                  <th class="py-2.5 px-3">Landing Page URL</th>
-                  <th class="py-2.5 px-3">Priority</th>
-                  <th class="py-2.5 px-3">Frequency</th>
-                  <th class="py-2.5 px-3">Last Modified</th>
-                  <th class="py-2.5 px-3 text-right">Google Index Status</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-white/5 text-white/80" id="sitemap-table-body">
-                <tr>
-                  <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/" target="_blank" class="hover:underline">https://www.sanatana360.com/</a></td>
-                  <td class="py-2.5 px-3">1.0</td>
-                  <td class="py-2.5 px-3">Daily</td>
-                  <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
-                  <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (Priority 1.0)</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/vedic-math.html" target="_blank" class="hover:underline">https://www.sanatana360.com/vedic-math.html</a></td>
-                  <td class="py-2.5 px-3">0.95</td>
-                  <td class="py-2.5 px-3">Weekly</td>
-                  <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
-                  <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (6 Simulators + 3 Memory Tools)</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/mudra-therapy.html" target="_blank" class="hover:underline">https://www.sanatana360.com/mudra-therapy.html</a></td>
-                  <td class="py-2.5 px-3">0.95</td>
-                  <td class="py-2.5 px-3">Weekly</td>
-                  <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
-                  <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (5-Element Mudras)</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/granthalaya.html" target="_blank" class="hover:underline">https://www.sanatana360.com/granthalaya.html</a></td>
-                  <td class="py-2.5 px-3">0.95</td>
-                  <td class="py-2.5 px-3">Weekly</td>
-                  <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
-                  <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (26 Sacred E-Books)</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/panchatantra-audio.html" target="_blank" class="hover:underline">https://www.sanatana360.com/panchatantra-audio.html</a></td>
-                  <td class="py-2.5 px-3">0.90</td>
-                  <td class="py-2.5 px-3">Weekly</td>
-                  <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
-                  <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (5-Lang Audiobooks)</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/divya-darshana.html" target="_blank" class="hover:underline">https://www.sanatana360.com/divya-darshana.html</a></td>
-                  <td class="py-2.5 px-3">0.90</td>
-                  <td class="py-2.5 px-3">Weekly</td>
-                  <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
-                  <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (3D Virtual Aarti)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Tab 2: Top Google Keywords Table -->
-        <div id="seo-tab-panel-queries" class="seo-tab-panel space-y-3 hidden">
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-xs font-mono">
-              <thead>
-                <tr class="text-white/40 border-b border-white/10 text-[10px] uppercase">
-                  <th class="py-2.5 px-3">High-Intent Google Search Query</th>
-                  <th class="py-2.5 px-3">Impressions</th>
-                  <th class="py-2.5 px-3">Clicks</th>
-                  <th class="py-2.5 px-3">CTR %</th>
-                  <th class="py-2.5 px-3 text-right">Avg Google Rank</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-white/5 text-white/80" id="keywords-table-body">
-                <tr>
-                  <td class="py-2.5 px-3 text-white font-bold">"vedic math tricks for kids"</td>
-                  <td class="py-2.5 px-3">3,870</td>
-                  <td class="py-2.5 px-3 text-gold font-bold">480</td>
-                  <td class="py-2.5 px-3 text-emerald-400">12.4%</td>
-                  <td class="py-2.5 px-3 text-right font-bold text-amber-300">#2.1</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 px-3 text-white font-bold">"katapayadi cipher sanskrit numbers"</td>
-                  <td class="py-2.5 px-3">1,700</td>
-                  <td class="py-2.5 px-3 text-gold font-bold">310</td>
-                  <td class="py-2.5 px-3 text-emerald-400">18.2%</td>
-                  <td class="py-2.5 px-3 text-right font-bold text-emerald-400">#1.4</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 px-3 text-white font-bold">"apana vayu mudra for heart &amp; anxiety"</td>
-                  <td class="py-2.5 px-3">3,020</td>
-                  <td class="py-2.5 px-3 text-gold font-bold">290</td>
-                  <td class="py-2.5 px-3 text-emerald-400">9.6%</td>
-                  <td class="py-2.5 px-3 text-right font-bold text-amber-300">#3.2</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 px-3 text-white font-bold">"5-minute daily gurukula challenge certificate"</td>
-                  <td class="py-2.5 px-3">1,590</td>
-                  <td class="py-2.5 px-3 text-gold font-bold">240</td>
-                  <td class="py-2.5 px-3 text-emerald-400">15.1%</td>
-                  <td class="py-2.5 px-3 text-right font-bold text-emerald-400">#1.8</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 px-3 text-white font-bold">"26 sacred granth e-books illustrated"</td>
-                  <td class="py-2.5 px-3">1,910</td>
-                  <td class="py-2.5 px-3 text-gold font-bold">210</td>
-                  <td class="py-2.5 px-3 text-emerald-400">11.0%</td>
-                  <td class="py-2.5 px-3 text-right font-bold text-amber-300">#2.7</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 px-3 text-white font-bold">"trataka focus exercise for exams"</td>
-                  <td class="py-2.5 px-3">2,070</td>
-                  <td class="py-2.5 px-3 text-gold font-bold">170</td>
-                  <td class="py-2.5 px-3 text-emerald-400">8.2%</td>
-                  <td class="py-2.5 px-3 text-right font-bold text-amber-300">#4.1</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Tab 3: GA4 & Looker Studio Settings & Embed View -->
-        <div id="seo-tab-panel-embed" class="seo-tab-panel space-y-4 hidden">
-          <form id="seo-config-form" class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-black/40 p-4 rounded-2xl border border-white/10">
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <!-- VIEW 2: 🌐 GOOGLE SEARCH & GA4 COMMAND CENTER -->
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <div id="view-seo" class="view-container space-y-8 hidden">
+        
+        <section class="bg-gradient-to-r from-blue-900/20 via-surface to-indigo-950/30 border border-blue-500/30 p-6 sm:p-8 rounded-3xl space-y-6 relative overflow-hidden shadow-2xl">
+          <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">GA4 Measurement ID</label>
-              <input type="text" id="config-ga4-id" placeholder="G-XXXXXXXXXX" value="G-ZKHEWYB53Q" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-blue-400 focus:outline-none">
-            </div>
-            <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Google Search Console Property</label>
-              <input type="text" id="config-gsc-url" placeholder="https://www.sanatana360.com/" value="https://www.sanatana360.com/" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-blue-400 focus:outline-none">
-            </div>
-            <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Looker Studio / GA4 Embed URL</label>
-              <div class="flex gap-2">
-                <input type="url" id="config-looker-url" placeholder="https://lookerstudio.google.com/embed/reporting/..." class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-blue-400 focus:outline-none">
-                <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl uppercase transition-all whitespace-nowrap cursor-pointer">
-                  Save
-                </button>
+              <div class="flex items-center gap-2.5">
+                <span class="text-2xl p-2 rounded-xl bg-blue-500/10 border border-blue-500/30">🌐</span>
+                <div>
+                  <h3 class="text-xl sm:text-2xl font-bold font-serif text-white">Google Search Console &amp; GA4 Command Center</h3>
+                  <p class="text-xs text-white/60 mt-0.5">Live sitemap health monitor, organic keyword ranks, GA4 traffic stream &amp; 1-click sync</p>
+                </div>
               </div>
             </div>
-          </form>
 
-          <!-- Embedded Analytics Frame Container -->
-          <div id="analytics-embed-container" class="bg-black/60 border border-white/10 rounded-2xl p-4 text-center min-h-[220px] flex flex-col items-center justify-center space-y-3">
-            <span class="text-3xl">📊</span>
-            <h4 class="text-sm font-bold text-white">Live Embedded Google Analytics Stream</h4>
-            <p class="text-xs text-white/50 max-w-md">
-              Paste your <strong>Google Looker Studio Embed URL</strong> above to view your real-time visual graphs right inside this console, or click <strong>&ldquo;Open GA4&rdquo;</strong> to view in Google Analytics.
-            </p>
-            <div class="flex gap-3 pt-2">
-              <a href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition-all shadow-md">
-                Launch Full GA4 Suite ↗
+            <div class="flex flex-wrap items-center gap-2">
+              <button id="sync-sitemap-btn" class="px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
+                <span id="sync-icon">🔄</span>
+                <span id="sync-btn-label">Sync Sitemap to Google</span>
+              </button>
+
+              <a href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 hover:text-white border border-blue-500/40 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5">
+                <span>📊</span> <span>Open GA4</span>
               </a>
-              <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl transition-all shadow-md">
-                Launch Search Console ↗
+
+              <a href="https://search.google.com/search-console?resource_id=https://www.sanatana360.com/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 hover:text-white border border-indigo-500/40 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5">
+                <span>🔍</span> <span>Open Search Console</span>
+              </a>
+
+              <a href="https://search.google.com/test/rich-results?url=https://www.sanatana360.com/" target="_blank" rel="noopener noreferrer" class="px-3 py-2.5 bg-white/5 hover:bg-white/10 text-white/70 hover:text-white border border-white/10 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5">
+                <span>🧪</span> <span>Test Schema</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Sync Feedback Notification Banner -->
+          <div id="seo-sync-banner" class="hidden p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-medium flex items-center justify-between">
+            <span id="seo-sync-msg">✓ Sitemap synced with Google &amp; Bing successfully!</span>
+            <span class="text-[10px] opacity-70" id="seo-sync-time">Just now</span>
+          </div>
+
+          <!-- 4 Live KPI Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+            <div class="bg-black/40 border border-white/10 p-4 rounded-2xl space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase">XML SITEMAP STATUS</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              </div>
+              <div class="text-xl font-bold font-mono text-white" id="seo-sitemap-status">🟢 200 OK Synced</div>
+              <div class="text-[11px] text-white/50 flex justify-between">
+                <span>Indexed Routes:</span>
+                <span class="text-white font-mono font-bold" id="seo-indexed-count">6 Pages</span>
+              </div>
+              <div class="text-[10px] text-gold/80 font-mono truncate" id="seo-last-sync-label">Last Sync: 2026-09-30</div>
+            </div>
+
+            <div class="bg-black/40 border border-white/10 p-4 rounded-2xl space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono text-blue-400 font-bold uppercase">GOOGLE SEARCH IMPRESSIONS</span>
+                <span class="text-[10px] font-mono text-emerald-400 font-bold">+18.4%</span>
+              </div>
+              <div class="text-xl font-bold font-mono text-white" id="seo-impressions">24,850</div>
+              <div class="text-[11px] text-white/50 flex justify-between">
+                <span>Organic Clicks:</span>
+                <span class="text-gold font-mono font-bold" id="seo-clicks">1,940 (7.8% CTR)</span>
+              </div>
+              <div class="text-[10px] text-white/40 font-mono">Avg Google Pos: 3.4</div>
+            </div>
+
+            <div class="bg-black/40 border border-white/10 p-4 rounded-2xl space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono text-amber-400 font-bold uppercase">GA4 REAL-TIME ACTIVE</span>
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              </div>
+              <div class="text-xl font-bold font-mono text-amber-300" id="ga-realtime">42 Online</div>
+              <div class="text-[11px] text-white/50 flex justify-between">
+                <span>7-Day Visitors:</span>
+                <span class="text-white font-mono font-bold" id="ga-users-7d">8,420 users</span>
+              </div>
+              <div class="text-[10px] text-white/40 font-mono">Avg Session: 6m 45s</div>
+            </div>
+
+            <div class="bg-black/40 border border-white/10 p-4 rounded-2xl space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono text-purple-400 font-bold uppercase">SEARCH CRAWLER ACCESS</span>
+                <span class="text-[10px] font-mono text-emerald-400">100% OK</span>
+              </div>
+              <div class="text-xl font-bold font-mono text-purple-300">IndexNow &bull; Active</div>
+              <div class="text-[11px] text-white/50 flex justify-between">
+                <span>Robots.txt &amp; RSS:</span>
+                <span class="text-emerald-400 font-mono font-bold">Authorized</span>
+              </div>
+              <div class="text-[10px] text-white/40 font-mono truncate">Key: sanatana360indexnow2026</div>
+            </div>
+          </div>
+
+          <!-- Interactive Sub-Tabs for Google Hub -->
+          <div class="pt-4 border-t border-white/10">
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-4">
+              <button id="tab-btn-sitemap" class="seo-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-500 text-white transition-all cursor-pointer whitespace-nowrap shadow-sm">
+                🗺️ Live Sitemap URLs &amp; Index Status
+              </button>
+              <button id="tab-btn-queries" class="seo-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap">
+                📈 Top Google Search Queries &amp; CTR
+              </button>
+              <button id="tab-btn-embed" class="seo-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap">
+                ⚙️ GA4 &amp; Looker Studio Embed Settings
+              </button>
+            </div>
+
+            <!-- Tab 1: Live Sitemap Table -->
+            <div id="seo-tab-panel-sitemap" class="seo-tab-panel space-y-3">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs font-mono">
+                  <thead>
+                    <tr class="text-white/40 border-b border-white/10 text-[10px] uppercase">
+                      <th class="py-2.5 px-3">Landing Page URL</th>
+                      <th class="py-2.5 px-3">Priority</th>
+                      <th class="py-2.5 px-3">Frequency</th>
+                      <th class="py-2.5 px-3">Last Modified</th>
+                      <th class="py-2.5 px-3 text-right">Google Index Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-white/5 text-white/80" id="sitemap-table-body">
+                    <tr>
+                      <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/" target="_blank" class="hover:underline">https://www.sanatana360.com/</a></td>
+                      <td class="py-2.5 px-3">1.0</td>
+                      <td class="py-2.5 px-3">Daily</td>
+                      <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
+                      <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (Priority 1.0)</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/vedic-math.html" target="_blank" class="hover:underline">https://www.sanatana360.com/vedic-math.html</a></td>
+                      <td class="py-2.5 px-3">0.95</td>
+                      <td class="py-2.5 px-3">Weekly</td>
+                      <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
+                      <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (6 Simulators + 3 Memory Tools)</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/mudra-therapy.html" target="_blank" class="hover:underline">https://www.sanatana360.com/mudra-therapy.html</a></td>
+                      <td class="py-2.5 px-3">0.95</td>
+                      <td class="py-2.5 px-3">Weekly</td>
+                      <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
+                      <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (5-Element Mudras)</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/granthalaya.html" target="_blank" class="hover:underline">https://www.sanatana360.com/granthalaya.html</a></td>
+                      <td class="py-2.5 px-3">0.95</td>
+                      <td class="py-2.5 px-3">Weekly</td>
+                      <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
+                      <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (26 Sacred E-Books)</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/panchatantra-audio.html" target="_blank" class="hover:underline">https://www.sanatana360.com/panchatantra-audio.html</a></td>
+                      <td class="py-2.5 px-3">0.90</td>
+                      <td class="py-2.5 px-3">Weekly</td>
+                      <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
+                      <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (5-Lang Audiobooks)</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-3 text-gold font-bold"><a href="https://www.sanatana360.com/divya-darshana.html" target="_blank" class="hover:underline">https://www.sanatana360.com/divya-darshana.html</a></td>
+                      <td class="py-2.5 px-3">0.90</td>
+                      <td class="py-2.5 px-3">Weekly</td>
+                      <td class="py-2.5 px-3 text-white/60">2026-09-30</td>
+                      <td class="py-2.5 px-3 text-right text-emerald-400 font-bold">✓ Indexed (3D Virtual Aarti)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Tab 2: Top Keywords -->
+            <div id="seo-tab-panel-queries" class="seo-tab-panel space-y-3 hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs font-mono">
+                  <thead>
+                    <tr class="text-white/40 border-b border-white/10 text-[10px] uppercase">
+                      <th class="py-2.5 px-3">Google Search Query</th>
+                      <th class="py-2.5 px-3">Impressions</th>
+                      <th class="py-2.5 px-3">Clicks</th>
+                      <th class="py-2.5 px-3">CTR %</th>
+                      <th class="py-2.5 px-3 text-right">Avg Google Rank</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-white/5 text-white/80" id="keywords-table-body">
+                    <tr>
+                      <td class="py-2.5 px-3 text-white font-bold">"vedic math tricks for kids"</td>
+                      <td class="py-2.5 px-3">3,870</td>
+                      <td class="py-2.5 px-3 text-gold font-bold">480</td>
+                      <td class="py-2.5 px-3 text-emerald-400">12.4%</td>
+                      <td class="py-2.5 px-3 text-right font-bold text-amber-300">#2.1</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-3 text-white font-bold">"katapayadi cipher sanskrit numbers"</td>
+                      <td class="py-2.5 px-3">1,700</td>
+                      <td class="py-2.5 px-3 text-gold font-bold">310</td>
+                      <td class="py-2.5 px-3 text-emerald-400">18.2%</td>
+                      <td class="py-2.5 px-3 text-right font-bold text-emerald-400">#1.4</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-3 text-white font-bold">"apana vayu mudra for heart &amp; anxiety"</td>
+                      <td class="py-2.5 px-3">3,020</td>
+                      <td class="py-2.5 px-3 text-gold font-bold">290</td>
+                      <td class="py-2.5 px-3 text-emerald-400">9.6%</td>
+                      <td class="py-2.5 px-3 text-right font-bold text-amber-300">#3.2</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-3 text-white font-bold">"5-minute daily gurukula challenge certificate"</td>
+                      <td class="py-2.5 px-3">1,590</td>
+                      <td class="py-2.5 px-3 text-gold font-bold">240</td>
+                      <td class="py-2.5 px-3 text-emerald-400">15.1%</td>
+                      <td class="py-2.5 px-3 text-right font-bold text-emerald-400">#1.8</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-3 text-white font-bold">"26 sacred granth e-books illustrated"</td>
+                      <td class="py-2.5 px-3">1,910</td>
+                      <td class="py-2.5 px-3 text-gold font-bold">210</td>
+                      <td class="py-2.5 px-3 text-emerald-400">11.0%</td>
+                      <td class="py-2.5 px-3 text-right font-bold text-amber-300">#2.7</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-3 text-white font-bold">"trataka focus exercise for exams"</td>
+                      <td class="py-2.5 px-3">2,070</td>
+                      <td class="py-2.5 px-3 text-gold font-bold">170</td>
+                      <td class="py-2.5 px-3 text-emerald-400">8.2%</td>
+                      <td class="py-2.5 px-3 text-right font-bold text-amber-300">#4.1</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Tab 3: GA4 & Looker Settings -->
+            <div id="seo-tab-panel-embed" class="seo-tab-panel space-y-4 hidden">
+              <form id="seo-config-form" class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-black/40 p-4 rounded-2xl border border-white/10">
+                <div>
+                  <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">GA4 Measurement ID</label>
+                  <input type="text" id="config-ga4-id" placeholder="G-XXXXXXXXXX" value="G-ZKHEWYB53Q" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-blue-400 focus:outline-none">
+                </div>
+                <div>
+                  <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Google Search Console Property</label>
+                  <input type="text" id="config-gsc-url" placeholder="https://www.sanatana360.com/" value="https://www.sanatana360.com/" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-blue-400 focus:outline-none">
+                </div>
+                <div>
+                  <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Looker Studio / GA4 Embed URL</label>
+                  <div class="flex gap-2">
+                    <input type="url" id="config-looker-url" placeholder="https://lookerstudio.google.com/embed/reporting/..." class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-blue-400 focus:outline-none">
+                    <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl uppercase transition-all whitespace-nowrap cursor-pointer">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- Embedded Analytics Frame Container -->
+              <div id="analytics-embed-container" class="bg-black/60 border border-white/10 rounded-2xl p-4 text-center min-h-[220px] flex flex-col items-center justify-center space-y-3">
+                <span class="text-3xl">📊</span>
+                <h4 class="text-sm font-bold text-white">Live Embedded Google Analytics Stream</h4>
+                <p class="text-xs text-white/50 max-w-md">
+                  Paste your <strong>Google Looker Studio Embed URL</strong> above to view your real-time visual graphs right inside this console, or click <strong>&ldquo;Open GA4&rdquo;</strong> to view in Google Analytics.
+                </p>
+                <div class="flex gap-3 pt-2">
+                  <a href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition-all shadow-md">
+                    Launch Full GA4 Suite ↗
+                  </a>
+                  <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl transition-all shadow-md">
+                    Launch Search Console ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <!-- VIEW 3: 📚 COURSES & CONTENT MEDIA LIBRARY -->
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <div id="view-content" class="view-container space-y-8 hidden">
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+          
+          <!-- Upload Form Column (1 Col) -->
+          <div class="lg:col-span-1 space-y-6">
+            <div class="bg-surface border border-surfaceBorder rounded-3xl p-6 space-y-5">
+              <div class="border-b border-surfaceBorder pb-3">
+                <h3 class="text-lg font-bold font-serif text-white">Upload New Course / Chronicle</h3>
+                <p class="text-[11px] text-white/50">Publish video or audio modules across categories</p>
+              </div>
+
+              <form id="upload-content-form" class="space-y-4 text-xs">
+                <div>
+                  <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Content Title *</label>
+                  <input type="text" id="content-title" placeholder="e.g. Legends of Vikramaditya" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-white focus:border-gold/50 focus:outline-none" required>
+                </div>
+
+                <div>
+                  <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Tagline / Subtitle</label>
+                  <input type="text" id="content-tagline" placeholder="e.g. The Righteous King of Ujjain" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-white focus:border-gold/50 focus:outline-none">
+                </div>
+
+                <div>
+                  <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Description *</label>
+                  <textarea id="content-desc" rows="3" placeholder="Enter deep cultural narrative..." class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-white focus:border-gold/50 focus:outline-none" required></textarea>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                  <div>
+                    <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Format Type</label>
+                    <select id="content-type" class="w-full bg-[#101116] border border-white/10 rounded-xl px-3 py-2 text-white focus:border-gold/50 focus:outline-none">
+                      <option value="video">🎥 Video Module</option>
+                      <option value="audio">🎧 Audio Karaoke</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Category</label>
+                    <select id="content-category" class="w-full bg-[#101116] border border-white/10 rounded-xl px-3 py-2 text-white focus:border-gold/50 focus:outline-none">
+                      <!-- Dynamically Loaded -->
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Duration</label>
+                  <input type="text" id="content-duration" placeholder="e.g. 18m or 45 mins" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-white focus:border-gold/50 focus:outline-none">
+                </div>
+
+                <div>
+                  <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Media URL (YouTube / Audio)</label>
+                  <input type="url" id="content-url" placeholder="https://www.youtube.com/embed/..." class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-white focus:border-gold/50 focus:outline-none">
+                </div>
+
+                <div>
+                  <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1">Cover Image</label>
+                  <input type="file" id="content-file" accept="image/*" class="w-full text-[11px] text-white/50 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-gold file:text-black hover:file:bg-gold/90">
+                </div>
+
+                <div class="flex items-center gap-6 pt-1">
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" id="content-premium" class="accent-gold rounded">
+                    <span class="text-[11px] font-bold text-gold">Premium Pass Only</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" id="content-god" class="accent-amber-500 rounded">
+                    <span class="text-[11px] font-bold text-amber-300">God Series</span>
+                  </label>
+                </div>
+
+                <button type="submit" id="submit-content-btn" class="w-full py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl uppercase tracking-wider transition-all shadow-md mt-2 cursor-pointer">
+                  Publish Content Card
+                </button>
+              </form>
+            </div>
+
+            <!-- Create Category Tool -->
+            <div class="bg-surface border border-surfaceBorder rounded-3xl p-6 space-y-3">
+              <h4 class="text-sm font-bold font-serif text-white">Create New Category</h4>
+              <form id="create-category-form" class="flex gap-2">
+                <input type="text" id="new-category-name" placeholder="e.g. Lost Sciences" class="flex-grow bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:border-gold/50 focus:outline-none" required>
+                <button type="submit" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl uppercase transition-all cursor-pointer">
+                  + Add
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Manage Content Table (2 Cols) -->
+          <div class="lg:col-span-2 bg-surface border border-surfaceBorder rounded-3xl p-6 space-y-4">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-surfaceBorder pb-4">
+              <div>
+                <h3 class="text-lg font-bold font-serif text-white">Content Library Manager</h3>
+                <p class="text-[11px] text-white/50">Edit or delete from active 251+ chronicle tiles</p>
+              </div>
+              <input type="text" id="content-filter-search" placeholder="Filter by title or category..." class="bg-white/5 border border-white/10 rounded-xl px-3 py-1.5 text-xs text-white placeholder:text-white/40 focus:border-gold/50 focus:outline-none">
+            </div>
+
+            <div class="overflow-x-auto max-h-[600px] overflow-y-auto no-scrollbar">
+              <table class="w-full text-left text-xs font-mono">
+                <thead>
+                  <tr class="text-white/40 border-b border-white/10 text-[10px] uppercase sticky top-0 bg-surface">
+                    <th class="py-2.5 px-3">Title &amp; Category</th>
+                    <th class="py-2.5 px-3">Format</th>
+                    <th class="py-2.5 px-3">Access</th>
+                    <th class="py-2.5 px-3 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5 text-white/80" id="content-table-body">
+                  <!-- Dynamically Loaded via loadDashboard() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <!-- VIEW 4: 🧮 VEDIC MATH & MEMORY SHASTRA LAB -->
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <div id="view-vedic-math" class="view-container space-y-8 hidden">
+        
+        <div class="p-6 sm:p-8 rounded-3xl bg-surface border border-gold/30 space-y-6">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-surfaceBorder pb-4">
+            <div>
+              <span class="text-[10px] font-mono text-gold font-bold uppercase">16 Sutras &amp; Smriti Shastra</span>
+              <h3 class="text-xl sm:text-2xl font-bold font-serif text-white">Vedic Mathematics &amp; Memory Shastra Lab</h3>
+              <p class="text-xs text-white/60 mt-0.5">Manage 6 speed math calculation models, 3 memory shastra tools &amp; Daily Gurukula streak engine</p>
+            </div>
+            <a href="/?open=vedic-math" target="_blank" class="px-4 py-2 bg-gold text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md">
+              Launch Speed Simulator ↗
+            </a>
+          </div>
+
+          <!-- 6 Models Quick Telemetry Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-1.5">
+              <span class="text-xs font-mono font-bold text-gold">SUTRA 1: Urdhva Tiryagbhyam</span>
+              <h4 class="text-sm font-bold text-white">Criss-Cross Multiplication</h4>
+              <p class="text-[11px] text-white/60">Solves 2-digit multiplication in 3 seconds. Status: <span class="text-emerald-400 font-bold">Active</span></p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-1.5">
+              <span class="text-xs font-mono font-bold text-gold">SUTRA 2: Ekadhikena Purvena</span>
+              <h4 class="text-sm font-bold text-white">Squaring Numbers Ending in 5</h4>
+              <p class="text-[11px] text-white/60">Instant squares of 25, 45, 85, 115. Status: <span class="text-emerald-400 font-bold">Active</span></p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-1.5">
+              <span class="text-xs font-mono font-bold text-gold">SUTRA 3: Nikhilam Navatashcaramam</span>
+              <h4 class="text-sm font-bold text-white">Base 100 &amp; 1000 Magic</h4>
+              <p class="text-[11px] text-white/60">Cross-subtraction near base numbers. Status: <span class="text-emerald-400 font-bold">Active</span></p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-1.5">
+              <span class="text-xs font-mono font-bold text-gold">SUTRA 4: Vilokanam</span>
+              <h4 class="text-sm font-bold text-white">2-Second Square Roots</h4>
+              <p class="text-[11px] text-white/60">Solves 3 &amp; 4 digit square roots by observation. Status: <span class="text-emerald-400 font-bold">Active</span></p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-1.5">
+              <span class="text-xs font-mono font-bold text-gold">SUTRA 5: Antyayoreva</span>
+              <h4 class="text-sm font-bold text-white">Lightning 11-Multiplication</h4>
+              <p class="text-[11px] text-white/60">Insert adjacent sum in the center. Status: <span class="text-emerald-400 font-bold">Active</span></p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-1.5">
+              <span class="text-xs font-mono font-bold text-gold">SUTRA 6: Shakabda Chronometry</span>
+              <h4 class="text-sm font-bold text-white">Historical Day-of-Week</h4>
+              <p class="text-[11px] text-white/60">Vedic modulo algorithm for any date. Status: <span class="text-emerald-400 font-bold">Active</span></p>
+            </div>
+          </div>
+
+          <!-- 3 Memory Engines & Gurukula Streak -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-surfaceBorder">
+            <div class="p-4 rounded-2xl bg-purple-500/10 border border-purple-500/30 space-y-1">
+              <span class="text-xs font-bold text-purple-300">🔡 Katapayadi Cipher</span>
+              <p class="text-[11px] text-white/70">Encodes numbers into Sanskrit mnemonic words.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-purple-500/10 border border-purple-500/30 space-y-1">
+              <span class="text-xs font-bold text-purple-300">🧠 Ashtavadhana Span Test</span>
+              <p class="text-[11px] text-white/70">8-second visual memory test (+50 Karma reward).</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-purple-500/10 border border-purple-500/30 space-y-1">
+              <span class="text-xs font-bold text-purple-300">👁️ Trataka Laser Focus</span>
+              <p class="text-[11px] text-white/70">Golden Bindu gazing kriya with 4-4 breathing.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <!-- VIEW 5: 📖 GRAND GRANTHALAYA (26 SACRED EPICS) -->
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <div id="view-granthalaya" class="view-container space-y-8 hidden">
+        
+        <div class="bg-surface border border-surfaceBorder rounded-3xl p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-surfaceBorder pb-4">
+            <div>
+              <span class="text-[10px] font-mono text-gold font-bold uppercase">Illustrated Manuscript Archive</span>
+              <h3 class="text-xl sm:text-2xl font-bold font-serif text-white">Grand Granthalaya (26 Epics)</h3>
+              <p class="text-xs text-white/60 mt-0.5">16 Free Classics + 10 Premier Illustrated Chronicles with 3D Parchment Reader</p>
+            </div>
+            <a href="/granthalaya.html" target="_blank" class="px-4 py-2 bg-gold text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md">
+              View Granthalaya Page ↗
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+              <div class="flex justify-between items-center text-xs font-bold text-gold">
+                <span>🔥 Devils &amp; Asuras</span>
+                <span>4 Epics</span>
+              </div>
+              <p class="text-[11px] text-white/70">Mahishasura, Ravana Tantra, Bhasmasura &amp; Mohini, Subterranean Patala.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+              <div class="flex justify-between items-center text-xs font-bold text-gold">
+                <span>🌌 Cosmic Sanatana</span>
+                <span>6 Epics</span>
+              </div>
+              <p class="text-[11px] text-white/70">14 Lokas, Samudra Manthan, Kundalini Chakras, Surya Siddhanta, Tirumala, Mount Kailash.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+              <div class="flex justify-between items-center text-xs font-bold text-gold">
+                <span>⚔️ Sages, Devas &amp; Avatars</span>
+                <span>6 Epics</span>
+              </div>
+              <p class="text-[11px] text-white/70">Veerabhadra, Kalabhairava, Narasimha, Kartikeya Vel, Parashurama, Mahakali.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+              <div class="flex justify-between items-center text-xs font-bold text-gold">
+                <span>🧘 Miracle Gurujis</span>
+                <span>4 Epics</span>
+              </div>
+              <p class="text-[11px] text-white/70">Adi Shankaracharya, Maharishi Agastya, Swami Vivekananda, Bhakti Saints.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+              <div class="flex justify-between items-center text-xs font-bold text-gold">
+                <span>👑 Moral &amp; Heroic Epics</span>
+                <span>6 Epics</span>
+              </div>
+              <p class="text-[11px] text-white/70">Panchatantra, Vikram &amp; Betal, Abhimanyu Chakravyuha, Tenali Rama, Garuda Amrita, Hanuman.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/40 border border-emerald-500/30 space-y-2">
+              <div class="flex justify-between items-center text-xs font-bold text-emerald-400">
+                <span>📖 3D Reader Engine</span>
+                <span>100% Active</span>
+              </div>
+              <p class="text-[11px] text-white/70">Parchment flip animations, audio sync, font size scaler &amp; dark mode.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <!-- VIEW 6: 👥 SUBSCRIBERS & PASS CRM -->
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <div id="view-subscribers" class="view-container space-y-8 hidden">
+        
+        <div class="bg-surface border border-surfaceBorder rounded-3xl p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-surfaceBorder pb-4">
+            <div>
+              <span class="text-[10px] font-mono text-gold font-bold uppercase">Customer Relationship Management</span>
+              <h3 class="text-xl sm:text-2xl font-bold font-serif text-white">Subscribers &amp; Billing CRM</h3>
+              <p class="text-xs text-white/60 mt-0.5">Manage ₹29 trial &amp; ₹399 annual pass activations and generate PDF invoices</p>
+            </div>
+            <input type="text" id="subscriber-filter-search" placeholder="Search by email or name..." class="bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-xs text-white placeholder:text-white/40 focus:border-gold/50 focus:outline-none w-full sm:w-64">
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs font-mono">
+              <thead>
+                <tr class="text-white/40 border-b border-white/10 text-[10px] uppercase">
+                  <th class="py-3 px-4">Customer Name &amp; Email</th>
+                  <th class="py-3 px-4">Plan Activated</th>
+                  <th class="py-3 px-4">Amount Paid</th>
+                  <th class="py-3 px-4">Activation Date</th>
+                  <th class="py-3 px-4">Expiry Date</th>
+                  <th class="py-3 px-4 text-right">Invoice</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-white/80" id="subscribers-table-body">
+                <!-- Dynamically Loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <!-- VIEW 7: 🤖 AI VIRAL MARKETING AGENT -->
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <div id="view-marketing" class="view-container space-y-8 hidden">
+        
+        <section class="bg-gradient-to-r from-amber-500/10 via-purple-500/5 to-surface border border-gold/30 p-6 sm:p-8 rounded-3xl space-y-6 relative overflow-hidden shadow-xl">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-surfaceBorder pb-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🚀</span>
+                <h3 class="text-xl sm:text-2xl font-bold font-serif text-white">Autonomous AI Viral Marketing Engine</h3>
+              </div>
+              <p class="text-xs text-white/60 mt-1 max-w-2xl">
+                Generates daily viral Reels/Shorts scripts, Twitter threads, WhatsApp broadcasts, and pings search engines automatically.
+              </p>
+            </div>
+            <button id="trigger-mkt-btn" class="px-5 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
+              <span>⚡ Generate Viral Campaign Now</span>
+            </button>
+          </div>
+
+          <!-- Live Generated Campaign Cards -->
+          <div id="ai-marketing-campaign-container" class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-2">
+            <!-- Box 1: Reel -->
+            <div class="bg-black/50 border border-white/10 p-5 rounded-2xl flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-[10px] font-mono font-bold text-gold uppercase">
+                  <span>🎬 Viral Reel Script</span>
+                  <span id="mkt-reel-category">Ancient Science</span>
+                </div>
+                <h4 class="text-sm font-bold text-white font-serif" id="mkt-reel-hook">🚨 STOP SCROLLING! Did you know about the 56 Musical Pillars of Hampi?</h4>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-xs text-white/70 space-y-2 font-mono leading-relaxed" id="mkt-reel-body">
+                  <p><strong>Visual:</strong> Ancient temple carvings &amp; 3D Granth reader.</p>
+                  <p><strong>Voiceover:</strong> "Modern engineers were shocked when they tested this! Solid granite pillars tuned to musical swaras..."</p>
+                  <p class="text-gold font-bold">CTA: Explore 251+ epics at www.sanatana360.com</p>
+                </div>
+              </div>
+              <button id="copy-reel-script-btn" class="w-full py-2 rounded-xl bg-gold/15 hover:bg-gold hover:text-black border border-gold/30 text-gold text-xs font-bold transition-all cursor-pointer">
+                📋 Copy Reel Script &amp; Hashtags
+              </button>
+            </div>
+
+            <!-- Box 2: Twitter Thread -->
+            <div class="bg-black/50 border border-white/10 p-5 rounded-2xl flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-[10px] font-mono font-bold text-blue-400 uppercase">
+                  <span>🐦 Twitter/X Viral Thread</span>
+                  <span>5-Tweet Thread</span>
+                </div>
+                <h4 class="text-sm font-bold text-white font-serif line-clamp-1" id="mkt-twitter-topic">The Science of Ancient Indian Acoustics</h4>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-xs text-white/70 space-y-2 font-sans leading-relaxed line-clamp-5 whitespace-pre-line" id="mkt-twitter-preview">
+                  🧵 THREAD: The Untold Science Behind Ancient Indian Temples...
+                </div>
+              </div>
+              <button id="copy-twitter-thread-btn" class="w-full py-2 rounded-xl bg-blue-500/15 hover:bg-blue-500 hover:text-white border border-blue-500/30 text-blue-300 text-xs font-bold transition-all cursor-pointer">
+                📋 Copy 5-Tweet Thread
+              </button>
+            </div>
+
+            <!-- Box 3: WhatsApp Broadcast -->
+            <div class="bg-black/50 border border-white/10 p-5 rounded-2xl flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-[10px] font-mono font-bold text-emerald-400 uppercase">
+                  <span>💬 WhatsApp Broadcast</span>
+                  <span>Morning Card</span>
+                </div>
+                <h4 class="text-sm font-bold text-white font-serif">Daily WhatsApp Community Message</h4>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-xs text-white/70 font-sans leading-relaxed line-clamp-5 whitespace-pre-line" id="mkt-whatsapp-preview">
+                  🌸 Good Morning! Today's Sacred Wisdom from Sanatana360...
+                </div>
+              </div>
+              <button id="copy-whatsapp-btn" class="w-full py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500 hover:text-white border border-emerald-500/30 text-emerald-300 text-xs font-bold transition-all cursor-pointer">
+                📋 Copy WhatsApp Message
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <!-- VIEW 8: ⚙️ SETTINGS & API CREDENTIALS -->
+      <!-- ════════════════════════════════════════════════════════════════════════ -->
+      <div id="view-settings" class="view-container space-y-8 hidden">
+        
+        <div class="bg-surface border border-surfaceBorder rounded-3xl p-6 sm:p-8 space-y-6">
+          <div class="border-b border-surfaceBorder pb-4">
+            <h3 class="text-xl sm:text-2xl font-bold font-serif text-white">Settings &amp; System Configuration</h3>
+            <p class="text-xs text-white/60 mt-0.5">Manage live API keys, payment gateways, and database backups</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Cashfree Payment Gateway -->
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/10 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  <span>💳</span> <span>Cashfree Payment Gateway</span>
+                </h4>
+                <span class="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/20 px-2 py-0.5 rounded-full">Production Live</span>
+              </div>
+              <div class="text-xs font-mono space-y-1 text-white/70">
+                <div>App ID: <span class="text-gold">1101601c20dcfdac0ecbce764bb1061011</span></div>
+                <div>Secret Key: <span class="text-white/40">cfsk_ma_prod_••••••••••••</span></div>
+              </div>
+            </div>
+
+            <!-- Gmail SMTP Service -->
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/10 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  <span>✉️</span> <span>Gmail SMTP Notification Relay</span>
+                </h4>
+                <span class="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/20 px-2 py-0.5 rounded-full">Connected</span>
+              </div>
+              <div class="text-xs font-mono space-y-1 text-white/70">
+                <div>Sender: <span class="text-gold">service.weforyou@gmail.com</span></div>
+                <div>App Password: <span class="text-white/40">ykpmajhirowqkhza</span></div>
+              </div>
+            </div>
+
+            <!-- Google Analytics ID -->
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/10 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  <span>📊</span> <span>Google Analytics (GA4) Tag</span>
+                </h4>
+                <span class="text-[10px] font-mono font-bold text-blue-400 bg-blue-500/20 px-2 py-0.5 rounded-full">Streaming</span>
+              </div>
+              <div class="text-xs font-mono text-white/70">
+                Measurement ID: <span class="text-blue-300 font-bold">G-ZKHEWYB53Q</span>
+              </div>
+            </div>
+
+            <!-- Database Backup -->
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/10 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  <span>💾</span> <span>Database JSON Archive</span>
+                </h4>
+                <span class="text-[10px] font-mono font-bold text-purple-300 bg-purple-500/20 px-2 py-0.5 rounded-full">Local db.json</span>
+              </div>
+              <p class="text-[11px] text-white/60">Download a full JSON snapshot of all subscriber records, analytics logs &amp; content tiles.</p>
+              <a href="/api/admin/stats" target="_blank" class="inline-block px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl transition-all">
+                Export Raw Database JSON ↗
               </a>
             </div>
           </div>
         </div>
+
       </div>
-    </section>
 
+    </main>
+  </div>
 
-    <!-- AI Content Pipeline Panel -->
-    <section class="bg-gradient-to-r from-white/[0.03] to-transparent border border-white/5 p-6 rounded-3xl space-y-6 relative overflow-hidden">
-      <div class="absolute top-0 right-0 bg-gold/15 text-gold text-[9px] font-bold px-3.5 py-1.5 rounded-bl-xl uppercase tracking-wider border-l border-b border-gold/20">AI Autonomous Pipeline</div>
+  <!-- ── 3. INVOICE GENERATOR MODAL ── -->
+  <div id="invoice-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="bg-[#101116] border border-white/10 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
+      <div class="flex justify-between items-center px-6 py-4 border-b border-white/5">
+        <h3 class="text-lg font-bold font-serif text-white flex items-center gap-2">🧾 Subscription Invoice</h3>
+        <button class="invoice-close text-white/50 hover:text-white transition-colors text-2xl font-bold cursor-pointer">&times;</button>
+      </div>
       
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-        <div>
-          <h3 class="text-xl font-bold font-serif text-white">AI Content Publisher</h3>
-          <p class="text-xs text-white/50 mt-1">Autonomous pipeline generating and publishing a new heritage chronicle tile every 3 days automatically.</p>
-        </div>
-        <button id="trigger-ai-btn" class="px-6 py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-gold/20 flex items-center gap-2">
-          <span>⚙️ Trigger AI Generation Now</span>
+      <div class="p-6 md:p-8 overflow-y-auto flex-grow" id="invoice-print-area">
+        <!-- Dynamically generated invoice HTML -->
+      </div>
+
+      <div class="p-6 border-t border-white/5 bg-black/40 flex justify-end gap-3">
+        <button class="invoice-close px-6 py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">Close</button>
+        <button id="print-invoice-btn" class="px-6 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-gold/10 flex items-center gap-2 cursor-pointer">
+          <span>🖨️ Print Invoice</span>
         </button>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-white/5">
-        <div class="p-4 bg-black/30 border border-white/5 rounded-xl">
-          <span class="text-[10px] text-white/40 font-bold uppercase tracking-wider block">Pipeline Status</span>
-          <span class="text-xs font-bold text-emerald-400 flex items-center gap-1.5 mt-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Active (Running every 72 hours)
-          </span>
-        </div>
-        <div class="p-4 bg-black/30 border border-white/5 rounded-xl">
-          <span class="text-[10px] text-white/40 font-bold uppercase tracking-wider block">Last AI Publish</span>
-          <span class="text-sm font-bold text-white/80 block mt-2" id="ai-last-published">None yet</span>
-        </div>
-        <div class="p-4 bg-black/30 border border-white/5 rounded-xl">
-          <span class="text-[10px] text-white/40 font-bold uppercase tracking-wider block">Next Scheduled Publish</span>
-          <span class="text-sm font-bold text-gold/80 block mt-2" id="ai-next-schedule">Pending first run</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="grid lg:grid-cols-3 gap-8">
-      
-      <!-- 🤖 AUTONOMOUS AI VIRAL MARKETING & ORGANIC SEO AGENT HUB -->
-    <section class="bg-gradient-to-r from-amber-500/10 via-purple-500/5 to-transparent border border-gold/30 p-6 rounded-3xl space-y-6 relative overflow-hidden shadow-xl shadow-gold/5">
-      <div class="absolute top-0 right-0 bg-gradient-to-r from-gold to-amber-500 text-black text-[9px] font-extrabold px-3.5 py-1.5 rounded-bl-xl uppercase tracking-wider">
-        AI Viral Growth Agent &bull; 24/7 Active
-      </div>
-
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <div>
-          <h3 class="text-xl font-bold font-serif text-white flex items-center gap-2">
-            <span>🚀</span> <span>Autonomous AI Marketing &amp; Viral Engine</span>
-          </h3>
-          <p class="text-xs text-white/60 mt-1 max-w-2xl">
-            Generates daily viral Reels/Shorts scripts, Twitter threads, WhatsApp broadcasts, and pings Google &amp; Bing search crawlers automatically.
-          </p>
-        </div>
-        <div class="flex items-center gap-2.5">
-          <button id="trigger-ping-seo-btn" class="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/15 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 cursor-pointer">
-            <span>🔍 Ping Google &amp; Bing</span>
-          </button>
-          <button id="trigger-mkt-btn" class="px-5 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md shadow-gold/20 flex items-center gap-1.5 cursor-pointer">
-            <span>⚡ Generate Viral Campaign Now</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Live Generated Campaign Cards -->
-      <div id="ai-marketing-campaign-container" class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4 border-t border-white/10">
-        
-        <!-- Box 1: 30s Viral Reel Script -->
-        <div class="bg-black/50 border border-white/10 p-5 rounded-2xl flex flex-col justify-between space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between text-[10px] font-mono font-bold text-gold uppercase">
-              <span>🎬 Viral Reel Script</span>
-              <span id="mkt-reel-category">Ancient Science</span>
-            </div>
-            <h4 class="text-sm font-bold text-white font-serif" id="mkt-reel-hook">🚨 STOP SCROLLING! Did you know about the 56 Musical Pillars of Hampi?</h4>
-            <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-xs text-white/70 space-y-2 font-mono leading-relaxed" id="mkt-reel-body">
-              <p><strong>Visual:</strong> Ancient temple carvings &amp; 3D Granth reader.</p>
-              <p><strong>Voiceover:</strong> "Modern engineers were shocked when they tested this! Solid granite pillars tuned to musical swaras..."</p>
-            </div>
-          </div>
-          <button id="copy-reel-script-btn" class="w-full py-2 rounded-xl bg-gold/15 hover:bg-gold hover:text-black border border-gold/30 text-gold text-xs font-bold transition-all cursor-pointer">
-            📋 Copy Reel Script &amp; Hashtags
-          </button>
-        </div>
-
-        <!-- Box 2: Twitter / X Thread -->
-        <div class="bg-black/50 border border-white/10 p-5 rounded-2xl flex flex-col justify-between space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between text-[10px] font-mono font-bold text-blue-400 uppercase">
-              <span>🐦 Twitter/X Viral Thread</span>
-              <span>5-Tweet Thread</span>
-            </div>
-            <h4 class="text-sm font-bold text-white font-serif line-clamp-1" id="mkt-twitter-topic">The Science of Ancient Indian Acoustics</h4>
-            <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-xs text-white/70 space-y-2 font-sans leading-relaxed line-clamp-5" id="mkt-twitter-preview">
-              🧵 THREAD: The Untold Science Behind Ancient Indian Temples...
-            </div>
-          </div>
-          <button id="copy-twitter-thread-btn" class="w-full py-2 rounded-xl bg-blue-500/15 hover:bg-blue-500 hover:text-white border border-blue-500/30 text-blue-300 text-xs font-bold transition-all cursor-pointer">
-            📋 Copy 5-Tweet Thread
-          </button>
-        </div>
-
-        <!-- Box 3: WhatsApp Morning Broadcast -->
-        <div class="bg-black/50 border border-white/10 p-5 rounded-2xl flex flex-col justify-between space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between text-[10px] font-mono font-bold text-emerald-400 uppercase">
-              <span>💬 WhatsApp Broadcast</span>
-              <span>Morning Card</span>
-            </div>
-            <h4 class="text-sm font-bold text-white font-serif">Daily WhatsApp Community Message</h4>
-            <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-xs text-white/70 font-sans leading-relaxed line-clamp-5 whitespace-pre-line" id="mkt-whatsapp-preview">
-              🌸 Good Morning! Today's Sacred Wisdom from Sanatana360...
-            </div>
-          </div>
-          <button id="copy-whatsapp-btn" class="w-full py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500 hover:text-white border border-emerald-500/30 text-emerald-300 text-xs font-bold transition-all cursor-pointer">
-            📋 Copy WhatsApp Message
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Content Upload Form Panel -->
-      <section class="lg:col-span-1 space-y-6">
-        <!-- Add Content Box -->
-        <div class="bg-white/5 border border-white/5 rounded-3xl p-6 space-y-6">
-          <h3 class="text-xl font-bold font-serif text-white border-b border-white/5 pb-3">Upload New Content</h3>
-          
-          <form id="upload-content-form" class="space-y-4 text-sm text-left">
-            <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Content Title *</label>
-              <input type="text" id="content-title" placeholder="e.g. Legends of Vikram Aditya" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-gold/50 focus:outline-none" required>
-            </div>
-
-            <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Tagline / Subtitle</label>
-              <input type="text" id="content-tagline" placeholder="e.g. The Righteous King of Ujjain" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-gold/50 focus:outline-none">
-            </div>
-
-            <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Description *</label>
-              <textarea id="content-desc" rows="3" placeholder="Enter deep cultural narrative..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-gold/50 focus:outline-none" required></textarea>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Format Type</label>
-                <select id="content-type" class="w-full bg-[#101116] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-gold/50 focus:outline-none">
-                  <option value="video">🎥 Animation / Video</option>
-                  <option value="audio">🎙️ Audio Story</option>
-                </select>
-              </div>
-              <div>
-                <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Category *</label>
-                <select id="content-category" class="w-full bg-[#101116] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-gold/50 focus:outline-none" required>
-                  <!-- Populated from server categories -->
-                </select>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Duration</label>
-                <input type="text" id="content-duration" placeholder="e.g. 15 Mins / 12:30" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-gold/50 focus:outline-none">
-              </div>
-              <div class="flex items-center gap-6 pt-6 pl-2">
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" id="content-premium" class="w-4 h-4 rounded text-gold bg-[#101116] border-white/10 focus:ring-0">
-                  <span class="text-xs text-white/80 font-bold">Premium Pass</span>
-                </label>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" id="content-god" class="w-4 h-4 rounded text-gold bg-[#101116] border-white/10 focus:ring-0">
-                  <span class="text-xs text-white/80 font-bold">God Series</span>
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Media Source Link (YouTube Embed URL or Audio URL) *</label>
-              <input type="url" id="content-url" placeholder="e.g. https://www.youtube.com/embed/S_B7y1G84k8" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-gold/50 focus:outline-none" required>
-            </div>
-
-            <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5">Upload Cover Image Tile *</label>
-              <input type="file" id="content-file" accept="image/*" class="w-full text-xs text-white/50 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20 cursor-pointer" required>
-            </div>
-
-            <button type="submit" id="submit-content-btn" class="w-full py-3 mt-4 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl tracking-wider uppercase transition-all shadow-lg shadow-gold/20">
-              Publish Content Card
-            </button>
-          </form>
-        </div>
-
-        <!-- Add Category Box -->
-        <div class="bg-white/5 border border-white/5 rounded-3xl p-6 space-y-4">
-          <h3 class="text-xl font-bold font-serif text-white border-b border-white/5 pb-3">Create Category</h3>
-          <form id="create-category-form" class="flex gap-3">
-            <input type="text" id="new-category-name" placeholder="e.g. Epics & Puranas" class="flex-grow bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:border-gold/50 focus:outline-none" required>
-            <button type="submit" class="px-5 bg-white text-black hover:bg-white/90 font-bold text-xs uppercase tracking-wider rounded-xl transition-all">Add</button>
-          </form>
-        </div>
-      </section>
-
-      <!-- Content Listing & Recent Payments Dashboard -->
-      <section class="lg:col-span-2 space-y-8">
-        
-        <!-- Live Catalogue Box -->
-        <div class="bg-white/5 border border-white/5 rounded-3xl p-6 space-y-6 flex flex-col h-full max-h-[500px]">
-          <h3 class="text-xl font-bold font-serif text-white border-b border-white/5 pb-3">Active Streaming Catalogue</h3>
-          
-          <div class="overflow-y-auto flex-grow no-scrollbar">
-            <table class="w-full text-left text-xs border-collapse">
-              <thead>
-                <tr class="border-b border-white/10 text-white/40 uppercase font-mono tracking-wider">
-                  <th class="pb-3 pl-2">Title</th>
-                  <th class="pb-3">Type</th>
-                  <th class="pb-3">Category</th>
-                  <th class="pb-3">Access</th>
-                  <th class="pb-3 text-right pr-2">Action</th>
-                </tr>
-              </thead>
-              <tbody id="catalog-table-body" class="divide-y divide-white/5">
-                <!-- Rendered dynamically by script -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Recent Payments / Orders Box -->
-        <div class="bg-white/5 border border-white/5 rounded-3xl p-6 space-y-6">
-          <h3 class="text-xl font-bold font-serif text-white border-b border-white/5 pb-3">Platform Orders & Billings</h3>
-          
-          <div id="recent-payments-list">
-            <!-- Rendered dynamically by script -->
-          </div>
-        </div>
-
-      </section>
-
     </div>
+  </div>
 
-  </main>
-
-  <!-- Footer -->
-  <footer class="border-t border-white/5 py-8 bg-black/40 text-center text-xs text-white/30">
-    © 2026 HeritageStream Console. Admin Management Framework.
-  </footer>
-
+  <!-- ── 4. JAVASCRIPT LOGIC & ROUTER ── -->
   <script>
     const API_BASE = '';
     let imageBase64String = "";
     let editingId = null;
+    let allContentItems = [];
+    let allSubscribers = [];
+    let currentMarketingCampaign = null;
 
+    // Helper for Admin Fetch Requests
     async function adminFetch(url, options = {}) {
-      const token = localStorage.getItem('hs_admin_token');
-      if (!options.headers) options.headers = {};
-      if (token) {
-        options.headers['Authorization'] = 'Bearer ' + token;
+      options.headers = options.headers || {};
+      options.headers['Content-Type'] = 'application/json';
+      const res = await fetch(url, options);
+      if (res.status === 401) {
+        window.location.href = '/login.html';
+        throw new Error("Unauthorized");
       }
-      if (!options.headers['Content-Type'] && !(options.body instanceof FormData)) {
-        options.headers['Content-Type'] = 'application/json';
-      }
-      return fetch(url, options);
+      return res;
     }
 
-    // Handle File Reader
-    document.getElementById('content-file').addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          imageBase64String = reader.result;
-        };
-        reader.readAsDataURL(file);
+    // ── LMS VIEW ROUTER ──
+    const viewTitles = {
+      'overview': 'Dashboard Overview',
+      'seo': 'Google Search Console & GA4 Hub',
+      'content': 'Courses & Media Manager',
+      'vedic-math': 'Vedic Math & Memory Shastra',
+      'granthalaya': '26 Sacred Granthalaya',
+      'subscribers': 'Subscribers & Pass CRM',
+      'marketing': 'AI Viral Growth Agent',
+      'settings': 'Settings & System Keys'
+    };
+
+    function showView(viewId) {
+      if (!viewTitles[viewId]) viewId = 'overview';
+
+      // Hide all views
+      document.querySelectorAll('.view-container').forEach(el => el.classList.add('hidden'));
+      
+      // Show target view
+      const target = document.getElementById('view-' + viewId);
+      if (target) {
+        target.classList.remove('hidden');
+        const mainStage = document.getElementById('main-content-stage');
+        if (mainStage) mainStage.scrollTop = 0;
+      }
+
+      // Update sidebar nav highlights
+      document.querySelectorAll('.nav-item').forEach(el => {
+        if (el.getAttribute('data-view') === viewId) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+
+      // Update Topbar Breadcrumb
+      const breadcrumb = document.getElementById('topbar-breadcrumb');
+      if (breadcrumb) breadcrumb.textContent = viewTitles[viewId];
+
+      // Update URL hash without scrolling jump
+      if (window.location.hash !== '#' + viewId) {
+        history.replaceState(null, null, '#' + viewId);
+      }
+
+      // Close mobile sidebar if open
+      closeMobileSidebar();
+    }
+
+    // Hash change router listener
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '') || 'overview';
+      showView(hash);
+    });
+
+    // Delegate click handler on all anchor links with hashes
+    document.addEventListener('click', (e) => {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (anchor) {
+        const targetHash = anchor.getAttribute('href').replace('#', '');
+        if (viewTitles[targetHash]) {
+          e.preventDefault();
+          showView(targetHash);
+        }
       }
     });
 
+    // Mobile Sidebar Drawer Toggles
+    const sidebar = document.getElementById('admin-sidebar');
+    const backdrop = document.getElementById('mobile-sidebar-backdrop');
+    const openBtn = document.getElementById('open-mobile-sidebar-btn');
+    const closeBtn = document.getElementById('close-mobile-sidebar-btn');
 
-    // Open Invoice Details
-    function openInvoice(sub) {
-      const modal = document.getElementById('invoice-modal');
-      const printArea = document.getElementById('invoice-print-area');
-      if (!modal || !printArea) return;
-
-      const dateStr = new Date(sub.timestamp).toLocaleDateString('en-IN', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-
-      // GST tax calculations (₹399 total, 18% integrated GST)
-      const baseValue = (399 / 1.18).toFixed(2);
-      const cgst = ((399 - baseValue) / 2).toFixed(2);
-      const sgst = cgst;
-
-      printArea.innerHTML = `
-        <div class="bg-slate-900 border border-white/10 rounded-2xl p-6 md:p-8 text-white font-sans">
-          <!-- Invoice Header -->
-          <div class="flex justify-between items-start border-b border-white/10 pb-6 mb-6">
-            <div>
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-2xl">⚜️</span>
-                <span class="font-serif font-bold text-xl text-gold">MANJUNATH ENTERPRISE</span>
-              </div>
-              <p class="text-[10px] text-white/50 leading-relaxed font-mono">
-                Proprietor: MANJUNATHA PRASANNA<br>
-                Email: service.weforyou@gmail.com | Phone: +91 9035442904<br>
-                Address: Bangalore, Karnataka, India
-              </p>
-            </div>
-            <div class="text-right">
-              <span class="text-lg font-bold text-white block uppercase tracking-wider">TAX INVOICE</span>
-              <span class="text-[10px] font-mono text-white/40 block mt-1">Invoice No: INV-2026-${sub.id.substring(4, 12)}</span>
-              <span class="text-[10px] font-mono text-white/40 block">Date: ${dateStr}</span>
-            </div>
-          </div>
-
-          <!-- Billing Info Grid -->
-          <div class="grid grid-cols-2 gap-6 mb-8 text-[11px]">
-            <div>
-              <span class="text-white/40 font-bold uppercase tracking-wider block mb-1">BILLED TO:</span>
-              <span class="font-bold text-white text-xs block">${sub.name}</span>
-              <span class="text-white/50 block">Customer ID: cust_${sub.id.substring(4, 10)}</span>
-              <span class="text-white/50 block">Billing Country: India</span>
-            </div>
-            <div class="text-right">
-              <span class="text-white/40 font-bold uppercase tracking-wider block mb-1">PAYMENT DETAILS:</span>
-              <span class="font-bold text-white block">Gateway: Razorpay / Stripe</span>
-              <span class="text-white/50 block">Method: ${sub.paymentMethod}</span>
-              <span class="text-white/50 block">Status: Paid</span>
-            </div>
-          </div>
-
-          <!-- Items Table -->
-          <table class="w-full text-left text-[11px] border-collapse mb-6">
-            <thead>
-              <tr class="border-b border-white/10 text-white/40 uppercase font-mono tracking-wider text-[10px]">
-                <th class="pb-2">Description</th>
-                <th class="pb-2 text-center">Qty</th>
-                <th class="pb-2 text-right">Unit Price</th>
-                <th class="pb-2 text-right">Tax Rate</th>
-                <th class="pb-2 text-right">Total Amount</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-white/5">
-              <tr>
-                <td class="py-3 font-semibold text-white/90">
-                  HeritageStream Premium Pass - 1 Year Subscription<br>
-                  <span class="text-[9px] text-white/40 font-normal">Full catalog access, VR Tours, and learning games</span>
-                </td>
-                <td class="py-3 text-center">1</td>
-                <td class="py-3 text-right font-mono">₹${baseValue}</td>
-                <td class="py-3 text-right font-mono">18% GST</td>
-                <td class="py-3 text-right font-mono">₹${baseValue}</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <!-- Totals Area -->
-          <div class="flex justify-end pt-4 border-t border-white/10">
-            <div class="w-48 text-right space-y-2 text-[11px]">
-              <div class="flex justify-between text-white/50">
-                <span>Taxable Value:</span>
-                <span class="font-mono">₹${baseValue}</span>
-              </div>
-              <div class="flex justify-between text-white/50">
-                <span>CGST (9%):</span>
-                <span class="font-mono">₹${cgst}</span>
-              </div>
-              <div class="flex justify-between text-white/50">
-                <span>SGST (9%):</span>
-                <span class="font-mono">₹${sgst}</span>
-              </div>
-              <div class="flex justify-between text-white font-bold border-t border-white/15 pt-2 text-xs">
-                <span class="text-gold">Grand Total:</span>
-                <span class="text-gold font-mono">₹399.00</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Declarations Footer -->
-          <div class="mt-8 pt-6 border-t border-white/10 text-[9px] text-white/40 text-center space-y-1">
-            <p>This is a computer-generated tax invoice. No signature is required.</p>
-            <p>Thank you for supporting cultural preservation through digital education.</p>
-          </div>
-        </div>
-      `;
-
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
+    function openMobileSidebar() {
+      if (sidebar) sidebar.classList.remove('-translate-x-full');
+      if (backdrop) backdrop.classList.remove('hidden');
     }
 
-    // Close invoice modal
-    document.querySelectorAll('.invoice-close').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.getElementById('invoice-modal').classList.add('hidden');
-        document.getElementById('invoice-modal').classList.remove('flex');
+    function closeMobileSidebar() {
+      if (sidebar && window.innerWidth < 1024) sidebar.classList.add('-translate-x-full');
+      if (backdrop) backdrop.classList.add('hidden');
+    }
+
+    if (openBtn) openBtn.onclick = openMobileSidebar;
+    if (closeBtn) closeBtn.onclick = closeMobileSidebar;
+    if (backdrop) backdrop.onclick = closeMobileSidebar;
+
+    // Handle Image file selection to Base64
+    const fileInput = document.getElementById('content-file');
+    if (fileInput) {
+      fileInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            imageBase64String = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
       });
-    });
+    }
 
-    // Print invoice action
-    document.getElementById('print-invoice-btn').addEventListener('click', () => {
-      window.print();
-    });
-
-    // Load Admin Stats & Lists
+    // Load Dashboard Stats, Content & Subscribers
     async function loadDashboard() {
       try {
         const res = await adminFetch(API_BASE + '/api/admin/stats');
         if (!res.ok) throw new Error("Failed to load admin stats");
         const data = await res.json();
 
-        // 1. Render metrics
-        document.getElementById('stats-revenue').textContent = `₹${data.totalRevenue}`;
-        document.getElementById('stats-subscribers').textContent = data.totalSubscribers;
-        document.getElementById('stats-visits').textContent = data.totalVisits || 0;
-        document.getElementById('stats-unique').textContent = data.uniqueVisitorsCount || 0;
-
-        // 2. Render Catalogue Table
-        const tableBody = document.getElementById('catalog-table-body');
-        if (data.contentList.length === 0) {
-          tableBody.innerHTML = `<tr><td colspan="5" class="py-6 text-center text-white/40">Catalogue is empty. Upload your first tile!</td></tr>`;
-        } else {
-          tableBody.innerHTML = data.contentList.map(item => `
-            <tr class="hover:bg-white/5 transition-colors group">
-              <td class="py-3 pl-2 font-semibold text-white/90">${item.title}</td>
-              <td class="py-3 font-mono text-white/60">${item.audioUrl ? '🎙️ Audio' : '🎥 Video'}</td>
-              <td class="py-3 text-white/60">${item.category}</td>
-              <td class="py-3">
-                <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.isPremium ? 'bg-gold/10 text-gold border border-gold/25' : 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/25'}">
-                  ${item.isPremium ? 'Premium' : 'Free'}
-                </span>
-              </td>
-              <td class="py-3 text-right pr-2 space-x-2">
-                <button class="edit-btn text-gold hover:text-white font-bold text-xs uppercase px-2.5 py-1 bg-gold/10 rounded border border-gold/20 transition-colors" data-id="${item.id}">
-                  Edit
-                </button>
-                <button class="delete-btn text-crimson hover:text-red-400 font-bold text-xs uppercase px-2 py-1 bg-crimson/10 rounded border border-crimson/20 opacity-60 group-hover:opacity-100 transition-opacity" data-id="${item.id}">
-                  Delete
-                </button>
-              </td>
-            </tr>
-          `).join('');
-
-          // Bind edit buttons
-          tableBody.querySelectorAll('.edit-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-              const id = btn.getAttribute('data-id');
-              const item = data.contentList.find(c => c.id === id);
-              if (item) {
-                editingId = item.id;
-                document.getElementById('content-title').value = item.title || "";
-                document.getElementById('content-tagline').value = item.tagline || "";
-                document.getElementById('content-desc').value = item.description || "";
-                document.getElementById('content-type').value = item.audioUrl ? "audio" : "video";
-                document.getElementById('content-category').value = item.category || "";
-                document.getElementById('content-duration').value = item.duration || "";
-                document.getElementById('content-premium').checked = !!item.isPremium;
-                document.getElementById('content-god').checked = !!item.isGodSeries;
-                document.getElementById('content-url').value = item.audioUrl || item.videoUrl || "";
-                
-                // Allow submitting without re-uploading file cover
-                document.getElementById('content-file').required = false;
-                
-                const submitBtn = document.getElementById('submit-content-btn');
-                submitBtn.textContent = "💾 Save Changes";
-                submitBtn.classList.remove('from-gold', 'to-amber-500');
-                submitBtn.classList.add('from-emerald-500', 'to-teal-500');
-                
-                document.getElementById('upload-content-form').scrollIntoView({ behavior: 'smooth' });
-              }
-            });
-          });
-
-          // Bind delete buttons
-          tableBody.querySelectorAll('.delete-btn').forEach(btn => {
-            btn.addEventListener('click', async () => {
-              const id = btn.getAttribute('data-id');
-              if (confirm("Are you sure you want to delete this catalogue content?")) {
-                const delRes = await adminFetch(API_BASE + `/api/content/${id}`, { method: 'DELETE' });
-                if (delRes.ok) {
-                  loadDashboard();
-                } else {
-                  alert("Failed to delete content.");
-                }
-              }
-            });
-          });
+        // Stats Counters
+        if (document.getElementById('stats-revenue')) {
+          document.getElementById('stats-revenue').textContent = '₹' + Number(data.totalRevenue).toLocaleString('en-IN');
+        }
+        if (document.getElementById('stats-subscribers')) {
+          document.getElementById('stats-subscribers').textContent = data.totalSubscribers;
+        }
+        if (document.getElementById('stats-visits')) {
+          document.getElementById('stats-visits').textContent = Number(data.totalVisits).toLocaleString('en-IN');
+        }
+        if (document.getElementById('stats-unique')) {
+          document.getElementById('stats-unique').textContent = Number(data.uniqueVisitorsCount).toLocaleString('en-IN');
+        }
+        if (document.getElementById('sidebar-content-badge')) {
+          document.getElementById('sidebar-content-badge').textContent = (data.totalContent || 251) + ' Tiles';
         }
 
-        // 3. Render Sales List / Orders
-        const salesList = document.getElementById('recent-payments-list');
-        if (data.recentSubscribers.length === 0) {
-          salesList.innerHTML = `<p class="text-xs text-white/40 text-center py-4">No transactions logged yet.</p>`;
-        } else {
-          salesList.innerHTML = `
-            <div class="overflow-x-auto">
-              <table class="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr class="border-b border-white/10 text-white/40 uppercase font-mono tracking-wider">
-                    <th class="pb-3 pl-2">Order ID</th>
-                    <th class="pb-3">Customer</th>
-                    <th class="pb-3">Gateway</th>
-                    <th class="pb-3">Date</th>
-                    <th class="pb-3">Amount</th>
-                    <th class="pb-3 text-right pr-2">Action</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-white/5">
-                  ${data.recentSubscribers.map(sub => `
-                    <tr class="hover:bg-white/5 transition-colors group">
-                      <td class="py-3 pl-2 font-mono font-bold text-white/50">${sub.id.substring(0, 12)}</td>
-                      <td class="py-3 font-semibold text-white/95">${sub.name}</td>
-                      <td class="py-3 text-white/60">${sub.paymentMethod}</td>
-                      <td class="py-3 text-white/60">${new Date(sub.timestamp).toLocaleDateString()}</td>
-                      <td class="py-3 font-mono font-bold text-gold">₹${sub.amount}</td>
-                      <td class="py-3 text-right pr-2">
-                        <button class="generate-invoice-btn text-gold hover:text-white font-bold text-[10px] uppercase px-2.5 py-1 bg-gold/10 hover:bg-gold/25 rounded border border-gold/20 transition-all flex items-center gap-1.5 ml-auto" data-id="${sub.id}">
-                          <span>🧾 Invoice</span>
-                        </button>
-                      </td>
-                    </tr>
-                  `).join('')}
-                </tbody>
-              </table>
-            </div>
-          `;
-
-          // Bind generate invoice buttons
-          salesList.querySelectorAll('.generate-invoice-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-              const id = btn.getAttribute('data-id');
-              const subRecord = data.recentSubscribers.find(s => s.id === id);
-              if (subRecord) {
-                openInvoice(subRecord);
-              }
-            });
-          });
+        // Recent Subscribers list in Overview
+        const recentSubsEl = document.getElementById('recent-subscribers-list');
+        if (recentSubsEl) {
+          if (data.recentSubscribers && data.recentSubscribers.length > 0) {
+            recentSubsEl.innerHTML = data.recentSubscribers.map(s => `
+              <tr class="hover:bg-white/5">
+                <td class="py-2.5 px-3">
+                  <div class="font-bold text-white">${s.name || 'Member'}</div>
+                  <div class="text-[10px] text-white/40">${s.email}</div>
+                </td>
+                <td class="py-2.5 px-3 text-gold font-bold">${s.plan || 'Pass'}</td>
+                <td class="py-2.5 px-3 text-emerald-400">₹${s.amount || '29'}</td>
+                <td class="py-2.5 px-3 text-white/50">${new Date(s.date || Date.now()).toLocaleDateString('en-IN')}</td>
+              </tr>
+            `).join('');
+          } else {
+            recentSubsEl.innerHTML = '<tr><td colspan="4" class="py-3 text-center text-white/40">No recent subscribers recorded.</td></tr>';
+          }
         }
+
+        // Render full Content Table
+        allContentItems = data.contentList || [];
+        renderContentTable(allContentItems);
+
+        // Render full Subscribers CRM Table
+        allSubscribers = data.subscribers || data.recentSubscribers || [];
+        renderSubscribersTable(allSubscribers);
 
       } catch (err) {
-        console.error(err);
+        console.error("Dashboard stats error:", err);
       }
     }
 
-    // Load Categories Dropdown
+    function renderContentTable(items) {
+      const tbody = document.getElementById('content-table-body');
+      if (!tbody) return;
+
+      if (!items || items.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" class="py-4 text-center text-white/40">No content items found.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = items.map(item => `
+        <tr class="hover:bg-white/5">
+          <td class="py-3 px-3">
+            <div class="font-bold text-white flex items-center gap-2">
+              <span>${item.isAudio ? '🎧' : '🎥'}</span>
+              <span>${item.title}</span>
+            </div>
+            <div class="text-[10px] text-white/40">${item.category || 'General'} &bull; ${item.duration || '15m'}</div>
+          </td>
+          <td class="py-3 px-3 uppercase text-[10px] font-bold text-white/60">${item.isAudio ? 'Audio' : 'Video'}</td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.isPremium ? 'bg-gold/20 text-gold border border-gold/30' : 'bg-emerald-500/20 text-emerald-400'}">
+              ${item.isPremium ? 'Premium' : 'Free'}
+            </span>
+          </td>
+          <td class="py-3 px-3 text-right space-x-2">
+            <button onclick="editContent('${item.id}')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-gold hover:text-black text-white font-bold text-[10px] transition-all cursor-pointer">
+              Edit
+            </button>
+            <button onclick="deleteContent('${item.id}')" class="px-2.5 py-1 rounded-lg bg-red-500/10 hover:bg-red-500 text-red-400 hover:text-white font-bold text-[10px] transition-all cursor-pointer">
+              Delete
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function renderSubscribersTable(subs) {
+      const tbody = document.getElementById('subscribers-table-body');
+      if (!tbody) return;
+
+      if (!subs || subs.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="py-4 text-center text-white/40">No active subscribers recorded in database.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = subs.map(s => `
+        <tr class="hover:bg-white/5">
+          <td class="py-3 px-4">
+            <div class="font-bold text-white">${s.name || 'Scholar Member'}</div>
+            <div class="text-[10px] text-white/40">${s.email}</div>
+          </td>
+          <td class="py-3 px-4 text-gold font-bold">${s.plan || 'All-Access Pass'}</td>
+          <td class="py-3 px-4 text-emerald-400 font-bold">₹${s.amount || '399'}</td>
+          <td class="py-3 px-4 text-white/60">${new Date(s.date || Date.now()).toLocaleDateString('en-IN')}</td>
+          <td class="py-3 px-4 text-white/60">${new Date(Date.now() + 365*24*60*60*1000).toLocaleDateString('en-IN')}</td>
+          <td class="py-3 px-4 text-right">
+            <button onclick="openInvoice('${s.email}', '${s.name || 'Member'}', ${s.amount || 399}, '${s.date || ''}')" class="px-3 py-1 rounded-lg bg-gold/15 hover:bg-gold hover:text-black text-gold font-bold text-[10px] transition-all cursor-pointer">
+              🧾 Invoice
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // Content Search Filters
+    const contentSearch = document.getElementById('content-filter-search');
+    if (contentSearch) {
+      contentSearch.oninput = (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtered = allContentItems.filter(item => (item.title || '').toLowerCase().includes(query) || (item.category || '').toLowerCase().includes(query));
+        renderContentTable(filtered);
+      };
+    }
+
+    const subSearch = document.getElementById('subscriber-filter-search');
+    if (subSearch) {
+      subSearch.oninput = (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtered = allSubscribers.filter(s => (s.email || '').toLowerCase().includes(query) || (s.name || '').toLowerCase().includes(query));
+        renderSubscribersTable(filtered);
+      };
+    }
+
+    const globalSearch = document.getElementById('global-admin-search');
+    if (globalSearch) {
+      globalSearch.oninput = (e) => {
+        const query = e.target.value.toLowerCase();
+        if (!query) return;
+        if (contentSearch) {
+          contentSearch.value = query;
+          showView('content');
+          const filtered = allContentItems.filter(item => (item.title || '').toLowerCase().includes(query) || (item.category || '').toLowerCase().includes(query));
+          renderContentTable(filtered);
+        }
+      };
+    }
+
+    // Load Categories
     async function loadCategories() {
       try {
         const res = await adminFetch(API_BASE + '/api/content');
@@ -949,16 +1414,16 @@
         const data = await res.json();
 
         const select = document.getElementById('content-category');
-        select.innerHTML = data.categories.map(c => `
-          <option value="${c}">${c}</option>
-        `).join('');
+        if (select && data.categories) {
+          select.innerHTML = data.categories.map(c => `<option value="${c}">${c}</option>`).join('');
+        }
       } catch (err) {
         console.error(err);
       }
     }
 
     // Handle Content Form Submit
-    document.getElementById('upload-content-form').addEventListener('submit', async (e) => {
+    document.getElementById('upload-content-form')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const payload = {
@@ -973,9 +1438,7 @@
         mediaUrl: document.getElementById('content-url').value
       };
 
-      if (imageBase64String) {
-        payload.imageBase64 = imageBase64String;
-      }
+      if (imageBase64String) payload.imageBase64 = imageBase64String;
 
       if (!editingId && !imageBase64String) {
         alert("Please select a cover image tile to upload.");
@@ -992,19 +1455,13 @@
         });
 
         if (res.ok) {
-          alert(editingId ? "Content card updated successfully!" : "Content card published successfully! check homepage.");
-          
-          // Reset edit state
+          alert(editingId ? "Content card updated successfully!" : "Content card published successfully!");
           editingId = null;
-          document.getElementById('content-file').required = true;
-          const submitBtn = document.getElementById('submit-content-btn');
-          submitBtn.textContent = "Publish Content Card";
-          submitBtn.classList.remove('from-emerald-500', 'to-teal-500');
-          submitBtn.classList.add('from-gold', 'to-amber-500');
-
           document.getElementById('upload-content-form').reset();
           imageBase64String = "";
-          loadDashboard();
+          const submitBtn = document.getElementById('submit-content-btn');
+          if (submitBtn) submitBtn.textContent = "Publish Content Card";
+          await loadDashboard();
         } else {
           const err = await res.json();
           alert(`Submission failed: ${err.error}`);
@@ -1015,87 +1472,208 @@
     });
 
     // Handle Category Form Submit
-    document.getElementById('create-category-form').addEventListener('submit', async (e) => {
+    document.getElementById('create-category-form')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('new-category-name').value;
-
       try {
         const res = await adminFetch(API_BASE + '/api/categories', {
           method: 'POST',
           body: JSON.stringify({ name })
         });
-
         if (res.ok) {
           alert(`Category "${name}" created!`);
           document.getElementById('create-category-form').reset();
           await loadCategories();
-        } else {
-          const err = await res.json();
-          alert(`Failed: ${err.error}`);
         }
       } catch (err) {
         alert(`Error creating category: ${err.message}`);
       }
     });
 
+    // Delete Content Item
+    async function deleteContent(id) {
+      if (!confirm("Are you sure you want to permanently delete this chronicle?")) return;
+      try {
+        const res = await adminFetch(`${API_BASE}/api/content/${id}`, { method: 'DELETE' });
+        if (res.ok) {
+          alert("Item deleted successfully.");
+          await loadDashboard();
+        }
+      } catch (err) {
+        alert("Failed to delete item: " + err.message);
+      }
+    }
+
+    // Edit Content Item
+    function editContent(id) {
+      const item = allContentItems.find(i => i.id === id);
+      if (!item) return;
+      editingId = id;
+      showView('content');
+
+      document.getElementById('content-title').value = item.title || '';
+      document.getElementById('content-tagline').value = item.tagline || '';
+      document.getElementById('content-desc').value = item.description || '';
+      document.getElementById('content-type').value = item.isAudio ? 'audio' : 'video';
+      document.getElementById('content-category').value = item.category || '';
+      document.getElementById('content-duration').value = item.duration || '';
+      document.getElementById('content-url').value = item.mediaUrl || '';
+      document.getElementById('content-premium').checked = !!item.isPremium;
+      document.getElementById('content-god').checked = !!item.isGodSeries;
+
+      const submitBtn = document.getElementById('submit-content-btn');
+      if (submitBtn) submitBtn.textContent = "Save Changes (Update Card)";
+    }
+
     // Load AI Status details
     async function loadAIStatus() {
       try {
         const res = await adminFetch(API_BASE + '/api/ai/status');
-        if (!res.ok) throw new Error("Failed to load AI pipeline status");
+        if (!res.ok) return;
         const data = await res.json();
-        
-        document.getElementById('ai-last-published').innerHTML = `
-          <div class="font-serif text-white/90 truncate max-w-[250px]">${data.lastTitle}</div>
-          <div class="text-[9px] text-white/40 mt-0.5">${data.lastRun}</div>
-        `;
-        document.getElementById('ai-next-schedule').textContent = data.nextRun;
+        const schedEl = document.getElementById('ai-next-schedule');
+        if (schedEl) schedEl.textContent = `Next run: ${data.nextRun || 'Pending'}`;
       } catch (err) {
         console.error("AI pipeline fetch failed:", err);
       }
     }
 
-    // Handle Manual AI Generation Trigger
-    document.getElementById('trigger-ai-btn').addEventListener('click', async () => {
+    // Trigger AI Generation
+    document.getElementById('trigger-ai-btn')?.addEventListener('click', async () => {
       const btn = document.getElementById('trigger-ai-btn');
-      const originalText = btn.innerHTML;
+      const orig = btn.innerHTML;
       btn.disabled = true;
-      btn.innerHTML = `<span>⏳ Running AI Engine...</span>`;
-      
+      btn.innerHTML = '<span>⏳ Generating...</span>';
       try {
         const res = await adminFetch(API_BASE + '/api/ai/generate', { method: 'POST' });
         if (res.ok) {
           const data = await res.json();
-          alert(`Success! AI successfully generated and published a new card:\n"${data.item.title}"`);
-          await loadAIStatus();
-      await loadSEOAnalyticsStatus();
+          alert(`Success! Generated: "${data.item.title}"`);
           await loadDashboard();
-        } else {
-          const err = await res.json();
-          alert(`AI Generation failed: ${err.error || 'Server error'}`);
         }
       } catch (err) {
-        alert(`Error triggering AI engine: ${err.message}`);
+        alert("AI error: " + err.message);
       } finally {
         btn.disabled = false;
-        btn.innerHTML = originalText;
+        btn.innerHTML = orig;
       }
     });
 
-    // Handle Logout Action
-    document.getElementById('logout-btn').addEventListener('click', async () => {
-      if (confirm("Are you sure you want to sign out of the admin console?")) {
-        const res = await adminFetch(API_BASE + '/api/admin/logout', { method: 'POST' });
-        if (res.ok) {
-          window.location.href = '/login.html';
-        } else {
-          alert("Failed to sign out.");
+    // ── 🤖 VIRAL MARKETING AGENT LOGIC ──
+    async function loadMarketingCampaigns() {
+      try {
+        const res = await adminFetch(API_BASE + '/api/ai/marketing-campaigns');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.campaigns && data.campaigns.length > 0) {
+          displayMarketingCampaign(data.campaigns[0]);
         }
+      } catch (err) {
+        console.error("Marketing campaigns fetch failed:", err);
+      }
+    }
+
+    function displayMarketingCampaign(camp) {
+      if (!camp) return;
+      currentMarketingCampaign = camp;
+
+      // Reel
+      const rCat = document.getElementById('mkt-reel-category');
+      const rHook = document.getElementById('mkt-reel-hook');
+      const rBody = document.getElementById('mkt-reel-body');
+      if (rCat) rCat.textContent = camp.category || 'Ancient Science';
+      if (rHook) rHook.textContent = (camp.reelScript && camp.reelScript.hook) || camp.topic;
+      if (rBody && camp.reelScript) {
+        rBody.innerHTML = `
+          <p><strong>Visual:</strong> ${camp.reelScript.visualCues || 'Sacred temple footage'}</p>
+          <p><strong>Voiceover:</strong> "${camp.reelScript.voiceover || ''}"</p>
+          <p class="text-gold font-bold">CTA: ${camp.reelScript.callToAction || 'Visit www.sanatana360.com'}</p>
+          <p class="text-[10px] text-white/40 font-mono">${camp.reelScript.hashtags || '#Sanatana360'}</p>
+        `;
+      }
+
+      // Twitter
+      const tTopic = document.getElementById('mkt-twitter-topic');
+      const tPrev = document.getElementById('mkt-twitter-preview');
+      if (tTopic) tTopic.textContent = camp.topic;
+      if (tPrev && camp.twitterThread) {
+        tPrev.textContent = Array.isArray(camp.twitterThread) ? camp.twitterThread.join('\n\n') : camp.twitterThread;
+      }
+
+      // WhatsApp
+      const wPrev = document.getElementById('mkt-whatsapp-preview');
+      if (wPrev && camp.whatsappCard) {
+        wPrev.textContent = camp.whatsappCard;
+      }
+    }
+
+    // Trigger Viral Campaign
+    document.getElementById('trigger-mkt-btn')?.addEventListener('click', async () => {
+      const btn = document.getElementById('trigger-mkt-btn');
+      const orig = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<span>⏳ Generating Campaign...</span>';
+      try {
+        const res = await adminFetch(API_BASE + '/api/ai/generate-marketing', { method: 'POST' });
+        if (res.ok) {
+          const data = await res.json();
+          displayMarketingCampaign(data.campaign);
+          alert(`✓ Fresh Viral Campaign generated for "${data.campaign.topic}"!`);
+        }
+      } catch (err) {
+        alert("Marketing generation failed: " + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = orig;
       }
     });
 
-    // Startup
-    
+    // Copy utilities with clipboard feedback
+    function copyTextWithFeedback(btn, text) {
+      if (!navigator.clipboard) {
+        alert("Clipboard access not supported in this browser.");
+        return;
+      }
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<span>✓ Copied to Clipboard!</span>';
+        btn.classList.add('bg-emerald-500/30', 'text-emerald-300');
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.classList.remove('bg-emerald-500/30', 'text-emerald-300');
+        }, 2000);
+      }).catch(err => {
+        alert("Failed to copy: " + err.message);
+      });
+    }
+
+    document.getElementById('copy-reel-script-btn')?.addEventListener('click', (e) => {
+      if (!currentMarketingCampaign || !currentMarketingCampaign.reelScript) {
+        alert("No active reel script to copy.");
+        return;
+      }
+      const r = currentMarketingCampaign.reelScript;
+      const text = `${r.hook}\n\n[VISUAL]: ${r.visualCues}\n[VOICEOVER]: ${r.voiceover}\n[CALL TO ACTION]: ${r.callToAction}\n\n${r.hashtags}`;
+      copyTextWithFeedback(e.currentTarget, text);
+    });
+
+    document.getElementById('copy-twitter-thread-btn')?.addEventListener('click', (e) => {
+      if (!currentMarketingCampaign || !currentMarketingCampaign.twitterThread) {
+        alert("No active Twitter thread to copy.");
+        return;
+      }
+      const text = Array.isArray(currentMarketingCampaign.twitterThread) ? currentMarketingCampaign.twitterThread.join('\n\n') : currentMarketingCampaign.twitterThread;
+      copyTextWithFeedback(e.currentTarget, text);
+    });
+
+    document.getElementById('copy-whatsapp-btn')?.addEventListener('click', (e) => {
+      if (!currentMarketingCampaign || !currentMarketingCampaign.whatsappCard) {
+        alert("No active WhatsApp message to copy.");
+        return;
+      }
+      copyTextWithFeedback(e.currentTarget, currentMarketingCampaign.whatsappCard);
+    });
+
     // ── 🌐 GOOGLE SEARCH CONSOLE & SITEMAP SYNC ENGINE ──
     async function loadSEOAnalyticsStatus() {
       try {
@@ -1103,7 +1681,6 @@
         if (!res.ok) return;
         const data = await res.json();
 
-        // Update stats
         if (document.getElementById('seo-impressions')) {
           document.getElementById('seo-impressions').textContent = Number(data.searchConsoleMetrics.impressions).toLocaleString('en-IN');
         }
@@ -1121,7 +1698,6 @@
           document.getElementById('seo-last-sync-label').textContent = `Last Sync: ${syncDate.toLocaleDateString('en-IN')} ${syncDate.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}`;
         }
 
-        // Populate Form Fields
         if (document.getElementById('config-ga4-id') && data.ga4MeasurementId) {
           document.getElementById('config-ga4-id').value = data.ga4MeasurementId;
         }
@@ -1130,7 +1706,6 @@
         }
         if (document.getElementById('config-looker-url') && data.lookerStudioEmbedUrl) {
           document.getElementById('config-looker-url').value = data.lookerStudioEmbedUrl;
-          // Render Looker Frame if valid URL
           const container = document.getElementById('analytics-embed-container');
           if (container && data.lookerStudioEmbedUrl.startsWith('http')) {
             container.innerHTML = `<iframe src="${data.lookerStudioEmbedUrl}" class="w-full h-[450px] rounded-xl border border-white/10" frameborder="0" allowfullscreen></iframe>`;
@@ -1178,10 +1753,7 @@
       };
     }
 
-    // Trigger Sitemap Sync Button Handler
-    const syncBtn = document.getElementById('sync-sitemap-btn');
-    const pingSeoBtn = document.getElementById('trigger-ping-seo-btn');
-
+    // Trigger Sitemap Sync
     async function triggerSitemapSync() {
       const btn = document.getElementById('sync-sitemap-btn');
       const label = document.getElementById('sync-btn-label');
@@ -1215,67 +1787,131 @@
       }
     }
 
+    const syncBtn = document.getElementById('sync-sitemap-btn');
     if (syncBtn) syncBtn.onclick = triggerSitemapSync;
-    if (pingSeoBtn) pingSeoBtn.onclick = triggerSitemapSync;
 
     // Handle SEO Config Form Submit
-    const configForm = document.getElementById('seo-config-form');
-    if (configForm) {
-      configForm.onsubmit = async (e) => {
-        e.preventDefault();
-        const payload = {
-          ga4MeasurementId: document.getElementById('config-ga4-id').value,
-          gscPropertyUrl: document.getElementById('config-gsc-url').value,
-          lookerStudioEmbedUrl: document.getElementById('config-looker-url').value
-        };
-
-        try {
-          const res = await adminFetch(API_BASE + '/api/admin/seo/save-config', {
-            method: 'POST',
-            body: JSON.stringify(payload)
-          });
-          if (res.ok) {
-            alert("✓ Google Analytics & Search Console settings saved!");
-            await loadSEOAnalyticsStatus();
-          } else {
-            alert("Failed to save settings.");
-          }
-        } catch (err) {
-          alert("Error saving SEO config: " + err.message);
-        }
+    document.getElementById('seo-config-form')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const payload = {
+        ga4MeasurementId: document.getElementById('config-ga4-id').value,
+        gscPropertyUrl: document.getElementById('config-gsc-url').value,
+        lookerStudioEmbedUrl: document.getElementById('config-looker-url').value
       };
+
+      try {
+        const res = await adminFetch(API_BASE + '/api/admin/seo/save-config', {
+          method: 'POST',
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          alert("✓ Google Analytics & Search Console settings saved!");
+          await loadSEOAnalyticsStatus();
+        }
+      } catch (err) {
+        alert("Error saving config: " + err.message);
+      }
+    });
+
+    // Invoice Generator Modal
+    function openInvoice(email, name, amount, date) {
+      const invoiceArea = document.getElementById('invoice-print-area');
+      const invoiceId = 'INV-' + Math.floor(100000 + Math.random() * 900000);
+      const invDate = date ? new Date(date).toLocaleDateString('en-IN') : new Date().toLocaleDateString('en-IN');
+
+      invoiceArea.innerHTML = `
+        <div class="space-y-6 font-sans">
+          <div class="flex justify-between items-start border-b border-white/10 pb-6">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-2xl">⚜️</span>
+                <span class="text-xl font-bold font-serif text-white">Sanatana360</span>
+              </div>
+              <p class="text-xs text-white/50">MANJUNATH ENTERPRISE</p>
+              <p class="text-xs text-white/50">Bengaluru, Karnataka, India</p>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-mono text-gold font-bold uppercase block">Official Tax Invoice</span>
+              <span class="text-base font-mono font-bold text-white block">${invoiceId}</span>
+              <span class="text-xs text-white/50 block mt-1">Date: ${invDate}</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 text-xs">
+            <div>
+              <span class="text-white/40 block uppercase font-mono text-[10px]">Billed To:</span>
+              <span class="text-white font-bold text-sm block mt-0.5">${name}</span>
+              <span class="text-white/60 block font-mono">${email}</span>
+            </div>
+            <div class="text-right">
+              <span class="text-white/40 block uppercase font-mono text-[10px]">Payment Status:</span>
+              <span class="text-emerald-400 font-bold block mt-0.5">✓ Paid (Cashfree PG)</span>
+            </div>
+          </div>
+
+          <table class="w-full text-left text-xs font-mono border-t border-b border-white/10 py-2">
+            <thead>
+              <tr class="text-white/40 text-[10px] uppercase">
+                <th class="py-2">Description</th>
+                <th class="py-2 text-right">Qty</th>
+                <th class="py-2 text-right">Price</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5 text-white">
+              <tr>
+                <td class="py-3 font-bold">Sanatana360 All-Access Gurukula Pass (Ad-Free)</td>
+                <td class="py-3 text-right">1</td>
+                <td class="py-3 text-right text-gold font-bold">₹${amount}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="flex justify-between items-center text-xs pt-2">
+            <span class="text-white/40">Thank you for preserving India's timeless heritage!</span>
+            <div class="text-right">
+              <span class="text-sm font-bold text-gold font-mono">Total Paid: ₹${amount}</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+      const modal = document.getElementById('invoice-modal');
+      if (modal) modal.classList.remove('hidden'), modal.classList.add('flex');
     }
 
+    // Close Invoice Modal
+    document.querySelectorAll('.invoice-close').forEach(btn => {
+      btn.onclick = () => {
+        const modal = document.getElementById('invoice-modal');
+        if (modal) modal.classList.add('hidden'), modal.classList.remove('flex');
+      };
+    });
 
+    document.getElementById('print-invoice-btn')?.addEventListener('click', () => {
+      window.print();
+    });
+
+    // Logout
+    document.getElementById('logout-btn')?.addEventListener('click', async () => {
+      if (confirm("Are you sure you want to sign out?")) {
+        await adminFetch(API_BASE + '/api/admin/logout', { method: 'POST' });
+        window.location.href = '/login.html';
+      }
+    });
+
+    // Startup Initialization
     window.addEventListener('DOMContentLoaded', async () => {
+      // Initialize view from hash or default to overview
+      const initialHash = window.location.hash.replace('#', '') || 'overview';
+      showView(initialHash);
+
       await loadCategories();
       await loadDashboard();
       await loadAIStatus();
+      await loadMarketingCampaigns();
+      await loadSEOAnalyticsStatus();
     });
   </script>
-  <!-- Invoice Generator Modal -->
-  <div id="invoice-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-    <div class="bg-[#101116] border border-white/10 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
-      <!-- Header -->
-      <div class="flex justify-between items-center px-6 py-4 border-b border-white/5">
-        <h3 class="text-lg font-bold font-serif text-white flex items-center gap-2">🧾 Subscription Invoice</h3>
-        <button class="invoice-close text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
-      </div>
-      
-      <!-- Printable Area -->
-      <div class="p-6 md:p-8 overflow-y-auto flex-grow" id="invoice-print-area">
-        <!-- Dynamically generated invoice HTML -->
-      </div>
-
-      <!-- Action Footer -->
-      <div class="p-6 border-t border-white/5 bg-black/40 flex justify-end gap-3">
-        <button class="invoice-close px-6 py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all">Close</button>
-        <button id="print-invoice-btn" class="px-6 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-gold/10 flex items-center gap-2">
-          <span>🖨️ Print Invoice</span>
-        </button>
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>
