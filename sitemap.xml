@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- 1. Homepage & OTT Gurukula Hub -->
   <url>
     <loc>https://www.sanatana360.com/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sanatana360.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.sanatana360.com/"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.sanatana360.com/"/>
-    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://www.sanatana360.com/"/>
-    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://www.sanatana360.com/"/>
-    <xhtml:link rel="alternate" hreflang="te-IN" href="https://www.sanatana360.com/"/>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ganesha.jpg</image:loc>
-      <image:title>Sanatana360 Cultural OTT &amp; Vedic Kids Gurukula</image:title>
+      <image:title>Sanatana360 Cultural OTT and Vedic Kids Gurukula</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/hampi.jpg</image:loc>
-      <image:title>Ancient Indian Architectural Chronicles &amp; Documentaries</image:title>
+      <image:title>Ancient Indian Architectural Chronicles and Documentaries</image:title>
     </image:image>
   </url>
 
@@ -32,7 +25,7 @@
     <priority>0.95</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ganesha.jpg</image:loc>
-      <image:title>6 Vedic Math Speed Simulators &amp; 3 Ancient Memory Tools</image:title>
+      <image:title>6 Vedic Math Speed Simulators and 3 Ancient Memory Tools</image:title>
     </image:image>
   </url>
 
@@ -44,11 +37,11 @@
     <priority>0.95</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mudra_stress_relief_mastery.jpg</image:loc>
-      <image:title>Mudra Therapy for Stress &amp; Anxiety Relief</image:title>
+      <image:title>Mudra Therapy for Stress and Anxiety Relief</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mudra_apana_vayu.jpg</image:loc>
-      <image:title>Apana Vayu Mudra Panic &amp; Heart Reliever</image:title>
+      <image:title>Apana Vayu Mudra Panic and Heart Reliever</image:title>
     </image:image>
   </url>
 

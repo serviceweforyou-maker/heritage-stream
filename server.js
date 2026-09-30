@@ -127,29 +127,13 @@ app.get(['/rss.xml', '/feed.xml'], (req, res) => {
 
 
 // Dynamic XML Sitemap Generator for Search Engines & AI Models
+// Clean Static XML Sitemap for Google Search Console & AI Engines
 app.get('/sitemap.xml', (req, res) => {
-  try {
-    const db = readDB();
-    const origin = `${req.protocol}://${req.get('host')}`;
-    
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
-    
-    // Add static main pages
-    xml += `  <url>\n    <loc>${origin}/index.html</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
-    xml += `  <url>\n    <loc>${origin}/login.html</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.3</priority>\n  </url>\n`;
-    
-    // Add dynamically generated content URLs
-    db.content.forEach(item => {
-      xml += `  <url>\n    <loc>${origin}/index.html?play=${item.id}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
-    });
-    
-    xml += `</urlset>`;
-    res.header('Content-Type', 'application/xml');
-    res.send(xml);
-  } catch (err) {
-    res.status(500).send("Error generating sitemap");
-  }
+  const filePath = fs.existsSync(path.join(__dirname, 'public', 'sitemap.xml')) 
+    ? path.join(__dirname, 'public', 'sitemap.xml') 
+    : path.join(__dirname, 'sitemap.xml');
+  res.header('Content-Type', 'application/xml; charset=utf-8');
+  res.sendFile(filePath);
 });
 
 // Robots.txt configuration allowing Google & AI indexing
