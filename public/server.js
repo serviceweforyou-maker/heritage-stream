@@ -42,11 +42,21 @@ app.use((req, res, next) => {
 // Visitor Tracking Middleware
 app.use((req, res, next) => {
   const pathName = req.path.toLowerCase();
-  const isPage = req.method === 'GET' && (pathName === '/' || pathName === '/index.html' || pathName === '/login.html' || pathName === '/admin.html');
+  const isPage = req.method === 'GET' && (
+    pathName === '/' || 
+    pathName === '/index.html' || 
+    pathName === '/login.html' || 
+    pathName === '/admin.html' || 
+    pathName === '/vedic-math.html' || 
+    pathName === '/granthalaya.html' || 
+    pathName === '/mudra-therapy.html' || 
+    pathName === '/panchatantra-audio.html' || 
+    pathName === '/divya-darshana.html'
+  );
   if (isPage) {
     try {
       const db = readDB();
-      if (!db.stats) db.stats = { totalRevenue: 0, totalSubscribers: 0 };
+      if (!db.stats) db.stats = { totalRevenue: 0, totalSubscribers: 0, totalVisits: 0, uniqueVisitorsCount: 0 };
       
       const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
       db.stats.totalVisits = (db.stats.totalVisits || 0) + 1;
@@ -798,6 +808,7 @@ app.put('/api/content/:id', verifyAdminSession, (req, res) => {
 // 6.1 Get Google Search Console & GA4 Live Status (Admin)
 app.get('/api/admin/seo/status', verifyAdminSession, (req, res) => {
   const db = readDB();
+  if (!db.stats) db.stats = { totalRevenue: 0, totalSubscribers: 0, totalVisits: 0, uniqueVisitorsCount: 0 };
   if (!db.seoConfig) {
     db.seoConfig = {
       ga4MeasurementId: 'G-ZKHEWYB53Q',
@@ -808,6 +819,11 @@ app.get('/api/admin/seo/status', verifyAdminSession, (req, res) => {
     writeDB(db);
   }
 
+  const totalVisits = db.stats.totalVisits || 0;
+  const uniqueVisitors = db.stats.uniqueVisitorsCount || (db.stats.uniqueVisitors ? db.stats.uniqueVisitors.length : 0);
+  const totalSubscribers = db.stats.totalSubscribers || (db.subscribers ? db.subscribers.length : 0);
+  const totalRevenue = db.stats.totalRevenue || 0;
+
   res.json({
     sitemapUrl: 'https://www.sanatana360.com/sitemap.xml',
     lastModified: '2026-09-30',
@@ -817,26 +833,12 @@ app.get('/api/admin/seo/status', verifyAdminSession, (req, res) => {
     ga4MeasurementId: db.seoConfig.ga4MeasurementId || 'G-ZKHEWYB53Q',
     gscPropertyUrl: db.seoConfig.gscPropertyUrl || 'https://www.sanatana360.com/',
     lookerStudioEmbedUrl: db.seoConfig.lookerStudioEmbedUrl || '',
-    searchConsoleMetrics: {
-      impressions: 24850,
-      clicks: 1940,
-      ctr: '7.8%',
-      avgPosition: 3.4
+    realStats: {
+      totalVisits,
+      uniqueVisitors,
+      totalSubscribers,
+      totalRevenue
     },
-    ga4Metrics: {
-      realtimeActive: 42,
-      totalUsers7d: 8420,
-      avgSessionDuration: '6m 45s',
-      bounceRate: '24.2%'
-    },
-    topKeywords: [
-      { query: 'vedic math tricks for kids', clicks: 480, impressions: 3870, ctr: '12.4%', position: 2.1 },
-      { query: 'katapayadi cipher sanskrit numbers', clicks: 310, impressions: 1700, ctr: '18.2%', position: 1.4 },
-      { query: 'apana vayu mudra for heart & anxiety', clicks: 290, impressions: 3020, ctr: '9.6%', position: 3.2 },
-      { query: '5-minute daily gurukula challenge certificate', clicks: 240, impressions: 1590, ctr: '15.1%', position: 1.8 },
-      { query: '26 sacred granth e-books illustrated', clicks: 210, impressions: 1910, ctr: '11.0%', position: 2.7 },
-      { query: 'trataka focus exercise for exams', clicks: 170, impressions: 2070, ctr: '8.2%', position: 4.1 }
-    ],
     sitemapEntries: [
       { url: 'https://www.sanatana360.com/', priority: '1.0', changefreq: 'daily', status: 'Indexed' },
       { url: 'https://www.sanatana360.com/vedic-math.html', priority: '0.95', changefreq: 'weekly', status: 'Indexed' },
