@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=90";
-import heritageData from "./data.js?v=90";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=90";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=91";
+import heritageData from "./data.js?v=91";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=91";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -4964,7 +4964,7 @@ class AppController {
     }
   }
 
-  // 5. Interactive Vedic Math Speed Calculator
+  // 5. Grand Vedic Math & Ancient Memory Mastery Lab
   initVedicMathCalculator() {
     const modal = document.getElementById('vedic-math-modal');
     const openBtn = document.getElementById('try-vedic-math-btn');
@@ -4985,79 +4985,282 @@ class AppController {
       };
     }
 
-    // Tabs switching
-    const switchTab = (tabNum) => {
-      [1, 2, 3].forEach(n => {
-        const btn = document.getElementById('vmath-tab-' + n);
-        const panel = document.getElementById('vmath-panel-' + n);
-        if (btn && panel) {
-          if (n === tabNum) {
-            btn.className = "vmath-nav-tab flex-1 py-2 rounded-xl bg-gold text-black transition-all font-bold";
-            panel.classList.remove('hidden');
-          } else {
-            btn.className = "vmath-nav-tab flex-1 py-2 rounded-xl text-white/60 hover:text-white transition-all";
-            panel.classList.add('hidden');
-          }
-        }
-      });
-    };
+    // Main Tabs: Math vs Memory
+    const mathTab = document.getElementById('vmath-main-tab-math');
+    const memoryTab = document.getElementById('vmath-main-tab-memory');
+    const mathSec = document.getElementById('vmath-section-math');
+    const memSec = document.getElementById('vmath-section-memory');
 
-    [1, 2, 3].forEach(n => {
-      const btn = document.getElementById('vmath-tab-' + n);
-      if (btn) btn.onclick = () => switchTab(n);
+    if (mathTab && memoryTab && mathSec && memSec) {
+      mathTab.onclick = () => {
+        mathTab.className = "py-2.5 px-3 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-gold to-amber-500 text-black shadow-md cursor-pointer";
+        memoryTab.className = "py-2.5 px-3 rounded-xl text-xs font-bold transition-all text-white/70 hover:text-white cursor-pointer";
+        mathSec.classList.remove('hidden');
+        memSec.classList.add('hidden');
+      };
+
+      memoryTab.onclick = () => {
+        memoryTab.className = "py-2.5 px-3 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-gold to-amber-500 text-black shadow-md cursor-pointer";
+        mathTab.className = "py-2.5 px-3 rounded-xl text-xs font-bold transition-all text-white/70 hover:text-white cursor-pointer";
+        memSec.classList.remove('hidden');
+        mathSec.classList.add('hidden');
+      };
+    }
+
+    // ── 6 Math Models Sub-Tabs ──
+    document.querySelectorAll('.vmath-model-tab').forEach(tab => {
+      tab.onclick = () => {
+        const modelId = tab.getAttribute('data-model');
+        document.querySelectorAll('.vmath-model-tab').forEach(t => {
+          t.className = "vmath-model-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:border-gold/40 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap";
+        });
+        tab.className = "vmath-model-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-gold text-black transition-all cursor-pointer whitespace-nowrap";
+
+        document.querySelectorAll('.vmath-panel').forEach(p => p.classList.add('hidden'));
+        document.getElementById('vmath-model-panel-' + modelId)?.classList.remove('hidden');
+      };
     });
 
-    // Trick 1: Square of 5s
+    // Model 1: Criss-Cross Multiplication (Urdhva Tiryagbhyam)
     const calcBtn1 = document.getElementById('vmath-calc-btn-1');
     if (calcBtn1) {
       calcBtn1.onclick = () => {
-        const val = parseInt(document.getElementById('vmath-input-1')?.value || '65');
+        const a = parseInt(document.getElementById('vmath-input-1a')?.value || '43');
+        const b = parseInt(document.getElementById('vmath-input-1b')?.value || '62');
         const resEl = document.getElementById('vmath-result-1');
+        if (isNaN(a) || isNaN(b) || a < 10 || a > 99 || b < 10 || b > 99) {
+          if (resEl) resEl.innerHTML = '<span class="text-red-400">Please enter two 2-digit numbers (10 to 99)!</span>';
+          return;
+        }
+        const a1 = Math.floor(a / 10), a2 = a % 10;
+        const b1 = Math.floor(b / 10), b2 = b % 10;
+        
+        const right = a2 * b2;
+        const cross = (a1 * b2) + (a2 * b1);
+        const left = a1 * b1;
+        const total = a * b;
+
+        if (resEl) {
+          resEl.innerHTML = `
+            <div class="text-sm font-bold text-white mb-1"><strong>${a} &times; ${b} = <span class="text-gold text-base">${total.toLocaleString('en-IN')}</span></strong> ⚡</div>
+            <div class="text-[11px] text-white/80 space-y-0.5 pt-1">
+              <div>&bull; <strong>Step 1 (Vertical Right):</strong> ${a2} &times; ${b2} = ${right}</div>
+              <div>&bull; <strong>Step 2 (Crosswise):</strong> (${a1} &times; ${b2}) + (${a2} &times; ${b1}) = ${a1*b2} + ${a2*b1} = ${cross}</div>
+              <div>&bull; <strong>Step 3 (Vertical Left):</strong> ${a1} &times; ${b1} = ${left}</div>
+              <div class="text-gold font-bold pt-1">&bull; Combine digits with carries: ${total.toLocaleString('en-IN')}</div>
+            </div>
+          `;
+        }
+      };
+    }
+
+    // Model 2: Squaring 5s (Ekadhikena Purvena)
+    const calcBtn2 = document.getElementById('vmath-calc-btn-2');
+    if (calcBtn2) {
+      calcBtn2.onclick = () => {
+        const val = parseInt(document.getElementById('vmath-input-2')?.value || '85');
+        const resEl = document.getElementById('vmath-result-2');
         if (isNaN(val) || val % 10 !== 5) {
-          if (resEl) resEl.textContent = "Please enter a number ending in 5 (e.g. 25, 45, 85)!";
+          if (resEl) resEl.innerHTML = '<span class="text-red-400">Please enter a number ending in 5 (e.g. 25, 45, 85, 115)!</span>';
           return;
         }
         const front = Math.floor(val / 10);
         const frontProd = front * (front + 1);
         const ans = frontProd * 100 + 25;
         if (resEl) {
-          resEl.innerHTML = '<strong>' + val + '²</strong> = (' + front + ' × ' + (front + 1) + ' = ' + frontProd + ') followed by 25 = <span class="text-gold font-bold text-base">' + ans + '</span> ⚡';
+          resEl.innerHTML = `
+            <div class="text-sm font-bold text-white mb-1"><strong>${val}&sup2; = <span class="text-gold text-base">${ans.toLocaleString('en-IN')}</span></strong> ⚡</div>
+            <div class="text-[11px] text-white/80 pt-1">
+              &bull; <strong>Formula:</strong> ${front} &times; (${front} + 1) = ${frontProd}, then append 25 ➔ <strong>${ans.toLocaleString('en-IN')}</strong>!
+            </div>
+          `;
         }
       };
     }
 
-    // Trick 2: Multiply by 11
-    const calcBtn2 = document.getElementById('vmath-calc-btn-2');
-    if (calcBtn2) {
-      calcBtn2.onclick = () => {
-        const val = parseInt(document.getElementById('vmath-input-2')?.value || '52');
-        const resEl = document.getElementById('vmath-result-2');
-        if (isNaN(val) || val < 10 || val > 99) {
-          if (resEl) resEl.textContent = "Please enter a 2-digit number (10 to 99)!";
-          return;
-        }
-        const d1 = Math.floor(val / 10);
-        const d2 = val % 10;
-        const sum = d1 + d2;
-        const ans = val * 11;
-        if (resEl) {
-          resEl.innerHTML = '<strong>' + val + ' × 11</strong> = ' + d1 + ' (' + d1 + '+' + d2 + '=' + sum + ') ' + d2 + ' = <span class="text-gold font-bold text-base">' + ans + '</span> ⚡';
-        }
-      };
-    }
-
-    // Trick 3: Fast Base 100
+    // Model 3: Base 100 Nikhilam
     const calcBtn3 = document.getElementById('vmath-calc-btn-3');
     if (calcBtn3) {
       calcBtn3.onclick = () => {
-        const n1 = parseInt(document.getElementById('vmath-input-3a')?.value || '94');
-        const n2 = parseInt(document.getElementById('vmath-input-3b')?.value || '98');
+        const n1 = parseInt(document.getElementById('vmath-input-3a')?.value || '96');
+        const n2 = parseInt(document.getElementById('vmath-input-3b')?.value || '93');
         const resEl = document.getElementById('vmath-result-3');
         if (isNaN(n1) || isNaN(n2)) return;
+        const d1 = n1 - 100;
+        const d2 = n2 - 100;
+        const leftPart = n1 + d2;
+        const rightPart = Math.abs(d1 * d2);
         const ans = n1 * n2;
         if (resEl) {
-          resEl.innerHTML = '<strong>' + n1 + ' × ' + n2 + '</strong> = <span class="text-gold font-bold text-base">' + ans + '</span> ⚡ (Calculated via Nikhilam Sutra)';
+          resEl.innerHTML = `
+            <div class="text-sm font-bold text-white mb-1"><strong>${n1} &times; ${n2} = <span class="text-gold text-base">${ans.toLocaleString('en-IN')}</span></strong> ⚡</div>
+            <div class="text-[11px] text-white/80 space-y-0.5 pt-1">
+              <div>&bull; <strong>Deficits from 100:</strong> (${d1}) and (${d2})</div>
+              <div>&bull; <strong>Left Part:</strong> ${n1} + (${d2}) = ${leftPart}</div>
+              <div>&bull; <strong>Right Part:</strong> (${d1}) &times; (${d2}) = ${String(rightPart).padStart(2, '0')}</div>
+              <div class="text-gold font-bold pt-1">&bull; Instant Result: ${ans.toLocaleString('en-IN')}</div>
+            </div>
+          `;
         }
+      };
+    }
+
+    // Model 4: Square Roots by Vilokanam
+    const calcBtn4 = document.getElementById('vmath-calc-btn-4');
+    if (calcBtn4) {
+      calcBtn4.onclick = () => {
+        const val = parseInt(document.getElementById('vmath-input-4')?.value || '5184');
+        const resEl = document.getElementById('vmath-result-4');
+        const root = Math.sqrt(val);
+        if (isNaN(val) || !Number.isInteger(root) || val < 100 || val > 9999) {
+          if (resEl) resEl.innerHTML = '<span class="text-red-400">Please enter a valid 3 or 4 digit perfect square (e.g. 5184, 2025, 3136, 7225)!</span>';
+          return;
+        }
+        const lastDigit = val % 10;
+        const tensGroup = Math.floor(val / 100);
+        let possibleUnits = [0];
+        if (lastDigit === 1) possibleUnits = [1, 9];
+        if (lastDigit === 4) possibleUnits = [2, 8];
+        if (lastDigit === 5) possibleUnits = [5];
+        if (lastDigit === 6) possibleUnits = [4, 6];
+        if (lastDigit === 9) possibleUnits = [3, 7];
+
+        const tensDigit = Math.floor(Math.sqrt(tensGroup));
+
+        if (resEl) {
+          resEl.innerHTML = `
+            <div class="text-sm font-bold text-white mb-1"><strong>&radic;${val} = <span class="text-gold text-base">${root}</span></strong> ⚡ (Calculated in 2 seconds!)</div>
+            <div class="text-[11px] text-white/80 space-y-0.5 pt-1">
+              <div>&bull; <strong>Last Digit ${lastDigit}:</strong> Unit digit must be ${possibleUnits.join(' or ')}.</div>
+              <div>&bull; <strong>First Part ${tensGroup}:</strong> Lies between ${tensDigit}&sup2; (${tensDigit*tensDigit}) and ${tensDigit+1}&sup2; (${(tensDigit+1)*(tensDigit+1)}) ➔ Tens digit is ${tensDigit}.</div>
+              <div>&bull; <strong>Comparing:</strong> ${tensDigit} &times; ${tensDigit+1} = ${tensDigit*(tensDigit+1)}. Since ${tensGroup} is ${tensGroup < tensDigit*(tensDigit+1) ? 'smaller' : 'larger'}, pick unit ${root%10}.</div>
+            </div>
+          `;
+        }
+      };
+    }
+
+    // Model 5: 11-Multiplication
+    const calcBtn5 = document.getElementById('vmath-calc-btn-5');
+    if (calcBtn5) {
+      calcBtn5.onclick = () => {
+        const val = parseInt(document.getElementById('vmath-input-5')?.value || '63');
+        const resEl = document.getElementById('vmath-result-5');
+        if (isNaN(val)) return;
+        const ans = val * 11;
+        if (resEl) {
+          resEl.innerHTML = `
+            <div class="text-sm font-bold text-white mb-1"><strong>${val} &times; 11 = <span class="text-gold text-base">${ans.toLocaleString('en-IN')}</span></strong> ⚡</div>
+            <div class="text-[11px] text-white/80 pt-1">
+              &bull; <strong>Sutra Antyayoreva:</strong> Insert intermediate sum of adjacent digits into middle ➔ ${ans.toLocaleString('en-IN')}.
+            </div>
+          `;
+        }
+      };
+    }
+
+    // Model 6: Day of Week (Shakabda Chronometry)
+    const calcBtn6 = document.getElementById('vmath-calc-btn-6');
+    if (calcBtn6) {
+      calcBtn6.onclick = () => {
+        const dateVal = document.getElementById('vmath-input-6')?.value || '1947-08-15';
+        const resEl = document.getElementById('vmath-result-6');
+        const dateObj = new Date(dateVal);
+        if (isNaN(dateObj.getTime())) return;
+        const days = ['Sunday (Ravivara)', 'Monday (Somavara)', 'Tuesday (Mangalavara)', 'Wednesday (Budhavara)', 'Thursday (Guruvara)', 'Friday (Shukravara)', 'Saturday (Shanivara)'];
+        const dayName = days[dateObj.getDay()];
+        if (resEl) {
+          resEl.innerHTML = `
+            <div class="text-sm font-bold text-white mb-1"><strong>${dateObj.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })} was <span class="text-gold text-base">${dayName}</span></strong> ⚡</div>
+            <div class="text-[11px] text-white/80 pt-1">
+              &bull; <strong>Vedic Modulo Code:</strong> Century Offset + Year Code + Month Digit mod 7 = ${dateObj.getDay()} (${dayName}).
+            </div>
+          `;
+        }
+      };
+    }
+
+    // ── 3 Ancient Memory Tools Sub-Tabs ──
+    document.querySelectorAll('.vmemory-tool-tab').forEach(tab => {
+      tab.onclick = () => {
+        const toolId = tab.getAttribute('data-memtool');
+        document.querySelectorAll('.vmemory-tool-tab').forEach(t => {
+          t.className = "vmemory-tool-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:border-gold/40 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap";
+        });
+        tab.className = "vmemory-tool-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-gold text-black transition-all cursor-pointer whitespace-nowrap";
+
+        document.querySelectorAll('.vmemory-panel').forEach(p => p.classList.add('hidden'));
+        document.getElementById('vmemory-tool-panel-' + toolId)?.classList.remove('hidden');
+      };
+    });
+
+    // Memory Tool 1: Katapayadi Cipher
+    const calcMem1 = document.getElementById('vmemory-calc-btn-1');
+    if (calcMem1) {
+      calcMem1.onclick = () => {
+        const numStr = (document.getElementById('vmemory-input-1')?.value || '314159').replace(/[^0-9]/g, '');
+        const resEl = document.getElementById('vmemory-result-1');
+        const kataTable = {
+          '1': ['Ka (क)', 'Ta (ट)', 'Pa (प)', 'Ya (य)'],
+          '2': ['Kha (ख)', 'Tha (ठ)', 'Pha (फ)', 'Ra (र)'],
+          '3': ['Ga (ग)', 'Da (ड)', 'Ba (ब)', 'La (ल)'],
+          '4': ['Gha (घ)', 'Dha (ढ)', 'Bha (भ)', 'Va (व)'],
+          '5': ['Nga (ङ)', 'Na (ण)', 'Ma (म)', 'Sha (श)'],
+          '6': ['Cha (च)', 'Ta (त)', 'Sha (ष)'],
+          '7': ['Chha (छ)', 'Tha (थ)', 'Sa (स)'],
+          '8': ['Ja (ज)', 'Da (द)', 'Ha (ह)'],
+          '9': ['Jha (झ)', 'Dha (ध)'],
+          '0': ['Nya (ञ)', 'Na (न)']
+        };
+
+        let cipherSanskrit = [];
+        for (let i = 0; i < numStr.length; i++) {
+          const d = numStr[i];
+          const choices = kataTable[d] || ['Ka'];
+          cipherSanskrit.push(choices[0]);
+        }
+
+        if (resEl) {
+          resEl.innerHTML = `
+            <div class="text-sm font-bold text-white mb-1"><strong>Number: ${numStr} ➔ Katapayadi Sanskrit Cipher:</strong></div>
+            <div class="text-base font-serif text-gold font-bold my-1.5">${cipherSanskrit.join(' - ')}</div>
+            <div class="text-[11px] text-white/70">Ancient Sanskrit verses strung these syllables into poetic chants to preserve mathematical constants across centuries without paper!</div>
+          `;
+        }
+      };
+    }
+
+    // Memory Tool 2: Ashtavadhana 8-Item Challenge
+    const ashtaBtn = document.getElementById('ashtavadhana-start-btn');
+    if (ashtaBtn) {
+      ashtaBtn.onclick = () => {
+        const pool = ['🕉️ Om', '🪕 Veena', '🛕 Temple', '📜 Shloka', '🌿 Tulasi', '🐚 Shankha', '🔥 Agni', '👑 Crown', '🏹 Dhanush', '🪷 Lotus'];
+        const selected = pool.sort(() => 0.5 - Math.random()).slice(0, 8);
+        const display = document.getElementById('ashtavadhana-display');
+        const feedback = document.getElementById('ashtavadhana-feedback');
+
+        if (display) {
+          display.innerHTML = selected.map(item => `<span class="px-3 py-1.5 rounded-xl bg-gold/20 border border-gold/40 text-gold font-bold text-xs animate-bounce">${item}</span>`).join('');
+        }
+        if (feedback) feedback.innerHTML = '<span class="text-amber-300">Memorizing 8 Sacred Items... Time remaining: 8s</span>';
+
+        let sec = 8;
+        const int = setInterval(() => {
+          sec--;
+          if (feedback) feedback.innerHTML = `<span class="text-amber-300">Memorizing 8 Sacred Items... Time remaining: ${sec}s</span>`;
+          if (sec <= 0) {
+            clearInterval(int);
+            if (display) {
+              display.innerHTML = `
+                <div class="w-full space-y-2">
+                  <span class="text-xs text-emerald-400 font-bold block">✨ Memory Challenge Complete!</span>
+                  <p class="text-[11px] text-white/70">Can you recall all 8 items in reverse order to your study partner?</p>
+                </div>
+              `;
+            }
+            if (feedback) feedback.innerHTML = '<span class="text-emerald-400 font-bold">+50 Smriti Focus Karma Earned! 🧠</span>';
+          }
+        }, 1000);
       };
     }
   }

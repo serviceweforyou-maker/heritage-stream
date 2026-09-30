@@ -275,8 +275,8 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=90">
-  <link rel="stylesheet" href="flipbook.css?v=90">
+  <link rel="stylesheet" href="styles.css?v=91">
+  <link rel="stylesheet" href="flipbook.css?v=91">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
@@ -2119,7 +2119,7 @@
     </div>
   </div>
 
-  <script type="module" src="app-prod.js?v=90"></script>
+  <script type="module" src="app-prod.js?v=91"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -2696,7 +2696,7 @@
     </div>
   </div>
 
-  <script src="flipbook.js?v=90"></script>
+  <script src="flipbook.js?v=91"></script>
 
   <!-- ── USER ACCOUNT & MEMBERSHIP MODAL ── -->
   <div id="user-account-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
@@ -2933,75 +2933,298 @@
 
   
 
-      <!-- Panel 2: Multiply by 11 -->
-      <div id="vmath-panel-2" class="space-y-4 hidden">
-        <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-3">
-          <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
-            <span>SUTRA: ANTYAYOREVA</span>
-            <span>INSTANT MULTIPLICATION</span>
+        <!-- ── 🧮 GRAND VEDIC MATHEMATICS & MEMORY MASTERY LAB MODAL ── -->
+  <div id="vedic-math-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-[#0f1118] border-2 border-gold/40 rounded-3xl w-full max-w-3xl shadow-2xl relative p-5 sm:p-7 max-h-[92vh] overflow-y-auto no-scrollbar font-sans">
+      <button id="close-vedic-math-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      
+      <!-- Header -->
+      <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
+        <span class="text-3xl p-2.5 rounded-2xl bg-amber-500/15 border border-amber-500/30 text-amber-400">🧮</span>
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg sm:text-xl font-bold font-serif text-white">Vedic Mathematics &amp; Memory Mastery Lab</h3>
+            <span class="text-[9px] font-mono font-bold text-gold bg-gold/20 border border-gold/40 px-2 py-0.5 rounded-full">16 Sutras &amp; Smriti Shastra</span>
           </div>
-          <p class="text-xs text-white/80 leading-relaxed font-sans">
-            To multiply any 2-digit number by 11 (e.g. <strong>43 × 11</strong>): Split the digits (4 and 3), add them (4 + 3 = 7), and place the sum in the middle!
-          </p>
-          <div class="bg-white/5 p-3 rounded-xl border border-white/5 text-xs font-mono text-center text-amber-300">
-            Example for 43 × 11: 4 _ 3 → (4 + 3 = 7) → <strong>473</strong>! ⚡
+          <p class="text-xs text-white/60 mt-0.5">Solve complex math in 3 seconds &amp; boost memory span 3x using ancient Indian techniques</p>
+        </div>
+      </div>
+
+      <!-- Main Category Nav (Vedic Math vs Ancient Memory) -->
+      <div class="grid grid-cols-2 gap-2 mb-4 p-1 rounded-2xl bg-white/5 border border-white/10">
+        <button id="vmath-main-tab-math" class="py-2.5 px-3 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-gold to-amber-500 text-black shadow-md cursor-pointer">
+          ⚡ 6 Vedic Math Speed Simulators
+        </button>
+        <button id="vmath-main-tab-memory" class="py-2.5 px-3 rounded-xl text-xs font-bold transition-all text-white/70 hover:text-white cursor-pointer">
+          🧠 3 Ancient Memory Shastra Tools
+        </button>
+      </div>
+
+      <!-- ── SECTION 1: VEDIC MATH SIMULATORS ── -->
+      <div id="vmath-section-math" class="space-y-4">
+        <!-- Sub Tabs for 6 Math Models -->
+        <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-2" id="vmath-sub-tabs">
+          <button class="vmath-model-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-gold text-black transition-all cursor-pointer whitespace-nowrap" data-model="1">
+            ⚡ Criss-Cross (Any 2-Digit)
+          </button>
+          <button class="vmath-model-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:border-gold/40 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap" data-model="2">
+            🔥 Squaring 5s (Ekadhikena)
+          </button>
+          <button class="vmath-model-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:border-gold/40 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap" data-model="3">
+            ✨ Base 100 &amp; 1000 (Nikhilam)
+          </button>
+          <button class="vmath-model-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:border-gold/40 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap" data-model="4">
+            🔍 Square Roots (Vilokanam)
+          </button>
+          <button class="vmath-model-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:border-gold/40 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap" data-model="5">
+            🎯 11-Multiplication (Antyayoreva)
+          </button>
+          <button class="vmath-model-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:border-gold/40 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap" data-model="6">
+            📅 Day of Week (Shakabda)
+          </button>
+        </div>
+
+        <!-- Model 1: Criss-Cross Multiplication -->
+        <div id="vmath-model-panel-1" class="vmath-panel space-y-4">
+          <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-2">
+            <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
+              <span>SUTRA: URDHVA TIRYAGBHYAM</span>
+              <span>UNIVERSAL 2-DIGIT MULTIPLICATION</span>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed">
+              Multiply ANY two 2-digit numbers in a single line from right to left using the 3-step vertical & crosswise pattern:
+            </p>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
+            <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block font-mono">Enter Any Two 2-Digit Numbers:</label>
+            <div class="flex gap-2">
+              <input type="number" id="vmath-input-1a" placeholder="e.g. 43" value="43" min="10" max="99" class="w-1/2 bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
+              <span class="text-xl text-white/40 self-center">&times;</span>
+              <input type="number" id="vmath-input-1b" placeholder="e.g. 62" value="62" min="10" max="99" class="w-1/2 bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
+            </div>
+            <button id="vmath-calc-btn-1" class="w-full py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+              ⚡ Calculate Step-by-Step
+            </button>
+            <div id="vmath-result-1" class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl font-mono text-xs text-emerald-300 space-y-1"></div>
           </div>
         </div>
 
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
-          <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block font-mono">Test Any 2-Digit Number × 11:</label>
-          <div class="flex gap-2">
-            <input type="number" id="vmath-input-2" placeholder="e.g. 52" value="52" class="flex-grow bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
-            <button id="vmath-calc-btn-2" class="px-5 py-2.5 bg-gold hover:bg-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all">
-              Multiply
-            </button>
+        <!-- Model 2: Squaring 5s -->
+        <div id="vmath-model-panel-2" class="vmath-panel space-y-4 hidden">
+          <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-2">
+            <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
+              <span>SUTRA: EKADHIKENA PURVENA</span>
+              <span>SQUARING NUMBERS ENDING IN 5</span>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed">
+              Multiply the first digit(s) by (digit + 1), then suffix <strong>25</strong>! e.g. <strong>75&sup2;</strong> ➔ 7 &times; 8 = 56 ➔ <strong>5625</strong>.
+            </p>
           </div>
-          <div id="vmath-result-2" class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center font-mono text-sm text-emerald-300 font-bold">
-            52 × 11 = 5 (5+2) 2 = 572 ⚡
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
+            <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block font-mono">Enter Any Number Ending in 5:</label>
+            <div class="flex gap-2">
+              <input type="number" id="vmath-input-2" placeholder="e.g. 85" value="85" class="flex-grow bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
+              <button id="vmath-calc-btn-2" class="px-6 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+                Square It
+              </button>
+            </div>
+            <div id="vmath-result-2" class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl font-mono text-xs text-emerald-300 space-y-1"></div>
+          </div>
+        </div>
+
+        <!-- Model 3: Base 100/1000 Nikhilam -->
+        <div id="vmath-model-panel-3" class="vmath-panel space-y-4 hidden">
+          <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-2">
+            <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
+              <span>SUTRA: NIKHILAM NAVATASHCARAMAM</span>
+              <span>BASE 100 &amp; 1000 MULTIPLICATION</span>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed">
+              For numbers near 100 or 1000: Track deficits from the base, cross-subtract, and multiply deficits!
+            </p>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
+            <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block font-mono">Enter Numbers Near 100 (e.g. 96 &times; 93 or 104 &times; 107):</label>
+            <div class="flex gap-2">
+              <input type="number" id="vmath-input-3a" placeholder="96" value="96" class="w-1/2 bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
+              <span class="text-xl text-white/40 self-center">&times;</span>
+              <input type="number" id="vmath-input-3b" placeholder="93" value="93" class="w-1/2 bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
+            </div>
+            <button id="vmath-calc-btn-3" class="w-full py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+              ⚡ Calculate Nikhilam Product
+            </button>
+            <div id="vmath-result-3" class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl font-mono text-xs text-emerald-300 space-y-1"></div>
+          </div>
+        </div>
+
+        <!-- Model 4: Square Roots by Vilokanam -->
+        <div id="vmath-model-panel-4" class="vmath-panel space-y-4 hidden">
+          <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-2">
+            <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
+              <span>SUTRA: VILOKANAM (OBSERVATION)</span>
+              <span>INSTANT 2-SECOND SQUARE ROOTS</span>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed">
+              Find the square root of any 3 or 4 digit perfect square purely by looking at unit digits & tens range!
+            </p>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
+            <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block font-mono">Enter 4-Digit Perfect Square (e.g. 5184, 2025, 3136, 7225, 9604):</label>
+            <div class="flex gap-2">
+              <input type="number" id="vmath-input-4" placeholder="e.g. 5184" value="5184" class="flex-grow bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
+              <button id="vmath-calc-btn-4" class="px-6 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+                Find Root
+              </button>
+            </div>
+            <div id="vmath-result-4" class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl font-mono text-xs text-emerald-300 space-y-1"></div>
+          </div>
+        </div>
+
+        <!-- Model 5: 11-Multiplication -->
+        <div id="vmath-model-panel-5" class="vmath-panel space-y-4 hidden">
+          <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-2">
+            <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
+              <span>SUTRA: ANTYAYOREVA</span>
+              <span>INSTANT 11-MULTIPLICATION</span>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed">
+              Split outer digits, insert their sum in the middle! e.g. <strong>43 &times; 11</strong> ➔ 4 (4+3=7) 3 ➔ <strong>473</strong>.
+            </p>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
+            <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block font-mono">Enter Any Number &times; 11:</label>
+            <div class="flex gap-2">
+              <input type="number" id="vmath-input-5" placeholder="e.g. 63" value="63" class="flex-grow bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
+              <button id="vmath-calc-btn-5" class="px-6 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+                Multiply
+              </button>
+            </div>
+            <div id="vmath-result-5" class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl font-mono text-xs text-emerald-300 space-y-1"></div>
+          </div>
+        </div>
+
+        <!-- Model 6: Day of Week Calendar -->
+        <div id="vmath-model-panel-6" class="vmath-panel space-y-4 hidden">
+          <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-2">
+            <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
+              <span>SHAKABDA CHRONOMETRY</span>
+              <span>INSTANT DAY OF THE WEEK CALCULATOR</span>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed">
+              Calculate the exact day of the week for any date in history in under 3 seconds using ancient Vedic calendar modulo algorithms!
+            </p>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
+            <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block font-mono">Select Any Date in History:</label>
+            <div class="flex gap-2">
+              <input type="date" id="vmath-input-6" value="1947-08-15" class="flex-grow bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
+              <button id="vmath-calc-btn-6" class="px-6 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+                Calculate Day
+              </button>
+            </div>
+            <div id="vmath-result-6" class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl font-mono text-xs text-emerald-300 space-y-1"></div>
           </div>
         </div>
       </div>
 
-      <!-- Panel 3: Fast Base 10 -->
-      <div id="vmath-panel-3" class="space-y-4 hidden">
-        <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-3">
-          <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
-            <span>SUTRA: NIKHILAM NAVATASCARAMAM</span>
-            <span>BASE 100 MULTIPLICATION</span>
+      <!-- ── SECTION 2: ANCIENT MEMORY SHASTRA TOOLS ── -->
+      <div id="vmath-section-memory" class="space-y-4 hidden">
+        <!-- Sub Tabs for 3 Memory Tools -->
+        <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-2" id="vmemory-sub-tabs">
+          <button class="vmemory-tool-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-gold text-black transition-all cursor-pointer whitespace-nowrap" data-memtool="1">
+            🔡 Katapayadi Cipher (Sanskrit Number Code)
+          </button>
+          <button class="vmemory-tool-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:border-gold/40 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap" data-memtool="2">
+            🧠 Ashtavadhana 8-Item Memory Span
+          </button>
+          <button class="vmemory-tool-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-white/5 text-white/70 hover:border-gold/40 hover:text-white border border-white/10 transition-all cursor-pointer whitespace-nowrap" data-memtool="3">
+            👁️ Trataka Laser Focus Trainer
+          </button>
+        </div>
+
+        <!-- Memory Tool 1: Katapayadi Decoder -->
+        <div id="vmemory-tool-panel-1" class="vmemory-panel space-y-4">
+          <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-2">
+            <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
+              <span>SMRITI SHASTRA: KATAPAYADI ENCRYPTION</span>
+              <span>ANCIENT SANSKRIT MNEMONIC SYSTEM</span>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed">
+              Used by ancient astronomers like Madhava to memorize Pi up to 32 decimal places by encoding numbers into memorable Sanskrit words.
+            </p>
           </div>
-          <p class="text-xs text-white/80 leading-relaxed font-sans">
-            Multiply numbers close to 100 (e.g. <strong>96 × 97</strong>) in seconds by tracking deviations from 100!
-          </p>
-          <div class="bg-white/5 p-3 rounded-xl border border-white/5 text-xs font-mono text-center text-amber-300">
-            96 is (-4), 97 is (-3) → (96 - 3 = 93) & (-4 × -3 = 12) → <strong>9312</strong>! ⚡
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
+            <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block font-mono">Enter Any Number or Phone to Generate Sanskrit Mnemonic:</label>
+            <div class="flex gap-2">
+              <input type="text" id="vmemory-input-1" placeholder="e.g. 314159" value="314159" class="flex-grow bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
+              <button id="vmemory-calc-btn-1" class="px-6 py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+                Encode
+              </button>
+            </div>
+            <div id="vmemory-result-1" class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl font-mono text-xs text-emerald-300 space-y-1"></div>
           </div>
         </div>
 
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
-          <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block font-mono">Test Fast Base 100 Product (91 to 99):</label>
-          <div class="flex gap-2">
-            <input type="number" id="vmath-input-3a" placeholder="94" value="94" class="w-1/2 bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
-            <input type="number" id="vmath-input-3b" placeholder="98" value="98" class="w-1/2 bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-white font-mono text-sm focus:border-gold/50 focus:outline-none">
+        <!-- Memory Tool 2: Ashtavadhana Memory Challenge -->
+        <div id="vmemory-tool-panel-2" class="vmemory-panel space-y-4 hidden">
+          <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-2">
+            <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
+              <span>ASHTAVADHANA BRAIN TRAINER</span>
+              <span>8-STREAM MEMORY SPAN TEST</span>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed">
+              Test your child's photographic memory retention. 8 sacred items will flash for 8 seconds. Recall them in exact or reverse sequence!
+            </p>
           </div>
-          <button id="vmath-calc-btn-3" class="w-full py-2.5 bg-gold hover:bg-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all">
-            Calculate Vedic Product
-          </button>
-          <div id="vmath-result-3" class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center font-mono text-sm text-emerald-300 font-bold">
-            94 × 98 = 9212 ⚡
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5 text-center space-y-4">
+            <div id="ashtavadhana-display" class="min-h-[90px] flex items-center justify-center flex-wrap gap-2.5 p-4 rounded-xl bg-black/50 border border-white/10">
+              <span class="text-xs text-white/50">Click &ldquo;Start 8-Second Memory Test&rdquo; to begin.</span>
+            </div>
+            <button id="ashtavadhana-start-btn" class="px-8 py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg cursor-pointer">
+              ▶ Start 8-Second Memory Test
+            </button>
+            <div id="ashtavadhana-feedback" class="text-xs font-mono font-bold min-h-[20px]"></div>
+          </div>
+        </div>
+
+        <!-- Memory Tool 3: Trataka Focus Dot -->
+        <div id="vmemory-tool-panel-3" class="vmemory-panel space-y-4 hidden">
+          <div class="bg-black/40 border border-white/10 rounded-2xl p-4 space-y-2">
+            <div class="flex justify-between items-center text-[10px] font-mono text-gold font-bold">
+              <span>YOGA SHASTRA: TRATAKA KRIYA</span>
+              <span>LASER OCULAR FOCUS &amp; EXAM ATTENTION SPAN</span>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed">
+              Gaze steadily at the pulsing golden Bindu without blinking to calm alpha-theta brain waves and eliminate mind wandering.
+            </p>
+          </div>
+
+          <div class="bg-black/60 border border-white/10 rounded-2xl p-6 text-center space-y-4 flex flex-col items-center justify-center min-h-[220px]">
+            <div class="relative w-28 h-28 flex items-center justify-center">
+              <div id="trataka-dot" class="w-10 h-10 rounded-full bg-gradient-to-tr from-gold to-amber-300 shadow-[0_0_30px_rgba(212,175,55,0.9)] animate-pulse"></div>
+            </div>
+            <p class="text-xs text-gold/80 font-mono" id="trataka-status">Focus your gaze on the central Bindu • Inhale 4s &bull; Exhale 4s</p>
           </div>
         </div>
       </div>
 
       <!-- Modal Footer -->
-      <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-        <span class="text-xs text-white/60">Unlock all 16 Vedic Math Sutras & Printable Student Worksheets</span>
+      <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left mt-4">
+        <span class="text-xs text-white/60">Includes all 16 Vedic Sutras &amp; Smriti Shastra Worksheets</span>
         <button onclick="window.appInstance.openPaymentModal()" class="px-5 py-2 bg-gradient-to-r from-gold to-amber-500 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all flex-shrink-0">
-          Unlock Annual Pass (₹399)
+          Unlock Full Gurukula Pass (₹29)
         </button>
       </div>
     </div>
   </div>
-
 
   <!-- ── VIRAL WHATSAPP REFERRAL MODAL ── -->
   <div id="viral-referral-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
