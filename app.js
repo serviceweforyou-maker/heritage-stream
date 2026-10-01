@@ -4192,16 +4192,8 @@ class AppController {
   // 1. 360 Virtual Darshana & Daily Digital Aarti
   initVirtualDarshana() {
     const modal = document.getElementById('virtual-darshana-modal');
-    const openBtn = document.getElementById('header-darshana-btn');
     const closeBtn = document.getElementById('close-darshana-modal-btn');
 
-    if (openBtn && modal) {
-      openBtn.onclick = (e) => {
-        e.preventDefault();
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      };
-    }
     if (closeBtn && modal) {
       closeBtn.onclick = () => {
         modal.classList.add('hidden');
