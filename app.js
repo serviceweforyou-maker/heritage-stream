@@ -1282,25 +1282,7 @@ class AppController {
 
     // ── Bind Header Dropdown & Profile Clicks ──
     const openProfBtn = document.getElementById('open-profile-btn');
-    const profMenu = document.getElementById('profile-dropdown-menu');
-
-    if (openProfBtn && profMenu) {
-      openProfBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isHidden = profMenu.classList.contains('hidden');
-        if (isHidden) {
-          profMenu.classList.remove('hidden');
-        } else {
-          profMenu.classList.add('hidden');
-        }
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!profMenu.contains(e.target) && e.target !== openProfBtn) {
-          profMenu.classList.add('hidden');
-        }
-      });
-    } else if (openProfBtn) {
+    if (openProfBtn) {
       openProfBtn.addEventListener('click', () => openAccountModal('profile'));
     }
 
