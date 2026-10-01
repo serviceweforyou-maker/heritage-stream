@@ -269,18 +269,16 @@ export const GLOBAL_TEMPLES_LIVE = [
   {
     "id": "shirdi_sai_mandir",
     "name": "Shirdi Sai Baba Samadhi Mandir",
-    "hindiName": "श्री साईं बाबा समाधि मंदिर शिर्डी (24/7 लाइव)",
+    "hindiName": "श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती)",
     "deity": "Shri Sai Baba of Shirdi",
     "category": "major",
     "location": "Shirdi, Ahmednagar, Maharashtra, India",
     "state": "Maharashtra",
     "country": "India",
-    "channelId": "UCKGvJDh7g_Kzocbwy7aKicA",
-    "channelHandle": "@saibabasansthantrust",
+    "videoId": "mCqRuQigwFU",
     "officialTrust": "Shri Saibaba Sansthan Trust (SSST), Shirdi",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UCKGvJDh7g_Kzocbwy7aKicA&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@saibabasansthantrust/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+    "liveStreamUrl": "https://www.youtube.com/embed/mCqRuQigwFU?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=mCqRuQigwFU",
     "imageUrl": "/images/dharma.jpg",
     "icon": "✨",
     "coords": {
@@ -289,7 +287,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     },
     "rating": "5.0 ★",
     "devoteesOnline": 6420,
-    "speciality": "Official 24/7 Live Darshana from the Samadhi Mandir of Sai Baba",
+    "speciality": "Live Darshana & Aarti from the Samadhi Mandir of Sai Baba in Shirdi",
     "mantra": "ॐ श्री साईंनाथाय नमः | ॐ साईं राम | सब का मालिक एक",
     "aartis": [
       {
@@ -317,18 +315,16 @@ export const GLOBAL_TEMPLES_LIVE = [
   {
     "id": "tirupati_balaji",
     "name": "Tirumala Sri Venkateswara Swamy",
-    "hindiName": "श्री वेंकटेश्वर स्वामी तिरुपति बालाजी (SVBC TTD लाइव)",
+    "hindiName": "श्री वेंकटेश्वर स्वामी तिरुपति बालाजी (सुप्रभातम् व दर्शन)",
     "deity": "Lord Venkateswara (Balaji / Maha Vishnu)",
     "category": "major",
     "location": "Tirumala Hills, Tirupati, Andhra Pradesh, India",
     "state": "Andhra Pradesh",
     "country": "India",
-    "channelId": "UCS2Y83GD-fc7qqgNW5uj41g",
-    "channelHandle": "@svbcttd",
+    "videoId": "WBD_ktj_6KU",
     "officialTrust": "Tirumala Tirupati Devasthanams (TTD / SVBC)",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UCS2Y83GD-fc7qqgNW5uj41g&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@svbcttd/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ",
+    "liveStreamUrl": "https://www.youtube.com/embed/WBD_ktj_6KU?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=WBD_ktj_6KU",
     "imageUrl": "/images/venkateswara_tirumala.jpg",
     "icon": "🛕",
     "coords": {
@@ -337,7 +333,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     },
     "rating": "5.0 ★",
     "devoteesOnline": 8150,
-    "speciality": "Official 24/7 Live Broadcast of Sri Venkateswara Bhakthi Channel (SVBC)",
+    "speciality": "Official Live Suprabhatam, Kalyanotsavam & Darshana from Tirumala",
     "mantra": "ॐ नमो वेङ्कटेशाय | गोविन्दा गोविन्दा | श्रीनिवास गोविन्दा",
     "aartis": [
       {
@@ -365,18 +361,16 @@ export const GLOBAL_TEMPLES_LIVE = [
   {
     "id": "kashi_vishwanath",
     "name": "Kashi Vishwanath Jyotirlinga",
-    "hindiName": "श्री काशी विश्वनाथ ज्योतिर्लिंग (वाराणसी लाइव)",
+    "hindiName": "श्री काशी विश्वनाथ ज्योतिर्लिंग (मंगला व गंगा आरती)",
     "deity": "Lord Shiva (Vishwanatha)",
     "category": "jyotirlinga",
     "location": "Varanasi, Uttar Pradesh, India",
     "state": "Uttar Pradesh",
     "country": "India",
-    "channelId": "UCdMj2twWfMHXrWgX5oVdoyA",
-    "channelHandle": "@ShreeKashiVishwanathMandir",
+    "videoId": "k5Lz3m9s03M",
     "officialTrust": "Shree Kashi Vishwanath Mandir Trust",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UCdMj2twWfMHXrWgX5oVdoyA&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@ShreeKashiVishwanathMandir/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+    "liveStreamUrl": "https://www.youtube.com/embed/k5Lz3m9s03M?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=k5Lz3m9s03M",
     "imageUrl": "/images/shiva_neelkanth.jpg",
     "icon": "🔱",
     "coords": {
@@ -385,7 +379,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     },
     "rating": "5.0 ★",
     "devoteesOnline": 5320,
-    "speciality": "Official Mandir Trust Live Darshana & Ganga Maha Aarti from Varanasi",
+    "speciality": "Live Mangala Aarti and Grand Ganga Aarti from Varanasi Ghats",
     "mantra": "ॐ नमः शिवाय | कर्पूरगौरं करुणावतारं संसारसारम् भुजगेन्द्रहारम्",
     "aartis": [
       {
@@ -413,18 +407,16 @@ export const GLOBAL_TEMPLES_LIVE = [
   {
     "id": "mahakaleshwar_ujjain",
     "name": "Mahakaleshwar Jyotirlinga Ujjain",
-    "hindiName": "श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन (भस्म आरती लाइव)",
+    "hindiName": "श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन (भस्म आरती)",
     "deity": "Lord Shiva (Dakshinamurti Mahakala)",
     "category": "jyotirlinga",
     "location": "Ujjain, Madhya Pradesh, India",
     "state": "Madhya Pradesh",
     "country": "India",
-    "channelId": "UCgpjB-csRj6rDwKQsLLZasg",
-    "channelHandle": "@MahakaleshwarJyotirlingaUjjain",
+    "videoId": "yuO3IWGpagI",
     "officialTrust": "Shri Mahakaleshwar Temple Management Committee",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UCgpjB-csRj6rDwKQsLLZasg&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@MahakaleshwarJyotirlingaUjjain/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/QvwWU2iDxkQ",
+    "liveStreamUrl": "https://www.youtube.com/embed/yuO3IWGpagI?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=yuO3IWGpagI",
     "imageUrl": "/images/shiva.jpg",
     "icon": "🔱",
     "coords": {
@@ -461,18 +453,16 @@ export const GLOBAL_TEMPLES_LIVE = [
   {
     "id": "somnath_jyotirlinga",
     "name": "Shree Somnath Jyotirlinga",
-    "hindiName": "श्री सोमनाथ ज्योतिर्लिंग (24/7 सागर तट लाइव)",
+    "hindiName": "श्री सोमनाथ ज्योतिर्लिंग (सागर आरती)",
     "deity": "Lord Shiva (Someshwara)",
     "category": "jyotirlinga",
     "location": "Prabhas Patan, Veraval, Gujarat, India",
     "state": "Gujarat",
     "country": "India",
-    "channelId": "UCIPhuppWW3cLu57lAd9Xlpg",
-    "channelHandle": "@ShreeSomnathTemple",
+    "videoId": "XG-8f_6FPco",
     "officialTrust": "Shree Somnath Trust",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UCIPhuppWW3cLu57lAd9Xlpg&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@ShreeSomnathTemple/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/Vg3XIfzoN6w",
+    "liveStreamUrl": "https://www.youtube.com/embed/XG-8f_6FPco?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=XG-8f_6FPco",
     "imageUrl": "/images/ellora_kailasa.jpg",
     "icon": "🌊",
     "coords": {
@@ -481,7 +471,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     },
     "rating": "4.9 ★",
     "devoteesOnline": 3150,
-    "speciality": "First of 12 Jyotirlingas with 24/7 Arabian Sea audio-visual stream",
+    "speciality": "First of 12 Jyotirlingas with Arabian Sea shoreline Aarti",
     "mantra": "सौराष्ट्रदेशे विशदेऽतिरम्ये ज्योतिर्मयं चन्द्रकलावतंसम्",
     "aartis": [
       {
@@ -504,18 +494,16 @@ export const GLOBAL_TEMPLES_LIVE = [
   {
     "id": "siddhivinayak_mumbai",
     "name": "Shree Siddhivinayak Temple Mumbai",
-    "hindiName": "श्री सिद्धिविनायक गणपति मंदिर मुंबई (लाइव)",
+    "hindiName": "श्री सिद्धिविनायक गणपति मंदिर मुंबई (लाइव दर्शन)",
     "deity": "Lord Ganesha (Siddhivinayaka)",
     "category": "major",
     "location": "Prabhadevi, Mumbai, Maharashtra, India",
     "state": "Maharashtra",
     "country": "India",
-    "channelId": "UCEH8uzUHZ0V6H5p2C7ai5dA",
-    "channelHandle": "@siddhivinayaktemple",
+    "videoId": "GdU7vdSe6aU",
     "officialTrust": "Shree Siddhivinayak Ganapati Temple Trust",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UCEH8uzUHZ0V6H5p2C7ai5dA&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@siddhivinayaktemple/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/GdU7vdSe6aU",
+    "liveStreamUrl": "https://www.youtube.com/embed/GdU7vdSe6aU?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=GdU7vdSe6aU",
     "imageUrl": "/images/ganesha.jpg",
     "icon": "🐘",
     "coords": {
@@ -524,7 +512,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     },
     "rating": "4.9 ★",
     "devoteesOnline": 3900,
-    "speciality": "Official Live Ganapati Darshana from Prabhadevi, Mumbai",
+    "speciality": "Live Ganapati Darshana and Modak offering from Prabhadevi, Mumbai",
     "mantra": "ॐ गं गणपतये सर्व कार्य सिद्धि कुरु कुरु स्वाहा",
     "aartis": [
       {
@@ -547,18 +535,16 @@ export const GLOBAL_TEMPLES_LIVE = [
   {
     "id": "iskcon_bangalore",
     "name": "ISKCON Sri Radha Krishna Temple",
-    "hindiName": "इस्कॉन श्री राधा कृष्ण मंदिर बेंगलुरु (24/7 लाइव)",
+    "hindiName": "इस्कॉन श्री राधा कृष्ण मंदिर बेंगलुरु (आरती व दर्शन)",
     "deity": "Sri Radha Krishnachandra",
     "category": "karnataka",
     "location": "Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka, India",
     "state": "Karnataka",
     "country": "India",
-    "channelId": "UCba8cP-Kdlm00_YSoXk467w",
-    "channelHandle": "@iskconbangalore",
+    "videoId": "tAm3NfRkcbw",
     "officialTrust": "ISKCON Bangalore Society",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UCba8cP-Kdlm00_YSoXk467w&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@iskconbangalore/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/o48PvG182gk",
+    "liveStreamUrl": "https://www.youtube.com/embed/tAm3NfRkcbw?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=tAm3NfRkcbw",
     "imageUrl": "/images/krishna_cover.jpg",
     "icon": "🦚",
     "coords": {
@@ -567,7 +553,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     },
     "rating": "5.0 ★",
     "devoteesOnline": 4200,
-    "speciality": "Official 24/7 Live Broadcast of Mangala Aarti, Kirtan & Darshana",
+    "speciality": "Live Mangala Aarti, Kirtan & Darshana from Bangalore hilltop sanctum",
     "mantra": "हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे | हरे राम हरे राम राम राम हरे हरे",
     "aartis": [
       {
@@ -595,18 +581,16 @@ export const GLOBAL_TEMPLES_LIVE = [
   {
     "id": "baps_akshardham",
     "name": "BAPS Shri Swaminarayan Akshardham",
-    "hindiName": "बीएपीएस स्वामीनारायण अक्षरधाम (वैश्विक लाइव)",
+    "hindiName": "बीएपीएस स्वामीनारायण अक्षरधाम (भव्य आरती)",
     "deity": "Bhagwan Swaminarayan",
     "category": "global",
-    "location": "Global Broadcast (New Delhi & USA)",
+    "location": "New Delhi & Robbinsville, USA",
     "state": "Global",
     "country": "Global",
-    "channelId": "UCutvkeF3tVgItCX31QhJ2Dw",
-    "channelHandle": "@baps",
+    "videoId": "w-TLCMlLh1Y",
     "officialTrust": "BAPS Swaminarayan Sanstha",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UCutvkeF3tVgItCX31QhJ2Dw&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@baps/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ",
+    "liveStreamUrl": "https://www.youtube.com/embed/w-TLCMlLh1Y?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=w-TLCMlLh1Y",
     "imageUrl": "/images/hampi.jpg",
     "icon": "🏛️",
     "coords": {
@@ -615,7 +599,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     },
     "rating": "5.0 ★",
     "devoteesOnline": 3100,
-    "speciality": "Official live broadcasts of Daily Aarti & Vedic cultural events",
+    "speciality": "Grand Stone-Carved Temple Darshana & Daily Musical Aarti",
     "mantra": "ॐ स्वामिनारायणाय नमः | ॐ अक्षरपुरुषोत्तमाय नमः",
     "aartis": [
       {
@@ -632,19 +616,17 @@ export const GLOBAL_TEMPLES_LIVE = [
   },
   {
     "id": "badrinath_kedarnath",
-    "name": "Kedarnath & Badrinath Dham (BKTC)",
-    "hindiName": "श्री बद्रीनाथ - केदारनाथ धाम (उत्तराखंड लाइव)",
+    "name": "Kedarnath & Badrinath Dham (Himalayas)",
+    "hindiName": "श्री बद्रीनाथ - केदारनाथ धाम (हिमालय दर्शन)",
     "deity": "Lord Shiva & Lord Badrinarayan",
     "category": "chardham",
     "location": "Garhwal Himalayas, Uttarakhand, India",
     "state": "Uttarakhand",
     "country": "India",
-    "channelId": "UC4sqfXTHIXfLiGE0Snx_ohA",
-    "channelHandle": "@badrikedar",
+    "videoId": "yYrc-RG_5bI",
     "officialTrust": "Shri Badrinath-Kedarnath Temple Committee (BKTC)",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UC4sqfXTHIXfLiGE0Snx_ohA&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@badrikedar/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/iaW4C8Laif4",
+    "liveStreamUrl": "https://www.youtube.com/embed/yYrc-RG_5bI?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=yYrc-RG_5bI",
     "imageUrl": "/images/hampi.jpg",
     "icon": "🏔️",
     "coords": {
@@ -653,7 +635,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     },
     "rating": "5.0 ★",
     "devoteesOnline": 4800,
-    "speciality": "Official live broadcasts from the high Himalayan shrines",
+    "speciality": "Sacred Himalayan Darshana of Kedarnath & Badrinath shrines",
     "mantra": "ॐ नमो भगवते वासुदेवाय | ॐ नमः शिवाय शुभं कुरु कुरु शिवाय नमः ॐ",
     "aartis": [
       {
@@ -671,18 +653,16 @@ export const GLOBAL_TEMPLES_LIVE = [
   {
     "id": "pashupatinath_nepal",
     "name": "Pashupatinath Temple Kathmandu",
-    "hindiName": "श्री पशुपतिनाथ मंदिर काठमांडू (बागमती महा आरती लाइव)",
+    "hindiName": "श्री पशुपतिनाथ मंदिर काठमांडू (बागमती महा आरती)",
     "deity": "Lord Shiva (Pashupatinatha)",
     "category": "global",
     "location": "Kathmandu, Nepal",
     "state": "Bagmati Province",
     "country": "Nepal",
-    "channelId": "UCWGgdcaxoMhnSy7Z7hWqpwg",
-    "channelHandle": "@NepalTelevisionOfficial",
+    "videoId": "k51UufYI3fg",
     "officialTrust": "Pashupati Area Development Trust / Nepal Television",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UCWGgdcaxoMhnSy7Z7hWqpwg&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@NepalTelevisionOfficial/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+    "liveStreamUrl": "https://www.youtube.com/embed/k51UufYI3fg?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=k51UufYI3fg",
     "imageUrl": "/images/shiva_neelkanth.jpg",
     "icon": "🛕",
     "coords": {
@@ -691,7 +671,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     },
     "rating": "4.9 ★",
     "devoteesOnline": 2900,
-    "speciality": "UNESCO World Heritage Pagoda shrine on the sacred Bagmati River",
+    "speciality": "UNESCO World Heritage Pagoda shrine & Bagmati River Maha Aarti",
     "mantra": "ॐ पशुपतये नमः | ईशानः सर्वविद्यानामीश्वरः सर्वभूतानाम्",
     "aartis": [
       {
@@ -707,45 +687,207 @@ export const GLOBAL_TEMPLES_LIVE = [
     ]
   },
   {
-    "id": "dhyanalinga_isha",
-    "name": "Dhyanalinga & Adiyogi Coimbatore",
-    "hindiName": "ध्यानालिंग व आदियोगी ईशा योग कोयंबटूर (लाइव)",
-    "deity": "Lord Shiva (Adiyogi)",
-    "category": "major",
-    "location": "Velliangiri Foothills, Coimbatore, Tamil Nadu, India",
-    "state": "Tamil Nadu",
+    "id": "udupi_krishna_matha",
+    "name": "Sri Krishna Matha Udupi",
+    "hindiName": "श्री कृष्ण मठ उडुपी (कनकन किंडी व महापूजा)",
+    "deity": "Lord Krishna (Bala Krishna)",
+    "category": "karnataka",
+    "location": "Udupi, Karnataka, India",
+    "state": "Karnataka",
     "country": "India",
-    "channelId": "UCcYzLCs3zrQIBVHYA1sK2sw",
-    "channelHandle": "@sadhguru",
-    "officialTrust": "Isha Foundation",
-    "liveStreamUrl": "https://www.youtube.com/embed/live_stream?channel=UCcYzLCs3zrQIBVHYA1sK2sw&autoplay=1&mute=0&rel=0",
-    "directYoutubeUrl": "https://www.youtube.com/@sadhguru/live",
-    "backupVideoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
-    "imageUrl": "/images/shiva.jpg",
-    "icon": "🧘",
+    "videoId": "o48PvG182gk",
+    "officialTrust": "Paryaya Sri Krishna Matha Udupi",
+    "liveStreamUrl": "https://www.youtube.com/embed/o48PvG182gk?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=o48PvG182gk",
+    "imageUrl": "/images/krishna_cover.jpg",
+    "icon": "🐚",
     "coords": {
-      "lat": 10.9725,
-      "lng": 76.7408
+      "lat": 13.3409,
+      "lng": 74.7473
     },
     "rating": "4.9 ★",
-    "devoteesOnline": 3500,
-    "speciality": "Official 24/7 Meditative Energy Center & Adiyogi Divya Darshana",
-    "mantra": "योगेश्वर लिंगेश्वर महादेवाय नमः | ॐ नमः शिवाय",
+    "devoteesOnline": 3430,
+    "speciality": "Darshana through Kanakana Kindi window & Paryaya Swamiji Mahapooja",
+    "mantra": "कृष्णाय वासुदेवाय हरये परमात्मने | प्रणत क्लेशनाशाय गोविंदाय नमो नमः",
     "aartis": [
       {
-        "name": "AUM Chanting",
+        "name": "Nirmalya Visarjana",
+        "time": "05:00 AM",
+        "desc": "Morning clearing & holy bath"
+      },
+      {
+        "name": "Mahapooja",
+        "time": "10:30 AM",
+        "desc": "Paryaya Swamiji supreme offering"
+      },
+      {
+        "name": "Chamara Seva",
+        "time": "07:00 PM",
+        "desc": "Golden chariot & fan ceremony"
+      }
+    ]
+  },
+  {
+    "id": "chamundeshwari_mysore",
+    "name": "Chamundeshwari Temple Mysuru",
+    "hindiName": "श्री चामुंडेश्वरी देवी मंदिर मैसूर (शृंगार व आरती)",
+    "deity": "Goddess Chamundeshwari",
+    "category": "karnataka",
+    "location": "Chamundi Hills, Mysuru, Karnataka, India",
+    "state": "Karnataka",
+    "country": "India",
+    "videoId": "0s0Ef_9AOVg",
+    "officialTrust": "Chamundeshwari Temple Trust",
+    "liveStreamUrl": "https://www.youtube.com/embed/0s0Ef_9AOVg?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=0s0Ef_9AOVg",
+    "imageUrl": "/images/lakshmibai.jpg",
+    "icon": "🦁",
+    "coords": {
+      "lat": 12.2748,
+      "lng": 76.6785
+    },
+    "rating": "4.9 ★",
+    "devoteesOnline": 2650,
+    "speciality": "Crowning Shakti Peetha atop Chamundi Hills overlooking Mysuru",
+    "mantra": "ऐं ह्रीं क्लीं चामुण्डायै विच्चे",
+    "aartis": [
+      {
+        "name": "Pratah Pooja",
         "time": "06:00 AM",
-        "desc": "Morning meditative sound resonance"
+        "desc": "Abhisheka with sacred panchamrita"
       },
       {
-        "name": "Nada Aradhana",
-        "time": "11:50 AM",
-        "desc": "Acoustic offering with bells and singing bowls"
+        "name": "Mahamangalarathi",
+        "time": "12:00 PM",
+        "desc": "Noon golden crown deeparadhana"
       },
       {
-        "name": "Evening Aradhana",
-        "time": "05:50 PM",
-        "desc": "Sunset lamp offering"
+        "name": "Rathri Pooja",
+        "time": "07:30 PM",
+        "desc": "Evening floral shringara"
+      }
+    ]
+  },
+  {
+    "id": "dharmasthala_manjunatha",
+    "name": "Shri Kshetra Dharmasthala",
+    "hindiName": "श्री क्षेत्र धर्मस्थल मंजुनाथ स्वामी (पूजा व अन्नदान)",
+    "deity": "Lord Manjunatha (Shiva)",
+    "category": "karnataka",
+    "location": "Dharmasthala, Karnataka, India",
+    "state": "Karnataka",
+    "country": "India",
+    "videoId": "Vg3XIfzoN6w",
+    "officialTrust": "Shri Kshetra Dharmasthala Trust",
+    "liveStreamUrl": "https://www.youtube.com/embed/Vg3XIfzoN6w?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=Vg3XIfzoN6w",
+    "imageUrl": "/images/dharma.jpg",
+    "icon": "🌾",
+    "coords": {
+      "lat": 12.9525,
+      "lng": 75.3852
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 3890,
+    "speciality": "Sacred Annadana feeding thousands of pilgrims daily on Netravati river",
+    "mantra": "ॐ श्री मंजुनाथाय नमः | सत्यं धर्मं दया शांति",
+    "aartis": [
+      {
+        "name": "Usha Kala Pooja",
+        "time": "06:30 AM",
+        "desc": "Dawn abhisheka and archana"
+      },
+      {
+        "name": "Mahapooja",
+        "time": "12:30 PM",
+        "desc": "Noon grand aarti & Annadana blessings"
+      },
+      {
+        "name": "Rathri Deeparadhana",
+        "time": "07:30 PM",
+        "desc": "Night lamp illuminations"
+      }
+    ]
+  },
+  {
+    "id": "murudeshwar_shiva",
+    "name": "Murudeshwar Shiva Mandir",
+    "hindiName": "मुरुडेश्वर शिव मंदिर कर्नाटक (समुद्र तट दर्शन)",
+    "deity": "Lord Shiva (Atmalinga)",
+    "category": "karnataka",
+    "location": "Murudeshwar, Coastal Karnataka, India",
+    "state": "Karnataka",
+    "country": "India",
+    "videoId": "5D3CeeZ6X1s",
+    "officialTrust": "Murudeshwar Temple Trust",
+    "liveStreamUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=5D3CeeZ6X1s",
+    "imageUrl": "/images/ellora_kailasa.jpg",
+    "icon": "🔱",
+    "coords": {
+      "lat": 14.0942,
+      "lng": 74.4849
+    },
+    "rating": "4.9 ★",
+    "devoteesOnline": 2980,
+    "speciality": "World's 2nd Tallest Shiva Statue (123 ft) on the Arabian Sea",
+    "mantra": "ॐ तत्पुरुषाय विद्महे महादेवाय धीमहि तन्नो रुद्रः प्रचोदयात्",
+    "aartis": [
+      {
+        "name": "Morning Darshana",
+        "time": "06:00 AM",
+        "desc": "Sea-side sunrise aarti"
+      },
+      {
+        "name": "Madhyahna Pooja",
+        "time": "12:30 PM",
+        "desc": "Noon Bilva archana"
+      },
+      {
+        "name": "Sunset Deeparadhana",
+        "time": "07:00 PM",
+        "desc": "Evening ocean illumination"
+      }
+    ]
+  },
+  {
+    "id": "meenakshi_madurai",
+    "name": "Meenakshi Sundareswarar Temple",
+    "hindiName": "श्री मीनाक्षी सुंदरेश्वरर मंदिर मदुरै (दीपारधना)",
+    "deity": "Goddess Meenakshi & Lord Sundareswarar",
+    "category": "major",
+    "location": "Madurai, Tamil Nadu, India",
+    "state": "Tamil Nadu",
+    "country": "India",
+    "videoId": "r1PQXBUjpqM",
+    "officialTrust": "Arulmigu Meenakshi Sundareswarar Temple Trust",
+    "liveStreamUrl": "https://www.youtube.com/embed/r1PQXBUjpqM?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=r1PQXBUjpqM",
+    "imageUrl": "/images/meenakshi.jpg",
+    "icon": "🦚",
+    "coords": {
+      "lat": 9.9195,
+      "lng": 78.1193
+    },
+    "rating": "4.9 ★",
+    "devoteesOnline": 2750,
+    "speciality": "14 Towering Gopurams with 33,000 sculpted deities & Golden Lotus Tank",
+    "mantra": "ॐ श्री मीनाक्षी देव्यै नमः | मातङ्गी जय माँ",
+    "aartis": [
+      {
+        "name": "Thiruvanandal",
+        "time": "05:00 AM",
+        "desc": "Morning awakening with nadaswaram"
+      },
+      {
+        "name": "Uchikalam",
+        "time": "11:30 AM",
+        "desc": "Midday pooja at Golden Lotus Tank"
+      },
+      {
+        "name": "Sayaratchai",
+        "time": "06:30 PM",
+        "desc": "Grand evening camphor Deeparadhana"
       }
     ]
   }
