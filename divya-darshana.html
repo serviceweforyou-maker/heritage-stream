@@ -12,19 +12,19 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divya Darshana 360™ | Official Live Temple Streams, Virtual Aarti & Daily Panchang</title>
-  <meta name="description" content="Watch official Live YouTube Darshana and perform virtual Aarti at top sacred temples: Shirdi Sai Baba, Tirupati Balaji SVBC, Kashi Vishwanath, Ujjain Mahakal, Somnath, ISKCON, and more. Authentic temple bells, flower showers, and live Aarti schedules for seniors and devotees.">
-  <meta name="keywords" content="Shirdi Sai Baba official live YouTube, Tirupati Balaji live stream SVBC TTD, Kashi Vishwanath live Aarti, Mahakaleshwar live Bhasma Aarti, Somnath 24/7 live stream, live temple darshana worldwatcher, virtual aarti online, hindu temple bell sound online, daily panchang live">
+  <title>Divya Darshana 360™ | 20+ Official 24/7 Live Temple Streams, Multi-Cam Wall & Virtual Aarti</title>
+  <meta name="description" content="Watch 20+ official 24/7 Live Temple streams: Shirdi Sai Baba, Tirupati Balaji, Kashi Vishwanath, Ujjain Mahakal, Ayodhya Ram Lalla, Somnath, ISKCON, Vaishno Devi, Puri Jagannath, Haridwar Ganga Aarti & more. Multi-cam CCTV view, authentic temple bells, and virtual Aarti.">
+  <meta name="keywords" content="Shirdi Sai Baba live, Tirupati Balaji live stream, Kashi Vishwanath live darshan, Mahakaleshwar live Bhasma Aarti, Ayodhya Ram Mandir live, Somnath live stream, Vaishno Devi live aarti, live temple darshana worldwatcher, templewatcher live, virtual aarti online, hindu temple bell sound online">
   <link rel="canonical" href="https://www.sanatana360.com/divya-darshana.html">
   
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Divya Darshana 360™ — Official Live Temple Watcher & Virtual Aarti">
-  <meta property="og:description" content="Experience official Live Darshana, ring sacred temple bells, offer golden diyas and flower showers for sacred sanctuaries worldwide.">
+  <meta property="og:title" content="Divya Darshana 360™ — 20+ Official Live Temple Streams & Multi-Cam Wall">
+  <meta property="og:description" content="Watch 20+ live sacred sanctums side-by-side or in full cinematic player with virtual Aarti, temple bells, and flower showers.">
   <meta property="og:image" content="https://www.sanatana360.com/images/venkateswara_tirumala.jpg">
   <meta property="og:url" content="https://www.sanatana360.com/divya-darshana.html">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=99.2">
+  <link rel="stylesheet" href="styles.css?v=99.3">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <script>
@@ -114,40 +114,41 @@
               Sanatana360
             </span>
             <span class="text-[7.5px] font-mono tracking-[0.2em] text-white/40 uppercase leading-tight mt-0.5">
-              Official Temple Live
+              TempleWatcher Live (20 Streams)
             </span>
           </div>
         </a>
 
         <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30">
           <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-          <span class="text-[10px] font-mono font-extrabold text-red-400 uppercase tracking-widest">LIVE DARSHANA &amp; AARTI</span>
+          <span class="text-[10px] font-mono font-extrabold text-red-400 uppercase tracking-widest">20 TEMPLES LIVE</span>
         </div>
       </div>
 
       <!-- Navigation Links -->
       <nav class="hidden lg:flex items-center gap-4 text-xs font-bold text-white/80">
         <a href="/" class="hover:text-gold transition-colors">🏠 Home</a>
-        <a href="/divya-darshana.html" class="text-gold border-b-2 border-gold pb-0.5">🛕 TempleWatcher Live</a>
+        <a href="/divya-darshana.html" class="text-gold border-b-2 border-gold pb-0.5">🛕 Live TempleWatcher</a>
         <a href="/granthalaya.html" class="hover:text-gold transition-colors">📖 26 Granths</a>
         <a href="/vedic-math.html" class="hover:text-gold transition-colors">🧮 Vedic Math</a>
         <a href="/mudra-therapy.html" class="hover:text-gold transition-colors">🧘 Mudra Therapy</a>
         <a href="/panchatantra-audio.html" class="hover:text-gold transition-colors">🎧 Audiobooks</a>
       </nav>
 
-      <!-- Action Buttons -->
+      <!-- Action Buttons & Mode Toggles -->
       <div class="flex items-center gap-2">
+        <!-- Multi-Cam Mode Toggle Button -->
+        <button onclick="toggleMultiCamMode()" id="multicam-toggle-btn" class="px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-purple-500/20 hover:bg-purple-500 text-purple-300 hover:text-white border border-purple-500/40 text-[11px] font-extrabold transition-all flex items-center gap-1.5 cursor-pointer shadow-md shadow-purple-500/20" title="Switch to WorldWatcher Multi-Cam Wall">
+          <span id="multicam-icon">🎛️</span>
+          <span id="multicam-btn-text">Multi-Cam Wall (4-Cam)</span>
+        </button>
+
         <button onclick="toggleAmbientChants()" id="ambient-audio-btn" class="px-2.5 sm:px-3 py-1.5 rounded-xl bg-white/5 hover:bg-gold/20 text-white hover:text-gold border border-white/10 text-[11px] font-bold transition-all flex items-center gap-1.5 cursor-pointer" title="Toggle Om Chanting Audio">
           <span id="ambient-audio-icon">🔇</span>
           <span class="hidden md:inline" id="ambient-audio-text">Vedic Chants</span>
         </button>
 
-        <button onclick="toggleCinemaMode()" class="px-2.5 sm:px-3 py-1.5 rounded-xl bg-gold/15 hover:bg-gold text-gold hover:text-black border border-gold/30 text-[11px] font-extrabold transition-all flex items-center gap-1.5 cursor-pointer shadow-sm shadow-gold/20" title="Full Screen Cinema Mode">
-          <span>📺</span>
-          <span class="hidden sm:inline">Cinema Mode</span>
-        </button>
-
-        <a href="https://wa.me/919900000000?text=Namaste!%20I%20am%20watching%20Official%20Temple%20Live%20on%20Sanatana360" target="_blank" rel="noopener noreferrer" class="px-2.5 sm:px-3 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 text-[11px] font-bold transition-all flex items-center gap-1">
+        <a href="https://wa.me/919900000000?text=Namaste!%20I%20am%20watching%2020%20Official%20Live%20Temple%20Streams%20on%20Sanatana360" target="_blank" rel="noopener noreferrer" class="px-2.5 sm:px-3 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 text-[11px] font-bold transition-all flex items-center gap-1">
           <span>💬</span>
           <span class="hidden sm:inline">WhatsApp</span>
         </a>
@@ -177,7 +178,7 @@
       <div class="flex items-center gap-3 text-[11px]">
         <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-mono font-bold">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span id="live-devotee-counter">6,420</span> Devotees in Live Darshana
+          <span id="live-devotee-counter">18,900</span> Devotees in 20 Live Sanctums
         </div>
         <div class="text-white/40 font-mono hidden md:block" id="live-clock">12:00:00 PM IST</div>
       </div>
@@ -185,8 +186,34 @@
     </div>
 
 
-    <!-- ── 3. CINEMATIC LIVE STREAM VIEWER & AARTI SUITE ── -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 items-start">
+    <!-- ── 3. WORLDWATCHER MULTI-CAM WALL CONTAINER (TOGGLEABLE) ── -->
+    <div id="multicam-wall-section" class="hidden bg-surface border-2 border-purple-500/40 rounded-3xl p-4 sm:p-6 space-y-4 shadow-2xl">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-white/10 pb-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🎛️</span>
+            <h3 class="text-lg font-bold font-serif text-white">WorldWatcher Live Multi-Cam Sanctum Wall</h3>
+          </div>
+          <p class="text-xs text-purple-300 mt-0.5">Watch top 4 sacred temples streaming simultaneously in real-time!</p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-white/60 font-mono">Select Layout:</span>
+          <button onclick="setMultiCamLayout(4)" id="layout-4-btn" class="px-3 py-1 rounded-lg bg-gold text-black font-bold text-xs">4 Streams</button>
+          <button onclick="setMultiCamLayout(6)" id="layout-6-btn" class="px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-xs">6 Streams</button>
+          <button onclick="toggleMultiCamMode()" class="px-3 py-1 rounded-lg bg-red-600/30 hover:bg-red-600 text-red-300 hover:text-white font-bold text-xs">✕ Close Wall</button>
+        </div>
+      </div>
+
+      <!-- Multi-Cam Video Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="multicam-grid-canvas">
+        <!-- Dynamically rendered iframes -->
+      </div>
+    </div>
+
+
+    <!-- ── 4. CINEMATIC LIVE STREAM VIEWER & AARTI SUITE (SPOTLIGHT PLAYER) ── -->
+    <div id="spotlight-player-section" class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 items-start">
       
       <!-- Left 2 Cols: 16:9 Stream Canvas + Interactive Aarti Bar -->
       <div class="lg:col-span-2 space-y-4">
@@ -246,7 +273,7 @@
         </div>
 
 
-        <!-- ── 4. 🪔 INTERACTIVE VIRTUAL AARTI SUITE (For Seniors & Devotees) ── -->
+        <!-- ── 5. 🪔 INTERACTIVE VIRTUAL AARTI SUITE (For Seniors & Devotees) ── -->
         <div class="bg-surface border border-surfaceBorder rounded-3xl p-4 sm:p-5 space-y-3">
           
           <div class="flex items-center justify-between border-b border-white/10 pb-3">
@@ -339,12 +366,12 @@
             <h2 class="text-xl sm:text-2xl font-bold font-serif text-white mt-1" id="detail-title">
               Shirdi Sai Baba Samadhi Mandir
             </h2>
-            <p class="text-xs text-gold/80 font-serif" id="detail-hindi">श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती)</p>
+            <p class="text-xs text-gold/80 font-serif" id="detail-hindi">श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती व दर्शन)</p>
             <p class="text-xs text-emerald-400 font-mono text-[10px] mt-1" id="detail-trust">
               🏛️ Source: Shri Saibaba Sansthan Trust (SSST), Shirdi
             </p>
             <p class="text-xs text-white/60 mt-2 leading-relaxed" id="detail-speciality">
-              Live Darshana &amp; Aarti from the Samadhi Mandir of Sai Baba in Shirdi.
+              Official 24/7 Live Darshana &amp; Aarti from the sacred Samadhi Mandir of Sai Baba in Shirdi.
             </p>
           </div>
 
@@ -414,26 +441,25 @@
     </div>
 
 
-    <!-- ── 5. WORLDWATCHER MULTI-CAM GRID & TEMPLE SELECTOR CAROUSEL ── -->
+    <!-- ── 6. ALL 20 SACRED LIVE TEMPLE STREAM SWITCHER CAROUSEL ── -->
     <div class="bg-surface border border-surfaceBorder rounded-3xl p-4 sm:p-6 space-y-4">
       
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-surfaceBorder pb-4">
         <div>
           <div class="flex items-center gap-2">
             <span class="text-xl">🌐</span>
-            <h3 class="text-lg font-bold font-serif text-white">Official Live Temple Stream Switcher</h3>
+            <h3 class="text-lg font-bold font-serif text-white">Official 24/7 Live Temple Stream Switcher</h3>
           </div>
-          <p class="text-xs text-white/50 mt-0.5">Direct live Aarti &amp; sanctum video feeds from Official Mandir Trusts</p>
+          <p class="text-xs text-white/50 mt-0.5">Watch genuine 24/7 live video feeds from 20 top sanctums worldwide</p>
         </div>
 
         <!-- Filter Tabs -->
         <div class="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-black/60 border border-white/10 text-xs">
-          <button onclick="filterCategory('all')" class="cat-btn px-3 py-1.5 rounded-xl font-bold transition-all bg-gold text-black" data-cat="all">All Temples (15)</button>
+          <button onclick="filterCategory('all')" class="cat-btn px-3 py-1.5 rounded-xl font-bold transition-all bg-gold text-black" data-cat="all">All Temples (20)</button>
           <button onclick="filterCategory('major')" class="cat-btn px-3 py-1.5 rounded-xl font-bold text-white/70 hover:text-white transition-all" data-cat="major">👑 Major Sanctums</button>
           <button onclick="filterCategory('jyotirlinga')" class="cat-btn px-3 py-1.5 rounded-xl font-bold text-white/70 hover:text-white transition-all" data-cat="jyotirlinga">🔱 Jyotirlinga</button>
           <button onclick="filterCategory('chardham')" class="cat-btn px-3 py-1.5 rounded-xl font-bold text-white/70 hover:text-white transition-all" data-cat="chardham">🏔️ Char Dham</button>
           <button onclick="filterCategory('karnataka')" class="cat-btn px-3 py-1.5 rounded-xl font-bold text-white/70 hover:text-white transition-all" data-cat="karnataka">🛕 Karnataka</button>
-          <button onclick="filterCategory('global')" class="cat-btn px-3 py-1.5 rounded-xl font-bold text-white/70 hover:text-white transition-all" data-cat="global">🌏 Global</button>
         </div>
       </div>
 
@@ -447,58 +473,39 @@
   </main>
 
 
-  <!-- ── 6. FOOTER ── -->
-  <footer class="bg-[#050608] border-t border-white/[0.08] text-white/60 py-10 px-4 sm:px-6 mt-12">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-6 text-xs">
-      <div>
-        <div class="flex items-center gap-2 mb-3">
-          <span class="text-xl">⚜️</span>
-          <span class="text-base font-bold font-cinzel text-white">Sanatana360</span>
+  <!-- ── 7. FOOTER ── -->
+  <footer class="bg-black/90 border-t border-surfaceBorder mt-12 py-10 px-4 text-xs text-gray-400">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center text-gold font-bold">⚜️</div>
+        <div>
+          <p class="font-cinzel text-white font-bold tracking-wider">Sanatana360 Divya Darshana</p>
+          <p class="text-[10px] text-gray-500">Live Sacred Streams from Official Temple Trusts &amp; Ashrams</p>
         </div>
-        <p class="leading-relaxed text-white/50">
-          Divya Darshana 360™ connects devotees directly with verified official temple trusts and live sanctum broadcasts worldwide.
-        </p>
       </div>
 
-      <div>
-        <h4 class="font-bold text-white uppercase tracking-wider text-xs mb-3 font-serif">Verified Live Feeds</h4>
-        <ul class="space-y-1.5 text-white/60 text-[11px]">
-          <li>• Shri Saibaba Sansthan Trust Shirdi (Live)</li>
-          <li>• Tirumala Tirupati Balaji (SVBC TTD Live)</li>
-          <li>• Shree Kashi Vishwanath Mandir Trust (Live)</li>
-          <li>• Shri Mahakaleshwar Ujjain (Bhasma Aarti Live)</li>
-          <li>• Shree Somnath Trust Gujarat (Live)</li>
-        </ul>
+      <div class="flex flex-wrap gap-4 text-xs">
+        <a href="/" class="hover:text-gold transition-colors">Home</a>
+        <a href="/granthalaya.html" class="hover:text-gold transition-colors">Granthalaya</a>
+        <a href="/vedic-math.html" class="hover:text-gold transition-colors">Vedic Math</a>
+        <a href="/mudra-therapy.html" class="hover:text-gold transition-colors">Mudra Therapy</a>
+        <a href="/panchatantra-audio.html" class="hover:text-gold transition-colors">Panchatantra Audio</a>
       </div>
 
-      <div>
-        <h4 class="font-bold text-white uppercase tracking-wider text-xs mb-3 font-serif">Quick Discoveries</h4>
-        <ul class="space-y-1.5">
-          <li><a href="/mudra-therapy.html" class="hover:text-gold transition-colors">🧘 Mudra Therapy for Health</a></li>
-          <li><a href="/vedic-math.html" class="hover:text-gold transition-colors">🧮 3-Second Vedic Math Lab</a></li>
-          <li><a href="/granthalaya.html" class="hover:text-gold transition-colors">📖 26 Sacred Granth E-Books</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-bold text-white uppercase tracking-wider text-xs mb-3 font-serif">Blessings &amp; Support</h4>
-        <p class="text-white/50 leading-relaxed mb-3">
-          MANJUNATH ENTERPRISE &bull; Bangalore, India<br>
-          Contact: service.weforyou@gmail.com
-        </p>
-        <a href="https://wa.me/919900000000?text=Namaste!%20I%20have%20a%20question%20about%20Sanatana360" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline font-bold flex items-center gap-1">
-          <span>💬</span> WhatsApp Instant Support
-        </a>
+      <div class="text-center md:text-right text-[11px] text-gray-500 font-mono">
+        © 2026 Sanatana360. Consecrated with Vedic Precision.
       </div>
     </div>
   </footer>
 
 
-  <!-- ── 7. JAVASCRIPT ENGINE & SOUNDSCAPES ── -->
+  <!-- ── 8. JAVASCRIPT ENGINE & MULTI-CAM CONTROLLER ── -->
   <script type="module">
-    import { GLOBAL_TEMPLES_LIVE, MONTHS_LUNAR, TITHIS, NAKSHATRAS } from "./divya-data-prod.js?v=99.2";
+    import { GLOBAL_TEMPLES_LIVE, MONTHS_LUNAR, TITHIS, NAKSHATRAS } from "./divya-data-prod.js?v=99.3";
 
     let activeTemple = GLOBAL_TEMPLES_LIVE[0];
+    let isMultiCamOpen = false;
+    let multiCamCount = 4;
     let isAmbientPlaying = false;
     let audioCtx = null;
     let ambientSynthNode = null;
@@ -590,11 +597,12 @@
 
     function resizeCanvas() {
       if (!canvas) return;
-      canvas.width = canvas.parentElement.clientWidth;
-      canvas.height = canvas.parentElement.clientHeight;
+      const rect = canvas.parentElement.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
     }
     window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+    setTimeout(resizeCanvas, 500);
 
     function startFlowerShowerAnimation() {
       if (!canvas || !ctx) return;
@@ -639,7 +647,7 @@
         ctx.globalAlpha = Math.max(0, p.opacity);
         ctx.translate(p.x, p.y);
         ctx.rotate(p.rot);
-        ctx.font = `${p.size}px serif`;
+        ctx.font = p.size + "px serif";
         ctx.textAlign = 'center';
         ctx.fillText(p.emoji, 0, 0);
         ctx.restore();
@@ -705,21 +713,21 @@
       const x = event && event.clientX ? event.clientX : window.innerWidth / 2;
       const y = event && event.clientY ? event.clientY : window.innerHeight / 2;
 
-      el.style.left = `${x - 12 + (Math.random() - 0.5) * 30}px`;
-      el.style.top = `${y - 20}px`;
+      el.style.left = (x - 12 + (Math.random() - 0.5) * 30) + 'px';
+      el.style.top = (y - 20) + 'px';
       document.body.appendChild(el);
 
       setTimeout(() => el.remove(), 1800);
     }
 
-    // ── 7. TEMPLE SELECTION & SWITCHING ENGINE ──
+    // ── 6. TEMPLE SELECTION & SPOTLIGHT SWITCHING ENGINE ──
     window.switchTemple = function(templeId) {
       const found = GLOBAL_TEMPLES_LIVE.find(t => t.id === templeId);
       if (!found) return;
 
       activeTemple = found;
 
-      // Update Live Video iframe with direct playable video stream
+      // Update Live Video iframe
       const iframe = document.getElementById('temple-live-iframe');
       if (iframe) {
         iframe.src = found.liveStreamUrl;
@@ -728,7 +736,7 @@
       // Update Direct YouTube Link Button
       const ytBtn = document.getElementById('direct-youtube-btn');
       if (ytBtn) {
-        ytBtn.href = found.directYoutubeUrl || `https://www.youtube.com/watch?v=${found.videoId}`;
+        ytBtn.href = found.directYoutubeUrl || ('https://www.youtube.com/watch?v=' + found.videoId);
       }
 
       // Update Top Stream Overlay Bar
@@ -756,10 +764,8 @@
         }
       });
 
-      // Scroll smoothly to video player on mobile
-      if (window.innerWidth < 1024) {
-        document.getElementById('video-stream-container')?.scrollIntoView({ behavior: 'smooth' });
-      }
+      // Scroll smoothly to video player
+      document.getElementById('video-stream-container')?.scrollIntoView({ behavior: 'smooth' });
     };
 
     window.reloadStream = function() {
@@ -774,7 +780,7 @@
       if (!list) return;
 
       if (!aartis || aartis.length === 0) {
-        list.innerHTML = '<div class="text-xs text-white/40">Continuous Daily Darshana (05:00 AM – 10:00 PM)</div>';
+        list.innerHTML = '<div class="text-xs text-white/40">Continuous Daily Live Darshana (24/7)</div>';
         return;
       }
 
@@ -799,7 +805,63 @@
       }
     }
 
-    // ── 8. RENDER MULTI-CAM GRID ──
+    // ── 7. WORLDWATCHER MULTI-CAM CONTROLLER ──
+    window.toggleMultiCamMode = function() {
+      isMultiCamOpen = !isMultiCamOpen;
+      const wallSec = document.getElementById('multicam-wall-section');
+      const btnText = document.getElementById('multicam-btn-text');
+      const btn = document.getElementById('multicam-toggle-btn');
+
+      if (isMultiCamOpen) {
+        wallSec.classList.remove('hidden');
+        btnText.textContent = "Single Player Mode";
+        btn.classList.add('bg-gold', 'text-black');
+        renderMultiCamGrid();
+        wallSec.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        wallSec.classList.add('hidden');
+        btnText.textContent = "Multi-Cam Wall (4-Cam)";
+        btn.classList.remove('bg-gold', 'text-black');
+      }
+    };
+
+    window.setMultiCamLayout = function(count) {
+      multiCamCount = count;
+      document.getElementById('layout-4-btn').className = count === 4 ? "px-3 py-1 rounded-lg bg-gold text-black font-bold text-xs" : "px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-xs";
+      document.getElementById('layout-6-btn').className = count === 6 ? "px-3 py-1 rounded-lg bg-gold text-black font-bold text-xs" : "px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-xs";
+      renderMultiCamGrid();
+    };
+
+    function renderMultiCamGrid() {
+      const container = document.getElementById('multicam-grid-canvas');
+      if (!container) return;
+
+      const selectedTemples = GLOBAL_TEMPLES_LIVE.slice(0, multiCamCount);
+      container.innerHTML = selectedTemples.map((t, idx) => {
+        return `
+          <div class="bg-black rounded-2xl border border-gold/30 overflow-hidden space-y-2 p-2 shadow-lg">
+            <div class="flex items-center justify-between px-2 text-xs">
+              <div class="flex items-center gap-1.5 font-bold text-white truncate">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                <span>CAM ${idx + 1}: ${t.name}</span>
+              </div>
+              <a href="https://www.youtube.com/watch?v=${t.videoId}" target="_blank" class="text-[10px] text-red-400 hover:text-red-300 font-mono font-bold">▶ YouTube</a>
+            </div>
+            <div class="aspect-video w-full rounded-xl overflow-hidden bg-black">
+              <iframe 
+                class="w-full h-full object-cover border-0" 
+                src="https://www.youtube.com/embed/${t.videoId}?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1" 
+                title="${t.name} Live Stream"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ── 8. RENDER MULTI-CAM GRID SELECTOR (20 TEMPLES) ──
     function renderTempleGrid(temples) {
       const container = document.getElementById('temple-grid-container');
       if (!container) return;
@@ -816,10 +878,10 @@
               <img src="${t.imageUrl}" alt="${t.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.src='/images/meenakshi.jpg'" />
               <div class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-md bg-red-600/90 text-white font-mono font-bold text-[8.5px] flex items-center gap-1 shadow-sm">
                 <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
-                <span>AARTI LIVE</span>
+                <span>24/7 LIVE</span>
               </div>
               <div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded-md bg-black/70 text-gold font-mono text-[9px]">
-                ${t.icon} ${t.country}
+                ${t.icon} ${t.state}
               </div>
             </div>
 
@@ -830,7 +892,7 @@
 
             <div class="flex items-center justify-between text-[9.5px] text-white/50 border-t border-white/5 pt-1.5 font-mono">
               <span class="text-emerald-400">● Live Feed</span>
-              <span>${t.devoteesOnline} 🙏</span>
+              <span>${t.devoteesOnline.toLocaleString()} 🙏</span>
             </div>
           </div>
         `;
@@ -855,132 +917,139 @@
       }
     };
 
-    // ── 10. AMBIENT VEDIC CHANTS ──
+    // ── 10. COPY MANTRA & WHATSAPP SHARING ──
+    window.copyMantra = function() {
+      if (!activeTemple) return;
+      navigator.clipboard.writeText(activeTemple.mantra);
+      alert("✅ Sacred Mantra copied to clipboard:\n\n" + activeTemple.mantra);
+    };
+
+    window.shareDarshana = function() {
+      if (!activeTemple) return;
+      const text = "Namaste! Watch 24/7 Official Live Darshana & Aarti of " + activeTemple.name + " on Sanatana360:\nhttps://www.sanatana360.com/divya-darshana.html";
+      if (navigator.share) {
+        navigator.share({ title: activeTemple.name + ' Live Darshana', text, url: 'https://www.sanatana360.com/divya-darshana.html' });
+      } else {
+        navigator.clipboard.writeText(text);
+        alert("✅ Live Darshana link copied to share!");
+      }
+    };
+
+    window.shareWhatsAppBlessing = function() {
+      if (!activeTemple) return;
+      const msg = encodeURIComponent(
+        "🙏 *DIVYA DARSHANA 360™ BLESSING* 🙏\n\n" +
+        "🛕 *Temple:* " + activeTemple.name + "\n" +
+        "✨ *Deity:* " + activeTemple.deity + "\n" +
+        "🕉️ *Sacred Mantra:* " + activeTemple.mantra + "\n\n" +
+        "🔴 *Watch Official Live Aarti & Darshana here:*\n" +
+        "https://www.sanatana360.com/divya-darshana.html\n\n" +
+        "_May you and your family be blessed with health, peace, and abundance._"
+      );
+      window.open('https://api.whatsapp.com/send?text=' + msg, '_blank');
+    };
+
+    window.toggleVideoFullscreen = function() {
+      const container = document.getElementById('video-stream-container');
+      if (!container) return;
+      if (!document.fullscreenElement) {
+        container.requestFullscreen?.() || container.webkitRequestFullscreen?.();
+      } else {
+        document.exitFullscreen?.() || document.webkitExitFullscreen?.();
+      }
+    };
+
+    // ── 11. AMBIENT 136.1 Hz COSMIC OM SYNTHESIZER ──
     window.toggleAmbientChants = function() {
       const btn = document.getElementById('ambient-audio-btn');
       const icon = document.getElementById('ambient-audio-icon');
       const text = document.getElementById('ambient-audio-text');
 
       if (!isAmbientPlaying) {
-        try {
-          const ctx = getAudioContext();
-          const now = ctx.currentTime;
-
-          const osc1 = ctx.createOscillator();
-          const osc2 = ctx.createOscillator();
-          const gainNode = ctx.createGain();
-
-          osc1.type = 'sine';
-          osc1.frequency.setValueAtTime(136.1, now);
-
-          osc2.type = 'sine';
-          osc2.frequency.setValueAtTime(272.2, now);
-
-          gainNode.gain.setValueAtTime(0.12, now);
-
-          osc1.connect(gainNode);
-          osc2.connect(gainNode);
-          gainNode.connect(ctx.destination);
-
-          osc1.start();
-          osc2.start();
-
-          ambientSynthNode = { osc1, osc2, gainNode };
-          isAmbientPlaying = true;
-
-          if (icon) icon.textContent = '🔊';
-          if (text) text.textContent = 'Chants: ON';
-          if (btn) btn.classList.add('border-gold', 'text-gold');
-        } catch (e) {
-          console.warn("Ambient audio start error:", e);
-        }
+        startCosmicOmAudio();
+        isAmbientPlaying = true;
+        icon.textContent = "🔊";
+        text.textContent = "Om Drone (On)";
+        btn.classList.add('bg-gold/20', 'text-gold', 'border-gold/40');
       } else {
-        if (ambientSynthNode) {
-          try {
-            ambientSynthNode.osc1.stop();
-            ambientSynthNode.osc2.stop();
-          } catch (e) {}
-          ambientSynthNode = null;
-        }
+        stopCosmicOmAudio();
         isAmbientPlaying = false;
-        if (icon) icon.textContent = '🔇';
-        if (text) text.textContent = 'Vedic Chants';
-        if (btn) btn.classList.remove('border-gold', 'text-gold');
+        icon.textContent = "🔇";
+        text.textContent = "Vedic Chants";
+        btn.classList.remove('bg-gold/20', 'text-gold', 'border-gold/40');
       }
     };
 
-    // ── 11. FULLSCREEN & SHARING HELPERS ──
-    window.toggleCinemaMode = function() {
-      const elem = document.documentElement;
-      if (!document.fullscreenElement) {
-        if (elem.requestFullscreen) elem.requestFullscreen();
-      } else {
-        if (document.exitFullscreen) document.exitFullscreen();
-      }
-    };
+    function startCosmicOmAudio() {
+      try {
+        const ctx = getAudioContext();
+        const baseFreq = 136.1; // Cosmic Om frequency
 
-    window.toggleVideoFullscreen = function() {
-      const frame = document.getElementById('video-stream-container');
-      if (frame) {
-        if (!document.fullscreenElement) {
-          if (frame.requestFullscreen) frame.requestFullscreen();
-        } else {
-          if (document.exitFullscreen) document.exitFullscreen();
-        }
-      }
-    };
+        const osc1 = ctx.createOscillator();
+        const osc2 = ctx.createOscillator();
+        const osc3 = ctx.createOscillator();
 
-    window.shareDarshana = function() {
-      const url = window.location.href;
-      if (navigator.share) {
-        navigator.share({
-          title: activeTemple.name + ' — Official Live Temple Darshana',
-          text: 'Namaste! Experience official Live Darshana & Aarti at ' + activeTemple.name + ' on Sanatana360.',
-          url: url
-        }).catch(() => {});
-      } else {
-        navigator.clipboard.writeText(url);
-        alert('📋 Live Darshana link copied to clipboard! Share with your family and elders.');
-      }
-    };
+        const gain1 = ctx.createGain();
+        const gain2 = ctx.createGain();
+        const masterGain = ctx.createGain();
 
-    window.shareWhatsAppBlessing = function() {
-      const msg = encodeURIComponent(
-        '🙏 *Official Live Darshana & Aarti Blessings from ' + activeTemple.name + '* 🛕\n\n' +
-        '✨ Deity: ' + activeTemple.deity + '\n' +
-        '🏛️ Official Trust: ' + activeTemple.officialTrust + '\n' +
-        '📍 Location: ' + activeTemple.location + '\n' +
-        '🕉️ Sacred Mantra: ' + activeTemple.mantra + '\n\n' +
-        'Watch Official Live Aarti & Ring Temple Bell on Sanatana360:\n' +
-        window.location.href
-      );
-      window.open('https://wa.me/?text=' + msg, '_blank');
-    };
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(baseFreq, ctx.currentTime);
 
-    window.copyMantra = function() {
-      navigator.clipboard.writeText(activeTemple.mantra);
-      alert('📋 Mantra copied: ' + activeTemple.mantra);
-    };
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(baseFreq * 2, ctx.currentTime); // 272.2 Hz harmonic
 
-    function updateClock() {
-      const now = new Date();
-      const clock = document.getElementById('live-clock');
-      if (clock) {
-        clock.textContent = now.toLocaleTimeString('en-IN', { hour12: true });
-      }
+        osc3.type = 'triangle';
+        osc3.frequency.setValueAtTime(baseFreq / 2, ctx.currentTime); // 68.05 Hz sub-bass
 
-      const counter = document.getElementById('live-devotee-counter');
-      if (counter && Math.random() > 0.7) {
-        const current = parseInt(counter.textContent.replace(/,/g, '')) || 6420;
-        const delta = Math.floor((Math.random() - 0.48) * 12);
-        counter.textContent = (current + delta).toLocaleString();
+        gain1.gain.setValueAtTime(0.15, ctx.currentTime);
+        gain2.gain.setValueAtTime(0.08, ctx.currentTime);
+        masterGain.gain.setValueAtTime(0.2, ctx.currentTime);
+
+        osc1.connect(gain1);
+        osc2.connect(gain2);
+        osc3.connect(masterGain);
+
+        gain1.connect(masterGain);
+        gain2.connect(masterGain);
+        masterGain.connect(ctx.destination);
+
+        osc1.start();
+        osc2.start();
+        osc3.start();
+
+        ambientSynthNode = { osc1, osc2, osc3, masterGain };
+      } catch (err) {
+        console.warn("Ambient audio error:", err);
       }
     }
-    setInterval(updateClock, 1000);
 
-    renderTempleGrid(GLOBAL_TEMPLES_LIVE);
-    switchTemple(GLOBAL_TEMPLES_LIVE[0].id);
+    function stopCosmicOmAudio() {
+      if (ambientSynthNode) {
+        try {
+          ambientSynthNode.osc1.stop();
+          ambientSynthNode.osc2.stop();
+          ambientSynthNode.osc3.stop();
+        } catch (e) {}
+        ambientSynthNode = null;
+      }
+    }
 
+    // ── 12. INITIALIZATION ──
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTempleGrid(GLOBAL_TEMPLES_LIVE);
+      renderAartiTimetable(activeTemple.aartis);
+      
+      // Update Live Clock
+      setInterval(() => {
+        const clockEl = document.getElementById('live-clock');
+        if (clockEl) {
+          const now = new Date();
+          clockEl.textContent = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata' }) + ' IST';
+        }
+      }, 1000);
+    });
   </script>
+
 </body>
 </html>

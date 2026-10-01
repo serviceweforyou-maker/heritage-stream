@@ -267,9 +267,9 @@ export const KARNATAKA_TEMPLES = [
 
 export const GLOBAL_TEMPLES_LIVE = [
   {
-    "id": "shirdi_sai_mandir",
+    "id": "shirdi_sai",
     "name": "Shirdi Sai Baba Samadhi Mandir",
-    "hindiName": "श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती)",
+    "hindiName": "श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती व दर्शन)",
     "deity": "Shri Sai Baba of Shirdi",
     "category": "major",
     "location": "Shirdi, Ahmednagar, Maharashtra, India",
@@ -286,24 +286,24 @@ export const GLOBAL_TEMPLES_LIVE = [
       "lng": 74.4767
     },
     "rating": "5.0 ★",
-    "devoteesOnline": 6420,
-    "speciality": "Live Darshana & Aarti from the Samadhi Mandir of Sai Baba in Shirdi",
-    "mantra": "ॐ श्री साईंनाथाय नमः | ॐ साईं राम | सब का मालिक एक",
+    "devoteesOnline": 12450,
+    "speciality": "Official 24/7 Live Darshana & Aarti from the sacred Samadhi Mandir of Sai Baba in Shirdi",
+    "mantra": "ॐ श्री साईंनाथाय नमः | सब का मालिक एक | ॐ साईं राम",
     "aartis": [
       {
         "name": "Kakad Aarti",
         "time": "04:30 AM",
-        "desc": "Morning auspicious awakening ritual"
+        "desc": "Dawn auspicious awakening ritual"
       },
       {
         "name": "Madhyahna Aarti",
         "time": "12:00 PM",
-        "desc": "Midday Rajbhog offering & Aarti"
+        "desc": "Midday Rajbhog offering & Shringara"
       },
       {
         "name": "Dhoop Aarti",
         "time": "06:30 PM",
-        "desc": "Sunset Deeparadhana & incense"
+        "desc": "Sunset Deeparadhana with camphor & incense"
       },
       {
         "name": "Shej Aarti",
@@ -315,16 +315,16 @@ export const GLOBAL_TEMPLES_LIVE = [
   {
     "id": "tirupati_balaji",
     "name": "Tirumala Sri Venkateswara Swamy",
-    "hindiName": "श्री वेंकटेश्वर स्वामी तिरुपति बालाजी (सुप्रभातम् व दर्शन)",
+    "hindiName": "श्री वेंकटेश्वर स्वामी तिरुपति बालाजी (कल्याणोत्सवम् व दर्शन)",
     "deity": "Lord Venkateswara (Balaji / Maha Vishnu)",
     "category": "major",
     "location": "Tirumala Hills, Tirupati, Andhra Pradesh, India",
     "state": "Andhra Pradesh",
     "country": "India",
-    "videoId": "WBD_ktj_6KU",
-    "officialTrust": "Tirumala Tirupati Devasthanams (TTD / SVBC)",
-    "liveStreamUrl": "https://www.youtube.com/embed/WBD_ktj_6KU?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=WBD_ktj_6KU",
+    "videoId": "XxdarKTmJ8c",
+    "officialTrust": "Tirumala Tirupati Devasthanams (TTD / SVBC Official)",
+    "liveStreamUrl": "https://www.youtube.com/embed/XxdarKTmJ8c?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=XxdarKTmJ8c",
     "imageUrl": "/images/venkateswara_tirumala.jpg",
     "icon": "🛕",
     "coords": {
@@ -332,8 +332,8 @@ export const GLOBAL_TEMPLES_LIVE = [
       "lng": 79.35
     },
     "rating": "5.0 ★",
-    "devoteesOnline": 8150,
-    "speciality": "Official Live Suprabhatam, Kalyanotsavam & Darshana from Tirumala",
+    "devoteesOnline": 18900,
+    "speciality": "Official 24/7 Live Suprabhatam, Kalyanotsavam & Srivari Darshana from Tirumala",
     "mantra": "ॐ नमो वेङ्कटेशाय | गोविन्दा गोविन्दा | श्रीनिवास गोविन्दा",
     "aartis": [
       {
@@ -347,7 +347,7 @@ export const GLOBAL_TEMPLES_LIVE = [
         "desc": "Golden flower and garland decoration"
       },
       {
-        "name": "Kalyanotsavam",
+        "name": "Srivari Kalyanotsavam",
         "time": "11:30 AM",
         "desc": "Divine celestial wedding ceremony"
       },
@@ -360,17 +360,17 @@ export const GLOBAL_TEMPLES_LIVE = [
   },
   {
     "id": "kashi_vishwanath",
-    "name": "Kashi Vishwanath Jyotirlinga",
-    "hindiName": "श्री काशी विश्वनाथ ज्योतिर्लिंग (मंगला व गंगा आरती)",
+    "name": "Shree Kashi Vishwanath Jyotirlinga",
+    "hindiName": "श्री काशी विश्वनाथ ज्योतिर्लिंग धाम वाराणसी (लाइव दर्शन)",
     "deity": "Lord Shiva (Vishwanatha)",
     "category": "jyotirlinga",
     "location": "Varanasi, Uttar Pradesh, India",
     "state": "Uttar Pradesh",
     "country": "India",
-    "videoId": "k5Lz3m9s03M",
+    "videoId": "uRUP4M_5vSo",
     "officialTrust": "Shree Kashi Vishwanath Mandir Trust",
-    "liveStreamUrl": "https://www.youtube.com/embed/k5Lz3m9s03M?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=k5Lz3m9s03M",
+    "liveStreamUrl": "https://www.youtube.com/embed/uRUP4M_5vSo?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=uRUP4M_5vSo",
     "imageUrl": "/images/shiva_neelkanth.jpg",
     "icon": "🔱",
     "coords": {
@@ -378,8 +378,8 @@ export const GLOBAL_TEMPLES_LIVE = [
       "lng": 83.0107
     },
     "rating": "5.0 ★",
-    "devoteesOnline": 5320,
-    "speciality": "Live Mangala Aarti and Grand Ganga Aarti from Varanasi Ghats",
+    "devoteesOnline": 14200,
+    "speciality": "Official Sanctum-Sanctorum Live Darshan from Kashi Vishwanath Dham on Ganga Ghats",
     "mantra": "ॐ नमः शिवाय | कर्पूरगौरं करुणावतारं संसारसारम् भुजगेन्द्रहारम्",
     "aartis": [
       {
@@ -405,18 +405,59 @@ export const GLOBAL_TEMPLES_LIVE = [
     ]
   },
   {
-    "id": "mahakaleshwar_ujjain",
+    "id": "somnath_jyotirlinga",
+    "name": "Shree Somnath Jyotirlinga (1st Jyotirlinga)",
+    "hindiName": "श्री सोमनाथ ज्योतिर्लिंग (प्रथम ज्योतिर्लिंग लाइव दर्शन)",
+    "deity": "Lord Shiva (Someshwara)",
+    "category": "jyotirlinga",
+    "location": "Prabhas Patan, Veraval, Gujarat, India",
+    "state": "Gujarat",
+    "country": "India",
+    "videoId": "uY5YwokiIsY",
+    "officialTrust": "Shree Somnath Trust (Official Channel)",
+    "liveStreamUrl": "https://www.youtube.com/embed/uY5YwokiIsY?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=uY5YwokiIsY",
+    "imageUrl": "/images/ellora_kailasa.jpg",
+    "icon": "🌊",
+    "coords": {
+      "lat": 20.888,
+      "lng": 70.4012
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 9800,
+    "speciality": "First of the 12 Jyotirlingas with continuous Arabian Sea shoreline Aarti & Abhishek",
+    "mantra": "सौराष्ट्रदेशे विशदेऽतिरम्ये ज्योतिर्मयं चन्द्रकलावतंसम् | नमामि सोमनाथम्",
+    "aartis": [
+      {
+        "name": "Pratah Aarti",
+        "time": "07:00 AM",
+        "desc": "Morning ocean breeze Deeparadhana"
+      },
+      {
+        "name": "Madhyahna Aarti",
+        "time": "12:00 PM",
+        "desc": "Noon sacred offering & Shringara"
+      },
+      {
+        "name": "Sandhya Aarti",
+        "time": "07:00 PM",
+        "desc": "Evening Aarti with ocean resonance"
+      }
+    ]
+  },
+  {
+    "id": "mahakal_ujjain",
     "name": "Mahakaleshwar Jyotirlinga Ujjain",
-    "hindiName": "श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन (भस्म आरती)",
+    "hindiName": "श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन (लाइव भस्म आरती व दर्शन)",
     "deity": "Lord Shiva (Dakshinamurti Mahakala)",
     "category": "jyotirlinga",
     "location": "Ujjain, Madhya Pradesh, India",
     "state": "Madhya Pradesh",
     "country": "India",
-    "videoId": "yuO3IWGpagI",
+    "videoId": "H6D_IGx5xOI",
     "officialTrust": "Shri Mahakaleshwar Temple Management Committee",
-    "liveStreamUrl": "https://www.youtube.com/embed/yuO3IWGpagI?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=yuO3IWGpagI",
+    "liveStreamUrl": "https://www.youtube.com/embed/H6D_IGx5xOI?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=H6D_IGx5xOI",
     "imageUrl": "/images/shiva.jpg",
     "icon": "🔱",
     "coords": {
@@ -424,8 +465,8 @@ export const GLOBAL_TEMPLES_LIVE = [
       "lng": 75.7682
     },
     "rating": "5.0 ★",
-    "devoteesOnline": 4940,
-    "speciality": "World-renowned live Bhasma Aarti and Shipra river sanctum",
+    "devoteesOnline": 16500,
+    "speciality": "World-renowned live Bhasma Aarti and Shipra river sacred Darshan",
     "mantra": "ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् | उर्वारुकमिव बन्धनान्मृत्य pushiya",
     "aartis": [
       {
@@ -451,100 +492,64 @@ export const GLOBAL_TEMPLES_LIVE = [
     ]
   },
   {
-    "id": "somnath_jyotirlinga",
-    "name": "Shree Somnath Jyotirlinga",
-    "hindiName": "श्री सोमनाथ ज्योतिर्लिंग (सागर आरती)",
-    "deity": "Lord Shiva (Someshwara)",
-    "category": "jyotirlinga",
-    "location": "Prabhas Patan, Veraval, Gujarat, India",
-    "state": "Gujarat",
+    "id": "ayodhya_ram_lalla",
+    "name": "Shri Ram Janmbhoomi Mandir Ayodhya",
+    "hindiName": "श्री राम जन्मभूमि मंदिर अयोध्या (प्रभु श्री राम लला शृंगार आरती)",
+    "deity": "Bhagwan Shri Ram Lalla Virajman",
+    "category": "major",
+    "location": "Ayodhya Dham, Uttar Pradesh, India",
+    "state": "Uttar Pradesh",
     "country": "India",
-    "videoId": "XG-8f_6FPco",
-    "officialTrust": "Shree Somnath Trust",
-    "liveStreamUrl": "https://www.youtube.com/embed/XG-8f_6FPco?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=XG-8f_6FPco",
-    "imageUrl": "/images/ellora_kailasa.jpg",
-    "icon": "🌊",
+    "videoId": "W8qEqGulnPg",
+    "officialTrust": "Shri Ram Janmbhoomi Teerth Kshetra (DD National Official)",
+    "liveStreamUrl": "https://www.youtube.com/embed/W8qEqGulnPg?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=W8qEqGulnPg",
+    "imageUrl": "/images/hampi.jpg",
+    "icon": "🏹",
     "coords": {
-      "lat": 20.888,
-      "lng": 70.4012
+      "lat": 26.7956,
+      "lng": 82.1943
     },
-    "rating": "4.9 ★",
-    "devoteesOnline": 3150,
-    "speciality": "First of 12 Jyotirlingas with Arabian Sea shoreline Aarti",
-    "mantra": "सौराष्ट्रदेशे विशदेऽतिरम्ये ज्योतिर्मयं चन्द्रकलावतंसम्",
+    "rating": "5.0 ★",
+    "devoteesOnline": 24600,
+    "speciality": "Official Live Sringaar Aarti & Darshana of Prabhu Shri Ram Lalla from the Grand Temple",
+    "mantra": "श्री राम जय राम जय जय राम | ॐ रां रामाय नमः | रघुपति राघव राजा राम",
     "aartis": [
       {
-        "name": "Pratah Aarti",
-        "time": "07:00 AM",
-        "desc": "Morning ocean breeze Deeparadhana"
+        "name": "Mangala Aarti",
+        "time": "04:30 AM",
+        "desc": "Dawn awakening of Balak Ram"
       },
       {
-        "name": "Madhyahna Aarti",
+        "name": "Sringaar Aarti",
+        "time": "06:30 AM",
+        "desc": "Morning royal dress & flower ornament offering"
+      },
+      {
+        "name": "Bhog Aarti",
         "time": "12:00 PM",
-        "desc": "Noon sacred offering & Shringara"
+        "desc": "Rajbhog offering"
       },
       {
         "name": "Sandhya Aarti",
         "time": "07:00 PM",
-        "desc": "Evening Aarti with ocean resonance"
-      }
-    ]
-  },
-  {
-    "id": "siddhivinayak_mumbai",
-    "name": "Shree Siddhivinayak Temple Mumbai",
-    "hindiName": "श्री सिद्धिविनायक गणपति मंदिर मुंबई (लाइव दर्शन)",
-    "deity": "Lord Ganesha (Siddhivinayaka)",
-    "category": "major",
-    "location": "Prabhadevi, Mumbai, Maharashtra, India",
-    "state": "Maharashtra",
-    "country": "India",
-    "videoId": "GdU7vdSe6aU",
-    "officialTrust": "Shree Siddhivinayak Ganapati Temple Trust",
-    "liveStreamUrl": "https://www.youtube.com/embed/GdU7vdSe6aU?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=GdU7vdSe6aU",
-    "imageUrl": "/images/ganesha.jpg",
-    "icon": "🐘",
-    "coords": {
-      "lat": 19.0169,
-      "lng": 72.8304
-    },
-    "rating": "4.9 ★",
-    "devoteesOnline": 3900,
-    "speciality": "Live Ganapati Darshana and Modak offering from Prabhadevi, Mumbai",
-    "mantra": "ॐ गं गणपतये सर्व कार्य सिद्धि कुरु कुरु स्वाहा",
-    "aartis": [
-      {
-        "name": "Kakad Aarti",
-        "time": "05:30 AM",
-        "desc": "Early morning Ganapati prayers"
-      },
-      {
-        "name": "Maha Abhishek",
-        "time": "07:30 AM",
-        "desc": "Panchamrit bath with Modak"
-      },
-      {
-        "name": "Dhoop Aarti",
-        "time": "07:00 PM",
-        "desc": "Evening camphor Deeparadhana"
+        "desc": "Evening golden Deeparadhana"
       }
     ]
   },
   {
     "id": "iskcon_bangalore",
     "name": "ISKCON Sri Radha Krishna Temple",
-    "hindiName": "इस्कॉन श्री राधा कृष्ण मंदिर बेंगलुरु (आरती व दर्शन)",
+    "hindiName": "इस्कॉन श्री राधा कृष्ण मंदिर बेंगलुरु (वैकुंठ हिल लाइव दर्शन)",
     "deity": "Sri Radha Krishnachandra",
     "category": "karnataka",
-    "location": "Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka, India",
+    "location": "Hare Krishna Hill / Vaikuntha Hill, Bengaluru, Karnataka, India",
     "state": "Karnataka",
     "country": "India",
-    "videoId": "tAm3NfRkcbw",
+    "videoId": "pq1fSKRlbc8",
     "officialTrust": "ISKCON Bangalore Society",
-    "liveStreamUrl": "https://www.youtube.com/embed/tAm3NfRkcbw?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=tAm3NfRkcbw",
+    "liveStreamUrl": "https://www.youtube.com/embed/pq1fSKRlbc8?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=pq1fSKRlbc8",
     "imageUrl": "/images/krishna_cover.jpg",
     "icon": "🦚",
     "coords": {
@@ -552,8 +557,8 @@ export const GLOBAL_TEMPLES_LIVE = [
       "lng": 77.5511
     },
     "rating": "5.0 ★",
-    "devoteesOnline": 4200,
-    "speciality": "Live Mangala Aarti, Kirtan & Darshana from Bangalore hilltop sanctum",
+    "devoteesOnline": 7800,
+    "speciality": "Official 24/7 Live Darshana, Mangala Aarti & Mahamantra Kirtan from Vaikuntha Hill",
     "mantra": "हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे | हरे राम हरे राम राम राम हरे हरे",
     "aartis": [
       {
@@ -579,54 +584,331 @@ export const GLOBAL_TEMPLES_LIVE = [
     ]
   },
   {
-    "id": "baps_akshardham",
-    "name": "BAPS Shri Swaminarayan Akshardham",
-    "hindiName": "बीएपीएस स्वामीनारायण अक्षरधाम (भव्य आरती)",
-    "deity": "Bhagwan Swaminarayan",
-    "category": "global",
-    "location": "New Delhi & Robbinsville, USA",
-    "state": "Global",
-    "country": "Global",
-    "videoId": "w-TLCMlLh1Y",
-    "officialTrust": "BAPS Swaminarayan Sanstha",
-    "liveStreamUrl": "https://www.youtube.com/embed/w-TLCMlLh1Y?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=w-TLCMlLh1Y",
-    "imageUrl": "/images/hampi.jpg",
-    "icon": "🏛️",
+    "id": "iskcon_vrindavan",
+    "name": "ISKCON Sri Sri Krishna Balaram Mandir",
+    "hindiName": "इस्कॉन श्री श्री कृष्ण बलराम मंदिर वृन्दावन (लाइव कीर्तन व दर्शन)",
+    "deity": "Sri Sri Krishna Balaram & Radhashyamasundara",
+    "category": "major",
+    "location": "Raman Reti, Vrindavan, Uttar Pradesh, India",
+    "state": "Uttar Pradesh",
+    "country": "India",
+    "videoId": "O2ojNbbB8Iw",
+    "officialTrust": "ISKCON Vrindavan Official",
+    "liveStreamUrl": "https://www.youtube.com/embed/O2ojNbbB8Iw?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=O2ojNbbB8Iw",
+    "imageUrl": "/images/krishna_cover.jpg",
+    "icon": "🦚",
     "coords": {
-      "lat": 28.6127,
-      "lng": 77.2773
+      "lat": 27.5706,
+      "lng": 77.6749
     },
     "rating": "5.0 ★",
-    "devoteesOnline": 3100,
-    "speciality": "Grand Stone-Carved Temple Darshana & Daily Musical Aarti",
-    "mantra": "ॐ स्वामिनारायणाय नमः | ॐ अक्षरपुरुषोत्तमाय नमः",
+    "devoteesOnline": 11200,
+    "speciality": "Continuous Live 24/7 Akhanda Kirtan and Darshana from holy Raman Reti, Vrindavan",
+    "mantra": "जय श्री राधे | राधे कृष्ण राधे श्याम | हरे कृष्ण महामंत्र",
     "aartis": [
       {
         "name": "Mangala Aarti",
-        "time": "06:00 AM",
-        "desc": "Morning peace and harmony prayers"
+        "time": "04:30 AM",
+        "desc": "Auspicious 24-hour kirtan awakening"
+      },
+      {
+        "name": "Darshan Aarti",
+        "time": "07:15 AM",
+        "desc": "Grand deity darshan reveal"
       },
       {
         "name": "Sandhya Aarti",
-        "time": "07:00 PM",
-        "desc": "Musical singing of Thaal and Deeparadhana"
+        "time": "06:30 PM",
+        "desc": "Evening Gaura Aarti"
       }
     ]
   },
   {
-    "id": "badrinath_kedarnath",
-    "name": "Kedarnath & Badrinath Dham (Himalayas)",
-    "hindiName": "श्री बद्रीनाथ - केदारनाथ धाम (हिमालय दर्शन)",
-    "deity": "Lord Shiva & Lord Badrinarayan",
+    "id": "vaishno_devi",
+    "name": "Shri Mata Vaishno Devi Shrine",
+    "hindiName": "श्री माता वैष्णो देवी धाम कटरा (पवित्र भवन लाइव आरती)",
+    "deity": "Maa Vaishno Devi (Maha Kali, Maha Lakshmi, Maha Saraswati)",
+    "category": "major",
+    "location": "Trikuta Hills, Katra, Jammu & Kashmir, India",
+    "state": "Jammu & Kashmir",
+    "country": "India",
+    "videoId": "jD-THm4dJz0",
+    "officialTrust": "Shri Mata Vaishno Devi Shrine Board (Shraddha MH ONE)",
+    "liveStreamUrl": "https://www.youtube.com/embed/jD-THm4dJz0?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=jD-THm4dJz0",
+    "imageUrl": "/images/lakshmibai.jpg",
+    "icon": "🏔️",
+    "coords": {
+      "lat": 33.0308,
+      "lng": 74.949
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 15300,
+    "speciality": "Live Pavitra Bhawan Aarti and Darshan from the Holy Cave atop Trikuta Mountains",
+    "mantra": "जय माता दी | ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे | सर्वमंगल मांगल्ये शिवे सर्वार्थ साधिके",
+    "aartis": [
+      {
+        "name": "Pratah Aarti",
+        "time": "05:00 AM",
+        "desc": "Dawn cave awakening and Pindi Darshan"
+      },
+      {
+        "name": "Sandhya Aarti",
+        "time": "06:30 PM",
+        "desc": "Evening golden lamp recitation"
+      }
+    ]
+  },
+  {
+    "id": "rishikesh_ganga_aarti",
+    "name": "Parmarth Niketan Rishikesh (Ganga Aarti)",
+    "hindiName": "परमार्थ निकेतन ऋषिकेश (भव्य गंगा आरती व यज्ञ)",
+    "deity": "Maa Ganga & Lord Shiva",
+    "category": "major",
+    "location": "Parmarth Niketan Ashram, Rishikesh, Uttarakhand, India",
+    "state": "Uttarakhand",
+    "country": "India",
+    "videoId": "usvU6ox_NQU",
+    "officialTrust": "Parmarth Niketan Ashram Official",
+    "liveStreamUrl": "https://www.youtube.com/embed/usvU6ox_NQU?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=usvU6ox_NQU",
+    "imageUrl": "/images/shiva.jpg",
+    "icon": "🔥",
+    "coords": {
+      "lat": 30.1197,
+      "lng": 78.3117
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 8700,
+    "speciality": "World-famous Live Sunset Ganga Aarti and Havan on the holy banks of Mother Ganga in Rishikesh",
+    "mantra": "ॐ जय गंगे माता | ॐ हर हर गंगे | नमामि गंगे तव पादपंकजम्",
+    "aartis": [
+      {
+        "name": "Pratah Yajna",
+        "time": "07:00 AM",
+        "desc": "Morning Vedic fire oblations"
+      },
+      {
+        "name": "Maha Ganga Aarti",
+        "time": "06:00 PM",
+        "desc": "Sunset multi-tiered bronze lamp Aarti"
+      }
+    ]
+  },
+  {
+    "id": "siddhivinayak_mumbai",
+    "name": "Shree Siddhivinayak Ganapati Temple",
+    "hindiName": "श्री सिद्धिविनायक गणपति मंदिर मुंबई (लाइव आरती व दर्शन)",
+    "deity": "Lord Ganesha (Siddhivinayaka)",
+    "category": "major",
+    "location": "Prabhadevi, Mumbai, Maharashtra, India",
+    "state": "Maharashtra",
+    "country": "India",
+    "videoId": "V2FnGzYYux8",
+    "officialTrust": "Shree Siddhivinayak Ganapati Temple Trust",
+    "liveStreamUrl": "https://www.youtube.com/embed/V2FnGzYYux8?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=V2FnGzYYux8",
+    "imageUrl": "/images/ganesha.jpg",
+    "icon": "🐘",
+    "coords": {
+      "lat": 19.0169,
+      "lng": 72.8304
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 13400,
+    "speciality": "Official Live Ganapati Darshana, Modak Prasad & Camphor Aarti from Mumbai",
+    "mantra": "ॐ गं गणपतये सर्व कार्य सिद्धि कुरु कुरु स्वाहा | वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ",
+    "aartis": [
+      {
+        "name": "Kakad Aarti",
+        "time": "05:30 AM",
+        "desc": "Early morning Ganapati prayers"
+      },
+      {
+        "name": "Maha Abhishek",
+        "time": "07:30 AM",
+        "desc": "Panchamrit bath with Modak"
+      },
+      {
+        "name": "Dhoop Aarti",
+        "time": "07:00 PM",
+        "desc": "Evening camphor Deeparadhana"
+      }
+    ]
+  },
+  {
+    "id": "jagannath_puri",
+    "name": "Shree Jagannath Temple Puri",
+    "hindiName": "श्री जगन्नाथ मंदिर पुरी (नीलाचल लाइव आरती व दर्शन)",
+    "deity": "Lord Jagannath, Balabhadra & Subhadra",
+    "category": "chardham",
+    "location": "Puri, Odisha, India",
+    "state": "Odisha",
+    "country": "India",
+    "videoId": "WD5kyQ4laVs",
+    "officialTrust": "Shree Jagannath Temple Administration (Jay Jagannath TV)",
+    "liveStreamUrl": "https://www.youtube.com/embed/WD5kyQ4laVs?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=WD5kyQ4laVs",
+    "imageUrl": "/images/krishna_cover.jpg",
+    "icon": "🛕",
+    "coords": {
+      "lat": 19.8049,
+      "lng": 85.8179
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 17200,
+    "speciality": "Official 24/7 Live Darshana from the sacred Nilachala Dham and Mahaprasada Sanctum",
+    "mantra": "नीलाचलनिवासाय नित्याय परमात्मने | बलभद्रसुभद्राभ्यां जगन्नाथाय ते नमः",
+    "aartis": [
+      {
+        "name": "Mangala Alati",
+        "time": "05:00 AM",
+        "desc": "First auspicious awakening"
+      },
+      {
+        "name": "Madhyahna Dhupa",
+        "time": "01:00 PM",
+        "desc": "Grand 56 Bhog Mahaprasad offering"
+      },
+      {
+        "name": "Sandhya Alati",
+        "time": "07:00 PM",
+        "desc": "Evening oil lamp offering"
+      }
+    ]
+  },
+  {
+    "id": "tulja_bhavani",
+    "name": "Shri Tulja Bhavani Temple",
+    "hindiName": "श्री तुळजाभवानी माता मंदिर तुळजापूर (लाइव दर्शन)",
+    "deity": "Goddess Tulja Bhavani (Kulswamini)",
+    "category": "major",
+    "location": "Tuljapur, Osmanabad, Maharashtra, India",
+    "state": "Maharashtra",
+    "country": "India",
+    "videoId": "B3r-kt5dK_M",
+    "officialTrust": "Shri Tuljabhavani Temple Trust",
+    "liveStreamUrl": "https://www.youtube.com/embed/B3r-kt5dK_M?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=B3r-kt5dK_M",
+    "imageUrl": "/images/meenakshi.jpg",
+    "icon": "🌺",
+    "coords": {
+      "lat": 18.0069,
+      "lng": 76.0792
+    },
+    "rating": "4.9 ★",
+    "devoteesOnline": 6700,
+    "speciality": "Swayambhu Shakti Peetha and patron deity of Chhatrapati Shivaji Maharaj",
+    "mantra": "ॐ श्री तुळजाभवानी देव्यै नमः | आई राजा उदे उदे",
+    "aartis": [
+      {
+        "name": "Charnamrit Aarti",
+        "time": "05:00 AM",
+        "desc": "Sacred dawn panchamrit abhisheka"
+      },
+      {
+        "name": "Dhoop Aarti",
+        "time": "07:00 PM",
+        "desc": "Evening grand floral deeparadhana"
+      }
+    ]
+  },
+  {
+    "id": "khatu_shyam",
+    "name": "Shree Khatu Shyam Ji Temple",
+    "hindiName": "श्री खाटू श्याम जी मंदिर राजस्थान (लाइव आरती व दर्शन)",
+    "deity": "Barbarika (Khatu Shyam Ji / Haare Ka Sahara)",
+    "category": "major",
+    "location": "Khatu, Sikar, Rajasthan, India",
+    "state": "Rajasthan",
+    "country": "India",
+    "videoId": "aHp8nnOwcpc",
+    "officialTrust": "Shri Shyam Mandir Committee Khatu Dham",
+    "liveStreamUrl": "https://www.youtube.com/embed/aHp8nnOwcpc?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=aHp8nnOwcpc",
+    "imageUrl": "/images/krishna_cover.jpg",
+    "icon": "🚩",
+    "coords": {
+      "lat": 27.4297,
+      "lng": 75.3117
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 10400,
+    "speciality": "Live Pratah Aarti & Shringara Darshan of Haare Ka Sahara Khatu Naresh",
+    "mantra": "ॐ श्री श्याम देवाय नमः | हारे का सहारा बाबा श्याम हमारा",
+    "aartis": [
+      {
+        "name": "Mangala Aarti",
+        "time": "04:30 AM",
+        "desc": "Morning awakening prayers"
+      },
+      {
+        "name": "Shringara Aarti",
+        "time": "07:00 AM",
+        "desc": "Floral crown decoration"
+      },
+      {
+        "name": "Sandhya Aarti",
+        "time": "07:00 PM",
+        "desc": "Evening camphor offering"
+      }
+    ]
+  },
+  {
+    "id": "salasar_balaji",
+    "name": "Shree Salasar Balaji Mandir",
+    "hindiName": "श्री सालासर बालाजी मंदिर राजस्थान (लाइव मंगला आरती)",
+    "deity": "Lord Hanuman (Salasar Balaji)",
+    "category": "major",
+    "location": "Salasar, Churu, Rajasthan, India",
+    "state": "Rajasthan",
+    "country": "India",
+    "videoId": "q58Wan19vns",
+    "officialTrust": "Shree Salasar Balaji Mandir Trust",
+    "liveStreamUrl": "https://www.youtube.com/embed/q58Wan19vns?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=q58Wan19vns",
+    "imageUrl": "/images/dharma.jpg",
+    "icon": "🚩",
+    "coords": {
+      "lat": 27.7126,
+      "lng": 74.7214
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 8900,
+    "speciality": "Unique bearded Hanumanji idol with continuous live Mangala Aarti and Savamani offerings",
+    "mantra": "ॐ श्री सालासर बालाजी नमः | मनोजवं मारुततुल्यवेगं जितेन्द्रियं बुद्धिमतां वरिष्ठम्",
+    "aartis": [
+      {
+        "name": "Mangala Aarti",
+        "time": "05:00 AM",
+        "desc": "Dawn awakening with Hanuman Chalisa"
+      },
+      {
+        "name": "Bhog Aarti",
+        "time": "11:30 AM",
+        "desc": "Churma Prasad offering"
+      },
+      {
+        "name": "Sandhya Aarti",
+        "time": "07:00 PM",
+        "desc": "Evening lamp illumination"
+      }
+    ]
+  },
+  {
+    "id": "kedarnath_dham",
+    "name": "Kedarnath & Badrinath Himalayan Dham",
+    "hindiName": "श्री केदारनाथ - बद्रीनाथ धाम (हिमालय लाइव दर्शन)",
+    "deity": "Lord Shiva & Lord Badri Vishal",
     "category": "chardham",
     "location": "Garhwal Himalayas, Uttarakhand, India",
     "state": "Uttarakhand",
     "country": "India",
-    "videoId": "yYrc-RG_5bI",
+    "videoId": "fURwn8kbRBc",
     "officialTrust": "Shri Badrinath-Kedarnath Temple Committee (BKTC)",
-    "liveStreamUrl": "https://www.youtube.com/embed/yYrc-RG_5bI?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=yYrc-RG_5bI",
+    "liveStreamUrl": "https://www.youtube.com/embed/fURwn8kbRBc?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=fURwn8kbRBc",
     "imageUrl": "/images/hampi.jpg",
     "icon": "🏔️",
     "coords": {
@@ -634,80 +916,44 @@ export const GLOBAL_TEMPLES_LIVE = [
       "lng": 79.0669
     },
     "rating": "5.0 ★",
-    "devoteesOnline": 4800,
-    "speciality": "Sacred Himalayan Darshana of Kedarnath & Badrinath shrines",
+    "devoteesOnline": 9500,
+    "speciality": "Himalayan Snow-Peak Darshana of the Supreme Shiva Sanctum at 3,583 meters",
     "mantra": "ॐ नमो भगवते वासुदेवाय | ॐ नमः शिवाय शुभं कुरु कुरु शिवाय नमः ॐ",
     "aartis": [
       {
         "name": "Maha Abhishek",
         "time": "04:30 AM",
-        "desc": "Holy snowmelt water abhishek"
+        "desc": "Dawn snowmelt water bath"
       },
       {
         "name": "Sandhya Aarti",
         "time": "06:30 PM",
-        "desc": "Evening Aarti amidst Garhwal snow peaks"
+        "desc": "Evening mountain lamp prayer"
       }
     ]
   },
   {
-    "id": "pashupatinath_nepal",
-    "name": "Pashupatinath Temple Kathmandu",
-    "hindiName": "श्री पशुपतिनाथ मंदिर काठमांडू (बागमती महा आरती)",
-    "deity": "Lord Shiva (Pashupatinatha)",
-    "category": "global",
-    "location": "Kathmandu, Nepal",
-    "state": "Bagmati Province",
-    "country": "Nepal",
-    "videoId": "k51UufYI3fg",
-    "officialTrust": "Pashupati Area Development Trust / Nepal Television",
-    "liveStreamUrl": "https://www.youtube.com/embed/k51UufYI3fg?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=k51UufYI3fg",
-    "imageUrl": "/images/shiva_neelkanth.jpg",
-    "icon": "🛕",
-    "coords": {
-      "lat": 27.7104,
-      "lng": 85.3487
-    },
-    "rating": "4.9 ★",
-    "devoteesOnline": 2900,
-    "speciality": "UNESCO World Heritage Pagoda shrine & Bagmati River Maha Aarti",
-    "mantra": "ॐ पशुपतये नमः | ईशानः सर्वविद्यानामीश्वरः सर्वभूतानाम्",
-    "aartis": [
-      {
-        "name": "Morning Rudrabhishek",
-        "time": "05:00 AM",
-        "desc": "Panchamrit bath by Bhatt priests"
-      },
-      {
-        "name": "Bagmati Sandhya Aarti",
-        "time": "06:00 PM",
-        "desc": "Resonant riverbank bell and lamp aarti"
-      }
-    ]
-  },
-  {
-    "id": "udupi_krishna_matha",
+    "id": "udupi_krishna",
     "name": "Sri Krishna Matha Udupi",
-    "hindiName": "श्री कृष्ण मठ उडुपी (कनकन किंडी व महापूजा)",
+    "hindiName": "श्री कृष्ण मठ उडुपी (कनकन किंडी व महापूजा लाइव)",
     "deity": "Lord Krishna (Bala Krishna)",
     "category": "karnataka",
     "location": "Udupi, Karnataka, India",
     "state": "Karnataka",
     "country": "India",
-    "videoId": "o48PvG182gk",
+    "videoId": "8JsL-H7fJy4",
     "officialTrust": "Paryaya Sri Krishna Matha Udupi",
-    "liveStreamUrl": "https://www.youtube.com/embed/o48PvG182gk?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=o48PvG182gk",
+    "liveStreamUrl": "https://www.youtube.com/embed/8JsL-H7fJy4?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=8JsL-H7fJy4",
     "imageUrl": "/images/krishna_cover.jpg",
     "icon": "🐚",
     "coords": {
       "lat": 13.3409,
       "lng": 74.7473
     },
-    "rating": "4.9 ★",
-    "devoteesOnline": 3430,
-    "speciality": "Darshana through Kanakana Kindi window & Paryaya Swamiji Mahapooja",
+    "rating": "5.0 ★",
+    "devoteesOnline": 5600,
+    "speciality": "Darshana through Kanakana Kindi window & Paryaya Swamiji Mahapooja with golden chariot",
     "mantra": "कृष्णाय वासुदेवाय हरये परमात्मने | प्रणत क्लेशनाशाय गोविंदाय नमो नमः",
     "aartis": [
       {
@@ -728,27 +974,68 @@ export const GLOBAL_TEMPLES_LIVE = [
     ]
   },
   {
-    "id": "chamundeshwari_mysore",
+    "id": "meenakshi_madurai",
+    "name": "Meenakshi Sundareswarar Temple",
+    "hindiName": "श्री मीनाक्षी सुंदरेश्वरर मंदिर मदुरै (लाइव दर्शन)",
+    "deity": "Goddess Meenakshi & Lord Sundareswarar",
+    "category": "major",
+    "location": "Madurai, Tamil Nadu, India",
+    "state": "Tamil Nadu",
+    "country": "India",
+    "videoId": "Aicrlohuuug",
+    "officialTrust": "Arulmigu Meenakshi Sundareswarar Temple Trust",
+    "liveStreamUrl": "https://www.youtube.com/embed/Aicrlohuuug?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=Aicrlohuuug",
+    "imageUrl": "/images/meenakshi.jpg",
+    "icon": "🦚",
+    "coords": {
+      "lat": 9.9195,
+      "lng": 78.1193
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 6200,
+    "speciality": "14 Towering Gopurams with 33,000 sculpted deities & Golden Lotus Tank live ceremonies",
+    "mantra": "ॐ श्री मीनाक्षी देव्यै नमः | मातङ्गी जय माँ",
+    "aartis": [
+      {
+        "name": "Thiruvanandal",
+        "time": "05:00 AM",
+        "desc": "Morning awakening with nadaswaram"
+      },
+      {
+        "name": "Uchikalam",
+        "time": "11:30 AM",
+        "desc": "Midday pooja at Golden Lotus Tank"
+      },
+      {
+        "name": "Sayaratchai",
+        "time": "06:30 PM",
+        "desc": "Grand evening camphor Deeparadhana"
+      }
+    ]
+  },
+  {
+    "id": "chamundeshwari_mysuru",
     "name": "Chamundeshwari Temple Mysuru",
-    "hindiName": "श्री चामुंडेश्वरी देवी मंदिर मैसूर (शृंगार व आरती)",
+    "hindiName": "श्री चामुंडेश्वरी देवी मंदिर मैसूर (शृंगार व लाइव दर्शन)",
     "deity": "Goddess Chamundeshwari",
     "category": "karnataka",
     "location": "Chamundi Hills, Mysuru, Karnataka, India",
     "state": "Karnataka",
     "country": "India",
-    "videoId": "0s0Ef_9AOVg",
+    "videoId": "9SBpnTrrXlw",
     "officialTrust": "Chamundeshwari Temple Trust",
-    "liveStreamUrl": "https://www.youtube.com/embed/0s0Ef_9AOVg?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=0s0Ef_9AOVg",
+    "liveStreamUrl": "https://www.youtube.com/embed/9SBpnTrrXlw?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=9SBpnTrrXlw",
     "imageUrl": "/images/lakshmibai.jpg",
     "icon": "🦁",
     "coords": {
       "lat": 12.2748,
       "lng": 76.6785
     },
-    "rating": "4.9 ★",
-    "devoteesOnline": 2650,
-    "speciality": "Crowning Shakti Peetha atop Chamundi Hills overlooking Mysuru",
+    "rating": "5.0 ★",
+    "devoteesOnline": 4900,
+    "speciality": "Crowning Shakti Peetha atop Chamundi Hills overlooking Mysuru palace city",
     "mantra": "ऐं ह्रीं क्लीं चामुण्डायै विच्चे",
     "aartis": [
       {
@@ -769,125 +1056,38 @@ export const GLOBAL_TEMPLES_LIVE = [
     ]
   },
   {
-    "id": "dharmasthala_manjunatha",
-    "name": "Shri Kshetra Dharmasthala",
-    "hindiName": "श्री क्षेत्र धर्मस्थल मंजुनाथ स्वामी (पूजा व अन्नदान)",
-    "deity": "Lord Manjunatha (Shiva)",
-    "category": "karnataka",
-    "location": "Dharmasthala, Karnataka, India",
-    "state": "Karnataka",
-    "country": "India",
-    "videoId": "Vg3XIfzoN6w",
-    "officialTrust": "Shri Kshetra Dharmasthala Trust",
-    "liveStreamUrl": "https://www.youtube.com/embed/Vg3XIfzoN6w?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=Vg3XIfzoN6w",
-    "imageUrl": "/images/dharma.jpg",
-    "icon": "🌾",
+    "id": "pashupatinath_temple",
+    "name": "Pashupatinath Temple Kathmandu",
+    "hindiName": "श्री पशुपतिनाथ मंदिर काठमांडू (बागमती महा आरती व दर्शन)",
+    "deity": "Lord Shiva (Pashupatinatha)",
+    "category": "major",
+    "location": "Kathmandu, Nepal",
+    "state": "Bagmati Province",
+    "country": "Nepal",
+    "videoId": "bi1PDhKGUd4",
+    "officialTrust": "Pashupati Area Development Trust",
+    "liveStreamUrl": "https://www.youtube.com/embed/bi1PDhKGUd4?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=bi1PDhKGUd4",
+    "imageUrl": "/images/shiva_neelkanth.jpg",
+    "icon": "🛕",
     "coords": {
-      "lat": 12.9525,
-      "lng": 75.3852
+      "lat": 27.7104,
+      "lng": 85.3487
     },
     "rating": "5.0 ★",
-    "devoteesOnline": 3890,
-    "speciality": "Sacred Annadana feeding thousands of pilgrims daily on Netravati river",
-    "mantra": "ॐ श्री मंजुनाथाय नमः | सत्यं धर्मं दया शांति",
+    "devoteesOnline": 7100,
+    "speciality": "UNESCO World Heritage Pagoda shrine & Bagmati River Evening Maha Aarti",
+    "mantra": "ॐ पशुपतये नमः | ईशानः सर्वविद्यानामीश्वरः सर्वभूतानाम्",
     "aartis": [
       {
-        "name": "Usha Kala Pooja",
-        "time": "06:30 AM",
-        "desc": "Dawn abhisheka and archana"
-      },
-      {
-        "name": "Mahapooja",
-        "time": "12:30 PM",
-        "desc": "Noon grand aarti & Annadana blessings"
-      },
-      {
-        "name": "Rathri Deeparadhana",
-        "time": "07:30 PM",
-        "desc": "Night lamp illuminations"
-      }
-    ]
-  },
-  {
-    "id": "murudeshwar_shiva",
-    "name": "Murudeshwar Shiva Mandir",
-    "hindiName": "मुरुडेश्वर शिव मंदिर कर्नाटक (समुद्र तट दर्शन)",
-    "deity": "Lord Shiva (Atmalinga)",
-    "category": "karnataka",
-    "location": "Murudeshwar, Coastal Karnataka, India",
-    "state": "Karnataka",
-    "country": "India",
-    "videoId": "5D3CeeZ6X1s",
-    "officialTrust": "Murudeshwar Temple Trust",
-    "liveStreamUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=5D3CeeZ6X1s",
-    "imageUrl": "/images/ellora_kailasa.jpg",
-    "icon": "🔱",
-    "coords": {
-      "lat": 14.0942,
-      "lng": 74.4849
-    },
-    "rating": "4.9 ★",
-    "devoteesOnline": 2980,
-    "speciality": "World's 2nd Tallest Shiva Statue (123 ft) on the Arabian Sea",
-    "mantra": "ॐ तत्पुरुषाय विद्महे महादेवाय धीमहि तन्नो रुद्रः प्रचोदयात्",
-    "aartis": [
-      {
-        "name": "Morning Darshana",
-        "time": "06:00 AM",
-        "desc": "Sea-side sunrise aarti"
-      },
-      {
-        "name": "Madhyahna Pooja",
-        "time": "12:30 PM",
-        "desc": "Noon Bilva archana"
-      },
-      {
-        "name": "Sunset Deeparadhana",
-        "time": "07:00 PM",
-        "desc": "Evening ocean illumination"
-      }
-    ]
-  },
-  {
-    "id": "meenakshi_madurai",
-    "name": "Meenakshi Sundareswarar Temple",
-    "hindiName": "श्री मीनाक्षी सुंदरेश्वरर मंदिर मदुरै (दीपारधना)",
-    "deity": "Goddess Meenakshi & Lord Sundareswarar",
-    "category": "major",
-    "location": "Madurai, Tamil Nadu, India",
-    "state": "Tamil Nadu",
-    "country": "India",
-    "videoId": "r1PQXBUjpqM",
-    "officialTrust": "Arulmigu Meenakshi Sundareswarar Temple Trust",
-    "liveStreamUrl": "https://www.youtube.com/embed/r1PQXBUjpqM?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
-    "directYoutubeUrl": "https://www.youtube.com/watch?v=r1PQXBUjpqM",
-    "imageUrl": "/images/meenakshi.jpg",
-    "icon": "🦚",
-    "coords": {
-      "lat": 9.9195,
-      "lng": 78.1193
-    },
-    "rating": "4.9 ★",
-    "devoteesOnline": 2750,
-    "speciality": "14 Towering Gopurams with 33,000 sculpted deities & Golden Lotus Tank",
-    "mantra": "ॐ श्री मीनाक्षी देव्यै नमः | मातङ्गी जय माँ",
-    "aartis": [
-      {
-        "name": "Thiruvanandal",
+        "name": "Morning Rudrabhishek",
         "time": "05:00 AM",
-        "desc": "Morning awakening with nadaswaram"
+        "desc": "Panchamrit bath by Bhatt priests"
       },
       {
-        "name": "Uchikalam",
-        "time": "11:30 AM",
-        "desc": "Midday pooja at Golden Lotus Tank"
-      },
-      {
-        "name": "Sayaratchai",
-        "time": "06:30 PM",
-        "desc": "Grand evening camphor Deeparadhana"
+        "name": "Bagmati Sandhya Aarti",
+        "time": "06:00 PM",
+        "desc": "Resonant riverbank bell and lamp aarti"
       }
     ]
   }
