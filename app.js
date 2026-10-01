@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=99.6";
-import heritageData from "./data.js?v=99.6";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=99.6";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=101.0";
+import heritageData from "./data.js?v=101.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=101.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -10,32 +10,22 @@ export const API_BASE = '';
 // BACKEND & DATABASE INTEGRATION SERVICE
 // ==========================================
 export class DatabaseService {
-    static async fetchContent() {
-    let raw = null;
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 800);
-      const res = await fetch((API_BASE || '') + '/api/content', { signal: controller.signal });
-      clearTimeout(timeoutId);
-      const contentType = res.headers.get('content-type') || '';
-      if (res.ok && contentType.includes('application/json')) {
-        raw = await res.json();
-      }
-    } catch (err) {
-      // Backend not running or static host, perfectly normal
-    }
-
-    if (!raw || !raw.content || !Array.isArray(raw.content) || raw.content.length === 0) {
-      raw = heritageData || (typeof window !== "undefined" ? window.COURSES_DATA : null);
-    }
-
-    // Normalize schema to support both flat fallback array and split backend tables
-    const categories = raw.categories || [];
+    static normalizeData(raw) {
+    if (!raw) raw = heritageData || (typeof window !== "undefined" ? window.COURSES_DATA : null) || {};
+    const categories = raw.categories || [
+      "Docu-Series",
+      "Audiobooks & Legends",
+      "God Series",
+      "Virtual Tours",
+      "Kids Stories",
+      "Unknown Knowledge",
+      "Wellness & Mudra Shastra"
+    ];
     let content = [];
     let docuSeries = [];
     let audioStories = [];
 
-    if (raw.content) {
+    if (raw.content && Array.isArray(raw.content)) {
       content = raw.content;
     } else {
       docuSeries = raw.docuSeries || [];
@@ -43,15 +33,20 @@ export class DatabaseService {
       content = [...docuSeries, ...audioStories];
     }
 
-    // Dynamic Normalization: Assign fallbacks so all 200+ content items work 100% without "Coming Soon" ribbons!
+    if (!content.length && heritageData && heritageData.content) {
+      content = heritageData.content;
+    }
+
+    // Dynamic Normalization: Assign fallbacks so all 250+ content items work 100%
     content = content.map(item => {
+      if (!item) return null;
       const isAudio = !!item.audioUrl || item.category === "Audiobooks & Legends" || item.category === "Ebook & Audio Series";
       
       // Fallback images
       if (!item.imageUrl) {
-        if (item.category === "God Series" || item.id.includes("shiva") || item.id.includes("vishnu") || item.id.includes("ganesha")) {
+        if (item.category === "God Series" || (item.id && (item.id.includes("shiva") || item.id.includes("vishnu") || item.id.includes("ganesha")))) {
           item.imageUrl = "/images/ganesha.jpg";
-        } else if (item.category === "Kids Stories" || item.id.includes("birbal") || item.id.includes("tenali")) {
+        } else if (item.category === "Kids Stories" || (item.id && (item.id.includes("birbal") || item.id.includes("tenali")))) {
           item.imageUrl = "/images/birbal.jpg";
         } else {
           item.imageUrl = "/images/hampi.jpg";
@@ -60,7 +55,6 @@ export class DatabaseService {
       
       if (isAudio) {
         if (!item.audioUrl) {
-          // Provide clean pre-loaded nature ambient stream
           item.audioUrl = "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg";
         }
         if (!item.narrator) {
@@ -68,8 +62,7 @@ export class DatabaseService {
         }
       } else {
         if (!item.videoUrl) {
-          // Fallback high-quality YouTube documentary links
-          if (item.category === "God Series" || item.id.includes("shiva") || item.id.includes("vishnu") || item.id.includes("ganesha")) {
+          if (item.category === "God Series" || (item.id && (item.id.includes("shiva") || item.id.includes("vishnu") || item.id.includes("ganesha")))) {
             item.videoUrl = "https://www.youtube.com/embed/5D3CeeZ6X1s";
           } else {
             item.videoUrl = "https://www.youtube.com/embed/S_B7y1G84k8";
@@ -77,7 +70,6 @@ export class DatabaseService {
         }
       }
       
-      // Ensure Ebook Page Content is populated
       if (!item.content || !item.content.length) {
         item.content = [
           {
@@ -103,9 +95,8 @@ export class DatabaseService {
       if (!item.year) item.year = "2026";
       
       return item;
-    });
+    }).filter(Boolean);
 
-    // Re-split normalized arrays
     docuSeries = content.filter(x => x.category === "Video Series" || x.category === "Docu-Series" || !!x.videoUrl);
     audioStories = content.filter(x => x.category === "Audiobooks & Legends" || x.category === "Ebook & Audio Series" || (!x.videoUrl && !!x.audioUrl));
 
@@ -115,6 +106,25 @@ export class DatabaseService {
       docuSeries,
       audioStories
     };
+  }
+
+  static async fetchContent() {
+    let raw = heritageData || (typeof window !== "undefined" ? window.COURSES_DATA : null);
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 600);
+      const res = await fetch((API_BASE || '') + '/db.json', { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (res.ok) {
+        const json = await res.json();
+        if (json && (json.content || json.docuSeries)) {
+          raw = json;
+        }
+      }
+    } catch (err) {
+      // Offline or static server
+    }
+    return this.normalizeData(raw);
   }
 
   static getDaysRemaining() {
@@ -330,7 +340,12 @@ class AppController {
     this.audioRateMultiplier = parseFloat(localStorage.getItem('hs_audio_rate') || '1.0');
     this.isStandardRowsRendered = false;
     
-    this.contentData = null;
+    // Synchronously initialize contentData so all sliders, spotlight, and rows render INSTANTLY (0ms latency)
+    try {
+      this.contentData = DatabaseService.normalizeData(heritageData || (typeof window !== "undefined" ? window.COURSES_DATA : null));
+    } catch (e) {
+      this.contentData = null;
+    }
     this.selectedAyurvedaCategory = 'all';
     this.ayurvedaSearchQuery = '';
     this.pranayamaInterval = null;
