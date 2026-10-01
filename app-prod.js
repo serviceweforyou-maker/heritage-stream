@@ -552,12 +552,26 @@ class AppController {
       'ajanta'
     ];
     let slides = [];
+    
+    // 🌟 1. Prepend Dedicated Divya Darshana 360 Live Streaming Hero Slide 🌟
+    slides.push({
+      id: 'divya_darshana_live_spotlight',
+      title: 'Divya Darshana 360™',
+      tagline: 'Experience the Divine — 20+ Official 24/7 Live Temple Streams',
+      description: 'Watch real-time live darshana and aartis from Shirdi Sai Baba, Tirupati Balaji SVBC, Kashi Vishwanath, Ujjain Mahakal, Ayodhya Ram Lalla, Somnath, ISKCON, Vaishno Devi & 20+ global shrines with WorldWatcher Multi-Cam Wall.',
+      category: 'Live Temple Streaming',
+      rating: '5.0 ★',
+      duration: '24/7 Continuous Live',
+      imageUrl: '/images/divya_darshana_banner.jpg',
+      isLiveDarshana: true
+    });
+
     premierIds.forEach(id => {
       const found = allContent.find(x => x.id === id);
       if (found) slides.push(found);
     });
     if (slides.length < 4) {
-      slides = allContent.slice(0, 6);
+      slides = slides.concat(allContent.slice(0, 5));
     }
     if (!slides.length) return;
     let currentIdx = 0;
@@ -567,25 +581,28 @@ class AppController {
         <!-- Slide items -->
         <div id="spotlight-slides-container" class="relative w-full h-full">
           ${slides.map((item, idx) => {
-            const badgeType = item.category === 'Wellness & Mudra Shastra' || (item.id && item.id.includes('mudra')) 
-              ? '🧘 SACRED WELLNESS' 
-              : (item.category === 'God Series' ? '🔱 DIVINE SAGA' : '🏆 PREMIER SAGA');
+            const isLive = !!item.isLiveDarshana;
+            const badgeType = isLive 
+              ? '🔴 24/7 WORLDWATCHER LIVE' 
+              : (item.category === 'Wellness & Mudra Shastra' || (item.id && item.id.includes('mudra')) 
+                ? '🧘 SACRED WELLNESS' 
+                : (item.category === 'God Series' ? '🔱 DIVINE SAGA' : '🏆 PREMIER SAGA'));
             return `
             <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}" data-index="${idx}">
               <img src="${item.imageUrl || '/images/hampi.jpg'}" ${idx > 0 ? 'loading="lazy"' : ''} class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[7500ms] ease-out ${idx === 0 ? 'scale-105' : 'scale-100'}" alt="${item.title}">
               
-              <!-- Hollywood-Grade Multi-Layer Vignette Scrim Overlays -->
+              <!-- Multi-Layer Vignette Scrim Overlays -->
               <div class="absolute inset-0 bg-gradient-to-r from-[#07080c]/95 via-[#07080c]/70 md:via-[#07080c]/35 to-transparent z-10 pointer-events-none md:w-3/4"></div>
               <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/40 to-transparent z-10 pointer-events-none"></div>
               <div class="absolute top-0 left-0 right-0 h-44 bg-gradient-to-b from-black/85 via-black/40 to-transparent z-10 pointer-events-none"></div>
               
-              <!-- Content Details Container (Generously padded to clear 3-tier header) -->
+              <!-- Content Details Container -->
               <div class="max-w-4xl pt-36 sm:pt-40 md:pt-48 lg:pt-52 pb-14 sm:pb-16 px-4 sm:px-8 md:px-14 lg:px-20 h-full flex flex-col justify-end relative z-20">
                 
                 <!-- Badge & Metadata -->
                 <div class="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap">
-                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 text-gold text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider border border-gold/40 shadow-sm backdrop-blur-md">
-                    <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full ${isLive ? 'bg-red-600/30 text-red-300 border-red-500/50 shadow-red-500/20' : 'bg-gold/20 text-gold border-gold/40 shadow-gold/5'} text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider border shadow-sm backdrop-blur-md">
+                    <span class="w-1.5 h-1.5 rounded-full ${isLive ? 'bg-red-500 animate-ping' : 'bg-gold animate-pulse'}"></span>
                     ${badgeType}
                   </span>
                   <span class="text-[10px] sm:text-[11px] font-mono text-white/80 bg-black/60 px-2.5 py-0.5 rounded-full border border-white/15 backdrop-blur-md">
@@ -594,9 +611,15 @@ class AppController {
                   <span class="text-[10px] sm:text-[11px] font-mono text-amber-300 font-bold bg-amber-500/20 px-2.5 py-0.5 rounded-full border border-amber-500/30 backdrop-blur-md">
                     ${item.rating || '9.9 ★'}
                   </span>
-                  <span class="text-[10px] sm:text-[11px] font-mono text-emerald-400 font-bold bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30 backdrop-blur-md hidden sm:inline-block">
-                    4K Ultra HD
-                  </span>
+                  ${isLive ? `
+                    <span class="text-[10px] sm:text-[11px] font-mono text-emerald-400 font-bold bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30 backdrop-blur-md">
+                      20 Temples Active
+                    </span>
+                  ` : `
+                    <span class="text-[10px] sm:text-[11px] font-mono text-emerald-400 font-bold bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30 backdrop-blur-md hidden sm:inline-block">
+                      4K Ultra HD
+                    </span>
+                  `}
                 </div>
 
                 <!-- Title -->
@@ -616,16 +639,29 @@ class AppController {
 
                 <!-- Action Buttons -->
                 <div class="hero-actions flex flex-wrap gap-2.5 sm:gap-3.5 items-center">
-                  <button class="hero-play-slide-btn px-6 sm:px-8 py-3 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-full text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-gold/30 flex items-center gap-2 hover:scale-105 cursor-pointer" data-id="${item.id}">
-                    <span>▶ Watch Episode</span>
-                    <span class="text-[11px] opacity-75 font-mono">(${item.duration || '45 Mins'})</span>
-                  </button>
-                  <button class="hero-read-slide-btn px-5 sm:px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/25 hover:border-gold/60 font-bold rounded-full text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 backdrop-blur-md hover:scale-105 cursor-pointer" data-id="${item.id}">
-                    <span>📖 Sacred Book</span>
-                  </button>
-                  <button class="hero-info-slide-btn px-5 sm:px-6 py-3 bg-gold/10 hover:bg-gold/20 text-gold border border-gold/40 hover:border-gold font-bold rounded-full text-xs sm:text-sm transition-all duration-300 hidden sm:flex items-center gap-1.5 backdrop-blur-md hover:scale-105 cursor-pointer" data-id="${item.id}">
-                    <span>ℹ Explore Saga</span>
-                  </button>
+                  ${isLive ? `
+                    <a href="/divya-darshana.html" class="px-6 sm:px-8 py-3 bg-gradient-to-r from-red-600 via-amber-500 to-gold hover:from-red-500 hover:to-gold text-black font-extrabold rounded-full text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-red-600/30 flex items-center gap-2 hover:scale-105 cursor-pointer">
+                      <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                      <span>▶ Enter Live Darshana (20 Temples)</span>
+                    </a>
+                    <a href="/divya-darshana.html" class="px-5 sm:px-6 py-3 bg-purple-500/20 hover:bg-purple-500 text-purple-200 hover:text-white border border-purple-500/40 font-bold rounded-full text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 backdrop-blur-md hover:scale-105 cursor-pointer">
+                      <span>🎛️ WorldWatcher Multi-Cam</span>
+                    </a>
+                    <a href="/divya-darshana.html" class="px-5 sm:px-6 py-3 bg-gold/10 hover:bg-gold/20 text-gold border border-gold/40 hover:border-gold font-bold rounded-full text-xs sm:text-sm transition-all duration-300 hidden sm:flex items-center gap-1.5 backdrop-blur-md hover:scale-105 cursor-pointer">
+                      <span>🪔 Virtual Aarti Suite</span>
+                    </a>
+                  ` : `
+                    <button class="hero-play-slide-btn px-6 sm:px-8 py-3 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-full text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-gold/30 flex items-center gap-2 hover:scale-105 cursor-pointer" data-id="${item.id}">
+                      <span>▶ Watch Episode</span>
+                      <span class="text-[11px] opacity-75 font-mono">(${item.duration || '45 Mins'})</span>
+                    </button>
+                    <button class="hero-read-slide-btn px-5 sm:px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/25 hover:border-gold/60 font-bold rounded-full text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 backdrop-blur-md hover:scale-105 cursor-pointer" data-id="${item.id}">
+                      <span>📖 Sacred Book</span>
+                    </button>
+                    <button class="hero-info-slide-btn px-5 sm:px-6 py-3 bg-gold/10 hover:bg-gold/20 text-gold border border-gold/40 hover:border-gold font-bold rounded-full text-xs sm:text-sm transition-all duration-300 hidden sm:flex items-center gap-1.5 backdrop-blur-md hover:scale-105 cursor-pointer" data-id="${item.id}">
+                      <span>ℹ Explore Saga</span>
+                    </button>
+                  `}
                 </div>
               </div>
             </div>
