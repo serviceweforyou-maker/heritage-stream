@@ -1007,6 +1007,12 @@ class AppController {
 
       if (avatarEl) avatarEl.textContent = savedAvatar;
       if (nameEl) nameEl.textContent = savedName;
+      const mobAvatarEl = document.getElementById('mobile-avatar-icon');
+      const mobNameEl = document.getElementById('mobile-profile-name');
+      const mobBadgeEl = document.getElementById('mobile-sub-badge');
+      if (mobAvatarEl) mobAvatarEl.textContent = savedAvatar;
+      if (mobNameEl) mobNameEl.textContent = savedName;
+      if (mobBadgeEl) mobBadgeEl.textContent = this.isSubscribed ? ('PRO ACTIVE • ' + DatabaseService.getDaysRemaining() + 'd') : 'Free Explorer';
 
       // Re-evaluate subscription status & live days remaining
       this.isSubscribed = DatabaseService.isSubscribed();
@@ -1276,7 +1282,25 @@ class AppController {
 
     // ── Bind Header Dropdown & Profile Clicks ──
     const openProfBtn = document.getElementById('open-profile-btn');
-    if (openProfBtn) {
+    const profMenu = document.getElementById('profile-dropdown-menu');
+
+    if (openProfBtn && profMenu) {
+      openProfBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = profMenu.classList.contains('hidden');
+        if (isHidden) {
+          profMenu.classList.remove('hidden');
+        } else {
+          profMenu.classList.add('hidden');
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!profMenu.contains(e.target) && e.target !== openProfBtn) {
+          profMenu.classList.add('hidden');
+        }
+      });
+    } else if (openProfBtn) {
       openProfBtn.addEventListener('click', () => openAccountModal('profile'));
     }
 
