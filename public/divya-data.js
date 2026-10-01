@@ -279,7 +279,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Saibaba Sansthan Trust (SSST), Shirdi",
     "liveStreamUrl": "https://www.youtube.com/embed/mCqRuQigwFU?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=mCqRuQigwFU",
-    "imageUrl": "/images/dharma.jpg",
+    "imageUrl": "https://img.youtube.com/vi/mCqRuQigwFU/hqdefault.jpg",
     "icon": "✨",
     "coords": {
       "lat": 19.7667,
@@ -325,7 +325,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Tirumala Tirupati Devasthanams (TTD / SVBC Official)",
     "liveStreamUrl": "https://www.youtube.com/embed/XxdarKTmJ8c?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=XxdarKTmJ8c",
-    "imageUrl": "/images/venkateswara_tirumala.jpg",
+    "imageUrl": "https://img.youtube.com/vi/XxdarKTmJ8c/hqdefault.jpg",
     "icon": "🛕",
     "coords": {
       "lat": 13.6833,
@@ -371,7 +371,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shree Kashi Vishwanath Mandir Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/uRUP4M_5vSo?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=uRUP4M_5vSo",
-    "imageUrl": "/images/shiva_neelkanth.jpg",
+    "imageUrl": "https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg",
     "icon": "🔱",
     "coords": {
       "lat": 25.3109,
@@ -417,7 +417,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shree Somnath Trust (Official Channel)",
     "liveStreamUrl": "https://www.youtube.com/embed/uY5YwokiIsY?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=uY5YwokiIsY",
-    "imageUrl": "/images/ellora_kailasa.jpg",
+    "imageUrl": "https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg",
     "icon": "🌊",
     "coords": {
       "lat": 20.888,
@@ -458,7 +458,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Mahakaleshwar Temple Management Committee",
     "liveStreamUrl": "https://www.youtube.com/embed/H6D_IGx5xOI?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=H6D_IGx5xOI",
-    "imageUrl": "/images/shiva.jpg",
+    "imageUrl": "https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg",
     "icon": "🔱",
     "coords": {
       "lat": 23.1827,
@@ -504,7 +504,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Ram Janmbhoomi Teerth Kshetra (DD National Official)",
     "liveStreamUrl": "https://www.youtube.com/embed/W8qEqGulnPg?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=W8qEqGulnPg",
-    "imageUrl": "/images/hampi.jpg",
+    "imageUrl": "https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg",
     "icon": "🏹",
     "coords": {
       "lat": 26.7956,
@@ -550,7 +550,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "ISKCON Bangalore Society",
     "liveStreamUrl": "https://www.youtube.com/embed/pq1fSKRlbc8?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=pq1fSKRlbc8",
-    "imageUrl": "/images/krishna_cover.jpg",
+    "imageUrl": "https://img.youtube.com/vi/pq1fSKRlbc8/hqdefault.jpg",
     "icon": "🦚",
     "coords": {
       "lat": 13.0098,
@@ -596,7 +596,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "ISKCON Vrindavan Official",
     "liveStreamUrl": "https://www.youtube.com/embed/O2ojNbbB8Iw?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=O2ojNbbB8Iw",
-    "imageUrl": "/images/krishna_cover.jpg",
+    "imageUrl": "https://img.youtube.com/vi/O2ojNbbB8Iw/hqdefault.jpg",
     "icon": "🦚",
     "coords": {
       "lat": 27.5706,
@@ -637,7 +637,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Mata Vaishno Devi Shrine Board (Shraddha MH ONE)",
     "liveStreamUrl": "https://www.youtube.com/embed/jD-THm4dJz0?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=jD-THm4dJz0",
-    "imageUrl": "/images/lakshmibai.jpg",
+    "imageUrl": "https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg",
     "icon": "🏔️",
     "coords": {
       "lat": 33.0308,
@@ -673,7 +673,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Parmarth Niketan Ashram Official",
     "liveStreamUrl": "https://www.youtube.com/embed/usvU6ox_NQU?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=usvU6ox_NQU",
-    "imageUrl": "/images/shiva.jpg",
+    "imageUrl": "https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg",
     "icon": "🔥",
     "coords": {
       "lat": 30.1197,
@@ -709,7 +709,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shree Siddhivinayak Ganapati Temple Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/V2FnGzYYux8?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=V2FnGzYYux8",
-    "imageUrl": "/images/ganesha.jpg",
+    "imageUrl": "https://img.youtube.com/vi/V2FnGzYYux8/hqdefault.jpg",
     "icon": "🐘",
     "coords": {
       "lat": 19.0169,
@@ -750,7 +750,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shree Jagannath Temple Administration (Jay Jagannath TV)",
     "liveStreamUrl": "https://www.youtube.com/embed/WD5kyQ4laVs?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=WD5kyQ4laVs",
-    "imageUrl": "/images/krishna_cover.jpg",
+    "imageUrl": "https://img.youtube.com/vi/WD5kyQ4laVs/hqdefault.jpg",
     "icon": "🛕",
     "coords": {
       "lat": 19.8049,
@@ -791,7 +791,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Tuljabhavani Temple Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/B3r-kt5dK_M?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=B3r-kt5dK_M",
-    "imageUrl": "/images/meenakshi.jpg",
+    "imageUrl": "https://img.youtube.com/vi/B3r-kt5dK_M/hqdefault.jpg",
     "icon": "🌺",
     "coords": {
       "lat": 18.0069,
@@ -827,7 +827,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Shyam Mandir Committee Khatu Dham",
     "liveStreamUrl": "https://www.youtube.com/embed/aHp8nnOwcpc?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=aHp8nnOwcpc",
-    "imageUrl": "/images/krishna_cover.jpg",
+    "imageUrl": "https://img.youtube.com/vi/aHp8nnOwcpc/hqdefault.jpg",
     "icon": "🚩",
     "coords": {
       "lat": 27.4297,
@@ -868,7 +868,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shree Salasar Balaji Mandir Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/q58Wan19vns?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=q58Wan19vns",
-    "imageUrl": "/images/dharma.jpg",
+    "imageUrl": "https://img.youtube.com/vi/q58Wan19vns/hqdefault.jpg",
     "icon": "🚩",
     "coords": {
       "lat": 27.7126,
@@ -909,7 +909,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Badrinath-Kedarnath Temple Committee (BKTC)",
     "liveStreamUrl": "https://www.youtube.com/embed/fURwn8kbRBc?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=fURwn8kbRBc",
-    "imageUrl": "/images/hampi.jpg",
+    "imageUrl": "https://img.youtube.com/vi/fURwn8kbRBc/hqdefault.jpg",
     "icon": "🏔️",
     "coords": {
       "lat": 30.7352,
@@ -945,7 +945,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Paryaya Sri Krishna Matha Udupi",
     "liveStreamUrl": "https://www.youtube.com/embed/8JsL-H7fJy4?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=8JsL-H7fJy4",
-    "imageUrl": "/images/krishna_cover.jpg",
+    "imageUrl": "https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg",
     "icon": "🐚",
     "coords": {
       "lat": 13.3409,
@@ -986,7 +986,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Arulmigu Meenakshi Sundareswarar Temple Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/Aicrlohuuug?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=Aicrlohuuug",
-    "imageUrl": "/images/meenakshi.jpg",
+    "imageUrl": "https://img.youtube.com/vi/Aicrlohuuug/hqdefault.jpg",
     "icon": "🦚",
     "coords": {
       "lat": 9.9195,
@@ -1027,7 +1027,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Chamundeshwari Temple Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/9SBpnTrrXlw?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=9SBpnTrrXlw",
-    "imageUrl": "/images/lakshmibai.jpg",
+    "imageUrl": "https://img.youtube.com/vi/9SBpnTrrXlw/hqdefault.jpg",
     "icon": "🦁",
     "coords": {
       "lat": 12.2748,
@@ -1068,7 +1068,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Pashupati Area Development Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/bi1PDhKGUd4?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=bi1PDhKGUd4",
-    "imageUrl": "/images/shiva_neelkanth.jpg",
+    "imageUrl": "https://img.youtube.com/vi/bi1PDhKGUd4/hqdefault.jpg",
     "icon": "🛕",
     "coords": {
       "lat": 27.7104,
