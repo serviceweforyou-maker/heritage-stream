@@ -65,15 +65,19 @@
     <priority>0.90</priority>
   </url>
 
-  <!-- 6. Divya Darshana 3D Virtual Temple Tours -->
+  <!-- 6. Divya Darshana 360™ (24/7 Global Live Temple Watcher & Virtual Aarti) -->
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.sanatana360.com/images/meenakshi.jpg</image:loc>
-      <image:title>Divya Darshana 3D Virtual Temple Aarti</image:title>
+      <image:loc>https://www.sanatana360.com/images/venkateswara_tirumala.jpg</image:loc>
+      <image:title>Divya Darshana 360 24/7 Live Temple Watcher and Virtual Aarti</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sanatana360.com/images/shiva_neelkanth.jpg</image:loc>
+      <image:title>Kashi Vishwanath and Mahakaleshwar Live Temple Darshana</image:title>
     </image:image>
   </url>
 </urlset>
