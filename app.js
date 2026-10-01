@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=98";
-import heritageData from "./data.js?v=98";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=98";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=99.6";
+import heritageData from "./data.js?v=99.6";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=99.6";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -349,7 +349,11 @@ class AppController {
 
     const safeInit = (name, fn) => {
       try {
-        fn.call(this);
+        if (typeof fn === 'function') {
+          fn.call(this);
+        } else if (typeof this[name] === 'function') {
+          this[name]();
+        }
       } catch (e) {
         console.error(`Error during ${name} initialization:`, e);
       }
@@ -4362,7 +4366,11 @@ class AppController {
     const closeBtn = document.getElementById('close-gita-modal-btn');
     const shareBtn = document.getElementById('whatsapp-share-gita-btn');
 
-    ;
+    if (openBtn && modal) {
+      openBtn.onclick = () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
     }
     if (closeBtn && modal) {
       closeBtn.onclick = () => {
@@ -4582,7 +4590,8 @@ class AppController {
       if (wReduce) wReduce.textContent = res.reduce;
     };
 
-    ;
+    if (openBtn && modal) {
+      openBtn.onclick = () => {
         quizCont?.classList.remove('hidden');
         resCont?.classList.add('hidden');
         renderStep();
@@ -4962,7 +4971,12 @@ class AppController {
       };
     });
 
-    ;
+    if (openBtn && modal) {
+      openBtn.onclick = () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        startBreathCycle();
+      };
     }
     if (closeBtn && modal) {
       closeBtn.onclick = () => {
@@ -4989,7 +5003,11 @@ class AppController {
     const openBtn = document.getElementById('try-vedic-math-btn');
     const closeBtn = document.getElementById('close-vedic-math-modal-btn');
 
-    ;
+    if (openBtn && modal) {
+      openBtn.onclick = () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
     }
 
     if (closeBtn && modal) {

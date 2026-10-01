@@ -8570,7 +8570,7 @@
       ]
     },
     {
-      "id": "ai_lepakshi_bull_1790767061313",
+      "id": "ai_lepakshi_bull_1790760287294",
       "title": "The Giant Nandi of Lepakshi",
       "tagline": "India's Largest Monolithic Bull",
       "description": "Located just a mile from the Lepakshi temple, this colossal Nandi is carved from a single granite stone block. It stands as a peak of Vijayanagara stone craftsmanship.",
@@ -8750,14 +8750,43 @@
   },
   "orders": [],
   "aiStatus": {
-    "lastRun": "2026-09-30T11:17:41.313Z",
+    "lastRun": "2026-09-30T09:24:47.294Z",
     "history": [
       {
-        "id": "ai_lepakshi_bull_1790767061313",
+        "id": "ai_lepakshi_bull_1790760287294",
         "title": "The Giant Nandi of Lepakshi",
         "category": "Video Series",
-        "timestamp": "2026-09-30T11:17:41.313Z"
+        "timestamp": "2026-09-30T09:24:47.294Z"
       }
     ]
+  },
+  "aiMarketing": {
+    "campaigns": [
+      {
+        "id": "mkt_1790767059149",
+        "date": "30 Sept 2026",
+        "timestamp": "2026-09-30T11:17:39.154Z",
+        "topic": "The Blue-Water Naval Battles of Raja Raja Chola",
+        "category": "Maritime History",
+        "reelScript": {
+          "hook": "🚨 STOP SCROLLING! Did you know the blue-water naval battles of raja raja chola?",
+          "visualCues": "Fast cuts of ancient temple carvings, animated Vedic math calculations, and 360° digital Aarti footage.",
+          "voiceover": "Modern engineers were shocked when they tested this! The Blue-Water Naval Battles of Raja Raja Chola proves our ancestors mastered sciences thousands of years ahead of their time.",
+          "callToAction": "Discover 200+ Indian history sagas, 5-language bedtime audiobooks & kids Vedic Math at www.sanatana360.com. Family pass just ₹1.09/day!",
+          "hashtags": "#SanatanaDharma #IndianHistory #AncientIndia #VedicScience #Sanatana360"
+        },
+        "twitterThread": [
+          "🧵 THREAD: The Untold Science Behind The Blue-Water Naval Battles of Raja Raja Chola (And why it baffles modern researchers) 👇",
+          "1/5 Ancient Indian treatises documented principles that modern academia only recently rediscovered. From metallurgy to celestial geometry, the precision is staggering.",
+          "2/5 When British colonial surveyors examined these monuments, they assumed hollow mechanisms were hidden inside. What they found was solid granite engineered with acoustic swaras.",
+          "3/5 Today, Indian families are rediscovering these authentic roots—replacing empty screen-time with real civilizational pride and mental math agility.",
+          "4/5 We compiled 200+ illustrated sagas, 3D Granth e-books & 5-language audiobooks on a 100% ad-free platform for children and parents.",
+          "5/5 Explore the full chronicle on Sanatana360: https://www.sanatana360.com (Use voucher GURUKULA50 for ₹50 off the Annual Pass). RT if you love Indian heritage!"
+        ],
+        "whatsappCard": "🌸 *Good Morning! Daily Wisdom from Sanatana360* 🌸\n\n✨ *Today's Discovery:* The Blue-Water Naval Battles of Raja Raja Chola\n🛕 *Morning Darshana:* Experience 360° Temple Aarti with ringing bells & chanting from home.\n🧮 *Kids Vedic Math:* Solve 3-second mental math challenges with your children.\n\n🎁 *Special Inaugural Pass:* Use code *GURUKULA50* for ₹50 OFF (Just ₹349/Year = ₹0.95/Day!)\n👉 Explore now: https://www.sanatana360.com",
+        "seoKeywords": "Chola navy, Indian Ocean trade, ancient Indian naval warfare"
+      }
+    ],
+    "lastRun": "2026-09-30T11:17:39.154Z"
   }
 }
