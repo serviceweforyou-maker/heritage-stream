@@ -4356,12 +4356,7 @@ class AppController {
     const closeBtn = document.getElementById('close-gita-modal-btn');
     const shareBtn = document.getElementById('whatsapp-share-gita-btn');
 
-    if (openBtn && modal) {
-      openBtn.onclick = (e) => {
-        e.preventDefault();
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      };
+    ;
     }
     if (closeBtn && modal) {
       closeBtn.onclick = () => {
@@ -4581,11 +4576,7 @@ class AppController {
       if (wReduce) wReduce.textContent = res.reduce;
     };
 
-    if (openBtn && modal) {
-      openBtn.onclick = (e) => {
-        e.preventDefault();
-        currentStep = 0;
-        scores = { vata: 0, pitta: 0, kapha: 0 };
+    ;
         quizCont?.classList.remove('hidden');
         resCont?.classList.add('hidden');
         renderStep();
@@ -4965,13 +4956,7 @@ class AppController {
       };
     });
 
-    if (openBtn && modal) {
-      openBtn.onclick = (e) => {
-        e.preventDefault();
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        startBreathCycle();
-      };
+    ;
     }
     if (closeBtn && modal) {
       closeBtn.onclick = () => {
@@ -4998,12 +4983,7 @@ class AppController {
     const openBtn = document.getElementById('try-vedic-math-btn');
     const closeBtn = document.getElementById('close-vedic-math-modal-btn');
 
-    if (openBtn && modal) {
-      openBtn.onclick = (e) => {
-        e.preventDefault();
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      };
+    ;
     }
 
     if (closeBtn && modal) {
