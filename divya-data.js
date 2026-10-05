@@ -1160,7 +1160,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Dwarkadhish Mandir Vahivatdar Committee",
     "liveStreamUrl": "https://www.youtube.com/embed/mCqRuQigwFU?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/@shridwarkadhishmandirofficial",
-    "imageUrl": "https://img.youtube.com/vi/mCqRuQigwFU/hqdefault.jpg",
+    "imageUrl": "/images/temple_dwarkadhish.jpg",
     "icon": "🦚",
     "coords": {
       "lat": 22.2376,
@@ -1207,7 +1207,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Badrinath-Kedarnath Temple Committee (BKTC)",
     "liveStreamUrl": "https://www.youtube.com/embed/fURwn8kbRBc?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=fURwn8kbRBc",
-    "imageUrl": "https://img.youtube.com/vi/fURwn8kbRBc/hqdefault.jpg",
+    "imageUrl": "/images/temple_badrinath.jpg",
     "icon": "🏔️",
     "coords": {
       "lat": 30.7447,
@@ -1249,7 +1249,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Ganga Sabha (Regd.), Haridwar",
     "liveStreamUrl": "https://www.youtube.com/embed/usvU6ox_NQU?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/@ShriGangaSabhaRegHaridwar",
-    "imageUrl": "https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg",
+    "imageUrl": "/images/temple_haridwar.jpg",
     "icon": "🌊",
     "coords": {
       "lat": 29.9576,
@@ -1538,7 +1538,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shree Grishneshwar Mandir Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/uY5YwokiIsY?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=uY5YwokiIsY",
-    "imageUrl": "https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg",
+    "imageUrl": "/images/ellora_kailasa.jpg",
     "icon": "🔱",
     "coords": {
       "lat": 20.0245,
@@ -1659,7 +1659,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Bankey Bihari Ji Mandir Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/O2ojNbbB8Iw?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=O2ojNbbB8Iw",
-    "imageUrl": "https://img.youtube.com/vi/O2ojNbbB8Iw/hqdefault.jpg",
+    "imageUrl": "/images/krishna_cover.jpg",
     "icon": "🦚",
     "coords": {
       "lat": 27.5815,
@@ -1701,7 +1701,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shri Radha Rani Temple Trust Barsana",
     "liveStreamUrl": "https://www.youtube.com/embed/O2ojNbbB8Iw?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=O2ojNbbB8Iw",
-    "imageUrl": "https://img.youtube.com/vi/O2ojNbbB8Iw/hqdefault.jpg",
+    "imageUrl": "/images/krishna_cover.jpg",
     "icon": "🦚",
     "coords": {
       "lat": 27.6475,
@@ -1743,7 +1743,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Shree Govind Dev Ji Mandir Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/aHp8nnOwcpc?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=aHp8nnOwcpc",
-    "imageUrl": "https://img.youtube.com/vi/aHp8nnOwcpc/hqdefault.jpg",
+    "imageUrl": "/images/krishna_cover.jpg",
     "icon": "🦚",
     "coords": {
       "lat": 26.9268,
@@ -1785,7 +1785,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Sri Kukke Subramanya Temple Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/8JsL-H7fJy4?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=8JsL-H7fJy4",
-    "imageUrl": "https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg",
+    "imageUrl": "/images/kartikeya_murugan.jpg",
     "icon": "🐍",
     "coords": {
       "lat": 12.6631,
@@ -1869,7 +1869,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Dakshinamnaya Sri Sharada Peetham Sringeri",
     "liveStreamUrl": "https://www.youtube.com/embed/9SBpnTrrXlw?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=9SBpnTrrXlw",
-    "imageUrl": "https://img.youtube.com/vi/9SBpnTrrXlw/hqdefault.jpg",
+    "imageUrl": "/images/adi_shankara.jpg",
     "icon": "🪕",
     "coords": {
       "lat": 13.4187,
@@ -1911,7 +1911,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "R.N. Shetty Murudeshwar Temple Trust",
     "liveStreamUrl": "https://www.youtube.com/embed/8JsL-H7fJy4?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=8JsL-H7fJy4",
-    "imageUrl": "https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg",
+    "imageUrl": "/images/shiva_neelkanth.jpg",
     "icon": "🌊",
     "coords": {
       "lat": 14.0944,
@@ -1953,7 +1953,7 @@ export const GLOBAL_TEMPLES_LIVE = [
     "officialTrust": "Guruvayur Devaswom Board",
     "liveStreamUrl": "https://www.youtube.com/embed/XxdarKTmJ8c?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
     "directYoutubeUrl": "https://www.youtube.com/watch?v=XxdarKTmJ8c",
-    "imageUrl": "https://img.youtube.com/vi/XxdarKTmJ8c/hqdefault.jpg",
+    "imageUrl": "/images/vishnu.jpg",
     "icon": "🦚",
     "coords": {
       "lat": 10.5947,
