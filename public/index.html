@@ -417,7 +417,13 @@
         </button>
 
         <!-- User Profile Dropdown -->
-        <div class="relative group" id="header-profile-dropdown">
+        <!-- Netflix-Style Sign In Button (Visible when logged out) -->
+        <button id="header-auth-btn" class="h-8.5 px-3.5 py-1 rounded-full bg-[#141826] hover:bg-gold hover:text-black border border-gold/40 text-gold font-extrabold text-xs transition-all flex items-center gap-1.5 cursor-pointer shadow-sm flex-shrink-0" title="Sign In to Sanatana360">
+          <span>🔑</span>
+          <span>Sign In</span>
+        </button>
+
+        <div class="relative group hidden" id="header-profile-dropdown">
           <button id="open-profile-btn" class="h-8.5 flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#141826] border border-gold/40 hover:border-gold transition-all text-xs font-bold text-white cursor-pointer shadow-sm flex-shrink-0" title="Profile &amp; Account">
             <span id="header-karma-badge" class="text-[9px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1.5 py-0.2 rounded-full hidden sm:inline-block">🕉️ 120</span>
             <span id="active-profile-avatar" class="text-sm">📜</span>
@@ -2791,7 +2797,275 @@
 
   <script src="flipbook.js?v=98"></script>
 
-    <!-- ── USER ACCOUNT & MEMBERSHIP MODAL (SOLID LUXURY DESIGN) ── -->
+      <!-- ── 🎬 NETFLIX-STYLE AUTHENTICATION MODAL (SIGN IN / REGISTER / LOGOUT) ── -->
+  <div id="netflix-auth-modal" class="modal-overlay fixed inset-0 z-[110] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
+    <div class="bg-[#090b12] border-2 border-gold/45 rounded-3xl w-full max-w-md shadow-[0_30px_80px_rgba(0,0,0,0.99)] relative p-6 sm:p-8 max-h-[92vh] overflow-y-auto no-scrollbar font-sans space-y-6" style="background-color: #090b12 !important; opacity: 1 !important;">
+      
+      <!-- Modal Top Header & Close Button -->
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-gold/30 to-amber-600/20 border border-gold/40 flex items-center justify-center text-base shadow-sm">
+            ⚜️
+          </div>
+          <div>
+            <h3 class="text-lg font-bold font-serif text-white tracking-wide">Sanatana360</h3>
+            <span class="text-[9px] font-mono text-gold/80 uppercase tracking-widest block font-bold">Vedic OTT &amp; Gurukula</span>
+          </div>
+        </div>
+        <button id="close-auth-modal-btn" class="modal-close w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 flex items-center justify-center text-xl font-bold transition-all cursor-pointer border border-white/10 hover:border-gold" title="Close">
+          &times;
+        </button>
+      </div>
+
+      <!-- Auth Toggle Tabs -->
+      <div class="grid grid-cols-2 gap-1.5 p-1 bg-[#141826] border border-white/10 rounded-2xl text-xs font-bold">
+        <button id="auth-tab-signin" class="auth-tab-btn py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer font-extrabold">
+          <span>🔑</span> <span>Sign In</span>
+        </button>
+        <button id="auth-tab-register" class="auth-tab-btn py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer font-bold">
+          <span>✨</span> <span>Create Account</span>
+        </button>
+      </div>
+
+      <!-- Panel 1: Sign In -->
+      <div id="auth-panel-signin" class="space-y-4">
+        <div>
+          <h4 class="text-xl font-extrabold font-serif text-white">Sign In</h4>
+          <p class="text-xs text-white/60 mt-1">Unlock 200+ sagas, 40+ 24/7 Live Temples &amp; Vedic Gurukula</p>
+        </div>
+
+        <form id="netflix-signin-form" class="space-y-3.5" onsubmit="event.preventDefault();">
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Email or Mobile Number</label>
+            <input type="text" id="auth-signin-email" placeholder="e.g. rahul@example.com or 9876543210" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+          </div>
+
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between">
+              <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Password</label>
+              <button type="button" id="auth-toggle-pwd-btn" class="text-[10px] text-gold/80 hover:text-gold font-mono cursor-pointer">Show</button>
+            </div>
+            <input type="password" id="auth-signin-pwd" placeholder="Enter your password" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-white/60 pt-1">
+            <label class="flex items-center gap-2 cursor-pointer select-none">
+              <input type="checkbox" id="auth-remember-me" checked class="rounded bg-[#141826] border-white/20 text-gold focus:ring-gold">
+              <span>Remember me</span>
+            </label>
+            <button type="button" id="auth-forgot-btn" class="text-gold/80 hover:text-gold hover:underline cursor-pointer text-[11px]">Forgot pass?</button>
+          </div>
+
+          <button type="submit" id="auth-signin-submit-btn" class="w-full py-3.5 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/25 hover:scale-[1.01] cursor-pointer mt-2">
+            Sign In to Sanatana360
+          </button>
+        </form>
+
+        <!-- 1-Click Fast Demo Login -->
+        <div class="pt-2 border-t border-white/10 space-y-2">
+          <span class="text-[10px] text-white/40 uppercase font-mono block text-center font-bold">Fast 1-Click Persona Sign In</span>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" data-name="Rahul (Scholar)" data-avatar="📜">
+              <span class="text-base">📜</span>
+              <span class="text-[10px]">Scholar</span>
+            </button>
+            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" data-name="Ananya (Yogi)" data-avatar="🧘">
+              <span class="text-base">🧘</span>
+              <span class="text-[10px]">Yogi</span>
+            </button>
+            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" data-name="Aarav (Warrior)" data-avatar="⚔️">
+              <span class="text-base">⚔️</span>
+              <span class="text-[10px]">Warrior</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="text-center text-xs text-white/60 pt-2">
+          New to Sanatana360? 
+          <button type="button" id="auth-switch-to-register" class="text-gold font-bold hover:underline ml-1 cursor-pointer">Sign up now</button>.
+        </div>
+      </div>
+
+      <!-- Panel 2: Create Account / Register -->
+      <div id="auth-panel-register" class="space-y-4 hidden">
+        <div>
+          <h4 class="text-xl font-extrabold font-serif text-white">Create Account</h4>
+          <p class="text-xs text-white/60 mt-1">Start your spiritual voyage with personalized recommendations</p>
+        </div>
+
+        <form id="netflix-register-form" class="space-y-3.5" onsubmit="event.preventDefault();">
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Full Name</label>
+            <input type="text" id="auth-reg-name" placeholder="e.g. Rahul Sharma" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Email or Mobile Number</label>
+            <input type="text" id="auth-reg-email" placeholder="e.g. rahul@example.com or 9876543210" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Create Password</label>
+            <input type="password" id="auth-reg-pwd" placeholder="At least 6 characters" required minlength="6" class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+          </div>
+
+          <!-- Select Persona Avatar -->
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Select Persona Avatar</label>
+            <div class="grid grid-cols-6 gap-1.5" id="auth-reg-avatar-picker">
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-gold text-xl text-center cursor-pointer shadow-sm active ring-1 ring-gold" data-avatar="📜">📜</button>
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🧘">🧘</button>
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="⚔️">⚔️</button>
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🧒">🧒</button>
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="👑">👑</button>
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🕉️">🕉️</button>
+            </div>
+          </div>
+
+          <div class="pt-1">
+            <button type="submit" id="auth-register-submit-btn" class="w-full py-3.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-500 text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/25 hover:scale-[1.01] cursor-pointer">
+              Create Free Account
+            </button>
+          </div>
+        </form>
+
+        <div class="text-center text-xs text-white/60 pt-2">
+          Already have an account? 
+          <button type="button" id="auth-switch-to-signin" class="text-gold font-bold hover:underline ml-1 cursor-pointer">Sign in</button>.
+        </div>
+      </div>
+
+      <!-- Security / Footer notice -->
+      <div class="text-center text-[10px] text-white/40 border-t border-white/10 pt-3">
+        Protected by Vedic Encryption &bull; Terms &amp; Privacy Apply
+      </div>
+    </div>
+  </div>
+        <button id="close-auth-modal-btn" class="modal-close w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 flex items-center justify-center text-xl font-bold transition-all cursor-pointer border border-white/10 hover:border-gold" title="Close">
+          &times;
+        </button>
+      </div>
+
+      <!-- Auth Toggle Tabs -->
+      <div class="grid grid-cols-2 gap-1.5 p-1 bg-[#141826] border border-white/10 rounded-2xl text-xs font-bold">
+        <button id="auth-tab-signin" class="auth-tab-btn py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer font-extrabold">
+          <span>🔑</span> <span>Sign In</span>
+        </button>
+        <button id="auth-tab-register" class="auth-tab-btn py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer font-bold">
+          <span>✨</span> <span>Create Account</span>
+        </button>
+      </div>
+
+      <!-- Panel 1: Sign In -->
+      <div id="auth-panel-signin" class="space-y-4">
+        <div>
+          <h4 class="text-xl font-extrabold font-serif text-white">Sign In</h4>
+          <p class="text-xs text-white/60 mt-1">Unlock 200+ sagas, 40+ 24/7 Live Temples &amp; Vedic Gurukula</p>
+        </div>
+
+        <form id="netflix-signin-form" class="space-y-3.5" onsubmit="event.preventDefault();">
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Email or Mobile Number</label>
+            <input type="text" id="auth-signin-email" placeholder="e.g. rahul@example.com or 9876543210" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+          </div>
+
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between">
+              <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Password</label>
+              <button type="button" id="auth-toggle-pwd-btn" class="text-[10px] text-gold/80 hover:text-gold font-mono cursor-pointer">Show</button>
+            </div>
+            <input type="password" id="auth-signin-pwd" placeholder="Enter your password" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-white/60 pt-1">
+            <label class="flex items-center gap-2 cursor-pointer select-none">
+              <input type="checkbox" id="auth-remember-me" checked class="rounded bg-[#141826] border-white/20 text-gold focus:ring-gold">
+              <span>Remember me</span>
+            </label>
+            <button type="button" id="auth-forgot-btn" class="text-gold/80 hover:text-gold hover:underline cursor-pointer text-[11px]">Forgot pass?</button>
+          </div>
+
+          <button type="submit" id="auth-signin-submit-btn" class="w-full py-3.5 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/25 hover:scale-[1.01] cursor-pointer mt-2">
+            Sign In to Sanatana360
+          </button>
+        </form>
+
+        <!-- 1-Click Fast Demo Login -->
+        <div class="pt-2 border-t border-white/10 space-y-2">
+          <span class="text-[10px] text-white/40 uppercase font-mono block text-center font-bold">Fast 1-Click Persona Sign In</span>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" data-name="Rahul (Scholar)" data-avatar="📜">
+              <span class="text-base">📜</span>
+              <span class="text-[10px]">Scholar</span>
+            </button>
+            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" data-name="Ananya (Yogi)" data-avatar="🧘">
+              <span class="text-base">🧘</span>
+              <span class="text-[10px]">Yogi</span>
+            </button>
+            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" data-name="Aarav (Warrior)" data-avatar="⚔️">
+              <span class="text-base">⚔️</span>
+              <span class="text-[10px]">Warrior</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="text-center text-xs text-white/60 pt-2">
+          New to Sanatana360? 
+          <button type="button" id="auth-switch-to-register" class="text-gold font-bold hover:underline ml-1 cursor-pointer">Sign up now</button>.
+        </div>
+      </div>
+
+      <!-- Panel 2: Register / Sign Up -->
+      <div id="auth-panel-register" class="space-y-4 hidden">
+        <div>
+          <h4 class="text-xl font-extrabold font-serif text-white">Create Account</h4>
+          <p class="text-xs text-white/60 mt-1">Start your cultural streaming journey with free access</p>
+        </div>
+
+        <form id="netflix-register-form" class="space-y-3.5" onsubmit="event.preventDefault();">
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Your Full Name</label>
+            <input type="text" id="auth-reg-name" placeholder="e.g. Vikramaditya Hegde" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Email or Mobile Number</label>
+            <input type="text" id="auth-reg-email" placeholder="e.g. vikram@example.com" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Create Password</label>
+            <input type="password" id="auth-reg-pwd" placeholder="Choose a secure password" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+          </div>
+
+          <!-- Avatar Selection -->
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-gold uppercase tracking-wider font-mono block">Choose Avatar</label>
+            <div class="grid grid-cols-6 gap-2" id="auth-reg-avatar-grid">
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-gold text-xl text-center cursor-pointer shadow-sm active" data-avatar="📜">📜</button>
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🧘">🧘</button>
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="⚔️">⚔️</button>
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🧒">🧒</button>
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="👑">👑</button>
+              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🕉️">🕉️</button>
+            </div>
+          </div>
+
+          <button type="submit" id="auth-register-submit-btn" class="w-full py-3.5 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/25 hover:scale-[1.01] cursor-pointer mt-2">
+            Create Free Account &amp; Start Exploring
+          </button>
+        </form>
+
+        <div class="text-center text-xs text-white/60 pt-2">
+          Already have an account? 
+          <button type="button" id="auth-switch-to-signin" class="text-gold font-bold hover:underline ml-1 cursor-pointer">Sign in now</button>.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── USER ACCOUNT & MEMBERSHIP MODAL (SOLID LUXURY DESIGN) ── -->
   <div id="user-account-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
     <div class="bg-[#0c0e17] border border-gold/40 rounded-3xl w-full max-w-lg shadow-[0_25px_60px_rgba(0,0,0,0.95)] relative p-5 sm:p-7 max-h-[90vh] overflow-y-auto no-scrollbar font-sans space-y-6">
       

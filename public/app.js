@@ -1009,8 +1009,15 @@ class AppController {
     setupProfileSelector() {
     const modal = document.getElementById('profile-modal');
     const accountModal = document.getElementById('user-account-modal');
+    const authModal = document.getElementById('netflix-auth-modal');
+    const headerAuthBtn = document.getElementById('header-auth-btn');
+    const headerProfileDropdown = document.getElementById('header-profile-dropdown');
+
+    // ── Check Login State ──
+    this.isLoggedIn = localStorage.getItem('hs_auth_logged_in') === 'true';
 
     const renderHeaderProfile = () => {
+      this.isLoggedIn = localStorage.getItem('hs_auth_logged_in') === 'true';
       const avatarEl = document.getElementById('active-profile-avatar');
       const nameEl = document.getElementById('active-profile-name');
       const greetingEl = document.getElementById('hero-sub-prompt');
@@ -1021,17 +1028,27 @@ class AppController {
       const dropdownSubPercent = document.getElementById('dropdown-sub-percent');
       const dropdownSubExpiry = document.getElementById('dropdown-sub-expiry');
 
-      const savedName = localStorage.getItem('hs_user_name') || this.currentProfile || 'Scholar';
-      const savedAvatar = localStorage.getItem('hs_avatar') || this.currentProfileAvatar || '📜';
+      const savedName = localStorage.getItem('hs_user_name') || this.currentProfile || (this.isLoggedIn ? 'Scholar' : 'Guest');
+      const savedAvatar = localStorage.getItem('hs_avatar') || this.currentProfileAvatar || (this.isLoggedIn ? '📜' : '👤');
 
       if (avatarEl) avatarEl.textContent = savedAvatar;
       if (nameEl) nameEl.textContent = savedName;
+
       const mobAvatarEl = document.getElementById('mobile-avatar-icon');
       const mobNameEl = document.getElementById('mobile-profile-name');
       const mobBadgeEl = document.getElementById('mobile-sub-badge');
       if (mobAvatarEl) mobAvatarEl.textContent = savedAvatar;
       if (mobNameEl) mobNameEl.textContent = savedName;
-      if (mobBadgeEl) mobBadgeEl.textContent = this.isSubscribed ? ('PRO ACTIVE • ' + DatabaseService.getDaysRemaining() + 'd') : 'Free Explorer';
+      if (mobBadgeEl) mobBadgeEl.textContent = this.isSubscribed ? ('PRO ACTIVE • ' + DatabaseService.getDaysRemaining() + 'd') : (this.isLoggedIn ? 'Free Explorer' : 'Guest');
+
+      // Toggle Header Auth vs Profile Button
+      if (this.isLoggedIn) {
+        if (headerAuthBtn) headerAuthBtn.classList.add('hidden');
+        if (headerProfileDropdown) headerProfileDropdown.classList.remove('hidden');
+      } else {
+        if (headerAuthBtn) headerAuthBtn.classList.remove('hidden');
+        if (headerProfileDropdown) headerProfileDropdown.classList.add('hidden');
+      }
 
       // Re-evaluate subscription status & live days remaining
       this.isSubscribed = DatabaseService.isSubscribed();
@@ -1049,7 +1066,7 @@ class AppController {
 
       if (dropdownSubCard) {
         if (this.isSubscribed) {
-          dropdownSubCard.className = "p-2.5 rounded-xl bg-gradient-to-r from-gold/15 to-emerald-500/15 border border-gold/30 mb-1";
+          dropdownSubCard.className = "p-3 rounded-xl bg-gradient-to-r from-gold/15 to-emerald-500/15 border border-gold/40 mb-1";
           if (dropdownSubPill) {
             dropdownSubPill.className = "text-[8px] font-mono font-bold text-emerald-400 bg-emerald-500/20 px-1.5 py-0.5 rounded uppercase";
             dropdownSubPill.textContent = "PRO ACTIVE";
@@ -1068,47 +1085,207 @@ class AppController {
             dropdownSubExpiry.textContent = "Expires: " + expiryDate.toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' });
           }
         } else {
-          dropdownSubCard.className = "p-2.5 rounded-xl bg-white/5 border border-white/10 mb-1";
+          dropdownSubCard.className = "p-3 rounded-xl bg-[#141826] border border-white/10 mb-1";
           if (dropdownSubPill) {
             dropdownSubPill.className = "text-[8px] font-mono font-bold text-amber-300 bg-amber-500/20 px-1.5 py-0.5 rounded uppercase";
             dropdownSubPill.textContent = "FREE EXPLORER";
           }
           if (dropdownSubDays) {
-            dropdownSubDays.className = "text-white/80 font-sans font-bold";
+            dropdownSubDays.className = "text-white font-sans font-bold";
             dropdownSubDays.textContent = "Free Access";
           }
           if (dropdownSubPercent) dropdownSubPercent.textContent = "₹399/yr";
-          if (dropdownSubExpiry) dropdownSubExpiry.textContent = "Upgrade to unlock 200+ sagas";
+          if (dropdownSubExpiry) dropdownSubExpiry.textContent = "Upgrade to unlock all sagas";
         }
       }
 
       if (greetingEl) {
         if (this.isSubscribed) {
           greetingEl.textContent = 'Pranam, ' + savedName + '! Your Premium Pass has ' + daysLeft + ' days left.';
-        } else if (savedName === "Yogi") {
-          greetingEl.textContent = "Pranam, Yogi! Cultivate inner peace and balance.";
-        } else if (savedName === "Kids") {
-          greetingEl.textContent = "Hey there! Ready to explore awesome animations and fables?";
-        } else if (savedName === "Warrior") {
-          greetingEl.textContent = "Salutations, Warrior! Explore royal dynastic chronicles.";
+        } else if (this.isLoggedIn) {
+          greetingEl.textContent = 'Welcome back, ' + savedName + '! Explore royal chronicles and live darshanas.';
         } else {
-          greetingEl.textContent = 'Welcome, ' + savedName + '! Unveil the secrets of antiquity.';
+          greetingEl.textContent = 'Welcome! Unveil the secrets of antiquity & 40+ Live Temples.';
         }
       }
     };
 
     renderHeaderProfile();
 
+    // ── Netflix Auth Modal Controls ──
+    const openAuthModal = (tab = 'signin') => {
+      if (!authModal) return;
+      authModal.classList.remove('hidden');
+      authModal.classList.add('flex');
+      switchAuthTab(tab);
+    };
+
+    const closeAuthModal = () => {
+      if (!authModal) return;
+      authModal.classList.add('hidden');
+      authModal.classList.remove('flex');
+    };
+
+    const switchAuthTab = (tab) => {
+      const tabSignIn = document.getElementById('auth-tab-signin');
+      const tabRegister = document.getElementById('auth-tab-register');
+      const panelSignIn = document.getElementById('auth-panel-signin');
+      const panelRegister = document.getElementById('auth-panel-register');
+
+      if (tab === 'signin') {
+        if (tabSignIn) tabSignIn.className = "auth-tab-btn py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer font-extrabold";
+        if (tabRegister) tabRegister.className = "auth-tab-btn py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer font-bold";
+        if (panelSignIn) panelSignIn.classList.remove('hidden');
+        if (panelRegister) panelRegister.classList.add('hidden');
+      } else {
+        if (tabRegister) tabRegister.className = "auth-tab-btn py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer font-extrabold";
+        if (tabSignIn) tabSignIn.className = "auth-tab-btn py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer font-bold";
+        if (panelRegister) panelRegister.classList.remove('hidden');
+        if (panelSignIn) panelSignIn.classList.add('hidden');
+      }
+    };
+
+    if (headerAuthBtn) {
+      headerAuthBtn.addEventListener('click', () => openAuthModal('signin'));
+    }
+
+    const closeAuthBtn = document.getElementById('close-auth-modal-btn');
+    if (closeAuthBtn) closeAuthBtn.addEventListener('click', closeAuthModal);
+
+    const tabSignInBtn = document.getElementById('auth-tab-signin');
+    const tabRegBtn = document.getElementById('auth-tab-register');
+    if (tabSignInBtn) tabSignInBtn.addEventListener('click', () => switchAuthTab('signin'));
+    if (tabRegBtn) tabRegBtn.addEventListener('click', () => switchAuthTab('register'));
+
+    const switchToReg = document.getElementById('auth-switch-to-register');
+    const switchToSign = document.getElementById('auth-switch-to-signin');
+    if (switchToReg) switchToReg.addEventListener('click', () => switchAuthTab('register'));
+    if (switchToSign) switchToSign.addEventListener('click', () => switchAuthTab('signin'));
+
+    // Toggle Password Visibility
+    const togglePwdBtn = document.getElementById('auth-toggle-pwd-btn');
+    const signInPwdInput = document.getElementById('auth-signin-pwd');
+    if (togglePwdBtn && signInPwdInput) {
+      togglePwdBtn.addEventListener('click', () => {
+        if (signInPwdInput.type === 'password') {
+          signInPwdInput.type = 'text';
+          togglePwdBtn.textContent = 'Hide';
+        } else {
+          signInPwdInput.type = 'password';
+          togglePwdBtn.textContent = 'Show';
+        }
+      });
+    }
+
+    // Avatar Selection in Register Form
+    let selectedRegAvatar = '📜';
+    document.querySelectorAll('.auth-reg-avatar-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.auth-reg-avatar-opt').forEach(b => {
+          b.className = "auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer";
+        });
+        btn.className = "auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-gold text-xl text-center cursor-pointer shadow-sm active ring-1 ring-gold";
+        selectedRegAvatar = btn.getAttribute('data-avatar');
+      });
+    });
+
+    // ── Submit Sign In Form ──
+    const signInForm = document.getElementById('netflix-signin-form');
+    if (signInForm) {
+      signInForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('auth-signin-email')?.value.trim();
+        const pwd = document.getElementById('auth-signin-pwd')?.value.trim();
+
+        if (!email) {
+          alert('Please enter your email or mobile number.');
+          return;
+        }
+
+        const nameFromEmail = email.split('@')[0];
+        const formattedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+
+        localStorage.setItem('hs_auth_logged_in', 'true');
+        localStorage.setItem('hs_user_name', formattedName || 'Scholar');
+        localStorage.setItem('hs_user_email', email);
+        if (pwd) localStorage.setItem('hs_user_pwd', pwd);
+        if (!localStorage.getItem('hs_avatar')) localStorage.setItem('hs_avatar', '📜');
+
+        this.currentProfile = formattedName || 'Scholar';
+        this.currentProfileAvatar = localStorage.getItem('hs_avatar') || '📜';
+
+        renderHeaderProfile();
+        this.renderSpotlight();
+        this.renderContentRows();
+        this.setupSubscriptionUI();
+        closeAuthModal();
+
+        alert('✨ Welcome to Sanatana360, ' + formattedName + '!');
+      });
+    }
+
+    // ── Fast 1-Click Persona Login Buttons ──
+    document.querySelectorAll('.fast-login-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.getAttribute('data-name');
+        const avatar = btn.getAttribute('data-avatar');
+
+        localStorage.setItem('hs_auth_logged_in', 'true');
+        localStorage.setItem('hs_user_name', name);
+        localStorage.setItem('hs_avatar', avatar);
+
+        this.currentProfile = name;
+        this.currentProfileAvatar = avatar;
+
+        renderHeaderProfile();
+        this.renderSpotlight();
+        this.renderContentRows();
+        this.setupSubscriptionUI();
+        closeAuthModal();
+      });
+    });
+
+    // ── Submit Registration Form ──
+    const registerForm = document.getElementById('netflix-register-form');
+    if (registerForm) {
+      registerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('auth-reg-name')?.value.trim();
+        const email = document.getElementById('auth-reg-email')?.value.trim();
+        const pwd = document.getElementById('auth-reg-pwd')?.value.trim();
+
+        if (!name || !email) {
+          alert('Please fill out all required fields.');
+          return;
+        }
+
+        localStorage.setItem('hs_auth_logged_in', 'true');
+        localStorage.setItem('hs_user_name', name);
+        localStorage.setItem('hs_user_email', email);
+        localStorage.setItem('hs_avatar', selectedRegAvatar);
+        if (pwd) localStorage.setItem('hs_user_pwd', pwd);
+
+        this.currentProfile = name;
+        this.currentProfileAvatar = selectedRegAvatar;
+
+        renderHeaderProfile();
+        this.renderSpotlight();
+        this.renderContentRows();
+        this.setupSubscriptionUI();
+        closeAuthModal();
+
+        alert('🎉 Account created successfully! Welcome, ' + name + '!');
+      });
+    }
+
     // ── Open Account Modal Helper ──
     const openAccountModal = (initialTab = 'profile') => {
       if (!accountModal) return;
 
-      // Populate current values
       const currentName = localStorage.getItem('hs_user_name') || this.currentProfile || 'Scholar';
       const currentAvatar = localStorage.getItem('hs_avatar') || this.currentProfileAvatar || '📜';
       const currentPwd = localStorage.getItem('hs_user_pwd') || '';
       const orderId = localStorage.getItem('hs_order_id') || '';
-      const subDate = localStorage.getItem('hs_sub_date') || 'Active';
 
       const nameInput = document.getElementById('acc-name-input');
       const pwdInput = document.getElementById('acc-password-input');
@@ -1130,10 +1307,9 @@ class AppController {
         }
       }
 
-      // Populate Plan Details Card with Live Remaining Days Countdown, Start Date & End Date
+      // Populate Plan Details Card
       const planCard = document.getElementById('plan-details-card');
       if (planCard) {
-        // Re-evaluate subscription status including expiration
         this.isSubscribed = DatabaseService.isSubscribed();
 
         if (this.isSubscribed) {
@@ -1237,11 +1413,11 @@ class AppController {
           }
         } else {
           planCard.innerHTML = `
-            <div class="text-center py-2 space-y-3">
-              <span class="text-3xl block">🏛️</span>
+            <div class="text-center py-4 space-y-3">
+              <span class="text-4xl block">🏛️</span>
               <h4 class="text-base font-bold text-white font-serif">Upgrade to Premium Heritage Pass</h4>
               <p class="text-xs text-white/60 max-w-xs mx-auto">Get unrestricted access to all 200+ documentaries, audiobooks, and illustrated 3D FlipBooks for ₹399/year.</p>
-              <button id="modal-upgrade-btn" class="w-full py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/20">
+              <button id="modal-upgrade-btn" class="w-full py-3.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/20 cursor-pointer">
                 Unlock Annual Pass (₹399)
               </button>
             </div>
@@ -1265,10 +1441,10 @@ class AppController {
           const panel = document.getElementById(`acc-panel-${t}`);
           if (btn && panel) {
             if (t === tab) {
-              btn.className = "acc-nav-tab flex-1 py-2 rounded-xl bg-gold text-black transition-all font-bold";
+              btn.className = "acc-nav-tab py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 font-extrabold";
               panel.classList.remove('hidden');
             } else {
-              btn.className = "acc-nav-tab flex-1 py-2 rounded-xl text-white/60 hover:text-white transition-all";
+              btn.className = "acc-nav-tab py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 font-bold";
               panel.classList.add('hidden');
             }
           }
@@ -1286,7 +1462,7 @@ class AppController {
       if (tabPlan) tabPlan.onclick = () => switchAccTab('plan');
       if (tabRest) tabRest.onclick = () => switchAccTab('restore');
 
-      // Bind Avatar Options inside modal
+      // Bind Avatar Options
       accountModal.querySelectorAll('.avatar-opt').forEach(btn => {
         btn.onclick = () => {
           const av = btn.getAttribute('data-avatar');
@@ -1302,7 +1478,7 @@ class AppController {
       accountModal.classList.add('flex');
     };
 
-    // ── Bind Header Dropdown & Profile Clicks ──
+    // Bind Open Profile / Account Button
     const openProfBtn = document.getElementById('open-profile-btn');
     if (openProfBtn) {
       openProfBtn.addEventListener('click', () => openAccountModal('profile'));
@@ -1314,47 +1490,11 @@ class AppController {
     }
 
     const mobileProfBtn = document.getElementById('mobile-profile-btn');
-    const mobileKidsBtn = document.getElementById('mobile-kids-btn');
-    if (mobileKidsBtn) {
-      mobileKidsBtn.onclick = () => {
-        const headerKidsBtn = document.getElementById('header-kids-mode-btn');
-        if (headerKidsBtn) headerKidsBtn.click();
-        const mobMenu = document.getElementById('mobile-nav-menu');
-        if (mobMenu) mobMenu.classList.add('hidden');
-      };
-    }
-    const mobileRishiBtn = document.getElementById('mobile-rishi-btn');
-    if (mobileRishiBtn) {
-      mobileRishiBtn.onclick = () => {
-        const headerRishiBtn = document.getElementById('header-rishi-btn');
-        if (headerRishiBtn) headerRishiBtn.click();
-        const mobMenu = document.getElementById('mobile-nav-menu');
-        if (mobMenu) mobMenu.classList.add('hidden');
-      };
-    }
-    const mobileArchBtn = document.getElementById('mobile-archetype-btn');
-    if (mobileArchBtn) {
-      mobileArchBtn.onclick = () => {
-        const headerArchBtn = document.getElementById('header-archetype-btn');
-        if (headerArchBtn) headerArchBtn.click();
-        const mobMenu = document.getElementById('mobile-nav-menu');
-        if (mobMenu) mobMenu.classList.add('hidden');
-      };
-    }
-    const mobileRefBtn = document.getElementById('mobile-referral-btn');
-    if (mobileRefBtn) {
-      mobileRefBtn.onclick = () => {
-        const headerRefBtn = document.getElementById('header-referral-btn');
-        if (headerRefBtn) headerRefBtn.click();
-        const mobMenu = document.getElementById('mobile-nav-menu');
-        if (mobMenu) mobMenu.classList.add('hidden');
-      };
-    }
     if (mobileProfBtn) {
       mobileProfBtn.addEventListener('click', () => openAccountModal('profile'));
     }
 
-    // ── Bind Save Profile Button ──
+    // ── Save Profile Details ──
     const saveProfBtn = document.getElementById('save-account-profile-btn');
     if (saveProfBtn) {
       saveProfBtn.onclick = () => {
@@ -1362,87 +1502,45 @@ class AppController {
         const pwdInput = document.getElementById('acc-password-input');
         const toast = document.getElementById('account-toast-msg');
 
-        const newName = (nameInput?.value || '').trim() || 'Scholar';
-        const newPwd = (pwdInput?.value || '').trim();
+        if (nameInput && nameInput.value.trim()) {
+          const newName = nameInput.value.trim();
+          this.currentProfile = newName;
+          localStorage.setItem('hs_user_name', newName);
+        }
 
-        this.currentProfile = newName;
-        localStorage.setItem('hs_user_name', newName);
-        localStorage.setItem('hs_profile', newName);
-        if (newPwd) {
-          localStorage.setItem('hs_user_pwd', newPwd);
+        if (pwdInput && pwdInput.value.trim()) {
+          localStorage.setItem('hs_user_pwd', pwdInput.value.trim());
         }
 
         renderHeaderProfile();
 
         if (toast) {
-          toast.textContent = "Profile Saved ✓";
+          toast.textContent = "Saved ✓";
           toast.classList.remove('opacity-0');
-          setTimeout(() => toast.classList.add('opacity-0'), 2500);
+          setTimeout(() => { toast.classList.add('opacity-0'); }, 1500);
         }
       };
     }
 
-    // ── Bind Sign In / Restore Pass Button ──
-    const restoreBtn = document.getElementById('submit-restore-btn');
-    if (restoreBtn) {
-      restoreBtn.onclick = () => {
-        const userInput = (document.getElementById('restore-user-input')?.value || '').trim();
-        const pwdInput = (document.getElementById('restore-pwd-input')?.value || '').trim();
-        const orderInput = (document.getElementById('restore-order-input')?.value || '').trim();
-        const toast = document.getElementById('account-toast-msg');
-
-        if (orderInput || userInput) {
-          this.isSubscribed = true;
-          localStorage.setItem('hs_subscribed', 'true');
-          if (orderInput) localStorage.setItem('hs_order_id', orderInput);
-          if (userInput) {
-            localStorage.setItem('hs_user_name', userInput);
-            this.currentProfile = userInput;
-          }
-          if (pwdInput) localStorage.setItem('hs_user_pwd', pwdInput);
-          localStorage.setItem('hs_sub_timestamp', String(Date.now()));
-        localStorage.setItem('hs_sub_date', new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }));
-        localStorage.removeItem('hs_sub_expired');
-
-          renderHeaderProfile();
-          this.renderSpotlight();
-          this.renderContentRows();
-          this.setupSubscriptionUI();
-
-          if (toast) {
-            toast.textContent = "Pass Restored ✓";
-            toast.classList.remove('opacity-0');
-            setTimeout(() => {
-              toast.classList.add('opacity-0');
-              if (accountModal) {
-                accountModal.classList.add('hidden');
-                accountModal.classList.remove('flex');
-              }
-            }, 1200);
-          }
-        }
-      };
-    }
-
-    // ── Bind Sign Out Button ──
-    const logoutBtn = document.getElementById('account-logout-btn');
-    const menuLogoutBtn = document.getElementById('menu-logout-btn');
-
+    // ── Robust Sign Out Handler (Netflix Style) ──
     const handleLogout = () => {
+      localStorage.setItem('hs_auth_logged_in', 'false');
+      localStorage.removeItem('hs_user_name');
+      localStorage.removeItem('hs_user_email');
+      localStorage.removeItem('hs_user_pwd');
       localStorage.removeItem('hs_subscribed');
       localStorage.removeItem('hs_subscribed_name');
-      localStorage.removeItem('hs_user_name');
       localStorage.removeItem('hs_order_id');
       localStorage.removeItem('hs_sub_timestamp');
       localStorage.removeItem('hs_sub_date');
       localStorage.removeItem('hs_sub_expired');
+      localStorage.removeItem('hs_profile');
+      localStorage.removeItem('hs_avatar');
 
+      this.isLoggedIn = false;
       this.isSubscribed = false;
       this.currentProfile = 'Guest';
       this.currentProfileAvatar = '👤';
-
-      localStorage.setItem('hs_profile', 'Guest');
-      localStorage.setItem('hs_avatar', '👤');
 
       renderHeaderProfile();
       this.renderSpotlight();
@@ -1453,8 +1551,12 @@ class AppController {
         accountModal.classList.add('hidden');
         accountModal.classList.remove('flex');
       }
+
+      alert('✅ You have been signed out successfully.');
     };
 
+    const logoutBtn = document.getElementById('account-logout-btn');
+    const menuLogoutBtn = document.getElementById('menu-logout-btn');
     if (logoutBtn) logoutBtn.onclick = handleLogout;
     if (menuLogoutBtn) menuLogoutBtn.onclick = handleLogout;
 
@@ -1480,40 +1582,38 @@ class AppController {
       });
     }
 
+    // Bind Persona Selection Cards
     if (modal) {
       modal.querySelectorAll('.profile-card').forEach(card => {
         card.addEventListener('click', () => {
-          const name = card.getAttribute('data-profile');
+          const profile = card.getAttribute('data-profile');
           const avatar = card.getAttribute('data-avatar');
-          
-          this.currentProfile = name;
+
+          this.currentProfile = profile;
           this.currentProfileAvatar = avatar;
-          
-          localStorage.setItem('hs_profile', name);
-          localStorage.setItem('hs_user_name', name);
+          localStorage.setItem('hs_auth_logged_in', 'true');
+          localStorage.setItem('hs_user_name', profile);
           localStorage.setItem('hs_avatar', avatar);
-          sessionStorage.setItem('hs_profile_prompted', 'true');
-          
+
+          renderHeaderProfile();
+          this.renderSpotlight();
+          this.renderContentRows();
+
           modal.classList.add('hidden');
           modal.classList.remove('flex');
-          
-          this.isStandardRowsRendered = false;
-          renderHeaderProfile();
-          this.renderContentRows();
         });
       });
 
       const skipBtn = document.getElementById('skip-profile-btn');
       if (skipBtn) {
         skipBtn.addEventListener('click', () => {
-          sessionStorage.setItem('hs_profile_prompted', 'true');
           modal.classList.add('hidden');
           modal.classList.remove('flex');
-          renderHeaderProfile();
         });
       }
     }
   }
+
 
   bindRowSliders() {
     const SCROLL_AMOUNT = 320;

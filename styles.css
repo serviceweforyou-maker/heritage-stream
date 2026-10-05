@@ -929,6 +929,7 @@ img {
 }
 
 #user-account-modal > div,
+#netflix-auth-modal > div,
 #profile-modal > div,
 #legal-modal > div,
 #payment-modal > div,
@@ -944,7 +945,8 @@ img {
 
 #user-account-modal input,
 #user-account-modal select,
-#user-account-modal textarea {
+#user-account-modal textarea,
+#netflix-auth-modal input {
   background: #141826 !important;
   background-color: #141826 !important;
   color: #ffffff !important;
@@ -953,7 +955,8 @@ img {
 }
 
 #user-account-modal input:focus,
-#user-account-modal select:focus {
+#user-account-modal select:focus,
+#netflix-auth-modal input:focus {
   border-color: #d4af37 !important;
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.4) !important;
 }
