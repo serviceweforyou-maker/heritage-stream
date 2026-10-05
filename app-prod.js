@@ -780,6 +780,681 @@ class AppController {
   }
 
   // Handle premium locked prompts inside games/features
+  setupProfileSelector() {
+    const modal = document.getElementById('profile-modal');
+    const accountModal = document.getElementById('user-account-modal');
+    const authModal = document.getElementById('netflix-auth-modal');
+    const trialModal = document.getElementById('trial-expiry-subscribe-modal');
+    const headerAuthBtn = document.getElementById('header-auth-btn');
+    const headerProfileDropdown = document.getElementById('header-profile-dropdown');
+
+    // ── Check Login & Trial State ──
+    this.isLoggedIn = localStorage.getItem('hs_auth_logged_in') === 'true';
+
+    // Helper: Compute User Subscription & Trial Status
+    const getAccountTrialStatus = () => {
+      this.isSubscribed = DatabaseService.isSubscribed();
+      if (this.isSubscribed) {
+        return { isSubscribed: true, daysLeft: DatabaseService.getDaysRemaining(), statusLabel: 'PRO Active' };
+      }
+
+      if (!this.isLoggedIn) {
+        return { isGuest: true, statusLabel: 'Guest Explorer' };
+      }
+
+      // Check Free Trial Window (3 Days)
+      const TRIAL_DAYS = 3;
+      let regTime = parseInt(localStorage.getItem('hs_account_created_timestamp') || localStorage.getItem('hs_free_trial_start') || '0');
+      if (!regTime) {
+        regTime = Date.now();
+        localStorage.setItem('hs_account_created_timestamp', String(regTime));
+        localStorage.setItem('hs_free_trial_start', String(regTime));
+      }
+
+      const msPassed = Date.now() - regTime;
+      const daysPassed = Math.floor(msPassed / (1000 * 60 * 60 * 24));
+      const trialDaysLeft = Math.max(0, TRIAL_DAYS - daysPassed);
+
+      if (daysPassed < TRIAL_DAYS) {
+        return {
+          isTrialActive: true,
+          dayNumber: daysPassed + 1,
+          trialDaysLeft: trialDaysLeft,
+          totalTrialDays: TRIAL_DAYS,
+          statusLabel: 'Trial Day ' + (daysPassed + 1) + ' of 3'
+        };
+      } else {
+        return {
+          isTrialExpired: true,
+          daysPassed: daysPassed,
+          statusLabel: 'Trial Expired'
+        };
+      }
+    };
+
+    const renderHeaderProfile = () => {
+      this.isLoggedIn = localStorage.getItem('hs_auth_logged_in') === 'true';
+      const trialInfo = getAccountTrialStatus();
+
+      const avatarEl = document.getElementById('active-profile-avatar');
+      const nameEl = document.getElementById('active-profile-name');
+      const greetingEl = document.getElementById('hero-sub-prompt');
+      const subBadge = document.getElementById('header-sub-badge');
+      const dropdownSubCard = document.getElementById('dropdown-sub-status-card');
+      const dropdownSubDays = document.getElementById('dropdown-sub-days');
+      const dropdownSubPill = document.getElementById('dropdown-sub-pill');
+      const dropdownSubPercent = document.getElementById('dropdown-sub-percent');
+      const dropdownSubExpiry = document.getElementById('dropdown-sub-expiry');
+
+      const savedName = localStorage.getItem('hs_user_name') || this.currentProfile || (this.isLoggedIn ? 'Scholar' : 'Guest');
+      const savedAvatar = localStorage.getItem('hs_avatar') || this.currentProfileAvatar || (this.isLoggedIn ? '📜' : '👤');
+
+      if (avatarEl) avatarEl.textContent = savedAvatar;
+      if (nameEl) nameEl.textContent = savedName;
+
+      const mobAvatarEl = document.getElementById('mobile-avatar-icon');
+      const mobNameEl = document.getElementById('mobile-profile-name');
+      const mobBadgeEl = document.getElementById('mobile-sub-badge');
+      const mobileProfBtn = document.getElementById('mobile-profile-btn');
+
+      if (mobAvatarEl) mobAvatarEl.textContent = savedAvatar;
+      if (mobNameEl) mobNameEl.textContent = this.isLoggedIn ? savedName : 'Guest Explorer';
+
+      if (trialInfo.isSubscribed) {
+        if (mobBadgeEl) mobBadgeEl.textContent = 'PRO ACTIVE • ' + trialInfo.daysLeft + 'd';
+      } else if (trialInfo.isTrialActive) {
+        if (mobBadgeEl) mobBadgeEl.textContent = '✨ FREE TRIAL • Day ' + trialInfo.dayNumber + ' of 3';
+      } else if (trialInfo.isTrialExpired) {
+        if (mobBadgeEl) mobBadgeEl.textContent = '⚡ TRIAL ENDED • Upgrade Pass';
+      } else {
+        if (mobBadgeEl) mobBadgeEl.textContent = 'Free Guest Explorer';
+      }
+
+      if (mobileProfBtn) {
+        mobileProfBtn.innerHTML = this.isLoggedIn ? 'Manage Account' : '🔑 Sign In';
+      }
+
+      // Toggle Header Auth vs Profile Dropdown Button
+      if (this.isLoggedIn) {
+        if (headerAuthBtn) {
+          headerAuthBtn.classList.add('hidden');
+          headerAuthBtn.style.display = 'none';
+        }
+        if (headerProfileDropdown) {
+          headerProfileDropdown.classList.remove('hidden');
+          headerProfileDropdown.style.display = 'block';
+        }
+      } else {
+        if (headerAuthBtn) {
+          headerAuthBtn.classList.remove('hidden');
+          headerAuthBtn.style.display = 'inline-flex';
+        }
+        if (headerProfileDropdown) {
+          headerProfileDropdown.classList.add('hidden');
+          headerProfileDropdown.style.display = 'none';
+        }
+      }
+
+      if (subBadge) {
+        if (trialInfo.isSubscribed) {
+          subBadge.classList.remove('hidden');
+          subBadge.className = "text-[9px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm";
+          subBadge.innerHTML = '👑 PRO <span class="opacity-90 font-mono text-[7px] ml-0.5">• ' + trialInfo.daysLeft + 'd</span>';
+          subBadge.title = 'PRO Pass Active • ' + trialInfo.daysLeft + ' Days Left';
+        } else if (trialInfo.isTrialActive) {
+          subBadge.classList.remove('hidden');
+          subBadge.className = "text-[9px] font-mono font-bold bg-gold/20 text-amber-300 border border-gold/40 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm animate-pulse";
+          subBadge.innerHTML = '✨ TRIAL <span class="opacity-90 font-mono text-[7px] ml-0.5">• Day ' + trialInfo.dayNumber + '/3</span>';
+          subBadge.title = 'Free Trial Active • Day ' + trialInfo.dayNumber + ' of 3';
+        } else if (trialInfo.isTrialExpired) {
+          subBadge.classList.remove('hidden');
+          subBadge.className = "text-[9px] font-mono font-bold bg-red-500/20 text-red-300 border border-red-500/40 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm";
+          subBadge.innerHTML = '⚡ UPGRADE PASS';
+          subBadge.title = 'Trial Concluded • Upgrade to Annual Pass';
+        } else {
+          subBadge.classList.add('hidden');
+        }
+      }
+
+      if (dropdownSubCard) {
+        if (trialInfo.isSubscribed) {
+          dropdownSubCard.className = "p-3 rounded-xl bg-gradient-to-r from-gold/15 to-emerald-500/15 border border-gold/40 mb-1";
+          if (dropdownSubPill) {
+            dropdownSubPill.className = "text-[8px] font-mono font-bold text-emerald-400 bg-emerald-500/20 px-1.5 py-0.5 rounded uppercase";
+            dropdownSubPill.textContent = "PRO ACTIVE";
+          }
+          if (dropdownSubDays) {
+            dropdownSubDays.className = "text-emerald-300 font-mono font-bold";
+            dropdownSubDays.textContent = trialInfo.daysLeft + " Days Left";
+          }
+          if (dropdownSubPercent) {
+            const pct = Math.round((trialInfo.daysLeft / 365) * 100);
+            dropdownSubPercent.textContent = pct + "% left";
+          }
+          if (dropdownSubExpiry) {
+            const subTimestamp = parseInt(localStorage.getItem('hs_sub_timestamp') || String(Date.now()));
+            const expiryDate = new Date(subTimestamp + (365 * 24 * 60 * 60 * 1000));
+            dropdownSubExpiry.textContent = "Expires: " + expiryDate.toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' });
+          }
+        } else if (trialInfo.isTrialActive) {
+          dropdownSubCard.className = "p-3 rounded-xl bg-gradient-to-r from-gold/20 via-amber-500/15 to-transparent border border-gold/40 mb-1";
+          if (dropdownSubPill) {
+            dropdownSubPill.className = "text-[8px] font-mono font-bold text-amber-300 bg-amber-500/25 px-1.5 py-0.5 rounded uppercase";
+            dropdownSubPill.textContent = "FREE TRIAL ACTIVE";
+          }
+          if (dropdownSubDays) {
+            dropdownSubDays.className = "text-amber-300 font-mono font-bold";
+            dropdownSubDays.textContent = "Day " + trialInfo.dayNumber + " of " + trialInfo.totalTrialDays;
+          }
+          if (dropdownSubPercent) dropdownSubPercent.textContent = trialInfo.trialDaysLeft + "d left";
+          if (dropdownSubExpiry) dropdownSubExpiry.textContent = "Upgrade to unlock uninterrupted 365-day access";
+        } else {
+          dropdownSubCard.className = "p-3 rounded-xl bg-[#141826] border border-white/10 mb-1";
+          if (dropdownSubPill) {
+            dropdownSubPill.className = "text-[8px] font-mono font-bold text-amber-300 bg-amber-500/20 px-1.5 py-0.5 rounded uppercase";
+            dropdownSubPill.textContent = trialInfo.isTrialExpired ? "TRIAL EXPIRED" : "FREE EXPLORER";
+          }
+          if (dropdownSubDays) {
+            dropdownSubDays.className = "text-white font-sans font-bold";
+            dropdownSubDays.textContent = trialInfo.isTrialExpired ? "Upgrade Pass" : "Free Access";
+          }
+          if (dropdownSubPercent) dropdownSubPercent.textContent = "₹399/yr";
+          if (dropdownSubExpiry) dropdownSubExpiry.textContent = "Unlock 200+ sagas & 40+ Live Temples";
+        }
+      }
+
+      if (greetingEl) {
+        if (trialInfo.isSubscribed) {
+          greetingEl.textContent = 'Pranam, ' + savedName + '! Your Premium Pass has ' + trialInfo.daysLeft + ' days left.';
+        } else if (trialInfo.isTrialActive) {
+          greetingEl.textContent = 'Pranam, ' + savedName + '! Free VIP Trial Day ' + trialInfo.dayNumber + ' of 3 Active.';
+        } else if (this.isLoggedIn) {
+          greetingEl.textContent = 'Welcome back, ' + savedName + '! Upgrade to unlock unrestricted access.';
+        } else {
+          greetingEl.textContent = 'Welcome! Unveil the secrets of antiquity & 40+ Live Temples.';
+        }
+      }
+    };
+
+    renderHeaderProfile();
+
+    // ── Automated Smart Trial Expiry Popup Trigger ──
+    const checkAndTriggerTrialPopup = () => {
+      const trialInfo = getAccountTrialStatus();
+      if (trialInfo.isTrialExpired && !trialInfo.isSubscribed) {
+        const alreadyPromptedSession = sessionStorage.getItem('hs_trial_popup_shown_session');
+        if (!alreadyPromptedSession) {
+          sessionStorage.setItem('hs_trial_popup_shown_session', 'true');
+          const tModal = document.getElementById('trial-expiry-subscribe-modal');
+          if (tModal) {
+            tModal.classList.remove('hidden');
+            tModal.classList.add('flex');
+            tModal.style.display = 'flex';
+          }
+        }
+      }
+    };
+
+    // Check after 5 seconds of browsing
+    setTimeout(checkAndTriggerTrialPopup, 5000);
+
+    // Expose Auth Modal Methods Globally & on Instance
+    this.openAuthModal = window.openAuthModal;
+    this.closeAuthModal = window.closeAuthModal;
+    this.switchAuthTab = window.switchAuthTab;
+    this.getAccountTrialStatus = getAccountTrialStatus;
+    this.renderHeaderProfile = renderHeaderProfile;
+
+    if (headerAuthBtn) {
+      headerAuthBtn.onclick = () => window.openAuthModal('signin');
+    }
+
+    const closeAuthBtn = document.getElementById('close-auth-modal-btn');
+    if (closeAuthBtn) closeAuthBtn.onclick = window.closeAuthModal;
+
+    const tabSignInBtn = document.getElementById('auth-tab-signin');
+    const tabRegBtn = document.getElementById('auth-tab-register');
+    if (tabSignInBtn) tabSignInBtn.onclick = () => window.switchAuthTab('signin');
+    if (tabRegBtn) tabRegBtn.onclick = () => window.switchAuthTab('register');
+
+    const switchToReg = document.getElementById('auth-switch-to-register');
+    const switchToSign = document.getElementById('auth-switch-to-signin');
+    if (switchToReg) switchToReg.onclick = () => window.switchAuthTab('register');
+    if (switchToSign) switchToSign.onclick = () => window.switchAuthTab('signin');
+
+    // Toggle Password Visibility
+    const togglePwdBtn = document.getElementById('auth-toggle-pwd-btn');
+    const signInPwdInput = document.getElementById('auth-signin-pwd');
+    if (togglePwdBtn && signInPwdInput) {
+      togglePwdBtn.onclick = () => {
+        if (signInPwdInput.type === 'password') {
+          signInPwdInput.type = 'text';
+          togglePwdBtn.textContent = 'Hide';
+        } else {
+          signInPwdInput.type = 'password';
+          togglePwdBtn.textContent = 'Show';
+        }
+      };
+    }
+
+    // ── Submit Sign In Form ──
+    const handleSignIn = (e) => {
+      if (e) e.preventDefault();
+      const email = (document.getElementById('auth-signin-email')?.value || '').trim();
+      const pwd = (document.getElementById('auth-signin-pwd')?.value || '').trim();
+
+      if (!email) {
+        alert('Please enter your email or mobile number.');
+        return;
+      }
+
+      const nameFromEmail = email.split('@')[0];
+      const formattedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+
+      localStorage.setItem('hs_auth_logged_in', 'true');
+      localStorage.setItem('hs_user_name', formattedName || 'Scholar');
+      localStorage.setItem('hs_user_email', email);
+      if (pwd) localStorage.setItem('hs_user_pwd', pwd);
+      if (!localStorage.getItem('hs_avatar')) localStorage.setItem('hs_avatar', '📜');
+
+      this.isLoggedIn = true;
+      this.currentProfile = formattedName || 'Scholar';
+      this.currentProfileAvatar = localStorage.getItem('hs_avatar') || '📜';
+
+      window.updateHeaderAuthState();
+      renderHeaderProfile();
+      this.renderSpotlight();
+      this.renderContentRows();
+      this.setupSubscriptionUI();
+      window.closeAuthModal();
+
+      alert('✨ Welcome to Sanatana360, ' + formattedName + '!');
+    };
+
+    const signInForm = document.getElementById('netflix-signin-form');
+    if (signInForm) {
+      signInForm.onsubmit = handleSignIn;
+    }
+    const signInSubmitBtn = document.getElementById('auth-signin-submit-btn');
+    if (signInSubmitBtn) {
+      signInSubmitBtn.onclick = handleSignIn;
+    }
+
+    // ── Fast 1-Click Persona Login Buttons ──
+    document.querySelectorAll('.fast-login-btn').forEach(btn => {
+      btn.onclick = () => {
+        const name = btn.getAttribute('data-name') || 'Scholar';
+        const avatar = btn.getAttribute('data-avatar') || '📜';
+
+        localStorage.setItem('hs_auth_logged_in', 'true');
+        localStorage.setItem('hs_user_name', name);
+        localStorage.setItem('hs_avatar', avatar);
+
+        this.isLoggedIn = true;
+        this.currentProfile = name;
+        this.currentProfileAvatar = avatar;
+
+        window.updateHeaderAuthState();
+        renderHeaderProfile();
+        this.renderSpotlight();
+        this.renderContentRows();
+        this.setupSubscriptionUI();
+        window.closeAuthModal();
+      };
+    });
+
+    // ── Open Account Modal Helper ──
+    const openAccountModal = (initialTab = 'profile') => {
+      if (!accountModal) return;
+
+      const trialInfo = getAccountTrialStatus();
+      const currentName = localStorage.getItem('hs_user_name') || this.currentProfile || 'Scholar';
+      const currentAvatar = localStorage.getItem('hs_avatar') || this.currentProfileAvatar || '📜';
+      const currentPwd = localStorage.getItem('hs_user_pwd') || '';
+      const orderId = localStorage.getItem('hs_order_id') || '';
+
+      const nameInput = document.getElementById('acc-name-input');
+      const pwdInput = document.getElementById('acc-password-input');
+      const avatarPreview = document.getElementById('account-modal-avatar-preview');
+      const displayName = document.getElementById('account-modal-display-name');
+      const subBadgeModal = document.getElementById('account-modal-sub-badge');
+
+      if (nameInput) nameInput.value = currentName === 'Guest' ? '' : currentName;
+      if (pwdInput) pwdInput.value = currentPwd;
+      if (avatarPreview) avatarPreview.textContent = currentAvatar;
+      if (displayName) displayName.textContent = currentName;
+
+      if (subBadgeModal) {
+        if (trialInfo.isSubscribed) {
+          subBadgeModal.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="text-emerald-400 font-bold">✨ Premium Pass Active • ' + trialInfo.daysLeft + ' Days Left</span>';
+        } else if (trialInfo.isTrialActive) {
+          subBadgeModal.innerHTML = '<span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span><span class="text-gold font-bold">✨ Free Trial • Day ' + trialInfo.dayNumber + ' of 3</span>';
+        } else {
+          subBadgeModal.innerHTML = '<span class="w-2 h-2 rounded-full bg-red-400"></span><span class="text-red-300 font-bold">⚡ Free Explorer (Trial Ended)</span>';
+        }
+      }
+
+      // Populate Plan Details Card
+      const planCard = document.getElementById('plan-details-card');
+      if (planCard) {
+        if (trialInfo.isSubscribed) {
+          const now = Date.now();
+          let subTimestamp = parseInt(localStorage.getItem('hs_sub_timestamp') || '');
+          if (!subTimestamp) {
+            subTimestamp = now;
+            localStorage.setItem('hs_sub_timestamp', String(now));
+          }
+
+          const expiryTime = subTimestamp + (365 * 24 * 60 * 60 * 1000);
+          const msLeft = expiryTime - now;
+          const daysLeft = Math.max(0, Math.ceil(msLeft / (1000 * 60 * 60 * 24)));
+          const daysPassed = Math.min(365, Math.max(0, 365 - daysLeft));
+          const progressPercent = Math.round((daysLeft / 365) * 100);
+          const startDateStr = new Date(subTimestamp).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+          const endDateStr = new Date(expiryTime).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+
+          planCard.innerHTML = `
+            <div class="flex items-center justify-between border-b border-gold/20 pb-3">
+              <div>
+                <span class="text-[9px] uppercase tracking-widest text-gold font-mono font-bold block">Current Active Plan</span>
+                <h4 class="text-base font-bold text-white font-serif">Sanatana360 Annual Pass</h4>
+              </div>
+              <span class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>ACTIVE</span>
+              </span>
+            </div>
+
+            <!-- Live Days Countdown Badge -->
+            <div class="bg-gradient-to-r from-amber-500/20 via-gold/15 to-emerald-500/20 border border-gold/40 rounded-2xl p-4 space-y-3 shadow-inner">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-gold/25 border border-gold/50 flex items-center justify-center text-xl flex-shrink-0 shadow-sm">
+                    ⏳
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase tracking-widest text-gold font-mono font-bold block">Pass Validity</span>
+                    <span class="text-base font-extrabold text-white font-mono">${daysLeft} Days Left</span>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="text-[9px] text-emerald-400 uppercase font-mono font-bold block">Access Level</span>
+                  <span class="text-xs font-bold text-white/90 font-mono">Full VIP Access</span>
+                </div>
+              </div>
+
+              <!-- Start Date & End Date Grid -->
+              <div class="grid grid-cols-2 gap-2 pt-1 border-t border-white/10">
+                <div class="bg-[#0c0e17] p-2.5 rounded-xl border border-white/10">
+                  <span class="text-[9px] text-white/50 uppercase tracking-wider font-mono block">📅 Start Date</span>
+                  <span class="text-xs font-bold text-white font-mono">${startDateStr}</span>
+                </div>
+                <div class="bg-[#0c0e17] p-2.5 rounded-xl border border-gold/30">
+                  <span class="text-[9px] text-gold/80 uppercase tracking-wider font-mono block">🏁 End Date (Expiry)</span>
+                  <span class="text-xs font-bold text-gold font-mono">${endDateStr}</span>
+                </div>
+              </div>
+
+              <!-- Animated Validity Progress Bar -->
+              <div class="space-y-1 pt-1">
+                <div class="flex justify-between text-[9px] font-mono text-white/60">
+                  <span>Day ${daysPassed} of 365</span>
+                  <span class="text-emerald-400 font-bold">${progressPercent}% remaining</span>
+                </div>
+                <div class="w-full h-2.5 bg-[#0c0e17] rounded-full overflow-hidden border border-white/10 p-0.5">
+                  <div class="h-full bg-gradient-to-r from-gold via-amber-400 to-emerald-400 rounded-full transition-all duration-500" style="width: ${Math.max(3, progressPercent)}%;"></div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Activation Order Details -->
+            <div class="space-y-2 text-xs text-white/80">
+              <div class="flex items-center justify-between bg-[#0c0e17] p-3 rounded-xl border border-white/10 font-mono">
+                <span class="text-white/60 text-[11px]">Order ID:</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-gold font-bold text-[11px] select-all truncate max-w-[140px] sm:max-w-none">${orderId || 'sub_heritage_pass'}</span>
+                  <button id="copy-order-id-btn" class="px-2.5 py-1 bg-white/10 hover:bg-gold hover:text-black rounded-lg text-[10px] uppercase tracking-wider font-bold transition-all cursor-pointer" title="Copy ID">Copy</button>
+                </div>
+              </div>
+
+              <div class="flex justify-between py-1 text-[11px]">
+                <span class="text-white/60">Membership Plan:</span>
+                <span class="font-bold text-gold font-mono">₹399 / Year (All 200+ Sagas Included)</span>
+              </div>
+            </div>
+
+            <div class="p-3 bg-emerald-500/10 border border-emerald-500/25 rounded-xl text-[11px] text-emerald-300 leading-relaxed">
+              🎉 <strong>All Sagas & Live Streams Unlocked:</strong> Enjoy 40+ 24/7 Live Darshanas, 26 Granths, 105+ Blogs, and Learning Arenas.
+            </div>
+          `;
+
+          const copyBtn = planCard.querySelector('#copy-order-id-btn');
+          if (copyBtn) {
+            copyBtn.onclick = () => {
+              navigator.clipboard.writeText(orderId || 'sub_heritage_pass');
+              copyBtn.textContent = 'Copied!';
+              setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+            };
+          }
+        } else {
+          planCard.innerHTML = `
+            <div class="text-center py-4 space-y-3">
+              <span class="text-4xl block">🏛️</span>
+              <h4 class="text-base font-bold text-white font-serif">Upgrade to Premium Heritage Pass</h4>
+              <p class="text-xs text-white/60 max-w-xs mx-auto">Get unrestricted access to all 200+ documentaries, audiobooks, and illustrated 3D FlipBooks for ₹399/year.</p>
+              <button id="modal-upgrade-btn" class="w-full py-3.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/20 cursor-pointer">
+                Unlock Annual Pass (₹399)
+              </button>
+            </div>
+          `;
+
+          const upBtn = planCard.querySelector('#modal-upgrade-btn');
+          if (upBtn) {
+            upBtn.onclick = () => {
+              accountModal.classList.add('hidden');
+              accountModal.classList.remove('flex');
+              this.openPaymentModal();
+            };
+          }
+        }
+      }
+
+      // Switch Tab Handler
+      const switchAccTab = (tab) => {
+        ['profile', 'plan', 'restore'].forEach(t => {
+          const btn = document.getElementById(`acc-tab-${t}`);
+          const panel = document.getElementById(`acc-panel-${t}`);
+          if (btn && panel) {
+            if (t === tab) {
+              btn.className = "acc-nav-tab py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 font-extrabold";
+              panel.classList.remove('hidden');
+            } else {
+              btn.className = "acc-nav-tab py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 font-bold";
+              panel.classList.add('hidden');
+            }
+          }
+        });
+      };
+
+      switchAccTab(initialTab);
+
+      // Bind Tab Buttons
+      const tabProf = document.getElementById('acc-tab-profile');
+      const tabPlan = document.getElementById('acc-tab-plan');
+      const tabRest = document.getElementById('acc-tab-restore');
+
+      if (tabProf) tabProf.onclick = () => switchAccTab('profile');
+      if (tabPlan) tabPlan.onclick = () => switchAccTab('plan');
+      if (tabRest) tabRest.onclick = () => switchAccTab('restore');
+
+      // Bind Avatar Options
+      accountModal.querySelectorAll('.avatar-opt').forEach(btn => {
+        btn.onclick = () => {
+          const av = btn.getAttribute('data-avatar');
+          this.currentProfileAvatar = av;
+          localStorage.setItem('hs_avatar', av);
+          if (avatarPreview) avatarPreview.textContent = av;
+          renderHeaderProfile();
+        };
+      });
+
+      // Show Modal
+      accountModal.classList.remove('hidden');
+      accountModal.classList.add('flex');
+    };
+
+    // Bind Open Profile / Account Button
+    const openProfBtn = document.getElementById('open-profile-btn');
+    if (openProfBtn) {
+      openProfBtn.onclick = () => openAccountModal('profile');
+    }
+
+    const menuAccBtn = document.getElementById('menu-account-btn');
+    if (menuAccBtn) {
+      menuAccBtn.onclick = () => openAccountModal('profile');
+    }
+
+    const mobileProfBtn = document.getElementById('mobile-profile-btn');
+    if (mobileProfBtn) {
+      mobileProfBtn.onclick = () => {
+        if (this.isLoggedIn) {
+          openAccountModal('profile');
+        } else {
+          window.openAuthModal('signin');
+        }
+      };
+    }
+
+    // ── Save Profile Details ──
+    const saveProfBtn = document.getElementById('save-account-profile-btn');
+    if (saveProfBtn) {
+      saveProfBtn.onclick = () => {
+        const nameInput = document.getElementById('acc-name-input');
+        const pwdInput = document.getElementById('acc-password-input');
+        const toast = document.getElementById('account-toast-msg');
+
+        if (nameInput && nameInput.value.trim()) {
+          const newName = nameInput.value.trim();
+          this.currentProfile = newName;
+          localStorage.setItem('hs_user_name', newName);
+        }
+
+        if (pwdInput && pwdInput.value.trim()) {
+          localStorage.setItem('hs_user_pwd', pwdInput.value.trim());
+        }
+
+        window.updateHeaderAuthState();
+        renderHeaderProfile();
+
+        if (toast) {
+          toast.textContent = "Saved ✓";
+          toast.classList.remove('opacity-0');
+          setTimeout(() => { toast.classList.add('opacity-0'); }, 1500);
+        }
+      };
+    }
+
+    // ── Robust Sign Out Handler (Netflix Style) ──
+    const handleLogout = () => {
+      localStorage.setItem('hs_auth_logged_in', 'false');
+      localStorage.removeItem('hs_user_name');
+      localStorage.removeItem('hs_user_email');
+      localStorage.removeItem('hs_user_pwd');
+      localStorage.removeItem('hs_subscribed');
+      localStorage.removeItem('hs_subscribed_name');
+      localStorage.removeItem('hs_order_id');
+      localStorage.removeItem('hs_sub_timestamp');
+      localStorage.removeItem('hs_sub_date');
+      localStorage.removeItem('hs_sub_expired');
+      localStorage.removeItem('hs_profile');
+      localStorage.removeItem('hs_avatar');
+      localStorage.removeItem('hs_account_created_timestamp');
+      localStorage.removeItem('hs_free_trial_start');
+      sessionStorage.removeItem('hs_trial_popup_shown_session');
+
+      this.isLoggedIn = false;
+      this.isSubscribed = false;
+      this.currentProfile = 'Guest';
+      this.currentProfileAvatar = '👤';
+
+      window.updateHeaderAuthState();
+      renderHeaderProfile();
+      this.renderSpotlight();
+      this.renderContentRows();
+      this.setupSubscriptionUI();
+
+      if (accountModal) {
+        accountModal.classList.add('hidden');
+        accountModal.classList.remove('flex');
+      }
+
+      alert('✅ You have been signed out successfully.');
+    };
+
+    this.handleLogout = handleLogout;
+    window.handleLogout = handleLogout;
+
+    const logoutBtn = document.getElementById('account-logout-btn');
+    const menuLogoutBtn = document.getElementById('menu-logout-btn');
+    if (logoutBtn) logoutBtn.onclick = handleLogout;
+    if (menuLogoutBtn) menuLogoutBtn.onclick = handleLogout;
+
+    // ── Close Account Modal ──
+    const closeAccBtn = document.getElementById('close-account-modal-btn');
+    if (closeAccBtn && accountModal) {
+      closeAccBtn.onclick = () => {
+        accountModal.classList.add('hidden');
+        accountModal.classList.remove('flex');
+      };
+    }
+
+    // ── Persona Switcher Modal ──
+    const switchBtn = document.getElementById('switch-profile-btn');
+    if (switchBtn && modal) {
+      switchBtn.onclick = () => {
+        if (accountModal) {
+          accountModal.classList.add('hidden');
+          accountModal.classList.remove('flex');
+        }
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+    }
+
+    // Bind Persona Selection Cards
+    if (modal) {
+      modal.querySelectorAll('.profile-card').forEach(card => {
+        card.onclick = () => {
+          const profile = card.getAttribute('data-profile');
+          const avatar = card.getAttribute('data-avatar');
+
+          this.currentProfile = profile;
+          this.currentProfileAvatar = avatar;
+          localStorage.setItem('hs_auth_logged_in', 'true');
+          localStorage.setItem('hs_user_name', profile);
+          localStorage.setItem('hs_avatar', avatar);
+
+          this.isLoggedIn = true;
+          window.updateHeaderAuthState();
+          renderHeaderProfile();
+          this.renderSpotlight();
+          this.renderContentRows();
+
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        };
+      });
+
+      const skipBtn = document.getElementById('skip-profile-btn');
+      if (skipBtn) {
+        skipBtn.onclick = () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        };
+      }
+    }
+  }
+
   // Handle premium locked prompts & dynamic buy button visibility
   setupSubscriptionUI() {
     const promoCard = document.getElementById('premium-promo-card');

@@ -5,6 +5,62 @@
   <script>
     window.selectedRegAvatar = '📜';
 
+    window.updateHeaderAuthState = function() {
+      try {
+        var isLoggedIn = localStorage.getItem('hs_auth_logged_in') === 'true';
+        var authBtn = document.getElementById('header-auth-btn');
+        var profDropdown = document.getElementById('header-profile-dropdown');
+        var nameEl = document.getElementById('active-profile-name');
+        var avatarEl = document.getElementById('active-profile-avatar');
+        var mobNameEl = document.getElementById('mobile-profile-name');
+        var mobAvatarEl = document.getElementById('mobile-avatar-icon');
+        var mobBadgeEl = document.getElementById('mobile-sub-badge');
+        var mobileProfBtn = document.getElementById('mobile-profile-btn');
+
+        var savedName = localStorage.getItem('hs_user_name') || 'Scholar';
+        var savedAvatar = localStorage.getItem('hs_avatar') || '📜';
+        var isSub = localStorage.getItem('hs_subscribed') === 'true';
+
+        if (isLoggedIn) {
+          if (authBtn) {
+            authBtn.classList.add('hidden');
+            authBtn.style.display = 'none';
+          }
+          if (profDropdown) {
+            profDropdown.classList.remove('hidden');
+            profDropdown.style.display = 'block';
+          }
+          if (nameEl) nameEl.textContent = savedName;
+          if (avatarEl) avatarEl.textContent = savedAvatar;
+          if (mobNameEl) mobNameEl.textContent = savedName;
+          if (mobAvatarEl) mobAvatarEl.textContent = savedAvatar;
+          if (mobBadgeEl) mobBadgeEl.textContent = isSub ? '👑 PRO Active' : '✨ 3-Day Free VIP Pass';
+          if (mobileProfBtn) mobileProfBtn.innerHTML = '<span>👤</span> Manage';
+        } else {
+          if (authBtn) {
+            authBtn.classList.remove('hidden');
+            authBtn.style.display = 'inline-flex';
+          }
+          if (profDropdown) {
+            profDropdown.classList.add('hidden');
+            profDropdown.style.display = 'none';
+          }
+          if (mobNameEl) mobNameEl.textContent = 'Guest Explorer';
+          if (mobAvatarEl) mobAvatarEl.textContent = '👤';
+          if (mobBadgeEl) mobBadgeEl.textContent = 'Guest (Sign In)';
+          if (mobileProfBtn) mobileProfBtn.innerHTML = '<span>🔑</span> Sign In';
+        }
+      } catch(e) {
+        console.warn('Error updating header auth state:', e);
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', window.updateHeaderAuthState);
+    } else {
+      window.updateHeaderAuthState();
+    }
+
     window.switchAuthTab = function(tab) {
       try {
         var tabSignIn = document.getElementById('auth-tab-signin');
@@ -110,6 +166,9 @@
         localStorage.setItem('hs_free_trial_start', String(now));
         if (pwd) localStorage.setItem('hs_user_pwd', pwd);
 
+        // Immediate 0ms Header Sync
+        window.updateHeaderAuthState();
+
         if (window.appInstance) {
           window.appInstance.isLoggedIn = true;
           window.appInstance.currentProfile = name;
@@ -125,6 +184,7 @@
         alert('🎉 Free Explorer Account Created! Welcome, ' + name + '! Your 3-Day Free VIP Access is now active.');
       } catch(err) {
         console.error('Error during registration:', err);
+        window.updateHeaderAuthState();
         window.closeAuthModal();
         alert('Account Created! Welcome to Sanatana360!');
       }
