@@ -120,148 +120,792 @@ export const DEITIES = [
 
 export const KARNATAKA_TEMPLES = [
   {
-    id: "temp_chamundi",
-    title: "Chamundeshwari",
-    location: "Mysore",
-    rating: "4.9",
-    categories: ["Shakti Peetha", "Major Pilgrimage"],
-    deityTag: "Chamundeshwari",
-    description: "One of 18 Maha Shakti Peethas atop Chamundi Hills. 1000+ steps climb.",
-    timings: "6:00–14:00, 15:30–18:00, 19:30–21:00",
-    phone: "+91-821-2525231",
-    coords: { lat: 12.2748, lng: 76.6785 },
-    icon: "🏔️",
-    image: "/images/mahishasura_battle.jpg",
-    era: "12th Century CE",
-    architect: "Hoysala & Vijayanagara Dynasties"
+    "id": "temp_iskcon_blr",
+    "title": "ISKCON Sri Radha Krishna-chandra",
+    "location": "Rajajinagar, Bengaluru",
+    "district": "Bengaluru",
+    "rating": "4.9",
+    "categories": [
+      "Major Pilgrimage",
+      "Dvaita Matha"
+    ],
+    "deityTag": "Krishna",
+    "description": "One of the largest ISKCON temple complexes in the world, featuring grand gopurams, gold-plated dhwaja sthamba, and spiritual Vedic cultural centers.",
+    "timings": "04:15–05:00, 07:15–13:00, 16:15–20:30",
+    "phone": "+91-80-23471956",
+    "coords": {
+      "lat": 13.0098,
+      "lng": 77.5511
+    },
+    "icon": "🛕",
+    "image": "/images/krishna_cover.jpg",
+    "era": "1997 CE",
+    "architect": "Sri Madhu Pandit Dasa (Patron)"
   },
   {
-    id: "temp_virupaksha",
-    title: "Virupaksha",
-    location: "Hampi",
-    rating: "4.8",
-    categories: ["UNESCO Heritage"],
-    deityTag: "Shiva",
-    description: "7th century Shiva temple. UNESCO World Heritage Site.",
-    timings: "6:00–12:30, 17:00–20:30",
-    phone: "+91-8394-241235",
-    coords: { lat: 15.3350, lng: 76.4562 },
-    icon: "🏛️",
-    image: "/images/hampi.jpg",
-    era: "7th Century CE",
-    architect: "Vijayanagara Empire"
+    "id": "temp_bull_temple",
+    "title": "Dodda Basavana Gudi (Bull Temple)",
+    "location": "Basavanagudi, Bengaluru",
+    "district": "Bengaluru",
+    "rating": "4.8",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Nandi / Shiva",
+    "description": "Famous monolithic Nandi statue carved out of a single granite rock, measuring 4.5m in height and 6.5m in length, built by Kempe Gowda I.",
+    "timings": "06:00–20:00",
+    "phone": "+91-80-22442220",
+    "coords": {
+      "lat": 12.9421,
+      "lng": 77.5681
+    },
+    "icon": "🐂",
+    "image": "/images/shiva.jpg",
+    "era": "1537 CE",
+    "architect": "Kempe Gowda I (Founder of Bengaluru)"
   },
   {
-    id: "temp_dharmasthala",
-    title: "Dharmasthala",
-    location: "Dharmasthala",
-    rating: "4.9",
-    categories: ["Major Pilgrimage"],
-    deityTag: "Manjunatha",
-    description: "Free meals to 10,000+ pilgrims daily. Unique inter-faith administration.",
-    timings: "6:30–14:00, 17:00–20:30",
-    phone: "+91-8256-277221",
-    coords: { lat: 12.9525, lng: 75.3852 },
-    icon: "🌊",
-    image: "/images/dharma.jpg",
-    era: "16th Century CE",
-    architect: "Hegde Family (patrons)"
+    "id": "temp_halasuru_someshwara",
+    "title": "Halasuru Someshwara Temple",
+    "location": "Ulsoor, Bengaluru",
+    "district": "Bengaluru",
+    "rating": "4.7",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Shiva",
+    "description": "Ancient Chola-era temple dedicated to Lord Someshwara, upgraded during the Vijayanagara period with magnificent Navagraha sculptures and Rajagopuram.",
+    "timings": "06:00–12:00, 17:30–20:30",
+    "phone": "+91-80-25586617",
+    "coords": {
+      "lat": 12.9774,
+      "lng": 77.6256
+    },
+    "icon": "🕉️",
+    "image": "/images/shiva_neelkanth.jpg",
+    "era": "12th Century CE",
+    "architect": "Chola Dynasty & Kempe Gowda II"
   },
   {
-    id: "temp_belur",
-    title: "Chennakeshava",
-    location: "Belur",
-    rating: "4.8",
-    categories: ["Hoysala Heritage", "UNESCO Heritage"],
-    deityTag: "Vishnu",
-    description: "Star-shaped soapstone marvel with intricate bracket dancers (Madanikas).",
-    timings: "7:30–20:00",
-    phone: "+91-8177-222218",
-    coords: { lat: 13.1623, lng: 75.8624 },
-    icon: "🏛️",
-    image: "/images/ellora_kailasa.jpg",
-    era: "1117 CE",
-    architect: "Hoysala Dynasty"
+    "id": "temp_gavi_gangadhareshwara",
+    "title": "Gavi Gangadhareshwara Cave Temple",
+    "location": "Gavipuram, Bengaluru",
+    "district": "Bengaluru",
+    "rating": "4.8",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Shiva",
+    "description": "Monolithic rock-cut cave temple where on Makara Sankranti day, sunlight passes through the horns of Nandi and illuminates the Shiva Lingam inside the sanctum.",
+    "timings": "06:00–12:30, 17:00–20:00",
+    "phone": "+91-80-22421313",
+    "coords": {
+      "lat": 12.9511,
+      "lng": 77.5607
+    },
+    "icon": "☀️",
+    "image": "/images/surya_siddhanta_astronomy.jpg",
+    "era": "9th–16th Century CE",
+    "architect": "Ganga Dynasty & Kempe Gowda I"
   },
   {
-    id: "temp_halebidu",
-    title: "Hoysaleswara",
-    location: "Halebidu",
-    rating: "4.7",
-    categories: ["Hoysala Heritage", "UNESCO Heritage"],
-    deityTag: "Shiva",
-    description: "Splendid twin temples adorned with massive soapstone relief carving panels.",
-    timings: "6:30–18:30",
-    phone: "+91-8177-220025",
-    coords: { lat: 13.2141, lng: 75.9926 },
-    icon: "🏛️",
-    image: "/images/ajanta.jpg",
-    era: "1121 CE",
-    architect: "Hoysala Dynasty"
+    "id": "temp_banashankari",
+    "title": "Banashankari Amma Temple",
+    "location": "Banashankari, Bengaluru",
+    "district": "Bengaluru",
+    "rating": "4.8",
+    "categories": [
+      "Shakti Peetha",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Banashankari",
+    "description": "Highly revered Shakti shrine where Rahukala pooja on Tuesdays and Fridays is believed to eliminate all life obstacles and doshas.",
+    "timings": "06:00–13:00, 16:30–20:30",
+    "phone": "+91-80-26714422",
+    "coords": {
+      "lat": 12.9155,
+      "lng": 77.5736
+    },
+    "icon": "🌺",
+    "image": "/images/mahakali_mahavidya.jpg",
+    "era": "1915 CE (Rooted in Badami Tradition)",
+    "architect": "Somanna Shastri (Patron)"
   },
   {
-    id: "temp_kollur",
-    title: "Mookambika",
-    location: "Kollur",
-    rating: "4.8",
-    categories: ["Shakti Peetha", "Major Pilgrimage"],
-    deityTag: "Mookambika",
-    description: "Sacred shrine housing Sri Chakra consecrated by Adi Shankaracharya.",
-    timings: "5:00–13:30, 15:00–21:00",
-    phone: "+91-8254-273202",
-    coords: { lat: 13.8647, lng: 74.8143 },
-    icon: "🌺",
-    image: "/images/meenakshi.jpg",
-    era: "8th Century CE",
-    architect: "Haleri Kings (patrons)"
+    "id": "temp_kote_venkataramana",
+    "title": "Sri Kote Venkataramana Temple",
+    "location": "KR Market / Fort, Bengaluru",
+    "district": "Bengaluru",
+    "rating": "4.7",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Venkateswara",
+    "description": "17th-century Dravidian and Vijayanagara architectural masterpiece standing beside the historic Bangalore Fort with intricate carvings of Vishnu avatars.",
+    "timings": "08:00–12:00, 18:00–20:30",
+    "phone": "+91-80-26701100",
+    "coords": {
+      "lat": 12.9602,
+      "lng": 77.575
+    },
+    "icon": "🛕",
+    "image": "/images/venkateswara_tirumala.jpg",
+    "era": "1689 CE",
+    "architect": "Chikka Devaraja Wodeyar"
   },
   {
-    id: "temp_udupi",
-    title: "Sri Krishna Matha",
-    location: "Udupi",
-    rating: "4.9",
-    categories: ["Dvaita Matha", "Major Pilgrimage"],
-    deityTag: "Krishna",
-    description: "Coastal monastery where Bala Krishna is viewed through Kanakana Kindi.",
-    timings: "5:00–21:30",
-    phone: "+91-820-2520598",
-    coords: { lat: 13.3409, lng: 74.7473 },
-    icon: "🐚",
-    image: "/images/krishna_cover.jpg",
-    era: "13th Century CE",
-    architect: "Sri Madhvacharya (founder)"
+    "id": "temp_ghati_subramanya",
+    "title": "Ghati Subramanya Swamy",
+    "location": "Doddaballapura, Bengaluru Rural",
+    "district": "Bengaluru Rural",
+    "rating": "4.8",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Subramanya / Narasimha",
+    "description": "Unique single idol displaying Lord Subramanya facing east and Lord Lakshmi Narasimha facing west, visible through a mirror arrangement.",
+    "timings": "06:00–20:30",
+    "phone": "+91-80-27657141",
+    "coords": {
+      "lat": 13.3283,
+      "lng": 77.5147
+    },
+    "icon": "🐍",
+    "image": "/images/kartikeya_murugan.jpg",
+    "era": "600+ Years Ancient",
+    "architect": "Ghorpade Dynasty of Sandur"
   },
   {
-    id: "temp_gokarna",
-    title: "Mahabaleshwar",
-    location: "Gokarna",
-    rating: "4.7",
-    categories: ["Major Pilgrimage", "Adi Shankara Peetha"],
-    deityTag: "Shiva",
-    description: "Houses the sacred Atmalinga given to Ravana by Shiva on the west coast.",
-    timings: "6:00–12:30, 17:00–20:00",
-    phone: "+91-8386-256241",
-    coords: { lat: 14.5413, lng: 74.3168 },
-    icon: "🐚",
-    image: "/images/shiva_neelkanth.jpg",
-    era: "4th Century CE",
-    architect: "Kadamba Dynasty"
+    "id": "temp_shivagange",
+    "title": "Shivagange Cave & Hill Temple",
+    "location": "Nelamangala / Dobbaspet",
+    "district": "Bengaluru Rural",
+    "rating": "4.7",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Shiva",
+    "description": "Sacred hill shaped like a Shiva Lingam with historic Gavi Gangadhareshwara spring, Patala Ganga, and Olakal Theertha holy waters.",
+    "timings": "06:00–18:00",
+    "phone": "+91-80-27734120",
+    "coords": {
+      "lat": 13.1706,
+      "lng": 77.2281
+    },
+    "icon": "🏔️",
+    "image": "/images/ganga_descent.jpg",
+    "era": "12th Century CE",
+    "architect": "Hoysala King Vishnuvardhana"
   },
   {
-    id: "temp_sringeri",
-    title: "Sharada Peetham",
-    location: "Sringeri",
-    rating: "4.9",
-    categories: ["Adi Shankara Peetha", "Major Pilgrimage"],
-    deityTag: "Sharada",
-    description: "First matha established by Adi Shankara on the banks of Tunga river.",
-    timings: "6:00–14:00, 16:00–21:00",
-    phone: "+91-8265-250123",
-    coords: { lat: 13.4192, lng: 75.2536 },
-    icon: "🏛️",
-    image: "/images/adi_shankara.jpg",
-    era: "8th Century CE",
-    architect: "Adi Shankaracharya"
+    "id": "temp_chamundi",
+    "title": "Sri Chamundeshwari Temple",
+    "location": "Chamundi Hills, Mysuru",
+    "district": "Mysuru",
+    "rating": "4.9",
+    "categories": [
+      "Shakti Peetha",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Chamundeshwari",
+    "description": "One of the 18 Maha Shakti Peethas (Krouncha Peetha) where Goddess Durga vanquished demon Mahishasura atop the sacred Chamundi Hills.",
+    "timings": "07:30–14:00, 15:30–18:00, 19:30–21:00",
+    "phone": "+91-821-2525231",
+    "coords": {
+      "lat": 12.2748,
+      "lng": 76.6785
+    },
+    "icon": "🏔️",
+    "image": "/images/mahishasura_battle.jpg",
+    "era": "12th Century CE",
+    "architect": "Hoysala & Vijayanagara Dynasties / Wodeyars"
+  },
+  {
+    "id": "temp_nanjangud",
+    "title": "Nanjangud Srikanteshwara Temple",
+    "location": "Nanjangud, Mysuru",
+    "district": "Mysuru",
+    "rating": "4.8",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Nanjundeshwara / Shiva",
+    "description": "Known as 'Dakshina Kashi' on the banks of Kapila river; Lord Shiva is worshipped as the healer of all ailments (Hakim Nanjunda).",
+    "timings": "06:00–13:00, 16:00–20:30",
+    "phone": "+91-8221-226241",
+    "coords": {
+      "lat": 12.1189,
+      "lng": 76.6835
+    },
+    "icon": "🕉️",
+    "image": "/images/shiva_parvati_kalyanam.jpg",
+    "era": "9th–11th Century CE",
+    "architect": "Ganga Dynasty, Cholas & Hoysalas"
+  },
+  {
+    "id": "temp_melukote",
+    "title": "Melukote Cheluvanarayana Swamy",
+    "location": "Melukote, Mandya",
+    "district": "Mandya",
+    "rating": "4.9",
+    "categories": [
+      "Major Pilgrimage",
+      "Dvaita Matha"
+    ],
+    "deityTag": "Cheluvanarayana / Vishnu",
+    "description": "Sacred Srivaishnava kshetra where Sri Ramanujacharya lived for 12 years; famous for the Vairamudi Brahmotsava diamond crown festival.",
+    "timings": "07:30–13:30, 16:00–20:30",
+    "phone": "+91-8236-299743",
+    "coords": {
+      "lat": 12.6639,
+      "lng": 76.6569
+    },
+    "icon": "👑",
+    "image": "/images/vishnu.jpg",
+    "era": "12th Century CE",
+    "architect": "Sri Ramanujacharya & Hoysala Vishnuvardhana"
+  },
+  {
+    "id": "temp_udupi",
+    "title": "Sri Krishna Matha & Kanakana Kindi",
+    "location": "Car Street, Udupi",
+    "district": "Udupi",
+    "rating": "4.9",
+    "categories": [
+      "Dvaita Matha",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Krishna",
+    "description": "World-renowned Dvaita monastery founded by Sri Madhvacharya. Bala Krishna is worshipped through the sacred 9-hole silver Kanakana Kindi window.",
+    "timings": "05:00–21:30",
+    "phone": "+91-820-2520598",
+    "coords": {
+      "lat": 13.3409,
+      "lng": 74.7473
+    },
+    "icon": "🐚",
+    "image": "/images/krishna_govardhan.jpg",
+    "era": "13th Century CE",
+    "architect": "Jagadguru Sri Madhvacharya"
+  },
+  {
+    "id": "temp_kollur",
+    "title": "Kollur Sri Mookambika Temple",
+    "location": "Kollur, Udupi",
+    "district": "Udupi",
+    "rating": "4.9",
+    "categories": [
+      "Shakti Peetha",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Mookambika",
+    "description": "Sacred shrine on the foothills of Kudajadri where Sri Adi Shankaracharya consecrated the golden Sri Chakra and installed the Jyotirlingam.",
+    "timings": "05:00–13:30, 15:00–21:00",
+    "phone": "+91-8254-273202",
+    "coords": {
+      "lat": 13.8647,
+      "lng": 74.8143
+    },
+    "icon": "🌺",
+    "image": "/images/meenakshi.jpg",
+    "era": "8th Century CE",
+    "architect": "Sri Adi Shankaracharya & Haleri Kings"
+  },
+  {
+    "id": "temp_dharmasthala",
+    "title": "Sri Manjunatha Swamy Temple",
+    "location": "Dharmasthala, Dakshina Kannada",
+    "district": "Dakshina Kannada",
+    "rating": "4.9",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Manjunatha / Shiva",
+    "description": "Sanctuary of Dharma providing Annadana to 10,000+ devotees daily, blending Shaivism, Vaishnavite Madhva priests, and Jain Heggade administration.",
+    "timings": "06:30–14:00, 17:00–20:30",
+    "phone": "+91-8256-277221",
+    "coords": {
+      "lat": 12.9525,
+      "lng": 75.3852
+    },
+    "icon": "🌊",
+    "image": "/images/dharma.jpg",
+    "era": "16th Century CE",
+    "architect": "Peramade & Heggade Dynasty"
+  },
+  {
+    "id": "temp_kukke",
+    "title": "Kukke Sri Subramanya Temple",
+    "location": "Subrahmanya, Sullia",
+    "district": "Dakshina Kannada",
+    "rating": "4.9",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Subramanya",
+    "description": "Nestled in Western Ghats, Kukke is the supreme pilgrimage site for Sarpa Dosha Nivarana and Ashlesha Bali, where Vasuki took refuge under Kartikeya.",
+    "timings": "06:00–13:00, 15:30–20:00",
+    "phone": "+91-8257-281224",
+    "coords": {
+      "lat": 12.6631,
+      "lng": 75.6153
+    },
+    "icon": "🐍",
+    "image": "/images/kartikeya_murugan.jpg",
+    "era": "Ancient Vedic Era",
+    "architect": "Ballal Dynasties & Tuluva Kings"
+  },
+  {
+    "id": "temp_kateel",
+    "title": "Kateel Sri Durgaparameshwari Temple",
+    "location": "Kateel, Mangaluru",
+    "district": "Dakshina Kannada",
+    "rating": "4.8",
+    "categories": [
+      "Shakti Peetha",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Durgaparameshwari",
+    "description": "Enchanting island temple situated on the sacred Nandini river where Goddess Durga incarnated as a bee (Bhramari) to defeat demon Arunasura.",
+    "timings": "06:00–13:30, 16:30–21:30",
+    "phone": "+91-824-2200361",
+    "coords": {
+      "lat": 13.0186,
+      "lng": 74.8519
+    },
+    "icon": "🌺",
+    "image": "/images/mahakali_mahavidya.jpg",
+    "era": "10th Century CE",
+    "architect": "Alupa Dynasty"
+  },
+  {
+    "id": "temp_mangaladevi",
+    "title": "Mangaladevi Temple",
+    "location": "Bolar, Mangaluru",
+    "district": "Dakshina Kannada",
+    "rating": "4.7",
+    "categories": [
+      "Shakti Peetha",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Mangaladevi",
+    "description": "The city of Mangaluru is named after this historic 9th-century temple built by King Kundavarma of the Alupa dynasty under Guru Gorakhnath's guidance.",
+    "timings": "06:00–13:00, 16:00–20:30",
+    "phone": "+91-824-2415476",
+    "coords": {
+      "lat": 12.853,
+      "lng": 74.8427
+    },
+    "icon": "🛕",
+    "image": "/images/queen_abbakka.jpg",
+    "era": "9th Century CE",
+    "architect": "King Kundavarma (Alupa Dynasty)"
+  },
+  {
+    "id": "temp_kadri",
+    "title": "Kadri Manjunatha Temple",
+    "location": "Kadri, Mangaluru",
+    "district": "Dakshina Kannada",
+    "rating": "4.8",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Manjunatha / Shiva",
+    "description": "Famous for its 10th-century Lokeshwara bronze statue, natural Gomukha springs, and ancient Buddhist-Shaiva syncretic rock architecture.",
+    "timings": "06:00–13:00, 16:00–20:30",
+    "phone": "+91-824-2214176",
+    "coords": {
+      "lat": 12.8837,
+      "lng": 74.8576
+    },
+    "icon": "🕉️",
+    "image": "/images/shiva_tandava.jpg",
+    "era": "10th Century CE",
+    "architect": "Alupa & Vijayanagara Dynasties"
+  },
+  {
+    "id": "temp_murudeshwar",
+    "title": "Murudeshwar Shiva & Beach Temple",
+    "location": "Murudeshwar, Bhatkal",
+    "district": "Uttara Kannada",
+    "rating": "4.9",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Shiva",
+    "description": "Iconic coastal temple featuring the world's 2nd tallest Shiva statue (123 ft) and the monumental 20-storied Raja Gopuram overlooking the Arabian Sea.",
+    "timings": "03:00–13:00, 15:00–20:00",
+    "phone": "+91-8385-268524",
+    "coords": {
+      "lat": 14.094,
+      "lng": 74.4849
+    },
+    "icon": "🌊",
+    "image": "/images/shiva_neelkanth.jpg",
+    "era": "Ancient (Modern Gopuram 2008)",
+    "architect": "R. N. Shetty (Patron)"
+  },
+  {
+    "id": "temp_gokarna",
+    "title": "Mahabaleshwar Atmalinga Temple",
+    "location": "Gokarna Beach",
+    "district": "Uttara Kannada",
+    "rating": "4.8",
+    "categories": [
+      "Major Pilgrimage",
+      "Adi Shankara Peetha"
+    ],
+    "deityTag": "Shiva Atmalinga",
+    "description": "One of the seven Muktistalas of Karnataka housing the legendary Atmalinga given to Ravana by Shiva, consecrated along the pristine Gokarna coast.",
+    "timings": "06:00–12:30, 17:00–20:00",
+    "phone": "+91-8386-256241",
+    "coords": {
+      "lat": 14.5413,
+      "lng": 74.3168
+    },
+    "icon": "🐚",
+    "image": "/images/ravana_lanka.jpg",
+    "era": "4th Century CE",
+    "architect": "Kadamba Dynasty King Mayurasharma"
+  },
+  {
+    "id": "temp_idagunji",
+    "title": "Idagunji Maha Ganapathi",
+    "location": "Honnavar, Idagunji",
+    "district": "Uttara Kannada",
+    "rating": "4.8",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Ganesha",
+    "description": "Famous Dvibhuja (two-handed) standing Ganesha holding Modaka and Padma, attracting over 1 million pilgrims seeking wish fulfillment every year.",
+    "timings": "06:00–13:00, 15:00–20:30",
+    "phone": "+91-8387-224422",
+    "coords": {
+      "lat": 14.3014,
+      "lng": 74.4789
+    },
+    "icon": "🐘",
+    "image": "/images/ganesha.jpg",
+    "era": "4th–5th Century CE",
+    "architect": "Valakhilya Rishi Tradition"
+  },
+  {
+    "id": "temp_belur",
+    "title": "Chennakeshava Temple (Hoysala)",
+    "location": "Belur, Hassan",
+    "district": "Hassan",
+    "rating": "4.9",
+    "categories": [
+      "UNESCO Heritage",
+      "Hoysala Heritage"
+    ],
+    "deityTag": "Vishnu",
+    "description": "UNESCO World Heritage Site with star-shaped soapstone architecture, 42 bracket Madanika dancers, and celestial carvings of the Ramayana and Mahabharata.",
+    "timings": "07:30–20:00",
+    "phone": "+91-8177-222218",
+    "coords": {
+      "lat": 13.1623,
+      "lng": 75.8624
+    },
+    "icon": "🏛️",
+    "image": "/images/ellora_kailasa.jpg",
+    "era": "1117 CE",
+    "architect": "Hoysala King Vishnuvardhana & Sculptor Jakanachari"
+  },
+  {
+    "id": "temp_halebidu",
+    "title": "Hoysaleswara & Shantaleswara",
+    "location": "Halebidu, Hassan",
+    "district": "Hassan",
+    "rating": "4.8",
+    "categories": [
+      "UNESCO Heritage",
+      "Hoysala Heritage"
+    ],
+    "deityTag": "Shiva",
+    "description": "UNESCO World Heritage twin temples with 240+ exquisite wall relief friezes of elephants, lions, makaras, and celestial deities in dark chloritic schist.",
+    "timings": "06:30–18:30",
+    "phone": "+91-8177-220025",
+    "coords": {
+      "lat": 13.2141,
+      "lng": 75.9926
+    },
+    "icon": "🏛️",
+    "image": "/images/ajanta.jpg",
+    "era": "1121 CE",
+    "architect": "Kedarojam & Hoysala Dynasty"
+  },
+  {
+    "id": "temp_sringeri",
+    "title": "Sri Sringeri Sharada Peetham",
+    "location": "Sringeri, Chikkamagaluru",
+    "district": "Chikkamagaluru",
+    "rating": "4.9",
+    "categories": [
+      "Adi Shankara Peetha",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Sharadamba",
+    "description": "The Southern Amnaya Matha established by Sri Adi Shankaracharya on the serene Tunga river bank, featuring the 12 zodiac pillar Vidyashankara temple.",
+    "timings": "06:00–14:00, 16:00–21:00",
+    "phone": "+91-8265-250123",
+    "coords": {
+      "lat": 13.4192,
+      "lng": 75.2536
+    },
+    "icon": "🏛️",
+    "image": "/images/adi_shankara.jpg",
+    "era": "8th Century CE",
+    "architect": "Jagadguru Sri Adi Shankaracharya"
+  },
+  {
+    "id": "temp_horanadu",
+    "title": "Horanadu Sri Annapoorneshwari",
+    "location": "Horanadu, Chikkamagaluru",
+    "district": "Chikkamagaluru",
+    "rating": "4.9",
+    "categories": [
+      "Major Pilgrimage",
+      "Shakti Peetha"
+    ],
+    "deityTag": "Annapoorneshwari",
+    "description": "Ancient sanctuary in lush Western Ghats offering golden darshana of Mother Annapoorneshwari and three sumptuous vegetarian meals daily to all visitors.",
+    "timings": "06:30–14:00, 19:00–21:30",
+    "phone": "+91-8263-269623",
+    "coords": {
+      "lat": 13.2721,
+      "lng": 75.3444
+    },
+    "icon": "🌾",
+    "image": "/images/dharma.jpg",
+    "era": "8th Century CE",
+    "architect": "Maharishi Agastya Consecration"
+  },
+  {
+    "id": "temp_sigandur",
+    "title": "Sigandur Chowdeshwari Temple",
+    "location": "Sharavathi Backwaters, Sigandur",
+    "district": "Shivamogga",
+    "rating": "4.8",
+    "categories": [
+      "Shakti Peetha",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Chowdeshwari",
+    "description": "Scenic backwater island temple reached by ferry barge across the Sharavathi river, where Goddess Chowdeshwari protects truth and vows.",
+    "timings": "06:30–14:30, 17:00–19:30",
+    "phone": "+91-8183-278144",
+    "coords": {
+      "lat": 14.0722,
+      "lng": 74.9083
+    },
+    "icon": "⛴️",
+    "image": "/images/mahakali_mahavidya.jpg",
+    "era": "300+ Years Ancient",
+    "architect": "Sheshappa Gowda (Founder)"
+  },
+  {
+    "id": "temp_virupaksha",
+    "title": "Virupaksha Temple (Hampi)",
+    "location": "Hampi Bazaar, Vijayanagara",
+    "district": "Vijayanagara",
+    "rating": "4.9",
+    "categories": [
+      "UNESCO Heritage",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Shiva",
+    "description": "Continuous worship since the 7th century CE. UNESCO World Heritage monument with a 50m Rajagopuram, inverted pinhole camera shadow effect, and Tungabhadra riverfront.",
+    "timings": "06:00–12:30, 17:00–20:30",
+    "phone": "+91-8394-241235",
+    "coords": {
+      "lat": 15.335,
+      "lng": 76.4562
+    },
+    "icon": "🏛️",
+    "image": "/images/hampi.jpg",
+    "era": "7th Century CE",
+    "architect": "Vijayanagara Empire (Krishnadevaraya)"
+  },
+  {
+    "id": "temp_badami",
+    "title": "Badami Cave Temples & Bhutanatha",
+    "location": "Badami, Bagalkot",
+    "district": "Bagalkot",
+    "rating": "4.9",
+    "categories": [
+      "UNESCO Heritage",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Nataraja / Vishnu / Jina",
+    "description": "Spectacular 6th-century rock-cut cave shrines overlooking Agastya Lake, showcasing 18-armed dancing Nataraja and Varaha avatars in red sandstone.",
+    "timings": "06:00–18:00",
+    "phone": "+91-8357-220138",
+    "coords": {
+      "lat": 15.9189,
+      "lng": 75.6766
+    },
+    "icon": "🧗",
+    "image": "/images/shiva_tandava.jpg",
+    "era": "6th Century CE",
+    "architect": "Early Chalukya Dynasty (Pulakeshin I)"
+  },
+  {
+    "id": "temp_pattadakal",
+    "title": "Pattadakal Virupaksha & Mallikarjuna",
+    "location": "Pattadakal, Bagalkot",
+    "district": "Bagalkot",
+    "rating": "4.9",
+    "categories": [
+      "UNESCO Heritage"
+    ],
+    "deityTag": "Shiva",
+    "description": "UNESCO World Heritage coronation site of the Badami Chalukyas demonstrating harmonious union of North Indian Rekha-Nagara and South Indian Dravida styles.",
+    "timings": "06:00–18:00",
+    "phone": "+91-8357-220030",
+    "coords": {
+      "lat": 15.9485,
+      "lng": 75.8164
+    },
+    "icon": "🏛️",
+    "image": "/images/ellora_kailasa.jpg",
+    "era": "740 CE",
+    "architect": "Queen Lokamahadevi (Badami Chalukyas)"
+  },
+  {
+    "id": "temp_aihole",
+    "title": "Aihole Durga & Lad Khan Temples",
+    "location": "Aihole, Bagalkot",
+    "district": "Bagalkot",
+    "rating": "4.8",
+    "categories": [
+      "UNESCO Heritage"
+    ],
+    "deityTag": "Durga / Surya / Shiva",
+    "description": "The 'Cradle of Hindu Rock Temple Architecture' with 120+ early temples; the apsidal Durga temple features unique horse-shoe sanctum geometry.",
+    "timings": "06:00–18:00",
+    "phone": "+91-8357-220050",
+    "coords": {
+      "lat": 16.021,
+      "lng": 75.8821
+    },
+    "icon": "🏛️",
+    "image": "/images/surya_siddhanta_astronomy.jpg",
+    "era": "5th–8th Century CE",
+    "architect": "Badami Chalukya Architects Guild"
+  },
+  {
+    "id": "temp_savadatti",
+    "title": "Savadatti Renuka Yellamma Temple",
+    "location": "Savadatti, Belagavi",
+    "district": "Belagavi",
+    "rating": "4.8",
+    "categories": [
+      "Shakti Peetha",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Renuka Yellamma",
+    "description": "Famous hill temple of Goddess Renuka (mother of Lord Parashurama) atop Yellammagudda, drawing millions during Banada Hunnime festival.",
+    "timings": "05:00–21:00",
+    "phone": "+91-8330-222340",
+    "coords": {
+      "lat": 15.7725,
+      "lng": 75.1235
+    },
+    "icon": "🪓",
+    "image": "/images/parashurama.jpg",
+    "era": "11th Century CE",
+    "architect": "Ratta Dynasty & Jamkhandi Rulers"
+  },
+  {
+    "id": "temp_hubli_siddharoodha",
+    "title": "Hubballi Sri Siddharoodha Matha",
+    "location": "Hubballi, Dharwad",
+    "district": "Dharwad",
+    "rating": "4.8",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Sri Siddharoodha Swamy",
+    "description": "Spiritual headquarters of Advaita Vedanta and selfless service visited by Lokmanya Tilak and Mahatma Gandhi, offering continuous Annadana.",
+    "timings": "05:00–21:00",
+    "phone": "+91-836-2283020",
+    "coords": {
+      "lat": 15.3533,
+      "lng": 75.1487
+    },
+    "icon": "🕉️",
+    "image": "/images/adi_shankara.jpg",
+    "era": "1890 CE",
+    "architect": "Jagadguru Siddharoodha Swamiji"
+  },
+  {
+    "id": "temp_ganagapur",
+    "title": "Ganagapura Dattatreya Temple",
+    "location": "Ganagapur, Kalaburagi",
+    "district": "Kalaburagi",
+    "rating": "4.9",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Narasimha Saraswati / Dattatreya",
+    "description": "Holistic Datta Kshetra on the holy confluence of Bhima and Amarja rivers, where Sri Narasimha Saraswati Swamy's Nirguna Padukas are worshipped.",
+    "timings": "04:30–21:30",
+    "phone": "+91-8470-274335",
+    "coords": {
+      "lat": 17.1856,
+      "lng": 76.4497
+    },
+    "icon": "🕉️",
+    "image": "/images/dashavatara.jpg",
+    "era": "15th Century CE",
+    "architect": "Sri Narasimha Saraswati Parampara"
+  },
+  {
+    "id": "temp_kotilingeshwara",
+    "title": "Kotilingeshwara Temple",
+    "location": "KGF, Kammasandra",
+    "district": "Kolar",
+    "rating": "4.7",
+    "categories": [
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Shiva",
+    "description": "Famous for housing over 10 million Shiva Lingas spread across sprawling grounds with a colossal 108 ft Maha Shiva Linga and 35 ft Nandi idol.",
+    "timings": "06:00–21:00",
+    "phone": "+91-8153-277555",
+    "coords": {
+      "lat": 12.9818,
+      "lng": 78.2917
+    },
+    "icon": "🕉️",
+    "image": "/images/shiva.jpg",
+    "era": "1980 CE",
+    "architect": "Swami Sambha Shiva Murthy"
+  },
+  {
+    "id": "temp_goravanahalli",
+    "title": "Goravanahalli Sri Mahalakshmi",
+    "location": "Goravanahalli, Koratagere",
+    "district": "Tumakuru",
+    "rating": "4.8",
+    "categories": [
+      "Shakti Peetha",
+      "Major Pilgrimage"
+    ],
+    "deityTag": "Mahalakshmi",
+    "description": "Self-manifested (Swayambhu) Mahalakshmi idol discovered by Kamalamma, revered for granting abundance, wealth, and prosperity to devotees.",
+    "timings": "06:00–14:00, 16:00–20:30",
+    "phone": "+91-8138-232145",
+    "coords": {
+      "lat": 13.4891,
+      "lng": 77.2661
+    },
+    "icon": "🪷",
+    "image": "/images/dharma.jpg",
+    "era": "20th Century CE",
+    "architect": "Kamalamma & Devotees Trust"
   }
 ];
 

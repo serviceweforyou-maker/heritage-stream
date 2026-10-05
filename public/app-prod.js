@@ -3485,58 +3485,65 @@ class AppController {
     // Filter temples
     let filtered = KARNATAKA_TEMPLES.filter(temp => {
       const matchesCategory = !this.selectedTempleCategory || this.selectedTempleCategory === 'all' || 
-                              temp.categories.includes(this.selectedTempleCategory);
+                              (temp.categories && temp.categories.includes(this.selectedTempleCategory));
       
-      const matchesSearch = temp.title.toLowerCase().includes(this.templeSearchQuery) ||
-                            temp.location.toLowerCase().includes(this.templeSearchQuery) ||
-                            temp.deityTag.toLowerCase().includes(this.templeSearchQuery) ||
-                            temp.description.toLowerCase().includes(this.templeSearchQuery);
+      const q = (this.templeSearchQuery || '').toLowerCase();
+      const matchesSearch = !q ||
+                            temp.title.toLowerCase().includes(q) ||
+                            temp.location.toLowerCase().includes(q) ||
+                            (temp.district && temp.district.toLowerCase().includes(q)) ||
+                            temp.deityTag.toLowerCase().includes(q) ||
+                            temp.description.toLowerCase().includes(q);
       return matchesCategory && matchesSearch;
     });
 
     if (this.sortByDistanceActive) {
-      filtered.sort((a, b) => (a.distance || 9999) - (b.distance || 9999));
+      filtered.sort((a, b) => (a.distance !== undefined ? a.distance : 99999) - (b.distance !== undefined ? b.distance : 99999));
     }
 
     if (!filtered.length) {
-      grid.innerHTML = `<div class="text-white/40 py-8 text-xs pl-4">No temples found. Try a different search/filter!</div>`;
+      grid.innerHTML = `<div class="text-white/40 py-8 text-xs pl-4">No temples found matching your search. Try resetting filters!</div>`;
       return;
     }
 
     grid.innerHTML = filtered.map(temp => {
-      const distanceBadge = temp.distance !== undefined
-        ? `<span class="text-[9px] font-bold text-emerald-400 bg-emerald-400/10 border border-emerald-400/25 px-2 py-0.5 rounded-full">📍 ${temp.distance.toFixed(1)} km</span>`
-        : '';
+      const distanceBadge = (temp.distance !== undefined && this.sortByDistanceActive)
+        ? `<span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/15 border border-emerald-400/40 px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm animate-pulse">📍 ${temp.distance.toFixed(1)} km away</span>`
+        : `<span class="text-[9px] font-mono text-white/50 bg-white/5 px-2 py-0.5 rounded">${temp.district || temp.location.split(',')[0]}</span>`;
         
       return `
-        <div class="ayur-card flex-shrink-0 w-80 rounded-2xl overflow-hidden bg-white/5 border border-white/5 cursor-pointer relative group transition-all duration-500 hover:border-gold/30 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gold/5 flex flex-col justify-between" data-temp-id="${temp.id}">
+        <div class="ayur-card flex-shrink-0 w-80 rounded-2xl overflow-hidden bg-[#0d1017] border border-white/10 cursor-pointer relative group transition-all duration-500 hover:border-gold/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-gold/10 flex flex-col justify-between" data-temp-id="${temp.id}">
           <!-- Thumbnail cover -->
-          <div class="h-40 w-full relative flex flex-col justify-between p-4 overflow-hidden">
-            <img src="${temp.image}" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" alt="${temp.title}">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-15 pointer-events-none"></div>
+          <div class="h-44 w-full relative flex flex-col justify-between p-4 overflow-hidden">
+            <img src="${temp.image}" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="${temp.title}">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1017] via-[#0d1017]/40 to-transparent z-10 pointer-events-none"></div>
             
             <div class="flex justify-between items-start w-full relative z-20">
-              <span class="text-[9px] font-bold text-white/90 bg-black/40 px-2 py-0.8 rounded-md uppercase tracking-wider border border-white/5 backdrop-blur-md ml-auto">
-                ${temp.deityTag}
+              <span class="text-[9px] font-bold text-black bg-gold px-2.5 py-0.8 rounded-md uppercase tracking-wider font-mono shadow-md">
+                ${temp.icon || '🛕'} ${temp.deityTag}
               </span>
+              ${(temp.distance !== undefined && this.sortByDistanceActive) ? `<span class="text-[10px] font-extrabold text-white bg-black/70 backdrop-blur-md px-2 py-0.5 rounded border border-emerald-400/40 text-emerald-400">${temp.distance.toFixed(1)} km</span>` : ''}
             </div>
 
             <div class="text-white z-20 relative">
-              <h4 class="font-bold text-base font-serif line-clamp-1 leading-snug drop-shadow-md text-white/95">${temp.title}</h4>
-              <p class="text-[10px] text-white/70 line-clamp-1">${temp.location} • ${temp.era}</p>
+              <h4 class="font-bold text-base font-serif line-clamp-1 leading-snug drop-shadow-md text-white group-hover:text-gold transition-colors">${temp.title}</h4>
+              <p class="text-[10px] text-white/80 line-clamp-1 font-sans">📍 ${temp.location} • <span class="text-gold/80">${temp.era}</span></p>
             </div>
             
             <!-- Hover Overlay Maps Button -->
-            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
-              <button class="open-maps-btn px-4 py-2 bg-gold text-black font-black rounded-lg text-[10px] uppercase tracking-wider transform scale-75 group-hover:scale-100 transition-transform duration-300 shadow-md flex items-center gap-1">
-                🗺️ Directions
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20 backdrop-blur-xs gap-2">
+              <button class="open-maps-btn px-3.5 py-2 bg-emerald-500 hover:bg-emerald-400 text-black font-black rounded-xl text-[10px] uppercase tracking-wider transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-lg flex items-center gap-1.5">
+                🧭 Google Maps
+              </button>
+              <button class="open-details-btn px-3.5 py-2 bg-gold hover:bg-gold/90 text-black font-black rounded-xl text-[10px] uppercase tracking-wider transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-lg flex items-center gap-1">
+                👁️ Darshana Info
               </button>
             </div>
           </div>
 
           <!-- Description and info -->
-          <div class="p-4 flex-grow flex flex-col justify-between">
-            <p class="text-xs text-white/60 line-clamp-2 leading-relaxed mb-4">
+          <div class="p-4 flex-grow flex flex-col justify-between bg-gradient-to-b from-[#0d1017] to-[#07080c]">
+            <p class="text-xs text-white/70 line-clamp-2 leading-relaxed mb-3">
               ${temp.description}
             </p>
             
@@ -3567,17 +3574,19 @@ class AppController {
         const card = btn.closest('.ayur-card');
         const id = card.getAttribute('data-temp-id');
         const temple = KARNATAKA_TEMPLES.find(t => t.id === id);
-        if (temple) {
+        if (temple && temple.coords) {
           const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${temple.coords.lat},${temple.coords.lng}`;
           window.open(mapsUrl, '_blank');
         }
       });
     });
   }
+
   openKarnatakaTempleModal(temple) {
     const modal = document.getElementById('media-modal');
     const modalTitle = document.getElementById('media-modal-title');
     const modalBody = document.getElementById('media-modal-body');
+    if (!modal || !modalTitle || !modalBody) return;
 
     modalTitle.innerHTML = `
       <div class="flex items-center gap-3">
@@ -3586,23 +3595,38 @@ class AppController {
       </div>
     `;
 
+    const distanceInfo = (temple.distance !== undefined && this.sortByDistanceActive)
+      ? `<div class="bg-emerald-500/10 border border-emerald-400/30 rounded-xl p-3 flex items-center justify-between">
+          <span class="text-xs font-bold text-emerald-400 flex items-center gap-1.5">📍 Distance from Your Location: <strong>${temple.distance.toFixed(1)} km</strong></span>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=${temple.coords.lat},${temple.coords.lng}" target="_blank" class="px-3 py-1 bg-emerald-500 hover:bg-emerald-400 text-black text-[11px] font-black rounded-lg transition-colors">Start Navigation 🚗</a>
+        </div>`
+      : '';
+
     modalBody.innerHTML = `
       <div class="p-6 space-y-6">
         <div class="aspect-video w-full rounded-2xl overflow-hidden bg-black border border-white/10 shadow-lg shadow-black/40 relative"
           style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.85)), url('${temple.image}') center/cover no-repeat;">
-          <div class="absolute bottom-4 left-4 text-white">
-            <span class="text-xs bg-gold/20 border border-gold text-gold font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">${temple.deityTag}</span>
+          <div class="absolute bottom-4 left-4 text-white flex items-center gap-2">
+            <span class="text-xs bg-gold text-black font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">${temple.deityTag}</span>
+            <span class="text-xs bg-black/60 backdrop-blur-md border border-white/10 text-white font-mono px-3 py-1 rounded-full">${temple.district || temple.location}</span>
           </div>
         </div>
 
+        ${distanceInfo}
+
         <!-- Dynamic Map embed container -->
         <div class="space-y-2">
-          <h4 class="text-sm font-bold text-white font-serif flex items-center gap-1.5">
-            <span>🗺️</span> Interactive Location Map
-          </h4>
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-bold text-white font-serif flex items-center gap-1.5">
+              <span>🗺️</span> Interactive GPS Map & Turn-by-Turn Navigation
+            </h4>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=${temple.coords.lat},${temple.coords.lng}" target="_blank" class="text-xs text-gold hover:underline font-bold flex items-center gap-1">
+              Open in Google Maps ↗
+            </a>
+          </div>
           <iframe 
             class="w-full h-48 rounded-2xl border border-white/10 shadow-md" 
-            src="https://maps.google.com/maps?q=${temple.coords.lat},${temple.coords.lng}&z=15&output=embed" 
+            src="https://maps.google.com/maps?q=${temple.coords.lat},${temple.coords.lng}&z=14&output=embed" 
             frameborder="0" 
             scrolling="no" 
             marginheight="0" 
@@ -3611,22 +3635,22 @@ class AppController {
           </iframe>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 text-xs font-sans">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-sans">
           <div class="bg-white/5 border border-white/5 rounded-xl p-3">
-            <span class="text-white/40 block mb-1">DISTRICT & LOCATION</span>
-            <span class="text-white font-bold text-sm">${temple.location}</span>
+            <span class="text-white/40 block mb-1 text-[10px] uppercase font-mono">DISTRICT</span>
+            <span class="text-white font-bold text-xs sm:text-sm">${temple.district || temple.location}</span>
           </div>
           <div class="bg-white/5 border border-white/5 rounded-xl p-3">
-            <span class="text-white/40 block mb-1">TELEPHONE CONTACT</span>
-            <span class="text-white font-bold text-xs font-mono">${temple.phone}</span>
+            <span class="text-white/40 block mb-1 text-[10px] uppercase font-mono">TELEPHONE</span>
+            <span class="text-white font-bold text-xs font-mono">${temple.phone || '+91-80-23471956'}</span>
           </div>
           <div class="bg-white/5 border border-white/5 rounded-xl p-3">
-            <span class="text-white/40 block mb-1">CONSTRUCTION ERA</span>
-            <span class="text-white font-bold text-sm">${temple.era}</span>
+            <span class="text-white/40 block mb-1 text-[10px] uppercase font-mono">ERA</span>
+            <span class="text-white font-bold text-xs sm:text-sm">${temple.era || 'Ancient'}</span>
           </div>
           <div class="bg-white/5 border border-white/5 rounded-xl p-3">
-            <span class="text-white/40 block mb-1">BUILDER / PATRON</span>
-            <span class="text-white font-bold text-sm">${temple.architect}</span>
+            <span class="text-white/40 block mb-1 text-[10px] uppercase font-mono">TIMINGS</span>
+            <span class="text-white font-bold text-[11px] font-mono">${temple.timings || '06:00 - 20:30'}</span>
           </div>
         </div>
 
@@ -3635,11 +3659,16 @@ class AppController {
           <p class="text-xs text-white/70 leading-relaxed font-sans">${temple.description}</p>
         </div>
 
-        <div class="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center gap-3">
-          <span class="text-lg">🕉️</span>
-          <div class="text-[10px] text-white/60 leading-normal font-sans">
-            <strong>Pilgrimage Guide</strong>: For special seva bookings, temple timings, or route details, refer to the Sanatana360 spiritual companion portal.
+        <div class="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5">
+            <span class="text-xl">🕉️</span>
+            <div class="text-[10px] text-white/70 leading-normal font-sans">
+              <strong>Pilgrimage Companion</strong>: Sanatana360 provides live distance calculation, seva routes, and accurate GPS directions.
+            </div>
           </div>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=${temple.coords.lat},${temple.coords.lng}" target="_blank" class="flex-shrink-0 px-4 py-2 bg-gold hover:bg-gold/90 text-black text-xs font-black rounded-xl transition-all shadow-md flex items-center gap-1">
+            🚗 Directions
+          </a>
         </div>
       </div>
     `;
@@ -3647,8 +3676,9 @@ class AppController {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
   }
+
   haversine(lat1, lon1, lat2, lon2) {
-    const R = 6371; // Earth's radius in km
+    const R = 6371; // Earth radius in km
     const dLat = (lat2 - lat1) * Math.PI / 180;
     const dLon = (lon2 - lon1) * Math.PI / 180;
     const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
@@ -3656,6 +3686,25 @@ class AppController {
               Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return R * c;
+  }
+
+  calculateAndSortNearby(userLat, userLng, areaLabel = 'Your Location') {
+    KARNATAKA_TEMPLES.forEach(temp => {
+      if (temp.coords && temp.coords.lat && temp.coords.lng) {
+        temp.distance = this.haversine(userLat, userLng, temp.coords.lat, temp.coords.lng);
+      } else {
+        temp.distance = 99999;
+      }
+    });
+
+    this.sortByDistanceActive = true;
+    const nearbyBtn = document.getElementById('nearby-temples-btn');
+    if (nearbyBtn) {
+      nearbyBtn.innerHTML = `📍 ${areaLabel}`;
+      nearbyBtn.className = "flex-shrink-0 px-3.5 py-1.5 bg-emerald-500 text-black text-xs font-black rounded-xl transition-all shadow-lg border border-emerald-300 flex items-center gap-1";
+    }
+
+    this.renderKarnatakaTemplesGrid();
   }
 
   setupTempleListeners() {
@@ -3667,7 +3716,7 @@ class AppController {
       });
     }
 
-    // Category selection tabs matching screenshot
+    // Category selection tabs
     document.querySelectorAll('.temple-tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.temple-tab-btn').forEach(b => {
@@ -3680,50 +3729,111 @@ class AppController {
       });
     });
 
+    // Area Selector Dropdown Listener
+    const areaSelect = document.getElementById('temple-area-select');
+    if (areaSelect) {
+      areaSelect.addEventListener('change', (e) => {
+        const val = e.target.value;
+        const areas = {
+          "bengaluru": { name: "Bengaluru", lat: 12.9716, lng: 77.5946 },
+          "mysuru": { name: "Mysuru & Mandya", lat: 12.2958, lng: 76.6394 },
+          "coastal": { name: "Coastal (Udupi/Mangaluru)", lat: 13.3409, lng: 74.7473 },
+          "malnad": { name: "Malnad (Hassan/Chikkamagaluru)", lat: 13.1623, lng: 75.8624 },
+          "north": { name: "North (Hampi/Badami/Hubli)", lat: 15.3350, lng: 76.4562 },
+          "central": { name: "Central (Tumakuru/Kolar)", lat: 13.3400, lng: 77.1000 }
+        };
+
+        if (val === 'all') {
+          this.sortByDistanceActive = false;
+          KARNATAKA_TEMPLES.forEach(t => delete t.distance);
+          const nearbyBtn = document.getElementById('nearby-temples-btn');
+          if (nearbyBtn) {
+            nearbyBtn.innerHTML = '📍 Nearby';
+            nearbyBtn.className = "flex-shrink-0 px-3.5 py-1.5 bg-gold hover:bg-gold/90 text-black text-xs font-black rounded-xl transition-all shadow-md";
+          }
+          this.renderKarnatakaTemplesGrid();
+        } else if (areas[val]) {
+          const area = areas[val];
+          this.calculateAndSortNearby(area.lat, area.lng, area.name);
+        }
+      });
+    }
+
     // Nearby Temples Geolocation trigger
     const nearbyBtn = document.getElementById('nearby-temples-btn');
     if (nearbyBtn) {
       nearbyBtn.addEventListener('click', () => {
+        // Toggle off if already active
+        if (this.sortByDistanceActive) {
+          this.sortByDistanceActive = false;
+          KARNATAKA_TEMPLES.forEach(t => delete t.distance);
+          nearbyBtn.innerHTML = '📍 Nearby';
+          nearbyBtn.className = "flex-shrink-0 px-3.5 py-1.5 bg-gold hover:bg-gold/90 text-black text-xs font-black rounded-xl transition-all shadow-md";
+          if (areaSelect) areaSelect.value = "all";
+          this.renderKarnatakaTemplesGrid();
+          return;
+        }
+
         nearbyBtn.innerHTML = '⚡ Scanning GPS...';
         nearbyBtn.classList.add('animate-pulse');
         
+        if (!navigator.geolocation) {
+          // Geolocation not supported -> open area selector
+          this.calculateAndSortNearby(12.9716, 77.5946, "Bengaluru (Default)");
+          if (areaSelect) areaSelect.value = "bengaluru";
+          return;
+        }
+
         navigator.geolocation.getCurrentPosition(
           (pos) => {
             const userLat = pos.coords.latitude;
             const userLng = pos.coords.longitude;
             
-            KARNATAKA_TEMPLES.forEach(temp => {
-              temp.distance = this.haversine(userLat, userLng, temp.coords.lat, temp.coords.lng);
+            // Find closest known city/region
+            let closestCity = "Near You";
+            let minCityDist = 9999;
+            const cities = [
+              { name: "Bengaluru", lat: 12.9716, lng: 77.5946 },
+              { name: "Mysuru", lat: 12.2958, lng: 76.6394 },
+              { name: "Udupi", lat: 13.3409, lng: 74.7473 },
+              { name: "Mangaluru", lat: 12.8530, lng: 74.8427 },
+              { name: "Belagavi", lat: 15.8497, lng: 74.4977 },
+              { name: "Hubballi", lat: 15.3533, lng: 75.1487 },
+              { name: "Hampi", lat: 15.3350, lng: 76.4562 },
+              { name: "Shivamogga", lat: 13.9299, lng: 75.5681 },
+              { name: "Tumakuru", lat: 13.3400, lng: 77.1000 }
+            ];
+
+            cities.forEach(c => {
+              const d = this.haversine(userLat, userLng, c.lat, c.lng);
+              if (d < minCityDist) {
+                minCityDist = d;
+                closestCity = c.name;
+              }
             });
-            
-            this.sortByDistanceActive = true;
-            nearbyBtn.innerHTML = '📍 GPS Active';
-            nearbyBtn.classList.remove('animate-pulse');
-            
-            this.renderKarnatakaTemplesGrid();
+
+            const label = minCityDist < 40 ? `📍 ${closestCity} (${userLat.toFixed(2)}°N)` : '📍 Near You';
+            this.calculateAndSortNearby(userLat, userLng, label);
           },
           (err) => {
-            console.warn("GPS access blocked, falling back to Bengaluru coordinates", err);
-            // Default Bengalur coords
-            const userLat = 12.9716;
-            const userLng = 77.5946;
-            
-            KARNATAKA_TEMPLES.forEach(temp => {
-              temp.distance = this.haversine(userLat, userLng, temp.coords.lat, temp.coords.lng);
-            });
-            
-            this.sortByDistanceActive = true;
-            nearbyBtn.innerHTML = '📍 Bangalore Base';
-            nearbyBtn.classList.remove('animate-pulse');
-            
-            alert("Location access denied. Displaying nearest temples from Bengaluru.");
-            this.renderKarnatakaTemplesGrid();
+            console.warn("GPS access blocked or timed out, falling back to instant Area selector", err);
+            // Fallback to Bengaluru and highlight Area Select
+            this.calculateAndSortNearby(12.9716, 77.5946, "Bengaluru (Selected)");
+            if (areaSelect) {
+              areaSelect.value = "bengaluru";
+              areaSelect.classList.add('ring-2', 'ring-gold', 'animate-pulse');
+              setTimeout(() => areaSelect.classList.remove('ring-2', 'ring-gold', 'animate-pulse'), 3000);
+            }
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 8000,
+            maximumAge: 60000
           }
         );
       });
     }
   }
-
   setupDivyaSubTabs() {
     const tabAyur = document.getElementById('divya-tab-ayur');
     const tabTemple = document.getElementById('divya-tab-temple');

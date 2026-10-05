@@ -2757,7 +2757,44 @@
         }
       });
 
-      if (cat === 'all') {
+      function haversineCalc(lat1, lon1, lat2, lon2) {
+        const R = 6371;
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                  Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return R * c;
+      }
+
+      if (cat === 'nearby') {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              const uLat = pos.coords.latitude;
+              const uLng = pos.coords.longitude;
+              const sorted = [...GLOBAL_TEMPLES_LIVE].map(t => {
+                const dist = (t.coords && t.coords.lat && t.coords.lng) ? haversineCalc(uLat, uLng, t.coords.lat, t.coords.lng) : 99999;
+                return { ...t, distance: dist };
+              }).sort((a, b) => a.distance - b.distance);
+              renderTempleGrid(sorted);
+            },
+            (err) => {
+              // Bengaluru center fallback
+              const uLat = 12.9716;
+              const uLng = 77.5946;
+              const sorted = [...GLOBAL_TEMPLES_LIVE].map(t => {
+                const dist = (t.coords && t.coords.lat && t.coords.lng) ? haversineCalc(uLat, uLng, t.coords.lat, t.coords.lng) : 99999;
+                return { ...t, distance: dist };
+              }).sort((a, b) => a.distance - b.distance);
+              renderTempleGrid(sorted);
+            }
+          );
+        } else {
+          renderTempleGrid(GLOBAL_TEMPLES_LIVE);
+        }
+      } else if (cat === 'all') {
         renderTempleGrid(GLOBAL_TEMPLES_LIVE);
       } else if (cat === 'south') {
         const filtered = GLOBAL_TEMPLES_LIVE.filter(t => t.category === 'south' || t.state === 'Karnataka' || t.state === 'Tamil Nadu' || t.state === 'Andhra Pradesh' || t.state === 'Kerala');
@@ -2770,8 +2807,6 @@
         renderTempleGrid(filtered);
       }
     };
-
-    // ── 10. COPY MANTRA & WHATSAPP SHARING ──
     window.copyMantra = function() {
       if (!activeTemple) return;
       navigator.clipboard.writeText(activeTemple.mantra);

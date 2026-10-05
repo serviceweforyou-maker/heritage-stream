@@ -1011,9 +1011,20 @@
                 <input type="text" id="temple-search" placeholder="Search temples..." class="w-full bg-white/5 border border-white/10 hover:border-white/20 focus:border-gold/50 rounded-xl px-3 py-1.5 pl-8 text-xs text-white focus:outline-none transition-all">
                 <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
               </div>
-              <button id="nearby-temples-btn" class="flex-shrink-0 px-3.5 py-1.5 bg-gold hover:bg-gold/90 text-black text-xs font-black rounded-xl transition-all shadow-md">
-                📍 Nearby
-              </button>
+              <div class="flex items-center gap-2">
+                <button id="nearby-temples-btn" title="Click to find temples closest to your current GPS location" class="flex-shrink-0 px-3.5 py-1.5 bg-gold hover:bg-gold/90 text-black text-xs font-black rounded-xl transition-all shadow-md flex items-center gap-1">
+                  📍 Nearby
+                </button>
+                <select id="temple-area-select" title="Select your specific Karnataka district or area" class="bg-black/60 border border-gold/30 hover:border-gold text-gold text-xs font-bold rounded-xl px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-gold transition-all cursor-pointer">
+                  <option value="all" class="bg-gray-900 text-white">🌐 All Karnataka (32+)</option>
+                  <option value="bengaluru" class="bg-gray-900 text-white">🏙️ Bengaluru & Urban</option>
+                  <option value="mysuru" class="bg-gray-900 text-white">🏛️ Mysuru & Mandya</option>
+                  <option value="coastal" class="bg-gray-900 text-white">🌊 Coastal (Udupi/Mangaluru/Gokarna)</option>
+                  <option value="malnad" class="bg-gray-900 text-white">🏔️ Malnad (Hassan/Chikkamagaluru)</option>
+                  <option value="north" class="bg-gray-900 text-white">🏰 North (Hampi/Badami/Hubballi)</option>
+                  <option value="central" class="bg-gray-900 text-white">🛕 Central (Tumakuru/Kolar)</option>
+                </select>
+              </div>
               <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar max-w-xs text-[10px]">
                 <button class="temple-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-gold bg-gold text-black shadow-lg" data-category="all">All</button>
                 <button class="temple-tab-btn px-3.5 py-1.5 rounded-full font-bold border border-white/10 text-white/70 hover:border-gold/30" data-category="Shakti Peetha">Shakti</button>
