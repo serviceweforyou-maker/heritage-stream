@@ -2797,7 +2797,7 @@
 
   <script src="flipbook.js?v=98"></script>
 
-        <!-- ── 🎬 NETFLIX-STYLE AUTHENTICATION MODAL (SIGN IN / REGISTER / LOGOUT) ── -->
+          <!-- ── 🎬 NETFLIX-STYLE AUTHENTICATION MODAL (SIGN IN / REGISTER / LOGOUT) ── -->
   <div id="netflix-auth-modal" class="modal-overlay fixed inset-0 z-[110] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
     <div class="bg-[#090b12] border-2 border-gold/45 rounded-3xl w-full max-w-md shadow-[0_30px_80px_rgba(0,0,0,0.99)] relative p-6 sm:p-8 max-h-[92vh] overflow-y-auto no-scrollbar font-sans space-y-6" style="background-color: #090b12 !important; opacity: 1 !important;">
       
@@ -2817,13 +2817,16 @@
         </button>
       </div>
 
+      <!-- Inline Notification Toast -->
+      <div id="auth-modal-toast" class="hidden px-3.5 py-2.5 rounded-xl text-xs font-bold text-center transition-all"></div>
+
       <!-- Auth Toggle Tabs -->
       <div class="grid grid-cols-2 gap-1.5 p-1 bg-[#141826] border border-white/10 rounded-2xl text-xs font-bold">
         <button id="auth-tab-signin" type="button" class="auth-tab-btn py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer font-extrabold">
           <span>🔑</span> <span>Sign In</span>
         </button>
         <button id="auth-tab-register" type="button" class="auth-tab-btn py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer font-bold">
-          <span>✨</span> <span>Create Account</span>
+          <span>✨</span> <span>Create Free Account</span>
         </button>
       </div>
 
@@ -2834,7 +2837,7 @@
           <p class="text-xs text-white/60 mt-1">Unlock 200+ sagas, 40+ 24/7 Live Temples &amp; Vedic Gurukula</p>
         </div>
 
-        <form id="netflix-signin-form" class="space-y-3.5">
+        <form id="netflix-signin-form" class="space-y-3.5" onsubmit="event.preventDefault();">
           <div class="space-y-1.5">
             <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Email or Mobile Number</label>
             <input type="text" id="auth-signin-email" placeholder="e.g. rahul@example.com or 9876543210" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
@@ -2882,20 +2885,23 @@
 
         <div class="text-center text-xs text-white/60 pt-2">
           New to Sanatana360? 
-          <button type="button" id="auth-switch-to-register" class="text-gold font-bold hover:underline ml-1 cursor-pointer">Sign up now</button>.
+          <button type="button" id="auth-switch-to-register" class="text-gold font-bold hover:underline ml-1 cursor-pointer">Create free account now</button>.
         </div>
       </div>
 
       <!-- Panel 2: Create Account / Register -->
       <div id="auth-panel-register" class="space-y-4 hidden">
         <div>
-          <h4 class="text-xl font-extrabold font-serif text-white">Create Account</h4>
-          <p class="text-xs text-white/60 mt-1">Start your spiritual voyage with personalized recommendations</p>
+          <div class="flex items-center gap-2">
+            <h4 class="text-xl font-extrabold font-serif text-white">Create Free Account</h4>
+            <span class="text-[9px] font-mono font-black uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full">3-Day Free VIP Pass</span>
+          </div>
+          <p class="text-xs text-white/60 mt-1">Instant free access to 200+ sagas, 40+ Live Temples &amp; Vedic Gurukula</p>
         </div>
 
-        <form id="netflix-register-form" class="space-y-3.5">
+        <form id="netflix-register-form" class="space-y-3.5" onsubmit="event.preventDefault();">
           <div class="space-y-1.5">
-            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Full Name</label>
+            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Your Full Name</label>
             <input type="text" id="auth-reg-name" placeholder="e.g. Rahul Sharma" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
           </div>
 
@@ -2905,8 +2911,11 @@
           </div>
 
           <div class="space-y-1.5">
-            <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Create Password</label>
-            <input type="password" id="auth-reg-pwd" placeholder="At least 6 characters" required minlength="6" class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
+            <div class="flex items-center justify-between">
+              <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Password (Optional / Minimum 4 characters)</label>
+              <span class="text-[9px] text-white/40 font-mono">Optional</span>
+            </div>
+            <input type="password" id="auth-reg-pwd" placeholder="Enter password (e.g. 123456)" class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
           </div>
 
           <!-- Select Persona Avatar -->
@@ -2924,7 +2933,7 @@
 
           <div class="pt-1">
             <button type="submit" id="auth-register-submit-btn" class="w-full py-3.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-500 text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/25 hover:scale-[1.01] cursor-pointer">
-              Create Free Account
+              ✨ Start 3-Day Free VIP Access
             </button>
           </div>
         </form>
@@ -2937,8 +2946,93 @@
 
       <!-- Security / Footer notice -->
       <div class="text-center text-[10px] text-white/40 border-t border-white/10 pt-3">
-        Protected by Vedic Encryption &bull; Terms &amp; Privacy Apply
+        Protected by Vedic Encryption &bull; 100% Free Explorer Access
       </div>
+    </div>
+  </div>
+
+    <!-- ── ⏳ SMART FREE TRIAL EXPIRY & SUBSCRIPTION PROMPT MODAL ── -->
+  <div id="trial-expiry-subscribe-modal" class="modal-overlay fixed inset-0 z-[120] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
+    <div class="bg-[#090b12] border-2 border-gold/50 rounded-3xl w-full max-w-lg shadow-[0_30px_90px_rgba(0,0,0,0.99)] relative p-6 sm:p-8 max-h-[92vh] overflow-y-auto no-scrollbar font-sans space-y-6" style="background-color: #090b12 !important; opacity: 1 !important;">
+      
+      <!-- Top Header -->
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-gold/30 via-amber-500/20 to-transparent border border-gold/50 flex items-center justify-center text-2xl shadow-sm">
+            ⏳
+          </div>
+          <div>
+            <h3 class="text-lg font-bold font-serif text-white tracking-wide">Sanatana360 Membership</h3>
+            <span class="text-[9px] font-mono text-gold uppercase tracking-widest block font-bold">Free Trial Concluded</span>
+          </div>
+        </div>
+        <button id="close-trial-modal-btn" onclick="document.getElementById('trial-expiry-subscribe-modal')?.classList.add('hidden'); document.getElementById('trial-expiry-subscribe-modal')?.classList.remove('flex');" class="modal-close w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 flex items-center justify-center text-xl font-bold transition-all cursor-pointer border border-white/10 hover:border-gold" title="Close">
+          &times;
+        </button>
+      </div>
+
+      <!-- Hero Message -->
+      <div class="text-center space-y-2 py-1">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[10px] font-mono font-bold">
+          <span>✨</span> <span>Unlock Full Unlimited 365-Day Vedic Streaming</span>
+        </div>
+        <h4 class="text-xl sm:text-2xl font-black font-serif text-white leading-tight">Continue Your Spiritual Voyage</h4>
+        <p class="text-xs text-white/70 max-w-md mx-auto leading-relaxed">
+          Your initial 3-day exploration pass has ended. Unlock unrestricted, ad-free streaming of 200+ sagas, 40+ 24/7 Live Temples, and 26 Grand Epics.
+        </p>
+      </div>
+
+      <!-- Pricing Options Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <!-- Annual Pass Option (Highlighted) -->
+        <div class="relative bg-[#141826] border-2 border-gold rounded-2xl p-4 space-y-2.5 shadow-lg shadow-gold/15 flex flex-col justify-between" style="background-color: #141826 !important;">
+          <div class="absolute -top-2.5 right-3 bg-gradient-to-r from-gold to-amber-500 text-black text-[9px] font-black uppercase font-mono px-2 py-0.5 rounded-full shadow-sm">
+            Best Value (₹1.09/day)
+          </div>
+          <div>
+            <span class="text-[10px] font-mono text-gold uppercase tracking-wider font-bold block">Annual Pass</span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span class="text-2xl font-black text-white font-mono">₹399</span>
+              <span class="text-[10px] text-white/50 font-mono">/ 365 Days</span>
+            </div>
+            <ul class="text-[11px] text-white/80 space-y-1 mt-2.5">
+              <li class="flex items-center gap-1.5">✓ <span>All 200+ Documentaries &amp; Audiobooks</span></li>
+              <li class="flex items-center gap-1.5">✓ <span>40+ 24/7 HD Live Temple Darshanas</span></li>
+              <li class="flex items-center gap-1.5">✓ <span>26 Illustrated 3D FlipBook Granths</span></li>
+            </ul>
+          </div>
+          <button onclick="document.getElementById('trial-expiry-subscribe-modal')?.classList.add('hidden'); window.appInstance?.openPaymentModal ? window.appInstance.openPaymentModal() : null;" class="w-full py-2.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer mt-2">
+            Unlock Annual Pass (₹399)
+          </button>
+        </div>
+
+        <!-- 24-Hour Day Pass Option -->
+        <div class="bg-[#141826] border border-white/15 rounded-2xl p-4 space-y-2.5 flex flex-col justify-between" style="background-color: #141826 !important;">
+          <div>
+            <span class="text-[10px] font-mono text-white/60 uppercase tracking-wider font-bold block">24-Hour Day Pass</span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span class="text-2xl font-black text-white font-mono">₹29</span>
+              <span class="text-[10px] text-white/50 font-mono">/ 1 Day Access</span>
+            </div>
+            <ul class="text-[11px] text-white/70 space-y-1 mt-2.5">
+              <li class="flex items-center gap-1.5">• <span>Single Day VIP Sagas Unlock</span></li>
+              <li class="flex items-center gap-1.5">• <span>Full Live Darshana Feeds</span></li>
+              <li class="flex items-center gap-1.5">• <span>No Auto-Renewal Required</span></li>
+            </ul>
+          </div>
+          <button onclick="document.getElementById('trial-expiry-subscribe-modal')?.classList.add('hidden'); window.appInstance?.openPaymentModal ? window.appInstance.openPaymentModal() : null;" class="w-full py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all border border-white/20 cursor-pointer mt-2">
+            Get 1-Day Pass (₹29)
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer Action -->
+      <div class="text-center pt-1 border-t border-white/10">
+        <button type="button" onclick="document.getElementById('trial-expiry-subscribe-modal')?.classList.add('hidden'); document.getElementById('trial-expiry-subscribe-modal')?.classList.remove('flex');" class="text-white/50 hover:text-white text-xs font-bold transition-all cursor-pointer">
+          Remind Me Later &bull; Continue Free Preview
+        </button>
+      </div>
+
     </div>
   </div>
 
