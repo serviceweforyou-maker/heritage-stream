@@ -348,7 +348,7 @@ export const BLOG_POSTS = [
     "category": "vedic_science",
     "categoryLabel": "Vedic Science",
     "categoryIcon": "🔬",
-    "featuredImage": "/images/ayurveda.jpg",
+    "featuredImage": "/images/dharma.jpg",
     "readTime": "8 min read",
     "keywords": [
       "Sushruta father of surgery",
@@ -377,7 +377,7 @@ export const BLOG_POSTS = [
     "category": "vedic_science",
     "categoryLabel": "Vedic Science",
     "categoryIcon": "🔬",
-    "featuredImage": "/images/astronomy.jpg",
+    "featuredImage": "/images/temple_dwarkadhish.jpg",
     "readTime": "9 min read",
     "keywords": [
       "Vimana Shastra Maharishi Bharadwaja",
@@ -405,7 +405,7 @@ export const BLOG_POSTS = [
     "category": "vedic_science",
     "categoryLabel": "Vedic Science",
     "categoryIcon": "🔬",
-    "featuredImage": "/images/vedic_math.jpg",
+    "featuredImage": "/images/ganga_descent.jpg",
     "readTime": "6 min read",
     "keywords": [
       "Baudhayana theorem",
@@ -434,7 +434,7 @@ export const BLOG_POSTS = [
     "category": "vedic_science",
     "categoryLabel": "Vedic Science",
     "categoryIcon": "🔬",
-    "featuredImage": "/images/dharma.jpg",
+    "featuredImage": "/images/ramayana_science.jpg",
     "readTime": "6 min read",
     "keywords": [
       "Rishi Kanada atomic theory",
@@ -462,7 +462,7 @@ export const BLOG_POSTS = [
     "category": "lost_civilizations",
     "categoryLabel": "Lost Civilizations",
     "categoryIcon": "🌊",
-    "featuredImage": "/images/temple_dwarkadhish.jpg",
+    "featuredImage": "/images/kundalini_chakras.jpg",
     "readTime": "8 min read",
     "keywords": [
       "Underwater Dwarka marine archaeology",
@@ -491,7 +491,7 @@ export const BLOG_POSTS = [
     "category": "lost_civilizations",
     "categoryLabel": "Lost Civilizations",
     "categoryIcon": "🌊",
-    "featuredImage": "/images/ganga_descent.jpg",
+    "featuredImage": "/images/mudra_apana_vayu.jpg",
     "readTime": "7 min read",
     "keywords": [
       "Lost Saraswati River satellite ISRO",
@@ -519,7 +519,7 @@ export const BLOG_POSTS = [
     "category": "lost_civilizations",
     "categoryLabel": "Lost Civilizations",
     "categoryIcon": "🌊",
-    "featuredImage": "/images/ramayana_science.jpg",
+    "featuredImage": "/images/fourteen_lokas_cosmos.jpg",
     "readTime": "7 min read",
     "keywords": [
       "Ram Setu NASA satellite photos",
@@ -548,7 +548,7 @@ export const BLOG_POSTS = [
     "category": "sacred_frequencies",
     "categoryLabel": "Frequencies & Mudras",
     "categoryIcon": "🧘",
-    "featuredImage": "/images/kundalini_chakras.jpg",
+    "featuredImage": "/images/shiva_parvati_kalyanam.jpg",
     "readTime": "6 min read",
     "keywords": [
       "136.1 Hz OM frequency",
@@ -577,7 +577,7 @@ export const BLOG_POSTS = [
     "category": "sacred_frequencies",
     "categoryLabel": "Frequencies & Mudras",
     "categoryIcon": "🧘",
-    "featuredImage": "/images/mudra_apana_vayu.jpg",
+    "featuredImage": "/images/temple_badrinath.jpg",
     "readTime": "5 min read",
     "keywords": [
       "Apana Vayu Mudra steps",
@@ -606,7 +606,7 @@ export const BLOG_POSTS = [
     "category": "cosmic_enigmas",
     "categoryLabel": "Cosmic Enigmas",
     "categoryIcon": "🌌",
-    "featuredImage": "/images/fourteen_lokas_cosmos.jpg",
+    "featuredImage": "/images/temple_haridwar.jpg",
     "readTime": "6 min read",
     "keywords": [
       "Time dilation in Hinduism",
@@ -635,7 +635,7 @@ export const BLOG_POSTS = [
     "category": "jyotirlinga_grid",
     "categoryLabel": "Jyotirlinga Grid",
     "categoryIcon": "🔱",
-    "featuredImage": "/images/shiva_parvati_kalyanam.jpg",
+    "featuredImage": "/images/abhimanyu_chakravyuha.jpg",
     "readTime": "7 min read",
     "keywords": [
       "79 degree longitude Shiva temples",
@@ -664,7 +664,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "🏔️",
-    "featuredImage": "/images/abhimanyu_chakravyuha.jpg",
+    "featuredImage": "/images/adi_shankara.jpg",
     "readTime": "5 min read",
     "keywords": [
       "Tungnath Temple",
@@ -693,7 +693,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "🌊",
-    "featuredImage": "/images/adi_shankara.jpg",
+    "featuredImage": "/images/ajanta.jpg",
     "readTime": "6 min read",
     "keywords": [
       "The Stambheshwar Mahadev Submerging Temple",
@@ -722,7 +722,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "☀️",
-    "featuredImage": "/images/ajanta.jpg",
+    "featuredImage": "/images/ashoka.jpg",
     "readTime": "7 min read",
     "keywords": [
       "Modhera Sun Temple",
@@ -751,7 +751,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "🔥",
-    "featuredImage": "/images/ashoka.jpg",
+    "featuredImage": "/images/bhangarh_cover.jpg",
     "readTime": "8 min read",
     "keywords": [
       "Jwala Ji Eternal Blue Flame",
@@ -780,7 +780,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "🌺",
-    "featuredImage": "/images/bhangarh_cover.jpg",
+    "featuredImage": "/images/bhasmasura_mohini.jpg",
     "readTime": "5 min read",
     "keywords": [
       "Kamakhya Temple Bleeding Stone",
@@ -809,7 +809,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "🏛️",
-    "featuredImage": "/images/bhasmasura_mohini.jpg",
+    "featuredImage": "/images/birbal.jpg",
     "readTime": "6 min read",
     "keywords": [
       "Chennakesava Temple Belur",
@@ -838,7 +838,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "🔒",
-    "featuredImage": "/images/birbal.jpg",
+    "featuredImage": "/images/chola_navy.jpg",
     "readTime": "7 min read",
     "keywords": [
       "Padmanabhaswamy Secret Underground Tunnels",
@@ -867,7 +867,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "🏛️",
-    "featuredImage": "/images/chola_navy.jpg",
+    "featuredImage": "/images/dashavatara.jpg",
     "readTime": "8 min read",
     "keywords": [
       "Meenakshi Temple's Chitra Gopuram",
@@ -896,7 +896,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "🔱",
-    "featuredImage": "/images/dashavatara.jpg",
+    "featuredImage": "/images/divya_darshana_banner.jpg",
     "readTime": "5 min read",
     "keywords": [
       "Kashi Vishwanath Jyotirlinga & Gyanvapi Well",
@@ -1998,7 +1998,7 @@ export const BLOG_POSTS = [
     "category": "cosmic_enigmas",
     "categoryLabel": "Cosmic Enigmas",
     "categoryIcon": "🌿",
-    "featuredImage": "/images/temple_badrinath.jpg",
+    "featuredImage": "/images/tenali.jpg",
     "readTime": "7 min read",
     "keywords": [
       "Sanjeevani Booti Bioluminescence",
@@ -2027,7 +2027,7 @@ export const BLOG_POSTS = [
     "category": "cosmic_enigmas",
     "categoryLabel": "Cosmic Enigmas",
     "categoryIcon": "⚡",
-    "featuredImage": "/images/temple_haridwar.jpg",
+    "featuredImage": "/images/venkateswara_tirumala.jpg",
     "readTime": "8 min read",
     "keywords": [
       "Shiva Tandava Stotram's Rhythmic Power",
@@ -2056,7 +2056,7 @@ export const BLOG_POSTS = [
     "category": "jyotirlinga_grid",
     "categoryLabel": "Jyotirlinga Grid",
     "categoryIcon": "🌐",
-    "featuredImage": "/images/tenali.jpg",
+    "featuredImage": "/images/vikram_betal.jpg",
     "readTime": "5 min read",
     "keywords": [
       "Ujjain Prime Meridian (0° Longitude)",
@@ -2085,7 +2085,7 @@ export const BLOG_POSTS = [
     "category": "jyotirlinga_grid",
     "categoryLabel": "Jyotirlinga Grid",
     "categoryIcon": "🔱",
-    "featuredImage": "/images/venkateswara_tirumala.jpg",
+    "featuredImage": "/images/vishwaroopam_darshan.jpg",
     "readTime": "6 min read",
     "keywords": [
       "Kashi Magnetic Shield",
@@ -2114,7 +2114,7 @@ export const BLOG_POSTS = [
     "category": "jyotirlinga_grid",
     "categoryLabel": "Jyotirlinga Grid",
     "categoryIcon": "🧭",
-    "featuredImage": "/images/vikram_betal.jpg",
+    "featuredImage": "/images/warrior_cover.jpg",
     "readTime": "7 min read",
     "keywords": [
       "Somnath to Antarctica",
@@ -2143,7 +2143,7 @@ export const BLOG_POSTS = [
     "category": "vedic_science",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "/images/vishwaroopam_darshan.jpg",
+    "featuredImage": "https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2171,7 +2171,7 @@ export const BLOG_POSTS = [
     "category": "lost_civilizations",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "/images/warrior_cover.jpg",
+    "featuredImage": "https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2199,7 +2199,7 @@ export const BLOG_POSTS = [
     "category": "sacred_frequencies",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2227,7 +2227,7 @@ export const BLOG_POSTS = [
     "category": "cosmic_enigmas",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2255,7 +2255,7 @@ export const BLOG_POSTS = [
     "category": "jyotirlinga_grid",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2283,7 +2283,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2311,7 +2311,7 @@ export const BLOG_POSTS = [
     "category": "vedic_science",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/V2FnGzYYux8/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2339,7 +2339,7 @@ export const BLOG_POSTS = [
     "category": "lost_civilizations",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/WD5kyQ4laVs/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2367,7 +2367,7 @@ export const BLOG_POSTS = [
     "category": "sacred_frequencies",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/V2FnGzYYux8/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/B3r-kt5dK_M/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2395,7 +2395,7 @@ export const BLOG_POSTS = [
     "category": "cosmic_enigmas",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/WD5kyQ4laVs/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/aHp8nnOwcpc/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2423,7 +2423,7 @@ export const BLOG_POSTS = [
     "category": "jyotirlinga_grid",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/B3r-kt5dK_M/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/q58Wan19vns/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2451,7 +2451,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/aHp8nnOwcpc/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/fURwn8kbRBc/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2479,7 +2479,7 @@ export const BLOG_POSTS = [
     "category": "vedic_science",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/q58Wan19vns/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2507,7 +2507,7 @@ export const BLOG_POSTS = [
     "category": "lost_civilizations",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/fURwn8kbRBc/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/Aicrlohuuug/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2535,7 +2535,7 @@ export const BLOG_POSTS = [
     "category": "sacred_frequencies",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/9SBpnTrrXlw/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2563,7 +2563,7 @@ export const BLOG_POSTS = [
     "category": "cosmic_enigmas",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/Aicrlohuuug/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/bi1PDhKGUd4/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2591,7 +2591,7 @@ export const BLOG_POSTS = [
     "category": "jyotirlinga_grid",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/9SBpnTrrXlw/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/cE0gGQG5XnY/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2619,7 +2619,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/bi1PDhKGUd4/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/dMMNKnJzjCc/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2647,7 +2647,7 @@ export const BLOG_POSTS = [
     "category": "vedic_science",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/cE0gGQG5XnY/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/OdcdnGb1MzM/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2675,7 +2675,7 @@ export const BLOG_POSTS = [
     "category": "lost_civilizations",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/dMMNKnJzjCc/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/gpBomD7BoTE/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2703,7 +2703,7 @@ export const BLOG_POSTS = [
     "category": "sacred_frequencies",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/OdcdnGb1MzM/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/Moj6qIUtzR0/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2731,7 +2731,7 @@ export const BLOG_POSTS = [
     "category": "cosmic_enigmas",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/gpBomD7BoTE/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/Dl7oOCQB8Io/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2759,7 +2759,7 @@ export const BLOG_POSTS = [
     "category": "jyotirlinga_grid",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/Moj6qIUtzR0/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/PTCrORkDhdc/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2787,7 +2787,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/Dl7oOCQB8Io/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/QJLJDfJPQsA/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2815,7 +2815,7 @@ export const BLOG_POSTS = [
     "category": "vedic_science",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/PTCrORkDhdc/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/SaoR3RAtKbk/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2843,7 +2843,7 @@ export const BLOG_POSTS = [
     "category": "lost_civilizations",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/QJLJDfJPQsA/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/GOXlKz5tySg/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2871,7 +2871,7 @@ export const BLOG_POSTS = [
     "category": "sacred_frequencies",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/SaoR3RAtKbk/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/mK2k8d2-ctM/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2899,7 +2899,7 @@ export const BLOG_POSTS = [
     "category": "cosmic_enigmas",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/GOXlKz5tySg/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/lvQT0WGp5Lk/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2927,7 +2927,7 @@ export const BLOG_POSTS = [
     "category": "jyotirlinga_grid",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/mK2k8d2-ctM/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/hvdWNsZ7nlU/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2955,7 +2955,7 @@ export const BLOG_POSTS = [
     "category": "temple_mysteries",
     "categoryLabel": "Temple Mysteries",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/lvQT0WGp5Lk/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/yK6PJU8qBU4/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",
@@ -2983,7 +2983,7 @@ export const BLOG_POSTS = [
     "category": "vedic_science",
     "categoryLabel": "Vedic Wisdom",
     "categoryIcon": "📜",
-    "featuredImage": "https://img.youtube.com/vi/hvdWNsZ7nlU/hqdefault.jpg",
+    "featuredImage": "https://img.youtube.com/vi/DjvDwf97Wzc/hqdefault.jpg",
     "readTime": "6 min read",
     "keywords": [
       "ancient Indian secrets",

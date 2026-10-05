@@ -279,7 +279,7 @@
 
   <!-- ── 5. JAVASCRIPT ENGINE & BLOG CONTROLLER ── -->
   <script type="module">
-    import { BLOG_POSTS } from "./blog-data-prod.js?v=1.0";
+    import { BLOG_POSTS } from "./blog-data-prod.js?v=105.0";
 
     let activeCategory = 'all';
     let searchQuery = '';
@@ -341,7 +341,7 @@
           >
             <div class="space-y-3">
               <div class="relative h-44 rounded-xl overflow-hidden bg-black/40">
-                <img src="${p.featuredImage}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='/images/hampi.jpg'" />
+                <img src="${p.featuredImage}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'" />
                 <div class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-gold text-[10px] font-mono font-bold">
                   ${p.categoryIcon || '📜'} ${p.categoryLabel || 'Mystery'}
                 </div>
