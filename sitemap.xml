@@ -1,26 +1,1361 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <!-- 1. Homepage & OTT Gurukula Hub -->
+
+  <!-- ========================================== -->
+  <!-- 1. HOMEPAGE & CULTURAL GURUKULA OTT HUB -->
+  <!-- ========================================== -->
   <url>
     <loc>https://www.sanatana360.com/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ganesha.jpg</image:loc>
       <image:title>Sanatana360 Cultural OTT and Vedic Kids Gurukula</image:title>
+      <image:caption>Premier Indian Heritage Knowledge OTT &amp; Digital Gurukula</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/hampi.jpg</image:loc>
-      <image:title>Ancient Indian Architectural Chronicles and Documentaries</image:title>
+      <image:title>Ancient Indian Architectural Chronicles and 3D Temple Documentaries</image:title>
     </image:image>
   </url>
 
-  <!-- 2. Vedic Mathematics & Ancient Memory Shastra Lab -->
+  <!-- ========================================== -->
+  <!-- 2. DIVYA DARSHANA 360 MAIN HUB (40+ LIVE TEMPLES) -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.sanatana360.com/images/divya_darshana_banner.jpg</image:loc>
+      <image:title>Divya Darshana 360 - 40+ Official 24/7 Live Temple Streams</image:title>
+      <image:caption>Watch 12 Jyotirlingas, Char Dham, and Shaktipeeth Live Feeds with Virtual Aarti</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/mCqRuQigwFU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shirdi Sai Baba Samadhi Mandir - Official 24/7 Live Darshana &amp; Aarti</video:title>
+      <video:description>Official 24/7 Live Darshana &amp; Aarti from the sacred Samadhi Mandir of Sai Baba in Shirdi | श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती व दर्शन) located in Shirdi, Ahmednagar, Maharashtra, India. Official live broadcast for elderly &amp; global devotees.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/mCqRuQigwFU</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:tag>Shirdi Sai Baba Samadhi Mandir</video:tag>
+      <video:tag>Live Temple Darshan</video:tag>
+      <video:tag>Shri Sai Baba of Shirdi</video:tag>
+      <video:tag>Maharashtra Temples</video:tag>
+      <video:tag>Virtual Aarti 24/7</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/XxdarKTmJ8c/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Tirumala Sri Venkateswara Swamy - Official 24/7 Live Darshana &amp; Aarti</video:title>
+      <video:description>Official 24/7 SVBC Live Darshana, Kalyanotsavam &amp; Sahasra Deepalankara Seva of Lord Balaji | श्री वेंकटेश्वर स्वामी तिरुपति बालाजी (कल्याणोत्सवम् व दर्शन) located in Tirumala Hills, Tirupati, Andhra Pradesh, India. Official live broadcast for elderly &amp; global devotees.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/XxdarKTmJ8c</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:tag>Tirumala Sri Venkateswara Swamy</video:tag>
+      <video:tag>Live Temple Darshan</video:tag>
+      <video:tag>Lord Venkateswara (Balaji / Maha Vishnu)</video:tag>
+      <video:tag>Andhra Pradesh Temples</video:tag>
+      <video:tag>Virtual Aarti 24/7</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Kashi Vishwanath Jyotirlinga - Official 24/7 Live Darshana &amp; Aarti</video:title>
+      <video:description>Avimukta Moksha Kshetra • Real-time Mangala &amp; Shringara Aarti directly on the banks of Holy Ganga | श्री काशी विश्वनाथ ज्योतिर्लिंग वाराणसी (मंगला व शृंगार आरती) located in Varanasi (Kashi), Uttar Pradesh, India. Official live broadcast for elderly &amp; global devotees.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uRUP4M_5vSo</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:tag>Shree Kashi Vishwanath Jyotirlinga</video:tag>
+      <video:tag>Live Temple Darshan</video:tag>
+      <video:tag>Lord Shiva (Vishveshwara / Lord of the Universe)</video:tag>
+      <video:tag>Uttar Pradesh Temples</video:tag>
+      <video:tag>Virtual Aarti 24/7</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Somnath Jyotirlinga (1st Jyotirlinga) - Official 24/7 Live Darshana &amp; Aarti</video:title>
+      <video:description>First of the 12 Sacred Jyotirlingas, situated at the confluence of 3 sacred rivers and the Arabian Sea | श्री सोमनाथ ज्योतिर्लिंग (प्रथम ज्योतिर्लिंग • प्रभास पाटन) located in Prabhas Patan, Veraval, Saurashtra, Gujarat, India. Official live broadcast for elderly &amp; global devotees.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uY5YwokiIsY</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:tag>Shree Somnath Jyotirlinga (1st Jyotirlinga)</video:tag>
+      <video:tag>Live Temple Darshan</video:tag>
+      <video:tag>Lord Shiva (Someshwara / Lord of the Moon)</video:tag>
+      <video:tag>Gujarat Temples</video:tag>
+      <video:tag>Virtual Aarti 24/7</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Mahakaleshwar Jyotirlinga Ujjain - Official 24/7 Live Darshana &amp; Aarti</video:title>
+      <video:description>Only South-Facing (Dakshinamurti) Jyotirlinga, famous for the world-renowned daily Bhasma Aarti | श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन (भस्म आरती व दर्शन) located in Ujjain, Madhya Pradesh, India. Official live broadcast for elderly &amp; global devotees.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/H6D_IGx5xOI</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:tag>Mahakaleshwar Jyotirlinga Ujjain</video:tag>
+      <video:tag>Live Temple Darshan</video:tag>
+      <video:tag>Lord Shiva (Dakshinamurti Mahakal / Kaal Ka Mahakaal)</video:tag>
+      <video:tag>Madhya Pradesh Temples</video:tag>
+      <video:tag>Virtual Aarti 24/7</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shri Ram Janmabhoomi Mandir Ayodhya - Official 24/7 Live Darshana &amp; Aarti</video:title>
+      <video:description>Sacred 5-year-old child form of Maryada Purushottam Shri Ram in the grand Nagara architectural sanctum | श्री राम जन्मभूमि मंदिर अयोध्या (रामलला दिव्य दर्शन व आरती) located in Ayodhya Dham, Uttar Pradesh, India. Official live broadcast for elderly &amp; global devotees.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/W8qEqGulnPg</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:tag>Shri Ram Janmabhoomi Mandir Ayodhya</video:tag>
+      <video:tag>Live Temple Darshan</video:tag>
+      <video:tag>Lord Rama (Bhagwan Shri Ram Lalla Virajman)</video:tag>
+      <video:tag>Uttar Pradesh Temples</video:tag>
+      <video:tag>Virtual Aarti 24/7</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/pq1fSKRlbc8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ISKCON Sri Radha Krishnachandra Bangalore - Official 24/7 Live Darshana &amp; Aarti</video:title>
+      <video:description>Ecstatic 24/7 Maha-Mantra Kirtan, opulent deity shringara, and uninterrupted divine stream | इस्कॉन श्री राधा कृष्णचंद्र मंदिर बेंगलुरु (कीर्तन व आरती) located in Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka, India. Official live broadcast for elderly &amp; global devotees.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/pq1fSKRlbc8</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:tag>ISKCON Sri Radha Krishnachandra Bangalore</video:tag>
+      <video:tag>Live Temple Darshan</video:tag>
+      <video:tag>Sri Sri Radha Krishnachandra &amp; Sri Narasimha</video:tag>
+      <video:tag>Karnataka Temples</video:tag>
+      <video:tag>Virtual Aarti 24/7</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/O2ojNbbB8Iw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ISKCON Sri Sri Krishna Balaram Mandir - Official 24/7 Live Darshana &amp; Aarti</video:title>
+      <video:description>Heart of Braj Dham, famous for uninterrupted 24-Hour Akhanda Harinama Kirtan since 1975 | श्री श्री कृष्ण बलराम मंदिर इस्कॉन वृंदावन (24-घंटे अखंड कीर्तन) located in Raman Reti, Vrindavan, Mathura, Uttar Pradesh, India. Official live broadcast for elderly &amp; global devotees.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/O2ojNbbB8Iw</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:tag>ISKCON Sri Sri Krishna Balaram Mandir</video:tag>
+      <video:tag>Live Temple Darshan</video:tag>
+      <video:tag>Sri Krishna &amp; Balarama, Sri Radha Shyamasundar</video:tag>
+      <video:tag>Uttar Pradesh Temples</video:tag>
+      <video:tag>Virtual Aarti 24/7</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shri Mata Vaishno Devi Bhawan Katra - Official 24/7 Live Darshana &amp; Aarti</video:title>
+      <video:description>Holy Cave Shrine in Trikuta Mountains housing the 3 natural Pindis of Mahakali, Mahalakshmi &amp; Mahasaraswati | श्री माता वैष्णो देवी भवन कटरा (पवित्र गुफा व दिव्य आरती) located in Trikuta Hills, Katra, Jammu &amp; Kashmir, India. Official live broadcast for elderly &amp; global devotees.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/jD-THm4dJz0</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:tag>Shri Mata Vaishno Devi Bhawan Katra</video:tag>
+      <video:tag>Live Temple Darshan</video:tag>
+      <video:tag>Maa Vaishno Devi (Maha Kali, Maha Lakshmi, Maha Saraswati Pindis)</video:tag>
+      <video:tag>Jammu &amp; Kashmir Temples</video:tag>
+      <video:tag>Virtual Aarti 24/7</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Parmarth Niketan Rishikesh (Ganga Aarti) - Official 24/7 Live Darshana &amp; Aarti</video:title>
+      <video:description>World-renowned sunset Ganga Aarti with Vedic chanting, lamps, and bhajans on the holy banks in Rishikesh | परमार्थ निकेतन ऋषिकेश (विश्वप्रसिद्ध संध्या गंगा आरती) located in Swargashram, Rishikesh, Uttarakhand, India. Official live broadcast for elderly &amp; global devotees.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/usvU6ox_NQU</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:tag>Parmarth Niketan Rishikesh (Ganga Aarti)</video:tag>
+      <video:tag>Live Temple Darshan</video:tag>
+      <video:tag>Maa Ganga &amp; Lord Shiva</video:tag>
+      <video:tag>Uttarakhand Temples</video:tag>
+      <video:tag>Virtual Aarti 24/7</video:tag>
+    </video:video>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- 3. INDIVIDUAL 40+ TEMPLE DEEP-LINKED URLS -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=shirdi_sai</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/mCqRuQigwFU/hqdefault.jpg</image:loc>
+      <image:title>Shirdi Sai Baba Samadhi Mandir (श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती व दर्शन))</image:title>
+      <image:caption>Official 24/7 Live Darshana &amp; Aarti from the sacred Samadhi Mandir of Sai Baba in Shirdi</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/mCqRuQigwFU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shirdi Sai Baba Samadhi Mandir 24/7 Live Darshan &amp; Aarti Today - Shirdi, Ahmednagar, Maharashtra, India</video:title>
+      <video:description>Official 24/7 Live Darshana &amp; Aarti from the sacred Samadhi Mandir of Sai Baba in Shirdi. Watch continuous live broadcast from Shri Saibaba Sansthan Trust (SSST), Shirdi. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/mCqRuQigwFU</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=shirdi_sai">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shirdi Sai Baba Samadhi Mandir</video:tag>
+      <video:tag>Shri Sai Baba of Shirdi</video:tag>
+      <video:tag>Shirdi, Ahmednagar, Maharashtra, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=tirupati_balaji</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/XxdarKTmJ8c/hqdefault.jpg</image:loc>
+      <image:title>Tirumala Sri Venkateswara Swamy (श्री वेंकटेश्वर स्वामी तिरुपति बालाजी (कल्याणोत्सवम् व दर्शन))</image:title>
+      <image:caption>Official 24/7 SVBC Live Darshana, Kalyanotsavam &amp; Sahasra Deepalankara Seva of Lord Balaji</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/XxdarKTmJ8c/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Tirumala Sri Venkateswara Swamy 24/7 Live Darshan &amp; Aarti Today - Tirumala Hills, Tirupati, Andhra Pradesh, India</video:title>
+      <video:description>Official 24/7 SVBC Live Darshana, Kalyanotsavam &amp; Sahasra Deepalankara Seva of Lord Balaji. Watch continuous live broadcast from Tirumala Tirupati Devasthanams (TTD / SVBC). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/XxdarKTmJ8c</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=tirupati_balaji">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Tirumala Sri Venkateswara Swamy</video:tag>
+      <video:tag>Lord Venkateswara (Balaji / Maha Vishnu)</video:tag>
+      <video:tag>Tirumala Hills, Tirupati, Andhra Pradesh, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=kashi_vishwanath</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg</image:loc>
+      <image:title>Shree Kashi Vishwanath Jyotirlinga (श्री काशी विश्वनाथ ज्योतिर्लिंग वाराणसी (मंगला व शृंगार आरती))</image:title>
+      <image:caption>Avimukta Moksha Kshetra • Real-time Mangala &amp; Shringara Aarti directly on the banks of Holy Ganga</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Kashi Vishwanath Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Varanasi (Kashi), Uttar Pradesh, India</video:title>
+      <video:description>Avimukta Moksha Kshetra • Real-time Mangala &amp; Shringara Aarti directly on the banks of Holy Ganga. Watch continuous live broadcast from Shri Kashi Vishwanath Temple Trust (SKVT). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uRUP4M_5vSo</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=kashi_vishwanath">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Kashi Vishwanath Jyotirlinga</video:tag>
+      <video:tag>Lord Shiva (Vishveshwara / Lord of the Universe)</video:tag>
+      <video:tag>Varanasi (Kashi), Uttar Pradesh, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=somnath_jyotirlinga</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg</image:loc>
+      <image:title>Shree Somnath Jyotirlinga (1st Jyotirlinga) (श्री सोमनाथ ज्योतिर्लिंग (प्रथम ज्योतिर्लिंग • प्रभास पाटन))</image:title>
+      <image:caption>First of the 12 Sacred Jyotirlingas, situated at the confluence of 3 sacred rivers and the Arabian Sea</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Somnath Jyotirlinga (1st Jyotirlinga) 24/7 Live Darshan &amp; Aarti Today - Prabhas Patan, Veraval, Saurashtra, Gujarat, India</video:title>
+      <video:description>First of the 12 Sacred Jyotirlingas, situated at the confluence of 3 sacred rivers and the Arabian Sea. Watch continuous live broadcast from Shree Somnath Trust, Prabhas Patan. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uY5YwokiIsY</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=somnath_jyotirlinga">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Somnath Jyotirlinga (1st Jyotirlinga)</video:tag>
+      <video:tag>Lord Shiva (Someshwara / Lord of the Moon)</video:tag>
+      <video:tag>Prabhas Patan, Veraval, Saurashtra, Gujarat, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=mahakaleshwar_ujjain</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg</image:loc>
+      <image:title>Mahakaleshwar Jyotirlinga Ujjain (श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन (भस्म आरती व दर्शन))</image:title>
+      <image:caption>Only South-Facing (Dakshinamurti) Jyotirlinga, famous for the world-renowned daily Bhasma Aarti</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Mahakaleshwar Jyotirlinga Ujjain 24/7 Live Darshan &amp; Aarti Today - Ujjain, Madhya Pradesh, India</video:title>
+      <video:description>Only South-Facing (Dakshinamurti) Jyotirlinga, famous for the world-renowned daily Bhasma Aarti. Watch continuous live broadcast from Shri Mahakaleshwar Temple Management Committee, Ujjain. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/H6D_IGx5xOI</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=mahakaleshwar_ujjain">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Mahakaleshwar Jyotirlinga Ujjain</video:tag>
+      <video:tag>Lord Shiva (Dakshinamurti Mahakal / Kaal Ka Mahakaal)</video:tag>
+      <video:tag>Ujjain, Madhya Pradesh, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=ayodhya_ram_mandir</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg</image:loc>
+      <image:title>Shri Ram Janmabhoomi Mandir Ayodhya (श्री राम जन्मभूमि मंदिर अयोध्या (रामलला दिव्य दर्शन व आरती))</image:title>
+      <image:caption>Sacred 5-year-old child form of Maryada Purushottam Shri Ram in the grand Nagara architectural sanctum</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shri Ram Janmabhoomi Mandir Ayodhya 24/7 Live Darshan &amp; Aarti Today - Ayodhya Dham, Uttar Pradesh, India</video:title>
+      <video:description>Sacred 5-year-old child form of Maryada Purushottam Shri Ram in the grand Nagara architectural sanctum. Watch continuous live broadcast from Shri Ram Janmbhoomi Teerth Kshetra Trust. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/W8qEqGulnPg</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=ayodhya_ram_mandir">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shri Ram Janmabhoomi Mandir Ayodhya</video:tag>
+      <video:tag>Lord Rama (Bhagwan Shri Ram Lalla Virajman)</video:tag>
+      <video:tag>Ayodhya Dham, Uttar Pradesh, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=iskcon_bangalore</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/pq1fSKRlbc8/hqdefault.jpg</image:loc>
+      <image:title>ISKCON Sri Radha Krishnachandra Bangalore (इस्कॉन श्री राधा कृष्णचंद्र मंदिर बेंगलुरु (कीर्तन व आरती))</image:title>
+      <image:caption>Ecstatic 24/7 Maha-Mantra Kirtan, opulent deity shringara, and uninterrupted divine stream</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/pq1fSKRlbc8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ISKCON Sri Radha Krishnachandra Bangalore 24/7 Live Darshan &amp; Aarti Today - Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka, India</video:title>
+      <video:description>Ecstatic 24/7 Maha-Mantra Kirtan, opulent deity shringara, and uninterrupted divine stream. Watch continuous live broadcast from ISKCON Bangalore Society. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/pq1fSKRlbc8</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=iskcon_bangalore">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>ISKCON Sri Radha Krishnachandra Bangalore</video:tag>
+      <video:tag>Sri Sri Radha Krishnachandra &amp; Sri Narasimha</video:tag>
+      <video:tag>Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=iskcon_vrindavan</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/O2ojNbbB8Iw/hqdefault.jpg</image:loc>
+      <image:title>ISKCON Sri Sri Krishna Balaram Mandir (श्री श्री कृष्ण बलराम मंदिर इस्कॉन वृंदावन (24-घंटे अखंड कीर्तन))</image:title>
+      <image:caption>Heart of Braj Dham, famous for uninterrupted 24-Hour Akhanda Harinama Kirtan since 1975</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/O2ojNbbB8Iw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ISKCON Sri Sri Krishna Balaram Mandir 24/7 Live Darshan &amp; Aarti Today - Raman Reti, Vrindavan, Mathura, Uttar Pradesh, India</video:title>
+      <video:description>Heart of Braj Dham, famous for uninterrupted 24-Hour Akhanda Harinama Kirtan since 1975. Watch continuous live broadcast from ISKCON Vrindavan Krishna Balaram Temple. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/O2ojNbbB8Iw</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=iskcon_vrindavan">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>ISKCON Sri Sri Krishna Balaram Mandir</video:tag>
+      <video:tag>Sri Krishna &amp; Balarama, Sri Radha Shyamasundar</video:tag>
+      <video:tag>Raman Reti, Vrindavan, Mathura, Uttar Pradesh, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=vaishno_devi_katra</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg</image:loc>
+      <image:title>Shri Mata Vaishno Devi Bhawan Katra (श्री माता वैष्णो देवी भवन कटरा (पवित्र गुफा व दिव्य आरती))</image:title>
+      <image:caption>Holy Cave Shrine in Trikuta Mountains housing the 3 natural Pindis of Mahakali, Mahalakshmi &amp; Mahasaraswati</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shri Mata Vaishno Devi Bhawan Katra 24/7 Live Darshan &amp; Aarti Today - Trikuta Hills, Katra, Jammu &amp; Kashmir, India</video:title>
+      <video:description>Holy Cave Shrine in Trikuta Mountains housing the 3 natural Pindis of Mahakali, Mahalakshmi &amp; Mahasaraswati. Watch continuous live broadcast from Shri Mata Vaishno Devi Shrine Board (SMVDSB). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/jD-THm4dJz0</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=vaishno_devi_katra">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shri Mata Vaishno Devi Bhawan Katra</video:tag>
+      <video:tag>Maa Vaishno Devi (Maha Kali, Maha Lakshmi, Maha Saraswati Pindis)</video:tag>
+      <video:tag>Trikuta Hills, Katra, Jammu &amp; Kashmir, India</video:tag>
+      <video:tag>shaktipeeth</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=parmarth_niketan_ganga</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg</image:loc>
+      <image:title>Parmarth Niketan Rishikesh (Ganga Aarti) (परमार्थ निकेतन ऋषिकेश (विश्वप्रसिद्ध संध्या गंगा आरती))</image:title>
+      <image:caption>World-renowned sunset Ganga Aarti with Vedic chanting, lamps, and bhajans on the holy banks in Rishikesh</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Parmarth Niketan Rishikesh (Ganga Aarti) 24/7 Live Darshan &amp; Aarti Today - Swargashram, Rishikesh, Uttarakhand, India</video:title>
+      <video:description>World-renowned sunset Ganga Aarti with Vedic chanting, lamps, and bhajans on the holy banks in Rishikesh. Watch continuous live broadcast from Parmarth Niketan Ashram, Rishikesh. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/usvU6ox_NQU</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=parmarth_niketan_ganga">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Parmarth Niketan Rishikesh (Ganga Aarti)</video:tag>
+      <video:tag>Maa Ganga &amp; Lord Shiva</video:tag>
+      <video:tag>Swargashram, Rishikesh, Uttarakhand, India</video:tag>
+      <video:tag>aarti</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=siddhivinayak_mumbai</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/V2FnGzYYux8/hqdefault.jpg</image:loc>
+      <image:title>Shree Siddhivinayak Temple Mumbai (श्री सिद्धिविनायक मंदिर प्रभादेवी मुंबई (लाइव दर्शन व काकड आरती))</image:title>
+      <image:caption>Wish-fulfilling right-trunked Ganesha sculpted from a single black stone with gold sanctum</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/V2FnGzYYux8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Siddhivinayak Temple Mumbai 24/7 Live Darshan &amp; Aarti Today - Prabhadevi, Mumbai, Maharashtra, India</video:title>
+      <video:description>Wish-fulfilling right-trunked Ganesha sculpted from a single black stone with gold sanctum. Watch continuous live broadcast from Shree Siddhivinayak Ganapati Temple Trust (SSGTB). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/V2FnGzYYux8</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=siddhivinayak_mumbai">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Siddhivinayak Temple Mumbai</video:tag>
+      <video:tag>Lord Ganesha (Siddhivinayak Ganapati)</video:tag>
+      <video:tag>Prabhadevi, Mumbai, Maharashtra, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=jagannath_puri</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/WD5kyQ4laVs/hqdefault.jpg</image:loc>
+      <image:title>Shree Jagannath Temple Puri (श्री जगन्नाथ मंदिर पुरी (महाप्रसाद, मंगला व संध्या आरती))</image:title>
+      <image:caption>Maha Char Dham shrine of the Supreme Lord of the Cosmos, famous for Ratha Yatra and 56-Bhog Mahaprasad</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/WD5kyQ4laVs/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Jagannath Temple Puri 24/7 Live Darshan &amp; Aarti Today - Puri Dham, Odisha, India</video:title>
+      <video:description>Maha Char Dham shrine of the Supreme Lord of the Cosmos, famous for Ratha Yatra and 56-Bhog Mahaprasad. Watch continuous live broadcast from Shree Jagannath Temple Administration (SJTA). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/WD5kyQ4laVs</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=jagannath_puri">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Jagannath Temple Puri</video:tag>
+      <video:tag>Lord Jagannath, Balabhadra, Subhadra &amp; Sudarshana</video:tag>
+      <video:tag>Puri Dham, Odisha, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=tulja_bhavani</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/B3r-kt5dK_M/hqdefault.jpg</image:loc>
+      <image:title>Shri Tulja Bhavani Temple (श्री तुलजा भवानी मंदिर तुलजापुर (कुलस्वामिनी दर्शन))</image:title>
+      <image:caption>Swayambhu Shaktipeeth who blessed Chhatrapati Shivaji Maharaj with the historic Bhavani Talwar</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/B3r-kt5dK_M/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shri Tulja Bhavani Temple 24/7 Live Darshan &amp; Aarti Today - Tuljapur, Dharashiv, Maharashtra, India</video:title>
+      <video:description>Swayambhu Shaktipeeth who blessed Chhatrapati Shivaji Maharaj with the historic Bhavani Talwar. Watch continuous live broadcast from Shri Tuljabhavani Temple Sansthan. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/B3r-kt5dK_M</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=tulja_bhavani">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shri Tulja Bhavani Temple</video:tag>
+      <video:tag>Goddess Tulja Bhavani (Kulswamini of Chhatrapati Shivaji Maharaj)</video:tag>
+      <video:tag>Tuljapur, Dharashiv, Maharashtra, India</video:tag>
+      <video:tag>shaktipeeth</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=khatu_shyam_ji</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/aHp8nnOwcpc/hqdefault.jpg</image:loc>
+      <image:title>Shree Khatu Shyam Ji Temple (श्री खाटू श्याम जी मंदिर सीकर राजस्थान (हारे का सहारा दर्शन))</image:title>
+      <image:caption>Sheesh Ke Daani (Giver of the Head), deity who relieves suffering for millions of humble seekers</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/aHp8nnOwcpc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Khatu Shyam Ji Temple 24/7 Live Darshan &amp; Aarti Today - Khatu Dham, Sikar, Rajasthan, India</video:title>
+      <video:description>Sheesh Ke Daani (Giver of the Head), deity who relieves suffering for millions of humble seekers. Watch continuous live broadcast from Shri Shyam Mandir Committee, Khatushyamji. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/aHp8nnOwcpc</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=khatu_shyam_ji">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Khatu Shyam Ji Temple</video:tag>
+      <video:tag>Barbarika (Khatu Shyam Ji / Haare Ka Sahara)</video:tag>
+      <video:tag>Khatu Dham, Sikar, Rajasthan, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=salasar_balaji</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/q58Wan19vns/hqdefault.jpg</image:loc>
+      <image:title>Shri Salasar Balaji Mandir (श्री सालासर बालाजी मंदिर (दाढ़ी-मूंछ वाले चमत्कारी हनुमान जी))</image:title>
+      <image:caption>Unique Swayambhu idol of Lord Hanuman with a divine beard and mustache, renowned for miraculous grace</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/q58Wan19vns/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shri Salasar Balaji Mandir 24/7 Live Darshan &amp; Aarti Today - Salasar, Churu District, Rajasthan, India</video:title>
+      <video:description>Unique Swayambhu idol of Lord Hanuman with a divine beard and mustache, renowned for miraculous grace. Watch continuous live broadcast from Shree Hanuman Seva Samiti, Salasar. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/q58Wan19vns</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=salasar_balaji">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shri Salasar Balaji Mandir</video:tag>
+      <video:tag>Lord Hanuman (Salasar Balaji with Beard &amp; Mustache)</video:tag>
+      <video:tag>Salasar, Churu District, Rajasthan, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=kedarnath_dham</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/fURwn8kbRBc/hqdefault.jpg</image:loc>
+      <image:title>Kedarnath Himalayan Dham (श्री केदारनाथ ज्योतिर्लिंग (हिमालयन धाम दर्शन))</image:title>
+      <image:caption>Highest Jyotirlinga at 3,584m altitude surrounded by snow-clad Himalayan peaks and Mandakini River</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/fURwn8kbRBc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Kedarnath Himalayan Dham 24/7 Live Darshan &amp; Aarti Today - Garhwal Himalayas, Rudraprayag, Uttarakhand, India</video:title>
+      <video:description>Highest Jyotirlinga at 3,584m altitude surrounded by snow-clad Himalayan peaks and Mandakini River. Watch continuous live broadcast from Shri Badrinath-Kedarnath Temple Committee (BKTC). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/fURwn8kbRBc</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=kedarnath_dham">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Kedarnath Himalayan Dham</video:tag>
+      <video:tag>Lord Shiva (Kedareshwara / Lord of the Glacial Peak)</video:tag>
+      <video:tag>Garhwal Himalayas, Rudraprayag, Uttarakhand, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=udupi_krishna_matha</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg</image:loc>
+      <image:title>Sri Krishna Matha Udupi (श्री कृष्ण मठ उडुपी (कनकन किंडी व नित्य महापूजा))</image:title>
+      <image:caption>Lord Krishna viewed through the sacred silver 9-holed window (Kanakana Kindi), following 800-yr Dwaita rituals</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Sri Krishna Matha Udupi 24/7 Live Darshan &amp; Aarti Today - Car Street, Udupi, Karnataka, India</video:title>
+      <video:description>Lord Krishna viewed through the sacred silver 9-holed window (Kanakana Kindi), following 800-yr Dwaita rituals. Watch continuous live broadcast from Ashta Mathas of Udupi (Paryaya Sri Krishna Matha). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/8JsL-H7fJy4</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=udupi_krishna_matha">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Sri Krishna Matha Udupi</video:tag>
+      <video:tag>Lord Balakrishna (Installed by Sri Madhvacharya through Kanakana Kindi)</video:tag>
+      <video:tag>Car Street, Udupi, Karnataka, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=meenakshi_madurai</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/Aicrlohuuug/hqdefault.jpg</image:loc>
+      <image:title>Meenakshi Sundareswarar Temple (श्री मीनाक्षी सुंदरेश्वरर मंदिर मदुरै (गोपुरम व संध्या पूजा))</image:title>
+      <image:caption>Architectural masterpiece of Dravidian heritage with 14 iconic Rajagopurams and Hall of 1000 Pillars</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Aicrlohuuug/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Meenakshi Sundareswarar Temple 24/7 Live Darshan &amp; Aarti Today - Madurai, Tamil Nadu, India</video:title>
+      <video:description>Architectural masterpiece of Dravidian heritage with 14 iconic Rajagopurams and Hall of 1000 Pillars. Watch continuous live broadcast from Arulmigu Meenakshi Sundareswarar Thirukoil (HR&amp;CE). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Aicrlohuuug</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=meenakshi_madurai">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Meenakshi Sundareswarar Temple</video:tag>
+      <video:tag>Goddess Meenakshi (Parvati) &amp; Sundareswarar (Shiva)</video:tag>
+      <video:tag>Madurai, Tamil Nadu, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=chamundeshwari_mysuru</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/9SBpnTrrXlw/hqdefault.jpg</image:loc>
+      <image:title>Chamundeshwari Temple Mysuru (श्री चामुंडेश्वरी देवी मंदिर मैसूर (नाडा हब्बा दर्शन))</image:title>
+      <image:caption>Presiding deity of Mysuru perched atop the picturesque Chamundi Hills, vanquisher of Mahishasura</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/9SBpnTrrXlw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Chamundeshwari Temple Mysuru 24/7 Live Darshan &amp; Aarti Today - Chamundi Hills, Mysuru, Karnataka, India</video:title>
+      <video:description>Presiding deity of Mysuru perched atop the picturesque Chamundi Hills, vanquisher of Mahishasura. Watch continuous live broadcast from Sri Chamundeshwari Temple Management Committee. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/9SBpnTrrXlw</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=chamundeshwari_mysuru">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Chamundeshwari Temple Mysuru</video:tag>
+      <video:tag>Goddess Chamundeshwari (Mahishasuramardini)</video:tag>
+      <video:tag>Chamundi Hills, Mysuru, Karnataka, India</video:tag>
+      <video:tag>shaktipeeth</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=pashupatinath_nepal</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/bi1PDhKGUd4/hqdefault.jpg</image:loc>
+      <image:title>Pashupatinath Temple Kathmandu Nepal (श्री पशुपतिनाथ मंदिर काठमांडू नेपाल (बागमती महाआरती))</image:title>
+      <image:caption>Sacred 5-faced Shiva Lingam on the sacred Bagmati river, UNESCO World Heritage site and crown jewel of Nepal</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/bi1PDhKGUd4/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Pashupatinath Temple Kathmandu Nepal 24/7 Live Darshan &amp; Aarti Today - Bagmati River, Kathmandu Valley, Nepal</video:title>
+      <video:description>Sacred 5-faced Shiva Lingam on the sacred Bagmati river, UNESCO World Heritage site and crown jewel of Nepal. Watch continuous live broadcast from Pashupati Area Development Trust (PADT), Nepal. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/bi1PDhKGUd4</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=pashupatinath_nepal">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Pashupatinath Temple Kathmandu Nepal</video:tag>
+      <video:tag>Lord Shiva (Pashupatinath - Lord of All Beings)</video:tag>
+      <video:tag>Bagmati River, Kathmandu Valley, Nepal</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=dwarkadhish_mandir</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://www.sanatana360.com/images/temple_dwarkadhish.jpg</image:loc>
+      <image:title>Shree Dwarkadhish Mandir (Jagat Mandir) (श्री द्वारकाधीश मंदिर (जगत मंदिर द्वारका गुजरात))</image:title>
+      <image:caption>Sacred Char Dham Moksha Kshetra where Lord Krishna ruled his ancient Golden Kingdom of Dwarka</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.sanatana360.com/images/temple_dwarkadhish.jpg</video:thumbnail_loc>
+      <video:title>Shree Dwarkadhish Mandir (Jagat Mandir) 24/7 Live Darshan &amp; Aarti Today - Dwarka, Devbhumi Dwarka, Gujarat, India</video:title>
+      <video:description>Sacred Char Dham Moksha Kshetra where Lord Krishna ruled his ancient Golden Kingdom of Dwarka. Watch continuous live broadcast from Shree Dwarkadhish Mandir Vahivatdar Committee. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/EuMt9vtsQSY</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=dwarkadhish_mandir">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Dwarkadhish Mandir (Jagat Mandir)</video:tag>
+      <video:tag>Lord Krishna (Dwarkadhish / King of Dwarka)</video:tag>
+      <video:tag>Dwarka, Devbhumi Dwarka, Gujarat, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=badrinath_temple</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://www.sanatana360.com/images/temple_badrinath.jpg</image:loc>
+      <image:title>Shree Badrinath Temple (Badri Vishal) (श्री बद्रीनाथ मंदिर (श्री बद्री विशाल धाम गढ़वाल हिमालय))</image:title>
+      <image:caption>Crown Char Dham sanctuary on the banks of Alaknanda River where Lord Vishnu meditated beneath the Badri tree</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.sanatana360.com/images/temple_badrinath.jpg</video:thumbnail_loc>
+      <video:title>Shree Badrinath Temple (Badri Vishal) 24/7 Live Darshan &amp; Aarti Today - Chamoli, Garhwal Himalayas, Uttarakhand, India</video:title>
+      <video:description>Crown Char Dham sanctuary on the banks of Alaknanda River where Lord Vishnu meditated beneath the Badri tree. Watch continuous live broadcast from Shri Badrinath-Kedarnath Temple Committee (BKTC). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/8JgURH8-EUA</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=badrinath_temple">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Badrinath Temple (Badri Vishal)</video:tag>
+      <video:tag>Lord Badrinarayan (Maha Vishnu in Meditative Posture)</video:tag>
+      <video:tag>Chamoli, Garhwal Himalayas, Uttarakhand, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=har_ki_pauri_haridwar</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://www.sanatana360.com/images/temple_haridwar.jpg</image:loc>
+      <image:title>Har Ki Pauri Maha Ganga Aarti (हर की पौड़ी हरिद्वार (दैनिक भव्य गंगा आरती व ब्रह्मकुंड))</image:title>
+      <image:caption>The historic Brahmakund at Haridwar where nectar drops (Amrit) fell during the churning of cosmic ocean</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.sanatana360.com/images/temple_haridwar.jpg</video:thumbnail_loc>
+      <video:title>Har Ki Pauri Maha Ganga Aarti 24/7 Live Darshan &amp; Aarti Today - Haridwar, Uttarakhand, India</video:title>
+      <video:description>The historic Brahmakund at Haridwar where nectar drops (Amrit) fell during the churning of cosmic ocean. Watch continuous live broadcast from Ganga Sabha, Har Ki Pauri, Haridwar. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/v01q0I4qSqE</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=har_ki_pauri_haridwar">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Har Ki Pauri Maha Ganga Aarti</video:tag>
+      <video:tag>Maa Ganga &amp; Lord Shiva (Brahmakund Haridwar)</video:tag>
+      <video:tag>Haridwar, Uttarakhand, India</video:tag>
+      <video:tag>aarti</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=srisailam_mallikarjuna</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/cE0gGQG5XnY/hqdefault.jpg</image:loc>
+      <image:title>Sri Bhramaramba Mallikarjuna Jyotirlinga (श्री भ्रमराम्बा मल्लिकार्जुन स्वामी (श्रीशैलम ज्योतिर्लिंग))</image:title>
+      <image:caption>Sacred confluence of a Maha Jyotirlinga and an ancient Shakti Peeth on the Krishna river in Nallamala forests</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/cE0gGQG5XnY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Sri Bhramaramba Mallikarjuna Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Srisailam, Nandyal, Andhra Pradesh, India</video:title>
+      <video:description>Sacred confluence of a Maha Jyotirlinga and an ancient Shakti Peeth on the Krishna river in Nallamala forests. Watch continuous live broadcast from Sri Bhramaramba Mallikarjuna Swamy Varla Devasthanam. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/cE0gGQG5XnY</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=srisailam_mallikarjuna">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Sri Bhramaramba Mallikarjuna Jyotirlinga</video:tag>
+      <video:tag>Lord Shiva (Mallikarjuna) &amp; Devi Bhramaramba</video:tag>
+      <video:tag>Srisailam, Nandyal, Andhra Pradesh, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=rameswaram_ramanatha</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/dMMNKnJzjCc/hqdefault.jpg</image:loc>
+      <image:title>Sri Ramanathaswamy Temple Rameswaram (श्री रामनाथस्वामी ज्योतिर्लिंग रामेश्वरम (२२ पवित्र तीर्थ))</image:title>
+      <image:caption>Southern Char Dham Jyotirlinga consecrated by Shri Rama himself, famed for the longest temple corridor in the world</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/dMMNKnJzjCc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Sri Ramanathaswamy Temple Rameswaram 24/7 Live Darshan &amp; Aarti Today - Rameswaram Island, Ramanathapuram, Tamil Nadu, India</video:title>
+      <video:description>Southern Char Dham Jyotirlinga consecrated by Shri Rama himself, famed for the longest temple corridor in the world. Watch continuous live broadcast from Arulmigu Ramanathaswamy Temple (HR&amp;CE). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/dMMNKnJzjCc</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=rameswaram_ramanatha">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Sri Ramanathaswamy Temple Rameswaram</video:tag>
+      <video:tag>Lord Shiva (Ramanathaswamy - Consecrated by Lord Rama)</video:tag>
+      <video:tag>Rameswaram Island, Ramanathapuram, Tamil Nadu, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=trimbakeshwar_nashik</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/OdcdnGb1MzM/hqdefault.jpg</image:loc>
+      <image:title>Shree Trimbakeshwar Jyotirlinga (श्री त्र्यंबकेश्वर ज्योतिर्लिंग नासिक (गोदावरी उद्गम स्थल))</image:title>
+      <image:caption>Unique Jyotirlinga with three faces representing Brahma, Vishnu, and Rudra, and source of Holy Godavari river</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/OdcdnGb1MzM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Trimbakeshwar Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Trimbak, Nashik, Maharashtra, India</video:title>
+      <video:description>Unique Jyotirlinga with three faces representing Brahma, Vishnu, and Rudra, and source of Holy Godavari river. Watch continuous live broadcast from Shree Trimbakeshwar Sansthan Trust. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/OdcdnGb1MzM</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=trimbakeshwar_nashik">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Trimbakeshwar Jyotirlinga</video:tag>
+      <video:tag>Lord Shiva, Vishnu &amp; Brahma (Trimurti Jyotirlinga)</video:tag>
+      <video:tag>Trimbak, Nashik, Maharashtra, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=omkareshwar_jyotirlinga</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/gpBomD7BoTE/hqdefault.jpg</image:loc>
+      <image:title>Shree Omkareshwar Jyotirlinga (श्री ओंकारेश्वर ज्योतिर्लिंग (नर्मदा द्वीप • ॐ आकार पर्वत))</image:title>
+      <image:caption>Situated on the Om-shaped island of Mandhata in holy Narmada River, revered for timeless peace and mukti</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/gpBomD7BoTE/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Omkareshwar Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Mandhata Island, Khandwa, Madhya Pradesh, India</video:title>
+      <video:description>Situated on the Om-shaped island of Mandhata in holy Narmada River, revered for timeless peace and mukti. Watch continuous live broadcast from Shri Omkareshwar Mandir Trust. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/gpBomD7BoTE</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=omkareshwar_jyotirlinga">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Omkareshwar Jyotirlinga</video:tag>
+      <video:tag>Lord Shiva (Omkareshwara / Amaleshwara)</video:tag>
+      <video:tag>Mandhata Island, Khandwa, Madhya Pradesh, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=kolhapur_mahalakshmi</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/Moj6qIUtzR0/hqdefault.jpg</image:loc>
+      <image:title>Shree Karveer Niwasini Ambabai (Mahalakshmi) (श्री करवीर निवासिनी महालक्ष्मी अंबाबाई मंदिर कोल्हापुर)</image:title>
+      <image:caption>Supreme Shaktipeeth of Mahalakshmi Ambabai where Kiranotsav (sun rays bathing the idol) occurs twice yearly</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Moj6qIUtzR0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Karveer Niwasini Ambabai (Mahalakshmi) 24/7 Live Darshan &amp; Aarti Today - Kolhapur, Maharashtra, India</video:title>
+      <video:description>Supreme Shaktipeeth of Mahalakshmi Ambabai where Kiranotsav (sun rays bathing the idol) occurs twice yearly. Watch continuous live broadcast from Paschim Maharashtra Devasthan Samiti (PMDS). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Moj6qIUtzR0</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=kolhapur_mahalakshmi">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Karveer Niwasini Ambabai (Mahalakshmi)</video:tag>
+      <video:tag>Goddess Mahalakshmi (Ambabai)</video:tag>
+      <video:tag>Kolhapur, Maharashtra, India</video:tag>
+      <video:tag>shaktipeeth</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=bhimashankar_jyotirlinga</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/Dl7oOCQB8Io/hqdefault.jpg</image:loc>
+      <image:title>Shree Bhimashankar Jyotirlinga (श्री भीमाशंकर ज्योतिर्लिंग (भीमा नदी उद्गम • सह्याद्रि))</image:title>
+      <image:caption>Ancient Nagara shrine situated in the verdant Sahyadri wildlife sanctuary where the Bhima river originates</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Dl7oOCQB8Io/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Bhimashankar Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Bhorgiri, Pune, Maharashtra, India</video:title>
+      <video:description>Ancient Nagara shrine situated in the verdant Sahyadri wildlife sanctuary where the Bhima river originates. Watch continuous live broadcast from Shree Bhimashankar Sansthan Trust. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Dl7oOCQB8Io</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=bhimashankar_jyotirlinga">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Bhimashankar Jyotirlinga</video:tag>
+      <video:tag>Lord Shiva (Bhimashankara)</video:tag>
+      <video:tag>Bhorgiri, Pune, Maharashtra, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=grishneshwar_jyotirlinga</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/PTCrORkDhdc/hqdefault.jpg</image:loc>
+      <image:title>Shree Grishneshwar Jyotirlinga (12th Jyotirlinga) (श्री घृष्णेश्वर ज्योतिर्लिंग (द्वादश ज्योतिर्लिंग • एलोरा))</image:title>
+      <image:caption>The 12th and final Jyotirlinga of Bharat, rebuilt by Queen Ahilyabai Holkar in red basalt stone beside Ellora Caves</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/PTCrORkDhdc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Grishneshwar Jyotirlinga (12th Jyotirlinga) 24/7 Live Darshan &amp; Aarti Today - Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra, India</video:title>
+      <video:description>The 12th and final Jyotirlinga of Bharat, rebuilt by Queen Ahilyabai Holkar in red basalt stone beside Ellora Caves. Watch continuous live broadcast from Shree Grishneshwar Temple Trust, Verul. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/PTCrORkDhdc</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=grishneshwar_jyotirlinga">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Grishneshwar Jyotirlinga (12th Jyotirlinga)</video:tag>
+      <video:tag>Lord Shiva (Ghushmeshwara / Grishneshwar)</video:tag>
+      <video:tag>Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=baidyanath_deoghar</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/QJLJDfJPQsA/hqdefault.jpg</image:loc>
+      <image:title>Shree Baidyanath Jyotirlinga Dham (श्री बैद्यनाथ ज्योतिर्लिंग धाम देवघर (मनोकामना लिंग))</image:title>
+      <image:caption>Wish-fulfilling Jyotirlinga where Ravana sacrificed ten heads to Shiva; world-famous for Shravani Mela Kanwar Yatra</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/QJLJDfJPQsA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Baidyanath Jyotirlinga Dham 24/7 Live Darshan &amp; Aarti Today - Deoghar, Santhal Pargana, Jharkhand, India</video:title>
+      <video:description>Wish-fulfilling Jyotirlinga where Ravana sacrificed ten heads to Shiva; world-famous for Shravani Mela Kanwar Yatra. Watch continuous live broadcast from Baba Baidyanath Dham Temple Trust, Deoghar. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/QJLJDfJPQsA</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=baidyanath_deoghar">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Baidyanath Jyotirlinga Dham</video:tag>
+      <video:tag>Lord Shiva (Baidyanath / Kamana Linga)</video:tag>
+      <video:tag>Deoghar, Santhal Pargana, Jharkhand, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=nageshwar_jyotirlinga</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/SaoR3RAtKbk/hqdefault.jpg</image:loc>
+      <image:title>Shree Nageshwar Jyotirlinga (श्री नागेश्वर ज्योतिर्लिंग (दारुकावन • गुजरात))</image:title>
+      <image:caption>Ancient Darukavanam shrine featuring an awe-inspiring 85-foot giant meditative statue of Lord Shiva</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/SaoR3RAtKbk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Nageshwar Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Darukavanam, Dwarka, Gujarat, India</video:title>
+      <video:description>Ancient Darukavanam shrine featuring an awe-inspiring 85-foot giant meditative statue of Lord Shiva. Watch continuous live broadcast from Shree Nageshwar Jyotirlinga Trust. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/SaoR3RAtKbk</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=nageshwar_jyotirlinga">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Nageshwar Jyotirlinga</video:tag>
+      <video:tag>Lord Shiva (Nageshwara / Lord of Serpents)</video:tag>
+      <video:tag>Darukavanam, Dwarka, Gujarat, India</video:tag>
+      <video:tag>jyotirlinga</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=banke_bihari_vrindavan</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/GOXlKz5tySg/hqdefault.jpg</image:loc>
+      <image:title>Shree Banke Bihari Mandir Vrindavan (श्री बांके बिहारी मंदिर वृन्दावन (दिव्य झांकी व चरण दर्शन))</image:title>
+      <image:caption>Manifested by Swami Haridas in Nidhivan; revered for curtain-pulling Jhaanki darshan so devotees are not enchanted away</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/GOXlKz5tySg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Banke Bihari Mandir Vrindavan 24/7 Live Darshan &amp; Aarti Today - Vrindavan, Mathura, Uttar Pradesh, India</video:title>
+      <video:description>Manifested by Swami Haridas in Nidhivan; revered for curtain-pulling Jhaanki darshan so devotees are not enchanted away. Watch continuous live broadcast from Shree Banke Bihari Ji Mandir Trust, Vrindavan. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/GOXlKz5tySg</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=banke_bihari_vrindavan">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Banke Bihari Mandir Vrindavan</video:tag>
+      <video:tag>Lord Krishna (Banke Bihari - Tribhanga Posture)</video:tag>
+      <video:tag>Vrindavan, Mathura, Uttar Pradesh, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=radha_rani_barsana</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/mK2k8d2-ctM/hqdefault.jpg</image:loc>
+      <image:title>Shree Radha Rani Mandir (Shriji Mandir Barsana) (श्री राधा रानी मंदिर बरसाना (श्रीजी मंदिर भानुगढ़ पर्वत))</image:title>
+      <image:caption>Birthplace palace of Shri Radha Rani atop Bhanugarh peak, center of world-famous Lathmar Holi</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/mK2k8d2-ctM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Radha Rani Mandir (Shriji Mandir Barsana) 24/7 Live Darshan &amp; Aarti Today - Bhanugarh Hill, Barsana, Mathura, UP, India</video:title>
+      <video:description>Birthplace palace of Shri Radha Rani atop Bhanugarh peak, center of world-famous Lathmar Holi. Watch continuous live broadcast from Shriji Mandir Management Committee, Barsana. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/mK2k8d2-ctM</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=radha_rani_barsana">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Radha Rani Mandir (Shriji Mandir Barsana)</video:tag>
+      <video:tag>Shri Radha Rani (Shriji / Vrishabhanu Nandini)</video:tag>
+      <video:tag>Bhanugarh Hill, Barsana, Mathura, UP, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=govind_devji_jaipur</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/lvQT0WGp5Lk/hqdefault.jpg</image:loc>
+      <image:title>Shree Govind Dev Ji Temple Jaipur (श्री गोविंद देव जी मंदिर जयपुर (राजसी झांकी व आरती))</image:title>
+      <image:caption>Original idol sculpted by Krishna grandson Bajranabh depicting the exact facial likeness of Lord Krishna</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/lvQT0WGp5Lk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shree Govind Dev Ji Temple Jaipur 24/7 Live Darshan &amp; Aarti Today - City Palace Complex, Jaipur, Rajasthan, India</video:title>
+      <video:description>Original idol sculpted by Krishna grandson Bajranabh depicting the exact facial likeness of Lord Krishna. Watch continuous live broadcast from Shree Govind Dev Ji Temple Trust, Jaipur. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/lvQT0WGp5Lk</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=govind_devji_jaipur">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Shree Govind Dev Ji Temple Jaipur</video:tag>
+      <video:tag>Lord Krishna (Govind Dev Ji)</video:tag>
+      <video:tag>City Palace Complex, Jaipur, Rajasthan, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=kukke_subramanya</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/hvdWNsZ7nlU/hqdefault.jpg</image:loc>
+      <image:title>Sri Kukke Subramanya Temple (श्री कुक्के सुब्रह्मण्य स्वामी मंदिर (सर्प दोष निवारण तीर्थ))</image:title>
+      <image:caption>Sacred foothills of Kumara Parvatha where Lord Kartikeya gave sanctuary to King Vasuki and all serpents</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/hvdWNsZ7nlU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Sri Kukke Subramanya Temple 24/7 Live Darshan &amp; Aarti Today - Subramanya, Dakshina Kannada, Karnataka, India</video:title>
+      <video:description>Sacred foothills of Kumara Parvatha where Lord Kartikeya gave sanctuary to King Vasuki and all serpents. Watch continuous live broadcast from Sri Kukke Subramanya Temple (HR&amp;CE Karnataka). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/hvdWNsZ7nlU</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=kukke_subramanya">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Sri Kukke Subramanya Temple</video:tag>
+      <video:tag>Lord Subramanya (Kartikeya / Shanmukha / King of Serpents)</video:tag>
+      <video:tag>Subramanya, Dakshina Kannada, Karnataka, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=dharmasthala_manjunatha</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/yK6PJU8qBU4/hqdefault.jpg</image:loc>
+      <image:title>Sri Kshetra Dharmasthala Manjunatha Swamy (श्री क्षेत्र धर्मस्थल मंजुनाथ स्वामी (धर्म व अन्नदान क्षेत्र))</image:title>
+      <image:caption>Unrivaled 800-year seat of righteous Dharma, Abhayadana (protection), and daily Annadana feeding over 30,000 pilgrims</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/yK6PJU8qBU4/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Sri Kshetra Dharmasthala Manjunatha Swamy 24/7 Live Darshan &amp; Aarti Today - Dharmasthala, Belthangady, Dakshina Kannada, Karnataka, India</video:title>
+      <video:description>Unrivaled 800-year seat of righteous Dharma, Abhayadana (protection), and daily Annadana feeding over 30,000 pilgrims. Watch continuous live broadcast from Sri Kshetra Dharmasthala Rural Development Project (SKDRDP). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/yK6PJU8qBU4</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=dharmasthala_manjunatha">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Sri Kshetra Dharmasthala Manjunatha Swamy</video:tag>
+      <video:tag>Lord Manjunatha (Shiva) &amp; Dharma Daivas</video:tag>
+      <video:tag>Dharmasthala, Belthangady, Dakshina Kannada, Karnataka, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=sringeri_sharada</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/DjvDwf97Wzc/hqdefault.jpg</image:loc>
+      <image:title>Sri Sringeri Sharada Peetham (श्री शृंगेरी शारदा पीठम (आदि शंकराचार्य दक्षिणाम्नाय पीठ))</image:title>
+      <image:caption>First Amnaya Peetham founded by Adi Shankaracharya in the 8th century CE on the tranquil banks of Tunga River</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/DjvDwf97Wzc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Sri Sringeri Sharada Peetham 24/7 Live Darshan &amp; Aarti Today - Sringeri, Chikkamagaluru, Karnataka, India</video:title>
+      <video:description>First Amnaya Peetham founded by Adi Shankaracharya in the 8th century CE on the tranquil banks of Tunga River. Watch continuous live broadcast from Dakshinamnaya Sri Sharada Peetham, Sringeri. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/DjvDwf97Wzc</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=sringeri_sharada">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Sri Sringeri Sharada Peetham</video:tag>
+      <video:tag>Goddess Sharadamba &amp; Sri Chandramouleshwara</video:tag>
+      <video:tag>Sringeri, Chikkamagaluru, Karnataka, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=murudeshwar_temple</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/ad1I46Ct648/hqdefault.jpg</image:loc>
+      <image:title>Murudeshwara Coastal Temple &amp; Shiva Statue (श्री मुरुडेश्वर मंदिर व विशाल शिव प्रतिमा (कंदुका गिरि))</image:title>
+      <image:caption>Colossal 123-foot world-famous statue of Lord Shiva on Kanduka Hill surrounded on 3 sides by the Arabian Sea</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/ad1I46Ct648/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Murudeshwara Coastal Temple &amp; Shiva Statue 24/7 Live Darshan &amp; Aarti Today - Murudeshwar, Bhatkal, Uttara Kannada, Karnataka, India</video:title>
+      <video:description>Colossal 123-foot world-famous statue of Lord Shiva on Kanduka Hill surrounded on 3 sides by the Arabian Sea. Watch continuous live broadcast from Murudeshwar Temple Trust (R.N. Shetty Trust). Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ad1I46Ct648</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=murudeshwar_temple">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Murudeshwara Coastal Temple &amp; Shiva Statue</video:tag>
+      <video:tag>Lord Shiva (Murudeshwara - Atma Linga Kshetra)</video:tag>
+      <video:tag>Murudeshwar, Bhatkal, Uttara Kannada, Karnataka, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://www.sanatana360.com/divya-darshana.html?temple=guruvayur_temple</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/5oHwdfJC2wk/hqdefault.jpg</image:loc>
+      <image:title>Guruvayur Sri Krishna Temple (गुरुवायूर श्री कृष्ण मंदिर केरल (भूलोक वैकुंठ दर्शन))</image:title>
+      <image:caption>Bhuloka Vaikuntha where Lord Krishna worshipped by Brahma himself was consecrated by Guru &amp; Vayu in pure Kerala style</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/5oHwdfJC2wk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Guruvayur Sri Krishna Temple 24/7 Live Darshan &amp; Aarti Today - Guruvayur, Thrissur, Kerala, India</video:title>
+      <video:description>Bhuloka Vaikuntha where Lord Krishna worshipped by Brahma himself was consecrated by Guru &amp; Vayu in pure Kerala style. Watch continuous live broadcast from Guruvayur Devaswom Board, Kerala. Daily aartis, temple bell chimes, and virtual pooja.</video:description>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/5oHwdfJC2wk</video:player_loc>
+      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>yes</video:live>
+      <video:uploader info="https://www.sanatana360.com/divya-darshana.html?temple=guruvayur_temple">Sanatana360 Divya Darshana</video:uploader>
+      <video:tag>Guruvayur Sri Krishna Temple</video:tag>
+      <video:tag>Lord Guruvayurappan (Unnikrishnan / Bala Vishnu)</video:tag>
+      <video:tag>Guruvayur, Thrissur, Kerala, India</video:tag>
+      <video:tag>major</video:tag>
+      <video:tag>Live Darshan Today</video:tag>
+      <video:tag>Aarti Live Stream</video:tag>
+    </video:video>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- 4. VEDIC MATHEMATICS & MEMORY SHASTRA LAB -->
+  <!-- ========================================== -->
   <url>
     <loc>https://www.sanatana360.com/vedic-math.html</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -29,10 +1364,12 @@
     </image:image>
   </url>
 
-  <!-- 3. Sacred Mudra Vigyan Studio & Stress Relief -->
+  <!-- ========================================== -->
+  <!-- 5. SACRED MUDRA VIGYAN STUDIO & STRESS RELIEF -->
+  <!-- ========================================== -->
   <url>
     <loc>https://www.sanatana360.com/mudra-therapy.html</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -41,14 +1378,16 @@
     </image:image>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mudra_apana_vayu.jpg</image:loc>
-      <image:title>Apana Vayu Mudra Panic and Heart Reliever</image:title>
+      <image:title>Apana Vayu Mudra Heart and Panic Reliever</image:title>
     </image:image>
   </url>
 
-  <!-- 4. Grand Granthalaya (26 Illustrated Sacred E-Books) -->
+  <!-- ========================================== -->
+  <!-- 6. GRAND GRANTHALAYA (26 SACRED E-BOOKS) -->
+  <!-- ========================================== -->
   <url>
     <loc>https://www.sanatana360.com/granthalaya.html</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -57,27 +1396,13 @@
     </image:image>
   </url>
 
-  <!-- 5. 5-Language Bedtime Audiobooks & Karaoke -->
+  <!-- ========================================== -->
+  <!-- 7. 5-LANGUAGE BEDTIME AUDIOBOOKS & KARAOKE -->
+  <!-- ========================================== -->
   <url>
     <loc>https://www.sanatana360.com/panchatantra-audio.html</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
-  </url>
-
-  <!-- 6. Divya Darshana 360™ (24/7 Global Live Temple Watcher & Virtual Aarti) -->
-  <url>
-    <loc>https://www.sanatana360.com/divya-darshana.html</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/venkateswara_tirumala.jpg</image:loc>
-      <image:title>Divya Darshana 360 24/7 Live Temple Watcher and Virtual Aarti</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/shiva_neelkanth.jpg</image:loc>
-      <image:title>Kashi Vishwanath and Mahakaleshwar Live Temple Darshana</image:title>
-    </image:image>
   </url>
 </urlset>
