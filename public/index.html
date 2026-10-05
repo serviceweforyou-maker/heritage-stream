@@ -1,6 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ── Global Netflix Auth & Pass Helpers (Immediate 0ms execution) ── -->
+  <script>
+    window.selectedRegAvatar = '📜';
+
+    window.switchAuthTab = function(tab) {
+      try {
+        var tabSignIn = document.getElementById('auth-tab-signin');
+        var tabRegister = document.getElementById('auth-tab-register');
+        var panelSignIn = document.getElementById('auth-panel-signin');
+        var panelRegister = document.getElementById('auth-panel-register');
+
+        if (tab === 'register') {
+          if (tabRegister) {
+            tabRegister.className = "auth-tab-btn py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer font-extrabold";
+          }
+          if (tabSignIn) {
+            tabSignIn.className = "auth-tab-btn py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer font-bold";
+          }
+          if (panelSignIn) {
+            panelSignIn.classList.add('hidden');
+            panelSignIn.style.display = 'none';
+          }
+          if (panelRegister) {
+            panelRegister.classList.remove('hidden');
+            panelRegister.style.display = 'block';
+          }
+        } else {
+          if (tabSignIn) {
+            tabSignIn.className = "auth-tab-btn py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer font-extrabold";
+          }
+          if (tabRegister) {
+            tabRegister.className = "auth-tab-btn py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer font-bold";
+          }
+          if (panelRegister) {
+            panelRegister.classList.add('hidden');
+            panelRegister.style.display = 'none';
+          }
+          if (panelSignIn) {
+            panelSignIn.classList.remove('hidden');
+            panelSignIn.style.display = 'block';
+          }
+        }
+      } catch(e) {
+        console.warn('Error in switchAuthTab:', e);
+      }
+    };
+
+    window.selectRegAvatar = function(avatar, el) {
+      try {
+        window.selectedRegAvatar = avatar || '📜';
+        var allOpts = document.querySelectorAll('.auth-reg-avatar-opt');
+        for (var i = 0; i < allOpts.length; i++) {
+          allOpts[i].className = "auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer";
+        }
+        if (el) {
+          el.className = "auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-gold text-xl text-center cursor-pointer shadow-sm active ring-1 ring-gold";
+        }
+      } catch(e) {
+        console.warn('Error in selectRegAvatar:', e);
+      }
+    };
+
+    window.openAuthModal = function(tab) {
+      try {
+        var modalEl = document.getElementById('netflix-auth-modal');
+        if (modalEl) {
+          modalEl.classList.remove('hidden');
+          modalEl.classList.add('flex');
+          modalEl.style.display = 'flex';
+        }
+        window.switchAuthTab(tab || 'signin');
+      } catch(e) {
+        console.warn('Error opening auth modal:', e);
+      }
+    };
+
+    window.closeAuthModal = function() {
+      try {
+        var modalEl = document.getElementById('netflix-auth-modal');
+        if (modalEl) {
+          modalEl.classList.add('hidden');
+          modalEl.classList.remove('flex');
+          modalEl.style.display = 'none';
+        }
+      } catch(e) {
+        console.warn('Error closing auth modal:', e);
+      }
+    };
+
+    window.handleRegisterSubmit = function(e) {
+      if (e) e.preventDefault();
+      try {
+        var rawName = (document.getElementById('auth-reg-name') ? document.getElementById('auth-reg-name').value : '').trim();
+        var rawEmail = (document.getElementById('auth-reg-email') ? document.getElementById('auth-reg-email').value : '').trim();
+        var pwd = (document.getElementById('auth-reg-pwd') ? document.getElementById('auth-reg-pwd').value : '').trim();
+
+        var name = rawName || (rawEmail ? rawEmail.split('@')[0] : 'Scholar');
+        var email = rawEmail || (name.toLowerCase().replace(/\s+/g, '') + '@explorer.sanatana360.com');
+        var avatar = window.selectedRegAvatar || '📜';
+        var now = Date.now();
+
+        localStorage.setItem('hs_auth_logged_in', 'true');
+        localStorage.setItem('hs_user_name', name);
+        localStorage.setItem('hs_user_email', email);
+        localStorage.setItem('hs_avatar', avatar);
+        localStorage.setItem('hs_account_created_timestamp', String(now));
+        localStorage.setItem('hs_free_trial_start', String(now));
+        if (pwd) localStorage.setItem('hs_user_pwd', pwd);
+
+        if (window.appInstance) {
+          window.appInstance.isLoggedIn = true;
+          window.appInstance.currentProfile = name;
+          window.appInstance.currentProfileAvatar = avatar;
+          if (typeof window.appInstance.renderHeader === 'function') window.appInstance.renderHeader();
+          if (typeof window.appInstance.renderSpotlight === 'function') window.appInstance.renderSpotlight();
+          if (typeof window.appInstance.renderContentRows === 'function') window.appInstance.renderContentRows();
+          if (typeof window.appInstance.setupSubscriptionUI === 'function') window.appInstance.setupSubscriptionUI();
+          if (typeof window.appInstance.setupProfileSelector === 'function') window.appInstance.setupProfileSelector();
+        }
+
+        window.closeAuthModal();
+        alert('🎉 Free Explorer Account Created! Welcome, ' + name + '! Your 3-Day Free VIP Access is now active.');
+      } catch(err) {
+        console.error('Error during registration:', err);
+        window.closeAuthModal();
+        alert('Account Created! Welcome to Sanatana360!');
+      }
+    };
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKHEWYB53Q"></script>
   <script>
@@ -410,7 +539,7 @@
         </button>
 
         <!-- Get Pass CTA Button -->
-        <button id="header-get-pass-btn" onclick="window.appInstance.openPaymentModal()" class="h-8.5 inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold text-xs uppercase tracking-wide transition-all duration-300 shadow-md shadow-gold/25 hover:scale-105 cursor-pointer flex-shrink-0 whitespace-nowrap" title="Get Sanatana360 Pass">
+        <button id="header-get-pass-btn" onclick="window.appInstance?.openPaymentModal ? window.appInstance.openPaymentModal('trial') : null" class="h-8.5 inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold text-xs uppercase tracking-wide transition-all duration-300 shadow-md shadow-gold/25 hover:scale-105 cursor-pointer flex-shrink-0 whitespace-nowrap" title="Get Sanatana360 Pass">
           <span>⚡</span>
           <span class="hidden sm:inline font-black">Get Pass</span>
           <span class="text-[9px] sm:text-[10px] font-mono font-black bg-black/25 text-black px-1.5 py-0.2 rounded-full">₹29</span>
@@ -2797,7 +2926,7 @@
 
   <script src="flipbook.js?v=98"></script>
 
-          <!-- ── 🎬 NETFLIX-STYLE AUTHENTICATION MODAL (SIGN IN / REGISTER / LOGOUT) ── -->
+            <!-- ── 🎬 NETFLIX-STYLE AUTHENTICATION MODAL (SIGN IN / REGISTER / LOGOUT) ── -->
   <div id="netflix-auth-modal" class="modal-overlay fixed inset-0 z-[110] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
     <div class="bg-[#090b12] border-2 border-gold/45 rounded-3xl w-full max-w-md shadow-[0_30px_80px_rgba(0,0,0,0.99)] relative p-6 sm:p-8 max-h-[92vh] overflow-y-auto no-scrollbar font-sans space-y-6" style="background-color: #090b12 !important; opacity: 1 !important;">
       
@@ -2812,7 +2941,7 @@
             <span class="text-[9px] font-mono text-gold/80 uppercase tracking-widest block font-bold">Vedic OTT &amp; Gurukula</span>
           </div>
         </div>
-        <button id="close-auth-modal-btn" onclick="window.appInstance?.closeAuthModal ? window.appInstance.closeAuthModal() : (document.getElementById('netflix-auth-modal')?.classList.add('hidden'), document.getElementById('netflix-auth-modal')?.classList.remove('flex'))" class="modal-close w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 flex items-center justify-center text-xl font-bold transition-all cursor-pointer border border-white/10 hover:border-gold" title="Close">
+        <button id="close-auth-modal-btn" type="button" onclick="window.closeAuthModal()" class="modal-close w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 flex items-center justify-center text-xl font-bold transition-all cursor-pointer border border-white/10 hover:border-gold" title="Close">
           &times;
         </button>
       </div>
@@ -2822,10 +2951,10 @@
 
       <!-- Auth Toggle Tabs -->
       <div class="grid grid-cols-2 gap-1.5 p-1 bg-[#141826] border border-white/10 rounded-2xl text-xs font-bold">
-        <button id="auth-tab-signin" type="button" class="auth-tab-btn py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer font-extrabold">
+        <button id="auth-tab-signin" type="button" onclick="window.switchAuthTab('signin')" class="auth-tab-btn py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer font-extrabold">
           <span>🔑</span> <span>Sign In</span>
         </button>
-        <button id="auth-tab-register" type="button" class="auth-tab-btn py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer font-bold">
+        <button id="auth-tab-register" type="button" onclick="window.switchAuthTab('register')" class="auth-tab-btn py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer font-bold">
           <span>✨</span> <span>Create Free Account</span>
         </button>
       </div>
@@ -2885,12 +3014,12 @@
 
         <div class="text-center text-xs text-white/60 pt-2">
           New to Sanatana360? 
-          <button type="button" id="auth-switch-to-register" class="text-gold font-bold hover:underline ml-1 cursor-pointer">Create free account now</button>.
+          <button type="button" id="auth-switch-to-register" onclick="window.switchAuthTab('register')" class="text-gold font-bold hover:underline ml-1 cursor-pointer">Create free account now</button>.
         </div>
       </div>
 
       <!-- Panel 2: Create Account / Register -->
-      <div id="auth-panel-register" class="space-y-4 hidden">
+      <div id="auth-panel-register" class="space-y-4 hidden" style="display: none;">
         <div>
           <div class="flex items-center gap-2">
             <h4 class="text-xl font-extrabold font-serif text-white">Create Free Account</h4>
@@ -2899,7 +3028,7 @@
           <p class="text-xs text-white/60 mt-1">Instant free access to 200+ sagas, 40+ Live Temples &amp; Vedic Gurukula</p>
         </div>
 
-        <form id="netflix-register-form" class="space-y-3.5" onsubmit="event.preventDefault();">
+        <form id="netflix-register-form" class="space-y-3.5" onsubmit="window.handleRegisterSubmit(event)">
           <div class="space-y-1.5">
             <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Your Full Name</label>
             <input type="text" id="auth-reg-name" placeholder="e.g. Rahul Sharma" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
@@ -2912,7 +3041,7 @@
 
           <div class="space-y-1.5">
             <div class="flex items-center justify-between">
-              <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Password (Optional / Minimum 4 characters)</label>
+              <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Password (Optional)</label>
               <span class="text-[9px] text-white/40 font-mono">Optional</span>
             </div>
             <input type="password" id="auth-reg-pwd" placeholder="Enter password (e.g. 123456)" class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
@@ -2922,12 +3051,12 @@
           <div class="space-y-1.5">
             <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Select Persona Avatar</label>
             <div class="grid grid-cols-6 gap-1.5" id="auth-reg-avatar-picker">
-              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-gold text-xl text-center cursor-pointer shadow-sm active ring-1 ring-gold" data-avatar="📜">📜</button>
-              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🧘">🧘</button>
-              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="⚔️">⚔️</button>
-              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🧒">🧒</button>
-              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="👑">👑</button>
-              <button type="button" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🕉️">🕉️</button>
+              <button type="button" onclick="window.selectRegAvatar('📜', this)" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-gold text-xl text-center cursor-pointer shadow-sm active ring-1 ring-gold" data-avatar="📜">📜</button>
+              <button type="button" onclick="window.selectRegAvatar('🧘', this)" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🧘">🧘</button>
+              <button type="button" onclick="window.selectRegAvatar('⚔️', this)" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="⚔️">⚔️</button>
+              <button type="button" onclick="window.selectRegAvatar('🧒', this)" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🧒">🧒</button>
+              <button type="button" onclick="window.selectRegAvatar('👑', this)" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="👑">👑</button>
+              <button type="button" onclick="window.selectRegAvatar('🕉️', this)" class="auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer" data-avatar="🕉️">🕉️</button>
             </div>
           </div>
 
@@ -2940,7 +3069,7 @@
 
         <div class="text-center text-xs text-white/60 pt-2">
           Already have an account? 
-          <button type="button" id="auth-switch-to-signin" class="text-gold font-bold hover:underline ml-1 cursor-pointer">Sign in</button>.
+          <button type="button" id="auth-switch-to-signin" onclick="window.switchAuthTab('signin')" class="text-gold font-bold hover:underline ml-1 cursor-pointer">Sign in</button>.
         </div>
       </div>
 
@@ -2951,7 +3080,7 @@
     </div>
   </div>
 
-    <!-- ── ⏳ SMART FREE TRIAL EXPIRY & SUBSCRIPTION PROMPT MODAL ── -->
+  <!-- ── ⏳ SMART FREE TRIAL EXPIRY & SUBSCRIPTION PROMPT MODAL ── -->
   <div id="trial-expiry-subscribe-modal" class="modal-overlay fixed inset-0 z-[120] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
     <div class="bg-[#090b12] border-2 border-gold/50 rounded-3xl w-full max-w-lg shadow-[0_30px_90px_rgba(0,0,0,0.99)] relative p-6 sm:p-8 max-h-[92vh] overflow-y-auto no-scrollbar font-sans space-y-6" style="background-color: #090b12 !important; opacity: 1 !important;">
       
