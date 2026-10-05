@@ -1037,11 +1037,16 @@ class AppController {
       const mobAvatarEl = document.getElementById('mobile-avatar-icon');
       const mobNameEl = document.getElementById('mobile-profile-name');
       const mobBadgeEl = document.getElementById('mobile-sub-badge');
-      if (mobAvatarEl) mobAvatarEl.textContent = savedAvatar;
-      if (mobNameEl) mobNameEl.textContent = savedName;
-      if (mobBadgeEl) mobBadgeEl.textContent = this.isSubscribed ? ('PRO ACTIVE • ' + DatabaseService.getDaysRemaining() + 'd') : (this.isLoggedIn ? 'Free Explorer' : 'Guest');
+      const mobileProfBtn = document.getElementById('mobile-profile-btn');
 
-      // Toggle Header Auth vs Profile Button
+      if (mobAvatarEl) mobAvatarEl.textContent = savedAvatar;
+      if (mobNameEl) mobNameEl.textContent = this.isLoggedIn ? savedName : 'Guest Explorer';
+      if (mobBadgeEl) mobBadgeEl.textContent = this.isSubscribed ? ('PRO ACTIVE • ' + DatabaseService.getDaysRemaining() + 'd') : (this.isLoggedIn ? 'Free Explorer' : 'Guest (Sign In)');
+      if (mobileProfBtn) {
+        mobileProfBtn.innerHTML = this.isLoggedIn ? 'Manage Account' : '🔑 Sign In';
+      }
+
+      // Toggle Header Auth vs Profile Dropdown Button
       if (this.isLoggedIn) {
         if (headerAuthBtn) headerAuthBtn.classList.add('hidden');
         if (headerProfileDropdown) headerProfileDropdown.classList.remove('hidden');
@@ -1114,16 +1119,18 @@ class AppController {
 
     // ── Netflix Auth Modal Controls ──
     const openAuthModal = (tab = 'signin') => {
-      if (!authModal) return;
-      authModal.classList.remove('hidden');
-      authModal.classList.add('flex');
+      const modalEl = document.getElementById('netflix-auth-modal');
+      if (!modalEl) return;
+      modalEl.classList.remove('hidden');
+      modalEl.classList.add('flex');
       switchAuthTab(tab);
     };
 
     const closeAuthModal = () => {
-      if (!authModal) return;
-      authModal.classList.add('hidden');
-      authModal.classList.remove('flex');
+      const modalEl = document.getElementById('netflix-auth-modal');
+      if (!modalEl) return;
+      modalEl.classList.add('hidden');
+      modalEl.classList.remove('flex');
     };
 
     const switchAuthTab = (tab) => {
@@ -1145,28 +1152,36 @@ class AppController {
       }
     };
 
+    // Expose Auth Modal Methods Globally & on Instance
+    this.openAuthModal = openAuthModal;
+    this.closeAuthModal = closeAuthModal;
+    this.switchAuthTab = switchAuthTab;
+    window.openAuthModal = openAuthModal;
+    window.closeAuthModal = closeAuthModal;
+    window.switchAuthTab = switchAuthTab;
+
     if (headerAuthBtn) {
-      headerAuthBtn.addEventListener('click', () => openAuthModal('signin'));
+      headerAuthBtn.onclick = () => openAuthModal('signin');
     }
 
     const closeAuthBtn = document.getElementById('close-auth-modal-btn');
-    if (closeAuthBtn) closeAuthBtn.addEventListener('click', closeAuthModal);
+    if (closeAuthBtn) closeAuthBtn.onclick = closeAuthModal;
 
     const tabSignInBtn = document.getElementById('auth-tab-signin');
     const tabRegBtn = document.getElementById('auth-tab-register');
-    if (tabSignInBtn) tabSignInBtn.addEventListener('click', () => switchAuthTab('signin'));
-    if (tabRegBtn) tabRegBtn.addEventListener('click', () => switchAuthTab('register'));
+    if (tabSignInBtn) tabSignInBtn.onclick = () => switchAuthTab('signin');
+    if (tabRegBtn) tabRegBtn.onclick = () => switchAuthTab('register');
 
     const switchToReg = document.getElementById('auth-switch-to-register');
     const switchToSign = document.getElementById('auth-switch-to-signin');
-    if (switchToReg) switchToReg.addEventListener('click', () => switchAuthTab('register'));
-    if (switchToSign) switchToSign.addEventListener('click', () => switchAuthTab('signin'));
+    if (switchToReg) switchToReg.onclick = () => switchAuthTab('register');
+    if (switchToSign) switchToSign.onclick = () => switchAuthTab('signin');
 
     // Toggle Password Visibility
     const togglePwdBtn = document.getElementById('auth-toggle-pwd-btn');
     const signInPwdInput = document.getElementById('auth-signin-pwd');
     if (togglePwdBtn && signInPwdInput) {
-      togglePwdBtn.addEventListener('click', () => {
+      togglePwdBtn.onclick = () => {
         if (signInPwdInput.type === 'password') {
           signInPwdInput.type = 'text';
           togglePwdBtn.textContent = 'Hide';
@@ -1174,66 +1189,74 @@ class AppController {
           signInPwdInput.type = 'password';
           togglePwdBtn.textContent = 'Show';
         }
-      });
+      };
     }
 
     // Avatar Selection in Register Form
     let selectedRegAvatar = '📜';
     document.querySelectorAll('.auth-reg-avatar-opt').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.onclick = () => {
         document.querySelectorAll('.auth-reg-avatar-opt').forEach(b => {
           b.className = "auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-white/10 hover:border-gold text-xl text-center cursor-pointer";
         });
         btn.className = "auth-reg-avatar-opt p-2 rounded-xl bg-[#141826] border border-gold text-xl text-center cursor-pointer shadow-sm active ring-1 ring-gold";
-        selectedRegAvatar = btn.getAttribute('data-avatar');
-      });
+        selectedRegAvatar = btn.getAttribute('data-avatar') || '📜';
+      };
     });
 
     // ── Submit Sign In Form ──
+    const handleSignIn = (e) => {
+      if (e) e.preventDefault();
+      const email = (document.getElementById('auth-signin-email')?.value || '').trim();
+      const pwd = (document.getElementById('auth-signin-pwd')?.value || '').trim();
+
+      if (!email) {
+        alert('Please enter your email or mobile number.');
+        return;
+      }
+
+      const nameFromEmail = email.split('@')[0];
+      const formattedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+
+      localStorage.setItem('hs_auth_logged_in', 'true');
+      localStorage.setItem('hs_user_name', formattedName || 'Scholar');
+      localStorage.setItem('hs_user_email', email);
+      if (pwd) localStorage.setItem('hs_user_pwd', pwd);
+      if (!localStorage.getItem('hs_avatar')) localStorage.setItem('hs_avatar', '📜');
+
+      this.isLoggedIn = true;
+      this.currentProfile = formattedName || 'Scholar';
+      this.currentProfileAvatar = localStorage.getItem('hs_avatar') || '📜';
+
+      renderHeaderProfile();
+      this.renderSpotlight();
+      this.renderContentRows();
+      this.setupSubscriptionUI();
+      closeAuthModal();
+
+      alert('✨ Welcome to Sanatana360, ' + formattedName + '!');
+    };
+
     const signInForm = document.getElementById('netflix-signin-form');
     if (signInForm) {
-      signInForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('auth-signin-email')?.value.trim();
-        const pwd = document.getElementById('auth-signin-pwd')?.value.trim();
-
-        if (!email) {
-          alert('Please enter your email or mobile number.');
-          return;
-        }
-
-        const nameFromEmail = email.split('@')[0];
-        const formattedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
-
-        localStorage.setItem('hs_auth_logged_in', 'true');
-        localStorage.setItem('hs_user_name', formattedName || 'Scholar');
-        localStorage.setItem('hs_user_email', email);
-        if (pwd) localStorage.setItem('hs_user_pwd', pwd);
-        if (!localStorage.getItem('hs_avatar')) localStorage.setItem('hs_avatar', '📜');
-
-        this.currentProfile = formattedName || 'Scholar';
-        this.currentProfileAvatar = localStorage.getItem('hs_avatar') || '📜';
-
-        renderHeaderProfile();
-        this.renderSpotlight();
-        this.renderContentRows();
-        this.setupSubscriptionUI();
-        closeAuthModal();
-
-        alert('✨ Welcome to Sanatana360, ' + formattedName + '!');
-      });
+      signInForm.onsubmit = handleSignIn;
+    }
+    const signInSubmitBtn = document.getElementById('auth-signin-submit-btn');
+    if (signInSubmitBtn) {
+      signInSubmitBtn.onclick = handleSignIn;
     }
 
     // ── Fast 1-Click Persona Login Buttons ──
     document.querySelectorAll('.fast-login-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const name = btn.getAttribute('data-name');
-        const avatar = btn.getAttribute('data-avatar');
+      btn.onclick = () => {
+        const name = btn.getAttribute('data-name') || 'Scholar';
+        const avatar = btn.getAttribute('data-avatar') || '📜';
 
         localStorage.setItem('hs_auth_logged_in', 'true');
         localStorage.setItem('hs_user_name', name);
         localStorage.setItem('hs_avatar', avatar);
 
+        this.isLoggedIn = true;
         this.currentProfile = name;
         this.currentProfileAvatar = avatar;
 
@@ -1242,40 +1265,47 @@ class AppController {
         this.renderContentRows();
         this.setupSubscriptionUI();
         closeAuthModal();
-      });
+      };
     });
 
     // ── Submit Registration Form ──
+    const handleRegister = (e) => {
+      if (e) e.preventDefault();
+      const name = (document.getElementById('auth-reg-name')?.value || '').trim();
+      const email = (document.getElementById('auth-reg-email')?.value || '').trim();
+      const pwd = (document.getElementById('auth-reg-pwd')?.value || '').trim();
+
+      if (!name || !email) {
+        alert('Please fill out all required fields.');
+        return;
+      }
+
+      localStorage.setItem('hs_auth_logged_in', 'true');
+      localStorage.setItem('hs_user_name', name);
+      localStorage.setItem('hs_user_email', email);
+      localStorage.setItem('hs_avatar', selectedRegAvatar);
+      if (pwd) localStorage.setItem('hs_user_pwd', pwd);
+
+      this.isLoggedIn = true;
+      this.currentProfile = name;
+      this.currentProfileAvatar = selectedRegAvatar;
+
+      renderHeaderProfile();
+      this.renderSpotlight();
+      this.renderContentRows();
+      this.setupSubscriptionUI();
+      closeAuthModal();
+
+      alert('🎉 Account created successfully! Welcome, ' + name + '!');
+    };
+
     const registerForm = document.getElementById('netflix-register-form');
     if (registerForm) {
-      registerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('auth-reg-name')?.value.trim();
-        const email = document.getElementById('auth-reg-email')?.value.trim();
-        const pwd = document.getElementById('auth-reg-pwd')?.value.trim();
-
-        if (!name || !email) {
-          alert('Please fill out all required fields.');
-          return;
-        }
-
-        localStorage.setItem('hs_auth_logged_in', 'true');
-        localStorage.setItem('hs_user_name', name);
-        localStorage.setItem('hs_user_email', email);
-        localStorage.setItem('hs_avatar', selectedRegAvatar);
-        if (pwd) localStorage.setItem('hs_user_pwd', pwd);
-
-        this.currentProfile = name;
-        this.currentProfileAvatar = selectedRegAvatar;
-
-        renderHeaderProfile();
-        this.renderSpotlight();
-        this.renderContentRows();
-        this.setupSubscriptionUI();
-        closeAuthModal();
-
-        alert('🎉 Account created successfully! Welcome, ' + name + '!');
-      });
+      registerForm.onsubmit = handleRegister;
+    }
+    const registerSubmitBtn = document.getElementById('auth-register-submit-btn');
+    if (registerSubmitBtn) {
+      registerSubmitBtn.onclick = handleRegister;
     }
 
     // ── Open Account Modal Helper ──
@@ -1405,11 +1435,11 @@ class AppController {
 
           const copyBtn = planCard.querySelector('#copy-order-id-btn');
           if (copyBtn) {
-            copyBtn.addEventListener('click', () => {
+            copyBtn.onclick = () => {
               navigator.clipboard.writeText(orderId || 'sub_heritage_pass');
               copyBtn.textContent = 'Copied!';
               setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
-            });
+            };
           }
         } else {
           planCard.innerHTML = `
@@ -1425,11 +1455,11 @@ class AppController {
 
           const upBtn = planCard.querySelector('#modal-upgrade-btn');
           if (upBtn) {
-            upBtn.addEventListener('click', () => {
+            upBtn.onclick = () => {
               accountModal.classList.add('hidden');
               accountModal.classList.remove('flex');
               this.openPaymentModal();
-            });
+            };
           }
         }
       }
@@ -1481,17 +1511,23 @@ class AppController {
     // Bind Open Profile / Account Button
     const openProfBtn = document.getElementById('open-profile-btn');
     if (openProfBtn) {
-      openProfBtn.addEventListener('click', () => openAccountModal('profile'));
+      openProfBtn.onclick = () => openAccountModal('profile');
     }
 
     const menuAccBtn = document.getElementById('menu-account-btn');
     if (menuAccBtn) {
-      menuAccBtn.addEventListener('click', () => openAccountModal('profile'));
+      menuAccBtn.onclick = () => openAccountModal('profile');
     }
 
     const mobileProfBtn = document.getElementById('mobile-profile-btn');
     if (mobileProfBtn) {
-      mobileProfBtn.addEventListener('click', () => openAccountModal('profile'));
+      mobileProfBtn.onclick = () => {
+        if (this.isLoggedIn) {
+          openAccountModal('profile');
+        } else {
+          openAuthModal('signin');
+        }
+      };
     }
 
     // ── Save Profile Details ──
@@ -1555,6 +1591,9 @@ class AppController {
       alert('✅ You have been signed out successfully.');
     };
 
+    this.handleLogout = handleLogout;
+    window.handleLogout = handleLogout;
+
     const logoutBtn = document.getElementById('account-logout-btn');
     const menuLogoutBtn = document.getElementById('menu-logout-btn');
     if (logoutBtn) logoutBtn.onclick = handleLogout;
@@ -1572,20 +1611,20 @@ class AppController {
     // ── Persona Switcher Modal ──
     const switchBtn = document.getElementById('switch-profile-btn');
     if (switchBtn && modal) {
-      switchBtn.addEventListener('click', () => {
+      switchBtn.onclick = () => {
         if (accountModal) {
           accountModal.classList.add('hidden');
           accountModal.classList.remove('flex');
         }
         modal.classList.remove('hidden');
         modal.classList.add('flex');
-      });
+      };
     }
 
     // Bind Persona Selection Cards
     if (modal) {
       modal.querySelectorAll('.profile-card').forEach(card => {
-        card.addEventListener('click', () => {
+        card.onclick = () => {
           const profile = card.getAttribute('data-profile');
           const avatar = card.getAttribute('data-avatar');
 
@@ -1595,21 +1634,22 @@ class AppController {
           localStorage.setItem('hs_user_name', profile);
           localStorage.setItem('hs_avatar', avatar);
 
+          this.isLoggedIn = true;
           renderHeaderProfile();
           this.renderSpotlight();
           this.renderContentRows();
 
           modal.classList.add('hidden');
           modal.classList.remove('flex');
-        });
+        };
       });
 
       const skipBtn = document.getElementById('skip-profile-btn');
       if (skipBtn) {
-        skipBtn.addEventListener('click', () => {
+        skipBtn.onclick = () => {
           modal.classList.add('hidden');
           modal.classList.remove('flex');
-        });
+        };
       }
     }
   }
