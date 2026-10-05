@@ -1513,7 +1513,7 @@
           <div class="p-3.5 rounded-2xl bg-gradient-to-br from-gold/15 via-black/40 to-black/40 border border-gold/30 space-y-2">
             <div class="flex items-center justify-between text-xs">
               <span class="font-bold text-gold flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-gold animate-ping"></span>
+                <span class="w-2 h-2 rounded-full bg-gold animate-ping" id="aarti-status-dot"></span>
                 <span>Next Scheduled Aarti:</span>
               </span>
               <span class="font-mono font-bold text-white" id="next-aarti-name">Madhyahna Aarti</span>
@@ -2464,6 +2464,162 @@
       }
     };
 
+    // ── 🕒 REAL-TIME IST AARTI SCHEDULING & LIVE COUNTDOWN ENGINE ──
+    let aartiTimerInterval = null;
+
+    function parseAartiTime(timeStr) {
+      if (!timeStr) return null;
+      const match = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+      if (!match) return null;
+      let hours = parseInt(match[1], 10);
+      const minutes = parseInt(match[2], 10);
+      const period = match[3].toUpperCase();
+      if (period === 'PM' && hours < 12) hours += 12;
+      if (period === 'AM' && hours === 12) hours = 0;
+      return { hours, minutes, totalMinutes: hours * 60 + minutes };
+    }
+
+    function getNowIST() {
+      const now = new Date();
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const istOffset = 5.5 * 3600000;
+      return new Date(utc + istOffset);
+    }
+
+    function updateAartiCountdown() {
+      if (!activeTemple || !activeTemple.aartis || activeTemple.aartis.length === 0) {
+        const nextName = document.getElementById('next-aarti-name');
+        const countdown = document.getElementById('next-aarti-countdown');
+        const nextTime = document.getElementById('next-aarti-time');
+        if (nextName) nextName.textContent = "Continuous Darshana";
+        if (countdown) countdown.textContent = "24/7 LIVE";
+        if (nextTime) nextTime.textContent = "Always Ongoing";
+        return;
+      }
+
+      const nowIST = getNowIST();
+      const curH = nowIST.getHours();
+      const curM = nowIST.getMinutes();
+      const curS = nowIST.getSeconds();
+      const currentTotalSec = curH * 3600 + curM * 60 + curS;
+
+      let parsedList = activeTemple.aartis.map((a, originalIndex) => {
+        const p = parseAartiTime(a.time);
+        return { ...a, originalIndex, parsed: p };
+      }).filter(a => a.parsed !== null);
+
+      if (parsedList.length === 0) return;
+
+      parsedList.sort((a, b) => a.parsed.totalMinutes - b.parsed.totalMinutes);
+
+      let activeOrNext = null;
+      let isLiveNow = false;
+      let diffSec = 0;
+      let isTomorrow = false;
+
+      // Check if any aarti is live right now (within 20-minute window)
+      for (let a of parsedList) {
+        const aartiSec = a.parsed.totalMinutes * 60;
+        const diff = currentTotalSec - aartiSec;
+        if (diff >= 0 && diff <= 20 * 60) {
+          activeOrNext = a;
+          isLiveNow = true;
+          diffSec = (20 * 60) - diff;
+          break;
+        }
+      }
+
+      // If not currently live, find next upcoming aarti today
+      if (!activeOrNext) {
+        for (let a of parsedList) {
+          const aartiSec = a.parsed.totalMinutes * 60;
+          if (aartiSec > currentTotalSec) {
+            activeOrNext = a;
+            diffSec = aartiSec - currentTotalSec;
+            break;
+          }
+        }
+      }
+
+      // If all aartis today are over, wrap to tomorrow's first morning aarti
+      if (!activeOrNext) {
+        activeOrNext = parsedList[0];
+        isTomorrow = true;
+        const secondsUntilMidnight = (24 * 3600) - currentTotalSec;
+        const tomorrowAartiSec = activeOrNext.parsed.totalMinutes * 60;
+        diffSec = secondsUntilMidnight + tomorrowAartiSec;
+      }
+
+      const nextNameEl = document.getElementById('next-aarti-name');
+      const countdownEl = document.getElementById('next-aarti-countdown');
+      const nextTimeEl = document.getElementById('next-aarti-time');
+      const badgeDot = document.getElementById('aarti-status-dot');
+
+      if (nextNameEl) nextNameEl.textContent = activeOrNext.name;
+      
+      if (isLiveNow) {
+        if (countdownEl) {
+          countdownEl.innerHTML = '<span class="text-emerald-400 animate-pulse font-bold text-xl sm:text-2xl">🔴 LIVE NOW</span>';
+        }
+        if (nextTimeEl) {
+          const mLeft = Math.ceil(diffSec / 60);
+          nextTimeEl.textContent = `In Progress (~${mLeft}m left)`;
+          nextTimeEl.className = "text-[11px] font-mono text-emerald-300 font-bold";
+        }
+        if (badgeDot) {
+          badgeDot.className = "w-2.5 h-2.5 rounded-full bg-red-500 animate-ping";
+        }
+      } else {
+        const h = Math.floor(diffSec / 3600);
+        const m = Math.floor((diffSec % 3600) / 60);
+        const s = diffSec % 60;
+        const formattedCountdown = `${h.toString().padStart(2, '0')}h ${m.toString().padStart(2, '0')}m ${s.toString().padStart(2, '0')}s`;
+
+        if (countdownEl) {
+          countdownEl.textContent = formattedCountdown;
+        }
+        if (nextTimeEl) {
+          nextTimeEl.textContent = `at ${activeOrNext.time} IST ${isTomorrow ? '(Tomorrow)' : '(Today)'}`;
+          nextTimeEl.className = "text-[11px] font-mono text-white/60";
+        }
+        if (badgeDot) {
+          badgeDot.className = "w-2 h-2 rounded-full bg-gold animate-ping";
+        }
+      }
+
+      // Update Timetable rows
+      const rows = document.querySelectorAll('.aarti-timetable-row');
+      rows.forEach(r => {
+        const idx = parseInt(r.dataset.originalIndex, 10);
+        const statusBadge = r.querySelector('.aarti-row-status');
+        const aartiObj = activeTemple.aartis[idx];
+        if (!aartiObj) return;
+
+        const parsed = parseAartiTime(aartiObj.time);
+        if (!parsed) return;
+
+        const aartiSec = parsed.totalMinutes * 60;
+
+        if (activeOrNext.originalIndex === idx) {
+          if (isLiveNow) {
+            r.className = 'aarti-timetable-row flex items-center justify-between p-2.5 rounded-xl bg-red-950/40 border border-red-500/60 shadow-lg text-xs transition-all';
+            if (statusBadge) statusBadge.innerHTML = '<span class="text-red-400 font-mono font-black text-[10px] bg-red-500/20 border border-red-500/40 px-2 py-0.5 rounded-md animate-pulse">🔴 LIVE NOW</span>';
+          } else {
+            r.className = 'aarti-timetable-row flex items-center justify-between p-2.5 rounded-xl bg-gold/20 border border-gold shadow-md text-xs transition-all';
+            if (statusBadge) statusBadge.innerHTML = `<span class="text-gold font-mono font-bold text-[10px] bg-black/60 border border-gold/40 px-2 py-0.5 rounded-md">⚡ NEXT UP (${activeOrNext.time})</span>`;
+          }
+        } else if (!isTomorrow && currentTotalSec > aartiSec + 20 * 60) {
+          // Completed earlier today
+          r.className = 'aarti-timetable-row flex items-center justify-between p-2 rounded-xl bg-black/20 border border-white/5 text-xs opacity-50 transition-all';
+          if (statusBadge) statusBadge.innerHTML = '<span class="text-white/40 font-mono text-[9.5px]">✓ Completed</span>';
+        } else {
+          // Upcoming later today
+          r.className = 'aarti-timetable-row flex items-center justify-between p-2 rounded-xl bg-black/30 border border-white/5 text-xs transition-all';
+          if (statusBadge) statusBadge.innerHTML = `<span class="font-mono text-gold font-bold text-[11px] bg-gold/10 px-2 py-0.5 rounded-lg">${aartiObj.time}</span>`;
+        }
+      });
+    }
+
     function renderAartiTimetable(aartis) {
       const list = document.getElementById('aarti-timetable-list');
       if (!list) return;
@@ -2475,23 +2631,25 @@
 
       list.innerHTML = aartis.map((a, idx) => {
         return `
-          <div class="flex items-center justify-between p-2 rounded-xl bg-black/30 border border-white/5 text-xs">
+          <div data-original-index="${idx}" class="aarti-timetable-row flex items-center justify-between p-2 rounded-xl bg-black/30 border border-white/5 text-xs transition-all">
             <div class="flex items-center gap-2">
               <span class="text-gold font-bold">${idx + 1}.</span>
               <div>
-                <span class="font-bold text-white block text-[11px]">${a.name}</span>
-                <span class="text-[9.5px] text-white/40 block">${a.desc}</span>
+                <span class="font-bold text-white block text-[11.5px]">${a.name}</span>
+                <span class="text-[9.5px] text-white/45 block">${a.desc}</span>
               </div>
             </div>
-            <span class="font-mono text-gold font-bold text-[11px] whitespace-nowrap bg-gold/10 px-2 py-0.5 rounded-lg">${a.time}</span>
+            <div class="aarti-row-status flex-shrink-0">
+              <span class="font-mono text-gold font-bold text-[11px] whitespace-nowrap bg-gold/10 px-2 py-0.5 rounded-lg">${a.time}</span>
+            </div>
           </div>
         `;
       }).join('');
 
-      if (aartis.length > 0) {
-        document.getElementById('next-aarti-name').textContent = aartis[0].name;
-        document.getElementById('next-aarti-time').textContent = 'at ' + aartis[0].time;
-      }
+      updateAartiCountdown();
+
+      if (aartiTimerInterval) clearInterval(aartiTimerInterval);
+      aartiTimerInterval = setInterval(updateAartiCountdown, 1000);
     }
 
     // ── 7. WORLDWATCHER MULTI-CAM CONTROLLER ──
