@@ -1,2451 +1,1725 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
-  <!-- ========================================== -->
-  <!-- 1. HOMEPAGE & CULTURAL GURUKULA OTT HUB -->
-  <!-- ========================================== -->
+  <!-- Core Landing & Hub Pages -->
   <url>
     <loc>https://www.sanatana360.com/</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/ganesha.jpg</image:loc>
-      <image:title>Sanatana360 Cultural OTT and Vedic Kids Gurukula</image:title>
-      <image:caption>Premier Indian Heritage Knowledge OTT &amp; Digital Gurukula</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/hampi.jpg</image:loc>
-      <image:title>Ancient Indian Architectural Chronicles and 3D Temple Documentaries</image:title>
-    </image:image>
   </url>
-
-  <!-- ========================================== -->
-  <!-- 2. BLOG & ANCIENT MYSTERIES MAIN HUB -->
-  <!-- ========================================== -->
-  <url>
-    <loc>https://www.sanatana360.com/blog.html</loc>
-    <lastmod>2026-10-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/ellora_kailasa.jpg</image:loc>
-      <image:title>Sanatana360 Blog - 100+ Ancient Indian Mysteries &amp; Vedic Science</image:title>
-    </image:image>
-  </url>
-
-  <!-- ========================================== -->
-  <!-- 3. DIVYA DARSHANA 360 MAIN HUB (40+ LIVE TEMPLES) -->
-  <!-- ========================================== -->
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>always</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/divya_darshana_banner.jpg</image:loc>
-      <image:title>Divya Darshana 360 - 40+ Official 24/7 Live Temple Streams</image:title>
-      <image:caption>Watch 12 Jyotirlingas, Char Dham, and Shaktipeeth Live Feeds with Virtual Aarti</image:caption>
-    </image:image>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/mCqRuQigwFU/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shirdi Sai Baba Samadhi Mandir - Official 24/7 Live Darshana &amp; Aarti</video:title>
-      <video:description>Official 24/7 Live Darshana &amp; Aarti from the sacred Samadhi Mandir of Sai Baba in Shirdi | श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती व दर्शन) located in Shirdi, Ahmednagar, Maharashtra, India</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/mCqRuQigwFU</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>yes</video:live>
-      <video:tag>Shirdi Sai Baba Samadhi Mandir</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/XxdarKTmJ8c/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Tirumala Sri Venkateswara Swamy - Official 24/7 Live Darshana &amp; Aarti</video:title>
-      <video:description>Official 24/7 SVBC Live Darshana, Kalyanotsavam &amp; Sahasra Deepalankara Seva of Lord Balaji | श्री वेंकटेश्वर स्वामी तिरुपति बालाजी (कल्याणोत्सवम् व दर्शन) located in Tirumala Hills, Tirupati, Andhra Pradesh, India</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/XxdarKTmJ8c</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>yes</video:live>
-      <video:tag>Tirumala Sri Venkateswara Swamy</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Kashi Vishwanath Jyotirlinga - Official 24/7 Live Darshana &amp; Aarti</video:title>
-      <video:description>Avimukta Moksha Kshetra • Real-time Mangala &amp; Shringara Aarti directly on the banks of Holy Ganga | श्री काशी विश्वनाथ ज्योतिर्लिंग वाराणसी (मंगला व शृंगार आरती) located in Varanasi (Kashi), Uttar Pradesh, India</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uRUP4M_5vSo</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>yes</video:live>
-      <video:tag>Shree Kashi Vishwanath Jyotirlinga</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Somnath Jyotirlinga (1st Jyotirlinga) - Official 24/7 Live Darshana &amp; Aarti</video:title>
-      <video:description>First of the 12 Sacred Jyotirlingas, situated at the confluence of 3 sacred rivers and the Arabian Sea | श्री सोमनाथ ज्योतिर्लिंग (प्रथम ज्योतिर्लिंग • प्रभास पाटन) located in Prabhas Patan, Veraval, Saurashtra, Gujarat, India</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uY5YwokiIsY</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>yes</video:live>
-      <video:tag>Shree Somnath Jyotirlinga (1st Jyotirlinga)</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Mahakaleshwar Jyotirlinga Ujjain - Official 24/7 Live Darshana &amp; Aarti</video:title>
-      <video:description>Only South-Facing (Dakshinamurti) Jyotirlinga, famous for the world-renowned daily Bhasma Aarti | श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन (भस्म आरती व दर्शन) located in Ujjain, Madhya Pradesh, India</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/H6D_IGx5xOI</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>yes</video:live>
-      <video:tag>Mahakaleshwar Jyotirlinga Ujjain</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shri Ram Janmabhoomi Mandir Ayodhya - Official 24/7 Live Darshana &amp; Aarti</video:title>
-      <video:description>Sacred 5-year-old child form of Maryada Purushottam Shri Ram in the grand Nagara architectural sanctum | श्री राम जन्मभूमि मंदिर अयोध्या (रामलला दिव्य दर्शन व आरती) located in Ayodhya Dham, Uttar Pradesh, India</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/W8qEqGulnPg</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>yes</video:live>
-      <video:tag>Shri Ram Janmabhoomi Mandir Ayodhya</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/pq1fSKRlbc8/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>ISKCON Sri Radha Krishnachandra Bangalore - Official 24/7 Live Darshana &amp; Aarti</video:title>
-      <video:description>Ecstatic 24/7 Maha-Mantra Kirtan, opulent deity shringara, and uninterrupted divine stream | इस्कॉन श्री राधा कृष्णचंद्र मंदिर बेंगलुरु (कीर्तन व आरती) located in Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka, India</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/pq1fSKRlbc8</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>yes</video:live>
-      <video:tag>ISKCON Sri Radha Krishnachandra Bangalore</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/O2ojNbbB8Iw/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>ISKCON Sri Sri Krishna Balaram Mandir - Official 24/7 Live Darshana &amp; Aarti</video:title>
-      <video:description>Heart of Braj Dham, famous for uninterrupted 24-Hour Akhanda Harinama Kirtan since 1975 | श्री श्री कृष्ण बलराम मंदिर इस्कॉन वृंदावन (24-घंटे अखंड कीर्तन) located in Raman Reti, Vrindavan, Mathura, Uttar Pradesh, India</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/O2ojNbbB8Iw</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>yes</video:live>
-      <video:tag>ISKCON Sri Sri Krishna Balaram Mandir</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shri Mata Vaishno Devi Bhawan Katra - Official 24/7 Live Darshana &amp; Aarti</video:title>
-      <video:description>Holy Cave Shrine in Trikuta Mountains housing the 3 natural Pindis of Mahakali, Mahalakshmi &amp; Mahasaraswati | श्री माता वैष्णो देवी भवन कटरा (पवित्र गुफा व दिव्य आरती) located in Trikuta Hills, Katra, Jammu &amp; Kashmir, India</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/jD-THm4dJz0</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>yes</video:live>
-      <video:tag>Shri Mata Vaishno Devi Bhawan Katra</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Parmarth Niketan Rishikesh (Ganga Aarti) - Official 24/7 Live Darshana &amp; Aarti</video:title>
-      <video:description>World-renowned sunset Ganga Aarti with Vedic chanting, lamps, and bhajans on the holy banks in Rishikesh | परमार्थ निकेतन ऋषिकेश (विश्वप्रसिद्ध संध्या गंगा आरती) located in Swargashram, Rishikesh, Uttarakhand, India</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/usvU6ox_NQU</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>yes</video:live>
-      <video:tag>Parmarth Niketan Rishikesh (Ganga Aarti)</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
-    </video:video>
+    <priority>0.95</priority>
   </url>
-
-  <!-- ========================================== -->
-  <!-- 4. INDIVIDUAL 40+ TEMPLE DEEP-LINKED URLS -->
-  <!-- ========================================== -->
+  <url>
+    <loc>https://www.sanatana360.com/blog.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.sanatana360.com/granthalaya.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.sanatana360.com/vedic-math.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.sanatana360.com/mudra-therapy.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.sanatana360.com/panchatantra-audio.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=shirdi_sai</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/mCqRuQigwFU/hqdefault.jpg</image:loc>
-      <image:title>Shirdi Sai Baba Samadhi Mandir (श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती व दर्शन))</image:title>
-      <image:caption>Official 24/7 Live Darshana &amp; Aarti from the sacred Samadhi Mandir of Sai Baba in Shirdi</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/mCqRuQigwFU/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shirdi Sai Baba Samadhi Mandir 24/7 Live Darshan &amp; Aarti Today - Shirdi, Ahmednagar, Maharashtra, India</video:title>
-      <video:description>Official 24/7 Live Darshana &amp; Aarti from the sacred Samadhi Mandir of Sai Baba in Shirdi. Watch continuous live broadcast from Shri Saibaba Sansthan Trust (SSST), Shirdi</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/mCqRuQigwFU</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shirdi Sai Baba Samadhi Mandir (श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती व दर्शन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shirdi Sai Baba Samadhi Mandir in Shirdi, Ahmednagar, Maharashtra, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/mCqRuQigwFU</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shirdi Sai Baba Samadhi Mandir</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=tirupati_balaji</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/XxdarKTmJ8c/hqdefault.jpg</image:loc>
-      <image:title>Tirumala Sri Venkateswara Swamy (श्री वेंकटेश्वर स्वामी तिरुपति बालाजी (कल्याणोत्सवम् व दर्शन))</image:title>
-      <image:caption>Official 24/7 SVBC Live Darshana, Kalyanotsavam &amp; Sahasra Deepalankara Seva of Lord Balaji</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/XxdarKTmJ8c/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Tirumala Sri Venkateswara Swamy 24/7 Live Darshan &amp; Aarti Today - Tirumala Hills, Tirupati, Andhra Pradesh, India</video:title>
-      <video:description>Official 24/7 SVBC Live Darshana, Kalyanotsavam &amp; Sahasra Deepalankara Seva of Lord Balaji. Watch continuous live broadcast from Tirumala Tirupati Devasthanams (TTD / SVBC)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/XxdarKTmJ8c</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Tirumala Sri Venkateswara Swamy (श्री वेंकटेश्वर स्वामी तिरुपति बालाजी (कल्याणोत्सवम् व दर्शन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Tirumala Sri Venkateswara Swamy in Tirumala Hills, Tirupati, Andhra Pradesh, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/XxdarKTmJ8c</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Tirumala Sri Venkateswara Swamy</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=kashi_vishwanath</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg</image:loc>
-      <image:title>Shree Kashi Vishwanath Jyotirlinga (श्री काशी विश्वनाथ ज्योतिर्लिंग वाराणसी (मंगला व शृंगार आरती))</image:title>
-      <image:caption>Avimukta Moksha Kshetra • Real-time Mangala &amp; Shringara Aarti directly on the banks of Holy Ganga</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Kashi Vishwanath Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Varanasi (Kashi), Uttar Pradesh, India</video:title>
-      <video:description>Avimukta Moksha Kshetra • Real-time Mangala &amp; Shringara Aarti directly on the banks of Holy Ganga. Watch continuous live broadcast from Shri Kashi Vishwanath Temple Trust (SKVT)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uRUP4M_5vSo</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Kashi Vishwanath Jyotirlinga (श्री काशी विश्वनाथ ज्योतिर्लिंग वाराणसी (मंगला व शृंगार आरती)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Kashi Vishwanath Jyotirlinga in Varanasi (Kashi), Uttar Pradesh, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/uRUP4M_5vSo</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Kashi Vishwanath Jyotirlinga</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=somnath_jyotirlinga</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg</image:loc>
-      <image:title>Shree Somnath Jyotirlinga (1st Jyotirlinga) (श्री सोमनाथ ज्योतिर्लिंग (प्रथम ज्योतिर्लिंग • प्रभास पाटन))</image:title>
-      <image:caption>First of the 12 Sacred Jyotirlingas, situated at the confluence of 3 sacred rivers and the Arabian Sea</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Somnath Jyotirlinga (1st Jyotirlinga) 24/7 Live Darshan &amp; Aarti Today - Prabhas Patan, Veraval, Saurashtra, Gujarat, India</video:title>
-      <video:description>First of the 12 Sacred Jyotirlingas, situated at the confluence of 3 sacred rivers and the Arabian Sea. Watch continuous live broadcast from Shree Somnath Trust, Prabhas Patan</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uY5YwokiIsY</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Somnath Jyotirlinga (1st Jyotirlinga) (श्री सोमनाथ ज्योतिर्लिंग (प्रथम ज्योतिर्लिंग • प्रभास पाटन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Somnath Jyotirlinga (1st Jyotirlinga) in Prabhas Patan, Veraval, Saurashtra, Gujarat, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/uY5YwokiIsY</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Somnath Jyotirlinga (1st Jyotirlinga)</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=mahakaleshwar_ujjain</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg</image:loc>
-      <image:title>Mahakaleshwar Jyotirlinga Ujjain (श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन (भस्म आरती व दर्शन))</image:title>
-      <image:caption>Only South-Facing (Dakshinamurti) Jyotirlinga, famous for the world-renowned daily Bhasma Aarti</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Mahakaleshwar Jyotirlinga Ujjain 24/7 Live Darshan &amp; Aarti Today - Ujjain, Madhya Pradesh, India</video:title>
-      <video:description>Only South-Facing (Dakshinamurti) Jyotirlinga, famous for the world-renowned daily Bhasma Aarti. Watch continuous live broadcast from Shri Mahakaleshwar Temple Management Committee, Ujjain</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/H6D_IGx5xOI</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Mahakaleshwar Jyotirlinga Ujjain (श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन (भस्म आरती व दर्शन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Mahakaleshwar Jyotirlinga Ujjain in Ujjain, Madhya Pradesh, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/H6D_IGx5xOI</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Mahakaleshwar Jyotirlinga Ujjain</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=ayodhya_ram_mandir</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg</image:loc>
-      <image:title>Shri Ram Janmabhoomi Mandir Ayodhya (श्री राम जन्मभूमि मंदिर अयोध्या (रामलला दिव्य दर्शन व आरती))</image:title>
-      <image:caption>Sacred 5-year-old child form of Maryada Purushottam Shri Ram in the grand Nagara architectural sanctum</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shri Ram Janmabhoomi Mandir Ayodhya 24/7 Live Darshan &amp; Aarti Today - Ayodhya Dham, Uttar Pradesh, India</video:title>
-      <video:description>Sacred 5-year-old child form of Maryada Purushottam Shri Ram in the grand Nagara architectural sanctum. Watch continuous live broadcast from Shri Ram Janmbhoomi Teerth Kshetra Trust</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/W8qEqGulnPg</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shri Ram Janmabhoomi Mandir Ayodhya (श्री राम जन्मभूमि मंदिर अयोध्या (रामलला दिव्य दर्शन व आरती)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shri Ram Janmabhoomi Mandir Ayodhya in Ayodhya Dham, Uttar Pradesh, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/W8qEqGulnPg</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shri Ram Janmabhoomi Mandir Ayodhya</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=iskcon_bangalore</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/pq1fSKRlbc8/hqdefault.jpg</image:loc>
-      <image:title>ISKCON Sri Radha Krishnachandra Bangalore (इस्कॉन श्री राधा कृष्णचंद्र मंदिर बेंगलुरु (कीर्तन व आरती))</image:title>
-      <image:caption>Ecstatic 24/7 Maha-Mantra Kirtan, opulent deity shringara, and uninterrupted divine stream</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/pq1fSKRlbc8/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>ISKCON Sri Radha Krishnachandra Bangalore 24/7 Live Darshan &amp; Aarti Today - Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka, India</video:title>
-      <video:description>Ecstatic 24/7 Maha-Mantra Kirtan, opulent deity shringara, and uninterrupted divine stream. Watch continuous live broadcast from ISKCON Bangalore Society</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/pq1fSKRlbc8</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>ISKCON Sri Radha Krishnachandra Bangalore (इस्कॉन श्री राधा कृष्णचंद्र मंदिर बेंगलुरु (कीर्तन व आरती)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from ISKCON Sri Radha Krishnachandra Bangalore in Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/pq1fSKRlbc8</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>ISKCON Sri Radha Krishnachandra Bangalore</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=iskcon_vrindavan</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/O2ojNbbB8Iw/hqdefault.jpg</image:loc>
-      <image:title>ISKCON Sri Sri Krishna Balaram Mandir (श्री श्री कृष्ण बलराम मंदिर इस्कॉन वृंदावन (24-घंटे अखंड कीर्तन))</image:title>
-      <image:caption>Heart of Braj Dham, famous for uninterrupted 24-Hour Akhanda Harinama Kirtan since 1975</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/O2ojNbbB8Iw/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>ISKCON Sri Sri Krishna Balaram Mandir 24/7 Live Darshan &amp; Aarti Today - Raman Reti, Vrindavan, Mathura, Uttar Pradesh, India</video:title>
-      <video:description>Heart of Braj Dham, famous for uninterrupted 24-Hour Akhanda Harinama Kirtan since 1975. Watch continuous live broadcast from ISKCON Vrindavan Krishna Balaram Temple</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/O2ojNbbB8Iw</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>ISKCON Sri Sri Krishna Balaram Mandir (श्री श्री कृष्ण बलराम मंदिर इस्कॉन वृंदावन (24-घंटे अखंड कीर्तन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from ISKCON Sri Sri Krishna Balaram Mandir in Raman Reti, Vrindavan, Mathura, Uttar Pradesh, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/O2ojNbbB8Iw</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>ISKCON Sri Sri Krishna Balaram Mandir</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=vaishno_devi_katra</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg</image:loc>
-      <image:title>Shri Mata Vaishno Devi Bhawan Katra (श्री माता वैष्णो देवी भवन कटरा (पवित्र गुफा व दिव्य आरती))</image:title>
-      <image:caption>Holy Cave Shrine in Trikuta Mountains housing the 3 natural Pindis of Mahakali, Mahalakshmi &amp; Mahasaraswati</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shri Mata Vaishno Devi Bhawan Katra 24/7 Live Darshan &amp; Aarti Today - Trikuta Hills, Katra, Jammu &amp; Kashmir, India</video:title>
-      <video:description>Holy Cave Shrine in Trikuta Mountains housing the 3 natural Pindis of Mahakali, Mahalakshmi &amp; Mahasaraswati. Watch continuous live broadcast from Shri Mata Vaishno Devi Shrine Board (SMVDSB)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/jD-THm4dJz0</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shri Mata Vaishno Devi Bhawan Katra (श्री माता वैष्णो देवी भवन कटरा (पवित्र गुफा व दिव्य आरती)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shri Mata Vaishno Devi Bhawan Katra in Trikuta Hills, Katra, Jammu &amp; Kashmir, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/jD-THm4dJz0</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shri Mata Vaishno Devi Bhawan Katra</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=parmarth_niketan_ganga</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg</image:loc>
-      <image:title>Parmarth Niketan Rishikesh (Ganga Aarti) (परमार्थ निकेतन ऋषिकेश (विश्वप्रसिद्ध संध्या गंगा आरती))</image:title>
-      <image:caption>World-renowned sunset Ganga Aarti with Vedic chanting, lamps, and bhajans on the holy banks in Rishikesh</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Parmarth Niketan Rishikesh (Ganga Aarti) 24/7 Live Darshan &amp; Aarti Today - Swargashram, Rishikesh, Uttarakhand, India</video:title>
-      <video:description>World-renowned sunset Ganga Aarti with Vedic chanting, lamps, and bhajans on the holy banks in Rishikesh. Watch continuous live broadcast from Parmarth Niketan Ashram, Rishikesh</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/usvU6ox_NQU</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Parmarth Niketan Rishikesh (Ganga Aarti) (परमार्थ निकेतन ऋषिकेश (विश्वप्रसिद्ध संध्या गंगा आरती)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Parmarth Niketan Rishikesh (Ganga Aarti) in Swargashram, Rishikesh, Uttarakhand, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/usvU6ox_NQU</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Parmarth Niketan Rishikesh (Ganga Aarti)</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=siddhivinayak_mumbai</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/V2FnGzYYux8/hqdefault.jpg</image:loc>
-      <image:title>Shree Siddhivinayak Temple Mumbai (श्री सिद्धिविनायक मंदिर प्रभादेवी मुंबई (लाइव दर्शन व काकड आरती))</image:title>
-      <image:caption>Wish-fulfilling right-trunked Ganesha sculpted from a single black stone with gold sanctum</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/V2FnGzYYux8/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Siddhivinayak Temple Mumbai 24/7 Live Darshan &amp; Aarti Today - Prabhadevi, Mumbai, Maharashtra, India</video:title>
-      <video:description>Wish-fulfilling right-trunked Ganesha sculpted from a single black stone with gold sanctum. Watch continuous live broadcast from Shree Siddhivinayak Ganapati Temple Trust (SSGTB)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/V2FnGzYYux8</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Siddhivinayak Temple Mumbai (श्री सिद्धिविनायक मंदिर प्रभादेवी मुंबई (लाइव दर्शन व काकड आरती)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Siddhivinayak Temple Mumbai in Prabhadevi, Mumbai, Maharashtra, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/V2FnGzYYux8</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Siddhivinayak Temple Mumbai</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=jagannath_puri</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/WD5kyQ4laVs/hqdefault.jpg</image:loc>
-      <image:title>Shree Jagannath Temple Puri (श्री जगन्नाथ मंदिर पुरी (महाप्रसाद, मंगला व संध्या आरती))</image:title>
-      <image:caption>Maha Char Dham shrine of the Supreme Lord of the Cosmos, famous for Ratha Yatra and 56-Bhog Mahaprasad</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/WD5kyQ4laVs/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Jagannath Temple Puri 24/7 Live Darshan &amp; Aarti Today - Puri Dham, Odisha, India</video:title>
-      <video:description>Maha Char Dham shrine of the Supreme Lord of the Cosmos, famous for Ratha Yatra and 56-Bhog Mahaprasad. Watch continuous live broadcast from Shree Jagannath Temple Administration (SJTA)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/WD5kyQ4laVs</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Jagannath Temple Puri (श्री जगन्नाथ मंदिर पुरी (महाप्रसाद, मंगला व संध्या आरती)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Jagannath Temple Puri in Puri Dham, Odisha, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/WD5kyQ4laVs</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Jagannath Temple Puri</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=tulja_bhavani</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/B3r-kt5dK_M/hqdefault.jpg</image:loc>
-      <image:title>Shri Tulja Bhavani Temple (श्री तुलजा भवानी मंदिर तुलजापुर (कुलस्वामिनी दर्शन))</image:title>
-      <image:caption>Swayambhu Shaktipeeth who blessed Chhatrapati Shivaji Maharaj with the historic Bhavani Talwar</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/B3r-kt5dK_M/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shri Tulja Bhavani Temple 24/7 Live Darshan &amp; Aarti Today - Tuljapur, Dharashiv, Maharashtra, India</video:title>
-      <video:description>Swayambhu Shaktipeeth who blessed Chhatrapati Shivaji Maharaj with the historic Bhavani Talwar. Watch continuous live broadcast from Shri Tuljabhavani Temple Sansthan</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/B3r-kt5dK_M</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shri Tulja Bhavani Temple (श्री तुलजा भवानी मंदिर तुलजापुर (कुलस्वामिनी दर्शन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shri Tulja Bhavani Temple in Tuljapur, Dharashiv, Maharashtra, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/B3r-kt5dK_M</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shri Tulja Bhavani Temple</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=khatu_shyam_ji</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/aHp8nnOwcpc/hqdefault.jpg</image:loc>
-      <image:title>Shree Khatu Shyam Ji Temple (श्री खाटू श्याम जी मंदिर सीकर राजस्थान (हारे का सहारा दर्शन))</image:title>
-      <image:caption>Sheesh Ke Daani (Giver of the Head), deity who relieves suffering for millions of humble seekers</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/aHp8nnOwcpc/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Khatu Shyam Ji Temple 24/7 Live Darshan &amp; Aarti Today - Khatu Dham, Sikar, Rajasthan, India</video:title>
-      <video:description>Sheesh Ke Daani (Giver of the Head), deity who relieves suffering for millions of humble seekers. Watch continuous live broadcast from Shri Shyam Mandir Committee, Khatushyamji</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/aHp8nnOwcpc</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Khatu Shyam Ji Temple (श्री खाटू श्याम जी मंदिर सीकर राजस्थान (हारे का सहारा दर्शन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Khatu Shyam Ji Temple in Khatu Dham, Sikar, Rajasthan, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/aHp8nnOwcpc</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Khatu Shyam Ji Temple</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=salasar_balaji</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/q58Wan19vns/hqdefault.jpg</image:loc>
-      <image:title>Shri Salasar Balaji Mandir (श्री सालासर बालाजी मंदिर (दाढ़ी-मूंछ वाले चमत्कारी हनुमान जी))</image:title>
-      <image:caption>Unique Swayambhu idol of Lord Hanuman with a divine beard and mustache, renowned for miraculous grace</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/q58Wan19vns/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shri Salasar Balaji Mandir 24/7 Live Darshan &amp; Aarti Today - Salasar, Churu District, Rajasthan, India</video:title>
-      <video:description>Unique Swayambhu idol of Lord Hanuman with a divine beard and mustache, renowned for miraculous grace. Watch continuous live broadcast from Shree Hanuman Seva Samiti, Salasar</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/q58Wan19vns</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shri Salasar Balaji Mandir (श्री सालासर बालाजी मंदिर (दाढ़ी-मूंछ वाले चमत्कारी हनुमान जी)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shri Salasar Balaji Mandir in Salasar, Churu District, Rajasthan, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/q58Wan19vns</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shri Salasar Balaji Mandir</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=kedarnath_dham</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/fURwn8kbRBc/hqdefault.jpg</image:loc>
-      <image:title>Kedarnath Himalayan Dham (श्री केदारनाथ ज्योतिर्लिंग (हिमालयन धाम दर्शन))</image:title>
-      <image:caption>Highest Jyotirlinga at 3,584m altitude surrounded by snow-clad Himalayan peaks and Mandakini River</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/fURwn8kbRBc/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Kedarnath Himalayan Dham 24/7 Live Darshan &amp; Aarti Today - Garhwal Himalayas, Rudraprayag, Uttarakhand, India</video:title>
-      <video:description>Highest Jyotirlinga at 3,584m altitude surrounded by snow-clad Himalayan peaks and Mandakini River. Watch continuous live broadcast from Shri Badrinath-Kedarnath Temple Committee (BKTC)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/fURwn8kbRBc</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Kedarnath Himalayan Dham (श्री केदारनाथ ज्योतिर्लिंग (हिमालयन धाम दर्शन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Kedarnath Himalayan Dham in Garhwal Himalayas, Rudraprayag, Uttarakhand, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/fURwn8kbRBc</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Kedarnath Himalayan Dham</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=udupi_krishna_matha</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg</image:loc>
-      <image:title>Sri Krishna Matha Udupi (श्री कृष्ण मठ उडुपी (कनकन किंडी व नित्य महापूजा))</image:title>
-      <image:caption>Lord Krishna viewed through the sacred silver 9-holed window (Kanakana Kindi), following 800-yr Dwaita rituals</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Sri Krishna Matha Udupi 24/7 Live Darshan &amp; Aarti Today - Car Street, Udupi, Karnataka, India</video:title>
-      <video:description>Lord Krishna viewed through the sacred silver 9-holed window (Kanakana Kindi), following 800-yr Dwaita rituals. Watch continuous live broadcast from Ashta Mathas of Udupi (Paryaya Sri Krishna Matha)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/8JsL-H7fJy4</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Sri Krishna Matha Udupi (श्री कृष्ण मठ उडुपी (कनकन किंडी व नित्य महापूजा)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Sri Krishna Matha Udupi in Car Street, Udupi, Karnataka, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/8JsL-H7fJy4</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Sri Krishna Matha Udupi</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=meenakshi_madurai</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/Aicrlohuuug/hqdefault.jpg</image:loc>
-      <image:title>Meenakshi Sundareswarar Temple (श्री मीनाक्षी सुंदरेश्वरर मंदिर मदुरै (गोपुरम व संध्या पूजा))</image:title>
-      <image:caption>Architectural masterpiece of Dravidian heritage with 14 iconic Rajagopurams and Hall of 1000 Pillars</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/Aicrlohuuug/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Meenakshi Sundareswarar Temple 24/7 Live Darshan &amp; Aarti Today - Madurai, Tamil Nadu, India</video:title>
-      <video:description>Architectural masterpiece of Dravidian heritage with 14 iconic Rajagopurams and Hall of 1000 Pillars. Watch continuous live broadcast from Arulmigu Meenakshi Sundareswarar Thirukoil (HR&amp;CE)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Aicrlohuuug</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Meenakshi Sundareswarar Temple (श्री मीनाक्षी सुंदरेश्वरर मंदिर मदुरै (गोपुरम व संध्या पूजा)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Meenakshi Sundareswarar Temple in Madurai, Tamil Nadu, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/Aicrlohuuug</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Meenakshi Sundareswarar Temple</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=chamundeshwari_mysuru</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/9SBpnTrrXlw/hqdefault.jpg</image:loc>
-      <image:title>Chamundeshwari Temple Mysuru (श्री चामुंडेश्वरी देवी मंदिर मैसूर (नाडा हब्बा दर्शन))</image:title>
-      <image:caption>Presiding deity of Mysuru perched atop the picturesque Chamundi Hills, vanquisher of Mahishasura</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/9SBpnTrrXlw/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Chamundeshwari Temple Mysuru 24/7 Live Darshan &amp; Aarti Today - Chamundi Hills, Mysuru, Karnataka, India</video:title>
-      <video:description>Presiding deity of Mysuru perched atop the picturesque Chamundi Hills, vanquisher of Mahishasura. Watch continuous live broadcast from Sri Chamundeshwari Temple Management Committee</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/9SBpnTrrXlw</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Chamundeshwari Temple Mysuru (श्री चामुंडेश्वरी देवी मंदिर मैसूर (नाडा हब्बा दर्शन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Chamundeshwari Temple Mysuru in Chamundi Hills, Mysuru, Karnataka, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/9SBpnTrrXlw</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Chamundeshwari Temple Mysuru</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=pashupatinath_nepal</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/bi1PDhKGUd4/hqdefault.jpg</image:loc>
-      <image:title>Pashupatinath Temple Kathmandu Nepal (श्री पशुपतिनाथ मंदिर काठमांडू नेपाल (बागमती महाआरती))</image:title>
-      <image:caption>Sacred 5-faced Shiva Lingam on the sacred Bagmati river, UNESCO World Heritage site and crown jewel of Nepal</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/bi1PDhKGUd4/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Pashupatinath Temple Kathmandu Nepal 24/7 Live Darshan &amp; Aarti Today - Bagmati River, Kathmandu Valley, Nepal</video:title>
-      <video:description>Sacred 5-faced Shiva Lingam on the sacred Bagmati river, UNESCO World Heritage site and crown jewel of Nepal. Watch continuous live broadcast from Pashupati Area Development Trust (PADT), Nepal</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/bi1PDhKGUd4</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Pashupatinath Temple Kathmandu Nepal (श्री पशुपतिनाथ मंदिर काठमांडू नेपाल (बागमती महाआरती)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Pashupatinath Temple Kathmandu Nepal in Bagmati River, Kathmandu Valley, Nepal.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/bi1PDhKGUd4</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Pashupatinath Temple Kathmandu Nepal</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=dwarkadhish_mandir</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/temple_dwarkadhish.jpg</image:loc>
-      <image:title>Shree Dwarkadhish Mandir (Jagat Mandir) (श्री द्वारकाधीश मंदिर (जगत मंदिर द्वारका गुजरात))</image:title>
-      <image:caption>Sacred Char Dham Moksha Kshetra where Lord Krishna ruled his ancient Golden Kingdom of Dwarka</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
-      <video:thumbnail_loc>https://www.sanatana360.com/images/temple_dwarkadhish.jpg</video:thumbnail_loc>
-      <video:title>Shree Dwarkadhish Mandir (Jagat Mandir) 24/7 Live Darshan &amp; Aarti Today - Dwarka, Devbhumi Dwarka, Gujarat, India</video:title>
-      <video:description>Sacred Char Dham Moksha Kshetra where Lord Krishna ruled his ancient Golden Kingdom of Dwarka. Watch continuous live broadcast from Shree Dwarkadhish Mandir Vahivatdar Committee</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/EuMt9vtsQSY</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:thumbnail_loc>/images/temple_dwarkadhish.jpg</video:thumbnail_loc>
+      <video:title>Shree Dwarkadhish Mandir (Jagat Mandir) (श्री द्वारकाधीश मंदिर (जगत मंदिर द्वारका गुजरात)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Dwarkadhish Mandir (Jagat Mandir) in Dwarka, Devbhumi Dwarka, Gujarat, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/EuMt9vtsQSY</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Dwarkadhish Mandir (Jagat Mandir)</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=badrinath_temple</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/temple_badrinath.jpg</image:loc>
-      <image:title>Shree Badrinath Temple (Badri Vishal) (श्री बद्रीनाथ मंदिर (श्री बद्री विशाल धाम गढ़वाल हिमालय))</image:title>
-      <image:caption>Crown Char Dham sanctuary on the banks of Alaknanda River where Lord Vishnu meditated beneath the Badri tree</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
-      <video:thumbnail_loc>https://www.sanatana360.com/images/temple_badrinath.jpg</video:thumbnail_loc>
-      <video:title>Shree Badrinath Temple (Badri Vishal) 24/7 Live Darshan &amp; Aarti Today - Chamoli, Garhwal Himalayas, Uttarakhand, India</video:title>
-      <video:description>Crown Char Dham sanctuary on the banks of Alaknanda River where Lord Vishnu meditated beneath the Badri tree. Watch continuous live broadcast from Shri Badrinath-Kedarnath Temple Committee (BKTC)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/8JgURH8-EUA</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:thumbnail_loc>/images/temple_badrinath.jpg</video:thumbnail_loc>
+      <video:title>Shree Badrinath Temple (Badri Vishal) (श्री बद्रीनाथ मंदिर (श्री बद्री विशाल धाम गढ़वाल हिमालय)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Badrinath Temple (Badri Vishal) in Chamoli, Garhwal Himalayas, Uttarakhand, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/8JgURH8-EUA</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Badrinath Temple (Badri Vishal)</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=har_ki_pauri_haridwar</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/temple_haridwar.jpg</image:loc>
-      <image:title>Har Ki Pauri Maha Ganga Aarti (हर की पौड़ी हरिद्वार (दैनिक भव्य गंगा आरती व ब्रह्मकुंड))</image:title>
-      <image:caption>The historic Brahmakund at Haridwar where nectar drops (Amrit) fell during the churning of cosmic ocean</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
-      <video:thumbnail_loc>https://www.sanatana360.com/images/temple_haridwar.jpg</video:thumbnail_loc>
-      <video:title>Har Ki Pauri Maha Ganga Aarti 24/7 Live Darshan &amp; Aarti Today - Haridwar, Uttarakhand, India</video:title>
-      <video:description>The historic Brahmakund at Haridwar where nectar drops (Amrit) fell during the churning of cosmic ocean. Watch continuous live broadcast from Ganga Sabha, Har Ki Pauri, Haridwar</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/v01q0I4qSqE</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:thumbnail_loc>/images/temple_haridwar.jpg</video:thumbnail_loc>
+      <video:title>Har Ki Pauri Maha Ganga Aarti (हर की पौड़ी हरिद्वार (दैनिक भव्य गंगा आरती व ब्रह्मकुंड)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Har Ki Pauri Maha Ganga Aarti in Haridwar, Uttarakhand, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/v01q0I4qSqE</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Har Ki Pauri Maha Ganga Aarti</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=srisailam_mallikarjuna</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/cE0gGQG5XnY/hqdefault.jpg</image:loc>
-      <image:title>Sri Bhramaramba Mallikarjuna Jyotirlinga (श्री भ्रमराम्बा मल्लिकार्जुन स्वामी (श्रीशैलम ज्योतिर्लिंग))</image:title>
-      <image:caption>Sacred confluence of a Maha Jyotirlinga and an ancient Shakti Peeth on the Krishna river in Nallamala forests</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/cE0gGQG5XnY/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Sri Bhramaramba Mallikarjuna Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Srisailam, Nandyal, Andhra Pradesh, India</video:title>
-      <video:description>Sacred confluence of a Maha Jyotirlinga and an ancient Shakti Peeth on the Krishna river in Nallamala forests. Watch continuous live broadcast from Sri Bhramaramba Mallikarjuna Swamy Varla Devasthanam</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/cE0gGQG5XnY</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Sri Bhramaramba Mallikarjuna Jyotirlinga (श्री भ्रमराम्बा मल्लिकार्जुन स्वामी (श्रीशैलम ज्योतिर्लिंग)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Sri Bhramaramba Mallikarjuna Jyotirlinga in Srisailam, Nandyal, Andhra Pradesh, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/cE0gGQG5XnY</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Sri Bhramaramba Mallikarjuna Jyotirlinga</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=rameswaram_ramanatha</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/dMMNKnJzjCc/hqdefault.jpg</image:loc>
-      <image:title>Sri Ramanathaswamy Temple Rameswaram (श्री रामनाथस्वामी ज्योतिर्लिंग रामेश्वरम (२२ पवित्र तीर्थ))</image:title>
-      <image:caption>Southern Char Dham Jyotirlinga consecrated by Shri Rama himself, famed for the longest temple corridor in the world</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/dMMNKnJzjCc/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Sri Ramanathaswamy Temple Rameswaram 24/7 Live Darshan &amp; Aarti Today - Rameswaram Island, Ramanathapuram, Tamil Nadu, India</video:title>
-      <video:description>Southern Char Dham Jyotirlinga consecrated by Shri Rama himself, famed for the longest temple corridor in the world. Watch continuous live broadcast from Arulmigu Ramanathaswamy Temple (HR&amp;CE)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/dMMNKnJzjCc</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Sri Ramanathaswamy Temple Rameswaram (श्री रामनाथस्वामी ज्योतिर्लिंग रामेश्वरम (२२ पवित्र तीर्थ)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Sri Ramanathaswamy Temple Rameswaram in Rameswaram Island, Ramanathapuram, Tamil Nadu, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/dMMNKnJzjCc</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Sri Ramanathaswamy Temple Rameswaram</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=trimbakeshwar_nashik</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/OdcdnGb1MzM/hqdefault.jpg</image:loc>
-      <image:title>Shree Trimbakeshwar Jyotirlinga (श्री त्र्यंबकेश्वर ज्योतिर्लिंग नासिक (गोदावरी उद्गम स्थल))</image:title>
-      <image:caption>Unique Jyotirlinga with three faces representing Brahma, Vishnu, and Rudra, and source of Holy Godavari river</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/OdcdnGb1MzM/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Trimbakeshwar Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Trimbak, Nashik, Maharashtra, India</video:title>
-      <video:description>Unique Jyotirlinga with three faces representing Brahma, Vishnu, and Rudra, and source of Holy Godavari river. Watch continuous live broadcast from Shree Trimbakeshwar Sansthan Trust</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/OdcdnGb1MzM</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Trimbakeshwar Jyotirlinga (श्री त्र्यंबकेश्वर ज्योतिर्लिंग नासिक (गोदावरी उद्गम स्थल)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Trimbakeshwar Jyotirlinga in Trimbak, Nashik, Maharashtra, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/OdcdnGb1MzM</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Trimbakeshwar Jyotirlinga</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=omkareshwar_jyotirlinga</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/gpBomD7BoTE/hqdefault.jpg</image:loc>
-      <image:title>Shree Omkareshwar Jyotirlinga (श्री ओंकारेश्वर ज्योतिर्लिंग (नर्मदा द्वीप • ॐ आकार पर्वत))</image:title>
-      <image:caption>Situated on the Om-shaped island of Mandhata in holy Narmada River, revered for timeless peace and mukti</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/gpBomD7BoTE/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Omkareshwar Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Mandhata Island, Khandwa, Madhya Pradesh, India</video:title>
-      <video:description>Situated on the Om-shaped island of Mandhata in holy Narmada River, revered for timeless peace and mukti. Watch continuous live broadcast from Shri Omkareshwar Mandir Trust</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/gpBomD7BoTE</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Omkareshwar Jyotirlinga (श्री ओंकारेश्वर ज्योतिर्लिंग (नर्मदा द्वीप • ॐ आकार पर्वत)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Omkareshwar Jyotirlinga in Mandhata Island, Khandwa, Madhya Pradesh, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/gpBomD7BoTE</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Omkareshwar Jyotirlinga</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=kolhapur_mahalakshmi</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/Moj6qIUtzR0/hqdefault.jpg</image:loc>
-      <image:title>Shree Karveer Niwasini Ambabai (Mahalakshmi) (श्री करवीर निवासिनी महालक्ष्मी अंबाबाई मंदिर कोल्हापुर)</image:title>
-      <image:caption>Supreme Shaktipeeth of Mahalakshmi Ambabai where Kiranotsav (sun rays bathing the idol) occurs twice yearly</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/Moj6qIUtzR0/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Karveer Niwasini Ambabai (Mahalakshmi) 24/7 Live Darshan &amp; Aarti Today - Kolhapur, Maharashtra, India</video:title>
-      <video:description>Supreme Shaktipeeth of Mahalakshmi Ambabai where Kiranotsav (sun rays bathing the idol) occurs twice yearly. Watch continuous live broadcast from Paschim Maharashtra Devasthan Samiti (PMDS)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Moj6qIUtzR0</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Karveer Niwasini Ambabai (Mahalakshmi) (श्री करवीर निवासिनी महालक्ष्मी अंबाबाई मंदिर कोल्हापुर) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Karveer Niwasini Ambabai (Mahalakshmi) in Kolhapur, Maharashtra, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/Moj6qIUtzR0</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Karveer Niwasini Ambabai (Mahalakshmi)</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=bhimashankar_jyotirlinga</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/Dl7oOCQB8Io/hqdefault.jpg</image:loc>
-      <image:title>Shree Bhimashankar Jyotirlinga (श्री भीमाशंकर ज्योतिर्लिंग (भीमा नदी उद्गम • सह्याद्रि))</image:title>
-      <image:caption>Ancient Nagara shrine situated in the verdant Sahyadri wildlife sanctuary where the Bhima river originates</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/Dl7oOCQB8Io/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Bhimashankar Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Bhorgiri, Pune, Maharashtra, India</video:title>
-      <video:description>Ancient Nagara shrine situated in the verdant Sahyadri wildlife sanctuary where the Bhima river originates. Watch continuous live broadcast from Shree Bhimashankar Sansthan Trust</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Dl7oOCQB8Io</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Bhimashankar Jyotirlinga (श्री भीमाशंकर ज्योतिर्लिंग (भीमा नदी उद्गम • सह्याद्रि)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Bhimashankar Jyotirlinga in Bhorgiri, Pune, Maharashtra, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/Dl7oOCQB8Io</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Bhimashankar Jyotirlinga</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=grishneshwar_jyotirlinga</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/PTCrORkDhdc/hqdefault.jpg</image:loc>
-      <image:title>Shree Grishneshwar Jyotirlinga (12th Jyotirlinga) (श्री घृष्णेश्वर ज्योतिर्लिंग (द्वादश ज्योतिर्लिंग • एलोरा))</image:title>
-      <image:caption>The 12th and final Jyotirlinga of Bharat, rebuilt by Queen Ahilyabai Holkar in red basalt stone beside Ellora Caves</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/PTCrORkDhdc/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Grishneshwar Jyotirlinga (12th Jyotirlinga) 24/7 Live Darshan &amp; Aarti Today - Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra, India</video:title>
-      <video:description>The 12th and final Jyotirlinga of Bharat, rebuilt by Queen Ahilyabai Holkar in red basalt stone beside Ellora Caves. Watch continuous live broadcast from Shree Grishneshwar Temple Trust, Verul</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/PTCrORkDhdc</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Grishneshwar Jyotirlinga (12th Jyotirlinga) (श्री घृष्णेश्वर ज्योतिर्लिंग (द्वादश ज्योतिर्लिंग • एलोरा)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Grishneshwar Jyotirlinga (12th Jyotirlinga) in Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/PTCrORkDhdc</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Grishneshwar Jyotirlinga (12th Jyotirlinga)</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=baidyanath_deoghar</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/QJLJDfJPQsA/hqdefault.jpg</image:loc>
-      <image:title>Shree Baidyanath Jyotirlinga Dham (श्री बैद्यनाथ ज्योतिर्लिंग धाम देवघर (मनोकामना लिंग))</image:title>
-      <image:caption>Wish-fulfilling Jyotirlinga where Ravana sacrificed ten heads to Shiva; world-famous for Shravani Mela Kanwar Yatra</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/QJLJDfJPQsA/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Baidyanath Jyotirlinga Dham 24/7 Live Darshan &amp; Aarti Today - Deoghar, Santhal Pargana, Jharkhand, India</video:title>
-      <video:description>Wish-fulfilling Jyotirlinga where Ravana sacrificed ten heads to Shiva; world-famous for Shravani Mela Kanwar Yatra. Watch continuous live broadcast from Baba Baidyanath Dham Temple Trust, Deoghar</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/QJLJDfJPQsA</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Baidyanath Jyotirlinga Dham (श्री बैद्यनाथ ज्योतिर्लिंग धाम देवघर (मनोकामना लिंग)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Baidyanath Jyotirlinga Dham in Deoghar, Santhal Pargana, Jharkhand, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/QJLJDfJPQsA</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Baidyanath Jyotirlinga Dham</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=nageshwar_jyotirlinga</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/SaoR3RAtKbk/hqdefault.jpg</image:loc>
-      <image:title>Shree Nageshwar Jyotirlinga (श्री नागेश्वर ज्योतिर्लिंग (दारुकावन • गुजरात))</image:title>
-      <image:caption>Ancient Darukavanam shrine featuring an awe-inspiring 85-foot giant meditative statue of Lord Shiva</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/SaoR3RAtKbk/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Nageshwar Jyotirlinga 24/7 Live Darshan &amp; Aarti Today - Darukavanam, Dwarka, Gujarat, India</video:title>
-      <video:description>Ancient Darukavanam shrine featuring an awe-inspiring 85-foot giant meditative statue of Lord Shiva. Watch continuous live broadcast from Shree Nageshwar Jyotirlinga Trust</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/SaoR3RAtKbk</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Nageshwar Jyotirlinga (श्री नागेश्वर ज्योतिर्लिंग (दारुकावन • गुजरात)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Nageshwar Jyotirlinga in Darukavanam, Dwarka, Gujarat, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/SaoR3RAtKbk</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Nageshwar Jyotirlinga</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=banke_bihari_vrindavan</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/GOXlKz5tySg/hqdefault.jpg</image:loc>
-      <image:title>Shree Banke Bihari Mandir Vrindavan (श्री बांके बिहारी मंदिर वृन्दावन (दिव्य झांकी व चरण दर्शन))</image:title>
-      <image:caption>Manifested by Swami Haridas in Nidhivan; revered for curtain-pulling Jhaanki darshan so devotees are not enchanted away</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/GOXlKz5tySg/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Banke Bihari Mandir Vrindavan 24/7 Live Darshan &amp; Aarti Today - Vrindavan, Mathura, Uttar Pradesh, India</video:title>
-      <video:description>Manifested by Swami Haridas in Nidhivan; revered for curtain-pulling Jhaanki darshan so devotees are not enchanted away. Watch continuous live broadcast from Shree Banke Bihari Ji Mandir Trust, Vrindavan</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/GOXlKz5tySg</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Banke Bihari Mandir Vrindavan (श्री बांके बिहारी मंदिर वृन्दावन (दिव्य झांकी व चरण दर्शन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Banke Bihari Mandir Vrindavan in Vrindavan, Mathura, Uttar Pradesh, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/GOXlKz5tySg</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Banke Bihari Mandir Vrindavan</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=radha_rani_barsana</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/mK2k8d2-ctM/hqdefault.jpg</image:loc>
-      <image:title>Shree Radha Rani Mandir (Shriji Mandir Barsana) (श्री राधा रानी मंदिर बरसाना (श्रीजी मंदिर भानुगढ़ पर्वत))</image:title>
-      <image:caption>Birthplace palace of Shri Radha Rani atop Bhanugarh peak, center of world-famous Lathmar Holi</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/mK2k8d2-ctM/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Radha Rani Mandir (Shriji Mandir Barsana) 24/7 Live Darshan &amp; Aarti Today - Bhanugarh Hill, Barsana, Mathura, UP, India</video:title>
-      <video:description>Birthplace palace of Shri Radha Rani atop Bhanugarh peak, center of world-famous Lathmar Holi. Watch continuous live broadcast from Shriji Mandir Management Committee, Barsana</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/mK2k8d2-ctM</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Radha Rani Mandir (Shriji Mandir Barsana) (श्री राधा रानी मंदिर बरसाना (श्रीजी मंदिर भानुगढ़ पर्वत)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Radha Rani Mandir (Shriji Mandir Barsana) in Bhanugarh Hill, Barsana, Mathura, UP, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/mK2k8d2-ctM</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Radha Rani Mandir (Shriji Mandir Barsana)</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=govind_devji_jaipur</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/lvQT0WGp5Lk/hqdefault.jpg</image:loc>
-      <image:title>Shree Govind Dev Ji Temple Jaipur (श्री गोविंद देव जी मंदिर जयपुर (राजसी झांकी व आरती))</image:title>
-      <image:caption>Original idol sculpted by Krishna grandson Bajranabh depicting the exact facial likeness of Lord Krishna</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/lvQT0WGp5Lk/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Shree Govind Dev Ji Temple Jaipur 24/7 Live Darshan &amp; Aarti Today - City Palace Complex, Jaipur, Rajasthan, India</video:title>
-      <video:description>Original idol sculpted by Krishna grandson Bajranabh depicting the exact facial likeness of Lord Krishna. Watch continuous live broadcast from Shree Govind Dev Ji Temple Trust, Jaipur</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/lvQT0WGp5Lk</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Shree Govind Dev Ji Temple Jaipur (श्री गोविंद देव जी मंदिर जयपुर (राजसी झांकी व आरती)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Shree Govind Dev Ji Temple Jaipur in City Palace Complex, Jaipur, Rajasthan, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/lvQT0WGp5Lk</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Shree Govind Dev Ji Temple Jaipur</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=kukke_subramanya</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/hvdWNsZ7nlU/hqdefault.jpg</image:loc>
-      <image:title>Sri Kukke Subramanya Temple (श्री कुक्के सुब्रह्मण्य स्वामी मंदिर (सर्प दोष निवारण तीर्थ))</image:title>
-      <image:caption>Sacred foothills of Kumara Parvatha where Lord Kartikeya gave sanctuary to King Vasuki and all serpents</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/hvdWNsZ7nlU/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Sri Kukke Subramanya Temple 24/7 Live Darshan &amp; Aarti Today - Subramanya, Dakshina Kannada, Karnataka, India</video:title>
-      <video:description>Sacred foothills of Kumara Parvatha where Lord Kartikeya gave sanctuary to King Vasuki and all serpents. Watch continuous live broadcast from Sri Kukke Subramanya Temple (HR&amp;CE Karnataka)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/hvdWNsZ7nlU</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Sri Kukke Subramanya Temple (श्री कुक्के सुब्रह्मण्य स्वामी मंदिर (सर्प दोष निवारण तीर्थ)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Sri Kukke Subramanya Temple in Subramanya, Dakshina Kannada, Karnataka, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/hvdWNsZ7nlU</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Sri Kukke Subramanya Temple</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=dharmasthala_manjunatha</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/yK6PJU8qBU4/hqdefault.jpg</image:loc>
-      <image:title>Sri Kshetra Dharmasthala Manjunatha Swamy (श्री क्षेत्र धर्मस्थल मंजुनाथ स्वामी (धर्म व अन्नदान क्षेत्र))</image:title>
-      <image:caption>Unrivaled 800-year seat of righteous Dharma, Abhayadana (protection), and daily Annadana feeding over 30,000 pilgrims</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/yK6PJU8qBU4/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Sri Kshetra Dharmasthala Manjunatha Swamy 24/7 Live Darshan &amp; Aarti Today - Dharmasthala, Belthangady, Dakshina Kannada, Karnataka, India</video:title>
-      <video:description>Unrivaled 800-year seat of righteous Dharma, Abhayadana (protection), and daily Annadana feeding over 30,000 pilgrims. Watch continuous live broadcast from Sri Kshetra Dharmasthala Rural Development Project (SKDRDP)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/yK6PJU8qBU4</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Sri Kshetra Dharmasthala Manjunatha Swamy (श्री क्षेत्र धर्मस्थल मंजुनाथ स्वामी (धर्म व अन्नदान क्षेत्र)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Sri Kshetra Dharmasthala Manjunatha Swamy in Dharmasthala, Belthangady, Dakshina Kannada, Karnataka, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/yK6PJU8qBU4</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Sri Kshetra Dharmasthala Manjunatha Swamy</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=sringeri_sharada</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/DjvDwf97Wzc/hqdefault.jpg</image:loc>
-      <image:title>Sri Sringeri Sharada Peetham (श्री शृंगेरी शारदा पीठम (आदि शंकराचार्य दक्षिणाम्नाय पीठ))</image:title>
-      <image:caption>First Amnaya Peetham founded by Adi Shankaracharya in the 8th century CE on the tranquil banks of Tunga River</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/DjvDwf97Wzc/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Sri Sringeri Sharada Peetham 24/7 Live Darshan &amp; Aarti Today - Sringeri, Chikkamagaluru, Karnataka, India</video:title>
-      <video:description>First Amnaya Peetham founded by Adi Shankaracharya in the 8th century CE on the tranquil banks of Tunga River. Watch continuous live broadcast from Dakshinamnaya Sri Sharada Peetham, Sringeri</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/DjvDwf97Wzc</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Sri Sringeri Sharada Peetham (श्री शृंगेरी शारदा पीठम (आदि शंकराचार्य दक्षिणाम्नाय पीठ)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Sri Sringeri Sharada Peetham in Sringeri, Chikkamagaluru, Karnataka, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/DjvDwf97Wzc</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Sri Sringeri Sharada Peetham</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=murudeshwar_temple</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/ad1I46Ct648/hqdefault.jpg</image:loc>
-      <image:title>Murudeshwara Coastal Temple &amp; Shiva Statue (श्री मुरुडेश्वर मंदिर व विशाल शिव प्रतिमा (कंदुका गिरि))</image:title>
-      <image:caption>Colossal 123-foot world-famous statue of Lord Shiva on Kanduka Hill surrounded on 3 sides by the Arabian Sea</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/ad1I46Ct648/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Murudeshwara Coastal Temple &amp; Shiva Statue 24/7 Live Darshan &amp; Aarti Today - Murudeshwar, Bhatkal, Uttara Kannada, Karnataka, India</video:title>
-      <video:description>Colossal 123-foot world-famous statue of Lord Shiva on Kanduka Hill surrounded on 3 sides by the Arabian Sea. Watch continuous live broadcast from Murudeshwar Temple Trust (R.N. Shetty Trust)</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ad1I46Ct648</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Murudeshwara Coastal Temple &amp; Shiva Statue (श्री मुरुडेश्वर मंदिर व विशाल शिव प्रतिमा (कंदुका गिरि)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Murudeshwara Coastal Temple &amp; Shiva Statue in Murudeshwar, Bhatkal, Uttara Kannada, Karnataka, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/ad1I46Ct648</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Murudeshwara Coastal Temple &amp; Shiva Statue</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html?temple=guruvayur_temple</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://img.youtube.com/vi/5oHwdfJC2wk/hqdefault.jpg</image:loc>
-      <image:title>Guruvayur Sri Krishna Temple (गुरुवायूर श्री कृष्ण मंदिर केरल (भूलोक वैकुंठ दर्शन))</image:title>
-      <image:caption>Bhuloka Vaikuntha where Lord Krishna worshipped by Brahma himself was consecrated by Guru &amp; Vayu in pure Kerala style</image:caption>
-    </image:image>
+    <changefreq>always</changefreq>
+    <priority>0.85</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/5oHwdfJC2wk/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>Guruvayur Sri Krishna Temple 24/7 Live Darshan &amp; Aarti Today - Guruvayur, Thrissur, Kerala, India</video:title>
-      <video:description>Bhuloka Vaikuntha where Lord Krishna worshipped by Brahma himself was consecrated by Guru &amp; Vayu in pure Kerala style. Watch continuous live broadcast from Guruvayur Devaswom Board, Kerala</video:description>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/5oHwdfJC2wk</video:player_loc>
-      <video:publication_date>2026-10-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
+      <video:title>Guruvayur Sri Krishna Temple (गुरुवायूर श्री कृष्ण मंदिर केरल (भूलोक वैकुंठ दर्शन)) Live Stream &amp; Aarti</video:title>
+      <video:description>Watch 24/7 official live darshana, puja, and aarti from Guruvayur Sri Krishna Temple in Guruvayur, Thrissur, Kerala, India.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/5oHwdfJC2wk</video:player_loc>
       <video:live>yes</video:live>
-      <video:tag>Guruvayur Sri Krishna Temple</video:tag>
-      <video:tag>Live Temple Darshan</video:tag>
     </video:video>
   </url>
-
-  <!-- ========================================== -->
-  <!-- 5. 100+ ANCIENT MYSTERIES & VEDIC SCIENCE BLOG ARTICLES -->
-  <!-- ========================================== -->
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=kailasa-temple-ellora-top-down-monolith-mystery</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ellora_kailasa.jpg</image:loc>
       <image:title>How Was Kailasa Temple Carved From Top to Bottom? The Impossible Monolith of Ellora Cave 16</image:title>
       <image:caption>Over 200,000 tonnes of basalt rock scooped out with precision chisels from top to bottom. Modern civil engineers admit this monolithic marvel cannot be replicated today even with laser-guided excavators.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=brihadeeswarar-temple-thanjavur-shadowless-vimana-mystery</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/chola.jpg</image:loc>
       <image:title>The Mystery of Brihadeeswarar Temple: 80-Tonne Single-Stone Cap &amp; The Zero Noon Shadow Legend</image:title>
       <image:caption>Built by Rajaraja Chola I in 1010 CE entirely out of granite in a region with no granite quarries for 60 miles. How did ancient builders haul an 80-tonne granite dome atop a 216-foot tower without mortar?</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=puri-jagannath-temple-8-scientific-mysteries</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/vishnu.jpg</image:loc>
       <image:title>8 Unexplained Phenomena of Puri Jagannath Temple That Defy Modern Physics</image:title>
       <image:caption>The sacred flag that flies against the wind direction, zero bird flight path above the Neela Chakra, and ocean waves that silence instantly when stepping through the Singhadwara.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=lepakshi-temple-hanging-pillar-anti-gravity-mystery</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/veerabhadra.jpg</image:loc>
       <image:title>The Hanging Pillar of Lepakshi: Vijayanagara&apos;s Anti-Gravity Architectural Miracle</image:title>
       <image:caption>Among the 70 massive stone pillars of Veerabhadra temple, one granite pillar does not touch the ground at all. Devotees pass cloths completely beneath it without friction.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=padmanabhaswamy-temple-vault-b-serpent-lock-mystery</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/vault_b_cover.jpg</image:loc>
       <image:title>The Sealed Vault B of Padmanabhaswamy Temple: The Unopened Snake Door &amp; Trillion-Dollar Treasure</image:title>
       <image:caption>While Vaults A, C, D, E, and F yielded over $22 Billion in pure gold idols and diamonds, Vault B remains sealed behind a steel door engraved with two gigantic cobras without a single lock, bolt, or keyhole.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=konark-sun-temple-floating-idol-magnetic-balance-mystery</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/sundials.jpg</image:loc>
       <image:title>Konark Sun Temple: The Lost Magnetic Chariot &amp; The Sundials That Measure Time to the Second</image:title>
       <image:caption>Ancient legends record that a massive lodestone at the pinnacle of Konark temple held the sun deity idol levitating in mid-air through electromagnetic equilibrium, until Portuguese ships dismantled it.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=somnath-temple-baan-stambha-antarctica-line-mystery</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/shiva_neelkanth.jpg</image:loc>
       <image:title>The Baan Stambha of Somnath: How Ancient Rishis Knew There Was No Land Between Gujarat &amp; Antarctica</image:title>
       <image:caption>Inscribed in 6th century Sanskrit: &apos;From this point to the South Pole, there is not a single piece of land obstacle.&apos; How did ancient Indian astronomers map the Indian Ocean to Antarctica without satellites?</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=vittala-temple-hampi-56-musical-stone-pillars-mystery</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/hampi.jpg</image:loc>
       <image:title>The 56 Musical Pillars of Hampi: Resonating Sa-Re-Ga-Ma Through Solid Granite</image:title>
       <image:caption>British colonizers cut open two pillars in Vittala Temple to find the hidden bells inside, only to discover completely solid granite blocks engineered to vibrate at musical octaves.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=meenakshi-temple-hall-of-thousand-pillars-acoustic-marvel</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/meenakshi.jpg</image:loc>
       <image:title>Acoustic Secrets of the Hall of 1000 Pillars: Madurai Meenakshi Temple&apos;s Sonic Engineering</image:title>
       <image:caption>Stand at any pillar in the 985-pillar hall and your voice will echo at a harmonic frequency that cancels out crowd noise while amplifying Vedic chanting.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=kedarnath-temple-buried-under-snow-400-years-ice-age</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/shiva.jpg</image:loc>
       <image:title>How Kedarnath Temple Survived Buried Under Ice for 400 Years: Geological Wonder of Garhwal</image:title>
       <image:caption>Geological research by the Wadia Institute of Himalayan Geology confirms Kedarnath was completely submerged under a glacial ice sheet for four centuries (1300–1700 CE) without structural damage.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=surya-siddhanta-speed-of-light-ancient-astronomy-accuracy</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/surya_siddhanta_astronomy.jpg</image:loc>
       <image:title>Did Surya Siddhanta Calculate the Speed of Light and Earth&apos;s Orbit 1,500 Years Before Newton?</image:title>
       <image:caption>14th-century scholar Sayana commentary on Rigveda 1.50.4 calculates light traveling 2,202 Yojanas in half a Nimesha — translating to 186,413 miles per second, within 0.04% of modern physics.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=delhi-iron-pillar-rustless-metallurgy-1600-years</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/iron_pillar.jpg</image:loc>
       <image:title>The Rustless Iron Pillar of Delhi: 1,600 Years in Rain and Sun Without a Speck of Corrosion</image:title>
       <image:caption>Erected during the Gupta Empire around 400 CE, this 6-tonne wrought iron pillar possesses high phosphorus and low sulfur content, forming a catalytic protective layer called Misawite.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=sushruta-samhita-father-of-plastic-surgery-ancient-instruments</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/dharma.jpg</image:loc>
       <image:title>Sushruta: The Ancient Indian Father of Plastic Surgery, Cataract Extraction &amp; 125 Surgical Tools</image:title>
       <image:caption>600 BCE pioneer Sushruta documented forensic dissection, rhinoplasty (forehead flap reconstruction used today), cesarean sections, bone grafting, and 125 distinct precision surgical instruments.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=vimana-shastra-ancient-flying-machines-mercury-vortex-debate</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/temple_dwarkadhish.jpg</image:loc>
       <image:title>Vimana Shastra &amp; Ancient Aviation: Deconstructing the Mercury Vortex Engine &amp; Shakuna Vimana</image:title>
       <image:caption>Ancient Sanskrit texts like Samarangana Sutradhara describe heavier-than-air flying craft powered by heated mercury vapor turbines capable of vertical takeoff and directional maneuvering.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=baudhayana-theorem-predating-pythagoras-shulba-sutras</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ganga_descent.jpg</image:loc>
       <image:title>The Baudhayana Theorem: How Ancient Indian Altars Proved Pythagoras 300 Years Earlier</image:title>
       <image:caption>Baudhayana Sulba Sutra (800 BCE) states: &apos;The diagonal of a rectangle produces by itself both the areas which the length and breadth produce separately.&apos; Includes the value of √2 to 5 decimal places.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=rishi-kanada-paramanu-ancient-indian-atomic-theory</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ramayana_science.jpg</image:loc>
       <image:title>Rishi Kanada &amp; Vaisheshika: The 6th Century BCE Atomic Theory of Paramanu</image:title>
       <image:caption>Long before John Dalton, Rishi Kanada established that all matter is composed of indestructible, indivisible spherical particles called &apos;Paramanu&apos; that combine in pairs (Dwinuka) to form molecules.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=underwater-dwarka-marine-archaeological-discoveries-gulf-khambhat</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/kundalini_chakras.jpg</image:loc>
       <image:title>The Submerged City of Dwarka: Marine Archaeological Proof of Krishna&apos;s Golden Metropolis</image:title>
       <image:caption>Dr. S.R. Rao&apos;s marine excavations off Gujarat coast revealed fortified sea-walls, triangular stone anchors, seal impressions, and pottery dating back to 1500–7500 BCE, matching the epic description of Dwarka sinking beneath the Arabian Sea.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=saraswati-river-satellite-tracking-isro-vedic-civilization</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mudra_apana_vayu.jpg</image:loc>
       <image:title>ISRO Satellite Imagery Confirms the Lost Vedic Saraswati River Flowed from Himalayas to Rann of Kutch</image:title>
       <image:caption>Space Applications Centre (ISRO) satellite sensors mapped subterranean palaeochannels beneath the Thar Desert, proving a mighty 8-km wide perennial river flowed from the Himalayas to Gujarat between 6000 and 1900 BCE.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ram-setu-floating-stones-carbon-dating-manmade-bridge</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/fourteen_lokas_cosmos.jpg</image:loc>
       <image:title>Ram Setu (Adam&apos;s Bridge): Carbon Dating, Pumice Floating Stones &amp; The 7,000-Year-Old Causeway</image:title>
       <image:caption>Geological analysis by scientists and NASA satellite surveys reveal that the stone boulders of Ram Setu are 7,000 years old while the sand beneath them is only 4,000 years old — confirming boulders were brought from elsewhere and placed atop the sandbar.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=om-frequency-136-1-hz-earth-year-circadian-resonance</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/shiva_parvati_kalyanam.jpg</image:loc>
       <image:title>136.1 Hz: The Science of OM Frequency and How It Synchronizes Human Brainwaves with the Earth&apos;s Year</image:title>
       <image:caption>Hans Cousto&apos;s &apos;Cosmic Octave&apos; calculated the frequency of the Earth orbiting the Sun as an astronomical tone: when transposed 32 octaves higher into human hearing range, it vibrates at exactly 136.10 Hz (C# in 432 Hz tuning), identical to traditional Vedic OM.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=apana-vayu-mudra-mrit-sanjeevani-emergency-heart-relief</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/temple_badrinath.jpg</image:loc>
       <image:title>Apana Vayu Mudra: The &apos;Mrit-Sanjeevani&apos; Hand Gesture That Calms Panic Attacks &amp; Regulates Blood Flow in 5 Mins</image:title>
       <image:caption>Known in classical Ayurveda as the first-aid gesture for acute panic, palpitations, and thoracic tension. Joining thumb, middle, and ring fingers while extending index finger rebalances Vata and Pitta bio-elements instantly.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=time-dilation-in-hindu-scriptures-king-kakudmi-einstein</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/temple_haridwar.jpg</image:loc>
       <image:title>Time Dilation in Hindu Puranas: The Story of King Kakudmi &amp; Einstein&apos;s Relativity Theory</image:title>
       <image:caption>Srimad Bhagavatam records King Kakudmi visiting Brahma Loka for 20 minutes of music. When he returned to Earth, 27 Chaturyugas (over 116 million years) had passed, and his kingdom was forgotten. How did ancient writers conceive of relativistic time dilation?</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=79-degree-longitude-shiva-temples-kedarnath-to-rameswaram-alignment</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/abhimanyu_chakravyuha.jpg</image:loc>
       <image:title>The 79° East Meridian Mystery: Why 8 Ancient Shiva Temples from Kedarnath to Rameswaram Form a Straight Line</image:title>
       <image:caption>Kedarnath (Uttarakhand), Kaleshwaram (Telangana), Ekambareswarar (Kanchipuram), Nataraja (Chidambaram), and Ramanathaswamy (Rameswaram) all lie precisely along the 79° 41&apos; E longitude, constructed thousands of years apart.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=tungnath-temple-how-was-the-highest-shiva-shrine-3-680m-built-on-a-vertical-himalayan-ridge</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/adi_shankara.jpg</image:loc>
       <image:title>Tungnath Temple: How Was the Highest Shiva Shrine (3,680m) Built on a Vertical Himalayan Ridge?</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Tungnath Temple in Uttarakhand.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=the-stambheshwar-mahadev-submerging-temple-disappearing-twice-daily-under-the-arabian-sea</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ajanta.jpg</image:loc>
       <image:title>The Stambheshwar Mahadev Submerging Temple: Disappearing Twice Daily Under the Arabian Sea</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding The Stambheshwar Mahadev Submerging Temple in Gujarat.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=modhera-sun-temple-the-equinox-solar-beam-engineering-of-solanki-dynasty</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ashoka.jpg</image:loc>
       <image:title>Modhera Sun Temple: The Equinox Solar Beam Engineering of Solanki Dynasty</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Modhera Sun Temple in Gujarat.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=jwala-ji-eternal-blue-flame-the-natural-gas-mystery-that-defied-emperor-akbar-british-geologists</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/bhangarh_cover.jpg</image:loc>
       <image:title>Jwala Ji Eternal Blue Flame: The Natural Gas Mystery That Defied Emperor Akbar &amp; British Geologists</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Jwala Ji Eternal Blue Flame in Himachal Pradesh.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=kamakhya-temple-bleeding-stone-the-tantric-hydro-geological-phenomenon-of-nilachal-hill</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/bhasmasura_mohini.jpg</image:loc>
       <image:title>Kamakhya Temple Bleeding Stone: The Tantric Hydro-Geological Phenomenon of Nilachal Hill</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Kamakhya Temple Bleeding Stone in Assam.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=chennakesava-temple-belur-the-soapstone-precision-lathe-turned-pillars-of-hoysala-empire</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/birbal.jpg</image:loc>
       <image:title>Chennakesava Temple Belur: The Soapstone Precision Lathe-Turned Pillars of Hoysala Empire</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Chennakesava Temple Belur in Karnataka.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=padmanabhaswamy-secret-underground-tunnels-the-sea-drainage-defense-architecture</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/chola_navy.jpg</image:loc>
       <image:title>Padmanabhaswamy Secret Underground Tunnels: The Sea Drainage Defense Architecture</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Padmanabhaswamy Secret Underground Tunnels in Kerala.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=meenakshi-temple-s-chitra-gopuram-1-511-intricate-terracotta-statues-without-modern-mortar</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/dashavatara.jpg</image:loc>
       <image:title>Meenakshi Temple&apos;s Chitra Gopuram: 1,511 Intricate Terracotta Statues Without Modern Mortar</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Meenakshi Temple&apos;s Chitra Gopuram in Tamil Nadu.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=kashi-vishwanath-jyotirlinga-gyanvapi-well-the-secret-history-of-the-hidden-shiva-lingam</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/divya_darshana_banner.jpg</image:loc>
       <image:title>Kashi Vishwanath Jyotirlinga &amp; Gyanvapi Well: The Secret History of the Hidden Shiva Lingam</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Kashi Vishwanath Jyotirlinga &amp; Gyanvapi Well in Varanasi.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=mahakaleshwar-south-facing-lingam-the-tantric-astro-magnetic-significance-of-ujjain</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ganesha.jpg</image:loc>
       <image:title>Mahakaleshwar South-Facing Lingam: The Tantric Astro-Magnetic Significance of Ujjain</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Mahakaleshwar South-Facing Lingam in Madhya Pradesh.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=trimbakeshwar-three-faced-lingam-the-triple-murti-cavity-erosion-that-baffles-geologists</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ganesha_mouse.jpg</image:loc>
       <image:title>Trimbakeshwar Three-Faced Lingam: The Triple Murti Cavity Erosion That Baffles Geologists</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Trimbakeshwar Three-Faced Lingam in Maharashtra.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=baidyanath-dham-chandrakanta-stone-the-healing-radiations-of-santhal-pargana</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/garuda_amrita.jpg</image:loc>
       <image:title>Baidyanath Dham Chandrakanta Stone: The Healing Radiations of Santhal Pargana</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Baidyanath Dham Chandrakanta Stone in Jharkhand.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=grishneshwar-red-basalt-architecture-the-12th-jyotirlinga-rebuilt-by-queen-ahilyabai-holkar</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/hanuman_cover.jpg</image:loc>
       <image:title>Grishneshwar Red Basalt Architecture: The 12th Jyotirlinga Rebuilt by Queen Ahilyabai Holkar</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Grishneshwar Red Basalt Architecture in Ellora.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=kukke-subramanya-serpent-energy-grid-the-subterranean-volcanic-caves-of-kumara-parvatha</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/hanuman_leap.jpg</image:loc>
       <image:title>Kukke Subramanya Serpent Energy Grid: The Subterranean Volcanic Caves of Kumara Parvatha</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Kukke Subramanya Serpent Energy Grid in Karnataka.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=dharmasthala-800-year-annadana-engine-the-zero-waste-kitchen-that-feeds-50-000-people-daily</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/hiranyakashipu_narasimha.jpg</image:loc>
       <image:title>Dharmasthala 800-Year Annadana Engine: The Zero-Waste Kitchen That Feeds 50,000 People Daily</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Dharmasthala 800-Year Annadana Engine in Karnataka.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=aryabhata-s-heliocentric-model-499-ce-calculating-earth-s-rotation-1-000-years-before-copernicus</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/jataka_cover.jpg</image:loc>
       <image:title>Aryabhata&apos;s Heliocentric Model (499 CE): Calculating Earth&apos;s Rotation 1,000 Years Before Copernicus</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Aryabhata&apos;s Heliocentric Model (499 CE) in Patliputra.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=the-zero-shunya-decimal-system-how-brahmagupta-defined-mathematical-infinity-negative-numbers</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/kalabhairava.jpg</image:loc>
       <image:title>The Zero (Shunya) &amp; Decimal System: How Brahmagupta Defined Mathematical Infinity &amp; Negative Numbers</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding The Zero (Shunya) &amp; Decimal System in Ujjain.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=pingala-s-chhandashastra-200-bce-the-invention-of-binary-numbers-and-pascal-s-triangle-meru-prastara</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/kaliya_daman.jpg</image:loc>
       <image:title>Pingala&apos;s Chhandashastra (200 BCE): The Invention of Binary Numbers and Pascal&apos;s Triangle (Meru Prastara)</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Pingala&apos;s Chhandashastra (200 BCE) in Ancient India.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=panini-s-ashtadhyayi-500-bce-the-world-s-first-context-free-formal-language-algorithmic-grammar</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/kartikeya_murugan.jpg</image:loc>
       <image:title>Panini&apos;s Ashtadhyayi (500 BCE): The World&apos;s First Context-Free Formal Language &amp; Algorithmic Grammar</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Panini&apos;s Ashtadhyayi (500 BCE) in Gandhara.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=madhava-of-sangamagrama-the-14th-century-kerala-school-calculus-pre-dating-leibniz-newton</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/krishna_cover.jpg</image:loc>
       <image:title>Madhava of Sangamagrama: The 14th Century Kerala School Calculus Pre-Dating Leibniz &amp; Newton</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Madhava of Sangamagrama in Kerala.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=varahamihira-s-panchasiddhantika-earthquake-prediction-bhumikampa-vigyan-by-cloud-animal-observation</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/krishna_govardhan.jpg</image:loc>
       <image:title>Varahamihira&apos;s Panchasiddhantika: Earthquake Prediction (Bhumikampa Vigyan) by Cloud &amp; Animal Observation</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Varahamihira&apos;s Panchasiddhantika in Ujjain.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=wootz-steel-ukku-the-ancient-south-indian-crucible-steel-that-forged-the-unbreakable-damascus-swords</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/lakshmibai.jpg</image:loc>
       <image:title>Wootz Steel (Ukku): The Ancient South Indian Crucible Steel That Forged the Unbreakable Damascus Swords</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Wootz Steel (Ukku) in Tamil Nadu.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-zinc-smelting-at-zawar-rajasthan-the-world-s-first-distillation-industry-at-1-000-c</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mahakali_mahavidya.jpg</image:loc>
       <image:title>Ancient Zinc Smelting at Zawar (Rajasthan): The World&apos;s First Distillation Industry at 1,000°C</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Ancient Zinc Smelting at Zawar (Rajasthan) in Rajasthan.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=patanjali-s-yoga-sutras-modern-neuroplasticity-how-8-limbs-rewire-the-human-default-mode-network</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/maharana_pratap.jpg</image:loc>
       <image:title>Patanjali&apos;s Yoga Sutras &amp; Modern Neuroplasticity: How 8 Limbs Rewire the Human Default Mode Network</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Patanjali&apos;s Yoga Sutras &amp; Modern Neuroplasticity in Varanasi.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=charaka-samhita-microbiome-epigenetics-the-3-prakritis-and-gut-brain-axis-described-in-300-bce</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/maharishi_agastya.jpg</image:loc>
       <image:title>Charaka Samhita Microbiome &amp; Epigenetics: The 3 Prakritis and Gut-Brain Axis Described in 300 BCE</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Charaka Samhita Microbiome &amp; Epigenetics in Ayurveda.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=rakhigarhi-dna-findings-the-5-000-year-old-genetic-continuity-of-indigenous-indian-civilization</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mahishasura_battle.jpg</image:loc>
       <image:title>Rakhigarhi DNA Findings: The 5,000-Year-Old Genetic Continuity of Indigenous Indian Civilization</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Rakhigarhi DNA Findings in Haryana.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=dholavira-water-reservoir-engineering-the-70-000-litre-sophisticated-urban-hydraulic-system</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/maurya_dynasty.jpg</image:loc>
       <image:title>Dholavira Water Reservoir Engineering: The 70,000-Litre Sophisticated Urban Hydraulic System</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Dholavira Water Reservoir Engineering in Kutch.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=lothal-tidal-dockyard-2400-bce-the-world-s-earliest-engineered-maritime-harbor-for-international-trade</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mudra_gyan_chin.jpg</image:loc>
       <image:title>Lothal Tidal Dockyard (2400 BCE): The World&apos;s Earliest Engineered Maritime Harbor for International Trade</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Lothal Tidal Dockyard (2400 BCE) in Gujarat.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=mehrgarh-dental-surgery-metallurgy-7000-bce-neolithic-evidence-of-drill-dentistry</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mudra_hakini_brain_sync.jpg</image:loc>
       <image:title>Mehrgarh Dental Surgery &amp; Metallurgy (7000 BCE): Neolithic Evidence of Drill Dentistry</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Mehrgarh Dental Surgery &amp; Metallurgy (7000 BCE) in Balochistan.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=keezhadi-archaeological-excavations-evidence-of-advanced-iron-age-urban-civilization-on-vaigai-river</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mudra_prana_vitality.jpg</image:loc>
       <image:title>Keezhadi Archaeological Excavations: Evidence of Advanced Iron Age Urban Civilization on Vaigai River</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Keezhadi Archaeological Excavations in Tamil Nadu.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=bhimbetka-cave-petroglyphs-30-000-year-old-mesolithic-paintings-the-origins-of-indian-art</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mudra_shunya_vayu.jpg</image:loc>
       <image:title>Bhimbetka Cave Petroglyphs: 30,000-Year-Old Mesolithic Paintings &amp; The Origins of Indian Art</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Bhimbetka Cave Petroglyphs in Madhya Pradesh.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=the-barabar-caves-of-ashoka-acoustic-mirror-polished-granite-echo-chambers-of-the-ajivikas</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mudra_stress_relief_mastery.jpg</image:loc>
       <image:title>The Barabar Caves of Ashoka: Acoustic Mirror-Polished Granite Echo Chambers of the Ajivikas</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding The Barabar Caves of Ashoka in Bihar.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=sinauli-royal-chariots-shields-2000-bce-the-archaeological-discovery-of-mahabharata-era-warriors</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/mysterious_ruins.jpg</image:loc>
       <image:title>Sinauli Royal Chariots &amp; Shields (2000 BCE): The Archaeological Discovery of Mahabharata-Era Warriors</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Sinauli Royal Chariots &amp; Shields (2000 BCE) in Uttar Pradesh.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=gayatri-mantra-brainwave-study-aiims-fmri-proof-of-hemispheric-synchronization-during-chanting</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/panchatantra_cover.jpg</image:loc>
       <image:title>Gayatri Mantra Brainwave Study: AIIMS &amp; fMRI Proof of Hemispheric Synchronization During Chanting</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Gayatri Mantra Brainwave Study in Vedic Chanting.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=mahamrityunjaya-mantra-cellular-regeneration-the-sound-frequency-of-immortality-healing</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/parashurama.jpg</image:loc>
       <image:title>Mahamrityunjaya Mantra &amp; Cellular Regeneration: The Sound Frequency of Immortality &amp; Healing</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Mahamrityunjaya Mantra &amp; Cellular Regeneration in Rishikesh.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=gyan-mudra-chin-mudra-how-index-thumb-neuro-acupressure-enhances-dopamine-memory-focus</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/patala_naga_kingdom.jpg</image:loc>
       <image:title>Gyan Mudra (Chin Mudra): How Index-Thumb Neuro-Acupressure Enhances Dopamine &amp; Memory Focus</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Gyan Mudra (Chin Mudra) in Mudra Science.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=shunya-mudra-for-ear-disorders-tinnitus-regulating-the-ether-akasha-element-within-minutes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/prithviraj_chauhan.jpg</image:loc>
       <image:title>Shunya Mudra for Ear Disorders &amp; Tinnitus: Regulating the Ether (Akasha) Element Within Minutes</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Shunya Mudra for Ear Disorders &amp; Tinnitus in Mudra Science.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=prana-mudra-for-chronic-fatigue-igniting-cellular-mitochondria-through-the-3-finger-locks</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/queen_abbakka.jpg</image:loc>
       <image:title>Prana Mudra for Chronic Fatigue: Igniting Cellular Mitochondria Through the 3 Finger Locks</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Prana Mudra for Chronic Fatigue in Mudra Science.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=hakini-mudra-for-brain-hemispheric-synchronization-the-science-behind-the-famous-thinker-gesture</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/rani_chennamma.jpg</image:loc>
       <image:title>Hakini Mudra for Brain Hemispheric Synchronization: The Science Behind the Famous Thinker Gesture</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Hakini Mudra for Brain Hemispheric Synchronization in Mudra Science.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=varun-mudra-for-deep-skin-hydration-balancing-water-metabolism-kidney-function-in-ayurveda</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/ravana_lanka.jpg</image:loc>
       <image:title>Varun Mudra for Deep Skin Hydration: Balancing Water Metabolism &amp; Kidney Function in Ayurveda</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Varun Mudra for Deep Skin Hydration in Mudra Science.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=surya-mudra-for-metabolic-activation-igniting-agni-fat-burning-through-ring-finger-compression</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/samudra_manthan.jpg</image:loc>
       <image:title>Surya Mudra for Metabolic Activation: Igniting Agni &amp; Fat Burning Through Ring Finger Compression</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Surya Mudra for Metabolic Activation in Mudra Science.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=dashavatara-darwinian-evolution-the-10-incarnations-matching-marine-to-advanced-consciousness</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/shabari_rama.jpg</image:loc>
       <image:title>Dashavatara &amp; Darwinian Evolution: The 10 Incarnations Matching Marine to Advanced Consciousness</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Dashavatara &amp; Darwinian Evolution in Puranas.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=brahmashira-narayana-astra-descriptions-of-ancient-nuclear-plasma-blast-weaponry-in-mahabharata</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/shivaji.jpg</image:loc>
       <image:title>Brahmashira &amp; Narayana Astra: Descriptions of Ancient Nuclear &amp; Plasma Blast Weaponry in Mahabharata</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Brahmashira &amp; Narayana Astra in Kurukshetra.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=14-lokas-multi-verse-theory-ancient-indian-cosmology-of-parallel-dimensions-dimensions-of-time</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/shiva_tandava.jpg</image:loc>
       <image:title>14 Lokas &amp; Multi-Verse Theory: Ancient Indian Cosmology of Parallel Dimensions &amp; Dimensions of Time</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding 14 Lokas &amp; Multi-Verse Theory in Cosmology.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=the-108-cosmic-sacred-ratio-the-precise-distance-to-diameter-proportions-of-sun-moon-earth</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/sudama_krishna.jpg</image:loc>
       <image:title>The 108 Cosmic Sacred Ratio: The Precise Distance-to-Diameter Proportions of Sun, Moon &amp; Earth</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding The 108 Cosmic Sacred Ratio in Vedic Math.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=garuda-purana-bardo-states-ancient-vedic-description-of-near-death-experiences-consciousness-transit</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/taj_cover.jpg</image:loc>
       <image:title>Garuda Purana Bardo States: Ancient Vedic Description of Near-Death Experiences &amp; Consciousness Transit</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Garuda Purana Bardo States in Puranas.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=sanjeevani-booti-bioluminescence-the-himalayan-medicinal-herb-of-dronagiri-hill</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/tenali.jpg</image:loc>
       <image:title>Sanjeevani Booti Bioluminescence: The Himalayan Medicinal Herb of Dronagiri Hill</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Sanjeevani Booti Bioluminescence in Uttarakhand.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=shiva-tandava-stotram-s-rhythmic-power-16-syllable-metre-that-triggers-dopamine-endorphin-surge</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/venkateswara_tirumala.jpg</image:loc>
       <image:title>Shiva Tandava Stotram&apos;s Rhythmic Power: 16-Syllable Metre That Triggers Dopamine &amp; Endorphin Surge</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Shiva Tandava Stotram&apos;s Rhythmic Power in Vedic Metres.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ujjain-prime-meridian-0-longitude-why-ancient-bharat-placed-the-navel-of-the-world-at-mahakal</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/vikram_betal.jpg</image:loc>
       <image:title>Ujjain Prime Meridian (0° Longitude): Why Ancient Bharat Placed the Navel of the World at Mahakal</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Ujjain Prime Meridian (0° Longitude) in Ujjain.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=kashi-magnetic-shield-why-varanasi-has-stood-continuously-inhabited-for-5-000-years</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/vishwaroopam_darshan.jpg</image:loc>
       <image:title>Kashi Magnetic Shield: Why Varanasi Has Stood Continuously Inhabited for 5,000 Years</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Kashi Magnetic Shield in Varanasi.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=somnath-to-antarctica-the-maritime-navigation-secrets-of-the-ancient-chola-and-kalinga-navies</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://www.sanatana360.com/images/warrior_cover.jpg</image:loc>
       <image:title>Somnath to Antarctica: The Maritime Navigation Secrets of the Ancient Chola and Kalinga Navies</image:title>
       <image:caption>Unravel the scientifically verified mysteries, archaeological discoveries, and ancient textual references surrounding Somnath to Antarctica in Indian Ocean.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-75</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 75: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#75)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-76</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 76: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#76)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-77</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 77: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#77)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-78</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 78: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#78)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-79</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 79: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#79)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-80</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 80: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#80)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-81</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/V2FnGzYYux8/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 81: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#81)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-82</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/WD5kyQ4laVs/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 82: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#82)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-83</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/B3r-kt5dK_M/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 83: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#83)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-84</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/aHp8nnOwcpc/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 84: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#84)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-85</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/q58Wan19vns/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 85: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#85)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-86</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/fURwn8kbRBc/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 86: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#86)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-87</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 87: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#87)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-88</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/Aicrlohuuug/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 88: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#88)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-89</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/9SBpnTrrXlw/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 89: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#89)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-90</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/bi1PDhKGUd4/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 90: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#90)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-91</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/cE0gGQG5XnY/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 91: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#91)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-92</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/dMMNKnJzjCc/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 92: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#92)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-93</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/OdcdnGb1MzM/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 93: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#93)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-94</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/gpBomD7BoTE/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 94: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#94)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-95</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/Moj6qIUtzR0/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 95: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#95)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-96</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/Dl7oOCQB8Io/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 96: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#96)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-97</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/PTCrORkDhdc/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 97: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#97)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-98</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/QJLJDfJPQsA/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 98: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#98)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-99</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/SaoR3RAtKbk/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 99: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#99)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-100</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/GOXlKz5tySg/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 100: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#100)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-101</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/mK2k8d2-ctM/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 101: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#101)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-102</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/lvQT0WGp5Lk/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 102: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#102)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-103</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/hvdWNsZ7nlU/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 103: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#103)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-104</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/yK6PJU8qBU4/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 104: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#104)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
   </url>
-
   <url>
     <loc>https://www.sanatana360.com/blog.html?post=ancient-indian-enigmas-research-volume-105</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.80</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/DjvDwf97Wzc/hqdefault.jpg</image:loc>
       <image:title>Ancient Indian Enigmas Vol 105: Deep Research Into Sacred Sanatana Architecture &amp; Vedic Physics (#105)</image:title>
       <image:caption>Comprehensive research analysis and mathematical breakdowns of ancient Indian temple acoustics, subterranean vaults, and astronomical geometry.</image:caption>
     </image:image>
-  </url>
-
-  <!-- ========================================== -->
-  <!-- 6. VEDIC MATHEMATICS & MEMORY SHASTRA LAB -->
-  <!-- ========================================== -->
-  <url>
-    <loc>https://www.sanatana360.com/vedic-math.html</loc>
-    <lastmod>2026-10-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/ganesha.jpg</image:loc>
-      <image:title>6 Vedic Math Speed Simulators and 3 Ancient Memory Tools</image:title>
-    </image:image>
-  </url>
-
-  <!-- ========================================== -->
-  <!-- 7. SACRED MUDRA VIGYAN STUDIO & STRESS RELIEF -->
-  <!-- ========================================== -->
-  <url>
-    <loc>https://www.sanatana360.com/mudra-therapy.html</loc>
-    <lastmod>2026-10-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/mudra_stress_relief_mastery.jpg</image:loc>
-      <image:title>Mudra Therapy for Stress and Anxiety Relief</image:title>
-    </image:image>
-  </url>
-
-  <!-- ========================================== -->
-  <!-- 8. GRAND GRANTHALAYA (26 SACRED E-BOOKS) -->
-  <!-- ========================================== -->
-  <url>
-    <loc>https://www.sanatana360.com/granthalaya.html</loc>
-    <lastmod>2026-10-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://www.sanatana360.com/images/hampi.jpg</image:loc>
-      <image:title>26 Sacred Illustrated Granth E-Books</image:title>
-    </image:image>
-  </url>
-
-  <!-- ========================================== -->
-  <!-- 9. 5-LANGUAGE BEDTIME AUDIOBOOKS & KARAOKE -->
-  <!-- ========================================== -->
-  <url>
-    <loc>https://www.sanatana360.com/panchatantra-audio.html</loc>
-    <lastmod>2026-10-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
   </url>
 </urlset>
