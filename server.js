@@ -87,7 +87,21 @@ app.get('/admin.html', (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
+// High-Performance Static Asset Caching Middleware
+app.use(express.static(path.join(__dirname, 'public'), {
+  maxAge: '7d',
+  etag: true,
+  lastModified: true,
+  setHeaders: (res, pathUrl) => {
+    if (pathUrl.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    } else if (pathUrl.match(/\.(jpg|jpeg|png|webp|svg|gif|ico|woff2|woff|ttf)$/)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    } else if (pathUrl.match(/\.(css|js)$/)) {
+      res.setHeader('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800');
+    }
+  }
+}));
 
 // IndexNow Protocol Key Verification File Route for Bing & Search Engines
 app.get('/sanatana360indexnow2026.txt', (req, res) => {

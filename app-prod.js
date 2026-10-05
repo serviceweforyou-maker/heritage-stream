@@ -3518,7 +3518,7 @@ class AppController {
         <div class="ayur-card flex-shrink-0 w-80 rounded-2xl overflow-hidden bg-[#0d1017] border border-white/10 cursor-pointer relative group transition-all duration-500 hover:border-gold/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-gold/10 flex flex-col justify-between" data-temp-id="${temp.id}">
           <!-- Thumbnail cover -->
           <div class="h-44 w-full relative flex flex-col justify-between p-4 overflow-hidden">
-            <img src="${temp.image}" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="${temp.title}">
+            <img src="${temp.image}" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="${temp.title}">
             <div class="absolute inset-0 bg-gradient-to-t from-[#0d1017] via-[#0d1017]/40 to-transparent z-10 pointer-events-none"></div>
             
             <div class="flex justify-between items-start w-full relative z-20">
@@ -7275,7 +7275,7 @@ class AppController {
 
         return '<div class="granth-card flex-shrink-0 w-72 sm:w-80 rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-gold/15 flex flex-col justify-between" data-granth-id="' + g.id + '">' +
           '<div class="h-48 w-full relative flex flex-col justify-between p-4 overflow-hidden">' +
-            '<img src="' + g.coverImg + '" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="' + g.title + '">' +
+            '<img src="' + g.coverImg + '" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="' + g.title + '">' +
             '<div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/30 to-transparent z-15 pointer-events-none"></div>' +
             '<div class="flex justify-between items-start w-full relative z-20 gap-1">' +
               tierBadge +
@@ -7640,7 +7640,7 @@ class AppController {
 
             <!-- Thumbnail Image -->
             <div class="h-40 sm:h-44 w-full relative overflow-hidden bg-black/60">
-              <img src="${item.imageUrl || '/images/hampi.jpg'}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="${item.title}">
+              <img src="${item.imageUrl || '/images/hampi.jpg'}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="${item.title}">
               <div class="absolute inset-0 bg-gradient-to-t from-[#0e1017] via-transparent to-black/30 z-10 pointer-events-none"></div>
               
               <!-- Hover Micro-Action Tray -->

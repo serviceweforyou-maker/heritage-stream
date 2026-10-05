@@ -885,3 +885,32 @@ header#main-header {
   background: linear-gradient(90deg, #dc2626 0%, #ea580c 50%, #d4af37 100%);
   box-shadow: 0 0 18px rgba(220, 38, 38, 0.45);
 }
+
+
+/* =============================================
+   ⚡ BROWSER RENDERING SPEED OPTIMIZATIONS
+   ============================================= */
+
+/* Content Visibility for Below-the-Fold Rows (Skips Layout Calculation until Scrolled) */
+.netflix-row,
+#granthalaya-library,
+#mystery-vault,
+#play-zone,
+#spiritual-dashboard,
+#testimonials-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 360px;
+}
+
+/* Optimize Image Rendering & Prevent Reflows */
+img {
+  content-visibility: auto;
+}
+
+/* Hardware Accelerated Transforms */
+.content-card,
+.ayur-card,
+.top10-card-wrapper {
+  will-change: transform;
+  transform: translateZ(0);
+}
