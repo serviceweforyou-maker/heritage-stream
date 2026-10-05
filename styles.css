@@ -914,3 +914,73 @@ img {
   will-change: transform;
   transform: translateZ(0);
 }
+
+
+
+/* =============================================
+   🔒 100% SOLID OPAQUE PROFILE, ACCOUNT & MODAL SYSTEM (NO TRANSPARENCY BLEED)
+   ============================================= */
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.96) !important;
+  background-color: rgba(0, 0, 0, 0.96) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+}
+
+#user-account-modal > div,
+#profile-modal > div,
+#legal-modal > div,
+#payment-modal > div,
+#ask-rishi-modal > div,
+#daily-gurukula-modal > div,
+#mudra-studio-modal > div {
+  background: #090b12 !important;
+  background-color: #090b12 !important;
+  opacity: 1 !important;
+  border: 1.5px solid #d4af37 !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.99), 0 0 40px rgba(212, 175, 55, 0.25) !important;
+}
+
+#user-account-modal input,
+#user-account-modal select,
+#user-account-modal textarea {
+  background: #141826 !important;
+  background-color: #141826 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+#user-account-modal input:focus,
+#user-account-modal select:focus {
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4) !important;
+}
+
+#header-profile-dropdown > div {
+  background: #090b12 !important;
+  background-color: #090b12 !important;
+  opacity: 1 !important;
+  border: 1.5px solid #d4af37 !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.99), 0 0 30px rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Master Header Container Alignment & Contrast */
+header#main-header {
+  background: #07090f !important;
+  background-color: #07090f !important;
+  opacity: 1 !important;
+  border-bottom: 1.5px solid rgba(212, 175, 55, 0.25) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.95) !important;
+}
+
+.sub-nav-tier-2 {
+  background: #0a0d17 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.sub-nav-tier-3 {
+  background: #06080e !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
