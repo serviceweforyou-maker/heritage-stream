@@ -576,7 +576,7 @@ class AppController {
     slides.push({
       id: 'divya_darshana_live_spotlight',
       title: 'Divya Darshana 360™',
-      tagline: 'Experience the Divine — 20+ Official 24/7 Live Temple Streams',
+      tagline: 'Experience the Divine — 40+ Official 24/7 Live Temple Streams',
       description: 'Watch real-time live darshana and aartis from Shirdi Sai Baba, Tirupati Balaji SVBC, Kashi Vishwanath, Ujjain Mahakal, Ayodhya Ram Lalla, Somnath, ISKCON, Vaishno Devi & 20+ global shrines with WorldWatcher Multi-Cam Wall.',
       category: 'Live Temple Streaming',
       rating: '5.0 ★',
@@ -632,7 +632,7 @@ class AppController {
                   </span>
                   ${isLive ? `
                     <span class="text-[10px] sm:text-[11px] font-mono text-emerald-400 font-bold bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30 backdrop-blur-md">
-                      20 Temples Active
+                      40 Temples Active
                     </span>
                   ` : `
                     <span class="text-[10px] sm:text-[11px] font-mono text-emerald-400 font-bold bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30 backdrop-blur-md hidden sm:inline-block">
@@ -661,7 +661,7 @@ class AppController {
                   ${isLive ? `
                     <a href="/divya-darshana.html" class="px-6 sm:px-8 py-3 bg-gradient-to-r from-red-600 via-amber-500 to-gold hover:from-red-500 hover:to-gold text-black font-extrabold rounded-full text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-red-600/30 flex items-center gap-2 hover:scale-105 cursor-pointer">
                       <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-                      <span>▶ Enter Live Darshana (20 Temples)</span>
+                      <span>▶ Enter Live Darshana (40 Temples)</span>
                     </a>
                     <a href="/divya-darshana.html" class="px-5 sm:px-6 py-3 bg-purple-500/20 hover:bg-purple-500 text-purple-200 hover:text-white border border-purple-500/40 font-bold rounded-full text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 backdrop-blur-md hover:scale-105 cursor-pointer">
                       <span>🎛️ WorldWatcher Multi-Cam</span>
