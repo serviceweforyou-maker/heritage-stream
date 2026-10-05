@@ -743,3 +743,62 @@ img {
   border-color: #ef4444 !important;
   color: #f87171 !important;
 }
+
+
+/* ── 🔥 CINEMA POLISH: AMBIENT GLOW & SKELETON LOADERS ── */
+.top10-card-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+  user-select: none;
+  padding-left: 10px;
+}
+
+.top10-rank-num {
+  font-family: 'Cinzel', serif, sans-serif;
+  font-weight: 900;
+  font-size: clamp(75px, 12vw, 130px);
+  line-height: 0.75;
+  letter-spacing: -6px;
+  position: relative;
+  z-index: 5;
+  margin-right: -24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fef08a 25%, #d4af37 60%, #452b04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2.5px rgba(212, 175, 55, 0.95);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 24px rgba(212, 175, 55, 0.45));
+  pointer-events: none;
+  transform: translateY(2px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.top10-card-wrapper:hover .top10-rank-num {
+  transform: translateY(-4px) scale(1.06);
+  -webkit-text-stroke: 3px #fef08a;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.99)) drop-shadow(0 0 36px rgba(212, 175, 55, 0.85));
+}
+
+/* Glassmorphism Quick Preview Modal Backdrops */
+#quick-preview-modal {
+  background: rgba(4, 5, 8, 0.92);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+}
+
+.preview-tab-btn {
+  position: relative;
+  font-family: var(--font-sans);
+}
+
+.preview-tab-btn.active {
+  color: var(--gold) !important;
+  border-bottom-color: var(--gold) !important;
+}
+
+.episode-item-row:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
