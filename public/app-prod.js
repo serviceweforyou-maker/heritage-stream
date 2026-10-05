@@ -1156,48 +1156,51 @@ class AppController {
             <div class="flex items-center justify-between border-b border-gold/20 pb-3">
               <div>
                 <span class="text-[9px] uppercase tracking-widest text-gold font-mono font-bold block">Current Active Plan</span>
-                <h4 class="text-base font-bold text-white font-serif">HeritageStream Annual Pass</h4>
+                <h4 class="text-base font-bold text-white font-serif">Sanatana360 Annual Pass</h4>
               </div>
-              <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">✓ ACTIVE</span>
+              <span class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>ACTIVE</span>
+              </span>
             </div>
 
             <!-- Live Days Countdown Badge -->
-            <div class="bg-gradient-to-r from-amber-500/15 via-gold/15 to-emerald-500/15 border border-gold/40 rounded-2xl p-4 space-y-3">
+            <div class="bg-gradient-to-r from-amber-500/20 via-gold/15 to-emerald-500/20 border border-gold/40 rounded-2xl p-4 space-y-3 shadow-inner">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-gold/20 border border-gold/40 flex items-center justify-center text-xl flex-shrink-0">
+                  <div class="w-10 h-10 rounded-xl bg-gold/25 border border-gold/50 flex items-center justify-center text-xl flex-shrink-0 shadow-sm">
                     ⏳
                   </div>
                   <div>
-                    <span class="text-[10px] uppercase tracking-widest text-gold font-mono font-bold block">Live Pass Validity</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gold font-mono font-bold block">Pass Validity</span>
                     <span class="text-base font-extrabold text-white font-mono">${daysLeft} Days Left</span>
                   </div>
                 </div>
                 <div class="text-right">
-                  <span class="text-[9px] text-emerald-400 uppercase font-mono font-bold block">Status</span>
-                  <span class="text-xs font-bold text-white/90 font-mono">365 Days Pass</span>
+                  <span class="text-[9px] text-emerald-400 uppercase font-mono font-bold block">Access Level</span>
+                  <span class="text-xs font-bold text-white/90 font-mono">Full VIP Access</span>
                 </div>
               </div>
 
               <!-- Start Date & End Date Grid -->
               <div class="grid grid-cols-2 gap-2 pt-1 border-t border-white/10">
-                <div class="bg-black/30 p-2 rounded-xl border border-white/5">
-                  <span class="text-[9px] text-white/40 uppercase tracking-wider font-mono block">📅 Start Date</span>
+                <div class="bg-[#0c0e17] p-2.5 rounded-xl border border-white/10">
+                  <span class="text-[9px] text-white/50 uppercase tracking-wider font-mono block">📅 Start Date</span>
                   <span class="text-xs font-bold text-white font-mono">${startDateStr}</span>
                 </div>
-                <div class="bg-black/30 p-2 rounded-xl border border-white/5">
-                  <span class="text-[9px] text-gold/60 uppercase tracking-wider font-mono block">🏁 End Date (Expiry)</span>
+                <div class="bg-[#0c0e17] p-2.5 rounded-xl border border-gold/30">
+                  <span class="text-[9px] text-gold/80 uppercase tracking-wider font-mono block">🏁 End Date (Expiry)</span>
                   <span class="text-xs font-bold text-gold font-mono">${endDateStr}</span>
                 </div>
               </div>
 
               <!-- Animated Validity Progress Bar -->
               <div class="space-y-1 pt-1">
-                <div class="flex justify-between text-[9px] font-mono text-white/50">
-                  <span>Day ${daysPassed} of 365 elapsed</span>
-                  <span class="text-emerald-400 font-bold">${progressPercent}% validity remaining</span>
+                <div class="flex justify-between text-[9px] font-mono text-white/60">
+                  <span>Day ${daysPassed} of 365</span>
+                  <span class="text-emerald-400 font-bold">${progressPercent}% remaining</span>
                 </div>
-                <div class="w-full h-2 bg-black/40 rounded-full overflow-hidden border border-white/10 p-0.5">
+                <div class="w-full h-2.5 bg-[#0c0e17] rounded-full overflow-hidden border border-white/10 p-0.5">
                   <div class="h-full bg-gradient-to-r from-gold via-amber-400 to-emerald-400 rounded-full transition-all duration-500" style="width: ${Math.max(3, progressPercent)}%;"></div>
                 </div>
               </div>
@@ -1205,22 +1208,22 @@ class AppController {
             
             <!-- Activation Order Details -->
             <div class="space-y-2 text-xs text-white/80">
-              <div class="flex items-center justify-between bg-black/30 p-2.5 rounded-xl border border-white/5 font-mono">
-                <span class="text-white/50 text-[11px]">Activation Order ID:</span>
+              <div class="flex items-center justify-between bg-[#0c0e17] p-3 rounded-xl border border-white/10 font-mono">
+                <span class="text-white/60 text-[11px]">Order ID:</span>
                 <div class="flex items-center gap-2">
-                  <span class="text-gold font-bold text-[11px] select-all">${orderId || 'sub_heritage_pass'}</span>
-                  <button id="copy-order-id-btn" class="px-2 py-0.5 bg-white/10 hover:bg-gold hover:text-black rounded text-[10px] uppercase tracking-wider font-bold transition-all" title="Copy ID">Copy</button>
+                  <span class="text-gold font-bold text-[11px] select-all truncate max-w-[140px] sm:max-w-none">${orderId || 'sub_heritage_pass'}</span>
+                  <button id="copy-order-id-btn" class="px-2.5 py-1 bg-white/10 hover:bg-gold hover:text-black rounded-lg text-[10px] uppercase tracking-wider font-bold transition-all cursor-pointer" title="Copy ID">Copy</button>
                 </div>
               </div>
 
-              <div class="flex justify-between py-1 border-b border-white/5 text-[11px]">
-                <span class="text-white/50">Billing Fee:</span>
-                <span class="font-bold text-gold font-mono">₹399 / Year (All Sagas Included)</span>
+              <div class="flex justify-between py-1 text-[11px]">
+                <span class="text-white/60">Membership Plan:</span>
+                <span class="font-bold text-gold font-mono">₹399 / Year (All 200+ Sagas Included)</span>
               </div>
             </div>
 
-            <div class="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-[11px] text-emerald-300/90 leading-relaxed">
-              🎉 <strong>All 200+ Sagas Unlocked:</strong> Full access to docu-series, audiobooks, 3D interactive flipbooks, and learning scoreboards.
+            <div class="p-3 bg-emerald-500/10 border border-emerald-500/25 rounded-xl text-[11px] text-emerald-300 leading-relaxed">
+              🎉 <strong>All Sagas & Live Streams Unlocked:</strong> Enjoy 40+ 24/7 Live Darshanas, 26 Granths, 105+ Blogs, and Learning Arenas.
             </div>
           `;
 

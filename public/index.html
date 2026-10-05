@@ -2797,36 +2797,40 @@
 
   <script src="flipbook.js?v=98"></script>
 
-  <!-- ── USER ACCOUNT & MEMBERSHIP MODAL ── -->
-  <div id="user-account-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
-    <div class="bg-[#101116] border border-gold/30 rounded-3xl w-full max-w-lg shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans">
-      <!-- Close Button -->
-      <button id="close-account-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+    <!-- ── USER ACCOUNT & MEMBERSHIP MODAL (SOLID LUXURY DESIGN) ── -->
+  <div id="user-account-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
+    <div class="bg-[#0c0e17] border border-gold/40 rounded-3xl w-full max-w-lg shadow-[0_25px_60px_rgba(0,0,0,0.95)] relative p-5 sm:p-7 max-h-[90vh] overflow-y-auto no-scrollbar font-sans space-y-6">
       
-      <!-- Modal Header -->
-      <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-5">
-        <div id="account-modal-avatar-preview" class="w-12 h-12 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-2xl flex-shrink-0">
-          📜
+      <!-- Top Bar: Avatar, Name & Dedicated Close Button -->
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="flex items-center gap-3 min-w-0">
+          <div id="account-modal-avatar-preview" class="w-13 h-13 rounded-2xl bg-gradient-to-br from-gold/25 via-gold/10 to-transparent border border-gold/40 flex items-center justify-center text-3xl flex-shrink-0 shadow-md">
+            📜
+          </div>
+          <div class="min-w-0">
+            <h3 id="account-modal-display-name" class="text-lg sm:text-xl font-bold font-serif text-white truncate">Scholar</h3>
+            <p id="account-modal-sub-badge" class="text-[10px] font-mono font-bold text-gold flex items-center gap-1.5 mt-0.5">
+              <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+              <span>Free Explorer Access</span>
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 id="account-modal-display-name" class="text-lg font-bold font-serif text-white">Scholar</h3>
-          <p id="account-modal-sub-badge" class="text-[10px] font-mono font-bold text-gold flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-            <span>Free Explorer</span>
-          </p>
-        </div>
+
+        <button id="close-account-modal-btn" class="modal-close w-9 h-9 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 hover:scale-105 border border-white/10 hover:border-gold flex items-center justify-center text-xl font-bold transition-all cursor-pointer flex-shrink-0 shadow-sm" title="Close Account Modal">
+          &times;
+        </button>
       </div>
 
       <!-- Navigation Tabs -->
-      <div class="flex border border-white/10 rounded-2xl p-1 bg-white/5 mb-6 text-xs font-bold">
-        <button id="acc-tab-profile" class="acc-nav-tab flex-1 py-2 rounded-xl bg-gold text-black transition-all">
-          👤 Profile
+      <div class="grid grid-cols-3 gap-1.5 p-1 bg-[#141724] border border-white/10 rounded-2xl text-xs font-bold">
+        <button id="acc-tab-profile" class="acc-nav-tab py-2.5 rounded-xl bg-gold text-black transition-all shadow-md flex items-center justify-center gap-1.5">
+          <span>👤</span> <span class="truncate">Profile</span>
         </button>
-        <button id="acc-tab-plan" class="acc-nav-tab flex-1 py-2 rounded-xl text-white/60 hover:text-white transition-all">
-          💳 My Plan & ID
+        <button id="acc-tab-plan" class="acc-nav-tab py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5">
+          <span>💳</span> <span class="truncate">My Plan</span>
         </button>
-        <button id="acc-tab-restore" class="acc-nav-tab flex-1 py-2 rounded-xl text-white/60 hover:text-white transition-all">
-          🔑 Sign In / Restore
+        <button id="acc-tab-restore" class="acc-nav-tab py-2.5 rounded-xl text-white/70 hover:text-white transition-all flex items-center justify-center gap-1.5">
+          <span>🔑</span> <span class="truncate">Restore</span>
         </button>
       </div>
 
@@ -2834,35 +2838,35 @@
       <div id="acc-panel-profile" class="space-y-5">
         <!-- Choose Avatar -->
         <div>
-          <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-2 font-mono">Choose Profile Avatar</label>
+          <label class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-2.5 font-mono">Choose Profile Avatar</label>
           <div class="grid grid-cols-4 sm:grid-cols-8 gap-2" id="avatar-picker-grid">
-            <button type="button" class="avatar-opt p-2 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-xl text-center transition-all" data-avatar="📜">📜</button>
-            <button type="button" class="avatar-opt p-2 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-xl text-center transition-all" data-avatar="🧘">🧘</button>
-            <button type="button" class="avatar-opt p-2 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-xl text-center transition-all" data-avatar="⚔️">⚔️</button>
-            <button type="button" class="avatar-opt p-2 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-xl text-center transition-all" data-avatar="🧒">🧒</button>
-            <button type="button" class="avatar-opt p-2 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-xl text-center transition-all" data-avatar="👑">👑</button>
-            <button type="button" class="avatar-opt p-2 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-xl text-center transition-all" data-avatar="🕉️">🕉️</button>
-            <button type="button" class="avatar-opt p-2 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-xl text-center transition-all" data-avatar="🪷">🪷</button>
-            <button type="button" class="avatar-opt p-2 rounded-xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold text-xl text-center transition-all" data-avatar="🏛️">🏛️</button>
+            <button type="button" class="avatar-opt p-2.5 rounded-xl text-2xl text-center cursor-pointer" data-avatar="📜">📜</button>
+            <button type="button" class="avatar-opt p-2.5 rounded-xl text-2xl text-center cursor-pointer" data-avatar="🧘">🧘</button>
+            <button type="button" class="avatar-opt p-2.5 rounded-xl text-2xl text-center cursor-pointer" data-avatar="⚔️">⚔️</button>
+            <button type="button" class="avatar-opt p-2.5 rounded-xl text-2xl text-center cursor-pointer" data-avatar="🧒">🧒</button>
+            <button type="button" class="avatar-opt p-2.5 rounded-xl text-2xl text-center cursor-pointer" data-avatar="👑">👑</button>
+            <button type="button" class="avatar-opt p-2.5 rounded-xl text-2xl text-center cursor-pointer" data-avatar="🕉️">🕉️</button>
+            <button type="button" class="avatar-opt p-2.5 rounded-xl text-2xl text-center cursor-pointer" data-avatar="🪷">🪷</button>
+            <button type="button" class="avatar-opt p-2.5 rounded-xl text-2xl text-center cursor-pointer" data-avatar="🏛️">🏛️</button>
           </div>
         </div>
 
         <!-- Edit Display Name -->
-        <div>
-          <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5 font-mono">Display Name</label>
-          <input type="text" id="acc-name-input" placeholder="e.g. Rahul Sharma" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:border-gold/50 focus:outline-none transition-colors">
+        <div class="space-y-1.5">
+          <label class="text-[10px] font-bold text-white/60 uppercase tracking-widest block font-mono">Display Name</label>
+          <input type="text" id="acc-name-input" placeholder="e.g. Rahul Sharma" class="w-full bg-[#141724] border border-white/15 focus:border-gold rounded-xl px-4 py-3 text-white text-sm focus:outline-none transition-all shadow-inner">
         </div>
 
         <!-- Set Password for Easy Return Login -->
-        <div>
-          <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1.5 font-mono">Account Password (Optional - for logging in on other devices)</label>
-          <input type="password" id="acc-password-input" placeholder="Set a password to protect your account" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:border-gold/50 focus:outline-none transition-colors">
-          <p class="text-[10px] text-white/40 mt-1">Allows you to sign back into your subscription anytime without re-entering payment.</p>
+        <div class="space-y-1.5">
+          <label class="text-[10px] font-bold text-white/60 uppercase tracking-widest block font-mono">Account Password (Optional - Multi-Device Access)</label>
+          <input type="password" id="acc-password-input" placeholder="Set a password to protect your account" class="w-full bg-[#141724] border border-white/15 focus:border-gold rounded-xl px-4 py-3 text-white text-sm focus:outline-none transition-all shadow-inner">
+          <p class="text-[10px] text-white/50 leading-normal">Allows you to sign back into your subscription on any phone or laptop without re-entering payments.</p>
         </div>
 
         <!-- Save Button -->
-        <div class="flex gap-3 pt-2">
-          <button id="save-account-profile-btn" class="flex-1 py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/15">
+        <div class="pt-2">
+          <button id="save-account-profile-btn" class="w-full py-3.5 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/25 hover:scale-[1.01] cursor-pointer">
             Save Profile Changes
           </button>
         </div>
@@ -2870,32 +2874,34 @@
 
       <!-- Tab 2: Plan & Activation Details -->
       <div id="acc-panel-plan" class="space-y-5 hidden">
-        <div id="plan-details-card" class="bg-gradient-to-br from-gold/10 to-amber-600/10 border border-gold/30 rounded-2xl p-5 space-y-4">
+        <div id="plan-details-card" class="bg-[#141724] border border-gold/30 rounded-2xl p-5 space-y-4 shadow-lg">
           <!-- Injected dynamically based on isSubscribed -->
         </div>
       </div>
 
       <!-- Tab 3: Sign In / Restore Pass -->
       <div id="acc-panel-restore" class="space-y-5 hidden">
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-4">
-          <h4 class="text-sm font-bold text-white font-serif">Restore Previous Pass or Login</h4>
-          <p class="text-xs text-white/50 leading-relaxed">If you subscribed previously or set a password, enter your details or Activation Order ID below to restore full access on this device.</p>
+        <div class="bg-[#141724] border border-white/10 rounded-2xl p-5 space-y-4 shadow-lg">
+          <div>
+            <h4 class="text-sm font-bold text-white font-serif">Restore Previous Pass or Login</h4>
+            <p class="text-xs text-white/60 leading-relaxed mt-1">If you subscribed previously or set a password, enter your details or Activation Order ID below to restore full access on this device.</p>
+          </div>
           
-          <div class="space-y-3">
+          <div class="space-y-3 pt-1">
             <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1 font-mono">Your Name / Email</label>
-              <input type="text" id="restore-user-input" placeholder="e.g. Rahul Sharma or rahul@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2 text-white text-xs focus:border-gold/50 focus:outline-none">
+              <label class="text-[10px] font-bold text-white/60 uppercase tracking-widest block mb-1 font-mono">Your Name / Email</label>
+              <input type="text" id="restore-user-input" placeholder="e.g. Rahul Sharma or rahul@example.com" class="w-full bg-[#0c0e17] border border-white/15 focus:border-gold rounded-xl px-3.5 py-2.5 text-white text-xs focus:outline-none">
             </div>
             <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1 font-mono">Password (if set)</label>
-              <input type="password" id="restore-pwd-input" placeholder="Enter your account password" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2 text-white text-xs focus:border-gold/50 focus:outline-none">
+              <label class="text-[10px] font-bold text-white/60 uppercase tracking-widest block mb-1 font-mono">Password (if set)</label>
+              <input type="password" id="restore-pwd-input" placeholder="Enter your account password" class="w-full bg-[#0c0e17] border border-white/15 focus:border-gold rounded-xl px-3.5 py-2.5 text-white text-xs focus:outline-none">
             </div>
-            <div class="text-center text-[10px] text-white/30 font-bold uppercase">— OR USE YOUR ORDER ID —</div>
+            <div class="text-center text-[10px] text-gold/60 font-mono font-bold uppercase tracking-wider">— OR USE YOUR ORDER ID —</div>
             <div>
-              <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest block mb-1 font-mono">Cashfree Activation Order ID</label>
-              <input type="text" id="restore-order-input" placeholder="e.g. order_1788257667390" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2 text-white text-xs focus:border-gold/50 focus:outline-none font-mono">
+              <label class="text-[10px] font-bold text-white/60 uppercase tracking-widest block mb-1 font-mono">Cashfree Activation Order ID</label>
+              <input type="text" id="restore-order-input" placeholder="e.g. order_1788257667390" class="w-full bg-[#0c0e17] border border-white/15 focus:border-gold rounded-xl px-3.5 py-2.5 text-white text-xs focus:outline-none font-mono">
             </div>
-            <button id="submit-restore-btn" class="w-full py-2.5 bg-gold hover:bg-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all">
+            <button id="submit-restore-btn" class="w-full py-3 bg-gold hover:bg-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-gold/20 cursor-pointer">
               Restore Premium Pass
             </button>
           </div>
@@ -2903,15 +2909,14 @@
       </div>
 
       <!-- Modal Footer / Logout -->
-      <div class="border-t border-white/10 pt-4 mt-6 flex items-center justify-between">
-        <button id="account-logout-btn" class="text-xs text-red-400 hover:text-red-300 font-bold flex items-center gap-1.5 transition-colors">
+      <div class="border-t border-white/10 pt-4 flex items-center justify-between">
+        <button id="account-logout-btn" class="text-xs text-red-400 hover:text-red-300 font-bold flex items-center gap-1.5 transition-colors cursor-pointer">
           🚪 Sign Out / Switch to Guest
         </button>
         <span id="account-toast-msg" class="text-xs font-bold text-emerald-400 opacity-0 transition-opacity">Saved!</span>
       </div>
     </div>
   </div>
-
 
   <!-- ── ASK RISHI AI ANCIENT WISDOM MODAL ── -->
   <div id="ask-rishi-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">

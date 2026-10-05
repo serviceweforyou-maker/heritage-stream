@@ -802,3 +802,86 @@ img {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
+
+
+/* =============================================
+   💎 LUXURY PROFILE, ACCOUNT & OTT HEADER SYSTEM
+   ============================================= */
+
+/* Profile & Account Modals - Solid Luxury Dark Slate (Zero Transparency Bleed) */
+#user-account-modal > div,
+#profile-modal > div,
+#legal-modal > div,
+#payment-modal > div,
+#ask-rishi-modal > div,
+#daily-gurukula-modal > div,
+#mudra-studio-modal > div {
+  background: #0c0e17 !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(212, 175, 55, 0.18) !important;
+}
+
+#user-account-modal input,
+#user-account-modal select,
+#catalog-explorer-page input,
+#catalog-explorer-page select {
+  background-color: #141724 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+
+#user-account-modal input:focus,
+#user-account-modal select:focus {
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25) !important;
+}
+
+/* User Profile Dropdown Menu - Deep Solid Glass (No Opacity Bleed) */
+#header-profile-dropdown > div {
+  background: #0e111a !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 25px rgba(212, 175, 55, 0.15) !important;
+}
+
+/* Avatar Option Buttons */
+.avatar-opt {
+  background: #141724 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.avatar-opt:hover {
+  background: rgba(212, 175, 55, 0.2) !important;
+  border-color: #d4af37 !important;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.25);
+}
+
+.avatar-opt.active {
+  background: #d4af37 !important;
+  color: #000000 !important;
+  border-color: #fef08a !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Master Header Glassmorphic Shimmer */
+header#main-header {
+  background: rgba(7, 9, 15, 0.97) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18) !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Gradient Gold Brand Text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 25%, #d4af37 65%, #b45309 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Glowing Live Darshana Pill */
+.live-darshana-pill {
+  background: linear-gradient(90deg, #dc2626 0%, #ea580c 50%, #d4af37 100%);
+  box-shadow: 0 0 18px rgba(220, 38, 38, 0.45);
+}
