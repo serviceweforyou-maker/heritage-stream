@@ -839,7 +839,8 @@ app.post('/api/create-cashfree-order', async (req, res) => {
       customer_phone: cleanPhone
     },
     order_meta: {
-      return_url: returnUrl
+      return_url: returnUrl,
+      notify_url: `${publicBaseUrl}/api/cashfree-webhook`
     }
   };
 
@@ -886,7 +887,7 @@ app.post('/api/create-cashfree-order', async (req, res) => {
   }
 });
 
-// 4b. Verify Cashfree Payment and Activate Subscription
+// 4b. Verify Cashfree Payment with Multi-Attempt Polling & Payments Array Inspection
 app.get('/api/verify-payment', async (req, res) => {
   const { order_id, frontend_origin } = req.query;
   if (!order_id) {
@@ -894,82 +895,113 @@ app.get('/api/verify-payment', async (req, res) => {
   }
 
   const targetFrontend = frontend_origin || `${req.protocol}://${req.get('host')}`;
-
   const { appId: cashfreeAppId, secretKey: cashfreeSecretKey } = getCashfreeCredentials();
   if (!cashfreeAppId || !cashfreeSecretKey) {
     return res.redirect(`${targetFrontend}/index.html?payment=failed&reason=credentials_not_configured`);
   }
-  
-  const cashfreeUrl = `https://api.cashfree.com/pg/orders/${order_id}`;
+
+  const headers = {
+    'x-api-version': '2023-08-01',
+    'x-client-id': cashfreeAppId,
+    'x-client-secret': cashfreeSecretKey,
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  };
 
   try {
-    const response = await fetch(cashfreeUrl, {
-      method: 'GET',
-      headers: {
-        'x-api-version': '2023-08-01',
-        'x-client-id': cashfreeAppId,
-        'x-client-secret': cashfreeSecretKey,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    });
+    let isPaid = false;
+    let orderData = null;
+    let paidAmount = order_id.includes('trial') ? 29 : 399;
 
-    const data = await response.json();
-    if (!response.ok) {
-      throw new Error(data.message || "Failed to verify order details");
+    // Retry loop: UPI payments (Paytm/GPay/PhonePe) take 1-4 seconds to settle with Cashfree
+    for (let attempt = 1; attempt <= 4; attempt++) {
+      console.log(`🔍 Verifying Cashfree order ${order_id} (Attempt ${attempt}/4)...`);
+      
+      // 1. Check order details
+      try {
+        const orderRes = await fetch(`https://api.cashfree.com/pg/orders/${order_id}`, { method: 'GET', headers });
+        if (orderRes.ok) {
+          orderData = await orderRes.json();
+          if (orderData.order_status === 'PAID') {
+            isPaid = true;
+            paidAmount = Number(orderData.order_amount) || paidAmount;
+            break;
+          }
+        }
+      } catch (e) {
+        console.warn(`Order fetch attempt ${attempt} warning:`, e.message);
+      }
+
+      // 2. Check payments attempt array
+      try {
+        const paymentsRes = await fetch(`https://api.cashfree.com/pg/orders/${order_id}/payments`, { method: 'GET', headers });
+        if (paymentsRes.ok) {
+          const payments = await paymentsRes.json();
+          if (Array.isArray(payments) && payments.some(p => p.payment_status === 'SUCCESS')) {
+            isPaid = true;
+            const successPayment = payments.find(p => p.payment_status === 'SUCCESS');
+            paidAmount = Number(successPayment?.payment_amount || orderData?.order_amount) || paidAmount;
+            break;
+          }
+        }
+      } catch (e) {
+        console.warn(`Payments fetch attempt ${attempt} warning:`, e.message);
+      }
+
+      if (attempt < 4) {
+        await new Promise(r => setTimeout(r, 1200));
+      }
     }
 
-    if (data.order_status === "PAID") {
+    if (isPaid && orderData) {
       const db = readDB();
-      const customer = data.customer_details || {};
-      
-      // Update order status in db.orders tracker
-      const loggedOrder = db.orders.find(o => o.orderId === order_id);
+      const customer = orderData.customer_details || {};
+
+      // Update order status in db.orders
+      const loggedOrder = (db.orders || []).find(o => o.orderId === order_id);
       if (loggedOrder) {
         loggedOrder.status = "PAID";
       }
 
-      // Check if order already processed in db to avoid duplicate credits
-      const alreadySubscribed = db.subscribers.some(sub => sub.orderId === order_id);
-      const paidAmount = Number(data.order_amount) || (order_id.includes('trial') ? 29 : 399);
-      
+      const alreadySubscribed = (db.subscribers || []).some(sub => sub.orderId === order_id);
       if (!alreadySubscribed) {
         const newSub = {
           id: `sub_${Date.now()}`,
-          name: customer.customer_name || "Premium Member",
-          email: customer.customer_email || "",
-          phone: customer.customer_phone || "",
+          name: customer.customer_name || loggedOrder?.name || "Premium Member",
+          email: customer.customer_email || loggedOrder?.email || "",
+          phone: customer.customer_phone || loggedOrder?.phone || "",
           orderId: order_id,
           paymentMethod: "Cashfree Live PG",
           amount: paidAmount,
           timestamp: new Date().toISOString()
         };
 
+        if (!db.subscribers) db.subscribers = [];
         db.subscribers.push(newSub);
+        if (!db.stats) db.stats = { totalRevenue: 0, totalSubscribers: 0 };
         db.stats.totalRevenue += paidAmount;
         db.stats.totalSubscribers += 1;
         writeDB(db);
 
-        // Send welcome email asynchronously to avoid blocking the redirect
         if (newSub.email) {
-          console.log(`✉️ Sending welcome email to ${newSub.name} (${newSub.email})...`);
           sendWelcomeEmail(newSub.email, newSub.name, paidAmount).catch(() => {});
         }
       } else {
         writeDB(db);
       }
 
-      // Redirect back to frontend domain with success query param
-      res.redirect(`${targetFrontend}/index.html?payment=success&order_id=${order_id}&amount=${paidAmount}&plan=${paidAmount === 29 ? 'trial' : 'annual'}`);
+      const planName = paidAmount === 29 ? 'trial' : 'annual';
+      return res.redirect(`${targetFrontend}/index.html?payment=success&order_id=${order_id}&amount=${paidAmount}&plan=${planName}`);
     } else {
-      res.redirect(`${targetFrontend}/index.html?payment=failed&order_id=${order_id}&status=${data.order_status}`);
+      const status = orderData?.order_status || 'PENDING';
+      console.warn(`⚠️ Cashfree order ${order_id} not yet confirmed (status: ${status}). Redirecting to pending/verify view.`);
+      return res.redirect(`${targetFrontend}/index.html?payment=pending&order_id=${order_id}&status=${status}`);
     }
   } catch (err) {
     console.error("Cashfree Order Verification Error:", err.message);
-    res.redirect(`${targetFrontend}/index.html?payment=failed&order_id=${order_id}&error=${encodeURIComponent(err.message)}`);
+    return res.redirect(`${targetFrontend}/index.html?payment=pending&order_id=${order_id}&error=${encodeURIComponent(err.message)}`);
   }
 });
-
 
 // 4c. Validate Subscription Integrity (Purges Fake/Unpaid LocalStorage Subscriptions)
 app.get('/api/validate-subscription', async (req, res) => {
