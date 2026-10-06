@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=110.0";
-import heritageData from "./data.js?v=110.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=110.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=111.0";
+import heritageData from "./data.js?v=111.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=111.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -648,10 +648,10 @@ class AppController {
           ❯
         </button>
 
-        <!-- Bottom Carousel Indicators (Numbered / Progress Pills) -->
-        <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-10 z-30 flex items-center gap-1.5 sm:gap-2 bg-black/60 px-3 py-1.5 rounded-full border border-white/15 backdrop-blur-md">
+        <!-- Bottom Carousel Indicators (Luxury Badges) -->
+        <div class="absolute bottom-8 sm:bottom-10 right-4 sm:right-12 z-40 flex items-center gap-1.5 sm:gap-2.5 bg-black/80 backdrop-blur-xl px-3 sm:px-4 py-2 rounded-full border border-gold/30 shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
           ${featuredList.map((item, idx) => `
-            <button class="spotlight-indicator-pill px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold transition-all cursor-pointer ${idx === this.spotlightIndex ? 'bg-gold text-black shadow-md shadow-gold/30' : 'bg-white/10 text-white/60 hover:text-white hover:bg-white/20'}" data-slide-idx="${idx}" title="${item.title}">
+            <button class="spotlight-indicator-pill w-7 h-7 sm:w-8 sm:h-8 rounded-full text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center cursor-pointer ${idx === this.spotlightIndex ? 'bg-gradient-to-r from-gold to-amber-400 text-black shadow-lg shadow-gold/40 scale-110 ring-2 ring-gold/60' : 'bg-white/10 hover:bg-white/20 text-white/70 hover:text-white'}" data-slide-idx="${idx}" title="${item.title}">
               ${idx + 1}
             </button>
           `).join('')}
@@ -678,9 +678,9 @@ class AppController {
       const pills = spotlight.querySelectorAll('.spotlight-indicator-pill');
       pills.forEach((p, i) => {
         if (i === targetIdx) {
-          p.className = "spotlight-indicator-pill px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold transition-all cursor-pointer bg-gold text-black shadow-md shadow-gold/30";
+          p.className = "spotlight-indicator-pill w-7 h-7 sm:w-8 sm:h-8 rounded-full text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center cursor-pointer bg-gradient-to-r from-gold to-amber-400 text-black shadow-lg shadow-gold/40 scale-110 ring-2 ring-gold/60";
         } else {
-          p.className = "spotlight-indicator-pill px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold transition-all cursor-pointer bg-white/10 text-white/60 hover:text-white hover:bg-white/20";
+          p.className = "spotlight-indicator-pill w-7 h-7 sm:w-8 sm:h-8 rounded-full text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center cursor-pointer bg-white/10 hover:bg-white/20 text-white/70 hover:text-white";
         }
       });
     };
