@@ -1061,6 +1061,60 @@ app.get('/api/validate-subscription', async (req, res) => {
   return res.json({ valid: false, reason: "unpaid_or_not_found" });
 });
 
+
+// 4e. Google OAuth Sign-In & Instant User Registration
+app.post('/api/auth/google-login', async (req, res) => {
+  const { name, email, picture, sub } = req.body;
+  if (!email) {
+    return res.status(400).json({ error: "Email is required" });
+  }
+
+  const cleanEmail = email.trim().toLowerCase();
+  const db = readDB();
+  if (!db.users) db.users = [];
+
+  // Check if user has an existing paid subscription or order
+  const isSubscribed = (db.subscribers || []).some(s => (s.email || '').toLowerCase() === cleanEmail);
+  const subscriber = (db.subscribers || []).find(s => (s.email || '').toLowerCase() === cleanEmail);
+  const paidOrder = (db.orders || []).find(o => (o.email || '').toLowerCase() === cleanEmail && o.status === 'PAID');
+
+  let user = db.users.find(u => (u.email || '').toLowerCase() === cleanEmail);
+  if (!user) {
+    user = {
+      id: `usr_g_${Date.now()}`,
+      name: name || 'Google Scholar',
+      email: cleanEmail,
+      avatar: picture || '🕉️',
+      provider: 'google',
+      googleSub: sub || '',
+      plan: isSubscribed || paidOrder ? (paidOrder?.plan || 'annual_399') : 'free',
+      status: 'ACTIVE',
+      registeredAt: new Date().toISOString(),
+      lastLogin: new Date().toISOString()
+    };
+    db.users.push(user);
+  } else {
+    user.lastLogin = new Date().toISOString();
+    if (picture) user.avatar = picture;
+  }
+  writeDB(db);
+
+  const finalSub = isSubscribed || !!paidOrder;
+  const plan = subscriber ? (subscriber.amount === 29 ? '7-Day Pass (₹29)' : 'Annual VIP Pass (₹399/yr)') : (paidOrder ? (paidOrder.amount === 29 ? '7-Day Pass (₹29)' : 'Annual VIP Pass (₹399/yr)') : null);
+
+  res.json({
+    success: true,
+    user: {
+      name: user.name,
+      email: user.email,
+      avatar: user.avatar
+    },
+    isSubscribed: finalSub,
+    plan: plan || '7-Day Pass (₹29)',
+    orderId: subscriber?.orderId || paidOrder?.orderId || ''
+  });
+});
+
 // 5. Delete Content (Admin)
 app.delete('/api/content/:id', verifyAdminSession, (req, res) => {
   const db = readDB();
