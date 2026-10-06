@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=109.0";
-import heritageData from "./data.js?v=109.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=109.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=110.0";
+import heritageData from "./data.js?v=110.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=110.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -526,93 +526,256 @@ class AppController {
   }
 
   // ── 🌟 CINEMATIC HERO SPOTLIGHT BANNER ──
+    // ── 🌟 CINEMATIC HERO SPOTLIGHT MULTI-ITEM CAROUSEL SLIDER ──
   renderSpotlight() {
     const spotlight = document.getElementById('hero-spotlight');
     if (!spotlight || !this.contentData) return;
 
+    // Clear any previously running auto-slide interval
+    if (this._spotlightInterval) {
+      clearInterval(this._spotlightInterval);
+      this._spotlightInterval = null;
+    }
+
     const all = this.contentData.content || [];
     if (!all.length) return;
 
-    // Featured hero item: default to Mudra Sleep/Hampi or top item
-    const featured = all.find(x => x.id === 'course_mudra_sleep_clarity') || all.find(x => x.id === 'hampi') || all[0];
-    const isLocked = featured.isPremium && !this.isSubscribed;
-    const isOnWatchlist = this.watchlist.includes(featured.id);
+    // Curate top 6-8 blockbuster featured items across categories
+    const preferredIds = [
+      'course_mudra_sleep_clarity',
+      'hampi',
+      'dashavatara',
+      'chola',
+      'bhagavad_gita',
+      'meenakshi',
+      'course_pranayama_neuro_somatic',
+      'shivaji'
+    ];
 
+    let featuredList = preferredIds.map(id => all.find(x => x.id === id)).filter(Boolean);
+    if (featuredList.length < 4) {
+      featuredList = all.slice(0, 6);
+    }
+
+    this.spotlightIndex = this.spotlightIndex || 0;
+    if (this.spotlightIndex >= featuredList.length) this.spotlightIndex = 0;
+
+    // Render Container HTML with all slides and navigation controls
     spotlight.innerHTML = `
-      <div class="relative min-h-[500px] md:min-h-[580px] lg:min-h-[640px] flex items-end justify-start p-6 sm:p-10 md:p-16 overflow-hidden bg-[#07090f]">
-        <!-- 16:9 Backdrop Image with Vignette & Gradients -->
-        <img src="${featured.imageUrl || '/images/hampi.jpg'}" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.75] contrast-[1.05] transition-transform duration-1000 scale-100 hover:scale-105" alt="${featured.title}">
-        <div class="absolute inset-0 bg-gradient-to-t from-[#07090f] via-[#07090f]/60 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-[#07090f] via-[#07090f]/70 to-transparent max-w-3xl"></div>
+      <div id="spotlight-carousel-wrapper" class="relative min-h-[520px] md:min-h-[600px] lg:min-h-[660px] flex items-end justify-start overflow-hidden bg-[#07090f] select-none">
+        
+        <!-- Slides Container -->
+        <div id="spotlight-slides-track" class="absolute inset-0 w-full h-full">
+          ${featuredList.map((item, idx) => {
+            const isLocked = item.isPremium && !this.isSubscribed;
+            const isOnWatchlist = this.watchlist.includes(item.id);
+            const isAudio = !!item.audioUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
+            const isActive = idx === this.spotlightIndex;
 
-        <!-- Spotlight Content Information -->
-        <div class="relative z-20 max-w-2xl space-y-4">
-          
-          <!-- Category & Badges -->
-          <div class="flex items-center gap-2 flex-wrap">
-            <span class="text-[10px] font-mono font-extrabold uppercase tracking-widest text-gold bg-gold/20 border border-gold/40 px-3 py-1 rounded-full backdrop-blur-md">
-              ⚜️ ${featured.category || 'Featured Masterpiece'}
-            </span>
-            <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">
-              4K ULTRA HD
-            </span>
-            <span class="text-xs font-mono text-amber-300 bg-black/60 px-2 py-0.5 rounded-full border border-white/10">
-              ${featured.rating || '9.9 ★'}
-            </span>
-            <span class="text-xs font-mono text-white/70 bg-black/60 px-2 py-0.5 rounded-full border border-white/10">
-              ${featured.duration || '50 Mins'}
-            </span>
-          </div>
+            return `
+              <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 pointer-events-none scale-105'}" data-slide-idx="${idx}">
+                <!-- 16:9 Backdrop Image with Vignette & Gradients -->
+                <img src="${item.imageUrl || '/images/hampi.jpg'}" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.72] contrast-[1.08]" alt="${item.title}">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#07090f] via-[#07090f]/60 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#07090f] via-[#07090f]/75 to-transparent max-w-3xl"></div>
+                
+                <!-- Bottom Radial Glow -->
+                <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-gold/10 blur-3xl pointer-events-none"></div>
 
-          <!-- Title -->
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-black font-serif text-white leading-tight drop-shadow-2xl">
-            ${featured.title}
-          </h1>
+                <!-- Slide Content Information -->
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-10 md:p-16 z-20 max-w-3xl space-y-4">
+                  
+                  <!-- Category & Badges -->
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="text-[10px] font-mono font-extrabold uppercase tracking-widest text-gold bg-gold/20 border border-gold/40 px-3 py-1 rounded-full backdrop-blur-md shadow-sm">
+                      ⚜️ ${item.category || 'Featured Masterpiece'}
+                    </span>
+                    <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-2.5 py-0.5 rounded-full backdrop-blur-md">
+                      4K ULTRA HD
+                    </span>
+                    <span class="text-xs font-mono text-amber-300 bg-black/60 px-2 py-0.5 rounded-full border border-white/10 backdrop-blur-md">
+                      ${item.rating || '9.9 ★'}
+                    </span>
+                    <span class="text-xs font-mono text-white/70 bg-black/60 px-2 py-0.5 rounded-full border border-white/10 backdrop-blur-md">
+                      ${item.duration || '50 Mins'}
+                    </span>
+                  </div>
 
-          <!-- Tagline & Description -->
-          <p class="text-xs sm:text-sm text-white/80 leading-relaxed max-w-xl font-sans line-clamp-3">
-            ${featured.description || featured.tagline || 'Explore the timeless depths of Indian wisdom, sacred architecture, and consciousness.'}
-          </p>
+                  <!-- Title -->
+                  <h1 class="text-2xl sm:text-4xl md:text-5xl font-black font-serif text-white leading-tight drop-shadow-2xl line-clamp-2">
+                    ${item.title}
+                  </h1>
 
-          <!-- Spotlight CTA Buttons -->
-          <div class="flex items-center gap-3 pt-2 flex-wrap">
-            <button id="spotlight-play-btn" class="px-6 sm:px-8 py-3.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-gold/30 hover:scale-105 flex items-center gap-2.5 cursor-pointer">
-              <span>${isLocked ? '🔒 Unlock VIP Stream' : '▶ Start Streaming'}</span>
-            </button>
+                  <!-- Tagline & Description -->
+                  <p class="text-xs sm:text-sm text-white/80 leading-relaxed max-w-2xl font-sans line-clamp-2 sm:line-clamp-3">
+                    ${item.description || item.tagline || 'Experience the authentic depth of ancient Indian heritage, consciousness, and timeless wisdom.'}
+                  </p>
 
-            <button id="spotlight-preview-btn" class="px-5 sm:px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all hover:scale-105 flex items-center gap-2 cursor-pointer backdrop-blur-md">
-              <span>ℹ️ Synopsis &amp; Chapters</span>
-            </button>
+                  <!-- Spotlight CTA Action Buttons -->
+                  <div class="flex items-center gap-3 pt-2 flex-wrap">
+                    <button class="spotlight-slide-play-btn px-6 sm:px-8 py-3.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-gold/30 hover:scale-105 flex items-center gap-2.5 cursor-pointer" data-id="${item.id}">
+                      <span>${isLocked ? '🔒 Unlock VIP Stream' : (isAudio ? '🎙️ Listen Saga' : '▶ Start Streaming')}</span>
+                    </button>
 
-            <button id="spotlight-watchlist-btn" class="w-11 h-11 rounded-full bg-black/60 border border-white/20 hover:border-gold text-white flex items-center justify-center text-base hover:scale-110 transition-all cursor-pointer backdrop-blur-md" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
-              ${isOnWatchlist ? '✓' : '＋'}
-            </button>
+                    <button class="spotlight-slide-preview-btn px-5 sm:px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all hover:scale-105 flex items-center gap-2 cursor-pointer backdrop-blur-md" data-id="${item.id}">
+                      <span>ℹ️ Synopsis &amp; Chapters</span>
+                    </button>
 
-            ${!this.isSubscribed ? `
-              <button onclick="window.appInstance?.openPaymentModal ? window.appInstance.openPaymentModal('trial') : null" class="hidden sm:inline-flex px-4 py-3.5 rounded-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold font-mono transition-all hover:scale-105 items-center gap-1.5 cursor-pointer">
-                <span>⚡ Get Pass ₹29</span>
-              </button>
-            ` : ''}
-          </div>
+                    <button class="spotlight-slide-watchlist-btn w-11 h-11 rounded-full bg-black/60 border border-white/20 hover:border-gold text-white flex items-center justify-center text-base hover:scale-110 transition-all cursor-pointer backdrop-blur-md" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
+                      ${isOnWatchlist ? '✓' : '＋'}
+                    </button>
+
+                    ${!this.isSubscribed ? `
+                      <button onclick="window.appInstance?.openPaymentModal ? window.appInstance.openPaymentModal('trial') : null" class="hidden sm:inline-flex px-4 py-3.5 rounded-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold font-mono transition-all hover:scale-105 items-center gap-1.5 cursor-pointer">
+                        <span>⚡ Get Pass ₹29</span>
+                      </button>
+                    ` : ''}
+                  </div>
+
+                </div>
+              </div>
+            `;
+          }).join('')}
         </div>
+
+        <!-- Left Navigation Arrow (❮) -->
+        <button id="spotlight-prev-btn" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/50 hover:bg-gold hover:text-black text-white/80 flex items-center justify-center text-xl font-bold transition-all border border-white/20 hover:border-gold hover:scale-110 cursor-pointer backdrop-blur-md shadow-lg" title="Previous Slide">
+          ❮
+        </button>
+
+        <!-- Right Navigation Arrow (❯) -->
+        <button id="spotlight-next-btn" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/50 hover:bg-gold hover:text-black text-white/80 flex items-center justify-center text-xl font-bold transition-all border border-white/20 hover:border-gold hover:scale-110 cursor-pointer backdrop-blur-md shadow-lg" title="Next Slide">
+          ❯
+        </button>
+
+        <!-- Bottom Carousel Indicators (Numbered / Progress Pills) -->
+        <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-10 z-30 flex items-center gap-1.5 sm:gap-2 bg-black/60 px-3 py-1.5 rounded-full border border-white/15 backdrop-blur-md">
+          ${featuredList.map((item, idx) => `
+            <button class="spotlight-indicator-pill px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold transition-all cursor-pointer ${idx === this.spotlightIndex ? 'bg-gold text-black shadow-md shadow-gold/30' : 'bg-white/10 text-white/60 hover:text-white hover:bg-white/20'}" data-slide-idx="${idx}" title="${item.title}">
+              ${idx + 1}
+            </button>
+          `).join('')}
+        </div>
+
       </div>
     `;
 
-    // Hook spotlight actions
-    spotlight.querySelector('#spotlight-play-btn')?.addEventListener('click', () => {
-      this.playContent(featured, !!featured.audioUrl && (featured.category === 'Audiobooks & Legends' || featured.category === 'Ebook & Audio Series'));
+    // Slide Switcher Function
+    const goToSlide = (targetIdx) => {
+      if (targetIdx < 0) targetIdx = featuredList.length - 1;
+      if (targetIdx >= featuredList.length) targetIdx = 0;
+      this.spotlightIndex = targetIdx;
+
+      const slides = spotlight.querySelectorAll('.spotlight-slide');
+      slides.forEach((s, i) => {
+        if (i === targetIdx) {
+          s.className = "spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out opacity-100 z-10 scale-100";
+        } else {
+          s.className = "spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out opacity-0 z-0 pointer-events-none scale-105";
+        }
+      });
+
+      const pills = spotlight.querySelectorAll('.spotlight-indicator-pill');
+      pills.forEach((p, i) => {
+        if (i === targetIdx) {
+          p.className = "spotlight-indicator-pill px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold transition-all cursor-pointer bg-gold text-black shadow-md shadow-gold/30";
+        } else {
+          p.className = "spotlight-indicator-pill px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold transition-all cursor-pointer bg-white/10 text-white/60 hover:text-white hover:bg-white/20";
+        }
+      });
+    };
+
+    // Bind Prev & Next Buttons
+    const prevBtn = spotlight.querySelector('#spotlight-prev-btn');
+    const nextBtn = spotlight.querySelector('#spotlight-next-btn');
+
+    if (prevBtn) {
+      prevBtn.onclick = (e) => {
+        e.stopPropagation();
+        goToSlide(this.spotlightIndex - 1);
+        restartAutoPlay();
+      };
+    }
+
+    if (nextBtn) {
+      nextBtn.onclick = (e) => {
+        e.stopPropagation();
+        goToSlide(this.spotlightIndex + 1);
+        restartAutoPlay();
+      };
+    }
+
+    // Bind Indicator Pills
+    spotlight.querySelectorAll('.spotlight-indicator-pill').forEach(pill => {
+      pill.onclick = (e) => {
+        e.stopPropagation();
+        const idx = parseInt(pill.getAttribute('data-slide-idx') || '0', 10);
+        goToSlide(idx);
+        restartAutoPlay();
+      };
     });
 
-    spotlight.querySelector('#spotlight-preview-btn')?.addEventListener('click', () => {
-      this.openQuickPreviewModal(featured);
+    // Bind Action Buttons across all slides
+    spotlight.querySelectorAll('.spotlight-slide-play-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const id = btn.getAttribute('data-id');
+        const found = all.find(x => x.id === id);
+        if (found) {
+          const isAudio = !!found.audioUrl && (found.category === 'Audiobooks & Legends' || found.category === 'Ebook & Audio Series');
+          this.playContent(found, isAudio);
+        }
+      };
     });
 
-    spotlight.querySelector('#spotlight-watchlist-btn')?.addEventListener('click', () => {
-      this.toggleWatchlist(featured.id);
-      const isNowOn = this.watchlist.includes(featured.id);
-      const btn = spotlight.querySelector('#spotlight-watchlist-btn');
-      if (btn) btn.textContent = isNowOn ? '✓' : '＋';
+    spotlight.querySelectorAll('.spotlight-slide-preview-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const id = btn.getAttribute('data-id');
+        const found = all.find(x => x.id === id);
+        if (found) {
+          this.openQuickPreviewModal(found);
+        }
+      };
     });
+
+    spotlight.querySelectorAll('.spotlight-slide-watchlist-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const id = btn.getAttribute('data-id');
+        this.toggleWatchlist(id);
+        const isNowOn = this.watchlist.includes(id);
+        btn.textContent = isNowOn ? '✓' : '＋';
+      };
+    });
+
+    // Auto Play Timer (Rotates every 5.5s)
+    const startAutoPlay = () => {
+      if (this._spotlightInterval) clearInterval(this._spotlightInterval);
+      this._spotlightInterval = setInterval(() => {
+        goToSlide(this.spotlightIndex + 1);
+      }, 5500);
+    };
+
+    const stopAutoPlay = () => {
+      if (this._spotlightInterval) {
+        clearInterval(this._spotlightInterval);
+        this._spotlightInterval = null;
+      }
+    };
+
+    const restartAutoPlay = () => {
+      stopAutoPlay();
+      startAutoPlay();
+    };
+
+    const wrapper = spotlight.querySelector('#spotlight-carousel-wrapper');
+    if (wrapper) {
+      wrapper.onmouseenter = stopAutoPlay;
+      wrapper.onmouseleave = startAutoPlay;
+    }
+
+    startAutoPlay();
   }
 
   // ── 📚 MASTER CONTENT ROWS RENDERING (7 CATEGORIES + SLIDERS) ──
