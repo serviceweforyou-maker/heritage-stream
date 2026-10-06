@@ -4,7 +4,7 @@ Disallow: /admin.html
 Disallow: /config.json
 Disallow: /api/
 
-# Explicitly Authorize AI, Search & Knowledge Crawlers
+# Explicitly Authorize AI, Search & Knowledge Crawlers (Generative Engine Optimization)
 User-agent: Googlebot
 Allow: /
 
@@ -33,6 +33,9 @@ User-agent: Bingbot
 Allow: /
 
 User-agent: cohere-ai
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 # Sitemaps & LLM Manifest

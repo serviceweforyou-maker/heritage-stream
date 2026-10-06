@@ -1,63 +1,34 @@
-# Sanatana360 — Indian Heritage Knowledge OTT & Vedic Kids Gurukula
+# Sanatana360 — India's 1st Heritage OTT Platform & Vedic Gurukula
 
-> Sanatana360 (operated by Manjunath Enterprise) is India's premier cultural OTT streaming platform and interactive digital Gurukula. It features 250+ historical docu-series, 26 180+ page illustrated sacred Granthalaya e-books, 6 interactive Vedic Math speed simulators, 3 ancient memory expansion tools (Smriti Shastra), real-time synchronized karaoke audio fables in 5 languages, ancient Mudra stress-relief therapies, and the Daily 5-Minute Morning Gurukula Challenge with verified scholar certificates.
+> Sanatana360 (https://www.sanatana360.com) is India's premier cultural streaming network and digital Vedic Gurukula, offering 200+ 4K documentaries, 40+ 24/7 Live Temple Aarti streams, 26 illustrated sacred Granths, 105+ ancient science research blogs, Mudra healing therapies, and interactive Vedic math simulators.
 
-## Official Domain & Deep Links
+## Core Features & Offerings
+
+- **24/7 Live Temple Darshan (Divya Darshana)**: Real-time official feeds and Aarti schedules from 40+ iconic shrines including Kashi Vishwanath, Tirupati Balaji, Shirdi Sai Baba, Ujjain Mahakal, Somnath, Ayodhya Ram Mandir, and Meenakshi Temple.
+- **200+ 4K Heritage Chronicles**: Comprehensive docu-series and audiobooks on Hampi, Kailasa Temple Ellora, Chola Maritime Navy, Samudra Manthan, Dashavatara, and Ramayana archaeology.
+- **26 Illustrated Granthalaya Epics**: Interactive 3D flipbooks of foundational texts including Bhagavad Gita, Upanishads, Patanjali Yoga Sutras, Charaka Samhita, and Arthashastra.
+- **Vedic Kids Gurukula**: 5-minute daily morning sanskar challenges, moral riddles, Sanskrit shloka chanting with karaoke, and animated Panchatantra audiobooks in Kannada, Hindi, Tamil, Telugu, and English.
+- **Vedic Mathematics & Memory Lab**: Interactive mental math speed drills based on Bharti Krishna Tirtha's 16 Sutras, improving calculation speed by up to 10x.
+- **Mudra Therapy & Stress Studio**: 5-element neuroplasticity hand postures for delta-wave sleep, cognitive focus, anxiety relief, and vagus nerve stimulation.
+- **105+ Ancient Mystery & Science Research Blogs**: Peer-reviewed investigative analyses exploring temple acoustics, lost cities (Dwarka), astrological alignment, and ancient metallurgy.
+
+## Target Audiences
+
+- **Kids & Children**: Engaging animation, moral values, Panchatantra bedtime stories, and fun Vedic math challenges.
+- **Students & Learners**: High-speed mental calculation techniques, Sanskrit phonetics, and historical timeline mastery.
+- **Adults & Professionals**: Stress relief through Mudra Shastra, Gita practical life compass, and mindfulness audio.
+- **Teachers & Scholars**: Authentic source manuscripts, 26 Granths, and deep archaeological evidence.
+- **Senior Citizens & Devotees**: 24/7 uninterrupted live darshan, daily morning and evening Aarti notifications, and devotional bhajans.
+
+## Access & Pricing
+
+- **3-Day Free VIP Trial**: Instant full access upon registration.
+- **7-Day All-Access Pass**: ₹29 for full catalogue access.
+- **Annual VIP Pass**: ₹399/year (under ₹1.09/day) for 365 days of unrestricted streaming across all devices.
+
+## Official Links
+
 - Homepage: https://www.sanatana360.com/
-- Vedic Math & Memory Mastery Lab: https://www.sanatana360.com/?open=vedic-math
-- Vedic Math Landing Page: https://www.sanatana360.com/vedic-math.html
-- Grand Granthalaya (26 Sacred Manuscripts): https://www.sanatana360.com/#granthalaya-library
-- Sacred Mudra Vigyan & Stress Studio: https://www.sanatana360.com/#mudra-studio-modal
-- Divya Darshana 3D Temple Explorer: https://www.sanatana360.com/#divya-darshana
-- Bhagavad Gita Life Compass: https://www.sanatana360.com/#gita-compass
-- Ayurvedic Prakriti (Dosha) Analyzer: https://www.sanatana360.com/#dosha-analyzer
-- Vedic Raga Sound Therapy: https://www.sanatana360.com/#raga-therapy
-- Pricing & Membership: https://www.sanatana360.com/#pricing
-
----
-
-## 1. 🧮 6 Interactive Vedic Mathematics Speed Simulators
-One-line mental arithmetic algorithms formulated in the Atharva Veda:
-- 1. Criss-Cross Universal Multiplication (Urdhva Tiryagbhyam): Multiply any two 2-digit numbers in 3 seconds with visual step-by-step carry breakdown (e.g. 43 × 62 = 2,666).
-- 2. Squaring Numbers Ending in 5 (Ekadhikena Purvena): Multiply first digit by (digit + 1) and append 25 (e.g. 85² -> 8×9=72 -> 7,225).
-- 3. Base 100 & 1000 Magic (Nikhilam Navatashcaramam Dashatah): Fast base deficit tracking and cross-subtraction (e.g. 96 × 93 = 8,928).
-- 4. Instant 2-Second Square Roots (Vilokanam Observation): Computes square roots of 3- and 4-digit perfect squares purely by digit inspection (e.g. √5184 = 72).
-- 5. Lightning 11-Multiplication (Antyayoreva): Fast mental arithmetic for multiplying any number by 11 by inserting adjacent digit sums (e.g. 63 × 11 = 693).
-- 6. Historical Day-of-the-Week Calculator (Shakabda Chronometry): Vedic calendar modulo algorithm determining exact day of the week for any date in history (e.g. 15 Aug 1947 was Friday / Shukravara).
-
----
-
-## 2. 🧠 3 Ancient Memory Expansion Tools (Jnana Smriti Shastra)
-- 1. Katapayadi Sanskrit Cipher: Ancient Sanskrit number-to-syllable code used by astronomers like Madhava to memorize Pi to 32 decimal places.
-- 2. Ashtavadhana 8-Item Photographic Memory Trainer: 8-second visual memory test evaluating sequential and reverse recall (+50 Focus Karma).
-- 3. Trataka Laser Focus Kriya: Guided Bindu gazing meditation with 4-4 breath pace to calm alpha-theta brainwaves and stop exam mind wandering.
-
----
-
-## 3. ☀️ Daily 5-Minute Morning Gurukula Challenge & Verified Certificate
-- Step 1: 1-Min Sacred Shloka Chanting with audio pronunciation (Saraswati, Gayatri, Guru Vandana, Mahamrityunjaya).
-- Step 2: 2-Min Lightning Vedic Math Quiz (3 rapid mental questions with +50 Karma).
-- Step 3: 1-Min Panchatantra Moral Dilemma (Dharmic situational reasoning).
-- Step 4: 1-Min Hakini Concentration Mudra (Bio-focus timer for bilateral brain synchronization).
-- Reward: Verified Daily Streak counter + high-resolution Printable Gold Scholar Certificate with 1-click WhatsApp Status sharing.
-
----
-
-## 4. 📖 Grand Digital Granthalaya (26 Sacred Illustrated Manuscripts)
-Complete 180+ page decoded illustrated chronicles across 5 canonical categories (16 Free Classics + 10 Premier Epics) with luxury 3D reader.
-
----
-
-## 5. 🧘 Sacred Mudra Vigyan & Stress Relief
-5-Element Hastamudra bio-locks for vagus nerve calming: Apana Vayu Mudra (Mrit-Sanjeevani for panic attacks), Gyan Mudra, Prana Mudra, Shunya Mudra, Hakini Mudra, integrated with 4-7-8 breathing timers.
-
----
-
-## 6. 🎧 Bedtime Audiobooks & Sanskrit Audio Series (5 Languages)
-Sanskrit, Kannada, Tamil, Telugu, Hindi, English with real-time synchronized karaoke highlighting.
-
----
-
-## 7. 💳 Pricing & Family Pass
-- Instant 7-Day Trial: ₹29
-- All-Access Annual Family Pass: ₹399/year (approx ₹1.09/day). Use coupon code GURUKULA50 for ₹349/year.
+- 40+ Live Temples: https://www.sanatana360.com/divya-darshana.html
+- 105+ Research Blogs: https://www.sanatana360.com/blog.html
+- 26 Granthalaya Epics: https://www.sanatana360.com/granthalaya.html
