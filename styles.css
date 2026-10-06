@@ -1001,3 +1001,58 @@ header#main-header {
   border: 1.5px solid #d4af37 !important;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.98), 0 0 30px rgba(212, 175, 55, 0.3) !important;
 }
+
+
+/* ── 🎬 SONY LIV / NETFLIX / AMAZON PRIME STYLE SMOOTH AUTH & MODALS ── */
+#netflix-auth-modal,
+#logout-confirm-modal,
+#user-account-modal,
+#trial-expiry-subscribe-modal {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#netflix-auth-modal.flex,
+#logout-confirm-modal.flex,
+#user-account-modal.flex {
+  animation: ottModalFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes ottModalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.auth-tab-btn {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.auth-tab-btn:hover {
+  transform: translateY(-1px);
+}
+.auth-tab-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.fast-login-btn {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fast-login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+  border-color: #d4af37 !important;
+}
+
+#header-auth-btn {
+  transition: all 0.25s ease;
+}
+#header-auth-btn:hover {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.45);
+  transform: scale(1.03);
+}

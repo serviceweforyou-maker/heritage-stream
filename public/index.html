@@ -394,6 +394,21 @@
         localStorage.setItem('hs_free_trial_start', String(now));
         if (pwd) localStorage.setItem('hs_user_pwd', pwd);
 
+        // Asynchronously dispatch Royal Welcome Email in background (non-blocking)
+        try {
+          fetch('/api/auth/register-user', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              avatar: avatar,
+              planType: '3-Day Free VIP Access Pass',
+              trialDays: 3
+            })
+          }).catch(function() {});
+        } catch(mailErr) {}
+
         // Immediate 0ms Header Sync
         window.updateHeaderAuthState();
 

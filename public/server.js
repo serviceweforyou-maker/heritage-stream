@@ -69,7 +69,26 @@ app.use((req, res, next) => {
         }
         db.stats.uniqueVisitorsCount = (db.stats.uniqueVisitorsCount || 0) + 1;
       }
-      writeDB(db);
+      
+      // 2b. Scan registered users for trial expiry (Day 3 reminder)
+      if (Array.isArray(db.users)) {
+        db.users.forEach(user => {
+          if (!user.renewalReminderSent && user.trialExpiry) {
+            const timeLeft = user.trialExpiry - now;
+            // If less than 24 hours left or expired today
+            if (timeLeft <= 24 * 60 * 60 * 1000 && timeLeft > -24 * 60 * 60 * 1000) {
+              user.renewalReminderSent = true;
+              changed = true;
+              if (user.email) {
+                console.log(`✉️ Sending Trial Renewal reminder to ${user.name} (${user.email})...`);
+                sendRenewalReminderEmail(user.email, user.name, user.trialExpiry, '3-Day Free VIP Trial', 1).catch(() => {});
+              }
+            }
+          }
+        });
+      }
+
+        writeDB(db);
     } catch (err) {
       console.error("Visitor tracking log failed:", err.message);
     }
@@ -211,86 +230,189 @@ function sendEmail(to, subject, html) {
     });
 }
 
-function sendWelcomeEmail(email, name, amount = 29) {
-  const isTrial = Number(amount) === 29;
-  const planTitle = isTrial ? '7-Day All-Access Trial' : 'Annual Premium Pass';
-  const planPrice = isTrial ? '₹29' : '₹399 / Year';
-  const planValidity = isTrial ? 'Valid for 7 Days • Unrestricted Access' : 'Valid for 365 Days • Unrestricted Access';
+// ==========================================
+// ⚜️ SANATANA360 ROYAL EMAIL ENGINE
+// ==========================================
+
+function sendWelcomeEmail(email, name, planType = '3-Day Free VIP Trial', trialDays = 3) {
+  const isAnnual = planType.includes('399') || planType.toLowerCase().includes('annual');
+  const isDayPass = planType.includes('29') || planType.toLowerCase().includes('day');
+  
+  let planTitle = '3-Day Free VIP Access Pass';
+  let planPrice = 'FREE (3-Day Full Access)';
+  let planValidity = 'Valid for 3 Days • Unrestricted Access';
+
+  if (isAnnual) {
+    planTitle = 'Sanatana360 Annual VIP Pass';
+    planPrice = '₹399 / Year (₹1.09/Day)';
+    planValidity = 'Valid for 365 Days • Complete Access';
+  } else if (isDayPass) {
+    planTitle = '24-Hour VIP Day Pass';
+    planPrice = '₹29';
+    planValidity = 'Valid for 24 Hours • Instant Unlock';
+  }
 
   const html = `
-    <div style="background-color: #0c0d12; color: #ffffff; font-family: 'Georgia', serif; padding: 40px; max-width: 600px; margin: 0 auto; border: 1px solid #d4af37; border-radius: 16px;">
-      <div style="text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 20px;">
-        <h2 style="color: #d4af37; font-size: 24px; margin: 0;">⚜️ SANATANA 360</h2>
-        <p style="color: rgba(255,255,255,0.6); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin: 5px 0 0 0;">Preserving Culture, Inspiring Minds</p>
-      </div>
-      
-      <h3 style="font-size: 20px; font-weight: bold; margin-top: 30px; color: #ffffff;">Welcome to the Inner Circle!</h3>
-      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Dear <strong>${name}</strong>,</p>
-      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Your ${planTitle} has been successfully activated. Thank you for supporting the preservation and education of our cultural history through <strong>MANJUNATH ENTERPRISE</strong>.</p>
-      
-      <div style="background-color: rgba(212, 175, 55, 0.05); border: 1px dashed rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 20px; margin: 25px 0; text-align: center;">
-        <p style="color: #d4af37; font-size: 12px; text-transform: uppercase; font-weight: bold; margin: 0 0 10px 0;">Pass Details</p>
-        <span style="font-size: 22px; font-weight: 900; color: #ffffff;">${planPrice}</span>
-        <p style="font-size: 11px; color: rgba(255,255,255,0.5); margin: 5px 0 0 0;">${planValidity}</p>
-      </div>
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Welcome to Sanatana360</title>
+    </head>
+    <body style="margin: 0; padding: 0; background-color: #07090f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed; background-color: #07090f; padding: 25px 10px;">
+        <tr>
+          <td align="center">
+            <div style="background-color: #090b12; color: #ffffff; padding: 35px 25px; max-width: 580px; margin: 0 auto; border: 1.5px solid #d4af37; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.9);">
+              
+              <!-- Brand Header -->
+              <div style="text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.25); padding-bottom: 20px;">
+                <div style="font-size: 32px; margin-bottom: 5px;">⚜️</div>
+                <h1 style="color: #d4af37; font-size: 26px; margin: 0; font-family: 'Georgia', serif; letter-spacing: 1px;">SANATANA360™</h1>
+                <p style="color: rgba(255,255,255,0.7); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin: 6px 0 0 0; font-weight: bold;">India's #1 Vedic OTT &amp; Sacred Gurukula</p>
+              </div>
+              
+              <!-- Greeting & Hero Message -->
+              <div style="padding-top: 25px;">
+                <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0; color: #ffffff; font-family: 'Georgia', serif;">Pranam, ${name}! 🙏</h2>
+                <p style="line-height: 1.65; color: rgba(255,255,255,0.85); font-size: 14px; margin: 0 0 15px 0;">
+                  Welcome to the sacred gateway of Sanatana Dharma. Your personalized portal to ancient mysteries, 40+ Live Temples, and timeless wisdom is now active.
+                </p>
+              </div>
+              
+              <!-- Pass Status Badge -->
+              <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(16, 185, 129, 0.1)); border: 1.5px solid #d4af37; border-radius: 16px; padding: 20px; margin: 20px 0; text-align: center;">
+                <span style="display: inline-block; background-color: rgba(212,175,55,0.25); color: #d4af37; font-size: 10px; text-transform: uppercase; font-weight: 800; letter-spacing: 1.5px; padding: 4px 12px; rounded-full; border-radius: 20px; margin-bottom: 8px;">${planTitle}</span>
+                <div style="font-size: 24px; font-weight: 900; color: #ffffff; margin: 4px 0;">${planPrice}</div>
+                <p style="font-size: 12px; color: #10b981; margin: 4px 0 0 0; font-weight: bold;">✨ ${planValidity}</p>
+              </div>
 
-      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">You now have full access to:
-        <ul style="padding-left: 20px; color: rgba(255,255,255,0.8); font-size: 13px; line-height: 1.8;">
-          <li>🎬 250+ high-fidelity Indian heritage docu-series & 4K Sagas</li>
-          <li>📚 26 Illustrated Granthalaya E-Books & Panchatantra Audiobooks</li>
-          <li>🎙️ Native Kannada narration and speed cadences</li>
-          <li>🧩 Interactive Vedic Math, Mudra Therapy & History games</li>
-          <li>🌿 Divya Darshana daily Panchanga & Rishi AI Guide</li>
-        </ul>
-      </p>
-      
-      <div style="text-align: center; margin-top: 35px; margin-bottom: 20px;">
-        <a href="https://www.sanatana360.com" style="background: linear-gradient(to right, #d4af37, #f39c12); color: #000000; text-decoration: none; padding: 14px 30px; font-weight: bold; border-radius: 8px; font-size: 14px; text-transform: uppercase; display: inline-block;">Start Exploring Now</a>
-      </div>
+              <!-- Unlocked Features List -->
+              <div style="background-color: #141826; border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 18px; margin: 20px 0;">
+                <p style="color: #d4af37; font-size: 12px; font-weight: 800; text-transform: uppercase; margin: 0 0 10px 0; letter-spacing: 1px;">What you can explore right now:</p>
+                <table width="100%" cellpadding="6" cellspacing="0" style="color: rgba(255,255,255,0.85); font-size: 13px; line-height: 1.5;">
+                  <tr>
+                    <td width="28" valign="top">🛕</td>
+                    <td><strong>40+ 24/7 Live Temples</strong> — Kashi Vishwanath, Mahakaleshwar, Somnath, Shirdi Sai &amp; Tirupati Balaji.</td>
+                  </tr>
+                  <tr>
+                    <td width="28" valign="top">📖</td>
+                    <td><strong>26 Sacred Illustrated Granthas</strong> — Ramayana, Mahabharata, Upanishads &amp; Gita with audio translation.</td>
+                  </tr>
+                  <tr>
+                    <td width="28" valign="top">📰</td>
+                    <td><strong>105+ Ancient Mystery Blogs</strong> — Lepakshi hanging pillars, Brihadeeswarar shadows &amp; submerged Dwaraka.</td>
+                  </tr>
+                  <tr>
+                    <td width="28" valign="top">🧘</td>
+                    <td><strong>Sacred Mudra Studio</strong> — 5-Element biometric tension relief and stress grounding.</td>
+                  </tr>
+                  <tr>
+                    <td width="28" valign="top">🧒</td>
+                    <td><strong>Kids Vedic Gurukula</strong> — Interactive speed math, moral riddles &amp; Sanskrit shloka karaoke.</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <!-- Direct Streaming CTA Button -->
+              <div style="text-align: center; margin: 30px 0 20px 0;">
+                <a href="https://www.sanatana360.com" style="background: linear-gradient(135deg, #d4af37, #f59e0b); color: #000000; text-decoration: none; padding: 15px 36px; font-weight: 900; border-radius: 12px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; display: inline-block; box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);">
+                  🎬 Start Streaming Now
+                </a>
+              </div>
 
-      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; margin-top: 40px; font-size: 10px; color: rgba(255,255,255,0.4); text-align: center; line-height: 1.5;">
-        This email was sent by MANJUNATH ENTERPRISE.<br>
-        Proprietor: MANJUNATHA PRASANNA | Contact: service.weforyou@gmail.com<br>
-        Address: Bangalore, Karnataka, India
-      </div>
-    </div>
+              <!-- Support & Company Footer -->
+              <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; margin-top: 30px; font-size: 11px; color: rgba(255,255,255,0.45); text-align: center; line-height: 1.6;">
+                Registered Account: <strong style="color: rgba(255,255,255,0.75);">${email}</strong><br>
+                This email was sent by <strong>MANJUNATH ENTERPRISE</strong>.<br>
+                Proprietor: MANJUNATHA PRASANNA | Contact: service.weforyou@gmail.com<br>
+                Bangalore, Karnataka, India &bull; <a href="https://www.sanatana360.com" style="color: #d4af37; text-decoration: none;">www.sanatana360.com</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </body>
+    </html>
   `;
-  return sendEmail(email, `✨ Welcome to Sanatana360 Pass!`, html);
+
+  return sendEmail(email, `✨ Welcome to Sanatana360, ${name}! [Pass Activated]`, html);
 }
 
-function sendRenewalReminderEmail(email, name, expiryDate) {
+function sendRenewalReminderEmail(email, name, expiryDate, planType = 'Annual Pass', daysLeft = 3) {
   const formattedDate = new Date(expiryDate).toLocaleDateString('en-IN', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   });
-  const html = `
-    <div style="background-color: #0c0d12; color: #ffffff; font-family: 'Georgia', serif; padding: 40px; max-width: 600px; margin: 0 auto; border: 1px solid #d4af37; border-radius: 16px;">
-      <div style="text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 20px;">
-        <h2 style="color: #d4af37; font-size: 24px; margin: 0;">⚜️ HERITAGE STREAM</h2>
-        <p style="color: rgba(255,255,255,0.6); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin: 5px 0 0 0;">Keep Your Access Active</p>
-      </div>
-      
-      <h3 style="font-size: 20px; font-weight: bold; margin-top: 30px; color: #ffffff;">Your Premium Pass Expires Soon!</h3>
-      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Dear <strong>${name}</strong>,</p>
-      <p style="line-height: 1.6; color: rgba(255,255,255,0.85); font-size: 14px;">Your annual HeritageStream Premium Pass is scheduled to expire on <strong>${formattedDate}</strong>. To ensure you do not lose access to your watch history, watchlist, saved game scores, and premium features, please renew your subscription today.</p>
-      
-      <div style="background-color: rgba(212, 175, 55, 0.05); border: 1px dashed rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 20px; margin: 25px 0; text-align: center;">
-        <p style="color: #d4af37; font-size: 11px; text-transform: uppercase; font-weight: bold; margin: 0 0 5px 0;">Annual Renewal Amount</p>
-        <span style="font-size: 26px; font-weight: 900; color: #ffffff;">₹399 / Year</span>
-      </div>
-      
-      <div style="text-align: center; margin-top: 35px; margin-bottom: 20px;">
-        <a href="https://heritage-stream.onrender.com" style="background: linear-gradient(to right, #d4af37, #f39c12); color: #000000; text-decoration: none; padding: 14px 30px; font-weight: bold; border-radius: 8px; font-size: 14px; text-transform: uppercase; display: inline-block;">Renew My Pass Now</a>
-      </div>
 
-      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; margin-top: 40px; font-size: 10px; color: rgba(255,255,255,0.4); text-align: center; line-height: 1.5;">
-        This email was sent by MANJUNATH ENTERPRISE.<br>
-        Proprietor: MANJUNATHA PRASANNA | Contact: service.weforyou@gmail.com
-      </div>
-    </div>
+  const isTrial = planType.toLowerCase().includes('trial');
+  const subjectText = isTrial 
+    ? `⏳ Your Sanatana360 Free VIP Trial Expires Today — Upgrade for ₹1.09/Day`
+    : `⚜️ Action Required: Your Sanatana360 ${planType} Expires Soon (${daysLeft} Days Left)`;
+
+  const html = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sanatana360 Pass Renewal Notice</title>
+    </head>
+    <body style="margin: 0; padding: 0; background-color: #07090f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed; background-color: #07090f; padding: 25px 10px;">
+        <tr>
+          <td align="center">
+            <div style="background-color: #090b12; color: #ffffff; padding: 35px 25px; max-width: 580px; margin: 0 auto; border: 1.5px solid #d4af37; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.9);">
+              
+              <!-- Header -->
+              <div style="text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.25); padding-bottom: 20px;">
+                <div style="font-size: 32px; margin-bottom: 5px;">⏳</div>
+                <h1 style="color: #d4af37; font-size: 24px; margin: 0; font-family: 'Georgia', serif;">SANATANA360™</h1>
+                <p style="color: #ef4444; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin: 6px 0 0 0; font-weight: bold;">Pass Renewal &amp; Expiry Reminder</p>
+              </div>
+              
+              <!-- Content -->
+              <div style="padding-top: 25px;">
+                <h2 style="font-size: 20px; font-weight: 800; margin: 0 0 10px 0; color: #ffffff; font-family: 'Georgia', serif;">Dear ${name},</h2>
+                <p style="line-height: 1.65; color: rgba(255,255,255,0.85); font-size: 14px; margin: 0 0 15px 0;">
+                  Your Sanatana360 <strong>${planType}</strong> is scheduled to conclude on <strong style="color: #d4af37;">${formattedDate}</strong> (${daysLeft <= 0 ? 'Today' : daysLeft + ' days remaining'}).
+                </p>
+                <p style="line-height: 1.65; color: rgba(255,255,255,0.85); font-size: 14px; margin: 0 0 15px 0;">
+                  To ensure you keep your uninterrupted access to 40+ 24/7 Live Darshans, personalized Vedic Granth bookmarks, and high-fidelity docu-series, please renew your access today.
+                </p>
+              </div>
+              
+              <!-- Pricing Options Card -->
+              <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(239, 68, 68, 0.1)); border: 1.5px solid #d4af37; border-radius: 16px; padding: 20px; margin: 20px 0; text-align: center;">
+                <span style="color: #d4af37; font-size: 11px; text-transform: uppercase; font-weight: 800; letter-spacing: 1.5px;">Recommended Plan</span>
+                <div style="font-size: 26px; font-weight: 900; color: #ffffff; margin: 4px 0;">₹399 / Year</div>
+                <p style="font-size: 12px; color: #10b981; margin: 4px 0 0 0; font-weight: bold;">Just ₹1.09 per day • 365 Days Unrestricted Access</p>
+              </div>
+              
+              <!-- Direct Renewal CTA Button -->
+              <div style="text-align: center; margin: 30px 0 20px 0;">
+                <a href="https://www.sanatana360.com/#pricing" style="background: linear-gradient(135deg, #d4af37, #f59e0b); color: #000000; text-decoration: none; padding: 15px 36px; font-weight: 900; border-radius: 12px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; display: inline-block; box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);">
+                  👑 Renew Pass Instantly
+                </a>
+              </div>
+
+              <!-- Footer -->
+              <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; margin-top: 30px; font-size: 11px; color: rgba(255,255,255,0.45); text-align: center; line-height: 1.6;">
+                This email was sent by <strong>MANJUNATH ENTERPRISE</strong>.<br>
+                Proprietor: MANJUNATHA PRASANNA | Contact: service.weforyou@gmail.com<br>
+                Bangalore, Karnataka, India &bull; <a href="https://www.sanatana360.com" style="color: #d4af37; text-decoration: none;">www.sanatana360.com</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </body>
+    </html>
   `;
-  return sendEmail(email, "⏳ Action Required: Your HeritageStream Premium Pass Expires Soon!", html);
+
+  return sendEmail(email, subjectText, html);
 }
 
 function sendAbandonedCheckoutReminderEmail(email, name) {
@@ -419,6 +541,84 @@ function verifyAdminSession(req, res, next) {
     res.status(401).json({ error: "Unauthorized access. Please log in as admin." });
   }
 }
+
+
+// ==========================================
+// 🔐 AUTH & NOTIFICATION REST ENDPOINTS
+// ==========================================
+
+// 0. Register User & Dispatch Royal Welcome Email
+app.post('/api/auth/register-user', (req, res) => {
+  try {
+    const { name, email, avatar, planType, trialDays } = req.body;
+    if (!email) {
+      return res.status(400).json({ error: 'Email or mobile number is required' });
+    }
+
+    const userName = name || email.split('@')[0] || 'Scholar';
+    const db = readDB();
+    if (!db.users) db.users = [];
+
+    const existingUserIndex = db.users.findIndex(u => u.email === email);
+    const now = Date.now();
+    const trialExpiry = now + (Number(trialDays || 3) * 24 * 60 * 60 * 1000);
+
+    const userData = {
+      name: userName,
+      email: email,
+      avatar: avatar || '📜',
+      planType: planType || '3-Day Free VIP Trial',
+      registeredAt: now,
+      trialExpiry: trialExpiry,
+      renewalReminderSent: false
+    };
+
+    if (existingUserIndex >= 0) {
+      db.users[existingUserIndex] = { ...db.users[existingUserIndex], ...userData };
+    } else {
+      db.users.push(userData);
+    }
+    writeDB(db);
+
+    console.log(`👤 User registered: ${userName} (${email}). Dispatching Welcome Email...`);
+    sendWelcomeEmail(email, userName, planType || '3-Day Free VIP Trial', trialDays || 3).catch(err => {
+      console.warn('Welcome email delivery error (will proceed):', err.message);
+    });
+
+    res.json({ success: true, message: 'User registered successfully and Welcome Email initiated.' });
+  } catch (err) {
+    console.error('Error in /api/auth/register-user:', err);
+    res.status(500).json({ error: 'Registration processing error' });
+  }
+});
+
+// 1. Dispatch Welcome Email on Demand
+app.post('/api/auth/send-welcome-email', (req, res) => {
+  try {
+    const { email, name, planType, trialDays } = req.body;
+    if (!email) return res.status(400).json({ error: 'Email is required' });
+
+    sendWelcomeEmail(email, name || 'Scholar', planType || '3-Day Free VIP Trial', trialDays || 3)
+      .then(() => res.json({ success: true, message: 'Welcome email sent successfully' }))
+      .catch(err => res.json({ success: false, message: 'Email queued/sent with note', note: err.message }));
+  } catch (err) {
+    res.status(500).json({ error: 'Error sending welcome email' });
+  }
+});
+
+// 2. Dispatch Renewal Reminder on Demand
+app.post('/api/auth/send-renewal-reminder', (req, res) => {
+  try {
+    const { email, name, expiryDate, planType, daysLeft } = req.body;
+    if (!email) return res.status(400).json({ error: 'Email is required' });
+
+    sendRenewalReminderEmail(email, name || 'Scholar', expiryDate || Date.now(), planType || 'Annual Pass', daysLeft || 3)
+      .then(() => res.json({ success: true, message: 'Renewal reminder sent successfully' }))
+      .catch(err => res.json({ success: false, message: 'Email queued/sent with note', note: err.message }));
+  } catch (err) {
+    res.status(500).json({ error: 'Error sending renewal reminder' });
+  }
+});
 
 // ==========================================
 // REST API ENDPOINTS

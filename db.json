@@ -8592,6 +8592,30 @@
       "year": "2026",
       "rating": "9.8 ★",
       "duration": "20 Mins"
+    },
+    {
+      "id": "ai_lepakshi_bull_1791271478278",
+      "title": "The Giant Nandi of Lepakshi",
+      "tagline": "India's Largest Monolithic Bull",
+      "description": "Located just a mile from the Lepakshi temple, this colossal Nandi is carved from a single granite stone block. It stands as a peak of Vijayanagara stone craftsmanship.",
+      "category": "Video Series",
+      "personas": [
+        "Travel & Architecture",
+        "Spiritual Seekers"
+      ],
+      "imageUrl": "images/hampi.jpg",
+      "videoUrl": "https://www.youtube.com/embed/5_9a6Ld8hB8",
+      "content": [
+        {
+          "title": "Monolithic Wonder",
+          "text": "Measuring 15 feet high and 27 feet long, it is the largest monolithic statue of Nandi (Shiva's mount) in India. Its proportions are perfectly balanced.",
+          "visual": "🐂"
+        }
+      ],
+      "isPremium": true,
+      "year": "2026",
+      "rating": "9.8 ★",
+      "duration": "20 Mins"
     }
   ],
   "games": {
@@ -8750,13 +8774,19 @@
   },
   "orders": [],
   "aiStatus": {
-    "lastRun": "2026-09-30T09:24:47.294Z",
+    "lastRun": "2026-10-06T07:24:38.278Z",
     "history": [
       {
         "id": "ai_lepakshi_bull_1790760287294",
         "title": "The Giant Nandi of Lepakshi",
         "category": "Video Series",
         "timestamp": "2026-09-30T09:24:47.294Z"
+      },
+      {
+        "id": "ai_lepakshi_bull_1791271478278",
+        "title": "The Giant Nandi of Lepakshi",
+        "category": "Video Series",
+        "timestamp": "2026-10-06T07:24:38.278Z"
       }
     ]
   },
