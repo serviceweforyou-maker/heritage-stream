@@ -421,6 +421,9 @@
           modalEl.style.display = 'flex';
         }
         window.switchAuthTab(tab || 'signin');
+        if (typeof window.initGoogleSignIn === 'function') {
+          setTimeout(window.initGoogleSignIn, 50);
+        }
       } catch(e) {
         console.warn('Error opening auth modal:', e);
       }
@@ -630,11 +633,11 @@
     // ── Fast 1-Click Persona Sign In Helper ──
     
     // ════════════════════════════════════════════════════════════════
-    // ── Google OAuth 2.0 & One-Tap Integration System ──
+    // ── Google OAuth 2.0 & One-Tap Integration System (Multi-Layer) ──
     // ════════════════════════════════════════════════════════════════
     window.GOOGLE_CLIENT_ID = '731558169906-m06hs4bbbdu5hl9mo5mcd6286ta8rnv0.apps.googleusercontent.com';
 
-    // 1. JWT Payload Decoder (pure client-side base64url decode)
+    // 1. JWT Payload Decoder
     window.decodeJwtPayload = function(token) {
       try {
         if (!token || typeof token !== 'string') return null;
@@ -665,7 +668,9 @@
         var avatar = profile.picture || '🕉️';
         var now = Date.now();
 
-        // 1. Store credentials & profile
+        console.log('Completing Google Sign-in for:', formattedName, rawEmail);
+
+        // 1. Store credentials & profile in localStorage
         localStorage.setItem('hs_auth_logged_in', 'true');
         localStorage.setItem('hs_user_name', formattedName);
         localStorage.setItem('hs_user_email', rawEmail);
@@ -694,7 +699,7 @@
           if (typeof window.appInstance.setupProfileSelector === 'function') window.appInstance.setupProfileSelector();
         }
 
-        // 3. Update header auth state & close modal immediately
+        // 3. Update header auth state & close modal immediately (0ms delay)
         window.updateHeaderAuthState();
         window.closeAuthModal();
         window.showAuthToast('Welcome ' + formattedName + '! Signed in via Google.', 'Login Successful', '🕉️');
@@ -724,25 +729,28 @@
           }
         })
         .catch(function(err) {
-          console.warn('Backend google sync error (client session is valid):', err);
+          console.warn('Backend google sync error (client session is active):', err);
         });
 
       } catch (err) {
         console.error('completeGoogleLogin error:', err);
-        window.showAuthToast('Google sign-in could not be completed. Please try again.', 'Sign In Error', '⚠️');
+        window.showAuthToast('Google sign-in error: ' + (err.message || 'Please try again'), 'Sign In Error', '⚠️');
       }
     };
 
     // 3. Callback for Google Identity Services (GSI) credential (JWT)
     window.handleGoogleCredentialResponse = function(response) {
       try {
+        console.log('handleGoogleCredentialResponse triggered:', response);
         if (!response || !response.credential) {
           console.warn('No credential received in Google response');
+          window.showAuthToast('No credential returned from Google. Please try again.', 'Auth Error', '⚠️');
           return;
         }
         var decoded = window.decodeJwtPayload(response.credential);
+        console.log('Decoded Google ID Token:', decoded);
         if (!decoded || !decoded.email) {
-          throw new Error('Invalid JWT payload from Google');
+          throw new Error('Invalid JWT payload from Google token');
         }
         window.completeGoogleLogin({
           name: decoded.name || decoded.given_name,
@@ -755,72 +763,69 @@
         window.showAuthToast('Failed to parse Google account. Please try again.', 'Auth Error', '⚠️');
       }
     };
+    var handleGoogleCredentialResponse = window.handleGoogleCredentialResponse;
 
-    // 4. Custom Button Click Handler (Token Client Popup & Fallback)
+    // 4. Custom Button Click Handler (Multi-Tier Strategy)
     window.triggerGoogleOAuthLogin = function() {
       try {
-        var btn = document.getElementById('google-custom-login-btn');
-        if (btn) {
-          btn.disabled = true;
-          btn.classList.add('opacity-70');
+        window.showAuthToast('Connecting with Google...', 'Google Authentication', '⏳');
+
+        // Strategy A: If Google Identity Services ID prompt is available, prompt One-Tap
+        if (window.google && window.google.accounts && window.google.accounts.id) {
+          google.accounts.id.prompt(function(notification) {
+            if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+              console.log('One-Tap not displayed, attempting token client popup...');
+              window.launchGoogleTokenPopup();
+            }
+          });
+          return;
         }
 
-        // Strategy A: Google Identity Services token client (Modern popup)
+        // Strategy B: Token Client Popup
+        window.launchGoogleTokenPopup();
+
+      } catch (err) {
+        console.error('triggerGoogleOAuthLogin error:', err);
+        window.launchGoogleTokenPopup();
+      }
+    };
+
+    // 5. Google OAuth 2.0 Token Client Popup
+    window.launchGoogleTokenPopup = function() {
+      try {
         if (window.google && window.google.accounts && window.google.accounts.oauth2) {
           var tokenClient = google.accounts.oauth2.initTokenClient({
             client_id: window.GOOGLE_CLIENT_ID,
             scope: 'openid email profile',
             callback: function(tokenResponse) {
-              if (btn) {
-                btn.disabled = false;
-                btn.classList.remove('opacity-70');
-              }
               if (tokenResponse && tokenResponse.access_token) {
+                window.showAuthToast('Access granted! Fetching profile...', 'Signing In', '✨');
                 window.fetchGoogleUserInfo(tokenResponse.access_token);
               } else if (tokenResponse && tokenResponse.error) {
-                console.warn('Google OAuth token error:', tokenResponse.error);
-                if (tokenResponse.error !== 'popup_closed_by_user') {
-                  window.redirectToGoogleOAuth();
+                console.warn('Google OAuth token error:', tokenResponse);
+                if (tokenResponse.error === 'origin_mismatch') {
+                  window.showAuthToast('Google Cloud Console origin mismatch. Please add https://www.sanatana360.com to Authorized JavaScript Origins.', 'Google Cloud Setup', '⚠️');
+                } else if (tokenResponse.error !== 'popup_closed_by_user') {
+                  window.showAuthToast('Google sign-in error: ' + (tokenResponse.error_description || tokenResponse.error), 'Auth Notice', '⚠️');
                 }
               }
             },
             error_callback: function(err) {
-              if (btn) {
-                btn.disabled = false;
-                btn.classList.remove('opacity-70');
-              }
-              console.warn('Google OAuth popup blocked or error:', err);
-              window.redirectToGoogleOAuth();
+              console.warn('Google popup error callback:', err);
+              window.showAuthToast('Google popup was closed or blocked. You can also sign in with email.', 'Popup Closed', '⚠️');
             }
           });
           tokenClient.requestAccessToken({ prompt: 'select_account' });
-          return;
+        } else {
+          window.showAuthToast('Google services not responding. Please sign in with email or reload page.', 'Notice', '⚠️');
         }
-
-        // Strategy B: Google One-Tap prompt
-        if (window.google && window.google.accounts && window.google.accounts.id) {
-          google.accounts.id.prompt(function(notification) {
-            if (btn) {
-              btn.disabled = false;
-              btn.classList.remove('opacity-70');
-            }
-            if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-              window.redirectToGoogleOAuth();
-            }
-          });
-          return;
-        }
-
-        // Strategy C: Full OAuth 2.0 Web Redirect
-        window.redirectToGoogleOAuth();
-
-      } catch (err) {
-        console.error('triggerGoogleOAuthLogin error:', err);
-        window.redirectToGoogleOAuth();
+      } catch (e) {
+        console.warn('launchGoogleTokenPopup error:', e);
+        window.showAuthToast('Google popup failed. Please sign in with email.', 'Error', '⚠️');
       }
     };
 
-    // 5. UserInfo Fetcher from Google OAuth Access Token
+    // 6. UserInfo Fetcher from Google OAuth Access Token
     window.fetchGoogleUserInfo = function(accessToken) {
       fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
         headers: { 'Authorization': 'Bearer ' + accessToken }
@@ -847,7 +852,7 @@
       });
     };
 
-    // 6. Full Web Redirect Fallback for Mobile / Popup-blocked Environments
+    // 7. Full Web Redirect Fallback
     window.redirectToGoogleOAuth = function() {
       try {
         var origin = window.location.origin;
@@ -869,7 +874,7 @@
       }
     };
 
-    // 7. Check URL Hash on Page Load for OAuth Redirect Returns (#access_token=... or #id_token=...)
+    // 8. Check URL Hash on Page Load for OAuth Redirect Returns
     (function checkOAuthHashRedirect() {
       try {
         var hash = window.location.hash;
@@ -878,7 +883,6 @@
           var idToken = hashParams.get('id_token');
           var accessToken = hashParams.get('access_token');
 
-          // Clean the address bar cleanly without page refresh
           if (window.history && window.history.replaceState) {
             window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
           }
@@ -894,28 +898,48 @@
       }
     })();
 
-    // 8. Initialize Google One Tap / GIS on load
+    // 9. Initialize Google One Tap / GIS on load & when modal opens
     window.initGoogleSignIn = function() {
       try {
-        if (window.google && window.google.accounts && window.google.accounts.id) {
-          google.accounts.id.initialize({
-            client_id: window.GOOGLE_CLIENT_ID,
-            callback: window.handleGoogleCredentialResponse,
-            auto_select: false,
-            cancel_on_tap_outside: true
+        if (!window.google || !window.google.accounts || !window.google.accounts.id) {
+          setTimeout(window.initGoogleSignIn, 400);
+          return;
+        }
+
+        google.accounts.id.initialize({
+          client_id: window.GOOGLE_CLIENT_ID,
+          callback: window.handleGoogleCredentialResponse,
+          auto_select: false,
+          cancel_on_tap_outside: true,
+          itp_support: true
+        });
+
+        var signinTarget = document.getElementById('google-signin-target');
+        if (signinTarget) {
+          signinTarget.innerHTML = '';
+          google.accounts.id.renderButton(signinTarget, {
+            theme: 'outline',
+            size: 'large',
+            type: 'standard',
+            shape: 'rectangular',
+            text: 'continue_with',
+            logo_alignment: 'left',
+            width: 320
           });
-          var btnContainer = document.getElementById('g_id_signin_btn');
-          if (btnContainer && !btnContainer.hasChildNodes()) {
-            google.accounts.id.renderButton(btnContainer, {
-              theme: 'outline',
-              size: 'large',
-              type: 'standard',
-              shape: 'rectangular',
-              text: 'continue_with',
-              logo_alignment: 'left',
-              width: 320
-            });
-          }
+        }
+
+        var signupTarget = document.getElementById('google-signup-target');
+        if (signupTarget) {
+          signupTarget.innerHTML = '';
+          google.accounts.id.renderButton(signupTarget, {
+            theme: 'outline',
+            size: 'large',
+            type: 'standard',
+            shape: 'rectangular',
+            text: 'signup_with',
+            logo_alignment: 'left',
+            width: 320
+          });
         }
       } catch (e) {
         console.warn('Google GSI init warning:', e);
@@ -923,7 +947,7 @@
     };
 
     window.addEventListener('load', function() {
-      setTimeout(window.initGoogleSignIn, 500);
+      setTimeout(window.initGoogleSignIn, 300);
     });
 
     window.fastSignIn = function(btn) {
@@ -1275,7 +1299,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#d4af37">
   <!-- Google Identity Services (OAuth Login) -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://accounts.google.com/gsi/client" async defer onload="if(typeof window.initGoogleSignIn === 'function') window.initGoogleSignIn()"></script>
 </head>
 <body class="bg-darkSlate text-gray-100 min-h-screen flex flex-col selection:bg-gold selection:text-black">
 
@@ -3774,22 +3798,8 @@
         </div>
 
                 <!-- Google OAuth 1-Click Sign In -->
-        <div class="my-2 space-y-2">
-          <div id="g_id_onload"
-               data-client_id="731558169906-m06hs4bbbdu5hl9mo5mcd6286ta8rnv0.apps.googleusercontent.com"
-               data-context="signin"
-               data-callback="handleGoogleCredentialResponse"
-               data-auto_prompt="false">
-          </div>
-          <div class="g_id_signin flex justify-center"
-               data-type="standard"
-               data-shape="rectangular"
-               data-theme="outline"
-               data-text="continue_with"
-               data-size="large"
-               data-logo_alignment="left"
-               data-width="360">
-          </div>
+        <div class="my-2 space-y-2 flex flex-col items-center">
+          <div id="google-signin-target" class="flex justify-center w-full min-h-[44px]"></div>
           <button type="button" id="google-custom-login-btn" onclick="window.triggerGoogleOAuthLogin()" class="w-full py-3 px-4 rounded-xl bg-white hover:bg-gray-100 text-[#3c4043] font-bold text-xs flex items-center justify-center gap-3 transition-all shadow-md hover:shadow-lg cursor-pointer border border-gray-200">
             <svg class="w-4 h-4" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -3881,8 +3891,9 @@
         </div>
 
         <!-- Google 1-Click Fast Registration -->
-        <div class="my-2 space-y-2">
-          <button type="button" onclick="window.triggerGoogleOAuthLogin()" class="w-full py-3 px-4 rounded-xl bg-white hover:bg-gray-100 text-[#3c4043] font-bold text-xs flex items-center justify-center gap-3 transition-all shadow-md hover:shadow-lg cursor-pointer border border-gray-200">
+        <div class="my-2 space-y-2 flex flex-col items-center">
+          <div id="google-signup-target" class="flex justify-center w-full min-h-[44px]"></div>
+          <button type="button" id="google-custom-signup-btn" onclick="window.triggerGoogleOAuthLogin()" class="w-full py-3 px-4 rounded-xl bg-white hover:bg-gray-100 text-[#3c4043] font-bold text-xs flex items-center justify-center gap-3 transition-all shadow-md hover:shadow-lg cursor-pointer border border-gray-200">
             <svg class="w-4 h-4" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
               <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
