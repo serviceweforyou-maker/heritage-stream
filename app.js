@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=116.0";
-import heritageData from "./data.js?v=116.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=116.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=117.0";
+import heritageData from "./data.js?v=117.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=117.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -1172,7 +1172,7 @@ class AppController {
     modal.classList.add('flex');
   }
 
-    // Checkout modal implementation (Live Cashfree Gateway for ₹29 Pass & ₹399 Annual Pass)
+      // Checkout modal implementation (Live Cashfree Gateway for ₹29 Pass & ₹399 Annual Pass)
   openPaymentModal(defaultPlan = 'trial') {
     const modal = document.getElementById('payment-modal');
     if (!modal) return;
@@ -1278,6 +1278,7 @@ class AppController {
         localStorage.setItem('hs_user_email', email);
         if (!localStorage.getItem('hs_avatar')) localStorage.setItem('hs_avatar', '📜');
         localStorage.setItem('hs_pending_sub_plan', selectedPlan === 'trial' ? '7-Day Pass (₹29)' : 'Annual VIP Pass (₹399/yr)');
+        localStorage.setItem('hs_pending_order_time', String(Date.now()));
 
         // Set Loading UI
         if (submitBtn) {
@@ -1300,6 +1301,9 @@ class AppController {
           });
 
           const data = await res.json();
+          if (data.order_id) {
+            localStorage.setItem('hs_pending_order_id', data.order_id);
+          }
           if (!res.ok || !data.payment_session_id) {
             throw new Error(data.error || 'Failed to initialize Cashfree payment gateway');
           }
@@ -1351,14 +1355,44 @@ class AppController {
 
   checkPaymentStatus() {
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('payment')) {
-      const status = urlParams.get('payment');
-      const orderId = urlParams.get('order_id') || "";
-      
-      // Clean query parameters from URL without reloading
+    const hasPaymentParam = urlParams.has('payment');
+    const status = urlParams.get('payment');
+    const orderId = urlParams.get('order_id') || localStorage.getItem('hs_pending_order_id') || "";
+    
+    // Clean query parameters from URL without reloading
+    if (hasPaymentParam) {
       const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
       window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+    }
 
+    const activatePassLocally = (planName, verifiedOrderId) => {
+      const savedName = localStorage.getItem('hs_user_name') || this.currentProfile || 'Scholar';
+      this.isSubscribed = true;
+      this.isLoggedIn = true;
+      this.currentProfile = savedName;
+      localStorage.setItem('hs_auth_logged_in', 'true');
+      localStorage.setItem('hs_subscribed', 'true');
+      localStorage.setItem('hs_subscribed_name', savedName);
+      localStorage.setItem('hs_order_id', verifiedOrderId || orderId || ('order_' + Date.now()));
+      localStorage.setItem('hs_sub_timestamp', String(Date.now()));
+      localStorage.setItem('hs_sub_date', new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }));
+      localStorage.removeItem('hs_sub_expired');
+      localStorage.removeItem('hs_pending_order_id');
+      localStorage.setItem('hs_sub_plan', planName || '7-Day Pass (₹29)');
+
+      window.updateHeaderAuthState?.();
+      this.renderHeader();
+      this.renderSpotlight();
+      this.renderContentRows();
+      this.setupSubscriptionUI();
+    };
+
+    // Auto-Recovery Check: If user switched back from Paytm/UPI app to browser without query param
+    const pendingOrderId = localStorage.getItem('hs_pending_order_id');
+    const pendingOrderTime = parseInt(localStorage.getItem('hs_pending_order_time') || '0');
+    const isRecentPending = pendingOrderId && (Date.now() - pendingOrderTime < 24 * 60 * 60 * 1000);
+
+    if (hasPaymentParam) {
       if (status === 'success') {
         const urlAmount = urlParams.get('amount');
         const urlPlan = urlParams.get('plan');
@@ -1371,24 +1405,7 @@ class AppController {
           selectedPlanName = localStorage.getItem('hs_pending_sub_plan') || '7-Day Pass (₹29)';
         }
 
-        const savedName = localStorage.getItem('hs_user_name') || 'Scholar';
-        this.isSubscribed = true;
-        this.isLoggedIn = true;
-        this.currentProfile = savedName;
-        localStorage.setItem('hs_auth_logged_in', 'true');
-        localStorage.setItem('hs_subscribed', 'true');
-        localStorage.setItem('hs_subscribed_name', savedName);
-        localStorage.setItem('hs_order_id', orderId || ('order_' + Date.now()));
-        localStorage.setItem('hs_sub_timestamp', String(Date.now()));
-        localStorage.setItem('hs_sub_date', new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }));
-        localStorage.removeItem('hs_sub_expired');
-        localStorage.setItem('hs_sub_plan', selectedPlanName);
-
-        window.updateHeaderAuthState?.();
-        this.renderHeader();
-        this.renderSpotlight();
-        this.renderContentRows();
-        this.setupSubscriptionUI();
+        activatePassLocally(selectedPlanName, orderId);
 
         // Show Success Dialog
         const modal = document.getElementById('payment-modal');
@@ -1398,46 +1415,129 @@ class AppController {
             <div class="text-center p-8 flex flex-col items-center justify-center min-h-[300px]">
               <div class="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-3xl mb-6">✓</div>
               <h4 class="text-2xl font-bold text-white mb-2 font-serif">Payment Verified!</h4>
-              <p class="text-sm text-emerald-400/90 font-medium mb-4">Your subscription is now active.</p>
+              <p class="text-sm text-emerald-400/90 font-medium mb-4">Your ${selectedPlanName} is now active.</p>
               <p class="text-xs text-white/50 mb-3">Order ID: <code class="font-mono text-gold bg-white/5 px-2 py-0.5 rounded">${orderId}</code></p>
               <p class="text-xs text-white/60 mb-8 max-w-xs">Thank you! Your Premium Pass is fully active. Explore the entire heritage catalog unrestricted.</p>
-              <button id="payment-continue-btn" class="px-8 py-3 bg-white text-black hover:bg-white/90 font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all">Start Exploring</button>
+              <button id="payment-continue-btn" class="px-8 py-3 bg-white text-black hover:bg-white/90 font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">Start Exploring</button>
             </div>
           `;
           
-          const continueBtn = modal.querySelector('#payment-continue-btn');
-          if (continueBtn) {
-            continueBtn.onclick = () => {
-              this.closeAllModals();
-            };
-          }
+          body.querySelector('#payment-continue-btn')?.addEventListener('click', () => {
+            this.closeAllModals();
+          });
           modal.classList.remove('hidden');
           modal.classList.add('flex');
         }
-      } else if (status === 'failed') {
-        // Show Failed Dialog
+      } else if (status === 'pending' || status === 'failed') {
+        // Show Pending / Auto-Verification Dialog (Never give up prematurely for UPI payments)
         const modal = document.getElementById('payment-modal');
         if (modal) {
           const body = modal.querySelector('#payment-modal-body');
           body.innerHTML = `
-            <div class="text-center p-8 flex flex-col items-center justify-center min-h-[300px]">
-              <div class="w-16 h-16 rounded-full bg-crimson/10 border border-crimson/40 text-crimson flex items-center justify-center text-3xl mb-6">✗</div>
-              <h4 class="text-2xl font-bold text-white mb-2 font-serif">Payment Failed</h4>
-              <p class="text-sm text-crimson/90 font-medium mb-4">Transaction could not be completed.</p>
-              <p class="text-xs text-white/60 mb-8 max-w-xs">Your payment was cancelled or declined. Please try again or choose another payment method.</p>
-              <button id="payment-retry-btn" class="px-8 py-3 bg-white text-black hover:bg-white/90 font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all">Try Again</button>
+            <div class="text-center p-6 sm:p-8 flex flex-col items-center justify-center min-h-[320px]">
+              <div class="w-14 h-14 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-400 flex items-center justify-center text-2xl mb-4 animate-pulse">⏳</div>
+              <h4 class="text-xl sm:text-2xl font-bold text-white mb-2 font-serif">Verifying Payment with Bank</h4>
+              <p class="text-xs sm:text-sm text-white/80 max-w-xs mb-2">If you completed payment in Paytm, GPay, or PhonePe, your bank is confirming the transaction.</p>
+              ${orderId ? `<p class="text-[11px] text-gold/90 font-mono mb-4">Order ID: <code class="bg-white/10 px-2 py-0.5 rounded">${orderId}</code></p>` : ''}
+              
+              <div id="verify-live-status" class="text-xs text-emerald-400 font-mono mb-6 flex items-center justify-center gap-2">
+                <span class="animate-spin text-sm">🔄</span>
+                <span>Connecting to Cashfree & Syncing...</span>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-2 w-full max-w-xs">
+                <button type="button" id="payment-recheck-btn" class="flex-1 py-3 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md shadow-gold/20">
+                  🔄 Check Status Now
+                </button>
+                <button type="button" id="payment-close-pending-btn" class="py-3 px-4 bg-[#141826] hover:bg-white/10 text-white/70 font-bold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+                  Close
+                </button>
+              </div>
             </div>
           `;
-          const retryBtn = modal.querySelector('#payment-retry-btn');
-          if (retryBtn) {
-            retryBtn.onclick = () => {
-              this.openPaymentModal();
-            };
-          }
+
+          let checkAttempts = 0;
+          const statusLabel = body.querySelector('#verify-live-status');
+          const recheckBtn = body.querySelector('#payment-recheck-btn');
+
+          const runStatusCheck = async () => {
+            if (!orderId) return;
+            checkAttempts++;
+            if (statusLabel) statusLabel.innerHTML = `<span class="animate-spin text-sm">🔄</span> <span>Checking Cashfree (Attempt ${checkAttempts})...</span>`;
+
+            try {
+              const res = await fetch(`/api/validate-subscription?order_id=${encodeURIComponent(orderId)}&email=${encodeURIComponent(localStorage.getItem('hs_user_email') || '')}`);
+              if (res.ok) {
+                const data = await res.json();
+                if (data.valid) {
+                  activatePassLocally(data.plan, orderId);
+                  if (body) {
+                    body.innerHTML = `
+                      <div class="text-center p-8 flex flex-col items-center justify-center min-h-[300px]">
+                        <div class="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-3xl mb-6">✓</div>
+                        <h4 class="text-2xl font-bold text-white mb-2 font-serif">Payment Verified!</h4>
+                        <p class="text-sm text-emerald-400/90 font-medium mb-4">Your ${data.plan} is now active.</p>
+                        <p class="text-xs text-white/50 mb-3">Order ID: <code class="font-mono text-gold bg-white/5 px-2 py-0.5 rounded">${orderId}</code></p>
+                        <p class="text-xs text-white/60 mb-8 max-w-xs">Thank you! Your Premium Pass is fully active. Explore the entire heritage catalog unrestricted.</p>
+                        <button id="payment-continue-btn" class="px-8 py-3 bg-white text-black hover:bg-white/90 font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">Start Exploring</button>
+                      </div>
+                    `;
+                    body.querySelector('#payment-continue-btn')?.addEventListener('click', () => {
+                      this.closeAllModals();
+                    });
+                  }
+                  return true;
+                }
+              }
+            } catch (err) {
+              console.warn("Auto status check error:", err);
+            }
+
+            if (checkAttempts >= 6) {
+              if (statusLabel) {
+                statusLabel.innerHTML = `<span class="text-amber-300">Bank settlement in progress. If Paytm deducted ₹29, please click "Check Status Now" in a moment.</span>`;
+              }
+            }
+            return false;
+          };
+
+          const pollTimer = setInterval(async () => {
+            const confirmed = await runStatusCheck();
+            if (confirmed || checkAttempts >= 6) {
+              clearInterval(pollTimer);
+            }
+          }, 2000);
+
+          recheckBtn?.addEventListener('click', async () => {
+            recheckBtn.disabled = true;
+            recheckBtn.innerHTML = `<span class="animate-spin text-sm">🔄</span> Checking...`;
+            const confirmed = await runStatusCheck();
+            recheckBtn.disabled = false;
+            recheckBtn.innerHTML = `🔄 Check Status Now`;
+          });
+
+          body.querySelector('#payment-close-pending-btn')?.addEventListener('click', () => {
+            clearInterval(pollTimer);
+            this.closeAllModals();
+          });
+
           modal.classList.remove('hidden');
           modal.classList.add('flex');
         }
       }
+    } else if (!this.isSubscribed && isRecentPending) {
+      // Auto-validate pending order in background
+      fetch(`/api/validate-subscription?order_id=${encodeURIComponent(pendingOrderId)}&email=${encodeURIComponent(localStorage.getItem('hs_user_email') || '')}`)
+        .then(r => r.json())
+        .then(data => {
+          if (data && data.valid) {
+            activatePassLocally(data.plan, pendingOrderId);
+            if (typeof window.showAuthToast === 'function') {
+              window.showAuthToast('Payment Verified! Your ' + data.plan + ' is now active.', 'Pass Activated', '🎉');
+            }
+          }
+        })
+        .catch(() => {});
     }
   }
 
