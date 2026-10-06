@@ -1000,6 +1000,10 @@ class AppController {
 
     // Expose Auth Modal Methods Globally & on Instance
     this.openAuthModal = window.openAuthModal;
+    this.requestLogout = window.requestLogout;
+    this.confirmSignOut = window.confirmSignOut;
+    this.cancelSignOut = window.cancelSignOut;
+    this.showAuthToast = window.showAuthToast;
     this.closeAuthModal = window.closeAuthModal;
     this.switchAuthTab = window.switchAuthTab;
     this.getAccountTrialStatus = getAccountTrialStatus;
@@ -1068,7 +1072,11 @@ class AppController {
       this.setupSubscriptionUI();
       window.closeAuthModal();
 
-      alert('✨ Welcome to Sanatana360, ' + formattedName + '!');
+      if (typeof window.showAuthToast === 'function') {
+        window.showAuthToast('Welcome back, ' + formattedName + '! Your library is ready.', 'Login Successful', '✨');
+      } else {
+        alert('✨ Welcome to Sanatana360, ' + formattedName + '!');
+      }
     };
 
     const signInForm = document.getElementById('netflix-signin-form');
@@ -1100,6 +1108,9 @@ class AppController {
         this.renderContentRows();
         this.setupSubscriptionUI();
         window.closeAuthModal();
+        if (typeof window.showAuthToast === 'function') {
+          window.showAuthToast('Welcome back, ' + name + '! Switched persona successfully.', 'Login Successful', '✨');
+        }
       };
     });
 
@@ -1354,41 +1365,13 @@ class AppController {
       };
     }
 
-    // ── Robust Sign Out Handler (Netflix Style) ──
+    // ── Robust Sign Out Handler (Interactive Modal Confirmation) ──
     const handleLogout = () => {
-      localStorage.setItem('hs_auth_logged_in', 'false');
-      localStorage.removeItem('hs_user_name');
-      localStorage.removeItem('hs_user_email');
-      localStorage.removeItem('hs_user_pwd');
-      localStorage.removeItem('hs_subscribed');
-      localStorage.removeItem('hs_subscribed_name');
-      localStorage.removeItem('hs_order_id');
-      localStorage.removeItem('hs_sub_timestamp');
-      localStorage.removeItem('hs_sub_date');
-      localStorage.removeItem('hs_sub_expired');
-      localStorage.removeItem('hs_profile');
-      localStorage.removeItem('hs_avatar');
-      localStorage.removeItem('hs_account_created_timestamp');
-      localStorage.removeItem('hs_free_trial_start');
-      sessionStorage.removeItem('hs_trial_popup_shown_session');
-
-      this.isLoggedIn = false;
-      this.isSubscribed = false;
-      this.currentProfile = 'Guest';
-      this.currentProfileAvatar = '👤';
-
-      window.updateHeaderAuthState();
-      renderHeaderProfile();
-      this.renderSpotlight();
-      this.renderContentRows();
-      this.setupSubscriptionUI();
-
-      if (accountModal) {
-        accountModal.classList.add('hidden');
-        accountModal.classList.remove('flex');
+      if (typeof window.requestLogout === 'function') {
+        window.requestLogout();
+      } else {
+        window.confirmSignOut();
       }
-
-      alert('✅ You have been signed out successfully.');
     };
 
     this.handleLogout = handleLogout;

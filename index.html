@@ -146,6 +146,234 @@
       }
     };
 
+    // ── Global Luxury Toast Engine ──
+    window.showAuthToast = function(msg, title, icon) {
+      try {
+        var toast = document.getElementById('global-auth-toast');
+        var titleEl = document.getElementById('global-toast-title');
+        var msgEl = document.getElementById('global-toast-msg');
+        var iconEl = document.getElementById('global-toast-icon');
+        if (!toast) return;
+
+        if (titleEl) titleEl.textContent = title || 'Sanatana360';
+        if (msgEl) msgEl.textContent = msg || '';
+        if (iconEl) iconEl.textContent = icon || '✨';
+
+        toast.classList.remove('hidden');
+        void toast.offsetWidth; // Force DOM reflow
+        toast.classList.remove('-translate-y-4', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+
+        if (window._toastTimeout) clearTimeout(window._toastTimeout);
+        window._toastTimeout = setTimeout(function() {
+          window.hideAuthToast();
+        }, 3800);
+      } catch(e) {
+        console.warn('Toast error:', e);
+      }
+    };
+
+    window.hideAuthToast = function() {
+      try {
+        var toast = document.getElementById('global-auth-toast');
+        if (!toast) return;
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('-translate-y-4', 'opacity-0');
+        setTimeout(function() {
+          toast.classList.add('hidden');
+        }, 300);
+      } catch(e) {}
+    };
+
+    // ── Interactive Sign Out Request & Confirmation Flow ──
+    window.requestLogout = function() {
+      try {
+        var confirmModal = document.getElementById('logout-confirm-modal');
+        if (confirmModal) {
+          confirmModal.classList.remove('hidden');
+          confirmModal.classList.add('flex');
+          confirmModal.style.display = 'flex';
+        } else {
+          window.confirmSignOut();
+        }
+      } catch(e) {
+        console.warn('Error opening logout confirm modal:', e);
+        window.confirmSignOut();
+      }
+    };
+
+    window.cancelSignOut = function() {
+      try {
+        var confirmModal = document.getElementById('logout-confirm-modal');
+        if (confirmModal) {
+          confirmModal.classList.add('hidden');
+          confirmModal.classList.remove('flex');
+          confirmModal.style.display = 'none';
+        }
+      } catch(e) {
+        console.warn('Error closing logout confirm modal:', e);
+      }
+    };
+
+    window.confirmSignOut = function() {
+      try {
+        // Clear all stored authentication & session values
+        localStorage.setItem('hs_auth_logged_in', 'false');
+        localStorage.removeItem('hs_user_name');
+        localStorage.removeItem('hs_user_email');
+        localStorage.removeItem('hs_user_pwd');
+        localStorage.removeItem('hs_subscribed');
+        localStorage.removeItem('hs_subscribed_name');
+        localStorage.removeItem('hs_order_id');
+        localStorage.removeItem('hs_sub_timestamp');
+        localStorage.removeItem('hs_sub_date');
+        localStorage.removeItem('hs_sub_expired');
+        localStorage.removeItem('hs_profile');
+        localStorage.removeItem('hs_avatar');
+        localStorage.removeItem('hs_account_created_timestamp');
+        localStorage.removeItem('hs_free_trial_start');
+        sessionStorage.removeItem('hs_trial_popup_shown_session');
+
+        // Close logout confirm modal
+        window.cancelSignOut();
+
+        // Close account modal if open
+        var accModal = document.getElementById('user-account-modal');
+        if (accModal) {
+          accModal.classList.add('hidden');
+          accModal.classList.remove('flex');
+          accModal.style.display = 'none';
+        }
+
+        // Close profile modal if open
+        var profModal = document.getElementById('profile-modal');
+        if (profModal) {
+          profModal.classList.add('hidden');
+          profModal.classList.remove('flex');
+          profModal.style.display = 'none';
+        }
+
+        // Immediate 0ms Header DOM Sync to Sign In state
+        window.updateHeaderAuthState();
+
+        // Synchronize appInstance if active
+        if (window.appInstance) {
+          window.appInstance.isLoggedIn = false;
+          window.appInstance.isSubscribed = false;
+          window.appInstance.currentProfile = 'Guest';
+          window.appInstance.currentProfileAvatar = '👤';
+          if (typeof window.appInstance.renderHeaderProfile === 'function') window.appInstance.renderHeaderProfile();
+          if (typeof window.appInstance.renderSpotlight === 'function') window.appInstance.renderSpotlight();
+          if (typeof window.appInstance.renderContentRows === 'function') window.appInstance.renderContentRows();
+          if (typeof window.appInstance.setupSubscriptionUI === 'function') window.appInstance.setupSubscriptionUI();
+        }
+
+        window.showAuthToast('You have been signed out. Visit again soon! 🙏', 'Signed Out', '🚪');
+      } catch(err) {
+        console.error('Error during sign out:', err);
+        window.updateHeaderAuthState();
+        window.showAuthToast('Signed out successfully.', 'Signed Out', '🚪');
+      }
+    };
+
+    // ── Instant Sign In Submit Handler ──
+    window.handleSignInSubmit = function(e) {
+      if (e) e.preventDefault();
+      try {
+        var emailInput = document.getElementById('auth-signin-email');
+        var pwdInput = document.getElementById('auth-signin-pwd');
+        var email = (emailInput ? emailInput.value : '').trim();
+        var pwd = (pwdInput ? pwdInput.value : '').trim();
+
+        if (!email) {
+          window.showAuthToast('Please enter your email or mobile number.', 'Input Required', '⚠️');
+          if (emailInput) emailInput.focus();
+          return;
+        }
+
+        var nameFromEmail = email.split('@')[0];
+        var formattedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+        if (/^\d+$/.test(formattedName)) {
+          formattedName = 'Explorer ' + formattedName.slice(-4);
+        }
+
+        var avatar = localStorage.getItem('hs_avatar') || '📜';
+        var now = Date.now();
+
+        localStorage.setItem('hs_auth_logged_in', 'true');
+        localStorage.setItem('hs_user_name', formattedName || 'Scholar');
+        localStorage.setItem('hs_user_email', email);
+        if (pwd) localStorage.setItem('hs_user_pwd', pwd);
+        if (!localStorage.getItem('hs_avatar')) localStorage.setItem('hs_avatar', avatar);
+        if (!localStorage.getItem('hs_account_created_timestamp')) {
+          localStorage.setItem('hs_account_created_timestamp', String(now));
+          localStorage.setItem('hs_free_trial_start', String(now));
+        }
+
+        // Immediate 0ms Header Sync
+        window.updateHeaderAuthState();
+
+        if (window.appInstance) {
+          window.appInstance.isLoggedIn = true;
+          window.appInstance.currentProfile = formattedName || 'Scholar';
+          window.appInstance.currentProfileAvatar = avatar;
+          if (typeof window.appInstance.renderHeaderProfile === 'function') window.appInstance.renderHeaderProfile();
+          if (typeof window.appInstance.renderSpotlight === 'function') window.appInstance.renderSpotlight();
+          if (typeof window.appInstance.renderContentRows === 'function') window.appInstance.renderContentRows();
+          if (typeof window.appInstance.setupSubscriptionUI === 'function') window.appInstance.setupSubscriptionUI();
+          if (typeof window.appInstance.setupProfileSelector === 'function') window.appInstance.setupProfileSelector();
+        }
+
+        window.closeAuthModal();
+        window.showAuthToast('Welcome back, ' + formattedName + '! Your Vedic library is ready.', 'Login Successful', '✨');
+      } catch(err) {
+        console.error('Error during sign in:', err);
+        window.updateHeaderAuthState();
+        window.closeAuthModal();
+        window.showAuthToast('Welcome to Sanatana360!', 'Login Successful', '✨');
+      }
+    };
+
+    // ── Fast 1-Click Persona Sign In Helper ──
+    window.fastSignIn = function(btn) {
+      try {
+        var name = (btn && btn.getAttribute('data-name')) ? btn.getAttribute('data-name') : 'Scholar';
+        var avatar = (btn && btn.getAttribute('data-avatar')) ? btn.getAttribute('data-avatar') : '📜';
+        var email = name.toLowerCase().replace(/[^a-z0-9]/g, '') + '@explorer.sanatana360.com';
+        var now = Date.now();
+
+        localStorage.setItem('hs_auth_logged_in', 'true');
+        localStorage.setItem('hs_user_name', name);
+        localStorage.setItem('hs_user_email', email);
+        localStorage.setItem('hs_avatar', avatar);
+        if (!localStorage.getItem('hs_account_created_timestamp')) {
+          localStorage.setItem('hs_account_created_timestamp', String(now));
+          localStorage.setItem('hs_free_trial_start', String(now));
+        }
+
+        // Immediate 0ms Header Sync
+        window.updateHeaderAuthState();
+
+        if (window.appInstance) {
+          window.appInstance.isLoggedIn = true;
+          window.appInstance.currentProfile = name;
+          window.appInstance.currentProfileAvatar = avatar;
+          if (typeof window.appInstance.renderHeaderProfile === 'function') window.appInstance.renderHeaderProfile();
+          if (typeof window.appInstance.renderSpotlight === 'function') window.appInstance.renderSpotlight();
+          if (typeof window.appInstance.renderContentRows === 'function') window.appInstance.renderContentRows();
+          if (typeof window.appInstance.setupSubscriptionUI === 'function') window.appInstance.setupSubscriptionUI();
+          if (typeof window.appInstance.setupProfileSelector === 'function') window.appInstance.setupProfileSelector();
+        }
+
+        window.closeAuthModal();
+        window.showAuthToast('Welcome back, ' + name + '! Switched persona successfully.', 'Login Successful', '✨');
+      } catch(err) {
+        console.error('Error fast signing in:', err);
+        window.updateHeaderAuthState();
+        window.closeAuthModal();
+      }
+    };
+
     window.handleRegisterSubmit = function(e) {
       if (e) e.preventDefault();
       try {
@@ -181,12 +409,12 @@
         }
 
         window.closeAuthModal();
-        alert('🎉 Free Explorer Account Created! Welcome, ' + name + '! Your 3-Day Free VIP Access is now active.');
+        window.showAuthToast('Welcome, ' + name + '! Your 3-Day Free VIP Access is now active.', 'Account Created', '🎉');
       } catch(err) {
         console.error('Error during registration:', err);
         window.updateHeaderAuthState();
         window.closeAuthModal();
-        alert('Account Created! Welcome to Sanatana360!');
+        window.showAuthToast('Welcome to Sanatana360!', 'Account Created', '🎉');
       }
     };
   </script>
@@ -546,6 +774,21 @@
 </head>
 <body class="bg-darkSlate text-gray-100 min-h-screen flex flex-col selection:bg-gold selection:text-black">
 
+  <!-- ── 🌟 GLOBAL LUXURY AUTH & NOTIFICATION TOAST ── -->
+  <div id="global-auth-toast" class="fixed top-5 left-1/2 -translate-x-1/2 z-[9999] hidden pointer-events-auto transition-all duration-300 transform -translate-y-4 opacity-0 max-w-md w-auto px-4" role="alert">
+    <div class="bg-[#090b12] text-white border-2 border-gold/60 shadow-[0_20px_60px_rgba(0,0,0,0.98)] rounded-2xl px-5 py-3.5 flex items-center gap-3 backdrop-blur-xl">
+      <div id="global-toast-icon" class="w-9 h-9 rounded-xl bg-gold/20 border border-gold/40 flex items-center justify-center text-xl flex-shrink-0 shadow-inner">
+        ✨
+      </div>
+      <div class="min-w-0 pr-1">
+        <div id="global-toast-title" class="text-xs font-black font-serif text-gold tracking-wide uppercase">Notification</div>
+        <div id="global-toast-msg" class="text-xs font-semibold text-white/90 leading-tight mt-0.5">Action completed successfully</div>
+      </div>
+      <button type="button" onclick="window.hideAuthToast()" class="ml-2 text-white/50 hover:text-gold text-xl font-bold cursor-pointer transition-colors p-1" title="Dismiss">&times;</button>
+    </div>
+  </div>
+
+
     <!-- ── 🌟 UNIFIED 3-TIER MASTER HEADER (Flawless Laptop & Mobile Fitting) ── -->
   <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-gold/25 flex flex-col bg-[#07090f] shadow-2xl shadow-black/90 select-none" id="main-header" style="background-color: #07090f !important;">
     
@@ -641,7 +884,7 @@
               <span>🎭</span> <span>Switch Persona</span>
             </button>
             <div class="border-t border-white/10 my-1"></div>
-            <button id="menu-logout-btn" class="w-full text-left px-3.5 py-2 text-xs text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-xl transition-all flex items-center gap-2 font-bold cursor-pointer">
+            <button id="menu-logout-btn" type="button" onclick="window.requestLogout()" class="w-full text-left px-3.5 py-2 text-xs text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-xl transition-all flex items-center gap-2 font-bold cursor-pointer">
               <span>🚪</span> <span>Sign Out</span>
             </button>
           </div>
@@ -3026,7 +3269,7 @@
           <p class="text-xs text-white/60 mt-1">Unlock 200+ sagas, 40+ 24/7 Live Temples &amp; Vedic Gurukula</p>
         </div>
 
-        <form id="netflix-signin-form" class="space-y-3.5" onsubmit="event.preventDefault();">
+        <form id="netflix-signin-form" class="space-y-3.5" onsubmit="window.handleSignInSubmit(event)">
           <div class="space-y-1.5">
             <label class="text-[10px] font-bold text-white/70 uppercase tracking-wider font-mono block">Email or Mobile Number</label>
             <input type="text" id="auth-signin-email" placeholder="e.g. rahul@example.com or 9876543210" required class="w-full bg-[#141826] border border-white/20 focus:border-gold rounded-xl px-4 py-3 text-white text-xs focus:outline-none transition-all shadow-inner" style="background-color: #141826 !important;">
@@ -3048,7 +3291,7 @@
             <button type="button" id="auth-forgot-btn" class="text-gold/80 hover:text-gold hover:underline cursor-pointer text-[11px]">Forgot pass?</button>
           </div>
 
-          <button type="submit" id="auth-signin-submit-btn" class="w-full py-3.5 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/25 hover:scale-[1.01] cursor-pointer mt-2">
+          <button type="submit" id="auth-signin-submit-btn" onclick="window.handleSignInSubmit(event)" class="w-full py-3.5 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/25 hover:scale-[1.01] cursor-pointer mt-2">
             Sign In to Sanatana360
           </button>
         </form>
@@ -3057,15 +3300,15 @@
         <div class="pt-2 border-t border-white/10 space-y-2">
           <span class="text-[10px] text-white/40 uppercase font-mono block text-center font-bold">Fast 1-Click Persona Sign In</span>
           <div class="grid grid-cols-3 gap-2">
-            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" data-name="Rahul (Scholar)" data-avatar="📜">
+            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" onclick="window.fastSignIn(this)" data-name="Rahul (Scholar)" data-avatar="📜">
               <span class="text-base">📜</span>
               <span class="text-[10px]">Scholar</span>
             </button>
-            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" data-name="Ananya (Yogi)" data-avatar="🧘">
+            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" onclick="window.fastSignIn(this)" data-name="Ananya (Yogi)" data-avatar="🧘">
               <span class="text-base">🧘</span>
               <span class="text-[10px]">Yogi</span>
             </button>
-            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" data-name="Aarav (Warrior)" data-avatar="⚔️">
+            <button type="button" class="fast-login-btn p-2 rounded-xl bg-[#141826] hover:bg-gold hover:text-black border border-white/10 text-white text-xs font-bold transition-all flex flex-col items-center gap-0.5 cursor-pointer" onclick="window.fastSignIn(this)" data-name="Aarav (Warrior)" data-avatar="⚔️">
               <span class="text-base">⚔️</span>
               <span class="text-[10px]">Warrior</span>
             </button>
@@ -3226,7 +3469,40 @@
   </div>
 
   <!-- ── USER ACCOUNT & MEMBERSHIP MODAL (SOLID LUXURY DESIGN) ── -->
-  <div id="user-account-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
+  <div 
+  <!-- ── 🚪 INTERACTIVE SIGN OUT CONFIRMATION MODAL ── -->
+  <div id="logout-confirm-modal" class="modal-overlay fixed inset-0 z-[120] hidden items-center justify-center p-4 overflow-y-auto font-sans">
+    <div class="bg-[#090b12] border-2 border-gold/50 rounded-3xl w-full max-w-sm shadow-[0_30px_90px_rgba(0,0,0,0.99)] relative p-6 sm:p-7 text-center space-y-5" style="background-color: #090b12 !important; opacity: 1 !important;">
+      
+      <!-- Top Icon Badge -->
+      <div class="mx-auto w-16 h-16 rounded-2xl bg-red-500/15 border border-red-500/35 flex items-center justify-center text-3xl shadow-inner animate-pulse">
+        🚪
+      </div>
+
+      <!-- Modal Title & Confirmation Prompt -->
+      <div class="space-y-1.5">
+        <h3 class="text-xl font-black font-serif text-white tracking-wide">Sign Out?</h3>
+        <p class="text-xs text-white/80 leading-relaxed">
+          Are you sure you want to sign out of Sanatana360?
+        </p>
+        <p class="text-[10px] text-white/50 font-mono">
+          You can sign back in at any time to access your Vedic sagas &amp; pass benefits.
+        </p>
+      </div>
+
+      <!-- Action Buttons: No (Stay) vs Yes (Sign Out) -->
+      <div class="grid grid-cols-2 gap-3 pt-2">
+        <button id="logout-confirm-no-btn" type="button" onclick="window.cancelSignOut()" class="py-3 px-4 rounded-xl bg-[#141826] hover:bg-[#1a2032] border border-white/20 hover:border-white/40 text-white font-bold text-xs transition-all cursor-pointer shadow-sm">
+          ✕ Stay In
+        </button>
+        <button id="logout-confirm-yes-btn" type="button" onclick="window.confirmSignOut()" class="py-3 px-4 rounded-xl bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-500 hover:to-rose-500 border border-red-500/50 text-white font-black text-xs uppercase tracking-wider transition-all shadow-lg shadow-red-900/40 hover:scale-[1.02] cursor-pointer">
+          ✓ Sign Out
+        </button>
+      </div>
+    </div>
+  </div>
+
+  id="user-account-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
     <div class="bg-[#0c0e17] border border-gold/40 rounded-3xl w-full max-w-lg shadow-[0_25px_60px_rgba(0,0,0,0.95)] relative p-5 sm:p-7 max-h-[90vh] overflow-y-auto no-scrollbar font-sans space-y-6">
       
       <!-- Top Bar: Avatar, Name & Dedicated Close Button -->
@@ -3338,7 +3614,7 @@
 
       <!-- Modal Footer / Logout -->
       <div class="border-t border-white/10 pt-4 flex items-center justify-between">
-        <button id="account-logout-btn" class="text-xs text-red-400 hover:text-red-300 font-bold flex items-center gap-1.5 transition-colors cursor-pointer">
+        <button id="account-logout-btn" type="button" onclick="window.requestLogout()" class="text-xs text-red-400 hover:text-red-300 font-bold flex items-center gap-1.5 transition-colors cursor-pointer">
           🚪 Sign Out / Switch to Guest
         </button>
         <span id="account-toast-msg" class="text-xs font-bold text-emerald-400 opacity-0 transition-opacity">Saved!</span>
