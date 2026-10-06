@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=113.0";
-import heritageData from "./data.js?v=113.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=113.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=114.0";
+import heritageData from "./data.js?v=114.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=114.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -1123,7 +1123,7 @@ class AppController {
     modal.classList.add('flex');
   }
 
-  // Checkout modal implementation (Instant ₹29 Pass & ₹399 Annual Pass Activation + Account Creation)
+    // Checkout modal implementation (Live Cashfree Gateway for ₹29 Pass & ₹399 Annual Pass)
   openPaymentModal(defaultPlan = 'trial') {
     const modal = document.getElementById('payment-modal');
     if (!modal) return;
@@ -1168,12 +1168,15 @@ class AppController {
                 <span class="text-3xl font-black text-gold font-mono">${price}</span>
                 <span class="text-xs text-white/70 font-mono">${period}</span>
               </div>
-              <div class="text-[10px] text-emerald-400 font-bold mt-1">✓ Instant Account Created &amp; Unlocked Immediately</div>
+              <div class="text-[10px] text-emerald-400 font-bold mt-1">✓ 256-Bit SSL Cashfree Secured &bull; UPI, Cards, NetBanking</div>
             </div>
             <div class="text-3xl opacity-90">🏛️</div>
           </div>
 
-          <!-- Payment & Instant Account Form -->
+          <!-- Error Feedback Box -->
+          <div id="pay-error-msg" class="hidden text-xs text-red-400 bg-red-500/15 border border-red-500/30 p-3 rounded-xl mb-3 text-left max-w-sm mx-auto"></div>
+
+          <!-- Payment Form -->
           <form id="payment-form" class="max-w-sm mx-auto text-left grid gap-3 mb-3">
             <div>
               <label class="text-[10px] font-bold text-white/70 uppercase tracking-widest block mb-1">Your Full Name</label>
@@ -1185,13 +1188,15 @@ class AppController {
             </div>
             
             <button type="submit" id="pay-submit-btn" class="w-full py-3.5 mt-1 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/25 hover:scale-[1.01] flex items-center justify-center gap-2 cursor-pointer">
-              <span>⚡ Activate ${price} Pass &amp; Start Instant VIP Access</span>
-              <span class="text-sm">✨</span>
+              <span>⚡ Pay ${price} &amp; Unlock VIP Pass</span>
+              <span class="text-sm">🔒</span>
             </button>
           </form>
 
-          <div class="text-[10px] text-white/40 text-center">
-            🔒 256-Bit Encrypted &bull; 100% Secure Instant Activation &bull; Zero Waiting
+          <div class="text-[10px] text-white/40 text-center flex items-center justify-center gap-2">
+            <span>🔒 256-Bit Encrypted</span>
+            <span>&bull;</span>
+            <span>Official Cashfree Payment Gateway</span>
           </div>
         </div>
       `;
@@ -1207,9 +1212,73 @@ class AppController {
       });
 
       const form = body.querySelector('#payment-form');
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        this.processPassInstantActivation(selectedPlan);
+        const submitBtn = form.querySelector('#pay-submit-btn');
+        const errBox = body.querySelector('#pay-error-msg');
+        if (errBox) errBox.classList.add('hidden');
+
+        const rawName = document.getElementById('pay-name')?.value || "";
+        const rawEmail = document.getElementById('pay-email')?.value || "";
+        const name = rawName.trim() || 'Heritage Explorer';
+        const email = rawEmail.trim() || (name.toLowerCase().replace(/\s+/g, '') + '@pass.sanatana360.com');
+        const phone = rawEmail.replace(/[^0-9]/g, '').length >= 10 ? rawEmail.replace(/[^0-9]/g, '') : "9876543210";
+
+        // Save pending intent in localStorage
+        localStorage.setItem('hs_user_name', name);
+        localStorage.setItem('hs_user_email', email);
+        if (!localStorage.getItem('hs_avatar')) localStorage.setItem('hs_avatar', '📜');
+        localStorage.setItem('hs_pending_sub_plan', selectedPlan === 'trial' ? '7-Day Pass (₹29)' : 'Annual VIP Pass (₹399/yr)');
+
+        // Set Loading UI
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `<span>🔒 Opening Cashfree Gateway...</span><span class="animate-spin text-sm">⏳</span>`;
+        }
+
+        try {
+          const res = await fetch('/api/create-cashfree-order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              phone: phone,
+              plan: selectedPlan,
+              amount: selectedPlan === 'trial' ? 29 : 399,
+              frontendOrigin: window.location.origin
+            })
+          });
+
+          const data = await res.json();
+          if (!res.ok || !data.payment_session_id) {
+            throw new Error(data.error || 'Failed to initialize Cashfree payment gateway');
+          }
+
+          // Trigger Cashfree JS SDK v3
+          if (typeof Cashfree !== 'undefined') {
+            const cashfree = Cashfree({ mode: "production" });
+            cashfree.checkout({
+              paymentSessionId: data.payment_session_id,
+              redirectTarget: "_self"
+            });
+          } else {
+            // Direct payment link fallback
+            window.location.href = `https://payments.cashfree.com/order/#${data.payment_session_id}`;
+          }
+        } catch (err) {
+          console.error("Cashfree Order Init Error:", err);
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>⚡ Pay ${price} &amp; Unlock VIP Pass</span><span class="text-sm">🔒</span>`;
+          }
+          if (errBox) {
+            errBox.textContent = err.message || "Unable to connect to Cashfree payment gateway. Please check your internet or try again.";
+            errBox.classList.remove('hidden');
+          } else {
+            alert(err.message || "Payment gateway connection failed.");
+          }
+        }
       });
     };
 
@@ -1222,96 +1291,12 @@ class AppController {
     if (closeBtn) {
       closeBtn.onclick = (e) => {
         if (e) e.stopPropagation();
-        if (typeof window.closeQuickPreviewModal === 'function') {
-          window.closeQuickPreviewModal();
+        if (typeof window.closePaymentModal === 'function') {
+          window.closePaymentModal();
         } else {
           this.closeAllModals();
         }
       };
-    }
-  }
-
-  // Instant Account Creation and Pass Activation
-  processPassInstantActivation(plan = 'trial') {
-    const rawName = document.getElementById('pay-name')?.value || "";
-    const rawEmail = document.getElementById('pay-email')?.value || "";
-    const name = rawName.trim() || 'Scholar';
-    const email = rawEmail.trim() || (name.toLowerCase().replace(/\s+/g, '') + '@pass.sanatana360.com');
-    const orderId = 'sanatana_' + (plan === 'trial' ? '29_' : '399_') + Math.floor(100000 + Math.random() * 900000);
-    const now = Date.now();
-
-    // 1. Create & Authenticate User Account
-    localStorage.setItem('hs_auth_logged_in', 'true');
-    localStorage.setItem('hs_user_name', name);
-    localStorage.setItem('hs_user_email', email);
-    if (!localStorage.getItem('hs_avatar')) localStorage.setItem('hs_avatar', '📜');
-
-    // 2. Activate Subscription
-    this.isSubscribed = true;
-    this.isLoggedIn = true;
-    this.currentProfile = name;
-    this.currentProfileAvatar = localStorage.getItem('hs_avatar') || '📜';
-
-    localStorage.setItem('hs_subscribed', 'true');
-    localStorage.setItem('hs_subscribed_name', name);
-    localStorage.setItem('hs_order_id', orderId);
-    localStorage.setItem('hs_sub_timestamp', String(now));
-    localStorage.setItem('hs_sub_date', new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }));
-    localStorage.removeItem('hs_sub_expired');
-    localStorage.setItem('hs_sub_plan', plan === 'trial' ? '7-Day Pass (₹29)' : 'Annual VIP Pass (₹399/yr)');
-
-    // 3. Immediately Re-render Header & UI
-    this.renderHeader();
-    this.renderSpotlight();
-    this.renderContentRows();
-    this.setupSubscriptionUI();
-    this.setupProfileSelector();
-
-    // 4. Show Celebratory Success Screen in Payment Modal
-    const modal = document.getElementById('payment-modal');
-    if (modal) {
-      const body = modal.querySelector('#payment-modal-body');
-      body.innerHTML = `
-        <div class="text-center p-6 sm:p-8 flex flex-col items-center justify-center min-h-[320px] space-y-4">
-          <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-gold/30 via-emerald-500/20 to-transparent border-2 border-gold flex items-center justify-center text-3xl shadow-lg shadow-gold/25 animate-bounce">
-            🎉
-          </div>
-          <div>
-            <h4 class="text-2xl font-black text-white font-serif tracking-wide">Pass Activated Successfully!</h4>
-            <p class="text-xs text-emerald-400 font-bold mt-1">✨ Account Created &bull; Welcome, ${name}!</p>
-          </div>
-          
-          <div class="bg-[#141826] border border-gold/40 rounded-2xl p-4 w-full max-w-sm space-y-2 text-left font-mono text-xs">
-            <div class="flex justify-between text-white/70">
-              <span>Pass Plan:</span>
-              <span class="text-gold font-bold">${plan === 'trial' ? '₹29 (7-Day VIP Pass)' : '₹399 (Annual VIP Pass)'}</span>
-            </div>
-            <div class="flex justify-between text-white/70">
-              <span>Order Ref:</span>
-              <span class="text-white font-bold select-all">${orderId}</span>
-            </div>
-            <div class="flex justify-between text-white/70">
-              <span>Access Level:</span>
-              <span class="text-emerald-400 font-bold">100% All Sagas &amp; Live Temples</span>
-            </div>
-          </div>
-
-          <p class="text-xs text-white/70 max-w-xs leading-relaxed">
-            Your account is now active with full VIP streaming privileges. Enjoy all 200+ sagas, 40+ Live Temples &amp; 26 Epics!
-          </p>
-
-          <button id="pass-success-explore-btn" class="w-full max-w-sm py-3.5 bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/25 cursor-pointer">
-            🏛️ Start Exploring Catalog Now
-          </button>
-        </div>
-      `;
-
-      const exploreBtn = body.querySelector('#pass-success-explore-btn');
-      if (exploreBtn) {
-        exploreBtn.onclick = () => {
-          this.closeAllModals();
-        };
-      }
     }
   }
 
@@ -1326,17 +1311,21 @@ class AppController {
       window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
 
       if (status === 'success') {
+        const pendingPlan = localStorage.getItem('hs_pending_sub_plan') || '7-Day Pass (₹29)';
+        const savedName = localStorage.getItem('hs_user_name') || 'Scholar';
         this.isSubscribed = true;
+        this.isLoggedIn = true;
+        this.currentProfile = savedName;
+        localStorage.setItem('hs_auth_logged_in', 'true');
         localStorage.setItem('hs_subscribed', 'true');
-        localStorage.setItem('hs_subscribed_name', 'Premium Pass Member');
+        localStorage.setItem('hs_subscribed_name', savedName);
         localStorage.setItem('hs_order_id', orderId || ('order_' + Date.now()));
-        if (!localStorage.getItem('hs_sub_timestamp')) {
-            localStorage.setItem('hs_sub_timestamp', String(Date.now()));
-          }
-          localStorage.setItem('hs_sub_date', new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }));
-          localStorage.removeItem('hs_sub_expired');
-        localStorage.setItem('hs_sub_plan', 'Heritage Knowledge Annual Pass (₹399/yr)');
-        
+        localStorage.setItem('hs_sub_timestamp', String(Date.now()));
+        localStorage.setItem('hs_sub_date', new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }));
+        localStorage.removeItem('hs_sub_expired');
+        localStorage.setItem('hs_sub_plan', pendingPlan);
+
+        window.updateHeaderAuthState?.();
         this.renderHeader();
         this.renderSpotlight();
         this.renderContentRows();
