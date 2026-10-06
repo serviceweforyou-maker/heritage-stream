@@ -5,6 +5,255 @@
   <script>
     window.selectedRegAvatar = '📜';
 
+    // ── 🛡️ BULLETPROOF GLOBAL MODAL CLOSING SUITE (Immediate 0ms Unblockable Execution) ──
+    window.closeAllModals = function() {
+      try {
+        var modalSelectors = [
+          '.modal-overlay',
+          '#quick-preview-modal',
+          '#media-modal',
+          '#daily-gurukula-modal',
+          '#payment-modal',
+          '#legal-modal',
+          '#profile-modal',
+          '#netflix-auth-modal',
+          '#trial-expiry-subscribe-modal',
+          '#logout-confirm-modal',
+          '#user-account-modal',
+          '#ask-rishi-modal',
+          '#archetype-modal',
+          '#vedic-math-modal',
+          '#viral-referral-modal',
+          '#virtual-darshana-modal',
+          '#gita-compass-modal',
+          '#dosha-analyzer-modal',
+          '#raga-therapy-modal',
+          '#mudra-studio-modal',
+          '#granth-reader-modal'
+        ];
+        var allModals = document.querySelectorAll(modalSelectors.join(', '));
+        allModals.forEach(function(m) {
+          if (m) {
+            m.classList.add('hidden');
+            m.classList.remove('flex');
+            m.style.display = 'none';
+          }
+        });
+
+        // Clear active media viewport to stop video/audio playback immediately
+        var mediaBody = document.getElementById('media-modal-body');
+        if (mediaBody) mediaBody.innerHTML = '';
+
+        // Stop Darshana audio if playing
+        if (window.appInstance && window.appInstance.darshanaAudio) {
+          try {
+            window.appInstance.darshanaAudio.pause();
+            window.appInstance.darshanaAudio = null;
+          } catch(e) {}
+        }
+
+        // Restore body scrolling
+        document.body.style.overflow = '';
+      } catch(err) {
+        console.warn('Error in window.closeAllModals:', err);
+      }
+    };
+
+    window.closeQuickPreviewModal = function() {
+      try {
+        var m = document.getElementById('quick-preview-modal');
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+        }
+      } catch(e) { console.warn('Error closing quick preview modal:', e); }
+    };
+
+    window.closeMediaModal = function() {
+      try {
+        var m = document.getElementById('media-modal');
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+        }
+        var b = document.getElementById('media-modal-body');
+        if (b) b.innerHTML = '';
+      } catch(e) { console.warn('Error closing media modal:', e); }
+    };
+
+    window.closeDailyGurukulaModal = function() {
+      try {
+        var m = document.getElementById('daily-gurukula-modal');
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+        }
+      } catch(e) { console.warn('Error closing daily gurukula modal:', e); }
+    };
+
+    window.closePaymentModal = function() {
+      try {
+        var m = document.getElementById('payment-modal');
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+        }
+      } catch(e) { console.warn('Error closing payment modal:', e); }
+    };
+
+    window.closeLegalModal = function() {
+      try {
+        var m = document.getElementById('legal-modal');
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+        }
+      } catch(e) { console.warn('Error closing legal modal:', e); }
+    };
+
+    window.closeAccountModal = function() {
+      try {
+        var m = document.getElementById('user-account-modal');
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+        }
+      } catch(e) { console.warn('Error closing account modal:', e); }
+    };
+
+    window.closeProfileModal = function() {
+      try {
+        var m = document.getElementById('profile-modal');
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+        }
+      } catch(e) { console.warn('Error closing profile modal:', e); }
+    };
+
+    window.closeLogoutModal = function() {
+      try {
+        var m = document.getElementById('logout-confirm-modal');
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+        }
+      } catch(e) { console.warn('Error closing logout modal:', e); }
+    };
+
+    window.closeTrialModal = function() {
+      try {
+        var m = document.getElementById('trial-expiry-subscribe-modal');
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+        }
+      } catch(e) { console.warn('Error closing trial modal:', e); }
+    };
+
+    window.closeDarshanaModal = function() {
+      try {
+        var m = document.getElementById('virtual-darshana-modal');
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+        }
+        if (window.appInstance && window.appInstance.darshanaAudio) {
+          try {
+            window.appInstance.darshanaAudio.pause();
+            window.appInstance.darshanaAudio = null;
+          } catch(e) {}
+        }
+      } catch(e) { console.warn('Error closing darshana modal:', e); }
+    };
+
+    window.closeGitaModal = function() {
+      try {
+        var m = document.getElementById('gita-compass-modal');
+        if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      } catch(e) {}
+    };
+
+    window.closeDoshaModal = function() {
+      try {
+        var m = document.getElementById('dosha-analyzer-modal');
+        if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      } catch(e) {}
+    };
+
+    window.closeRagaModal = function() {
+      try {
+        var m = document.getElementById('raga-therapy-modal');
+        if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      } catch(e) {}
+    };
+
+    window.closeMudraModal = function() {
+      try {
+        var m = document.getElementById('mudra-studio-modal');
+        if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      } catch(e) {}
+    };
+
+    window.closeVedicMathModal = function() {
+      try {
+        var m = document.getElementById('vedic-math-modal');
+        if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      } catch(e) {}
+    };
+
+    window.closeRishiModal = function() {
+      try {
+        var m = document.getElementById('ask-rishi-modal');
+        if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      } catch(e) {}
+    };
+
+    window.closeArchetypeModal = function() {
+      try {
+        var m = document.getElementById('archetype-modal');
+        if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      } catch(e) {}
+    };
+
+    window.closeReferralModal = function() {
+      try {
+        var m = document.getElementById('viral-referral-modal');
+        if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      } catch(e) {}
+    };
+
+    window.closeGranthReader = function() {
+      try {
+        var m = document.getElementById('granth-reader-modal');
+        if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      } catch(e) {}
+    };
+
+    // Attach universal backdrop click listener & ESC key listener
+    document.addEventListener('click', function(e) {
+      if (e.target && e.target.classList && e.target.classList.contains('modal-overlay')) {
+        window.closeAllModals();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' || e.keyCode === 27) {
+        window.closeAllModals();
+      }
+    });
+
+
     window.updateHeaderAuthState = function() {
       try {
         var isLoggedIn = localStorage.getItem('hs_auth_logged_in') === 'true';
@@ -765,7 +1014,7 @@
 }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=108.0">
+  <link rel="stylesheet" href="styles.css?v=109.0">
   <link rel="stylesheet" href="flipbook.css?v=98">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap&display=swap" rel="stylesheet">
   <script>
@@ -1715,9 +1964,7 @@
             <button id="reader-font-dec-btn" class="w-7 h-7 rounded-lg border border-white/20 bg-white/5 text-xs text-white hover:border-gold transition-all">A-</button>
             <button id="reader-font-inc-btn" class="w-7 h-7 rounded-lg border border-white/20 bg-white/5 text-xs text-white hover:border-gold transition-all">A+</button>
             <!-- Close Button -->
-            <button id="close-granth-reader-btn" class="w-8 h-8 rounded-full border border-white/20 bg-white/10 text-white hover:bg-gold hover:text-black flex items-center justify-center text-sm font-bold transition-all ml-2">
-              ✕
-            </button>
+            <button id="close-granth-reader-btn" type="button" onclick="window.closeGranthReader ? window.closeGranthReader() : window.closeAllModals()" class="w-8 h-8 rounded-full border border-white/20 bg-white/10 text-white hover:bg-gold hover:text-black flex items-center justify-center text-sm font-bold transition-all ml-2 cursor-pointer" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Granth Reader">&times;</button>
           </div>
         </div>
 
@@ -2595,7 +2842,7 @@
       <!-- Top header bar -->
       <div class="flex justify-between items-center px-6 py-4 border-b border-white/5">
         <div id="media-modal-title"></div>
-        <button onclick="if(window.appInstance){window.appInstance.closeAllModals()}else{document.getElementById('media-modal').classList.add('hidden');document.getElementById('media-modal').classList.remove('flex')}" class="modal-close text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+        <button type="button" onclick="window.closeMediaModal ? window.closeMediaModal() : window.closeAllModals()" class="modal-close text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Player">&times;</button>
       </div>
       <!-- Inner Content -->
       <div id="media-modal-body" class="overflow-y-auto max-h-[75vh]">
@@ -2608,7 +2855,7 @@
   <!-- ── 🔍 NETFLIX-STYLE QUICK PREVIEW MODAL ── -->
   <div id="quick-preview-modal" class="modal-overlay fixed inset-0 z-[105] hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
     <div class="bg-[#0d0f16] border border-white/15 rounded-3xl w-full max-w-3xl shadow-[0_25px_60px_rgba(0,0,0,0.95)] relative overflow-hidden max-h-[92vh] overflow-y-auto no-scrollbar font-sans">
-      <button id="close-quick-preview-btn" class="modal-close absolute top-4 right-5 text-white/70 hover:text-white transition-colors text-2xl font-bold z-30 bg-black/60 w-9 h-9 rounded-full flex items-center justify-center border border-white/20">&times;</button>
+      <button id="close-quick-preview-btn" type="button" onclick="window.closeQuickPreviewModal ? window.closeQuickPreviewModal() : window.closeAllModals()" class="modal-close absolute top-4 right-5 text-white/80 hover:text-white transition-colors text-2xl font-bold bg-black/70 hover:bg-black/90 w-10 h-10 rounded-full flex items-center justify-center border border-white/30 cursor-pointer shadow-lg" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Preview">&times;</button>
       <div id="quick-preview-modal-body">
         <!-- Injected dynamically by app.js -->
       </div>
@@ -2634,7 +2881,7 @@
             <p class="text-[11px] text-white/60">5-Minute Vedic Sanskar &amp; Mental Math Brain Booster</p>
           </div>
         </div>
-        <button id="close-gurukula-modal-btn" class="modal-close text-white/50 hover:text-white transition-colors text-2xl font-bold w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10">&times;</button>
+        <button id="close-gurukula-modal-btn" type="button" onclick="window.closeDailyGurukulaModal ? window.closeDailyGurukulaModal() : window.closeAllModals()" class="modal-close text-white/60 hover:text-white transition-colors text-2xl font-bold w-9 h-9 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/15 cursor-pointer border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Gurukula">&times;</button>
       </div>
 
       <!-- Step Progress Bar -->
@@ -2658,15 +2905,15 @@
   <!-- Payment Modal -->
   <div id="payment-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <div class="bg-[#101116] border border-gold/20 rounded-3xl w-full max-w-md shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar">
-      <button onclick="if(window.appInstance){window.appInstance.closeAllModals()}else{document.getElementById('payment-modal').classList.add('hidden');document.getElementById('payment-modal').classList.remove('flex')}" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <button type="button" onclick="window.closePaymentModal ? window.closePaymentModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Pass Modal">&times;</button>
       <div id="payment-modal-body" class="mt-4">
         <!-- Injected by app.js -->
       </div>
     </div>
   </div>
 
-  <script src="data.js?v=108.0"></script>
-  <script type="module" src="app-prod.js?v=108.0"></script>
+  <script src="data.js?v=109.0"></script>
+  <script type="module" src="app-prod.js?v=109.0"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -3070,7 +3317,7 @@
       <div class="flex flex-col border-b border-white/5 bg-black/40">
         <div class="flex justify-between items-center px-6 py-4">
           <h3 class="text-lg font-bold font-serif text-white">Legal Information</h3>
-          <button onclick="document.getElementById('legal-modal').classList.add('hidden'); document.getElementById('legal-modal').classList.remove('flex')" class="modal-close text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+          <button type="button" onclick="window.closeLegalModal ? window.closeLegalModal() : window.closeAllModals()" class="modal-close text-white/50 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Legal Notice">&times;</button>
         </div>
         <div class="flex border-t border-white/5 text-[10px] sm:text-xs">
           <button class="legal-tab-btn flex-1 py-3 text-center border-b-2 border-gold font-extrabold text-gold uppercase tracking-wider" data-tab="terms">Terms</button>
@@ -3243,7 +3490,7 @@
     </div>
   </div>
 
-  <script src="flipbook.js?v=108.0"></script>
+  <script src="flipbook.js?v=109.0"></script>
 
             <!-- ── 🎬 NETFLIX-STYLE AUTHENTICATION MODAL (SIGN IN / REGISTER / LOGOUT) ── -->
   <div id="netflix-auth-modal" class="modal-overlay fixed inset-0 z-[110] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
@@ -3260,7 +3507,7 @@
             <span class="text-[9px] font-mono text-gold/80 uppercase tracking-widest block font-bold">Vedic OTT &amp; Gurukula</span>
           </div>
         </div>
-        <button id="close-auth-modal-btn" type="button" onclick="window.closeAuthModal()" class="modal-close w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 flex items-center justify-center text-xl font-bold transition-all cursor-pointer border border-white/10 hover:border-gold" title="Close">
+        <button id="close-auth-modal-btn" type="button" onclick="window.closeAuthModal ? window.closeAuthModal() : window.closeAllModals()" class="modal-close w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 flex items-center justify-center text-xl font-bold transition-all cursor-pointer border border-white/10 hover:border-gold" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close">
           &times;
         </button>
       </div>
@@ -3414,9 +3661,7 @@
             <span class="text-[9px] font-mono text-gold uppercase tracking-widest block font-bold">Free Trial Concluded</span>
           </div>
         </div>
-        <button id="close-trial-modal-btn" onclick="document.getElementById('trial-expiry-subscribe-modal')?.classList.add('hidden'); document.getElementById('trial-expiry-subscribe-modal')?.classList.remove('flex');" class="modal-close w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 flex items-center justify-center text-xl font-bold transition-all cursor-pointer border border-white/10 hover:border-gold" title="Close">
-          &times;
-        </button>
+        <button id="close-trial-modal-btn" type="button" onclick="window.closeTrialModal ? window.closeTrialModal() : window.closeAllModals()" class="modal-close w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 flex items-center justify-center text-xl font-bold transition-all cursor-pointer border border-white/10 hover:border-gold" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close">&times;</button>
       </div>
 
       <!-- Hero Message -->
@@ -3535,9 +3780,7 @@
           </div>
         </div>
 
-        <button id="close-account-modal-btn" class="modal-close w-9 h-9 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 hover:scale-105 border border-white/10 hover:border-gold flex items-center justify-center text-xl font-bold transition-all cursor-pointer flex-shrink-0 shadow-sm" title="Close Account Modal">
-          &times;
-        </button>
+        <button id="close-account-modal-btn" type="button" onclick="window.closeAccountModal ? window.closeAccountModal() : window.closeAllModals()" class="modal-close w-9 h-9 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white/60 hover:scale-105 border border-white/10 hover:border-gold flex items-center justify-center text-xl font-bold transition-all cursor-pointer flex-shrink-0 shadow-sm" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Account Modal">&times;</button>
       </div>
 
       <!-- Navigation Tabs -->
@@ -3640,7 +3883,7 @@
   <!-- ── ASK RISHI AI ANCIENT WISDOM MODAL ── -->
   <div id="ask-rishi-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <div class="bg-[#101116] border border-gold/40 rounded-3xl w-full max-w-xl shadow-2xl relative p-6 max-h-[90vh] flex flex-col font-sans">
-      <button id="close-rishi-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <button id="close-rishi-modal-btn" type="button" onclick="window.closeRishiModal ? window.closeRishiModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Rishi Modal">&times;</button>
       
       <!-- Modal Header -->
       <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
@@ -3706,7 +3949,7 @@
   <!-- ── ROYAL ARCHETYPE & CERTIFICATE GENERATOR MODAL ── -->
   <div id="archetype-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <div class="bg-[#101116] border border-gold/40 rounded-3xl w-full max-w-lg shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans">
-      <button id="close-archetype-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <button id="close-archetype-modal-btn" type="button" onclick="window.closeArchetypeModal ? window.closeArchetypeModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Archetype Modal">&times;</button>
       
       <!-- Header -->
       <div class="text-center mb-6 border-b border-white/10 pb-4">
@@ -3759,7 +4002,7 @@
         <!-- ── 🧮 GRAND VEDIC MATHEMATICS & MEMORY MASTERY LAB MODAL ── -->
   <div id="vedic-math-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
     <div class="bg-[#0f1118] border-2 border-gold/40 rounded-3xl w-full max-w-3xl shadow-2xl relative p-5 sm:p-7 max-h-[92vh] overflow-y-auto no-scrollbar font-sans">
-      <button id="close-vedic-math-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <button id="close-vedic-math-modal-btn" type="button" onclick="window.closeVedicMathModal ? window.closeVedicMathModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Vedic Math Lab">&times;</button>
       
       <!-- Header -->
       <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
@@ -4052,7 +4295,7 @@
   <!-- ── VIRAL WHATSAPP REFERRAL MODAL ── -->
   <div id="viral-referral-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <div class="bg-[#101116] border border-gold/40 rounded-3xl w-full max-w-md shadow-2xl relative p-6 font-sans text-center">
-      <button id="close-referral-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <button id="close-referral-modal-btn" type="button" onclick="window.closeReferralModal ? window.closeReferralModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Referral">&times;</button>
       
       <div class="w-16 h-16 rounded-full bg-[#25D366]/15 border border-[#25D366]/40 flex items-center justify-center text-3xl mx-auto mb-4">
         🎁
@@ -4079,7 +4322,7 @@
   <!-- ── 360 VIRTUAL DARSHANA & DIGITAL AARTI MODAL ── -->
   <div id="virtual-darshana-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <div class="bg-[#0e1017] border-2 border-gold/50 rounded-3xl w-full max-w-xl shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans">
-      <button id="close-darshana-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <button id="close-darshana-modal-btn" type="button" onclick="window.closeDarshanaModal ? window.closeDarshanaModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Virtual Darshana">&times;</button>
       
       <!-- Header -->
       <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
@@ -4172,7 +4415,7 @@
   <!-- ── GITA LIFE COMPASS & SHLOKA OF THE DAY MODAL ── -->
   <div id="gita-compass-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <div class="bg-[#101116] border-2 border-gold/50 rounded-3xl w-full max-w-xl shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans">
-      <button id="close-gita-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <button id="close-gita-modal-btn" type="button" onclick="window.closeGitaModal ? window.closeGitaModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Gita Compass">&times;</button>
       
       <!-- Header -->
       <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
@@ -4248,7 +4491,7 @@
   <!-- ── AYURVEDIC PRAKRITI (DOSHA) ANALYZER MODAL ── -->
   <div id="dosha-analyzer-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <div class="bg-[#101116] border-2 border-emerald-500/40 rounded-3xl w-full max-w-xl shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans">
-      <button id="close-dosha-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <button id="close-dosha-modal-btn" type="button" onclick="window.closeDoshaModal ? window.closeDoshaModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Dosha Analyzer">&times;</button>
       
       <!-- Header -->
       <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
@@ -4304,7 +4547,7 @@
   <!-- ── VEDIC RAGA SOUND THERAPY & PRANAYAMA MODAL ── -->
   <div id="raga-therapy-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <div class="bg-[#101116] border-2 border-purple-500/40 rounded-3xl w-full max-w-xl shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar font-sans text-center">
-      <button id="close-raga-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <button id="close-raga-modal-btn" type="button" onclick="window.closeRagaModal ? window.closeRagaModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Raga Therapy">&times;</button>
       
       <!-- Header -->
       <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4 text-left">
@@ -4374,7 +4617,7 @@
   <!-- ── 🧘 SACRED MUDRA VIGYAN & STRESS RELIEF STUDIO MODAL ── -->
   <div id="mudra-studio-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
     <div class="bg-[#0f1118] border-2 border-amber-500/40 rounded-3xl w-full max-w-2xl shadow-2xl relative p-5 sm:p-7 max-h-[92vh] overflow-y-auto no-scrollbar font-sans">
-      <button id="close-mudra-modal-btn" class="modal-close absolute top-4 right-6 text-white/50 hover:text-white transition-colors text-2xl font-bold">&times;</button>
+      <button id="close-mudra-modal-btn" type="button" onclick="window.closeMudraModal ? window.closeMudraModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Mudra Studio">&times;</button>
       
       <!-- Header -->
       <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-5">

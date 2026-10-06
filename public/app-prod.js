@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=108.0";
-import heritageData from "./data.js?v=108.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=108.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=109.0";
+import heritageData from "./data.js?v=109.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=109.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -1055,11 +1055,15 @@ class AppController {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
 
-    const closeBtn = modal.querySelector('.modal-close');
+    const closeBtn = modal.querySelector('.modal-close') || document.getElementById('close-quick-preview-btn');
     if (closeBtn) {
       closeBtn.onclick = (e) => {
-        e.stopPropagation();
-        this.closeAllModals();
+        if (e) e.stopPropagation();
+        if (typeof window.closeQuickPreviewModal === 'function') {
+          window.closeQuickPreviewModal();
+        } else {
+          this.closeAllModals();
+        }
       };
     }
   }
@@ -6816,6 +6820,45 @@ class AppController {
   }
 
   // ── 🔍 NETFLIX-STYLE QUICK PREVIEW MODAL ──
+  
+  closeAllModals() {
+    if (typeof window.closeAllModals === 'function') {
+      window.closeAllModals();
+    } else {
+      document.querySelectorAll('.modal-overlay, #profile-modal, #granth-reader-modal, #quick-preview-modal, #media-modal, #daily-gurukula-modal, #payment-modal, #legal-modal, #netflix-auth-modal, #trial-expiry-subscribe-modal, #logout-confirm-modal, #user-account-modal, #ask-rishi-modal, #archetype-modal, #vedic-math-modal, #viral-referral-modal, #virtual-darshana-modal, #gita-compass-modal, #dosha-analyzer-modal, #raga-therapy-modal, #mudra-studio-modal').forEach(m => {
+        m.classList.add('hidden');
+        m.classList.remove('flex');
+        m.style.display = 'none';
+      });
+      const mediaBody = document.getElementById('media-modal-body');
+      if (mediaBody) mediaBody.innerHTML = '';
+      if (this.darshanaAudio) {
+        try { this.darshanaAudio.pause(); this.darshanaAudio = null; } catch(e) {}
+      }
+      document.body.style.overflow = '';
+    }
+  }
+
+  closeQuickPreviewModal() {
+    if (typeof window.closeQuickPreviewModal === 'function') {
+      window.closeQuickPreviewModal();
+    } else {
+      const m = document.getElementById('quick-preview-modal');
+      if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+    }
+  }
+
+  closeMediaModal() {
+    if (typeof window.closeMediaModal === 'function') {
+      window.closeMediaModal();
+    } else {
+      const m = document.getElementById('media-modal');
+      if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      const b = document.getElementById('media-modal-body');
+      if (b) b.innerHTML = '';
+    }
+  }
+
   openQuickPreviewModal(item) {
     const modal = document.getElementById('quick-preview-modal');
     const body = document.getElementById('quick-preview-modal-body');
@@ -6997,11 +7040,15 @@ class AppController {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
 
-    const closeBtn = modal.querySelector('.modal-close');
+    const closeBtn = modal.querySelector('.modal-close') || document.getElementById('close-quick-preview-btn');
     if (closeBtn) {
       closeBtn.onclick = (e) => {
-        e.stopPropagation();
-        this.closeAllModals();
+        if (e) e.stopPropagation();
+        if (typeof window.closeQuickPreviewModal === 'function') {
+          window.closeQuickPreviewModal();
+        } else {
+          this.closeAllModals();
+        }
       };
     }
   }
@@ -7050,11 +7097,15 @@ class AppController {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
 
-    const closeBtn = modal.querySelector('.modal-close');
+    const closeBtn = modal.querySelector('.modal-close') || document.getElementById('close-quick-preview-btn');
     if (closeBtn) {
       closeBtn.onclick = (e) => {
-        e.stopPropagation();
-        this.closeAllModals();
+        if (e) e.stopPropagation();
+        if (typeof window.closeQuickPreviewModal === 'function') {
+          window.closeQuickPreviewModal();
+        } else {
+          this.closeAllModals();
+        }
       };
     }
   }
