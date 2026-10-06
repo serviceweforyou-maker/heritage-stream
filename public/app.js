@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=114.0";
-import heritageData from "./data.js?v=114.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=114.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=115.0";
+import heritageData from "./data.js?v=115.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=115.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -127,7 +127,7 @@ export class DatabaseService {
     return this.normalizeData(raw);
   }
 
-  static getDaysRemaining() {
+    static getDaysRemaining() {
     if (localStorage.getItem('hs_subscribed') !== 'true') return 0;
     const now = Date.now();
     let subTimestamp = parseInt(localStorage.getItem('hs_sub_timestamp') || '');
@@ -135,7 +135,10 @@ export class DatabaseService {
       subTimestamp = now;
       localStorage.setItem('hs_sub_timestamp', String(now));
     }
-    const expiryTime = subTimestamp + (365 * 24 * 60 * 60 * 1000);
+    const plan = localStorage.getItem('hs_sub_plan') || '';
+    const isTrialPass = plan.includes('7-Day') || plan.includes('29') || plan.includes('trial');
+    const totalDays = isTrialPass ? 7 : 365;
+    const expiryTime = subTimestamp + (totalDays * 24 * 60 * 60 * 1000);
     const msLeft = expiryTime - now;
     return Math.max(0, Math.ceil(msLeft / (1000 * 60 * 60 * 24)));
   }
@@ -143,10 +146,13 @@ export class DatabaseService {
   static isSubscribed() {
     if (localStorage.getItem('hs_subscribed') !== 'true') return false;
     
-    // Automatic Expiration Fallback Check (365 Days Validity)
+    // Plan-based automatic expiration check
     const subTimestamp = parseInt(localStorage.getItem('hs_sub_timestamp') || '');
     if (subTimestamp) {
-      const expiryTime = subTimestamp + (365 * 24 * 60 * 60 * 1000);
+      const plan = localStorage.getItem('hs_sub_plan') || '';
+      const isTrialPass = plan.includes('7-Day') || plan.includes('29') || plan.includes('trial');
+      const totalDays = isTrialPass ? 7 : 365;
+      const expiryTime = subTimestamp + (totalDays * 24 * 60 * 60 * 1000);
       if (Date.now() >= expiryTime) {
         console.warn("⚠️ Subscription has expired. Automatically downgraded to Free Explorer group.");
         localStorage.removeItem('hs_subscribed');
@@ -155,6 +161,48 @@ export class DatabaseService {
       }
     }
     return true;
+  }
+
+  static async verifySubscriptionIntegrity() {
+    const isSub = localStorage.getItem('hs_subscribed') === 'true';
+    if (!isSub) return;
+    const orderId = localStorage.getItem('hs_order_id') || '';
+    const email = localStorage.getItem('hs_user_email') || '';
+
+    // If order ID is missing or a fake mock ID, purge the invalid subscription
+    if (!orderId || orderId === 'order_mock' || orderId === 'sub_heritage_pass' || orderId.startsWith('order_pass_instant_')) {
+      console.warn("⚠️ Purging unverified/mock subscription from localStorage.");
+      localStorage.removeItem('hs_subscribed');
+      localStorage.removeItem('hs_order_id');
+      localStorage.removeItem('hs_sub_plan');
+      localStorage.removeItem('hs_sub_timestamp');
+      return;
+    }
+
+    try {
+      const res = await fetch(`/api/validate-subscription?order_id=${encodeURIComponent(orderId)}&email=${encodeURIComponent(email)}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (!data.valid) {
+          console.warn("⚠️ Server rejected unverified subscription order. Resetting to standard account.");
+          localStorage.removeItem('hs_subscribed');
+          localStorage.removeItem('hs_order_id');
+          localStorage.removeItem('hs_sub_plan');
+          localStorage.removeItem('hs_sub_timestamp');
+          window.updateHeaderAuthState?.();
+          if (window.appInstance) {
+            window.appInstance.isSubscribed = false;
+            window.appInstance.renderHeader?.();
+            window.appInstance.renderSpotlight?.();
+            window.appInstance.renderContentRows?.();
+          }
+        } else if (data.plan) {
+          localStorage.setItem('hs_sub_plan', data.plan);
+        }
+      }
+    } catch (e) {
+      // Offline fallback: keep as-is if network error
+    }
   }
 
   static async setSubscribed(status, name = "Anonymous Member", paymentMethod = "Mock Card/UPI") {
@@ -313,6 +361,7 @@ class AppController {
   constructor() {
     window.appInstance = this; // global reference for script tags
     this.isSubscribed = DatabaseService.isSubscribed();
+    DatabaseService.verifySubscriptionIntegrity();
     this.userScores = DatabaseService.getUserScores();
     
     const safeParse = (key, fallback) => {
@@ -1311,7 +1360,17 @@ class AppController {
       window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
 
       if (status === 'success') {
-        const pendingPlan = localStorage.getItem('hs_pending_sub_plan') || '7-Day Pass (₹29)';
+        const urlAmount = urlParams.get('amount');
+        const urlPlan = urlParams.get('plan');
+        let selectedPlanName = '7-Day Pass (₹29)';
+        if (urlAmount === '399' || urlPlan === 'annual') {
+          selectedPlanName = 'Annual VIP Pass (₹399/yr)';
+        } else if (urlAmount === '29' || urlPlan === 'trial') {
+          selectedPlanName = '7-Day Pass (₹29)';
+        } else {
+          selectedPlanName = localStorage.getItem('hs_pending_sub_plan') || '7-Day Pass (₹29)';
+        }
+
         const savedName = localStorage.getItem('hs_user_name') || 'Scholar';
         this.isSubscribed = true;
         this.isLoggedIn = true;
@@ -1323,7 +1382,7 @@ class AppController {
         localStorage.setItem('hs_sub_timestamp', String(Date.now()));
         localStorage.setItem('hs_sub_date', new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }));
         localStorage.removeItem('hs_sub_expired');
-        localStorage.setItem('hs_sub_plan', pendingPlan);
+        localStorage.setItem('hs_sub_plan', selectedPlanName);
 
         window.updateHeaderAuthState?.();
         this.renderHeader();
@@ -1397,6 +1456,7 @@ class AppController {
     // Helper: Compute User Subscription & Trial Status
     const getAccountTrialStatus = () => {
       this.isSubscribed = DatabaseService.isSubscribed();
+    DatabaseService.verifySubscriptionIntegrity();
       if (this.isSubscribed) {
         return { isSubscribed: true, daysLeft: DatabaseService.getDaysRemaining(), statusLabel: 'PRO Active' };
       }
@@ -1531,12 +1591,13 @@ class AppController {
             dropdownSubDays.textContent = trialInfo.daysLeft + " Days Left";
           }
           if (dropdownSubPercent) {
-            const pct = Math.round((trialInfo.daysLeft / 365) * 100);
+            const currentPlan = localStorage.getItem('hs_sub_plan') || '7-Day Pass (₹29)';
+            const isTrialPass = currentPlan.includes('7-Day') || currentPlan.includes('29') || currentPlan.includes('trial');
+            const totalDays = isTrialPass ? 7 : 365;
+            const pct = Math.round((trialInfo.daysLeft / totalDays) * 100);
             dropdownSubPercent.textContent = pct + "% left";
-          }
-          if (dropdownSubExpiry) {
             const subTimestamp = parseInt(localStorage.getItem('hs_sub_timestamp') || String(Date.now()));
-            const expiryDate = new Date(subTimestamp + (365 * 24 * 60 * 60 * 1000));
+            const expiryDate = new Date(subTimestamp + (totalDays * 24 * 60 * 60 * 1000));
             dropdownSubExpiry.textContent = "Expires: " + expiryDate.toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' });
           }
         } else if (trialInfo.isTrialActive) {
@@ -1745,7 +1806,7 @@ class AppController {
         }
       }
 
-      // Populate Plan Details Card
+            // Populate Plan Details Card
       const planCard = document.getElementById('plan-details-card');
       if (planCard) {
         if (trialInfo.isSubscribed) {
@@ -1756,11 +1817,18 @@ class AppController {
             localStorage.setItem('hs_sub_timestamp', String(now));
           }
 
-          const expiryTime = subTimestamp + (365 * 24 * 60 * 60 * 1000);
+          const currentPlan = localStorage.getItem('hs_sub_plan') || '7-Day Pass (₹29)';
+          const isTrialPass = currentPlan.includes('7-Day') || currentPlan.includes('29') || currentPlan.includes('trial');
+          const totalDays = isTrialPass ? 7 : 365;
+          const planTitle = isTrialPass ? '⚡ 7-Day All-Access Pass' : '👑 Annual VIP Pass';
+          const planPrice = isTrialPass ? '₹29 Total (7 Days Unlimited VIP Access)' : '₹399 / Year (365 Days Unrestricted Access)';
+          const badgeText = isTrialPass ? '7-DAY PASS ACTIVE' : 'ANNUAL VIP ACTIVE';
+
+          const expiryTime = subTimestamp + (totalDays * 24 * 60 * 60 * 1000);
           const msLeft = expiryTime - now;
           const daysLeft = Math.max(0, Math.ceil(msLeft / (1000 * 60 * 60 * 24)));
-          const daysPassed = Math.min(365, Math.max(0, 365 - daysLeft));
-          const progressPercent = Math.round((daysLeft / 365) * 100);
+          const daysPassed = Math.min(totalDays, Math.max(0, totalDays - daysLeft));
+          const progressPercent = Math.round((daysLeft / totalDays) * 100);
           const startDateStr = new Date(subTimestamp).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
           const endDateStr = new Date(expiryTime).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
 
@@ -1768,11 +1836,11 @@ class AppController {
             <div class="flex items-center justify-between border-b border-gold/20 pb-3">
               <div>
                 <span class="text-[9px] uppercase tracking-widest text-gold font-mono font-bold block">Current Active Plan</span>
-                <h4 class="text-base font-bold text-white font-serif">Sanatana360 Annual Pass</h4>
+                <h4 class="text-base font-bold text-white font-serif">${planTitle}</h4>
               </div>
               <span class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-                <span>ACTIVE</span>
+                <span>${badgeText}</span>
               </span>
             </div>
 
@@ -1809,7 +1877,7 @@ class AppController {
               <!-- Animated Validity Progress Bar -->
               <div class="space-y-1 pt-1">
                 <div class="flex justify-between text-[9px] font-mono text-white/60">
-                  <span>Day ${daysPassed} of 365</span>
+                  <span>Day ${daysPassed} of ${totalDays}</span>
                   <span class="text-emerald-400 font-bold">${progressPercent}% remaining</span>
                 </div>
                 <div class="w-full h-2.5 bg-[#0c0e17] rounded-full overflow-hidden border border-white/10 p-0.5">
@@ -1823,14 +1891,14 @@ class AppController {
               <div class="flex items-center justify-between bg-[#0c0e17] p-3 rounded-xl border border-white/10 font-mono">
                 <span class="text-white/60 text-[11px]">Order ID:</span>
                 <div class="flex items-center gap-2">
-                  <span class="text-gold font-bold text-[11px] select-all truncate max-w-[140px] sm:max-w-none">${orderId || 'sub_heritage_pass'}</span>
+                  <span class="text-gold font-bold text-[11px] select-all truncate max-w-[140px] sm:max-w-none">${orderId || 'Verified Cashfree Pass'}</span>
                   <button id="copy-order-id-btn" class="px-2.5 py-1 bg-white/10 hover:bg-gold hover:text-black rounded-lg text-[10px] uppercase tracking-wider font-bold transition-all cursor-pointer" title="Copy ID">Copy</button>
                 </div>
               </div>
 
               <div class="flex justify-between py-1 text-[11px]">
                 <span class="text-white/60">Membership Plan:</span>
-                <span class="font-bold text-gold font-mono">₹399 / Year (All 200+ Sagas Included)</span>
+                <span class="font-bold text-gold font-mono">${planPrice}</span>
               </div>
             </div>
 
@@ -1842,32 +1910,95 @@ class AppController {
           const copyBtn = planCard.querySelector('#copy-order-id-btn');
           if (copyBtn) {
             copyBtn.onclick = () => {
-              navigator.clipboard.writeText(orderId || 'sub_heritage_pass');
+              navigator.clipboard.writeText(orderId || 'Verified Cashfree Pass');
               copyBtn.textContent = 'Copied!';
               setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
             };
           }
+        } else if (trialInfo.isTrialActive) {
+          const regTimestamp = parseInt(localStorage.getItem('hs_account_created_timestamp') || localStorage.getItem('hs_free_trial_start') || String(Date.now()));
+          const trialExpiry = regTimestamp + (3 * 24 * 60 * 60 * 1000);
+          const trialEndStr = new Date(trialExpiry).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+
+          planCard.innerHTML = `
+            <div class="flex items-center justify-between border-b border-gold/20 pb-3">
+              <div>
+                <span class="text-[9px] uppercase tracking-widest text-gold font-mono font-bold block">Current Plan</span>
+                <h4 class="text-base font-bold text-white font-serif">3-Day Free VIP Trial</h4>
+              </div>
+              <span class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+                <span>TRIAL ACTIVE</span>
+              </span>
+            </div>
+
+            <div class="bg-gradient-to-r from-amber-500/15 via-gold/10 to-transparent border border-gold/30 rounded-2xl p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest text-gold font-mono font-bold block">Trial Progress</span>
+                  <span class="text-base font-extrabold text-white font-mono">Day ${trialInfo.dayNumber} of 3 (${trialInfo.trialDaysLeft}d left)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-[9px] text-amber-300 uppercase font-mono font-bold block">Trial Expiry</span>
+                  <span class="text-xs font-bold text-white/90 font-mono">${trialEndStr}</span>
+                </div>
+              </div>
+              <div class="w-full h-2 bg-[#0c0e17] rounded-full overflow-hidden border border-white/10">
+                <div class="h-full bg-gradient-to-r from-amber-500 to-gold rounded-full" style="width: ${Math.round((trialInfo.trialDaysLeft / 3) * 100)}%;"></div>
+              </div>
+            </div>
+
+            <div class="pt-2 space-y-2">
+              <p class="text-xs text-white/70">Upgrade your pass to ensure uninterrupted access to all sagas & 40+ Live Temples:</p>
+              <div class="grid grid-cols-2 gap-2">
+                <button type="button" id="modal-pass-trial-btn" class="py-3 px-2 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md shadow-gold/20">
+                  ⚡ 7-Day Pass (₹29)
+                </button>
+                <button type="button" id="modal-pass-annual-btn" class="py-3 px-2 bg-[#141826] hover:bg-gold hover:text-black border border-gold/40 text-gold font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+                  👑 Annual VIP (₹399)
+                </button>
+              </div>
+            </div>
+          `;
+
+          planCard.querySelector('#modal-pass-trial-btn')?.addEventListener('click', () => {
+            accountModal.classList.add('hidden');
+            accountModal.classList.remove('flex');
+            this.openPaymentModal('trial');
+          });
+          planCard.querySelector('#modal-pass-annual-btn')?.addEventListener('click', () => {
+            accountModal.classList.add('hidden');
+            accountModal.classList.remove('flex');
+            this.openPaymentModal('annual');
+          });
         } else {
           planCard.innerHTML = `
             <div class="text-center py-4 space-y-3">
               <span class="text-4xl block">🏛️</span>
-              <h4 class="text-base font-bold text-white font-serif">Upgrade to Premium Heritage Pass</h4>
-              <p class="text-xs text-white/60 max-w-xs mx-auto">Get unrestricted access to all 200+ documentaries, audiobooks, and illustrated 3D FlipBooks for ₹399/year.</p>
-              <button id="modal-upgrade-btn" class="w-full py-3.5 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/20 cursor-pointer">
-                Unlock Annual Pass (₹399)
-              </button>
+              <h4 class="text-base font-bold text-white font-serif">Unlock Sanatana360 VIP Pass</h4>
+              <p class="text-xs text-white/60 max-w-xs mx-auto">Get unrestricted access to all 200+ documentaries, audiobooks, and 40+ 24/7 Live Temples.</p>
+              <div class="grid grid-cols-2 gap-2 pt-2">
+                <button type="button" id="modal-pass-trial-btn2" class="py-3 px-2 bg-gradient-to-r from-gold to-amber-500 hover:from-gold/90 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md shadow-gold/20">
+                  ⚡ 7-Day Pass (₹29)
+                </button>
+                <button type="button" id="modal-pass-annual-btn2" class="py-3 px-2 bg-[#141826] hover:bg-gold hover:text-black border border-gold/40 text-gold font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+                  👑 Annual VIP (₹399)
+                </button>
+              </div>
             </div>
           `;
 
-          const upBtn = planCard.querySelector('#modal-upgrade-btn');
-          if (upBtn) {
-            upBtn.onclick = () => {
-              accountModal.classList.add('hidden');
-              accountModal.classList.remove('flex');
-              this.openPaymentModal();
-            };
-          }
-        }
+          planCard.querySelector('#modal-pass-trial-btn2')?.addEventListener('click', () => {
+            accountModal.classList.add('hidden');
+            accountModal.classList.remove('flex');
+            this.openPaymentModal('trial');
+          });
+          planCard.querySelector('#modal-pass-annual-btn2')?.addEventListener('click', () => {
+            accountModal.classList.add('hidden');
+            accountModal.classList.remove('flex');
+            this.openPaymentModal('annual');
+          });
+              }
       }
 
       // Switch Tab Handler

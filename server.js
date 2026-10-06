@@ -883,8 +883,10 @@ app.post('/api/create-cashfree-order', async (req, res) => {
       name: cleanName,
       email: cleanEmail,
       phone: cleanPhone,
+      amount: payload.order_amount,
+      plan: req.body.plan || (payload.order_amount === 29 ? 'trial' : 'annual'),
       timestamp: Date.now(),
-      status: "ACTIVE"
+      status: "PENDING"
     });
     writeDB(db);
 
@@ -972,7 +974,7 @@ app.get('/api/verify-payment', async (req, res) => {
       }
 
       // Redirect back to frontend domain with success query param
-      res.redirect(`${targetFrontend}/index.html?payment=success&order_id=${order_id}`);
+      res.redirect(`${targetFrontend}/index.html?payment=success&order_id=${order_id}&amount=${paidAmount}&plan=${paidAmount === 29 ? 'trial' : 'annual'}`);
     } else {
       res.redirect(`${targetFrontend}/index.html?payment=failed&order_id=${order_id}&status=${data.order_status}`);
     }
@@ -980,6 +982,65 @@ app.get('/api/verify-payment', async (req, res) => {
     console.error("Cashfree Order Verification Error:", err.message);
     res.redirect(`${targetFrontend}/index.html?payment=failed&order_id=${order_id}&error=${encodeURIComponent(err.message)}`);
   }
+});
+
+
+// 4c. Validate Subscription Integrity (Purges Fake/Unpaid LocalStorage Subscriptions)
+app.get('/api/validate-subscription', async (req, res) => {
+  const { order_id, email } = req.query;
+  const db = readDB();
+
+  if (!order_id || order_id === 'order_mock' || order_id === 'sub_heritage_pass') {
+    return res.json({ valid: false, reason: "invalid_or_mock_order_id" });
+  }
+
+  // Check if subscriber exists in verified db
+  const subscriber = (db.subscribers || []).find(s => s.orderId === order_id);
+  const order = (db.orders || []).find(o => o.orderId === order_id && o.status === 'PAID');
+
+  if (subscriber || order) {
+    const amount = Number(subscriber ? subscriber.amount : (order ? order.amount : 0));
+    const isTrial = amount === 29 || order_id.includes('trial');
+    return res.json({
+      valid: true,
+      plan: isTrial ? '7-Day Pass (₹29)' : 'Annual VIP Pass (₹399/yr)',
+      durationDays: isTrial ? 7 : 365,
+      amount: amount || (isTrial ? 29 : 399)
+    });
+  }
+
+  // Fallback: Verify with Cashfree Live API directly
+  const { appId, secretKey } = getCashfreeCredentials();
+  if (appId && secretKey && order_id.startsWith('order_')) {
+    try {
+      const response = await fetch(`https://api.cashfree.com/pg/orders/${order_id}`, {
+        method: 'GET',
+        headers: {
+          'x-api-version': '2023-08-01',
+          'x-client-id': appId,
+          'x-client-secret': secretKey,
+          'Accept': 'application/json'
+        }
+      });
+      if (response.ok) {
+        const data = await response.json();
+        if (data.order_status === 'PAID') {
+          const paidAmount = Number(data.order_amount) || 29;
+          const isTrial = paidAmount === 29;
+          return res.json({
+            valid: true,
+            plan: isTrial ? '7-Day Pass (₹29)' : 'Annual VIP Pass (₹399/yr)',
+            durationDays: isTrial ? 7 : 365,
+            amount: paidAmount
+          });
+        }
+      }
+    } catch (e) {
+      console.warn("Cashfree validation check error:", e.message);
+    }
+  }
+
+  return res.json({ valid: false, reason: "unpaid_or_not_found" });
 });
 
 // 5. Delete Content (Admin)
