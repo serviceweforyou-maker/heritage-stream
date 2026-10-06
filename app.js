@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=111.0";
-import heritageData from "./data.js?v=111.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=111.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=112.0";
+import heritageData from "./data.js?v=112.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=112.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -1640,20 +1640,17 @@ class AppController {
     if (switchToReg) switchToReg.onclick = () => window.switchAuthTab('register');
     if (switchToSign) switchToSign.onclick = () => window.switchAuthTab('signin');
 
-    // Toggle Password Visibility
-    const togglePwdBtn = document.getElementById('auth-toggle-pwd-btn');
-    const signInPwdInput = document.getElementById('auth-signin-pwd');
-    if (togglePwdBtn && signInPwdInput) {
-      togglePwdBtn.onclick = () => {
-        if (signInPwdInput.type === 'password') {
-          signInPwdInput.type = 'text';
-          togglePwdBtn.textContent = 'Hide';
-        } else {
-          signInPwdInput.type = 'password';
-          togglePwdBtn.textContent = 'Show';
+    // Password Eye Icon Toggles
+    document.querySelectorAll('.pwd-toggle-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const input = btn.closest('.relative')?.querySelector('input');
+        if (input && typeof window.togglePasswordVisibility === 'function') {
+          window.togglePasswordVisibility(input, btn);
         }
       };
-    }
+    });
 
     // ── Submit Sign In Form ──
     const handleSignIn = (e) => {

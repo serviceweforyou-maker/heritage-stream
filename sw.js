@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sanatana360-cache-v111';
+const CACHE_NAME = 'sanatana360-cache-v112';
 
 // Top critical assets to pre-cache on install for instant loading
 const CRITICAL_ASSETS = [
