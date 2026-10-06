@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=101.0";
-import heritageData from "./data.js?v=101.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=101.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=108.0";
+import heritageData from "./data.js?v=108.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=108.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -360,6 +360,9 @@ class AppController {
       this.contentData = await DatabaseService.fetchContent();
     } catch (e) {
       console.error("Failed to load content data:", e);
+    }
+    if (!this.contentData || !this.contentData.content || !this.contentData.content.length) {
+      this.contentData = DatabaseService.normalizeData(heritageData || (typeof window !== "undefined" ? window.COURSES_DATA : null));
     }
 
     const safeInit = (name, fn) => {
