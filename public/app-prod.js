@@ -1612,7 +1612,13 @@ class AppController {
       const savedName = localStorage.getItem('hs_user_name') || this.currentProfile || (this.isLoggedIn ? 'Scholar' : 'Guest');
       const savedAvatar = localStorage.getItem('hs_avatar') || this.currentProfileAvatar || (this.isLoggedIn ? '📜' : '👤');
 
-      if (avatarEl) avatarEl.textContent = savedAvatar;
+      if (avatarEl) {
+        if (savedAvatar && (savedAvatar.startsWith('http://') || savedAvatar.startsWith('https://') || savedAvatar.startsWith('data:image'))) {
+          avatarEl.innerHTML = `<img src="${savedAvatar}" alt="Avatar" class="w-6 h-6 rounded-full object-cover inline-block border border-gold/40 shadow-sm" referrerpolicy="no-referrer">`;
+        } else {
+          avatarEl.textContent = savedAvatar;
+        }
+      }
       if (nameEl) nameEl.textContent = savedName;
 
       const mobAvatarEl = document.getElementById('mobile-avatar-icon');
@@ -1620,7 +1626,13 @@ class AppController {
       const mobBadgeEl = document.getElementById('mobile-sub-badge');
       const mobileProfBtn = document.getElementById('mobile-profile-btn');
 
-      if (mobAvatarEl) mobAvatarEl.textContent = savedAvatar;
+      if (mobAvatarEl) {
+        if (savedAvatar && (savedAvatar.startsWith('http://') || savedAvatar.startsWith('https://') || savedAvatar.startsWith('data:image'))) {
+          mobAvatarEl.innerHTML = `<img src="${savedAvatar}" alt="Avatar" class="w-6 h-6 rounded-full object-cover inline-block border border-gold/40" referrerpolicy="no-referrer">`;
+        } else {
+          mobAvatarEl.textContent = savedAvatar;
+        }
+      }
       if (mobNameEl) mobNameEl.textContent = this.isLoggedIn ? savedName : 'Guest Explorer';
 
       if (trialInfo.isSubscribed) {

@@ -312,9 +312,21 @@
             profDropdown.style.display = 'block';
           }
           if (nameEl) nameEl.textContent = savedName;
-          if (avatarEl) avatarEl.textContent = savedAvatar;
+          if (avatarEl) {
+            if (savedAvatar && (savedAvatar.startsWith('http://') || savedAvatar.startsWith('https://') || savedAvatar.startsWith('data:image'))) {
+              avatarEl.innerHTML = '<img src="' + savedAvatar + '" alt="Avatar" class="w-6 h-6 rounded-full object-cover inline-block border border-gold/40 shadow-sm" referrerpolicy="no-referrer">';
+            } else {
+              avatarEl.textContent = savedAvatar;
+            }
+          }
           if (mobNameEl) mobNameEl.textContent = savedName;
-          if (mobAvatarEl) mobAvatarEl.textContent = savedAvatar;
+          if (mobAvatarEl) {
+            if (savedAvatar && (savedAvatar.startsWith('http://') || savedAvatar.startsWith('https://') || savedAvatar.startsWith('data:image'))) {
+              mobAvatarEl.innerHTML = '<img src="' + savedAvatar + '" alt="Avatar" class="w-6 h-6 rounded-full object-cover inline-block border border-gold/40" referrerpolicy="no-referrer">';
+            } else {
+              mobAvatarEl.textContent = savedAvatar;
+            }
+          }
           if (mobBadgeEl) mobBadgeEl.textContent = isSub ? '👑 PRO Active' : '✨ 3-Day Free VIP Pass';
           if (mobileProfBtn) mobileProfBtn.innerHTML = '<span>👤</span> Manage';
         } else {
@@ -616,6 +628,304 @@
     };
 
     // ── Fast 1-Click Persona Sign In Helper ──
+    
+    // ════════════════════════════════════════════════════════════════
+    // ── Google OAuth 2.0 & One-Tap Integration System ──
+    // ════════════════════════════════════════════════════════════════
+    window.GOOGLE_CLIENT_ID = '731558169906-m06hs4bbbdu5hl9mo5mcd6286ta8rnv0.apps.googleusercontent.com';
+
+    // 1. JWT Payload Decoder (pure client-side base64url decode)
+    window.decodeJwtPayload = function(token) {
+      try {
+        if (!token || typeof token !== 'string') return null;
+        var parts = token.split('.');
+        if (parts.length < 2) return null;
+        var base64Url = parts[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return JSON.parse(jsonPayload);
+      } catch (e) {
+        console.warn('JWT Decode error:', e);
+        return null;
+      }
+    };
+
+    // 2. Main Login Completion & Profile / Account Sync Engine
+    window.completeGoogleLogin = function(profile) {
+      try {
+        if (!profile || !profile.email) {
+          throw new Error('No valid Google email found');
+        }
+
+        var rawEmail = profile.email.trim().toLowerCase();
+        var rawName = profile.name || profile.given_name || rawEmail.split('@')[0];
+        var formattedName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+        var avatar = profile.picture || '🕉️';
+        var now = Date.now();
+
+        // 1. Store credentials & profile
+        localStorage.setItem('hs_auth_logged_in', 'true');
+        localStorage.setItem('hs_user_name', formattedName);
+        localStorage.setItem('hs_user_email', rawEmail);
+        if (profile.picture) {
+          localStorage.setItem('hs_google_avatar', profile.picture);
+          localStorage.setItem('hs_user_avatar', profile.picture);
+        }
+        localStorage.setItem('hs_avatar', avatar);
+        localStorage.setItem('hs_auth_provider', 'google');
+
+        // Automatic 3-Day Free VIP Pass grant for new accounts
+        if (!localStorage.getItem('hs_account_created_timestamp')) {
+          localStorage.setItem('hs_account_created_timestamp', String(now));
+          localStorage.setItem('hs_free_trial_start', String(now));
+        }
+
+        // 2. Synchronize App Instance immediately
+        if (window.appInstance) {
+          window.appInstance.isLoggedIn = true;
+          window.appInstance.currentProfile = formattedName;
+          window.appInstance.currentProfileAvatar = avatar;
+          if (typeof window.appInstance.renderHeaderProfile === 'function') window.appInstance.renderHeaderProfile();
+          if (typeof window.appInstance.renderSpotlight === 'function') window.appInstance.renderSpotlight();
+          if (typeof window.appInstance.renderContentRows === 'function') window.appInstance.renderContentRows();
+          if (typeof window.appInstance.setupSubscriptionUI === 'function') window.appInstance.setupSubscriptionUI();
+          if (typeof window.appInstance.setupProfileSelector === 'function') window.appInstance.setupProfileSelector();
+        }
+
+        // 3. Update header auth state & close modal immediately
+        window.updateHeaderAuthState();
+        window.closeAuthModal();
+        window.showAuthToast('Welcome ' + formattedName + '! Signed in via Google.', 'Login Successful', '🕉️');
+
+        // 4. Server-side registration & subscription status check (async)
+        fetch('/api/auth/google-login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formattedName,
+            email: rawEmail,
+            picture: profile.picture || '',
+            sub: profile.sub || ''
+          })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data && data.isSubscribed) {
+            localStorage.setItem('hs_subscribed', 'true');
+            localStorage.setItem('hs_subscription_active', 'true');
+            if (data.plan) localStorage.setItem('hs_subscription_tier', data.plan);
+            if (window.appInstance) {
+              window.appInstance.isSubscribed = true;
+              if (data.plan) window.appInstance.subscriptionTier = data.plan;
+            }
+            window.updateHeaderAuthState();
+          }
+        })
+        .catch(function(err) {
+          console.warn('Backend google sync error (client session is valid):', err);
+        });
+
+      } catch (err) {
+        console.error('completeGoogleLogin error:', err);
+        window.showAuthToast('Google sign-in could not be completed. Please try again.', 'Sign In Error', '⚠️');
+      }
+    };
+
+    // 3. Callback for Google Identity Services (GSI) credential (JWT)
+    window.handleGoogleCredentialResponse = function(response) {
+      try {
+        if (!response || !response.credential) {
+          console.warn('No credential received in Google response');
+          return;
+        }
+        var decoded = window.decodeJwtPayload(response.credential);
+        if (!decoded || !decoded.email) {
+          throw new Error('Invalid JWT payload from Google');
+        }
+        window.completeGoogleLogin({
+          name: decoded.name || decoded.given_name,
+          email: decoded.email,
+          picture: decoded.picture,
+          sub: decoded.sub
+        });
+      } catch (e) {
+        console.error('Google credential handler error:', e);
+        window.showAuthToast('Failed to parse Google account. Please try again.', 'Auth Error', '⚠️');
+      }
+    };
+
+    // 4. Custom Button Click Handler (Token Client Popup & Fallback)
+    window.triggerGoogleOAuthLogin = function() {
+      try {
+        var btn = document.getElementById('google-custom-login-btn');
+        if (btn) {
+          btn.disabled = true;
+          btn.classList.add('opacity-70');
+        }
+
+        // Strategy A: Google Identity Services token client (Modern popup)
+        if (window.google && window.google.accounts && window.google.accounts.oauth2) {
+          var tokenClient = google.accounts.oauth2.initTokenClient({
+            client_id: window.GOOGLE_CLIENT_ID,
+            scope: 'openid email profile',
+            callback: function(tokenResponse) {
+              if (btn) {
+                btn.disabled = false;
+                btn.classList.remove('opacity-70');
+              }
+              if (tokenResponse && tokenResponse.access_token) {
+                window.fetchGoogleUserInfo(tokenResponse.access_token);
+              } else if (tokenResponse && tokenResponse.error) {
+                console.warn('Google OAuth token error:', tokenResponse.error);
+                if (tokenResponse.error !== 'popup_closed_by_user') {
+                  window.redirectToGoogleOAuth();
+                }
+              }
+            },
+            error_callback: function(err) {
+              if (btn) {
+                btn.disabled = false;
+                btn.classList.remove('opacity-70');
+              }
+              console.warn('Google OAuth popup blocked or error:', err);
+              window.redirectToGoogleOAuth();
+            }
+          });
+          tokenClient.requestAccessToken({ prompt: 'select_account' });
+          return;
+        }
+
+        // Strategy B: Google One-Tap prompt
+        if (window.google && window.google.accounts && window.google.accounts.id) {
+          google.accounts.id.prompt(function(notification) {
+            if (btn) {
+              btn.disabled = false;
+              btn.classList.remove('opacity-70');
+            }
+            if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+              window.redirectToGoogleOAuth();
+            }
+          });
+          return;
+        }
+
+        // Strategy C: Full OAuth 2.0 Web Redirect
+        window.redirectToGoogleOAuth();
+
+      } catch (err) {
+        console.error('triggerGoogleOAuthLogin error:', err);
+        window.redirectToGoogleOAuth();
+      }
+    };
+
+    // 5. UserInfo Fetcher from Google OAuth Access Token
+    window.fetchGoogleUserInfo = function(accessToken) {
+      fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+        headers: { 'Authorization': 'Bearer ' + accessToken }
+      })
+      .then(function(res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function(profile) {
+        if (profile && (profile.email || profile.sub)) {
+          window.completeGoogleLogin({
+            name: profile.name || profile.given_name || (profile.email ? profile.email.split('@')[0] : 'Scholar'),
+            email: profile.email,
+            picture: profile.picture,
+            sub: profile.sub
+          });
+        } else {
+          throw new Error('Email not found in Google user profile');
+        }
+      })
+      .catch(function(err) {
+        console.error('Failed to fetch Google user info:', err);
+        window.showAuthToast('Could not fetch Google profile. Please try email sign in.', 'Auth Error', '⚠️');
+      });
+    };
+
+    // 6. Full Web Redirect Fallback for Mobile / Popup-blocked Environments
+    window.redirectToGoogleOAuth = function() {
+      try {
+        var origin = window.location.origin;
+        var pathname = window.location.pathname;
+        var redirectUri = origin + (pathname.endsWith('/') ? pathname : pathname + '/');
+        if (!redirectUri.startsWith('http')) {
+          redirectUri = 'https://www.sanatana360.com/';
+        }
+        var authUrl = 'https://accounts.google.com/o/oauth2/v2/auth' +
+          '?client_id=' + encodeURIComponent(window.GOOGLE_CLIENT_ID) +
+          '&redirect_uri=' + encodeURIComponent(redirectUri) +
+          '&response_type=token%20id_token' +
+          '&scope=openid%20email%20profile' +
+          '&nonce=' + Math.random().toString(36).substring(2) +
+          '&prompt=select_account';
+        window.location.href = authUrl;
+      } catch(e) {
+        console.error('Redirect to Google OAuth failed:', e);
+      }
+    };
+
+    // 7. Check URL Hash on Page Load for OAuth Redirect Returns (#access_token=... or #id_token=...)
+    (function checkOAuthHashRedirect() {
+      try {
+        var hash = window.location.hash;
+        if (hash && (hash.indexOf('access_token=') !== -1 || hash.indexOf('id_token=') !== -1)) {
+          var hashParams = new URLSearchParams(hash.substring(1));
+          var idToken = hashParams.get('id_token');
+          var accessToken = hashParams.get('access_token');
+
+          // Clean the address bar cleanly without page refresh
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
+          }
+
+          if (idToken) {
+            window.handleGoogleCredentialResponse({ credential: idToken });
+          } else if (accessToken) {
+            window.fetchGoogleUserInfo(accessToken);
+          }
+        }
+      } catch (e) {
+        console.warn('OAuth hash parse error:', e);
+      }
+    })();
+
+    // 8. Initialize Google One Tap / GIS on load
+    window.initGoogleSignIn = function() {
+      try {
+        if (window.google && window.google.accounts && window.google.accounts.id) {
+          google.accounts.id.initialize({
+            client_id: window.GOOGLE_CLIENT_ID,
+            callback: window.handleGoogleCredentialResponse,
+            auto_select: false,
+            cancel_on_tap_outside: true
+          });
+          var btnContainer = document.getElementById('g_id_signin_btn');
+          if (btnContainer && !btnContainer.hasChildNodes()) {
+            google.accounts.id.renderButton(btnContainer, {
+              theme: 'outline',
+              size: 'large',
+              type: 'standard',
+              shape: 'rectangular',
+              text: 'continue_with',
+              logo_alignment: 'left',
+              width: 320
+            });
+          }
+        }
+      } catch (e) {
+        console.warn('Google GSI init warning:', e);
+      }
+    };
+
+    window.addEventListener('load', function() {
+      setTimeout(window.initGoogleSignIn, 500);
+    });
+
     window.fastSignIn = function(btn) {
       try {
         var name = (btn && btn.getAttribute('data-name')) ? btn.getAttribute('data-name') : 'Scholar';
@@ -3568,6 +3878,25 @@
             <span class="text-[9px] font-mono font-black uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full">3-Day Free VIP Pass</span>
           </div>
           <p class="text-xs text-white/60 mt-1">Instant free access to 200+ sagas, 40+ Live Temples &amp; Vedic Gurukula</p>
+        </div>
+
+        <!-- Google 1-Click Fast Registration -->
+        <div class="my-2 space-y-2">
+          <button type="button" onclick="window.triggerGoogleOAuthLogin()" class="w-full py-3 px-4 rounded-xl bg-white hover:bg-gray-100 text-[#3c4043] font-bold text-xs flex items-center justify-center gap-3 transition-all shadow-md hover:shadow-lg cursor-pointer border border-gray-200">
+            <svg class="w-4 h-4" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span class="font-extrabold text-xs">Sign Up with Google (Instant Free Pass)</span>
+          </button>
+        </div>
+
+        <div class="relative flex py-2 items-center">
+          <div class="flex-grow border-t border-white/10"></div>
+          <span class="flex-shrink mx-3 text-[10px] text-white/40 uppercase font-mono font-bold">Or register with Email / Mobile</span>
+          <div class="flex-grow border-t border-white/10"></div>
         </div>
 
         <form id="netflix-register-form" class="space-y-3.5" onsubmit="window.handleRegisterSubmit(event)">
