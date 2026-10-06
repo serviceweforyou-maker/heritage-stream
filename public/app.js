@@ -508,9 +508,453 @@ class AppController {
     document.querySelectorAll('.trigger-checkout').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        this.openPaymentModal();
+        this.openPaymentModal('trial');
       });
     });
+  }
+
+  // ── 🎬 MASTER HEADER RENDERING & AUTH STATE SYNC ──
+  renderHeader() {
+    if (typeof this.renderHeaderProfile === 'function') {
+      this.renderHeaderProfile();
+    } else if (typeof window.updateHeaderAuthState === 'function') {
+      window.updateHeaderAuthState();
+    }
+  }
+
+  // ── 🌟 CINEMATIC HERO SPOTLIGHT BANNER ──
+  renderSpotlight() {
+    const spotlight = document.getElementById('hero-spotlight');
+    if (!spotlight || !this.contentData) return;
+
+    const all = this.contentData.content || [];
+    if (!all.length) return;
+
+    // Featured hero item: default to Mudra Sleep/Hampi or top item
+    const featured = all.find(x => x.id === 'course_mudra_sleep_clarity') || all.find(x => x.id === 'hampi') || all[0];
+    const isLocked = featured.isPremium && !this.isSubscribed;
+    const isOnWatchlist = this.watchlist.includes(featured.id);
+
+    spotlight.innerHTML = `
+      <div class="relative min-h-[500px] md:min-h-[580px] lg:min-h-[640px] flex items-end justify-start p-6 sm:p-10 md:p-16 overflow-hidden bg-[#07090f]">
+        <!-- 16:9 Backdrop Image with Vignette & Gradients -->
+        <img src="${featured.imageUrl || '/images/hampi.jpg'}" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.75] contrast-[1.05] transition-transform duration-1000 scale-100 hover:scale-105" alt="${featured.title}">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#07090f] via-[#07090f]/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#07090f] via-[#07090f]/70 to-transparent max-w-3xl"></div>
+
+        <!-- Spotlight Content Information -->
+        <div class="relative z-20 max-w-2xl space-y-4">
+          
+          <!-- Category & Badges -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-[10px] font-mono font-extrabold uppercase tracking-widest text-gold bg-gold/20 border border-gold/40 px-3 py-1 rounded-full backdrop-blur-md">
+              ⚜️ ${featured.category || 'Featured Masterpiece'}
+            </span>
+            <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">
+              4K ULTRA HD
+            </span>
+            <span class="text-xs font-mono text-amber-300 bg-black/60 px-2 py-0.5 rounded-full border border-white/10">
+              ${featured.rating || '9.9 ★'}
+            </span>
+            <span class="text-xs font-mono text-white/70 bg-black/60 px-2 py-0.5 rounded-full border border-white/10">
+              ${featured.duration || '50 Mins'}
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-black font-serif text-white leading-tight drop-shadow-2xl">
+            ${featured.title}
+          </h1>
+
+          <!-- Tagline & Description -->
+          <p class="text-xs sm:text-sm text-white/80 leading-relaxed max-w-xl font-sans line-clamp-3">
+            ${featured.description || featured.tagline || 'Explore the timeless depths of Indian wisdom, sacred architecture, and consciousness.'}
+          </p>
+
+          <!-- Spotlight CTA Buttons -->
+          <div class="flex items-center gap-3 pt-2 flex-wrap">
+            <button id="spotlight-play-btn" class="px-6 sm:px-8 py-3.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-gold/30 hover:scale-105 flex items-center gap-2.5 cursor-pointer">
+              <span>${isLocked ? '🔒 Unlock VIP Stream' : '▶ Start Streaming'}</span>
+            </button>
+
+            <button id="spotlight-preview-btn" class="px-5 sm:px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all hover:scale-105 flex items-center gap-2 cursor-pointer backdrop-blur-md">
+              <span>ℹ️ Synopsis &amp; Chapters</span>
+            </button>
+
+            <button id="spotlight-watchlist-btn" class="w-11 h-11 rounded-full bg-black/60 border border-white/20 hover:border-gold text-white flex items-center justify-center text-base hover:scale-110 transition-all cursor-pointer backdrop-blur-md" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
+              ${isOnWatchlist ? '✓' : '＋'}
+            </button>
+
+            ${!this.isSubscribed ? `
+              <button onclick="window.appInstance?.openPaymentModal ? window.appInstance.openPaymentModal('trial') : null" class="hidden sm:inline-flex px-4 py-3.5 rounded-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold font-mono transition-all hover:scale-105 items-center gap-1.5 cursor-pointer">
+                <span>⚡ Get Pass ₹29</span>
+              </button>
+            ` : ''}
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Hook spotlight actions
+    spotlight.querySelector('#spotlight-play-btn')?.addEventListener('click', () => {
+      this.playContent(featured, !!featured.audioUrl && (featured.category === 'Audiobooks & Legends' || featured.category === 'Ebook & Audio Series'));
+    });
+
+    spotlight.querySelector('#spotlight-preview-btn')?.addEventListener('click', () => {
+      this.openQuickPreviewModal(featured);
+    });
+
+    spotlight.querySelector('#spotlight-watchlist-btn')?.addEventListener('click', () => {
+      this.toggleWatchlist(featured.id);
+      const isNowOn = this.watchlist.includes(featured.id);
+      const btn = spotlight.querySelector('#spotlight-watchlist-btn');
+      if (btn) btn.textContent = isNowOn ? '✓' : '＋';
+    });
+  }
+
+  // ── 📚 MASTER CONTENT ROWS RENDERING (7 CATEGORIES + SLIDERS) ──
+  renderContentRows() {
+    const standardContainer = document.getElementById('standard-library-rows');
+    if (!this.contentData) return;
+
+    // 1. Render Top 10 Row
+    this.renderTop10Row();
+
+    // 2. Render Dynamic Rows (Continue Watching & Watchlist)
+    this.renderDynamicRows();
+
+    // 3. Render Categorized Horizontal Rows
+    if (!standardContainer) return;
+
+    const allContent = this.contentData.content || [];
+    if (!allContent.length) return;
+
+    const categories = this.contentData.categories || [
+      "Docu-Series",
+      "Audiobooks & Legends",
+      "God Series",
+      "Virtual Tours",
+      "Kids Stories",
+      "Unknown Knowledge",
+      "Wellness & Mudra Shastra"
+    ];
+
+    const categoryIcons = {
+      "Docu-Series": "🎬",
+      "Audiobooks & Legends": "🎧",
+      "God Series": "🔱",
+      "Virtual Tours": "🛕",
+      "Kids Stories": "🧒",
+      "Unknown Knowledge": "🔒",
+      "Wellness & Mudra Shastra": "🧘"
+    };
+
+    const categoryIds = {
+      "Docu-Series": "docu-parent",
+      "Audiobooks & Legends": "audio-parent",
+      "God Series": "god-parent",
+      "Virtual Tours": "tours-parent",
+      "Kids Stories": "kids-parent",
+      "Unknown Knowledge": "unknown-parent",
+      "Wellness & Mudra Shastra": "wellness-parent"
+    };
+
+    const rowsHTML = categories.map((cat, catIdx) => {
+      const items = allContent.filter(x => x.category === cat || (cat === 'Docu-Series' && x.category === 'Video Series'));
+      if (!items.length) return '';
+
+      const rowId = 'scroll-row-' + catIdx;
+      const parentId = categoryIds[cat] || ('row-parent-' + catIdx);
+      const icon = categoryIcons[cat] || '✨';
+
+      const cardsHTML = items.map(item => this.createContentCardHTML(item, item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series')).join('');
+
+      return `
+        <div id="${parentId}" class="netflix-row space-y-3">
+          <!-- Row Header with Nav Buttons -->
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <span class="text-xl">${icon}</span>
+              <div>
+                <h3 class="text-lg sm:text-xl font-bold font-serif text-white tracking-wide flex items-center gap-2">
+                  <span>${cat}</span>
+                  <span class="text-[10px] font-mono text-gold bg-gold/15 border border-gold/30 px-2 py-0.5 rounded-full font-bold">${items.length} Sagas</span>
+                </h3>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-2">
+              <button class="row-prev-btn carousel-nav-btn w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black border border-white/10 hover:border-gold flex items-center justify-center text-xs font-bold transition-all cursor-pointer" data-row="${rowId}" aria-label="Previous">◀</button>
+              <button class="row-next-btn carousel-nav-btn w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-black border border-white/10 hover:border-gold flex items-center justify-center text-xs font-bold transition-all cursor-pointer" data-row="${rowId}" aria-label="Next">▶</button>
+            </div>
+          </div>
+
+          <!-- Horizontal Sliding Carousel Container -->
+          <div id="${rowId}" class="flex gap-4 sm:gap-5 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth scroll-snap-x">
+            ${cardsHTML}
+          </div>
+        </div>
+      `;
+    }).filter(Boolean).join('');
+
+    standardContainer.innerHTML = rowsHTML;
+
+    // Bind scroll buttons for horizontal carousels
+    document.querySelectorAll('.carousel-nav-btn').forEach(btn => {
+      btn.onclick = () => {
+        const targetRowId = btn.getAttribute('data-row');
+        const scrollRow = document.getElementById(targetRowId);
+        if (scrollRow) {
+          const isNext = btn.classList.contains('row-next-btn');
+          const scrollAmount = scrollRow.clientWidth * 0.75;
+          scrollRow.scrollBy({ left: isNext ? scrollAmount : -scrollAmount, behavior: 'smooth' });
+        }
+      };
+    });
+
+    // Bind interactions across all cards in standard container
+    this.bindCardInteractions(standardContainer);
+    this.bindCardInteractions(document.getElementById('top10-library-row'));
+
+    // Bind genre ribbon filters
+    this.bindGenreRibbon();
+    this.isStandardRowsRendered = true;
+  }
+
+  // ── 🔄 DYNAMIC ROWS (CONTINUE WATCHING & WATCHLIST) ──
+  renderDynamicRows() {
+    const dynamicContainer = document.getElementById('dynamic-library-rows');
+    if (!dynamicContainer || !this.contentData) return;
+
+    const all = this.contentData.content || [];
+    let dynamicHTML = '';
+
+    // 1. My Watchlist Row
+    if (this.watchlist && this.watchlist.length > 0) {
+      const watchlistItems = all.filter(x => this.watchlist.includes(x.id));
+      if (watchlistItems.length > 0) {
+        const cards = watchlistItems.map(item => this.createContentCardHTML(item, item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series')).join('');
+        dynamicHTML += `
+          <div class="netflix-row space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg sm:text-xl font-bold font-serif text-white flex items-center gap-2">
+                <span>🔖</span> <span>My Sacred Watchlist</span>
+                <span class="text-[10px] font-mono text-gold bg-gold/15 border border-gold/30 px-2 py-0.5 rounded-full font-bold">${watchlistItems.length}</span>
+              </h3>
+            </div>
+            <div class="flex gap-4 sm:gap-5 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth">
+              ${cards}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    dynamicContainer.innerHTML = dynamicHTML;
+    if (dynamicHTML) {
+      this.bindCardInteractions(dynamicContainer);
+    }
+  }
+
+  // ── 🎴 GENERATE SINGLE HIGH-FIDELITY CONTENT CARD HTML ──
+  createContentCardHTML(item, isAudio = false, customClass = '') {
+    if (!item) return '';
+    const isLocked = item.isPremium && !this.isSubscribed;
+    const isOnWatchlist = this.watchlist.includes(item.id);
+    const cardWidth = customClass || 'w-[170px] xs:w-[195px] sm:w-[220px] md:w-[240px]';
+
+    return `
+      <div class="content-card ${cardWidth} flex-shrink-0 rounded-2xl overflow-hidden bg-[#0d0f16] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/60 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/15" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
+        
+        <!-- Top Badges -->
+        <div class="absolute top-2.5 right-2.5 z-20 flex items-center gap-1.5">
+          ${item.isPremium ? `
+            <span class="w-5 h-5 rounded-full ${isLocked ? 'bg-red-500/20 border-red-500/40 text-red-400' : 'bg-gold/20 border-gold/40 text-gold'} border flex items-center justify-center text-[9px] backdrop-blur-md">
+              ${isLocked ? '🔒' : '🔑'}
+            </span>
+          ` : `
+            <span class="text-[8px] font-extrabold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-1.5 py-0.5 rounded backdrop-blur-md font-mono">
+              FREE
+            </span>
+          `}
+        </div>
+
+        <!-- Thumbnail Image Container -->
+        <div class="h-36 sm:h-40 w-full relative overflow-hidden bg-black/60">
+          <img src="${item.imageUrl || '/images/hampi.jpg'}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="${item.title}">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0d0f16] via-transparent to-black/25 z-10 pointer-events-none"></div>
+          
+          <!-- Hover Micro-Action Tray -->
+          <div class="card-hover-actions absolute inset-x-0 bottom-2.5 px-3 flex items-center justify-between z-20">
+            <div class="flex items-center gap-1.5">
+              <button class="quick-play-btn w-8 h-8 rounded-full bg-gold hover:bg-gold/90 text-black flex items-center justify-center text-xs font-bold shadow-lg shadow-gold/30 hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="Play Now">
+                ${isLocked ? '🔒' : '▶'}
+              </button>
+              <button class="watchlist-toggle-btn w-8 h-8 rounded-full bg-black/70 border border-white/20 hover:border-gold text-white flex items-center justify-center text-xs hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
+                ${isOnWatchlist ? '✓' : '＋'}
+              </button>
+            </div>
+            <button class="quick-preview-btn w-8 h-8 rounded-full bg-black/70 border border-white/20 hover:border-gold text-white flex items-center justify-center text-xs hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="More Details &amp; Episodes">
+              ℹ
+            </button>
+          </div>
+        </div>
+
+        <!-- Meta Information Body -->
+        <div class="p-3 space-y-1">
+          <div class="flex items-center justify-between text-[10px] text-white/60 font-mono">
+            <span class="text-gold font-bold truncate max-w-[120px]">${item.category || 'Vedic Saga'}</span>
+            <span>${item.duration || '30 Mins'}</span>
+          </div>
+          <h4 class="font-bold text-xs sm:text-sm font-serif text-white line-clamp-1 group-hover:text-gold transition-colors">${item.title}</h4>
+          <p class="text-[10px] text-white/50 line-clamp-1 font-sans">${item.tagline || item.description || ''}</p>
+          <div class="flex items-center gap-1.5 pt-1 text-[8px] font-mono text-white/50">
+            <span class="border border-white/10 px-1 rounded">4K UHD</span>
+            <span class="text-gold font-bold ml-auto">${item.rating || '9.8 ★'}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // ── 🔗 BIND CARD CLICKS & INTERACTIONS ──
+  bindCardInteractions(container) {
+    if (!container || !this.contentData) return;
+    const all = this.contentData.content || [];
+
+    // 1. Play Button Click
+    container.querySelectorAll('.quick-play-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const id = btn.getAttribute('data-id');
+        const item = all.find(x => x.id === id);
+        if (item) {
+          const isAudio = !!item.audioUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
+          this.playContent(item, isAudio);
+        }
+      };
+    });
+
+    // 2. Watchlist Button Click
+    container.querySelectorAll('.watchlist-toggle-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const id = btn.getAttribute('data-id');
+        this.toggleWatchlist(id);
+        const isNowOn = this.watchlist.includes(id);
+        btn.textContent = isNowOn ? '✓' : '＋';
+      };
+    });
+
+    // 3. Quick Preview Button Click
+    container.querySelectorAll('.quick-preview-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const id = btn.getAttribute('data-id');
+        const item = all.find(x => x.id === id);
+        if (item) this.openQuickPreviewModal(item);
+      };
+    });
+
+    // 4. Clicking the entire Card body
+    container.querySelectorAll('.content-card').forEach(card => {
+      card.onclick = () => {
+        const id = card.getAttribute('data-id');
+        const item = all.find(x => x.id === id);
+        if (item) {
+          this.openQuickPreviewModal(item);
+        }
+      };
+    });
+  }
+
+  // ── 🎬 PLAY CONTENT MODAL PLAYER (VIDEO & AUDIO) ──
+  playContent(item, isAudio = false) {
+    if (!item) return;
+
+    // Check Premium Access
+    if (item.isPremium && !this.isSubscribed) {
+      if (typeof this.openPaymentModal === 'function') {
+        this.openPaymentModal('trial');
+      }
+      return;
+    }
+
+    const modal = document.getElementById('media-modal');
+    const modalTitle = document.getElementById('media-modal-title');
+    const modalBody = document.getElementById('media-modal-body');
+    if (!modal || !modalTitle || !modalBody) return;
+
+    modalTitle.innerHTML = `
+      <div class="flex items-center gap-3">
+        <span class="bg-gold text-black text-[10px] font-bold px-2 py-0.5 rounded font-mono uppercase">${isAudio ? '🎙️ AUDIO SAGA' : '🎬 4K STREAM'}</span>
+        <h2 class="text-base sm:text-lg font-bold font-serif text-white truncate max-w-md">${item.title}</h2>
+      </div>
+    `;
+
+    const chapters = item.content && item.content.length ? item.content : [
+      { title: "Chapter 1: Historical Genesis", text: item.description || "Introduction to the divine chronicle.", visual: "🛕" }
+    ];
+
+    modalBody.innerHTML = `
+      <div class="p-4 sm:p-6 space-y-6">
+        
+        <!-- Media Viewport (Video Iframe or Audio Visualizer) -->
+        ${isAudio ? `
+          <div class="bg-gradient-to-br from-[#121522] via-[#090b12] to-black border border-gold/30 rounded-2xl p-6 text-center space-y-4 shadow-xl">
+            <div class="w-24 h-24 mx-auto rounded-2xl overflow-hidden border border-gold/40 shadow-lg">
+              <img src="${item.imageUrl || '/images/hampi.jpg'}" class="w-full h-full object-cover" alt="${item.title}">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold font-serif text-white">${item.title}</h3>
+              <p class="text-xs text-gold/80 font-mono mt-0.5">${item.narrator || 'Narrated by Vedic Scholars'}</p>
+            </div>
+            <audio id="media-audio-player" src="${item.audioUrl || 'https://actions.google.com/sounds/v1/ambient/morning_birds.ogg'}" controls autoplay class="w-full max-w-md mx-auto accent-gold"></audio>
+          </div>
+        ` : `
+          <div class="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl">
+            <iframe src="${item.videoUrl || 'https://www.youtube.com/embed/S_B7y1G84k8'}?autoplay=1&enablejsapi=1&rel=0" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        `}
+
+        <!-- Metadata & Synopsis -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-xs text-white/60 font-mono flex-wrap">
+            <span class="text-gold font-bold">${item.category || 'Vedic Chronicle'}</span>
+            <span>&bull;</span>
+            <span>${item.duration || '45 Mins'}</span>
+            <span>&bull;</span>
+            <span>${item.rating || '9.9 ★'}</span>
+            <span>&bull;</span>
+            <span>4K HDR</span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-sans">
+            ${item.description || item.tagline || ''}
+          </p>
+        </div>
+
+        <!-- Chapters / Manuscripts -->
+        <div class="space-y-3 border-t border-white/10 pt-4">
+          <h4 class="text-xs font-bold text-gold uppercase tracking-widest font-mono">Sacred Manuscripts &amp; Chapters</h4>
+          <div class="space-y-2">
+            ${chapters.map((ch, idx) => `
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                <div class="flex items-center gap-2 text-xs font-bold text-white">
+                  <span>${ch.visual || '📜'}</span>
+                  <span>${ch.title}</span>
+                </div>
+                <p class="text-xs text-white/70 leading-relaxed font-sans pl-6">${ch.text}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+      </div>
+    `;
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
   }
 
   // Checkout modal implementation (Instant ₹29 Pass & ₹399 Annual Pass Activation + Account Creation)
