@@ -158,6 +158,17 @@
   ]
 }
   </script>
+  <script>
+    (function() {
+      try {
+        var canonical = document.querySelector('link[rel="canonical"]');
+        var urlParams = new URLSearchParams(window.location.search);
+        if (canonical && (urlParams.has('post') || urlParams.has('temple') || urlParams.has('epic') || urlParams.has('kit'))) {
+          canonical.setAttribute('href', window.location.origin + window.location.pathname + window.location.search);
+        }
+      } catch(e) {}
+    })();
+  </script>
 </head>
 <body class="bg-darkSlate text-gray-100 min-h-screen flex flex-col selection:bg-gold selection:text-black">
   

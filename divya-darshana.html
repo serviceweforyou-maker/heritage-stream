@@ -1217,6 +1217,17 @@
   ]
 }
   </script>
+  <script>
+    (function() {
+      try {
+        var canonical = document.querySelector('link[rel="canonical"]');
+        var urlParams = new URLSearchParams(window.location.search);
+        if (canonical && (urlParams.has('post') || urlParams.has('temple') || urlParams.has('epic') || urlParams.has('kit'))) {
+          canonical.setAttribute('href', window.location.origin + window.location.pathname + window.location.search);
+        }
+      } catch(e) {}
+    })();
+  </script>
 </head>
 <body class="bg-darkSlate text-gray-100 min-h-screen flex flex-col font-sans selection:bg-gold selection:text-black">
 
@@ -1606,7 +1617,1007 @@
 
       <!-- Multi-Cam Thumbnail Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4" id="temple-grid-container">
-        <!-- Dynamically rendered -->
+
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="shirdi_sai">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/mCqRuQigwFU/hqdefault.jpg" alt="Shirdi Sai Baba Samadhi Mandir" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Shri Sai Baba of Shirdi</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shirdi Sai Baba Samadhi Mandir</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री साईं बाबा समाधि मंदिर शिर्डी (लाइव आरती व दर्शन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Shirdi, Ahmednagar, Maharashtra, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=shirdi_sai" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">4 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="tirupati_balaji">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/XxdarKTmJ8c/hqdefault.jpg" alt="Tirumala Sri Venkateswara Swamy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Venkateswara (Balaji / Maha Vishnu)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Tirumala Sri Venkateswara Swamy</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री वेंकटेश्वर स्वामी तिरुपति बालाजी (कल्याणोत्सवम् व दर्शन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Tirumala Hills, Tirupati, Andhra Pradesh, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=tirupati_balaji" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">4 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="kashi_vishwanath">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/uRUP4M_5vSo/hqdefault.jpg" alt="Shree Kashi Vishwanath Jyotirlinga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Vishveshwara / Lord of the Universe)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Kashi Vishwanath Jyotirlinga</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री काशी विश्वनाथ ज्योतिर्लिंग वाराणसी (मंगला व शृंगार आरती)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Varanasi (Kashi), Uttar Pradesh, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=kashi_vishwanath" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">4 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="somnath_jyotirlinga">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/uY5YwokiIsY/hqdefault.jpg" alt="Shree Somnath Jyotirlinga (1st Jyotirlinga)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Someshwara / Lord of the Moon)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Somnath Jyotirlinga (1st Jyotirlinga)</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री सोमनाथ ज्योतिर्लिंग (प्रथम ज्योतिर्लिंग • प्रभास पाटन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Prabhas Patan, Veraval, Saurashtra, Gujarat, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=somnath_jyotirlinga" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="mahakaleshwar_ujjain">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/H6D_IGx5xOI/hqdefault.jpg" alt="Mahakaleshwar Jyotirlinga Ujjain" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Dakshinamurti Mahakal / Kaal Ka Mahakaal)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Mahakaleshwar Jyotirlinga Ujjain</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन (भस्म आरती व दर्शन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Ujjain, Madhya Pradesh, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=mahakaleshwar_ujjain" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">4 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="ayodhya_ram_mandir">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/W8qEqGulnPg/hqdefault.jpg" alt="Shri Ram Janmabhoomi Mandir Ayodhya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Rama (Bhagwan Shri Ram Lalla Virajman)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shri Ram Janmabhoomi Mandir Ayodhya</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री राम जन्मभूमि मंदिर अयोध्या (रामलला दिव्य दर्शन व आरती)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Ayodhya Dham, Uttar Pradesh, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=ayodhya_ram_mandir" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">5 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="iskcon_bangalore">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/pq1fSKRlbc8/hqdefault.jpg" alt="ISKCON Sri Radha Krishnachandra Bangalore" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Sri Sri Radha Krishnachandra & Sri Narasimha</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">ISKCON Sri Radha Krishnachandra Bangalore</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">इस्कॉन श्री राधा कृष्णचंद्र मंदिर बेंगलुरु (कीर्तन व आरती)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=iskcon_bangalore" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="iskcon_vrindavan">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/O2ojNbbB8Iw/hqdefault.jpg" alt="ISKCON Sri Sri Krishna Balaram Mandir" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Sri Krishna & Balarama, Sri Radha Shyamasundar</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">ISKCON Sri Sri Krishna Balaram Mandir</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री श्री कृष्ण बलराम मंदिर इस्कॉन वृंदावन (24-घंटे अखंड कीर्तन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Raman Reti, Vrindavan, Mathura, Uttar Pradesh, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=iskcon_vrindavan" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="vaishno_devi_katra">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/jD-THm4dJz0/hqdefault.jpg" alt="Shri Mata Vaishno Devi Bhawan Katra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Maa Vaishno Devi (Maha Kali, Maha Lakshmi, Maha Saraswati Pindis)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shri Mata Vaishno Devi Bhawan Katra</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री माता वैष्णो देवी भवन कटरा (पवित्र गुफा व दिव्य आरती)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Trikuta Hills, Katra, Jammu & Kashmir, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=vaishno_devi_katra" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">2 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="parmarth_niketan_ganga">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/usvU6ox_NQU/hqdefault.jpg" alt="Parmarth Niketan Rishikesh (Ganga Aarti)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Maa Ganga & Lord Shiva</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Parmarth Niketan Rishikesh (Ganga Aarti)</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">परमार्थ निकेतन ऋषिकेश (विश्वप्रसिद्ध संध्या गंगा आरती)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Swargashram, Rishikesh, Uttarakhand, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=parmarth_niketan_ganga" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">2 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="siddhivinayak_mumbai">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/V2FnGzYYux8/hqdefault.jpg" alt="Shree Siddhivinayak Temple Mumbai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Ganesha (Siddhivinayak Ganapati)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Siddhivinayak Temple Mumbai</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री सिद्धिविनायक मंदिर प्रभादेवी मुंबई (लाइव दर्शन व काकड आरती)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Prabhadevi, Mumbai, Maharashtra, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=siddhivinayak_mumbai" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">4 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="jagannath_puri">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/WD5kyQ4laVs/hqdefault.jpg" alt="Shree Jagannath Temple Puri" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Jagannath, Balabhadra, Subhadra & Sudarshana</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Jagannath Temple Puri</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री जगन्नाथ मंदिर पुरी (महाप्रसाद, मंगला व संध्या आरती)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Puri Dham, Odisha, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=jagannath_puri" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">4 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="tulja_bhavani">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/B3r-kt5dK_M/hqdefault.jpg" alt="Shri Tulja Bhavani Temple" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Goddess Tulja Bhavani (Kulswamini of Chhatrapati Shivaji Maharaj)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shri Tulja Bhavani Temple</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री तुलजा भवानी मंदिर तुलजापुर (कुलस्वामिनी दर्शन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Tuljapur, Dharashiv, Maharashtra, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=tulja_bhavani" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="khatu_shyam_ji">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/aHp8nnOwcpc/hqdefault.jpg" alt="Shree Khatu Shyam Ji Temple" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Barbarika (Khatu Shyam Ji / Haare Ka Sahara)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Khatu Shyam Ji Temple</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री खाटू श्याम जी मंदिर सीकर राजस्थान (हारे का सहारा दर्शन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Khatu Dham, Sikar, Rajasthan, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=khatu_shyam_ji" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">4 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="salasar_balaji">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/q58Wan19vns/hqdefault.jpg" alt="Shri Salasar Balaji Mandir" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Hanuman (Salasar Balaji with Beard & Mustache)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shri Salasar Balaji Mandir</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री सालासर बालाजी मंदिर (दाढ़ी-मूंछ वाले चमत्कारी हनुमान जी)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Salasar, Churu District, Rajasthan, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=salasar_balaji" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="kedarnath_dham">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/fURwn8kbRBc/hqdefault.jpg" alt="Kedarnath Himalayan Dham" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Kedareshwara / Lord of the Glacial Peak)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Kedarnath Himalayan Dham</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री केदारनाथ ज्योतिर्लिंग (हिमालयन धाम दर्शन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Garhwal Himalayas, Rudraprayag, Uttarakhand, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=kedarnath_dham" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="udupi_krishna_matha">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/8JsL-H7fJy4/hqdefault.jpg" alt="Sri Krishna Matha Udupi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Balakrishna (Installed by Sri Madhvacharya through Kanakana Kindi)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Sri Krishna Matha Udupi</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री कृष्ण मठ उडुपी (कनकन किंडी व नित्य महापूजा)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Car Street, Udupi, Karnataka, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=udupi_krishna_matha" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="meenakshi_madurai">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/Aicrlohuuug/hqdefault.jpg" alt="Meenakshi Sundareswarar Temple" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Goddess Meenakshi (Parvati) & Sundareswarar (Shiva)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Meenakshi Sundareswarar Temple</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री मीनाक्षी सुंदरेश्वरर मंदिर मदुरै (गोपुरम व संध्या पूजा)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Madurai, Tamil Nadu, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=meenakshi_madurai" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="chamundeshwari_mysuru">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/9SBpnTrrXlw/hqdefault.jpg" alt="Chamundeshwari Temple Mysuru" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Goddess Chamundeshwari (Mahishasuramardini)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Chamundeshwari Temple Mysuru</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री चामुंडेश्वरी देवी मंदिर मैसूर (नाडा हब्बा दर्शन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Chamundi Hills, Mysuru, Karnataka, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=chamundeshwari_mysuru" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="pashupatinath_nepal">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/bi1PDhKGUd4/hqdefault.jpg" alt="Pashupatinath Temple Kathmandu Nepal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Pashupatinath - Lord of All Beings)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Pashupatinath Temple Kathmandu Nepal</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री पशुपतिनाथ मंदिर काठमांडू नेपाल (बागमती महाआरती)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Bagmati River, Kathmandu Valley, Nepal</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=pashupatinath_nepal" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">2 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="dwarkadhish_mandir">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="/images/temple_dwarkadhish.jpg" alt="Shree Dwarkadhish Mandir (Jagat Mandir)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Krishna (Dwarkadhish / King of Dwarka)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Dwarkadhish Mandir (Jagat Mandir)</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री द्वारकाधीश मंदिर (जगत मंदिर द्वारका गुजरात)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Dwarka, Devbhumi Dwarka, Gujarat, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=dwarkadhish_mandir" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">4 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="badrinath_temple">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="/images/temple_badrinath.jpg" alt="Shree Badrinath Temple (Badri Vishal)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Badrinarayan (Maha Vishnu in Meditative Posture)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Badrinath Temple (Badri Vishal)</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री बद्रीनाथ मंदिर (श्री बद्री विशाल धाम गढ़वाल हिमालय)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Chamoli, Garhwal Himalayas, Uttarakhand, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=badrinath_temple" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="har_ki_pauri_haridwar">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="/images/temple_haridwar.jpg" alt="Har Ki Pauri Maha Ganga Aarti" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Maa Ganga & Lord Shiva (Brahmakund Haridwar)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Har Ki Pauri Maha Ganga Aarti</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">हर की पौड़ी हरिद्वार (दैनिक भव्य गंगा आरती व ब्रह्मकुंड)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Haridwar, Uttarakhand, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=har_ki_pauri_haridwar" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">2 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="srisailam_mallikarjuna">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/cE0gGQG5XnY/hqdefault.jpg" alt="Sri Bhramaramba Mallikarjuna Jyotirlinga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Mallikarjuna) & Devi Bhramaramba</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Sri Bhramaramba Mallikarjuna Jyotirlinga</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री भ्रमराम्बा मल्लिकार्जुन स्वामी (श्रीशैलम ज्योतिर्लिंग)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Srisailam, Nandyal, Andhra Pradesh, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=srisailam_mallikarjuna" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="rameswaram_ramanatha">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/dMMNKnJzjCc/hqdefault.jpg" alt="Sri Ramanathaswamy Temple Rameswaram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Ramanathaswamy - Consecrated by Lord Rama)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Sri Ramanathaswamy Temple Rameswaram</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री रामनाथस्वामी ज्योतिर्लिंग रामेश्वरम (२२ पवित्र तीर्थ)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Rameswaram Island, Ramanathapuram, Tamil Nadu, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=rameswaram_ramanatha" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="trimbakeshwar_nashik">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/OdcdnGb1MzM/hqdefault.jpg" alt="Shree Trimbakeshwar Jyotirlinga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva, Vishnu & Brahma (Trimurti Jyotirlinga)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Trimbakeshwar Jyotirlinga</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री त्र्यंबकेश्वर ज्योतिर्लिंग नासिक (गोदावरी उद्गम स्थल)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Trimbak, Nashik, Maharashtra, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=trimbakeshwar_nashik" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="omkareshwar_jyotirlinga">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/gpBomD7BoTE/hqdefault.jpg" alt="Shree Omkareshwar Jyotirlinga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Omkareshwara / Amaleshwara)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Omkareshwar Jyotirlinga</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री ओंकारेश्वर ज्योतिर्लिंग (नर्मदा द्वीप • ॐ आकार पर्वत)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Mandhata Island, Khandwa, Madhya Pradesh, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=omkareshwar_jyotirlinga" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="kolhapur_mahalakshmi">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/Moj6qIUtzR0/hqdefault.jpg" alt="Shree Karveer Niwasini Ambabai (Mahalakshmi)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Goddess Mahalakshmi (Ambabai)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Karveer Niwasini Ambabai (Mahalakshmi)</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री करवीर निवासिनी महालक्ष्मी अंबाबाई मंदिर कोल्हापुर</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Kolhapur, Maharashtra, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=kolhapur_mahalakshmi" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="bhimashankar_jyotirlinga">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/Dl7oOCQB8Io/hqdefault.jpg" alt="Shree Bhimashankar Jyotirlinga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Bhimashankara)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Bhimashankar Jyotirlinga</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री भीमाशंकर ज्योतिर्लिंग (भीमा नदी उद्गम • सह्याद्रि)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Bhorgiri, Pune, Maharashtra, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=bhimashankar_jyotirlinga" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="grishneshwar_jyotirlinga">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/PTCrORkDhdc/hqdefault.jpg" alt="Shree Grishneshwar Jyotirlinga (12th Jyotirlinga)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Ghushmeshwara / Grishneshwar)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Grishneshwar Jyotirlinga (12th Jyotirlinga)</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री घृष्णेश्वर ज्योतिर्लिंग (द्वादश ज्योतिर्लिंग • एलोरा)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=grishneshwar_jyotirlinga" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="baidyanath_deoghar">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/QJLJDfJPQsA/hqdefault.jpg" alt="Shree Baidyanath Jyotirlinga Dham" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Baidyanath / Kamana Linga)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Baidyanath Jyotirlinga Dham</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री बैद्यनाथ ज्योतिर्लिंग धाम देवघर (मनोकामना लिंग)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Deoghar, Santhal Pargana, Jharkhand, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=baidyanath_deoghar" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">2 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="nageshwar_jyotirlinga">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/SaoR3RAtKbk/hqdefault.jpg" alt="Shree Nageshwar Jyotirlinga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Nageshwara / Lord of Serpents)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Nageshwar Jyotirlinga</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री नागेश्वर ज्योतिर्लिंग (दारुकावन • गुजरात)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Darukavanam, Dwarka, Gujarat, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=nageshwar_jyotirlinga" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="banke_bihari_vrindavan">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/GOXlKz5tySg/hqdefault.jpg" alt="Shree Banke Bihari Mandir Vrindavan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Krishna (Banke Bihari - Tribhanga Posture)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Banke Bihari Mandir Vrindavan</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री बांके बिहारी मंदिर वृन्दावन (दिव्य झांकी व चरण दर्शन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Vrindavan, Mathura, Uttar Pradesh, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=banke_bihari_vrindavan" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="radha_rani_barsana">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/mK2k8d2-ctM/hqdefault.jpg" alt="Shree Radha Rani Mandir (Shriji Mandir Barsana)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Shri Radha Rani (Shriji / Vrishabhanu Nandini)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Radha Rani Mandir (Shriji Mandir Barsana)</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री राधा रानी मंदिर बरसाना (श्रीजी मंदिर भानुगढ़ पर्वत)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Bhanugarh Hill, Barsana, Mathura, UP, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=radha_rani_barsana" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="govind_devji_jaipur">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/lvQT0WGp5Lk/hqdefault.jpg" alt="Shree Govind Dev Ji Temple Jaipur" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Krishna (Govind Dev Ji)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Shree Govind Dev Ji Temple Jaipur</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री गोविंद देव जी मंदिर जयपुर (राजसी झांकी व आरती)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 City Palace Complex, Jaipur, Rajasthan, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=govind_devji_jaipur" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">4 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="kukke_subramanya">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/hvdWNsZ7nlU/hqdefault.jpg" alt="Sri Kukke Subramanya Temple" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Subramanya (Kartikeya / Shanmukha / King of Serpents)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Sri Kukke Subramanya Temple</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री कुक्के सुब्रह्मण्य स्वामी मंदिर (सर्प दोष निवारण तीर्थ)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Subramanya, Dakshina Kannada, Karnataka, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=kukke_subramanya" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="dharmasthala_manjunatha">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/yK6PJU8qBU4/hqdefault.jpg" alt="Sri Kshetra Dharmasthala Manjunatha Swamy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Manjunatha (Shiva) & Dharma Daivas</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Sri Kshetra Dharmasthala Manjunatha Swamy</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री क्षेत्र धर्मस्थल मंजुनाथ स्वामी (धर्म व अन्नदान क्षेत्र)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Dharmasthala, Belthangady, Dakshina Kannada, Karnataka, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=dharmasthala_manjunatha" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="sringeri_sharada">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/DjvDwf97Wzc/hqdefault.jpg" alt="Sri Sringeri Sharada Peetham" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Goddess Sharadamba & Sri Chandramouleshwara</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Sri Sringeri Sharada Peetham</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री शृंगेरी शारदा पीठम (आदि शंकराचार्य दक्षिणाम्नाय पीठ)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Sringeri, Chikkamagaluru, Karnataka, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=sringeri_sharada" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="murudeshwar_temple">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/ad1I46Ct648/hqdefault.jpg" alt="Murudeshwara Coastal Temple & Shiva Statue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Shiva (Murudeshwara - Atma Linga Kshetra)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Murudeshwara Coastal Temple & Shiva Statue</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">श्री मुरुडेश्वर मंदिर व विशाल शिव प्रतिमा (कंदुका गिरि)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Murudeshwar, Bhatkal, Uttara Kannada, Karnataka, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=murudeshwar_temple" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">3 Aartis</span>
+      </div>
+    </article>
+  
+    <article class="bg-[#0f1118] border border-gold/20 hover:border-gold/50 rounded-2xl p-3 sm:p-4 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-lg group space-y-2" data-id="guruvayur_temple">
+      <div class="space-y-2">
+        <div class="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-black/40 border border-white/10">
+          <img src="https://img.youtube.com/vi/5oHwdfJC2wk/hqdefault.jpg" alt="Guruvayur Sri Krishna Temple" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-600/90 text-white font-mono font-black text-[8px] sm:text-[9px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>LIVE</span>
+          </span>
+          <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-md bg-black/80 text-gold font-mono text-[9px] font-bold">5.0 ★</span>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono text-gold/80 block uppercase">Lord Guruvayurappan (Unnikrishnan / Bala Vishnu)</span>
+          <h3 class="font-cinzel text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors line-clamp-1">Guruvayur Sri Krishna Temple</h3>
+          <p class="text-[10px] text-amber-300 font-serif truncate">गुरुवायूर श्री कृष्ण मंदिर केरल (भूलोक वैकुंठ दर्शन)</p>
+        </div>
+        <p class="text-[11px] text-white/50 font-mono truncate">📍 Guruvayur, Thrissur, Kerala, India</p>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+        <a href="/divya-darshana.html?temple=guruvayur_temple" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold flex items-center gap-1 hover:opacity-90 shadow-md">
+          <span>🔴 Darshan</span>
+        </a>
+        <span class="text-emerald-400 font-bold">4 Aartis</span>
+      </div>
+    </article>
+  
       </div>
 
     </div>
