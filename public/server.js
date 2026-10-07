@@ -222,6 +222,8 @@ app.use((req, res, next) => {
 
 // Visitor Tracking Middleware
 app.use((req, res, next) => {
+  const now = Date.now();
+  let changed = false;
   const pathName = req.path.toLowerCase();
   const isPage = req.method === 'GET' && (
     pathName === '/' || 
