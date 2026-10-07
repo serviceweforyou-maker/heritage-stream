@@ -152,7 +152,7 @@ app.use((req, res, next) => {
 });
 
 // ── 📰 DYNAMIC BLOG ARTICLE SSR & SELF-REFERENCING CANONICAL TAG ENGINE ──
-app.get(['/blog.html', '/blog/:slug?'], (req, res, next) => {
+app.get(['/blog.html', '/blog', '/blog/:slug'], (req, res, next) => {
   const postSlug = req.query.post || req.params.slug;
   const blogHtmlPath = path.join(__dirname, 'public', 'blog.html');
   if (!fs.existsSync(blogHtmlPath)) return next();
