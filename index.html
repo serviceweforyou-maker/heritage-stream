@@ -262,6 +262,150 @@
     // ════════════════════════════════════════════════════════════════
     // ── 🎁 VIRAL REFERRAL & MULTI-CHANNEL SHARE ENGINE ──
     // ════════════════════════════════════════════════════════════════
+    
+    // ── 🌟 ROBUST UNIVERSAL MODAL & GURUKULA OPENERS ──
+    window.openDailyGurukulaModal = function() {
+      try {
+        if (window.appInstance && typeof window.appInstance.openDailyGurukulaModal === 'function') {
+          window.appInstance.openDailyGurukulaModal();
+          return;
+        }
+        var m = document.getElementById('daily-gurukula-modal');
+        if (m) {
+          m.classList.remove('hidden');
+          m.classList.add('flex');
+          m.style.display = 'flex';
+          if (window.appInstance && typeof window.appInstance.renderGurukulaStep === 'function') {
+            window.appInstance.renderGurukulaStep(1);
+          }
+        }
+      } catch(e) { console.warn('Error opening daily gurukula modal:', e); }
+    };
+
+    window.openKidsGurukula = window.openKidsModeModal = function() {
+      try {
+        var lib = document.getElementById('library');
+        if (lib) {
+          lib.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        var kidsPill = document.querySelector('.ott-filter-pill[data-category="kids"]');
+        if (kidsPill) {
+          kidsPill.click();
+        } else {
+          var kidsPersona = document.querySelector('.persona-tab-btn[data-persona="Kids"]');
+          if (kidsPersona) kidsPersona.click();
+        }
+        if (typeof window.showAuthToast === 'function') {
+          window.showAuthToast('🧒 Kids Gurukula Activated', 'Enjoy animated Panchatantra, moral sagas & Vedic math speed drills!');
+        }
+      } catch(e) { console.warn('Error activating kids gurukula:', e); }
+    };
+
+    window.openRishiModal = function() {
+      try {
+        if (window.appInstance && typeof window.appInstance.openRishiModal === 'function') {
+          window.appInstance.openRishiModal();
+          return;
+        }
+        var m = document.getElementById('ask-rishi-modal');
+        if (m) {
+          m.classList.remove('hidden');
+          m.classList.add('flex');
+          m.style.display = 'flex';
+        }
+      } catch(e) { console.warn('Error opening rishi modal:', e); }
+    };
+
+    window.openMudraModal = function() {
+      try {
+        if (window.appInstance && typeof window.appInstance.openMudraModal === 'function') {
+          window.appInstance.openMudraModal();
+          return;
+        }
+        var m = document.getElementById('mudra-studio-modal');
+        if (m) {
+          m.classList.remove('hidden');
+          m.classList.add('flex');
+          m.style.display = 'flex';
+        }
+      } catch(e) { console.warn('Error opening mudra modal:', e); }
+    };
+
+    window.openGitaModal = function() {
+      try {
+        if (window.appInstance && typeof window.appInstance.openGitaModal === 'function') {
+          window.appInstance.openGitaModal();
+          return;
+        }
+        var m = document.getElementById('gita-compass-modal');
+        if (m) {
+          m.classList.remove('hidden');
+          m.classList.add('flex');
+          m.style.display = 'flex';
+        }
+      } catch(e) { console.warn('Error opening gita modal:', e); }
+    };
+
+    window.openDoshaModal = function() {
+      try {
+        if (window.appInstance && typeof window.appInstance.openDoshaModal === 'function') {
+          window.appInstance.openDoshaModal();
+          return;
+        }
+        var m = document.getElementById('dosha-analyzer-modal');
+        if (m) {
+          m.classList.remove('hidden');
+          m.classList.add('flex');
+          m.style.display = 'flex';
+        }
+      } catch(e) { console.warn('Error opening dosha modal:', e); }
+    };
+
+    window.openRagaModal = function() {
+      try {
+        if (window.appInstance && typeof window.appInstance.openRagaModal === 'function') {
+          window.appInstance.openRagaModal();
+          return;
+        }
+        var m = document.getElementById('raga-therapy-modal');
+        if (m) {
+          m.classList.remove('hidden');
+          m.classList.add('flex');
+          m.style.display = 'flex';
+        }
+      } catch(e) { console.warn('Error opening raga modal:', e); }
+    };
+
+    window.openArchetypeModal = function() {
+      try {
+        if (window.appInstance && typeof window.appInstance.openArchetypeModal === 'function') {
+          window.appInstance.openArchetypeModal();
+          return;
+        }
+        var m = document.getElementById('archetype-modal');
+        if (m) {
+          m.classList.remove('hidden');
+          m.classList.add('flex');
+          m.style.display = 'flex';
+        }
+      } catch(e) { console.warn('Error opening archetype modal:', e); }
+    };
+
+    window.openVedicMathModal = function() {
+      try {
+        if (window.appInstance && typeof window.appInstance.openVedicMathModal === 'function') {
+          window.appInstance.openVedicMathModal();
+          return;
+        }
+        var m = document.getElementById('vedic-math-modal');
+        if (m) {
+          m.classList.remove('hidden');
+          m.classList.add('flex');
+          m.style.display = 'flex';
+        }
+      } catch(e) { console.warn('Error opening vedic math modal:', e); }
+    };
+
     window.SHARE_TEMPLATES = [
       {
         id: 'general',
@@ -1435,7 +1579,7 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=125.0">
+  <link rel="stylesheet" href="styles.css?v=126.0">
   <link rel="stylesheet" href="flipbook.css?v=98">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap&display=swap" rel="stylesheet">
   <script>
@@ -1500,14 +1644,14 @@
 
         <!-- Fast Feature Shortcuts in Tier 1 (Visible on 2XL / Ultra-wide desktops to protect laptop width) -->
         <div class="hidden 2xl:flex items-center gap-1.5 ml-2 border-l border-white/10 pl-2.5">
-          <button id="header-daily-gurukula-btn" class="h-8 px-2.5 py-1 rounded-full text-amber-300 bg-amber-500/15 border border-amber-500/40 hover:bg-amber-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm animate-pulse whitespace-nowrap" title="Daily 5-Minute Morning Gurukula Challenge">
+          <button id="header-daily-gurukula-btn" onclick="window.openDailyGurukulaModal()" class="h-8 px-2.5 py-1 rounded-full text-amber-300 bg-amber-500/15 border border-amber-500/40 hover:bg-amber-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm animate-pulse whitespace-nowrap" title="Daily 5-Minute Morning Gurukula Challenge">
             <span>☀️</span> <span>Daily Gurukula</span>
             <span id="header-gurukula-streak-badge" class="text-[9px] font-mono text-gold bg-black/60 px-1.5 py-0.2 rounded-full border border-gold/40">🔥 1d</span>
           </button>
-          <button id="header-kids-mode-btn" class="h-8 px-2.5 py-1 rounded-full text-emerald-300 bg-emerald-500/15 border border-emerald-500/40 hover:bg-emerald-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm whitespace-nowrap">
+          <button id="header-kids-mode-btn" onclick="window.openKidsGurukula()" class="h-8 px-2.5 py-1 rounded-full text-emerald-300 bg-emerald-500/15 border border-emerald-500/40 hover:bg-emerald-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm whitespace-nowrap">
             <span>🧒</span> <span>Kids Gurukula</span>
           </button>
-          <button id="header-rishi-btn" class="h-8 px-2.5 py-1 rounded-full text-purple-300 bg-purple-500/15 border border-purple-500/40 hover:bg-purple-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm whitespace-nowrap">
+          <button id="header-rishi-btn" onclick="window.openRishiModal()" class="h-8 px-2.5 py-1 rounded-full text-purple-300 bg-purple-500/15 border border-purple-500/40 hover:bg-purple-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm whitespace-nowrap">
             <span>🕉️</span> <span>Ask Rishi AI</span>
           </button>
         </div>
@@ -1602,6 +1746,14 @@
           <span>📖</span> Granthalaya (26 Epics)
         </a>
 
+        <button type="button" onclick="window.openDailyGurukulaModal()" class="sec-nav-pill px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/50 text-amber-300 hover:bg-amber-500/25 transition-all flex items-center gap-1.5 font-bold shadow-sm cursor-pointer animate-pulse" title="Daily 5-Minute Morning Gurukula Challenge">
+          <span>☀️</span> Daily Gurukula <span class="text-[9px] font-mono text-gold bg-black/60 px-1.5 py-0.2 rounded-full border border-gold/40">🔥 1d</span>
+        </button>
+
+        <button type="button" onclick="window.openKidsGurukula()" class="sec-nav-pill px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/50 text-emerald-300 hover:bg-emerald-500/25 transition-all flex items-center gap-1.5 font-bold shadow-sm cursor-pointer" title="Kids Gurukula (Panchatantra, Moral Sagas &amp; Vedic Math)">
+          <span>🧒</span> Kids Gurukula
+        </button>
+
         <a href="/blog.html" class="sec-nav-pill px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/50 text-amber-300 hover:bg-amber-500/25 transition-all flex items-center gap-1.5 font-bold shadow-sm" title="100+ Ancient Mysteries &amp; Vedic Science Articles">
           <span>📰</span> Blog (100+ Mysteries)
         </a>
@@ -1635,23 +1787,23 @@
           <span class="text-[9px] font-mono font-black bg-black text-gold px-1.5 py-0.2 rounded-full uppercase tracking-wider">40 TEMPLES</span>
         </a>
         
-        <button id="header-mudra-btn" class="sec-nav-pill px-3 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 hover:bg-amber-500/25 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm">
+        <button id="header-mudra-btn" onclick="window.openMudraModal()" class="sec-nav-pill px-3 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 hover:bg-amber-500/25 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm">
           <span>🧘</span> Mudra Studio
         </button>
 
-        <button id="header-gita-btn" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-gold/40 hover:text-gold transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
+        <button id="header-gita-btn" onclick="window.openGitaModal()" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-gold/40 hover:text-gold transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
           <span>📜</span> Gita Compass
         </button>
 
-        <button id="header-dosha-btn" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-emerald-400 hover:text-emerald-300 transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
+        <button id="header-dosha-btn" onclick="window.openDoshaModal()" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-emerald-400 hover:text-emerald-300 transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
           <span>🌿</span> Ayurvedic Dosha
         </button>
 
-        <button id="header-raga-btn" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-purple-400 hover:text-purple-300 transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
+        <button id="header-raga-btn" onclick="window.openRagaModal()" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-purple-400 hover:text-purple-300 transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
           <span>🪕</span> Raga Therapy
         </button>
 
-        <button id="header-archetype-btn" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-gold/40 hover:text-gold transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
+        <button id="header-archetype-btn" onclick="window.openArchetypeModal()" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-gold/40 hover:text-gold transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
           <span>👑</span> Archetype Test
         </button>
 
@@ -1714,7 +1866,7 @@
         </button>
       </div>
 
-      <button id="mobile-daily-gurukula-btn" class="w-full text-left py-3 px-3.5 rounded-2xl text-sm font-extrabold text-amber-300 bg-[#141826] border border-amber-500/40 hover:bg-amber-500/25 transition-all flex items-center justify-between shadow-lg cursor-pointer" style="background-color: #141826 !important;">
+      <button id="mobile-daily-gurukula-btn" onclick="window.openDailyGurukulaModal()" class="w-full text-left py-3 px-3.5 rounded-2xl text-sm font-extrabold text-amber-300 bg-[#141826] border border-amber-500/40 hover:bg-amber-500/25 transition-all flex items-center justify-between shadow-lg cursor-pointer" style="background-color: #141826 !important;">
         <div class="flex items-center gap-2">
           <span class="text-xl">☀️</span>
           <div>
@@ -1745,7 +1897,7 @@
       <a href="#mystery-vault" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 transition-all">🔒 Secret Mystery Vaults</a>
       
       <div class="text-[9px] font-mono font-bold uppercase text-gold/80 tracking-wider pt-2">Sacred Wellness &amp; Mind</div>
-      <button id="mobile-mudra-btn" class="w-full text-left py-2.5 px-3.5 rounded-xl text-sm font-semibold text-amber-300 hover:bg-white/5 transition-all flex items-center gap-2 cursor-pointer">
+      <button id="mobile-mudra-btn" onclick="window.openMudraModal()" class="w-full text-left py-2.5 px-3.5 rounded-xl text-sm font-semibold text-amber-300 hover:bg-white/5 transition-all flex items-center gap-2 cursor-pointer">
         <span>🧘</span> Sacred Mudra Studio
       </button>
       <button id="mobile-dosha-btn" onclick="document.getElementById('header-dosha-btn')?.click() || window.appInstance?.openDoshaModal()" class="w-full text-left py-2.5 px-3.5 rounded-xl text-sm font-semibold text-emerald-300 hover:bg-white/5 transition-all flex items-center gap-2 cursor-pointer">
@@ -1756,7 +1908,7 @@
       </button>
 
       <div class="text-[9px] font-mono font-bold uppercase text-gold/80 tracking-wider pt-2">Kids &amp; Learning</div>
-      <button id="mobile-kids-btn" class="w-full text-left py-2.5 px-3.5 rounded-xl text-sm font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all flex items-center gap-2 cursor-pointer">
+      <button id="mobile-kids-btn" onclick="window.openKidsGurukula()" class="w-full text-left py-2.5 px-3.5 rounded-xl text-sm font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all flex items-center gap-2 cursor-pointer">
         <span>🧒</span> Kids Safe Mode &amp; Vedic Math
       </button>
       <a href="#explorer" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 transition-all">🗺️ Map Explorer</a>
@@ -3351,7 +3503,7 @@
   </div>
 
   <script src="data.js?v=118.0"></script>
-  <script type="module" src="app-prod.js?v=125.0"></script>
+  <script type="module" src="app-prod.js?v=126.0"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {

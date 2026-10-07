@@ -451,6 +451,7 @@ class AppController {
     safeInit("initAskRishiAI", this.initAskRishiAI);
     safeInit("initArchetypeCertificate", this.initArchetypeCertificate);
     safeInit("initViralReferral", this.initViralReferral);
+    safeInit("initDailyGurukulaEngine", this.initDailyGurukulaEngine);
     safeInit("initKidsModeToggle", this.initKidsModeToggle);
     safeInit("initPWA", this.initPWA);
     safeInit("initDynamicSEO", this.initDynamicSEO);
@@ -7452,6 +7453,32 @@ class AppController {
   }
 
 
+
+  
+  openKidsGurukula() {
+    try {
+      const lib = document.getElementById('library');
+      if (lib) {
+        lib.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      const kidsPill = document.querySelector('.ott-filter-pill[data-category="kids"]');
+      if (kidsPill) {
+        kidsPill.click();
+      } else {
+        const kidsPersona = document.querySelector('.persona-tab-btn[data-persona="Kids"]');
+        if (kidsPersona) kidsPersona.click();
+      }
+      if (typeof window.showAuthToast === 'function') {
+        window.showAuthToast('🧒 Kids Gurukula Activated', 'Enjoy animated Panchatantra, moral sagas & Vedic math speed drills!');
+      }
+    } catch(e) {
+      console.warn('Error in openKidsGurukula:', e);
+    }
+  }
+
+  openKidsModeModal() {
+    this.openKidsGurukula();
+  }
 
   // ── ☀️ DAILY 5-MINUTE MORNING GURUKULA & CERTIFICATE ENGINE ──
   initDailyGurukulaEngine() {
