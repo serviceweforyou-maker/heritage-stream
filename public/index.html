@@ -18,6 +18,27 @@
   <script>
     window.selectedRegAvatar = '📜';
 
+    // ── ⚖️ GLOBAL LEGAL MODAL OPENER HELPER ──
+    window.openLegalTab = function(tabName) {
+      try {
+        var modal = document.getElementById('legal-modal');
+        if (!modal) {
+          window.location.href = tabName === 'privacy' ? '/privacy-policy.html' : (tabName === 'refund' ? '/refund-policy.html' : '/terms-conditions.html');
+          return;
+        }
+        if (window.showLegalTab) {
+          window.showLegalTab(tabName);
+        }
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        modal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+      } catch(e) {
+        console.warn('Error opening legal modal:', e);
+      }
+    };
+      
+
     // ── 👁️ PASSWORD VISIBILITY TOGGLE ENGINE ──
     window.togglePasswordVisibility = function(inputId, btnEl) {
       try {
@@ -3672,7 +3693,8 @@
       `
     };
 
-    function showLegalTab(tabName) {
+    window.legalDocs = legalDocs;
+    window.showLegalTab = function showLegalTab(tabName) {
       // Set active tab button style
       document.querySelectorAll('.legal-tab-btn').forEach(btn => {
         if (btn.getAttribute('data-tab') === tabName) {
@@ -5620,9 +5642,9 @@
       <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
         <p>© 2026 Sanatana360. All rights reserved. India's 1st Sacred Heritage Knowledge OTT Platform.</p>
         <div class="flex items-center gap-4 text-xs">
-          <a href="#library" class="hover:text-gold transition-colors">Terms of Service</a>
+          <a href="/terms-conditions.html" onclick="if(window.openLegalTab){event.preventDefault(); window.openLegalTab('terms');}" class="hover:text-gold transition-colors">Terms of Service</a>
           <span>•</span>
-          <a href="#library" class="hover:text-gold transition-colors">Privacy Policy</a>
+          <a href="/privacy-policy.html" onclick="if(window.openLegalTab){event.preventDefault(); window.openLegalTab('privacy');}" class="hover:text-gold transition-colors">Privacy Policy</a>
           <span>•</span>
           <span class="text-gold font-mono font-bold">Referral Code: GURUKULA50</span>
         </div>
