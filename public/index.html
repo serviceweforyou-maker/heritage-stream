@@ -264,6 +264,50 @@
     // ════════════════════════════════════════════════════════════════
     
     // ── 🌟 ROBUST UNIVERSAL MODAL & GURUKULA OPENERS ──
+    
+    // ── 🌟 COMPACT FLOATING WIDGET DISMISS & HIDE LOGIC ──
+    window.hideReferFloating = function() {
+      try {
+        var el = document.getElementById('floating-share-wrapper');
+        if (el) {
+          el.style.transition = 'all 0.3s ease';
+          el.style.opacity = '0';
+          el.style.transform = 'scale(0.8) translateY(10px)';
+          setTimeout(function() { el.style.display = 'none'; }, 300);
+        }
+        sessionStorage.setItem('hs_hide_refer_floating', '1');
+      } catch(e) {}
+    };
+
+    window.hideWhatsAppFloating = function() {
+      try {
+        var el = document.getElementById('floating-whatsapp-wrapper');
+        if (el) {
+          el.style.transition = 'all 0.3s ease';
+          el.style.opacity = '0';
+          el.style.transform = 'scale(0.8) translateY(10px)';
+          setTimeout(function() { el.style.display = 'none'; }, 300);
+        }
+        sessionStorage.setItem('hs_hide_whatsapp_floating', '1');
+      } catch(e) {}
+    };
+
+    // Auto-check on load if user dismissed in current session
+    (function checkFloatingState() {
+      if (typeof window !== 'undefined') {
+        window.addEventListener('DOMContentLoaded', function() {
+          if (sessionStorage.getItem('hs_hide_refer_floating') === '1') {
+            var r = document.getElementById('floating-share-wrapper');
+            if (r) r.style.display = 'none';
+          }
+          if (sessionStorage.getItem('hs_hide_whatsapp_floating') === '1') {
+            var w = document.getElementById('floating-whatsapp-wrapper');
+            if (w) w.style.display = 'none';
+          }
+        });
+      }
+    })();
+
     window.openDailyGurukulaModal = function() {
       try {
         if (window.appInstance && typeof window.appInstance.openDailyGurukulaModal === 'function') {
@@ -1579,7 +1623,7 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=127.0">
+  <link rel="stylesheet" href="styles.css?v=128.0">
   <link rel="stylesheet" href="flipbook.css?v=98">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap&display=swap" rel="stylesheet">
   <script>
@@ -3503,7 +3547,7 @@
   </div>
 
   <script src="data.js?v=118.0"></script>
-  <script type="module" src="app-prod.js?v=127.0"></script>
+  <script type="module" src="app-prod.js?v=128.0"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -5689,20 +5733,32 @@
 
 
 
-  <!-- ── 🎁 FLOATING VIRAL REFER & SHARE BUTTON (Bottom-Left: Zero Overlap) ── -->
-  <div id="floating-share-wrapper" class="fixed bottom-20 left-3 sm:bottom-6 sm:left-6 z-50 flex items-center gap-2 select-none pointer-events-auto" style="position: fixed !important; z-index: 50 !important;">
-    <button type="button" id="floating-refer-btn" onclick="window.openReferralModal()" class="group relative flex items-center gap-2 px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold hover:to-amber-600 text-black font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-[0_10px_35px_rgba(212,175,55,0.6)] hover:shadow-[0_15px_45px_rgba(212,175,55,0.85)] hover:scale-105 cursor-pointer border-2 border-amber-200" title="Refer & Share Sanatana360 with Friends">
-      <span class="text-base sm:text-lg animate-bounce">🎁</span>
-      <span class="font-black">Refer &amp; Share</span>
-      <span class="text-[9px] font-mono font-black bg-black text-gold px-1.5 py-0.5 rounded-full border border-gold/40 hidden xs:inline">₹50 OFF</span>
-    </button>
+  
+
+
+
+  <!-- ── 🎁 COMPACT FLOATING VIRAL REFER & SHARE (Bottom-Left with Hide Option) ── -->
+  <div id="floating-share-wrapper" class="fixed bottom-20 left-3 sm:bottom-6 sm:left-6 z-50 flex items-center select-none transition-all duration-300" style="position: fixed !important; z-index: 50 !important;">
+    <div class="flex items-center bg-gradient-to-r from-gold via-amber-400 to-amber-500 rounded-full p-0.5 shadow-[0_6px_20px_rgba(212,175,55,0.4)] border border-amber-200/80 group">
+      <button type="button" id="floating-refer-btn" onclick="window.openReferralModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-black font-extrabold text-[11px] sm:text-xs uppercase tracking-wide cursor-pointer hover:opacity-90 transition-opacity" title="Refer & Share Sanatana360 (₹50 OFF)">
+        <span class="text-sm">🎁</span>
+        <span class="font-black">Refer &amp; Earn</span>
+        <span class="text-[8.5px] font-mono font-black bg-black text-gold px-1.5 py-0.2 rounded-full hidden xs:inline">₹50</span>
+      </button>
+      <button type="button" onclick="event.stopPropagation(); window.hideReferFloating()" class="w-4.5 h-4.5 rounded-full bg-black/20 hover:bg-black/60 text-black hover:text-white flex items-center justify-center text-[11px] font-black mr-1 cursor-pointer transition-colors" title="Hide Refer Button">&times;</button>
+    </div>
   </div>
 
-  <!-- ── 💬 FLOATING WHATSAPP SUPPORT BUTTON (Bottom-Right: Zero Overlap) ── -->
-  <a href="https://wa.me/919900000000?text=Namaste!%20I%20have%20a%20question%20about%20Sanatana360%20Pass" target="_blank" rel="noopener noreferrer" id="whatsapp-support-btn" class="fixed bottom-20 right-3 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 px-3.5 py-2.5 sm:px-4 sm:py-3 bg-[#25D366] hover:bg-[#20bd5a] text-black font-black text-xs sm:text-sm rounded-full shadow-2xl shadow-green-500/40 hover:scale-105 transition-all duration-300 cursor-pointer select-none" title="Chat with Sanatana360 Support" style="position: fixed !important; z-index: 50 !important;">
-    <span class="text-base sm:text-lg">💬</span>
-    <span class="font-black hidden xs:inline">WhatsApp Support</span>
-  </a>
+  <!-- ── 💬 COMPACT FLOATING WHATSAPP SUPPORT (Bottom-Right with Hide Option) ── -->
+  <div id="floating-whatsapp-wrapper" class="fixed bottom-20 right-3 sm:bottom-6 sm:right-6 z-50 flex items-center select-none transition-all duration-300" style="position: fixed !important; z-index: 50 !important;">
+    <div class="flex items-center bg-[#25D366] rounded-full p-0.5 shadow-[0_6px_20px_rgba(37,211,102,0.4)] border border-emerald-300/80 group">
+      <a href="https://wa.me/919900000000?text=Namaste!%20I%20have%20a%20question%20about%20Sanatana360%20Pass" target="_blank" rel="noopener noreferrer" id="whatsapp-support-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-black font-extrabold text-[11px] sm:text-xs uppercase tracking-wide cursor-pointer hover:opacity-90 transition-opacity" title="Chat with WhatsApp Support">
+        <span class="text-sm">💬</span>
+        <span class="font-black hidden xs:inline">Support</span>
+      </a>
+      <button type="button" onclick="event.stopPropagation(); window.hideWhatsAppFloating()" class="w-4.5 h-4.5 rounded-full bg-black/20 hover:bg-black/60 text-black hover:text-white flex items-center justify-center text-[11px] font-black mr-1 cursor-pointer transition-colors" title="Hide WhatsApp">&times;</button>
+    </div>
+  </div>
 
 
 </body>
