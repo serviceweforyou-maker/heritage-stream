@@ -1056,3 +1056,20 @@ header#main-header {
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.45);
   transform: scale(1.03);
 }
+
+
+/* ── MOBILE MODAL SAFETY & FLOATING BUTTON AUTO-HIDE ── */
+body.modal-open .floating-btn-group,
+.modal-overlay:not(.hidden) ~ .floating-btn-group {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  transform: translateY(12px) !important;
+}
+
+@media (max-width: 640px) {
+  #floating-share-wrapper,
+  #floating-whatsapp-wrapper {
+    bottom: max(16px, env(safe-area-inset-bottom)) !important;
+  }
+}

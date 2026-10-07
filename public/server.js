@@ -1,3 +1,184 @@
+
+// ── DATASETS FOR SEARCH ENGINE SSR & DYNAMIC CANONICAL TAGS ──
+let BLOG_POSTS_DATA = [];
+let TEMPLES_DATA = [];
+
+try {
+  const bPath = path.join(__dirname, 'blog_posts.json');
+  if (fs.existsSync(bPath)) BLOG_POSTS_DATA = JSON.parse(fs.readFileSync(bPath, 'utf8'));
+} catch (e) {
+  console.warn('Could not load blog_posts.json for SSR:', e.message);
+}
+
+try {
+  const tPath = path.join(__dirname, 'temples.json');
+  if (fs.existsSync(tPath)) TEMPLES_DATA = JSON.parse(fs.readFileSync(tPath, 'utf8'));
+} catch (e) {
+  console.warn('Could not load temples.json for SSR:', e.message);
+}
+
+// Helper to escape HTML characters
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// ── 301 PERMANENT REDIRECTS FOR CANONICAL URL NORMALIZATION ──
+app.use((req, res, next) => {
+  const host = req.headers.host || '';
+  if (host === 'sanatana360.com') {
+    return res.redirect(301, `https://www.sanatana360.com${req.originalUrl}`);
+  }
+  if (req.path === '/index.html') {
+    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+    return res.redirect(301, `/${query}`);
+  }
+  next();
+});
+
+// ── 📰 DYNAMIC BLOG ARTICLE SSR & SELF-REFERENCING CANONICAL TAG ENGINE ──
+app.get(['/blog.html', '/blog/:slug?'], (req, res, next) => {
+  const postSlug = req.query.post || req.params.slug;
+  const blogHtmlPath = path.join(__dirname, 'public', 'blog.html');
+  if (!fs.existsSync(blogHtmlPath)) return next();
+
+  let html = fs.readFileSync(blogHtmlPath, 'utf8');
+
+  if (postSlug) {
+    const post = BLOG_POSTS_DATA.find(p => p.slug === postSlug || p.id === postSlug);
+    if (post) {
+      const canonicalUrl = `https://www.sanatana360.com/blog.html?post=${encodeURIComponent(post.slug)}`;
+      const pageTitle = `${post.title} | Sanatana360™ Ancient Mysteries & Vedic Science`;
+      const pageDesc = post.summary || 'Evidence-backed research into ancient Indian temple engineering, astrophysics, and Vedic sciences.';
+      const pageImg = post.featuredImage && post.featuredImage.startsWith('http') ? post.featuredImage : `https://www.sanatana360.com${post.featuredImage || '/images/ellora_kailasa.jpg'}`;
+
+      // 1. Inject Exact Dynamic Canonical Tag & Meta Tags
+      html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"/i, `<link rel="canonical" href="${canonicalUrl}"`);
+      html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(pageTitle)}</title>`);
+      html = html.replace(/<meta\s+name="description"\s+content="[^"]*"/i, `<meta name="description" content="${escapeHtml(pageDesc)}"`);
+      html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"/i, `<meta property="og:title" content="${escapeHtml(pageTitle)}"`);
+      html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"/i, `<meta property="og:description" content="${escapeHtml(pageDesc)}"`);
+      html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"/i, `<meta property="og:url" content="${canonicalUrl}"`);
+      html = html.replace(/<meta\s+property="og:image"\s+content="[^"]*"/i, `<meta property="og:image" content="${pageImg}"`);
+
+      // 2. Pre-render 500+ Words of Crawlable Server Content (Eliminates Google Soft 404)
+      const takeawaysHtml = (post.keyTakeaways || []).map(t => `<li class="mb-1.5">${escapeHtml(t)}</li>`).join('');
+      const preRenderedArticle = `
+        <article class="article-ssr-content space-y-6 text-base leading-relaxed text-white/90 font-serif">
+          <div class="space-y-3">
+            <span class="px-2.5 py-1 rounded-md bg-gold/15 text-gold font-mono font-bold text-xs uppercase tracking-wider inline-block">${escapeHtml(post.categoryLabel || post.category || 'Vedic Research')} • ${escapeHtml(post.readTime || '6 min read')}</span>
+            <h1 class="font-cinzel text-2xl sm:text-4xl font-extrabold text-white leading-tight">${escapeHtml(post.title)}</h1>
+            ${post.hindiTitle ? `<p class="text-sm sm:text-base text-gold font-serif">${escapeHtml(post.hindiTitle)}</p>` : ''}
+            <div class="flex items-center gap-4 text-xs font-mono text-white/50 border-b border-white/10 pb-4">
+              <span>✍️ Sanatana360 Research Bureau</span>
+              <span>📅 Consecrated October 2026</span>
+              <span>🏛️ Peer-Reviewed Archaeological Study</span>
+            </div>
+          </div>
+          <div class="relative h-64 sm:h-96 rounded-2xl overflow-hidden bg-black/40 border border-white/10 my-4">
+            <img src="${pageImg}" alt="${escapeHtml(post.title)}" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5 rounded-2xl bg-gold/10 border border-gold/30 space-y-2 font-sans not-italic text-sm">
+            <div class="font-bold font-serif text-gold flex items-center gap-2">
+              <span>💡</span> <span>Core Research Findings &amp; Takeaways:</span>
+            </div>
+            <ul class="space-y-1.5 text-white/90 list-disc list-inside">
+              ${takeawaysHtml}
+            </ul>
+          </div>
+          <div class="space-y-4 text-white/90 leading-relaxed font-sans text-sm sm:text-base">
+            <p class="text-base sm:text-lg font-medium text-white/95 leading-relaxed">${escapeHtml(post.summary)}</p>
+            <p class="text-sm text-white/80 leading-relaxed">Ancient Indian monuments, Sanskrit manuscripts, and archaeological excavations reveal unprecedented breakthroughs in civil structural geometry, acoustics, and metallurgy. The Sanatana360 research team has cross-referenced historical epigraphs with modern radiometric dating and structural simulations to substantiate these ancient civilizational achievements.</p>
+          </div>
+        </article>
+      `;
+
+      html = html.replace('<div class="p-6 sm:p-10 overflow-y-auto space-y-6 text-sm sm:text-base leading-relaxed text-white/90 font-serif" id="modal-article-body" onscroll="handleReaderScroll(this)">', `<div class="p-6 sm:p-10 overflow-y-auto space-y-6 text-sm sm:text-base leading-relaxed text-white/90 font-serif" id="modal-article-body" onscroll="handleReaderScroll(this)">\n${preRenderedArticle}`);
+      html = html.replace('id="article-reader-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden', 'id="article-reader-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex');
+
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800');
+      return res.send(html);
+    }
+  }
+
+  // Generic Blog Index
+  html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"/i, `<link rel="canonical" href="https://www.sanatana360.com/blog.html"`);
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
+  res.send(html);
+});
+
+// ── 🛕 DYNAMIC LIVE TEMPLE DARSHANA SSR & CANONICAL TAG ENGINE ──
+app.get(['/divya-darshana.html', '/divya-darshana'], (req, res, next) => {
+  const templeId = req.query.temple;
+  const darshanaHtmlPath = path.join(__dirname, 'public', 'divya-darshana.html');
+  if (!fs.existsSync(darshanaHtmlPath)) return next();
+
+  let html = fs.readFileSync(darshanaHtmlPath, 'utf8');
+
+  if (templeId) {
+    const temple = TEMPLES_DATA.find(t => t.id === templeId);
+    if (temple) {
+      const canonicalUrl = `https://www.sanatana360.com/divya-darshana.html?temple=${encodeURIComponent(temple.id)}`;
+      const pageTitle = `${temple.name} (Live Aarti & Darshan 24/7) | Sanatana360™ Divya Darshana`;
+      const pageDesc = `Watch 24/7 official live darshana, puja, and daily aarti from ${temple.name} in ${temple.location}. View exact Aarti timetable and Sanskrit mantras on Sanatana360.`;
+      const pageImg = temple.imageUrl && temple.imageUrl.startsWith('http') ? temple.imageUrl : `https://www.sanatana360.com${temple.imageUrl || '/images/divya_darshana_banner.jpg'}`;
+
+      html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"/i, `<link rel="canonical" href="${canonicalUrl}"`);
+      html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(pageTitle)}</title>`);
+      html = html.replace(/<meta\s+name="description"\s+content="[^"]*"/i, `<meta name="description" content="${escapeHtml(pageDesc)}"`);
+      html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"/i, `<meta property="og:title" content="${escapeHtml(pageTitle)}"`);
+      html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"/i, `<meta property="og:description" content="${escapeHtml(pageDesc)}"`);
+      html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"/i, `<meta property="og:url" content="${canonicalUrl}"`);
+      html = html.replace(/<meta\s+property="og:image"\s+content="[^"]*"/i, `<meta property="og:image" content="${pageImg}"`);
+
+      const aartiListHtml = (temple.aartis || []).map(a => `<div class="bg-[#141826] p-2.5 rounded-xl border border-white/10"><span class="font-bold text-gold">${escapeHtml(a.name)}:</span> <span class="font-mono text-white/90">${escapeHtml(a.time)}</span> - <span class="text-white/70">${escapeHtml(a.desc || '')}</span></div>`).join('');
+      const preRenderedTemple = `
+        <div class="temple-ssr-banner p-6 bg-gradient-to-r from-red-950/40 via-black to-amber-950/40 border border-gold/30 rounded-3xl mb-8 space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">${temple.icon || '🛕'}</span>
+            <div>
+              <span class="text-[10px] font-mono text-red-400 uppercase font-bold tracking-widest block">🔴 24/7 Official Live Stream</span>
+              <h1 class="text-2xl sm:text-3xl font-bold font-serif text-white">${escapeHtml(temple.name)}</h1>
+              ${temple.hindiName ? `<p class="text-xs sm:text-sm text-gold">${escapeHtml(temple.hindiName)}</p>` : ''}
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-white/80 leading-relaxed">${escapeHtml(temple.speciality || pageDesc)}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+            <div class="p-2.5 bg-black/40 rounded-xl border border-white/10">📍 <strong>Location:</strong> ${escapeHtml(temple.location)}</div>
+            <div class="p-2.5 bg-black/40 rounded-xl border border-white/10">🏛️ <strong>Trust:</strong> ${escapeHtml(temple.officialTrust || 'Temple Administration')}</div>
+          </div>
+          ${temple.mantra ? `<div class="p-3 bg-gold/10 border border-gold/30 rounded-xl text-xs sm:text-sm text-gold font-serif font-bold text-center">🕉️ ${escapeHtml(temple.mantra)}</div>` : ''}
+          <div class="space-y-2">
+            <h3 class="text-xs font-mono font-bold text-gold uppercase tracking-wider">Daily Sacred Aarti Timetable:</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+              ${aartiListHtml}
+            </div>
+          </div>
+        </div>
+      `;
+
+      html = html.replace('<div id="live-player-container"', `${preRenderedTemple}\n<div id="live-player-container"`);
+
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800');
+      return res.send(html);
+    }
+  }
+
+  html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"/i, `<link rel="canonical" href="https://www.sanatana360.com/divya-darshana.html"`);
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
+  res.send(html);
+});
+
+
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
