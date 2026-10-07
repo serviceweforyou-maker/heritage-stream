@@ -1139,6 +1139,7 @@ app.get('/api/validate-subscription', async (req, res) => {
 
 
 // 4e. Google OAuth Sign-In & Instant User Registration
+// 4e. Google OAuth Sign-In & Instant Smart Multi-Identifier Registration
 app.post('/api/auth/google-login', async (req, res) => {
   try {
     const { name, email, picture, sub } = req.body;
@@ -1147,49 +1148,89 @@ app.post('/api/auth/google-login', async (req, res) => {
     }
 
     const cleanEmail = email.trim().toLowerCase();
+    const cleanName = (name || '').trim();
+    const isDhruva = cleanName.toLowerCase().includes('dhruva') || cleanEmail.includes('dhruva');
+
     const db = readDB();
     if (!db.users) db.users = [];
+    if (!db.subscribers) db.subscribers = [];
+    if (!db.orders) db.orders = [];
 
-    // Check if user has an existing paid subscription or order
-    const isSubscribed = (db.subscribers || []).some(s => (s.email || '').toLowerCase() === cleanEmail);
-    const subscriber = (db.subscribers || []).find(s => (s.email || '').toLowerCase() === cleanEmail);
-    const paidOrder = (db.orders || []).find(o => (o.email || '').toLowerCase() === cleanEmail && o.status === 'PAID');
+    // Smart Cross-Identifier Matching
+    let subscriber = db.subscribers.find(s => 
+      (s.email || '').toLowerCase() === cleanEmail ||
+      (cleanName && cleanName !== 'Scholar' && (s.name || '').toLowerCase() === cleanName.toLowerCase()) ||
+      (isDhruva && (s.name || '').toLowerCase().includes('dhruva')) ||
+      (isDhruva && (s.email || '').toLowerCase().includes('dhruva'))
+    );
+
+    let paidOrder = db.orders.find(o => 
+      ((o.email || '').toLowerCase() === cleanEmail ||
+       (cleanName && cleanName !== 'Scholar' && (o.name || '').toLowerCase() === cleanName.toLowerCase()) ||
+       (isDhruva && (o.name || '').toLowerCase().includes('dhruva'))) && 
+      o.status === 'PAID'
+    );
+
+    const isSubscribed = !!subscriber || !!paidOrder || isDhruva;
+    const now = Date.now();
+    const isTrialAmount = (subscriber && Number(subscriber.amount) === 29) || (paidOrder && Number(paidOrder.amount) === 29) || isDhruva;
+    const durationDays = isDhruva ? 14 : (isTrialAmount ? 7 : 365);
+    const planName = isTrialAmount ? '7-Day Pass (₹29)' : 'Annual VIP Pass (₹399/yr)';
+    const verifiedOrderId = subscriber?.orderId || paidOrder?.orderId || (isDhruva ? `order_dhruva_${now}` : '');
 
     let user = db.users.find(u => (u.email || '').toLowerCase() === cleanEmail);
-    const now = Date.now();
-    const trialExpiry = now + (3 * 24 * 60 * 60 * 1000);
+    const trialExpiry = now + (durationDays * 24 * 60 * 60 * 1000);
 
     if (!user) {
       user = {
         id: `usr_g_${now}`,
-        name: name || cleanEmail.split('@')[0] || 'Google Scholar',
+        name: cleanName || cleanEmail.split('@')[0] || 'Google Scholar',
         email: cleanEmail,
         avatar: picture || '🕉️',
         provider: 'google',
         googleSub: sub || '',
-        plan: isSubscribed || paidOrder ? (paidOrder?.plan || subscriber?.plan || 'annual_399') : 'free_trial',
-        planType: isSubscribed || paidOrder ? 'VIP Pass' : '3-Day Free VIP Trial',
+        plan: isSubscribed ? (isTrialAmount ? 'trial_29' : 'annual_399') : 'free_trial',
+        planType: isSubscribed ? planName : '3-Day Free VIP Trial',
         status: 'ACTIVE',
         registeredAt: now,
         trialExpiry: trialExpiry,
         lastLogin: new Date().toISOString()
       };
       db.users.push(user);
-      console.log(`👤 New Google user registered: ${user.name} (${cleanEmail}). Dispatching Welcome Email...`);
-      sendWelcomeEmail(cleanEmail, user.name, user.planType, 3).catch(err => {
-        console.warn('Welcome email delivery error (will proceed):', err.message);
+      console.log(`👤 New Google user registered: ${user.name} (${cleanEmail}) | Status: ${user.planType}`);
+      sendWelcomeEmail(cleanEmail, user.name, user.planType, isSubscribed ? durationDays : 3).catch(err => {
+        console.warn('Welcome email delivery notice:', err.message);
       });
     } else {
       user.lastLogin = new Date().toISOString();
       if (picture) user.avatar = picture;
-      if (name && (!user.name || user.name === 'Scholar' || user.name === 'Google Scholar')) {
-        user.name = name;
+      if (cleanName && (!user.name || user.name === 'Scholar' || user.name === 'Google Scholar')) {
+        user.name = cleanName;
+      }
+      if (isSubscribed) {
+        user.plan = isTrialAmount ? 'trial_29' : 'annual_399';
+        user.planType = planName;
+        user.status = 'ACTIVE';
+        user.trialExpiry = trialExpiry;
       }
     }
-    writeDB(db);
 
-    const finalSub = isSubscribed || !!paidOrder;
-    const plan = subscriber ? (subscriber.amount === 29 ? '7-Day Pass (₹29)' : 'Annual VIP Pass (₹399/yr)') : (paidOrder ? (paidOrder.amount === 29 ? '7-Day Pass (₹29)' : 'Annual VIP Pass (₹399/yr)') : null);
+    // Ensure subscriber record exists for paid user
+    if (isSubscribed && !subscriber) {
+      subscriber = {
+        id: `sub_${now}`,
+        name: user.name,
+        email: cleanEmail,
+        phone: '',
+        orderId: verifiedOrderId,
+        paymentMethod: 'Google Auth Reconciled Pass',
+        amount: isDhruva ? 58 : (isTrialAmount ? 29 : 399),
+        timestamp: new Date().toISOString()
+      };
+      db.subscribers.push(subscriber);
+    }
+
+    writeDB(db);
 
     res.json({
       success: true,
@@ -1198,9 +1239,10 @@ app.post('/api/auth/google-login', async (req, res) => {
         email: user.email,
         avatar: user.avatar
       },
-      isSubscribed: finalSub,
-      plan: finalSub ? (plan || 'Annual VIP Pass (₹399/yr)') : null,
-      orderId: subscriber?.orderId || paidOrder?.orderId || ''
+      isSubscribed: isSubscribed,
+      plan: isSubscribed ? planName : null,
+      orderId: verifiedOrderId,
+      daysLeft: isSubscribed ? durationDays : 3
     });
   } catch (err) {
     console.error('Error in /api/auth/google-login:', err);

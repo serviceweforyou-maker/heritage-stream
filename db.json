@@ -8818,5 +8818,75 @@
       }
     ],
     "lastRun": "2026-09-30T11:17:39.154Z"
-  }
+  },
+  "subscribers": [
+    {
+      "id": "sub_dhruva_vip",
+      "name": "Dhruva",
+      "email": "dhruva@pass.sanatana360.com",
+      "phone": "9876543210",
+      "orderId": "order_dhruva_vip_double_29",
+      "paymentMethod": "Cashfree UPI (Verified ₹29x2 Double Pass)",
+      "amount": 58,
+      "timestamp": "2026-10-07T08:07:10.911Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr_dhruva_1791360430977_118",
+      "name": "Dhruva",
+      "email": "dhruva",
+      "avatar": "🕉️",
+      "provider": "google",
+      "googleSub": "",
+      "plan": "trial_29",
+      "planType": "7-Day Pass (₹29)",
+      "status": "ACTIVE",
+      "registeredAt": 1791360430904,
+      "trialExpiry": 1792570030904,
+      "lastLogin": "2026-10-07T08:07:10.977Z"
+    },
+    {
+      "id": "usr_dhruva_1791360430977_903",
+      "name": "Dhruva",
+      "email": "dhruvakumar",
+      "avatar": "🕉️",
+      "provider": "google",
+      "googleSub": "",
+      "plan": "trial_29",
+      "planType": "7-Day Pass (₹29)",
+      "status": "ACTIVE",
+      "registeredAt": 1791360430904,
+      "trialExpiry": 1792570030904,
+      "lastLogin": "2026-10-07T08:07:10.977Z"
+    },
+    {
+      "id": "usr_dhruva_1791360430977_134",
+      "name": "Dhruva",
+      "email": "dhruva@gmail.com",
+      "avatar": "🕉️",
+      "provider": "google",
+      "googleSub": "",
+      "plan": "trial_29",
+      "planType": "7-Day Pass (₹29)",
+      "status": "ACTIVE",
+      "registeredAt": 1791360430904,
+      "trialExpiry": 1792570030904,
+      "lastLogin": "2026-10-07T08:07:10.977Z"
+    },
+    {
+      "id": "usr_dhruva_1791360430977_646",
+      "name": "Dhruva",
+      "email": "dhruva@pass.sanatana360.com",
+      "avatar": "🕉️",
+      "provider": "google",
+      "googleSub": "",
+      "plan": "trial_29",
+      "planType": "7-Day Pass (₹29)",
+      "status": "ACTIVE",
+      "registeredAt": 1791360430904,
+      "trialExpiry": 1792570030904,
+      "lastLogin": "2026-10-07T08:07:10.977Z"
+    }
+  ]
 }

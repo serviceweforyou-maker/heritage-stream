@@ -1061,17 +1061,26 @@
             sub: profile.sub || ''
           })
         })
+        
         .then(function(res) { return res.json(); })
         .then(function(data) {
           if (data && data.isSubscribed) {
             localStorage.setItem('hs_subscribed', 'true');
             localStorage.setItem('hs_subscription_active', 'true');
-            if (data.plan) localStorage.setItem('hs_subscription_tier', data.plan);
+            if (data.plan) localStorage.setItem('hs_sub_plan', data.plan);
+            if (data.orderId) localStorage.setItem('hs_order_id', data.orderId);
+            localStorage.setItem('hs_sub_timestamp', String(Date.now()));
+            localStorage.removeItem('hs_sub_expired');
             if (window.appInstance) {
               window.appInstance.isSubscribed = true;
               if (data.plan) window.appInstance.subscriptionTier = data.plan;
+              if (typeof window.appInstance.renderHeaderProfile === 'function') window.appInstance.renderHeaderProfile();
+              if (typeof window.appInstance.renderSpotlight === 'function') window.appInstance.renderSpotlight();
+              if (typeof window.appInstance.renderContentRows === 'function') window.appInstance.renderContentRows();
+              if (typeof window.appInstance.setupSubscriptionUI === 'function') window.appInstance.setupSubscriptionUI();
             }
             window.updateHeaderAuthState();
+            window.showAuthToast('🎉 Welcome ' + formattedName + '! Your ' + (data.plan || 'PRO Pass') + ' is active.', 'PRO Active', '👑');
           }
         })
         .catch(function(err) {
@@ -1753,6 +1762,10 @@
               <div class="text-[8px] text-white/60 font-mono mt-0.5" id="dropdown-sub-expiry">Expires: 365 Days Validity</div>
             </div>
 
+            
+            <button onclick="window.syncUserPayment()" class="w-full text-left px-3.5 py-2.5 text-xs text-emerald-300 hover:text-emerald-200 rounded-xl transition-all flex items-center gap-2 font-bold cursor-pointer border border-emerald-500/30 hover:border-emerald-500/60 shadow-sm" style="background-color: #0c1c16 !important;">
+              <span class="animate-spin text-xs">⚡</span> <span>Sync / Restore Bank Payment</span>
+            </button>
             <button id="menu-account-btn" class="w-full text-left px-3.5 py-2.5 text-xs text-white hover:text-gold rounded-xl transition-all flex items-center gap-2 font-bold cursor-pointer border border-white/10 hover:border-gold/40" style="background-color: #141826 !important;">
               <span>👤</span> <span>Manage Account &amp; Pass</span>
             </button>
@@ -3547,7 +3560,7 @@
   </div>
 
   <script src="data.js?v=118.0"></script>
-  <script type="module" src="app-prod.js?v=128.0"></script>
+  <script type="module" src="app-prod.js?v=129.0"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {

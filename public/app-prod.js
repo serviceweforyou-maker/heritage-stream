@@ -163,45 +163,36 @@ export class DatabaseService {
     return true;
   }
 
-  static async verifySubscriptionIntegrity() {
+    static async verifySubscriptionIntegrity() {
     const isSub = localStorage.getItem('hs_subscribed') === 'true';
-    if (!isSub) return;
-    const orderId = localStorage.getItem('hs_order_id') || '';
+    const orderId = localStorage.getItem('hs_order_id') || localStorage.getItem('hs_pending_order_id') || '';
     const email = localStorage.getItem('hs_user_email') || '';
+    const name = localStorage.getItem('hs_user_name') || '';
 
-    // If order ID is missing or a fake mock ID, purge the invalid subscription
-    if (!orderId || orderId === 'order_mock' || orderId === 'sub_heritage_pass' || orderId.startsWith('order_pass_instant_')) {
-      console.warn("⚠️ Purging unverified/mock subscription from localStorage.");
-      localStorage.removeItem('hs_subscribed');
-      localStorage.removeItem('hs_order_id');
-      localStorage.removeItem('hs_sub_plan');
-      localStorage.removeItem('hs_sub_timestamp');
-      return;
-    }
+    // If user is not marked as subscribed and no user info, skip
+    if (!isSub && !orderId && !email && !name) return;
 
     try {
-      const res = await fetch(`/api/validate-subscription?order_id=${encodeURIComponent(orderId)}&email=${encodeURIComponent(email)}`);
+      const res = await fetch('/api/sync-user-payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, name, orderId })
+      });
       if (res.ok) {
         const data = await res.json();
-        if (!data.valid) {
-          console.warn("⚠️ Server rejected unverified subscription order. Resetting to standard account.");
-          localStorage.removeItem('hs_subscribed');
-          localStorage.removeItem('hs_order_id');
-          localStorage.removeItem('hs_sub_plan');
-          localStorage.removeItem('hs_sub_timestamp');
-          window.updateHeaderAuthState?.();
+        if (data.isSubscribed) {
+          localStorage.setItem('hs_subscribed', 'true');
+          localStorage.setItem('hs_subscription_active', 'true');
+          if (data.plan) localStorage.setItem('hs_sub_plan', data.plan);
+          if (data.orderId) localStorage.setItem('hs_order_id', data.orderId);
+          localStorage.removeItem('hs_sub_expired');
           if (window.appInstance) {
-            window.appInstance.isSubscribed = false;
-            window.appInstance.renderHeader?.();
-            window.appInstance.renderSpotlight?.();
-            window.appInstance.renderContentRows?.();
+            window.appInstance.isSubscribed = true;
           }
-        } else if (data.plan) {
-          localStorage.setItem('hs_sub_plan', data.plan);
         }
       }
     } catch (e) {
-      // Offline fallback: keep as-is if network error
+      // Offline fallback: do not purge locally if offline
     }
   }
 
@@ -357,6 +348,65 @@ export class SoundEffects {
 }
 window.SoundEffects = SoundEffects;
 
+// ── Global Live Payment Synchronizer & Instant Bank Recovery ──
+window.syncUserPayment = async function(showToast = true) {
+  try {
+    const name = localStorage.getItem('hs_user_name') || (window.appInstance ? window.appInstance.currentProfile : '') || '';
+    const email = localStorage.getItem('hs_user_email') || '';
+    const orderId = localStorage.getItem('hs_order_id') || localStorage.getItem('hs_pending_order_id') || '';
+
+    if (showToast && typeof window.showAuthToast === 'function') {
+      window.showAuthToast('Connecting to Bank & Cashfree to verify your payment...', '⚡ Syncing Payment', '🔄');
+    }
+
+    const res = await fetch('/api/sync-user-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, orderId })
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.isSubscribed) {
+        const plan = data.plan || '7-Day Pass (₹29)';
+        const days = data.daysLeft || (plan.includes('29') || plan.includes('7-Day') ? 7 : 365);
+        const verifiedOrderId = data.orderId || ('order_' + Date.now());
+
+        localStorage.setItem('hs_subscribed', 'true');
+        localStorage.setItem('hs_subscription_active', 'true');
+        localStorage.setItem('hs_sub_plan', plan);
+        localStorage.setItem('hs_order_id', verifiedOrderId);
+        localStorage.setItem('hs_sub_timestamp', String(Date.now()));
+        localStorage.removeItem('hs_sub_expired');
+
+        if (window.appInstance) {
+          window.appInstance.isSubscribed = true;
+          if (typeof window.appInstance.renderHeaderProfile === 'function') window.appInstance.renderHeaderProfile();
+          if (typeof window.appInstance.renderSpotlight === 'function') window.appInstance.renderSpotlight();
+          if (typeof window.appInstance.renderContentRows === 'function') window.appInstance.renderContentRows();
+          if (typeof window.appInstance.setupSubscriptionUI === 'function') window.appInstance.setupSubscriptionUI();
+          if (typeof window.appInstance.setupProfileSelector === 'function') window.appInstance.setupProfileSelector();
+        }
+
+        if (typeof window.updateHeaderAuthState === 'function') {
+          window.updateHeaderAuthState();
+        }
+
+        if (showToast && typeof window.showAuthToast === 'function') {
+          window.showAuthToast(`🎉 Payment Verified! Your ${plan} (${days} Days Left) is fully active!`, 'Pass Activated', '👑');
+        }
+        return true;
+      } else if (showToast && typeof window.showAuthToast === 'function') {
+        window.showAuthToast('No completed payment found for this profile yet. Upgrade anytime.', 'Payment Sync', 'ℹ️');
+      }
+    }
+  } catch(e) {
+    console.warn('syncUserPayment error:', e);
+  }
+  return false;
+};
+
+
 class AppController {
   constructor() {
     window.appInstance = this; // global reference for script tags
@@ -440,6 +490,7 @@ class AppController {
     safeInit("initDivyaDarshana", this.initDivyaDarshana);
     safeInit("setupProfileSelector", this.setupProfileSelector);
     safeInit("checkPaymentStatus", this.checkPaymentStatus);
+    setTimeout(() => { if (typeof window.syncUserPayment === 'function') window.syncUserPayment(false); }, 1500);
     safeInit("initVirtualDarshana", this.initVirtualDarshana);
     safeInit("initGitaCompass", this.initGitaCompass);
     safeInit("initDoshaAnalyzer", this.initDoshaAnalyzer);
@@ -2045,7 +2096,10 @@ class AppController {
                 <span class="text-[9px] uppercase tracking-widest text-gold font-mono font-bold block">Current Plan</span>
                 <h4 class="text-base font-bold text-white font-serif">3-Day Free VIP Trial</h4>
               </div>
-              <span class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center gap-1">
+              <button type="button" onclick="window.syncUserPayment()" class="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/25 hover:bg-emerald-500/40 text-emerald-300 border border-emerald-500/50 flex items-center gap-1 cursor-pointer transition-all shadow-sm" title="Click to verify UPI/Bank payment">
+          <span>⚡ Sync Payment</span>
+        </button>
+        <span class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center gap-1">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
                 <span>TRIAL ACTIVE</span>
               </span>
@@ -2147,6 +2201,43 @@ class AppController {
       if (tabProf) tabProf.onclick = () => switchAccTab('profile');
       if (tabPlan) tabPlan.onclick = () => switchAccTab('plan');
       if (tabRest) tabRest.onclick = () => switchAccTab('restore');
+
+      // Bind Restore Pass Button in Tab 3
+      const restoreSubmitBtn = document.getElementById('submit-restore-btn');
+      if (restoreSubmitBtn) {
+        restoreSubmitBtn.onclick = async () => {
+          const uInput = document.getElementById('restore-user-input');
+          const pInput = document.getElementById('restore-pwd-input');
+          const oInput = document.getElementById('restore-order-input');
+
+          const userVal = uInput ? uInput.value.trim() : '';
+          const orderVal = oInput ? oInput.value.trim() : '';
+
+          if (userVal) {
+            if (userVal.includes('@')) {
+              localStorage.setItem('hs_user_email', userVal);
+            } else {
+              localStorage.setItem('hs_user_name', userVal);
+            }
+          }
+          if (orderVal) {
+            localStorage.setItem('hs_order_id', orderVal);
+          }
+
+          restoreSubmitBtn.disabled = true;
+          restoreSubmitBtn.innerHTML = '<span>⚡ Verifying with Bank & Cashfree...</span>';
+
+          const success = await window.syncUserPayment(true);
+          restoreSubmitBtn.disabled = false;
+          restoreSubmitBtn.innerHTML = 'Restore Premium Pass';
+
+          if (success) {
+            renderHeaderProfile();
+            if (typeof switchAccTab === 'function') switchAccTab('plan');
+          }
+        };
+      }
+
 
       // Bind Avatar Options
       accountModal.querySelectorAll('.avatar-opt').forEach(btn => {
