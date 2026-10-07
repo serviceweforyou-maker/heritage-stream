@@ -1905,7 +1905,13 @@ class AppController {
 
       if (nameInput) nameInput.value = currentName === 'Guest' ? '' : currentName;
       if (pwdInput) pwdInput.value = currentPwd;
-      if (avatarPreview) avatarPreview.textContent = currentAvatar;
+      if (avatarPreview) {
+        if (currentAvatar && (currentAvatar.startsWith('http://') || currentAvatar.startsWith('https://') || currentAvatar.startsWith('data:image'))) {
+          avatarPreview.innerHTML = `<img src="${currentAvatar}" alt="Avatar" class="w-full h-full rounded-2xl object-cover" referrerpolicy="no-referrer">`;
+        } else {
+          avatarPreview.textContent = currentAvatar || '📜';
+        }
+      }
       if (displayName) displayName.textContent = currentName;
 
       if (subBadgeModal) {
