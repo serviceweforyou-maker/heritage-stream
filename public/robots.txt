@@ -38,6 +38,9 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-# Sitemaps & LLM Manifest
+# Sitemaps & LLM Knowledge Manifests
 Sitemap: https://www.sanatana360.com/sitemap.xml
 Sitemap: https://www.sanatana360.com/rss.xml
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /press-release.html

@@ -7,9 +7,15 @@
   <!-- Core Landing & Hub Pages -->
   <url>
     <loc>https://www.sanatana360.com/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.sanatana360.com/press-release.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.98</priority>
   </url>
   <url>
     <loc>https://www.sanatana360.com/divya-darshana.html</loc>

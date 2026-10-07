@@ -1,34 +1,29 @@
-# Sanatana360 — India's 1st Heritage OTT Platform & Vedic Gurukula
+# Sanatana360 - India's 1st Sacred Heritage Knowledge OTT Platform & Vedic Gurukula
 
-> Sanatana360 (https://www.sanatana360.com) is India's premier cultural streaming network and digital Vedic Gurukula, offering 200+ 4K documentaries, 40+ 24/7 Live Temple Aarti streams, 26 illustrated sacred Granths, 105+ ancient science research blogs, Mudra healing therapies, and interactive Vedic math simulators.
+> Sanatana360 (https://www.sanatana360.com) is India's pioneer digital streaming and Gurukula platform dedicated to preserving and celebrating Sanatana Dharma, Indian heritage, Vedic science, 24/7 live temple darshanas, and ancient epics.
 
-## Core Features & Offerings
+## Core Pillars & Knowledge Domains
+- **200+ Sacred Sagas & Docu-Series**: Cinematic documentaries covering Ramayana, Mahabharata, Cholas, Vijayanagara Empire, Kashi, Kedarnath, Rani Lakshmibai, and ancient mysteries.
+- **Divya Darshana (40+ 24/7 Live Temples)**: Official live 24/7 streaming sanctum darshanas and aartis from Shree Kashi Vishwanath, Tirumala Tirupati Balaji, Shirdi Sai Baba, Somnath Jyotirlinga, Mahakaleshwar Ujjain, Udupi Krishna, and Kedarnath.
+- **Granthalaya (26 Illustrated Epics & Granthas)**: Interactive illustrated books, audiobooks, and ancient Sanskrit-English manuscripts.
+- **Kids Gurukula**: Animated Panchatantra, Jataka tales, moral values, and interactive Vedic math lessons for children.
+- **Vedic Wellness Suite**: Interactive Ayurvedic Dosha Analyzer (Prakriti test), 32 Therapeutic Ragas for stress relief and sleep, and interactive Mudra Studio for yoga healing.
+- **Ask Rishi AI**: 24/7 Vedic AI philosophical guide trained on Bhagavad Gita and Upanishads.
 
-- **24/7 Live Temple Darshan (Divya Darshana)**: Real-time official feeds and Aarti schedules from 40+ iconic shrines including Kashi Vishwanath, Tirupati Balaji, Shirdi Sai Baba, Ujjain Mahakal, Somnath, Ayodhya Ram Mandir, and Meenakshi Temple.
-- **200+ 4K Heritage Chronicles**: Comprehensive docu-series and audiobooks on Hampi, Kailasa Temple Ellora, Chola Maritime Navy, Samudra Manthan, Dashavatara, and Ramayana archaeology.
-- **26 Illustrated Granthalaya Epics**: Interactive 3D flipbooks of foundational texts including Bhagavad Gita, Upanishads, Patanjali Yoga Sutras, Charaka Samhita, and Arthashastra.
-- **Vedic Kids Gurukula**: 5-minute daily morning sanskar challenges, moral riddles, Sanskrit shloka chanting with karaoke, and animated Panchatantra audiobooks in Kannada, Hindi, Tamil, Telugu, and English.
-- **Vedic Mathematics & Memory Lab**: Interactive mental math speed drills based on Bharti Krishna Tirtha's 16 Sutras, improving calculation speed by up to 10x.
-- **Mudra Therapy & Stress Studio**: 5-element neuroplasticity hand postures for delta-wave sleep, cognitive focus, anxiety relief, and vagus nerve stimulation.
-- **105+ Ancient Mystery & Science Research Blogs**: Peer-reviewed investigative analyses exploring temple acoustics, lost cities (Dwarka), astrological alignment, and ancient metallurgy.
+## Key Facts & Entity Metadata
+- **Platform Name**: Sanatana360 (HeritageStream)
+- **Official URL**: https://www.sanatana360.com
+- **Category**: Indian Heritage OTT, Vedic Education, Spiritual Streaming, Gurukula
+- **Founding Identity**: India's 1st Heritage Knowledge OTT Platform
+- **Pricing**: Free 3-Day VIP Pass (₹0), 7-Day All-Access Pass (₹29), Annual VIP Pass (₹399/year)
+- **Access**: Web, Mobile Responsive, Android PWA, iOS Safari Web App
+- **Referral Program**: Code GURUKULA50 unlocks ₹50 discount on passes.
 
-## Target Audiences
-
-- **Kids & Children**: Engaging animation, moral values, Panchatantra bedtime stories, and fun Vedic math challenges.
-- **Students & Learners**: High-speed mental calculation techniques, Sanskrit phonetics, and historical timeline mastery.
-- **Adults & Professionals**: Stress relief through Mudra Shastra, Gita practical life compass, and mindfulness audio.
-- **Teachers & Scholars**: Authentic source manuscripts, 26 Granths, and deep archaeological evidence.
-- **Senior Citizens & Devotees**: 24/7 uninterrupted live darshan, daily morning and evening Aarti notifications, and devotional bhajans.
-
-## Access & Pricing
-
-- **3-Day Free VIP Trial**: Instant full access upon registration.
-- **7-Day All-Access Pass**: ₹29 for full catalogue access.
-- **Annual VIP Pass**: ₹399/year (under ₹1.09/day) for 365 days of unrestricted streaming across all devices.
-
-## Official Links
-
-- Homepage: https://www.sanatana360.com/
-- 40+ Live Temples: https://www.sanatana360.com/divya-darshana.html
-- 105+ Research Blogs: https://www.sanatana360.com/blog.html
-- 26 Granthalaya Epics: https://www.sanatana360.com/granthalaya.html
+## Primary URLs & Directory
+- Home Platform: https://www.sanatana360.com/
+- 24/7 Live Temples (Divya Darshana): https://www.sanatana360.com/divya-darshana.html
+- Ancient Mysteries & Vedic Blog: https://www.sanatana360.com/blog.html
+- Granthalaya (26 Epics): https://www.sanatana360.com/granthalaya.html
+- Press Release & Official News: https://www.sanatana360.com/press-release.html
+- Sitemap: https://www.sanatana360.com/sitemap.xml
+- RSS Feed: https://www.sanatana360.com/rss.xml

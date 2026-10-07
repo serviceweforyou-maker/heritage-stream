@@ -108,6 +108,68 @@ app.get('/admin.html', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Real-Time Search Engine & AI Knowledge Graph Pinger
+app.get('/api/seo/ping-all', async (req, res) => {
+  const origin = 'https://www.sanatana360.com';
+  const urls = [
+    origin + '/',
+    origin + '/divya-darshana.html',
+    origin + '/blog.html',
+    origin + '/granthalaya.html',
+    origin + '/press-release.html',
+    origin + '/llms.txt'
+  ];
+
+  const results = { indexNow: false, bingPing: false, googlePing: false };
+
+  // 1. IndexNow API (Bing, Yandex, Seznam)
+  try {
+    const indexNowRes = await fetch('https://api.indexnow.org/indexnow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        host: 'www.sanatana360.com',
+        key: 'sanatana360indexnow2026',
+        keyLocation: origin + '/sanatana360indexnow2026.txt',
+        urlList: urls
+      })
+    });
+    results.indexNow = indexNowRes.status === 200 || indexNowRes.status === 202;
+  } catch(e) {
+    results.indexNowError = e.message;
+  }
+
+  // 2. Google Sitemap Ping
+  try {
+    const gRes = await fetch('https://www.google.com/ping?sitemap=' + encodeURIComponent(origin + '/sitemap.xml'));
+    results.googlePing = gRes.status < 400;
+  } catch(e) {}
+
+  // 3. Bing Sitemap Ping
+  try {
+    const bRes = await fetch('https://www.bing.com/ping?sitemap=' + encodeURIComponent(origin + '/sitemap.xml'));
+    results.bingPing = bRes.status < 400;
+  } catch(e) {}
+
+  res.json({
+    success: true,
+    message: 'Search engine crawl pings dispatched.',
+    results: results,
+    submittedUrls: urls
+  });
+});
+
+// Serve llms.txt and llms-full.txt
+app.get('/llms.txt', (req, res) => {
+  res.header('Content-Type', 'text/plain; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'llms.txt'));
+});
+
+app.get('/llms-full.txt', (req, res) => {
+  res.header('Content-Type', 'text/plain; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'llms-full.txt'));
+});
+
 // IndexNow Protocol Key Verification File Route for Bing & Search Engines
 app.get('/sanatana360indexnow2026.txt', (req, res) => {
   res.header('Content-Type', 'text/plain');

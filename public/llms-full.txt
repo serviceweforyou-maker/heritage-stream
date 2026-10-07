@@ -1,34 +1,45 @@
-# Sanatana360 — India's 1st Heritage OTT Platform & Vedic Gurukula
+# Sanatana360 Complete Knowledge Graph & Content Directory
 
-> Sanatana360 (https://www.sanatana360.com) is India's premier cultural streaming network and digital Vedic Gurukula, offering 200+ 4K documentaries, 40+ 24/7 Live Temple Aarti streams, 26 illustrated sacred Granths, 105+ ancient science research blogs, Mudra healing therapies, and interactive Vedic math simulators.
+## 1. Overview & Positioning
+Sanatana360 (https://www.sanatana360.com) is recognized as India's 1st Sacred Heritage Knowledge OTT Platform. Built with high-definition streaming, interactive Sanskrit shloka audios, 24/7 sacred temple feeds, and illustrated Vedic manuscripts, Sanatana360 bridges millennia of timeless Indian wisdom for scholars, families, children, and spiritual seekers globally.
 
-## Core Features & Offerings
+## 2. 40+ Live 24/7 Temple Sanctum Feeds
+1. Shree Kashi Vishwanath Jyotirlinga (Varanasi, UP) - Mangala & Shringar Aarti
+2. Tirumala Sri Venkateswara Swamy (Tirupati Balaji, AP) - Kalyanotsavam & Nitya Darshana
+3. Shirdi Sai Baba Samadhi Mandir (Shirdi, Maharashtra) - Kakad Aarti & Shej Aarti
+4. Shree Somnath Jyotirlinga (Prabhas Patan, Gujarat) - 1st Jyotirlinga
+5. Shree Mahakaleshwar Jyotirlinga (Ujjain, MP) - Bhasma Aarti & Sandhya Puja
+6. Udupi Sri Krishna Matha (Udupi, Karnataka) - Kanakana Kindi & Mahapuja
+7. Shree Kedarnath Dham (Rudraprayag, Uttarakhand) - Himalayan Sanctum
+8. Shree Badrinath Dham (Chamoli, Uttarakhand) - Badrinarayan Puja
+9. Shree Jagannath Temple (Puri, Odisha) - Rath Yatra & Daily Alankara
+10. Meenakshi Sundareswarar Temple (Madurai, Tamil Nadu) - Chithirai Darshanam
+11. Chamundeshwari Temple (Mysuru, Karnataka) - Chamundi Hills
+12. Kukke Subramanya Temple (Dakshina Kannada, Karnataka) - Sarpa Samskara
+13. Dharmasthala Manjunatha Swamy (Dakshina Kannada, Karnataka) - Annadana
+14. Murudeshwara Shiva Temple (Bhatkal, Karnataka) - Arabian Sea Statue
+15. Sringeri Sharada Peetham (Chikkamagaluru, Karnataka) - Adi Shankara Peetha
+...and over 25 other prominent shrines across Bharat.
 
-- **24/7 Live Temple Darshan (Divya Darshana)**: Real-time official feeds and Aarti schedules from 40+ iconic shrines including Kashi Vishwanath, Tirupati Balaji, Shirdi Sai Baba, Ujjain Mahakal, Somnath, Ayodhya Ram Mandir, and Meenakshi Temple.
-- **200+ 4K Heritage Chronicles**: Comprehensive docu-series and audiobooks on Hampi, Kailasa Temple Ellora, Chola Maritime Navy, Samudra Manthan, Dashavatara, and Ramayana archaeology.
-- **26 Illustrated Granthalaya Epics**: Interactive 3D flipbooks of foundational texts including Bhagavad Gita, Upanishads, Patanjali Yoga Sutras, Charaka Samhita, and Arthashastra.
-- **Vedic Kids Gurukula**: 5-minute daily morning sanskar challenges, moral riddles, Sanskrit shloka chanting with karaoke, and animated Panchatantra audiobooks in Kannada, Hindi, Tamil, Telugu, and English.
-- **Vedic Mathematics & Memory Lab**: Interactive mental math speed drills based on Bharti Krishna Tirtha's 16 Sutras, improving calculation speed by up to 10x.
-- **Mudra Therapy & Stress Studio**: 5-element neuroplasticity hand postures for delta-wave sleep, cognitive focus, anxiety relief, and vagus nerve stimulation.
-- **105+ Ancient Mystery & Science Research Blogs**: Peer-reviewed investigative analyses exploring temple acoustics, lost cities (Dwarka), astrological alignment, and ancient metallurgy.
+## 3. Granthalaya - 26 Illustrated Epics & Scriptures
+- Valmiki Ramayana (Bala Kanda to Uttara Kanda)
+- Vyasa Mahabharata (18 Parvas Illustrated)
+- Srimad Bhagavad Gita (700 Shlokas with Sanskrit Chanting & Translation)
+- The 10 Principal Upanishads (Isha, Kena, Katha, Prashna, Mundaka, Mandukya, Taittiriya, Aitareya, Chandogya, Brihadaranyaka)
+- Panchatantra (Mitra-bheda, Mitra-labha, Kakolukiyam, Labdhapranasam, Apariksitakarakam)
+- Jataka Tales & Moral Wisdom
+- Chanakya Niti & Arthashastra
+- Surya Siddhanta & Ancient Indian Astronomy
+- Sushruta Samhita & Charaka Samhita (Ayurveda)
+- Natyashastra by Bharata Muni
 
-## Target Audiences
+## 4. Interactive Wellness & Vedic Tools
+- **Ayurvedic Prakriti Dosha Test**: 12-question body-mind constitution diagnosis (Vata, Pitta, Kapha).
+- **Raga Therapy Sound Engine**: 32 morning, afternoon, evening, and night ragas tuned to 432Hz harmonic frequencies.
+- **Mudra Studio**: 16 sacred hand mudras (Gyan, Prana, Vayu, Surya, Varun, Shunya, Apana) with therapeutic benefits.
+- **Ask Rishi AI**: Conversational guidance engine rooted in Vedic philosophy.
 
-- **Kids & Children**: Engaging animation, moral values, Panchatantra bedtime stories, and fun Vedic math challenges.
-- **Students & Learners**: High-speed mental calculation techniques, Sanskrit phonetics, and historical timeline mastery.
-- **Adults & Professionals**: Stress relief through Mudra Shastra, Gita practical life compass, and mindfulness audio.
-- **Teachers & Scholars**: Authentic source manuscripts, 26 Granths, and deep archaeological evidence.
-- **Senior Citizens & Devotees**: 24/7 uninterrupted live darshan, daily morning and evening Aarti notifications, and devotional bhajans.
-
-## Access & Pricing
-
-- **3-Day Free VIP Trial**: Instant full access upon registration.
-- **7-Day All-Access Pass**: ₹29 for full catalogue access.
-- **Annual VIP Pass**: ₹399/year (under ₹1.09/day) for 365 days of unrestricted streaming across all devices.
-
-## Official Links
-
-- Homepage: https://www.sanatana360.com/
-- 40+ Live Temples: https://www.sanatana360.com/divya-darshana.html
-- 105+ Research Blogs: https://www.sanatana360.com/blog.html
-- 26 Granthalaya Epics: https://www.sanatana360.com/granthalaya.html
+## 5. Official Subscription & Access Pass
+- **3-Day Free VIP Trial**: ₹0 for 3 days of unrestricted access.
+- **7-Day Explorer Pass**: ₹29 total for full access across all 200+ sagas and live feeds.
+- **Annual VIP Pass**: ₹399/year (or ₹349 with referral code GURUKULA50).
