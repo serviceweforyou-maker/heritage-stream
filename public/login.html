@@ -1,6 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <script>
+    // ── 👁️ BULLETPROOF PASSWORD VISIBILITY TOGGLE ENGINE ──
+    window.togglePasswordVisibility = function(inputId, btnEl) {
+      try {
+        var input = typeof inputId === 'string' ? document.getElementById(inputId) : inputId;
+        if (!input) return;
+        
+        var isPwd = input.type === 'password';
+        input.type = isPwd ? 'text' : 'password';
+
+        if (btnEl) {
+          var eyeOpen = btnEl.querySelector('.eye-open-icon');
+          var eyeClosed = btnEl.querySelector('.eye-closed-icon');
+          if (eyeOpen && eyeClosed) {
+            if (isPwd) {
+              eyeOpen.classList.add('hidden');
+              eyeClosed.classList.remove('hidden');
+              btnEl.classList.add('text-gold');
+              btnEl.classList.remove('text-white/50');
+            } else {
+              eyeOpen.classList.remove('hidden');
+              eyeClosed.classList.add('hidden');
+              btnEl.classList.remove('text-gold');
+              btnEl.classList.add('text-white/50');
+            }
+          }
+        }
+      } catch(e) {
+        console.warn('Error toggling password visibility:', e);
+      }
+    };
+  </script>
+
   <!-- ── 📰 GOOGLE READER REVENUE MANAGER (Subscribe with Google) ── -->
   <script async type="application/javascript" src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
   <script>

@@ -1,6 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
 <head>
+
+  <script>
+    // ── 👁️ BULLETPROOF PASSWORD VISIBILITY TOGGLE ENGINE ──
+    window.togglePasswordVisibility = function(inputId, btnEl) {
+      try {
+        var input = typeof inputId === 'string' ? document.getElementById(inputId) : inputId;
+        if (!input) return;
+        
+        var isPwd = input.type === 'password';
+        input.type = isPwd ? 'text' : 'password';
+
+        if (btnEl) {
+          var eyeOpen = btnEl.querySelector('.eye-open-icon');
+          var eyeClosed = btnEl.querySelector('.eye-closed-icon');
+          if (eyeOpen && eyeClosed) {
+            if (isPwd) {
+              eyeOpen.classList.add('hidden');
+              eyeClosed.classList.remove('hidden');
+              btnEl.classList.add('text-gold');
+              btnEl.classList.remove('text-white/50');
+            } else {
+              eyeOpen.classList.remove('hidden');
+              eyeClosed.classList.add('hidden');
+              btnEl.classList.remove('text-gold');
+              btnEl.classList.add('text-white/50');
+            }
+          }
+        }
+      } catch(e) {
+        console.warn('Error toggling password visibility:', e);
+      }
+    };
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKHEWYB53Q"></script>
   <script>
