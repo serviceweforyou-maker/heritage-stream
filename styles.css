@@ -1058,18 +1058,116 @@ header#main-header {
 }
 
 
-/* ── MOBILE MODAL SAFETY & FLOATING BUTTON AUTO-HIDE ── */
-body.modal-open .floating-btn-group,
-.modal-overlay:not(.hidden) ~ .floating-btn-group {
+
+}
+
+
+/* ================================================================
+   🌟 NETFLIX & PRIME VIDEO MOBILE UX & RANKING SYSTEM OVERHAUL
+   ================================================================ */
+
+/* ── 🏆 TOP 10 IN INDIA RANKED ROW (Netflix Big Stroke Numbers) ── */
+.top10-card-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+  padding-left: 8px;
+  user-select: none;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.top10-rank-num {
+  font-family: 'Cinzel', 'Impact', 'Arial Black', sans-serif;
+  font-size: 110px;
+  font-weight: 900;
+  line-height: 0.72;
+  letter-spacing: -6px;
+  color: #07090f;
+  -webkit-text-stroke: 3px #d4af37;
+  text-shadow: 0 0 24px rgba(212, 175, 55, 0.4), 0 8px 16px rgba(0, 0, 0, 0.9);
+  margin-right: -28px;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.8));
+  transition: all 0.3s ease;
+}
+
+.top10-card-wrapper:hover .top10-rank-num {
+  transform: scale(1.06) translateX(-3px);
+  -webkit-text-stroke: 3px #fef08a;
+  text-shadow: 0 0 30px rgba(254, 240, 138, 0.6);
+}
+
+@media (max-width: 640px) {
+  .top10-card-wrapper {
+    padding-left: 4px;
+    margin-right: 4px;
+  }
+  .top10-rank-num {
+    font-size: 76px;
+    -webkit-text-stroke: 2.2px #d4af37;
+    margin-right: -16px;
+    letter-spacing: -4px;
+  }
+}
+
+/* ── 📱 SMOOTH TOUCH SNAP SCROLL FOR ALL ROWS ── */
+#top10-scroll-row,
+.carousel-row,
+#granthalaya-slider-row {
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  scroll-padding: 12px;
+}
+
+#top10-scroll-row > *,
+.carousel-row > *,
+#granthalaya-slider-row > * {
+  scroll-snap-align: start;
+}
+
+/* ── 💬 FLOATING ACTION BUTTONS (Clean Hover Above Mobile Dock) ── */
+#floating-share-wrapper {
+  position: fixed !important;
+  bottom: 24px;
+  left: 24px;
+  z-index: 60 !important;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#floating-whatsapp-wrapper {
+  position: fixed !important;
+  bottom: 24px;
+  right: 24px;
+  z-index: 60 !important;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  #floating-share-wrapper {
+    bottom: calc(72px + env(safe-area-inset-bottom, 8px)) !important;
+    left: 10px !important;
+  }
+  #floating-whatsapp-wrapper {
+    bottom: calc(72px + env(safe-area-inset-bottom, 8px)) !important;
+    right: 10px !important;
+  }
+}
+
+/* Modal Open Safety: Hide floating pills cleanly when modal is active */
+body.modal-open .floating-btn-group {
   opacity: 0 !important;
   pointer-events: none !important;
   visibility: hidden !important;
   transform: translateY(12px) !important;
 }
 
-@media (max-width: 640px) {
-  #floating-share-wrapper,
-  #floating-whatsapp-wrapper {
-    bottom: max(16px, env(safe-area-inset-bottom)) !important;
-  }
+/* ── 🌟 PRIME / NETFLIX CARD TOUCH FEEDBACK ── */
+.content-card {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+}
+.content-card:active {
+  transform: scale(0.98);
 }

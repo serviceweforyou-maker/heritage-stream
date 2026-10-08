@@ -750,7 +750,15 @@ class AppController {
         </button>
 
         <!-- Bottom Carousel Indicators (Luxury Badges) -->
-        <div class="absolute bottom-8 sm:bottom-10 right-4 sm:right-12 z-40 flex items-center gap-1.5 sm:gap-2.5 bg-black/80 backdrop-blur-xl px-3 sm:px-4 py-2 rounded-full border border-gold/30 shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
+        
+        <!-- Top-Right Minimalist Slide Counter (Mobile & Tablet Friendly) -->
+        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 z-30 flex items-center gap-1.5 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30 text-gold font-mono text-[11px] font-bold shadow-lg">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+          <span id="spotlight-slide-counter">${this.spotlightIndex + 1} / ${featuredList.length}</span>
+        </div>
+
+        <!-- Bottom Carousel Indicators (Hidden on Mobile to Prevent Button Overlap, Visible on Tablet/Desktop) -->
+        <div class="hidden md:flex absolute bottom-8 lg:bottom-10 right-6 lg:right-12 z-40 items-center gap-2 bg-black/80 backdrop-blur-xl px-3.5 py-2 rounded-full border border-gold/30 shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
           ${featuredList.map((item, idx) => `
             <button class="spotlight-indicator-pill w-7 h-7 sm:w-8 sm:h-8 rounded-full text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center cursor-pointer ${idx === this.spotlightIndex ? 'bg-gradient-to-r from-gold to-amber-400 text-black shadow-lg shadow-gold/40 scale-110 ring-2 ring-gold/60' : 'bg-white/10 hover:bg-white/20 text-white/70 hover:text-white'}" data-slide-idx="${idx}" title="${item.title}">
               ${idx + 1}
@@ -7164,7 +7172,7 @@ class AppController {
       return `
         <div class="top10-card-wrapper flex items-end">
           <div class="top10-rank-num">${idx + 1}</div>
-          <div class="content-card w-[170px] xs:w-[195px] sm:w-[220px] md:w-[245px] flex-shrink-0 rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/60 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/15" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
+          <div class="content-card w-[150px] xs:w-[175px] sm:w-[210px] md:w-[240px] flex-shrink-0 rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/60 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/15" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
             
             <!-- Top Badges -->
             <div class="absolute top-2.5 right-2.5 z-20 flex items-center gap-1.5">
