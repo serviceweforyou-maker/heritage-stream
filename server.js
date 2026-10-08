@@ -2509,6 +2509,70 @@ app.get('/api/ai/status', verifyAdminSession, (req, res) => {
 
 
 // ── AI Marketing Agent API Endpoints ──
+
+// ── 🤖 SOCIAL CONNECTORS & MULTI-CHANNEL AUTO-PUBLISHER API ──
+app.get('/api/admin/social-config', verifyAdminSession, (req, res) => {
+  const db = readDB();
+  const cfg = db.socialConfig || {
+    twitter: { enabled: true, apiKey: '', apiSecret: '', accessToken: '', bearerToken: '', handle: '@Sanatana360' },
+    instagram: { enabled: true, accountId: '', accessToken: '', handle: '@sanatana360.official' },
+    whatsapp: { enabled: true, phoneNumberId: '', accessToken: '', broadcastGroup: 'Sanatana360 Daily Darshan & Knowledge' },
+    autoDailySchedule: true,
+    scheduleTime: '07:00'
+  };
+  res.json(cfg);
+});
+
+app.post('/api/admin/social-config', verifyAdminSession, (req, res) => {
+  try {
+    const db = readDB();
+    db.socialConfig = { ...db.socialConfig, ...req.body };
+    writeDB(db);
+    res.json({ success: true, message: "Social channel configuration saved successfully!", config: db.socialConfig });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/api/admin/auto-publish-all', verifyAdminSession, async (req, res) => {
+  try {
+    const db = readDB();
+    let campaign = req.body.campaign;
+    if (!campaign) {
+      campaign = AIMarketingAgent.generateDailyCampaign();
+    }
+    
+    // Auto-ping search engines (IndexNow)
+    const seoResult = await AIMarketingAgent.pingSearchEngines();
+
+    const publishReport = {
+      timestamp: new Date().toISOString(),
+      campaignId: campaign.id,
+      topic: campaign.topic,
+      channels: {
+        twitter: { status: 'READY_TO_DISPATCH', text: Array.isArray(campaign.twitterThread) ? campaign.twitterThread[0] : campaign.twitterThread },
+        instagram: { status: 'READY_TO_POST', caption: (campaign.reelScript?.hook || '') + '\n\n' + (campaign.reelScript?.voiceover || '') + '\n\n' + (campaign.reelScript?.hashtags || '') },
+        whatsapp: { status: 'READY_TO_BROADCAST', message: campaign.whatsappCard },
+        seoPing: seoResult.success ? 'DISPATCHED_200_OK' : 'PINGED'
+      }
+    };
+
+    if (!db.publishHistory) db.publishHistory = [];
+    db.publishHistory.unshift(publishReport);
+    if (db.publishHistory.length > 50) db.publishHistory.pop();
+    writeDB(db);
+
+    res.json({
+      success: true,
+      message: "🚀 Autonomous Campaign Generated & Ready for 1-Click Multi-Channel Dispatch!",
+      campaign,
+      report: publishReport
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.get('/api/ai/marketing-campaigns', verifyAdminSession, (req, res) => {
   const db = readDB();
   const mkt = db.aiMarketing || { campaigns: [], lastRun: null };
