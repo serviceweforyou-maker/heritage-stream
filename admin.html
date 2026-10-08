@@ -1505,11 +1505,14 @@
           <tr class="hover:bg-white/5">
             <td class="py-3 px-4">
               <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-gold/30 to-white/10 text-gold font-bold flex items-center justify-center text-xs flex-shrink-0">
-                  ${initials}
+                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-gold/30 to-white/10 text-gold font-bold flex items-center justify-center text-xs flex-shrink-0 overflow-hidden border border-white/10">
+                  ${u.avatar && u.avatar.startsWith('http') ? `<img src="${u.avatar}" class="w-full h-full object-cover" alt="avatar">` : initials}
                 </div>
                 <div class="min-w-0">
-                  <div class="font-bold text-white truncate">${u.name || 'Scholar Member'}</div>
+                  <div class="font-bold text-white truncate flex items-center gap-1.5">
+                    <span>${u.name || 'Scholar Member'}</span>
+                    ${u.provider === 'google' || (u.avatar && u.avatar.startsWith('http')) || (u.id && u.id.startsWith('usr_g_')) ? '<span class="px-1.5 py-0.2 rounded text-[8.5px] font-mono font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">🌐 Google</span>' : '<span class="px-1.5 py-0.2 rounded text-[8.5px] font-mono text-white/40 bg-white/5 border border-white/10">📧 Direct</span>'}
+                  </div>
                   <div class="text-[10px] text-white/40 truncate">${u.email}</div>
                 </div>
               </div>
