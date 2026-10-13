@@ -410,6 +410,8 @@ window.syncUserPayment = async function(showToast = true) {
 class AppController {
   constructor() {
     window.appInstance = this; // global reference for script tags
+    window.openQuickPreviewModal = (itemOrId) => this.openQuickPreviewModal(itemOrId);
+    window.playContent = (itemOrId, isAudio) => this.playContent(itemOrId, isAudio);
     this.isSubscribed = DatabaseService.isSubscribed();
     DatabaseService.verifySubscriptionIntegrity();
     this.userScores = DatabaseService.getUserScores();
@@ -1102,7 +1104,7 @@ class AppController {
       btn.onclick = (e) => {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
-        const item = all.find(x => x.id === id);
+        const item = all.find(x => String(x.id) === String(id));
         if (item) {
           const isAudio = !!item.audioUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
           this.playContent(item, isAudio);
@@ -1126,16 +1128,19 @@ class AppController {
       btn.onclick = (e) => {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
-        const item = all.find(x => x.id === id);
+        const item = all.find(x => String(x.id) === String(id));
         if (item) this.openQuickPreviewModal(item);
       };
     });
 
     // 4. Clicking the entire Card body
     container.querySelectorAll('.content-card').forEach(card => {
-      card.onclick = () => {
+      card.onclick = (e) => {
+        if (e && e.target && e.target.closest('.quick-play-btn, .watchlist-toggle-btn, .quick-preview-btn')) {
+          return;
+        }
         const id = card.getAttribute('data-id');
-        const item = all.find(x => x.id === id);
+        const item = all.find(x => String(x.id) === String(id));
         if (item) {
           this.openQuickPreviewModal(item);
         }
@@ -1144,11 +1149,25 @@ class AppController {
   }
 
   // ── 🎬 PLAY CONTENT MODAL PLAYER (VIDEO & AUDIO) ──
-  playContent(item, isAudio = false) {
+  playContent(itemOrId, isAudio = false) {
+    if (!itemOrId) return;
+    let item = itemOrId;
+    if (typeof itemOrId === 'string' || typeof itemOrId === 'number') {
+      const all = (this.contentData && this.contentData.content) || [];
+      item = all.find(x => String(x.id) === String(itemOrId));
+    }
     if (!item) return;
 
-    // Check Premium Access
-    if (item.isPremium && !this.isSubscribed) {
+    // Check Premium Access - allow if subscribed OR free trial is active
+    let isTrialActive = false;
+    try {
+      const tStart = parseInt(localStorage.getItem('hs_free_trial_start') || localStorage.getItem('hs_account_created_timestamp') || '0');
+      if (tStart && (Date.now() - tStart) < (3 * 24 * 60 * 60 * 1000)) {
+        isTrialActive = true;
+      }
+    } catch(e) {}
+
+    if (item.isPremium && !this.isSubscribed && !isTrialActive) {
       if (typeof this.openPaymentModal === 'function') {
         this.openPaymentModal('trial');
       }
@@ -1230,9 +1249,11 @@ class AppController {
 
     modal.classList.remove('hidden');
     modal.classList.add('flex');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   }
 
-      // Checkout modal implementation (Live Cashfree Gateway for ₹29 Pass & ₹399 Annual Pass)
+  // Checkout modal implementation (Live Cashfree Gateway for ₹29 Pass & ₹399 Annual Pass)
   openPaymentModal(defaultPlan = 'trial') {
     const modal = document.getElementById('payment-modal');
     if (!modal) return;
@@ -1396,9 +1417,12 @@ class AppController {
     };
 
     renderModalContent();
-
     modal.classList.remove('hidden');
     modal.classList.add('flex');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 
     const closeBtn = modal.querySelector('.modal-close') || document.getElementById('close-quick-preview-btn');
     if (closeBtn) {
@@ -3720,7 +3744,7 @@ class AppController {
         if (e.target.closest('.watchlist-toggle-btn')) return;
         const id = card.getAttribute('data-id');
         const type = card.getAttribute('data-type');
-        const item = all.find(x => x.id === id);
+        const item = all.find(x => String(x.id) === String(id));
         if (item) {
           this.playContent(item, type === 'audio');
         }
@@ -7357,7 +7381,13 @@ class AppController {
     }
   }
 
-  openQuickPreviewModal(item) {
+  openQuickPreviewModal(itemOrId) {
+    if (!itemOrId) return;
+    let item = itemOrId;
+    if (typeof itemOrId === 'string' || typeof itemOrId === 'number') {
+      const all = (this.contentData && this.contentData.content) || [];
+      item = all.find(x => String(x.id) === String(itemOrId));
+    }
     const modal = document.getElementById('quick-preview-modal');
     const body = document.getElementById('quick-preview-modal-body');
     if (!modal || !body || !item) return;
@@ -7498,7 +7528,7 @@ class AppController {
 
     // Bind Preview Modal Actions
     body.querySelector('#modal-play-action-btn')?.addEventListener('click', () => {
-      this.closeAllModals();
+      this.closeQuickPreviewModal();
       this.playContent(item, isAudio);
     });
 
@@ -7510,7 +7540,7 @@ class AppController {
     });
 
     body.querySelector('#modal-read-book-btn')?.addEventListener('click', () => {
-      this.closeAllModals();
+      this.closeQuickPreviewModal();
       if (window.flipBook) {
         window.flipBook.open(item);
       } else {
@@ -7520,7 +7550,7 @@ class AppController {
 
     body.querySelectorAll('.episode-row').forEach(row => {
       row.addEventListener('click', () => {
-        this.closeAllModals();
+        this.closeQuickPreviewModal();
         this.playContent(item, isAudio);
       });
     });
@@ -7537,6 +7567,8 @@ class AppController {
 
     modal.classList.remove('hidden');
     modal.classList.add('flex');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 
     const closeBtn = modal.querySelector('.modal-close') || document.getElementById('close-quick-preview-btn');
     if (closeBtn) {
@@ -7620,6 +7652,8 @@ class AppController {
 
     modal.classList.remove('hidden');
     modal.classList.add('flex');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 
     const closeBtn = modal.querySelector('.modal-close') || document.getElementById('close-quick-preview-btn');
     if (closeBtn) {
