@@ -103,6 +103,7 @@
             m.classList.add('hidden');
             m.classList.remove('flex');
             m.style.display = 'none';
+            m.style.pointerEvents = 'none';
           }
         });
 
@@ -118,7 +119,7 @@
           } catch(e) {}
         }
 
-        // Restore body scrolling
+        // Restore body scrolling immediately
         document.body.style.overflow = '';
       } catch(err) {
         console.warn('Error in window.closeAllModals:', err);
@@ -131,11 +132,18 @@
           window.appInstance.openQuickPreviewModal(itemOrId);
           return;
         }
+        var all = (window.COURSES_DATA && window.COURSES_DATA.content) || [];
+        var item = typeof itemOrId === 'object' ? itemOrId : all.find(function(x) { return x && String(x.id) === String(itemOrId); });
         var m = document.getElementById('quick-preview-modal');
+        var b = document.getElementById('quick-preview-modal-body');
         if (m) {
+          if (item && b) {
+            b.innerHTML = '<div class="p-6 text-white text-center space-y-4"><div class="w-full h-48 rounded-2xl overflow-hidden bg-black mb-3"><img src="' + (item.imageUrl || '/images/hampi.jpg') + '" class="w-full h-full object-cover"></div><h2 class="text-2xl font-bold font-serif text-gold">' + (item.title || 'Course Details') + '</h2><p class="text-xs text-white/70 max-w-lg mx-auto leading-relaxed">' + (item.description || item.tagline || '') + '</p><div class="pt-2 flex items-center justify-center gap-3"><button onclick="window.playContent(\'' + item.id + '\')" class="px-6 py-3 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider shadow-lg hover:scale-105 cursor-pointer">▶ Start Watching</button></div></div>';
+          }
           m.classList.remove('hidden');
           m.classList.add('flex');
           m.style.display = 'flex';
+          m.style.pointerEvents = 'auto';
           document.body.style.overflow = 'hidden';
         }
       } catch(e) { console.warn('Error opening quick preview modal:', e); }
@@ -147,11 +155,21 @@
           window.appInstance.playContent(itemOrId, isAudio);
           return;
         }
+        var all = (window.COURSES_DATA && window.COURSES_DATA.content) || [];
+        var item = typeof itemOrId === 'object' ? itemOrId : all.find(function(x) { return x && String(x.id) === String(itemOrId); });
         var m = document.getElementById('media-modal');
-        if (m) {
+        var t = document.getElementById('media-modal-title');
+        var b = document.getElementById('media-modal-body');
+        if (m && item) {
+          if (t) t.innerHTML = '<h2 class="text-base font-bold text-white font-serif">' + item.title + '</h2>';
+          if (b) {
+            var vUrl = item.videoUrl || 'https://www.youtube.com/embed/59YYd1rkZRQ';
+            b.innerHTML = '<div class="p-4"><div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-2xl"><iframe src="' + vUrl + '?autoplay=1&enablejsapi=1&rel=0" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>';
+          }
           m.classList.remove('hidden');
           m.classList.add('flex');
           m.style.display = 'flex';
+          m.style.pointerEvents = 'auto';
           document.body.style.overflow = 'hidden';
         }
       } catch(e) { console.warn('Error playing content:', e); }
@@ -164,7 +182,9 @@
           m.classList.add('hidden');
           m.classList.remove('flex');
           m.style.display = 'none';
+          m.style.pointerEvents = 'none';
         }
+        document.body.style.overflow = '';
       } catch(e) { console.warn('Error closing quick preview modal:', e); }
     };
 
@@ -175,11 +195,29 @@
           m.classList.add('hidden');
           m.classList.remove('flex');
           m.style.display = 'none';
+          m.style.pointerEvents = 'none';
         }
         var b = document.getElementById('media-modal-body');
         if (b) b.innerHTML = '';
+        document.body.style.overflow = '';
       } catch(e) { console.warn('Error closing media modal:', e); }
     };
+
+    // Universal backdrop click listener for all modal overlays
+    document.addEventListener('click', function(e) {
+      if (e.target && e.target.classList && e.target.classList.contains('modal-overlay')) {
+        if (e.target.id === 'quick-preview-modal') {
+          window.closeQuickPreviewModal();
+        } else if (e.target.id === 'media-modal') {
+          window.closeMediaModal();
+        } else if (e.target.id === 'payment-modal') {
+          if (window.closePaymentModal) window.closePaymentModal();
+          else window.closeAllModals();
+        } else {
+          window.closeAllModals();
+        }
+      }
+    });
 
     window.closeDailyGurukulaModal = function() {
       try {
@@ -3550,7 +3588,7 @@
   <!-- MODALS -->
 
   <!-- Media Player Modal -->
-  <div id="media-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+  <div id="media-modal" class="modal-overlay fixed inset-0 z-[120] hidden items-center justify-center p-4">
     <div id="media-modal-container" class="bg-[#101116] border border-white/10 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative transition-all duration-300">
       <!-- Top header bar -->
       <div class="flex justify-between items-center px-6 py-4 border-b border-white/5">
@@ -3566,7 +3604,7 @@
 
   
   <!-- ── 🔍 NETFLIX-STYLE QUICK PREVIEW MODAL ── -->
-  <div id="quick-preview-modal" class="modal-overlay fixed inset-0 z-[105] hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+  <div id="quick-preview-modal" class="modal-overlay fixed inset-0 z-[115] hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
     <div class="bg-[#0d0f16] border border-white/15 rounded-3xl w-full max-w-3xl shadow-[0_25px_60px_rgba(0,0,0,0.95)] relative overflow-hidden max-h-[92vh] overflow-y-auto no-scrollbar font-sans">
       <button id="close-quick-preview-btn" type="button" onclick="window.closeQuickPreviewModal ? window.closeQuickPreviewModal() : window.closeAllModals()" class="modal-close absolute top-4 right-5 text-white/80 hover:text-white transition-colors text-2xl font-bold bg-black/70 hover:bg-black/90 w-10 h-10 rounded-full flex items-center justify-center border border-white/30 cursor-pointer shadow-lg" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Preview">&times;</button>
       <div id="quick-preview-modal-body">
@@ -3616,7 +3654,7 @@
   </div>
 
   <!-- Payment Modal -->
-  <div id="payment-modal" class="modal-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4">
+  <div id="payment-modal" class="modal-overlay fixed inset-0 z-[130] hidden items-center justify-center p-4">
     <div class="bg-[#101116] border border-gold/20 rounded-3xl w-full max-w-md shadow-2xl relative p-6 max-h-[90vh] overflow-y-auto no-scrollbar">
       <button type="button" onclick="window.closePaymentModal ? window.closePaymentModal() : window.closeAllModals()" class="modal-close absolute top-4 right-6 text-white/60 hover:text-white transition-colors text-2xl font-bold cursor-pointer w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center border border-white/10" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Pass Modal">&times;</button>
       <div id="payment-modal-body" class="mt-4">
@@ -3625,8 +3663,8 @@
     </div>
   </div>
 
-  <script type="module" src="data.js?v=138.0"></script>
-  <script type="module" src="app-prod.js?v=138.0"></script>
+  <script type="module" src="data.js?v=139.0"></script>
+  <script type="module" src="app-prod.js?v=139.0"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {

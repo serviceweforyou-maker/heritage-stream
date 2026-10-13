@@ -1171,3 +1171,22 @@ body.modal-open .floating-btn-group {
 .content-card:active {
   transform: scale(0.98);
 }
+
+/* ── 🛡️ MODAL OVERLAY & CARD RESPONSIVENESS FIXES (v139.0) ── */
+.modal-overlay.hidden {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.content-card {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  /* On touch devices, prevent invisible hover trays from intercepting card taps */
+  .card-hover-actions {
+    pointer-events: none;
+  }
+}

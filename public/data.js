@@ -20,7 +20,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/mudra_hakini_brain_sync.jpg",
-      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
@@ -63,7 +63,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/mudra_apana_vayu.jpg",
-      "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
+      "videoUrl": "https://www.youtube.com/embed/1jwZ-iVRi44",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
@@ -105,7 +105,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/mudra_stress_relief_mastery.jpg",
-      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Acharya & Neuro-Vedic Scholar",
       "personas": [
@@ -8344,7 +8344,7 @@ const COURSES_DATA = {
       "isPremium": false,
       "isGodSeries": true,
       "imageUrl": "/images/veerabhadra.jpg",
-      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
@@ -8382,7 +8382,7 @@ const COURSES_DATA = {
       "isPremium": false,
       "isGodSeries": true,
       "imageUrl": "/images/kalabhairava.jpg",
-      "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
+      "videoUrl": "https://www.youtube.com/embed/1jwZ-iVRi44",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
@@ -8682,7 +8682,7 @@ const COURSES_DATA = {
       "isPremium": false,
       "isGodSeries": false,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [

@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=118.0";
-import heritageData from "./data.js?v=118.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=118.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=139.0";
+import heritageData from "./data.js?v=139.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=139.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -37,6 +37,18 @@ export class DatabaseService {
       content = heritageData.content;
     }
 
+    // Comprehensive Course Preservation: Ensure all Masterclass courses from heritageData/window.COURSES_DATA are preserved
+    const fallbackDataSource = heritageData || (typeof window !== "undefined" ? window.COURSES_DATA : null);
+    if (fallbackDataSource && Array.isArray(fallbackDataSource.content)) {
+      const existingIds = new Set(content.map(x => x && String(x.id)));
+      fallbackDataSource.content.forEach(fbItem => {
+        if (fbItem && !existingIds.has(String(fbItem.id))) {
+          content.unshift(fbItem);
+          existingIds.add(String(fbItem.id));
+        }
+      });
+    }
+
     // Dynamic Normalization: Assign fallbacks so all 250+ content items work 100%
     content = content.map(item => {
       if (!item) return null;
@@ -63,9 +75,9 @@ export class DatabaseService {
       } else {
         if (!item.videoUrl) {
           if (item.category === "God Series" || (item.id && (item.id.includes("shiva") || item.id.includes("vishnu") || item.id.includes("ganesha")))) {
-            item.videoUrl = "https://www.youtube.com/embed/5D3CeeZ6X1s";
+            item.videoUrl = "https://www.youtube.com/embed/EewjQ06HqtE";
           } else {
-            item.videoUrl = "https://www.youtube.com/embed/S_B7y1G84k8";
+            item.videoUrl = "https://www.youtube.com/embed/59YYd1rkZRQ";
           }
         }
       }
@@ -1096,7 +1108,11 @@ class AppController {
       btn.onclick = (e) => {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
-        const item = all.find(x => String(x.id) === String(id));
+        let item = all.find(x => String(x.id) === String(id));
+        if (!item) {
+          const fallbackList = (heritageData?.content || []).concat(window.COURSES_DATA?.content || []);
+          item = fallbackList.find(x => x && String(x.id) === String(id));
+        }
         if (item) {
           const isAudio = !!item.audioUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
           this.playContent(item, isAudio);
@@ -1120,8 +1136,13 @@ class AppController {
       btn.onclick = (e) => {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
-        const item = all.find(x => String(x.id) === String(id));
+        let item = all.find(x => String(x.id) === String(id));
+        if (!item) {
+          const fallbackList = (heritageData?.content || []).concat(window.COURSES_DATA?.content || []);
+          item = fallbackList.find(x => x && String(x.id) === String(id));
+        }
         if (item) this.openQuickPreviewModal(item);
+        else if (id) this.openQuickPreviewModal(id);
       };
     });
 
@@ -1132,9 +1153,15 @@ class AppController {
           return;
         }
         const id = card.getAttribute('data-id');
-        const item = all.find(x => String(x.id) === String(id));
+        let item = all.find(x => String(x.id) === String(id));
+        if (!item) {
+          const fallbackList = (heritageData?.content || []).concat(window.COURSES_DATA?.content || []);
+          item = fallbackList.find(x => x && String(x.id) === String(id));
+        }
         if (item) {
           this.openQuickPreviewModal(item);
+        } else if (id) {
+          this.openQuickPreviewModal(id);
         }
       };
     });
@@ -1147,6 +1174,10 @@ class AppController {
     if (typeof itemOrId === 'string' || typeof itemOrId === 'number') {
       const all = (this.contentData && this.contentData.content) || [];
       item = all.find(x => String(x.id) === String(itemOrId));
+      if (!item) {
+        const fallbackList = (heritageData?.content || []).concat(window.COURSES_DATA?.content || []);
+        item = fallbackList.find(x => x && String(x.id) === String(itemOrId));
+      }
     }
     if (!item) return;
 
@@ -1199,7 +1230,7 @@ class AppController {
           </div>
         ` : `
           <div class="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl">
-            <iframe src="${item.videoUrl || 'https://www.youtube.com/embed/S_B7y1G84k8'}?autoplay=1&enablejsapi=1&rel=0" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="${item.videoUrl || 'https://www.youtube.com/embed/59YYd1rkZRQ'}?autoplay=1&enablejsapi=1&rel=0" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         `}
 
@@ -1242,7 +1273,15 @@ class AppController {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     modal.style.display = 'flex';
+    modal.style.pointerEvents = 'auto';
     document.body.style.overflow = 'hidden';
+
+    // Backdrop dismissal
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        this.closeQuickPreviewModal();
+      }
+    };
   }
 
   // Checkout modal implementation (Live Cashfree Gateway for ₹29 Pass & ₹399 Annual Pass)
@@ -6433,7 +6472,7 @@ class AppController {
     "isPremium": false,
     "coverImg": "/images/veerabhadra.jpg",
     "desc": "The colossal warrior born from Shiva's matted lock who decimated the arrogant sacrifice of Daksha and restored cosmic humility.",
-    "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+    "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
     "chapters": [
       {
         "title": "Chapter 1: The Sacrificial Fire & The Insult to Sati",
@@ -6472,7 +6511,7 @@ class AppController {
     "isPremium": false,
     "coverImg": "/images/kalabhairava.jpg",
     "desc": "The supreme master of Time (Kala) and ruler of Varanasi who burns away karmic debts and grants immediate spiritual fearlessness.",
-    "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
+    "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ",
     "chapters": [
       {
         "title": "Chapter 1: The Cosmic Debate of the Creator & The Fifth Head",
@@ -6784,7 +6823,7 @@ class AppController {
     "isPremium": false,
     "coverImg": "/images/ellora_kailasa.jpg",
     "desc": "The unclimbed four-faced pyramid mountain that stands at the magnetic center of the world, housing the eternal abode of Shiva and Parvati.",
-    "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+    "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
     "chapters": [
       {
         "title": "Chapter 1: The Unclimbed Pyramid & Cardinal Geometry",
@@ -7267,6 +7306,7 @@ class AppController {
         </div>
       </div>
     `;
+    this.bindCardInteractions(top10Container);
   }
 
   // ── 🏷️ PRIME VIDEO / NETFLIX GENRE FILTER RIBBON ENGINE ──
@@ -7354,22 +7394,32 @@ class AppController {
   }
 
   closeQuickPreviewModal() {
+    const m = document.getElementById('quick-preview-modal');
+    if (m) {
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      m.style.display = 'none';
+      m.style.pointerEvents = 'none';
+    }
+    document.body.style.overflow = '';
     if (typeof window.closeQuickPreviewModal === 'function') {
-      window.closeQuickPreviewModal();
-    } else {
-      const m = document.getElementById('quick-preview-modal');
-      if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+      try { window.closeQuickPreviewModal(); } catch(e) {}
     }
   }
 
   closeMediaModal() {
+    const m = document.getElementById('media-modal');
+    if (m) {
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      m.style.display = 'none';
+      m.style.pointerEvents = 'none';
+    }
+    const b = document.getElementById('media-modal-body');
+    if (b) b.innerHTML = '';
+    document.body.style.overflow = '';
     if (typeof window.closeMediaModal === 'function') {
-      window.closeMediaModal();
-    } else {
-      const m = document.getElementById('media-modal');
-      if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
-      const b = document.getElementById('media-modal-body');
-      if (b) b.innerHTML = '';
+      try { window.closeMediaModal(); } catch(e) {}
     }
   }
 

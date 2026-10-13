@@ -9,6 +9,144 @@
   ],
   "content": [
     {
+      "id": "course_mudra_vigyan_stress",
+      "title": "Sacred Mudra Vigyan: 5-Element Science of Stress & Panic Relief",
+      "category": "Docu-Series",
+      "tagline": "The Neuro-Pranic Bio-Circuits of Ancient Hatha Yoga & Ayurveda",
+      "description": "Discover the ancient 5,000-year-old Vedic science of Hastamudras (sacred hand gestures) documented in the Gheranda Samhita and Shiva Samhita. Learn how connecting specific fingertip meridians balances the five cosmic elements (Pancha Bhootas), activates the vagus nerve, reduces acute cortisol, and dissolves anxiety, burnout, and panic within minutes.",
+      "duration": "55 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/mudra_stress_relief_mastery.jpg",
+      "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya & Neuro-Vedic Scholar",
+      "personas": [
+        "Stress Relief",
+        "Yogic Healers",
+        "Mindfulness Seekers",
+        "High Performers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Pancha Bhootas in Your Hands & Bio-Circuits",
+          "text": "According to the Gheranda Samhita and Ayurvedic neurobiology, each finger acts as an elemental conductor: Thumb represents Agni (Fire/Metabolic will), Index finger represents Vayu (Air/Thought movement), Middle finger represents Akasha (Space/Open consciousness), Ring finger represents Prithvi (Earth/Grounding stability), and Little finger represents Jala (Water/Emotional fluidity). When specific fingertips touch, they close biological electromagnetic loops, redirecting subtle prana inward and resetting brainwaves from turbulent Beta (14–30 Hz) to calm Alpha (8–12 Hz).",
+          "visual": "⚡"
+        },
+        {
+          "title": "Chapter II: Mrit-Sanjeevani / Apana Vayu Mudra: Emergency Panic & Heart Calm",
+          "text": "Known anciently as the 'Life-Rescuing Gesture', Apana Vayu Mudra is performed by folding the index finger to the base of the thumb while joining the tips of the middle and ring fingers with the thumb tip (little finger extended). This powerful bio-lock regulates chaotic heart rhythms, lowers acute blood pressure surges, stimulates the vagus nerve, and dissolves sudden panic attacks and chest tightness within 3 to 5 minutes of steady diaphragmatic breathing.",
+          "visual": "💚"
+        },
+        {
+          "title": "Chapter III: Gyan & Chin Mudra: Banishing Overthinking & Burnout",
+          "text": "Gyan Mudra (touching the tip of the index finger to the tip of the thumb while resting palms upward) bridges individual soul consciousness (Jivatma) with universal cosmic wisdom (Paramatma). Physiologically, this pressure point stimulates the pituitary and pineal glands, boosts cerebral serotonin synthesis, calms racing thoughts, and improves concentration during intense mental work and meditation.",
+          "visual": "🧘"
+        },
+        {
+          "title": "Chapter IV: Shunya & Vayu Mudra: Eliminating Restlessness & Tinnitus",
+          "text": "By bending the middle finger flat against the mount of Venus and pressing it gently with the thumb (Shunya Mudra), the space element is systematically balanced, relieving ear pressure, nervous dizziness, and spatial restlessness. Vayu Mudra (pressing the index finger down) calms internal tremors, restless leg syndrome, and the whirlwind of anxious hyper-vigilance.",
+          "visual": "🌌"
+        },
+        {
+          "title": "Chapter V: Prana Mudra: Reviving Vitality & Root Grounding",
+          "text": "Joining the tips of the ring and little fingers with the thumb tip while keeping the index and middle fingers straight activates dormant Muladhara (Root Chakra) energy. It rekindles depleted Ojas (vital life essence), eliminates chronic fatigue syndrome, strengthens optical nerve vitality, and provides an unshakable energetic shield against environmental and psychological stress.",
+          "visual": "🔥"
+        },
+        {
+          "title": "Chapter VI: The 15-Minute Daily Anti-Stress Protocol & 4-7-8 Breathing",
+          "text": "Integrate this clinical Vedic routine: 5 minutes of Gyan Mudra at dawn for mental clarity, 5 minutes of Apana Vayu Mudra during afternoon workday stress spikes, and 5 minutes of Prana or Shunya Mudra with 4-7-8 rhythmic breathing (Inhale for 4 seconds, Hold for 7 seconds, Exhale slowly for 8 seconds) before bed for deep restorative sleep.",
+          "visual": "✨"
+        }
+      ]
+    },
+    {
+      "id": "course_pranayama_neuro_somatic",
+      "title": "Pranayama & Neuro-Somatic Healing: Resetting the Vagus Nerve",
+      "category": "Docu-Series",
+      "tagline": "Ancient Breath Mastery for Deep Nervous System Healing",
+      "description": "Explore the neurobiology of Vedic breathwork. Learn how combining Nadi Shodhana (Alternate Nostril Breathing with Vishnu Mudra), Bhramari (Humming Bee Breath with Shanmukhi Mudra), and Ujjayi breathing directly stimulates the parasympathetic nervous system, improves Heart Rate Variability (HRV), and permanently lowers chronic stress.",
+      "duration": "48 Mins",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/mudra_apana_vayu.jpg",
+      "videoUrl": "https://www.youtube.com/embed/1jwZ-iVRi44",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Stress Relief",
+        "Breathwork Enthusiasts",
+        "Yogis"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: The Vagus Nerve & The Pranic Highway",
+          "text": "The 10th cranial nerve (Vagus) originates in the brainstem and innervates the heart, lungs, and gut microbiome, directly mapping to the ancient Ida and Pingala nadis. Slow, conscious yogic pranayama creates resonant baroreflex stimulation, sending immediate biochemical signals of safety to the amygdala and halting chronic cortisol production.",
+          "visual": "🫁"
+        },
+        {
+          "title": "Chapter II: Nadi Shodhana & Vishnu Mudra: Brain Hemisphere Balance",
+          "text": "Holding the right hand in Vishnu Mudra (index and middle fingers folded inward, using thumb and ring finger to alternate nostril occlusion) establishes bilateral synchronization across the cerebral cortex. Left nostril breathing (Chandra Nadi) activates parasympathetic cooling, while right nostril breathing (Surya Nadi) enhances digestive fire and cognitive alertness.",
+          "visual": "⚖️"
+        },
+        {
+          "title": "Chapter III: Bhramari with Shanmukhi Mudra: Nitric Oxide Sound Healing",
+          "text": "Closing the 6 gates of sensory perception with Shanmukhi Mudra (thumbs on ear tragi, index on eyelids, middle on nostrils, ring/little on lips) while vocalizing a smooth humming sound creates internal acoustic vibration. This humming increases nasal nitric oxide production by fifteen-fold, dilating cerebral micro-vessels and inducing instant mental tranquility.",
+          "visual": "🐝"
+        },
+        {
+          "title": "Chapter IV: Sheetali & Sheetkari: Cooling Irritability & Burning Stress",
+          "text": "Drawing breath across a curled tongue (Sheetali) or through gently closed teeth (Sheetkari) cools the blood in the lingual and carotid arteries. It pacifies aggravated Pitta dosha, eliminates stress-induced acid reflux and headaches, and brings immediate emotional composure during tense conflicts.",
+          "visual": "❄️"
+        }
+      ]
+    },
+    {
+      "id": "course_mudra_sleep_clarity",
+      "title": "Mudra Therapy for Deep Sleep, Neuroplasticity & Cognitive Power",
+      "category": "Docu-Series",
+      "tagline": "Hakini, Brahma & Uttarabodhi Mudras for Brain Balancing and Insomnia Cure",
+      "description": "Master the sacred hand gestures that optimize brain connectivity and induce effortless delta-wave deep sleep. Discover Hakini Mudra for hemispheric memory recall, Uttarabodhi Mudra for conquering fear, and Yoni Mudra for tranquil sensory withdrawal before bed.",
+      "duration": "50 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/mudra_hakini_brain_sync.jpg",
+      "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
+      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "narrator": "Voice of Wisdom: Acharya",
+      "personas": [
+        "Sleep Seekers",
+        "Students",
+        "Executives",
+        "Researchers"
+      ],
+      "content": [
+        {
+          "title": "Chapter I: Hakini Mudra: Uniting Left & Right Brain Hemispheres",
+          "text": "Named after the Hindu Goddess Hakini associated with the Third Eye (Ajna Chakra), Hakini Mudra is formed by gently pressing the tips of all five fingers of both hands together. Scientific electroencephalogram (EEG) research shows this posture instantly stimulates communication between the analytical left hemisphere and creative right hemisphere, vastly improving memory recall, logical clarity, and problem-solving speed.",
+          "visual": "🧠"
+        },
+        {
+          "title": "Chapter II: Uttarabodhi Mudra: The Gesture of Supreme Fearlessness",
+          "text": "Formed by interlocking the middle, ring, and little fingers while pressing the index fingers together straight upward and thumbs downward, Uttarabodhi Mudra channels cosmic Prana through the central Sushumna Nadi. It shatters self-doubt, stage fright, and fear of failure, restoring steady courage and supreme self-confidence.",
+          "visual": "⚡"
+        },
+        {
+          "title": "Chapter III: Yoni Mudra & Shambhavi: Sensory Withdrawal for Deep Sleep",
+          "text": "Yoni Mudra represents the return to the cosmic womb of pure unmanifest consciousness. By sealing the senses and focusing inward at the eyebrow center with Shambhavi Mudra, racing nocturnal thoughts cease completely. The brain seamlessly shifts from Beta into Theta and deep restorative Delta sleep cycles without pharmaceutical sleep aids.",
+          "visual": "🌙"
+        },
+        {
+          "title": "Chapter IV: Brahma Mudra & Neck Vagus Nerve Decompression",
+          "text": "Tucking the thumbs inside closed fists and gently rotating the neck in the four cardinal directions while chanting the sacred seeds A-U-M-Silence decompresses the cervical vertebrae and releases trapped tension in the carotid sheath. It optimizes cerebral spinal fluid (CSF) flow and relieves tension headaches in under 5 minutes.",
+          "visual": "👑"
+        }
+      ]
+    },
+    {
       "id": "hampi",
       "title": "Hampi: The Lost Empire of Vijaynagara",
       "tagline": "Granite Symphony of the Vijayanagara Empire (1336–1565 CE)",
@@ -350,7 +488,8 @@
         }
       ],
       "tagline": "Cosmic Balance, Sheshanaga Slumber & The 10 Avatars of Preservation",
-      "description": "Journey across the celestial ocean of milk (Kshira Sagara) where Lord Vishnu rests upon the thousand-headed serpent Sheshanaga. Unveil the cosmological mechanism of Yuga cycles, the divine laws of Dharma preservation (Sthiti), and how the Supreme Sustainer manifests across time through the Dashavatara to restore universal harmony."
+      "description": "Journey across the celestial ocean of milk (Kshira Sagara) where Lord Vishnu rests upon the thousand-headed serpent Sheshanaga. Unveil the cosmological mechanism of Yuga cycles, the divine laws of Dharma preservation (Sthiti), and how the Supreme Sustainer manifests across time through the Dashavatara to restore universal harmony.",
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "dharma",
@@ -919,7 +1058,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_god_series_9",
@@ -1023,7 +1163,8 @@
           "text": "The worship of Devi culminates in the Sri Yantra—a sacred geometric mandala of nine interlocking triangles forming 43 smaller triangles radiating from the central Bindu point. Synthesizing quantum acoustics, golden ratio proportions (1.618), and esoteric tantra, Sri Vidya represents the complete unification of the human micro-cosmos with the universal macro-cosmos.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_god_series_12",
@@ -2002,7 +2143,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_kids_stories_14",
@@ -2211,7 +2353,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_kids_stories_20",
@@ -2245,7 +2388,8 @@
           "text": "Lord Kartikeya (Murugan/Subrahmanya), born from the sparks of Shiva's third eye, wields the golden Vel (spear of divine intellect). Celebrated across the six sacred hill shrines of Tamil Nadu (Tiruchendur, Palani, Swamimalai, Thiruthani, Pazhamudircholai, and Thiruparankundram), Skanda represents the conquest of demonic lower nature through razor-sharp spiritual discernment (Jnana Vel).",
           "visual": "🦚"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_kids_stories_21",
@@ -2314,7 +2458,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_kids_stories_23",
@@ -2348,7 +2493,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_kids_stories_24",
@@ -2487,7 +2633,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_1",
@@ -2626,7 +2773,8 @@
           "text": "Archaeological excavations, stone edicts, and copper plate grants attest to their enlightened governance: religious tolerance, construction of grand irrigation reservoirs, reconstruction of thousands of destroyed temple shrines (as championed by Maharani Ahilyabai Holkar across Somnath, Kashi, and Gaya), and establishing the eternal standard of heroic national self-reliance.",
           "visual": "⚔️"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_5",
@@ -2870,7 +3018,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_12",
@@ -2974,7 +3123,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_15",
@@ -3008,7 +3158,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_16",
@@ -3042,7 +3193,8 @@
           "text": "Archaeological excavations, stone edicts, and copper plate grants attest to their enlightened governance: religious tolerance, construction of grand irrigation reservoirs, reconstruction of thousands of destroyed temple shrines (as championed by Maharani Ahilyabai Holkar across Somnath, Kashi, and Gaya), and establishing the eternal standard of heroic national self-reliance.",
           "visual": "⚔️"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_17",
@@ -3076,7 +3228,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_18",
@@ -3110,7 +3263,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_19",
@@ -3179,7 +3333,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_21",
@@ -3213,7 +3368,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_22",
@@ -3247,7 +3403,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_23",
@@ -3281,7 +3438,8 @@
           "text": "The worship of Devi culminates in the Sri Yantra—a sacred geometric mandala of nine interlocking triangles forming 43 smaller triangles radiating from the central Bindu point. Synthesizing quantum acoustics, golden ratio proportions (1.618), and esoteric tantra, Sri Vidya represents the complete unification of the human micro-cosmos with the universal macro-cosmos.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_24",
@@ -3315,7 +3473,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_25",
@@ -3349,7 +3508,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_audiobooks___legends_26",
@@ -3383,7 +3543,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_1",
@@ -3417,7 +3578,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_2",
@@ -3451,7 +3613,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_3",
@@ -3485,7 +3648,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_4",
@@ -3519,7 +3683,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_5",
@@ -3553,7 +3718,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_6",
@@ -3587,7 +3753,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_7",
@@ -3621,7 +3788,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_8",
@@ -3655,7 +3823,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_9",
@@ -3689,7 +3858,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_10",
@@ -3723,7 +3893,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_11",
@@ -3757,7 +3928,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_12",
@@ -3791,7 +3963,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_13",
@@ -3825,7 +3998,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_14",
@@ -3859,7 +4033,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_15",
@@ -3893,7 +4068,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_16",
@@ -3927,7 +4103,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_17",
@@ -3961,7 +4138,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_18",
@@ -3995,7 +4173,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_19",
@@ -4029,7 +4208,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_20",
@@ -4063,7 +4243,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_21",
@@ -4097,7 +4278,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_22",
@@ -4131,7 +4313,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_23",
@@ -4165,7 +4348,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_24",
@@ -4199,7 +4383,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_25",
@@ -4233,7 +4418,8 @@
           "text": "Archaeological excavations, stone edicts, and copper plate grants attest to their enlightened governance: religious tolerance, construction of grand irrigation reservoirs, reconstruction of thousands of destroyed temple shrines (as championed by Maharani Ahilyabai Holkar across Somnath, Kashi, and Gaya), and establishing the eternal standard of heroic national self-reliance.",
           "visual": "⚔️"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_unknown_knowledge_26",
@@ -4267,7 +4453,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_1",
@@ -4301,7 +4488,8 @@
           "text": "Across the geography of Bharat, twelve self-manifested Jyotirlingas (from Somnath in Gujarat and Kedarnath in the snowy Himalayas to Rameshwaram in the southern seas) anchor the spiritual architecture of the subcontinent. Ancient temple engineering aligns these sacred shrines with geomagnetic ley lines and astronomical solstice axes, preserving centuries of unbroken Agamic rituals and Vedic chanting.",
           "visual": "🛕"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_2",
@@ -4335,7 +4523,8 @@
           "text": "Lord Kartikeya (Murugan/Subrahmanya), born from the sparks of Shiva's third eye, wields the golden Vel (spear of divine intellect). Celebrated across the six sacred hill shrines of Tamil Nadu (Tiruchendur, Palani, Swamimalai, Thiruthani, Pazhamudircholai, and Thiruparankundram), Skanda represents the conquest of demonic lower nature through razor-sharp spiritual discernment (Jnana Vel).",
           "visual": "🦚"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_3",
@@ -4369,7 +4558,8 @@
           "text": "On the battlefield of Kurukshetra, amidst the existential crisis of Arjuna, Lord Krishna delivered the 700 verses of the Bhagavad Gita. Synthesizing Karma Yoga (action without selfish attachment), Jnana Yoga (discriminative wisdom of the immortal Atman), and Bhakti Yoga (unconditional surrender), the Gita remains the supreme psychological and philosophical guide for humanity.",
           "visual": "📜"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_4",
@@ -4403,7 +4593,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_5",
@@ -4437,7 +4628,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_6",
@@ -4471,7 +4663,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_7",
@@ -4505,7 +4698,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_8",
@@ -4539,7 +4733,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_9",
@@ -4573,7 +4768,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_10",
@@ -4607,7 +4803,8 @@
           "text": "Lord Kartikeya (Murugan/Subrahmanya), born from the sparks of Shiva's third eye, wields the golden Vel (spear of divine intellect). Celebrated across the six sacred hill shrines of Tamil Nadu (Tiruchendur, Palani, Swamimalai, Thiruthani, Pazhamudircholai, and Thiruparankundram), Skanda represents the conquest of demonic lower nature through razor-sharp spiritual discernment (Jnana Vel).",
           "visual": "🦚"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_11",
@@ -4641,7 +4838,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_12",
@@ -4675,7 +4873,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_13",
@@ -4709,7 +4908,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_14",
@@ -4743,7 +4943,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_15",
@@ -4777,7 +4978,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_16",
@@ -4811,7 +5013,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_17",
@@ -4845,7 +5048,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_18",
@@ -4879,7 +5083,8 @@
           "text": "Across the geography of Bharat, twelve self-manifested Jyotirlingas (from Somnath in Gujarat and Kedarnath in the snowy Himalayas to Rameshwaram in the southern seas) anchor the spiritual architecture of the subcontinent. Ancient temple engineering aligns these sacred shrines with geomagnetic ley lines and astronomical solstice axes, preserving centuries of unbroken Agamic rituals and Vedic chanting.",
           "visual": "🛕"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_19",
@@ -4913,7 +5118,8 @@
           "text": "Preserved across the 108 Divya Desams celebrated by the Tamil Alvar saints, the worship of Vishnu established the philosophy of Vishishtadvaita (qualified non-dualism) under Acharya Ramanuja and Dvaita under Madhvacharya. These sacred traditions emphasize universal surrender (Sharanagati), asserting that divine grace is accessible to all beings regardless of caste or origin.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_20",
@@ -4947,7 +5153,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_21",
@@ -4981,7 +5188,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_22",
@@ -5015,7 +5223,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_23",
@@ -5049,7 +5258,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_24",
@@ -5083,7 +5293,8 @@
           "text": "On the battlefield of Kurukshetra, amidst the existential crisis of Arjuna, Lord Krishna delivered the 700 verses of the Bhagavad Gita. Synthesizing Karma Yoga (action without selfish attachment), Jnana Yoga (discriminative wisdom of the immortal Atman), and Bhakti Yoga (unconditional surrender), the Gita remains the supreme psychological and philosophical guide for humanity.",
           "visual": "📜"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_25",
@@ -5117,7 +5328,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_26",
@@ -5151,7 +5363,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_27",
@@ -5220,7 +5433,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_29",
@@ -5254,7 +5468,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_30",
@@ -5288,7 +5503,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_31",
@@ -5322,7 +5538,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_32",
@@ -5356,7 +5573,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_33",
@@ -5390,7 +5608,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_34",
@@ -5424,7 +5643,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_35",
@@ -5458,7 +5678,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_36",
@@ -5492,7 +5713,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_37",
@@ -5563,7 +5785,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_39",
@@ -5598,7 +5821,8 @@
           "text": "Archaeological excavations, stone edicts, and copper plate grants attest to their enlightened governance: religious tolerance, construction of grand irrigation reservoirs, reconstruction of thousands of destroyed temple shrines (as championed by Maharani Ahilyabai Holkar across Somnath, Kashi, and Gaya), and establishing the eternal standard of heroic national self-reliance.",
           "visual": "⚔️"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_40",
@@ -5669,7 +5893,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_42",
@@ -5704,7 +5929,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_43",
@@ -5775,7 +6001,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_45",
@@ -5810,7 +6037,8 @@
           "text": "Across the geography of Bharat, twelve self-manifested Jyotirlingas (from Somnath in Gujarat and Kedarnath in the snowy Himalayas to Rameshwaram in the southern seas) anchor the spiritual architecture of the subcontinent. Ancient temple engineering aligns these sacred shrines with geomagnetic ley lines and astronomical solstice axes, preserving centuries of unbroken Agamic rituals and Vedic chanting.",
           "visual": "🛕"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_46",
@@ -5845,7 +6073,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_47",
@@ -5880,7 +6109,8 @@
           "text": "Modern computational sciences, binary logic, and neuroscience increasingly validate the principles found in Indian texts. From Ayurvedic circadian rhythms (Dinacharya) winning Nobel prizes in chronobiology to Vedic mathematical algorithms powering modern cryptography and quantum computing models, Bharat's scientific legacy continues to lead global thought.",
           "visual": "🔬"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_48",
@@ -5915,7 +6145,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_49",
@@ -5986,7 +6217,8 @@
           "text": "Lord Kartikeya (Murugan/Subrahmanya), born from the sparks of Shiva's third eye, wields the golden Vel (spear of divine intellect). Celebrated across the six sacred hill shrines of Tamil Nadu (Tiruchendur, Palani, Swamimalai, Thiruthani, Pazhamudircholai, and Thiruparankundram), Skanda represents the conquest of demonic lower nature through razor-sharp spiritual discernment (Jnana Vel).",
           "visual": "🦚"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_51",
@@ -6057,7 +6289,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_53",
@@ -6092,7 +6325,8 @@
           "text": "The worship of Devi culminates in the Sri Yantra—a sacred geometric mandala of nine interlocking triangles forming 43 smaller triangles radiating from the central Bindu point. Synthesizing quantum acoustics, golden ratio proportions (1.618), and esoteric tantra, Sri Vidya represents the complete unification of the human micro-cosmos with the universal macro-cosmos.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_54",
@@ -6127,7 +6361,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_55",
@@ -6162,7 +6397,8 @@
           "text": "On the battlefield of Kurukshetra, amidst the existential crisis of Arjuna, Lord Krishna delivered the 700 verses of the Bhagavad Gita. Synthesizing Karma Yoga (action without selfish attachment), Jnana Yoga (discriminative wisdom of the immortal Atman), and Bhakti Yoga (unconditional surrender), the Gita remains the supreme psychological and philosophical guide for humanity.",
           "visual": "📜"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_56",
@@ -6197,7 +6433,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_57",
@@ -6232,7 +6469,8 @@
           "text": "Preserved across the 108 Divya Desams celebrated by the Tamil Alvar saints, the worship of Vishnu established the philosophy of Vishishtadvaita (qualified non-dualism) under Acharya Ramanuja and Dvaita under Madhvacharya. These sacred traditions emphasize universal surrender (Sharanagati), asserting that divine grace is accessible to all beings regardless of caste or origin.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_58",
@@ -6267,7 +6505,8 @@
           "text": "Lord Kartikeya (Murugan/Subrahmanya), born from the sparks of Shiva's third eye, wields the golden Vel (spear of divine intellect). Celebrated across the six sacred hill shrines of Tamil Nadu (Tiruchendur, Palani, Swamimalai, Thiruthani, Pazhamudircholai, and Thiruparankundram), Skanda represents the conquest of demonic lower nature through razor-sharp spiritual discernment (Jnana Vel).",
           "visual": "🦚"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_59",
@@ -6302,7 +6541,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_60",
@@ -6337,7 +6577,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_61",
@@ -6372,7 +6613,8 @@
           "text": "Preserved across the 108 Divya Desams celebrated by the Tamil Alvar saints, the worship of Vishnu established the philosophy of Vishishtadvaita (qualified non-dualism) under Acharya Ramanuja and Dvaita under Madhvacharya. These sacred traditions emphasize universal surrender (Sharanagati), asserting that divine grace is accessible to all beings regardless of caste or origin.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_62",
@@ -6407,7 +6649,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_63",
@@ -6442,7 +6685,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_64",
@@ -6477,7 +6721,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_65",
@@ -6512,7 +6757,8 @@
           "text": "Preserved across the 108 Divya Desams celebrated by the Tamil Alvar saints, the worship of Vishnu established the philosophy of Vishishtadvaita (qualified non-dualism) under Acharya Ramanuja and Dvaita under Madhvacharya. These sacred traditions emphasize universal surrender (Sharanagati), asserting that divine grace is accessible to all beings regardless of caste or origin.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_66",
@@ -6547,7 +6793,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_67",
@@ -6582,7 +6829,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_68",
@@ -6617,7 +6865,8 @@
           "text": "Across the geography of Bharat, twelve self-manifested Jyotirlingas (from Somnath in Gujarat and Kedarnath in the snowy Himalayas to Rameshwaram in the southern seas) anchor the spiritual architecture of the subcontinent. Ancient temple engineering aligns these sacred shrines with geomagnetic ley lines and astronomical solstice axes, preserving centuries of unbroken Agamic rituals and Vedic chanting.",
           "visual": "🛕"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_69",
@@ -6652,7 +6901,8 @@
           "text": "Preserved across the 108 Divya Desams celebrated by the Tamil Alvar saints, the worship of Vishnu established the philosophy of Vishishtadvaita (qualified non-dualism) under Acharya Ramanuja and Dvaita under Madhvacharya. These sacred traditions emphasize universal surrender (Sharanagati), asserting that divine grace is accessible to all beings regardless of caste or origin.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_70",
@@ -6687,7 +6937,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_71",
@@ -6722,7 +6973,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_72",
@@ -6757,7 +7009,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_73",
@@ -6792,7 +7045,8 @@
           "text": "Preserved across the 108 Divya Desams celebrated by the Tamil Alvar saints, the worship of Vishnu established the philosophy of Vishishtadvaita (qualified non-dualism) under Acharya Ramanuja and Dvaita under Madhvacharya. These sacred traditions emphasize universal surrender (Sharanagati), asserting that divine grace is accessible to all beings regardless of caste or origin.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_74",
@@ -6827,7 +7081,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_75",
@@ -6862,7 +7117,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_76",
@@ -6897,7 +7153,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_77",
@@ -6932,7 +7189,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_78",
@@ -6967,7 +7225,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_79",
@@ -7002,7 +7261,8 @@
           "text": "Modern computational sciences, binary logic, and neuroscience increasingly validate the principles found in Indian texts. From Ayurvedic circadian rhythms (Dinacharya) winning Nobel prizes in chronobiology to Vedic mathematical algorithms powering modern cryptography and quantum computing models, Bharat's scientific legacy continues to lead global thought.",
           "visual": "🔬"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_80",
@@ -7037,7 +7297,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_81",
@@ -7072,7 +7333,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_82",
@@ -7107,7 +7369,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_83",
@@ -7142,7 +7405,8 @@
           "text": "Preserved across the 108 Divya Desams celebrated by the Tamil Alvar saints, the worship of Vishnu established the philosophy of Vishishtadvaita (qualified non-dualism) under Acharya Ramanuja and Dvaita under Madhvacharya. These sacred traditions emphasize universal surrender (Sharanagati), asserting that divine grace is accessible to all beings regardless of caste or origin.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_84",
@@ -7177,7 +7441,8 @@
           "text": "Archaeological excavations, stone edicts, and copper plate grants attest to their enlightened governance: religious tolerance, construction of grand irrigation reservoirs, reconstruction of thousands of destroyed temple shrines (as championed by Maharani Ahilyabai Holkar across Somnath, Kashi, and Gaya), and establishing the eternal standard of heroic national self-reliance.",
           "visual": "⚔️"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_85",
@@ -7212,7 +7477,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_86",
@@ -7247,7 +7513,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_87",
@@ -7282,7 +7549,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_88",
@@ -7317,7 +7585,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_89",
@@ -7352,7 +7621,8 @@
           "text": "The worship of Devi culminates in the Sri Yantra—a sacred geometric mandala of nine interlocking triangles forming 43 smaller triangles radiating from the central Bindu point. Synthesizing quantum acoustics, golden ratio proportions (1.618), and esoteric tantra, Sri Vidya represents the complete unification of the human micro-cosmos with the universal macro-cosmos.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_90",
@@ -7387,7 +7657,8 @@
           "text": "For generations, these stories have served as the core pedagogical foundation of Indian Gurukula education. They impart moral clarity (Sanskara), emotional resilience, strategic caution, and compassion in children and leaders alike, remaining as vital in contemporary problem-solving as they were millennia ago.",
           "visual": "🌟"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_91",
@@ -7422,7 +7693,8 @@
           "text": "Modern computational sciences, binary logic, and neuroscience increasingly validate the principles found in Indian texts. From Ayurvedic circadian rhythms (Dinacharya) winning Nobel prizes in chronobiology to Vedic mathematical algorithms powering modern cryptography and quantum computing models, Bharat's scientific legacy continues to lead global thought.",
           "visual": "🔬"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_92",
@@ -7457,7 +7729,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_93",
@@ -7492,7 +7765,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_94",
@@ -7527,7 +7801,8 @@
           "text": "Hanuman's leap across the ocean and carrying of the medicinal Dronagiri mountain with Sanjeevani herb represents the triumph of pure selfless devotion (Seva) and inner Pranic mastery. Rama's concept of 'Ramarajya'—a just, prosperous society where the weakest citizen has equal voice and protection—remains the enduring benchmark of good governance across Southeast Asia.",
           "visual": "🚩"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_95",
@@ -7562,7 +7837,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_96",
@@ -7597,7 +7873,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_97",
@@ -7632,7 +7909,8 @@
           "text": "Today, this sacred heritage is recognized through epigraphical inscriptions, UNESCO cultural preservation, and ongoing spiritual traditions. It bridges ancient Vedic insights with contemporary life, inspiring generations with timeless values of courage, truth, selfless service (Seva), and cultural pride.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_98",
@@ -7667,7 +7945,8 @@
           "text": "Lord Kartikeya (Murugan/Subrahmanya), born from the sparks of Shiva's third eye, wields the golden Vel (spear of divine intellect). Celebrated across the six sacred hill shrines of Tamil Nadu (Tiruchendur, Palani, Swamimalai, Thiruthani, Pazhamudircholai, and Thiruparankundram), Skanda represents the conquest of demonic lower nature through razor-sharp spiritual discernment (Jnana Vel).",
           "visual": "🦚"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_99",
@@ -7702,7 +7981,8 @@
           "text": "The worship of Devi culminates in the Sri Yantra—a sacred geometric mandala of nine interlocking triangles forming 43 smaller triangles radiating from the central Bindu point. Synthesizing quantum acoustics, golden ratio proportions (1.618), and esoteric tantra, Sri Vidya represents the complete unification of the human micro-cosmos with the universal macro-cosmos.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "eb_extra_100",
@@ -7737,7 +8017,8 @@
           "text": "Declared UNESCO World Heritage Sites and preserved by the Archaeological Survey of India (ASI), these monuments stand as timeless proof of Bharat's civilizational zenith in stone metallurgy, structural physics, and celestial trigonometry, continuing to inspire architects, historians, and spiritual seekers globally.",
           "visual": "✨"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ"
     },
     {
       "id": "ai_lonar_1788928324251",
@@ -8205,7 +8486,7 @@
       "isPremium": false,
       "isGodSeries": true,
       "imageUrl": "/images/veerabhadra.jpg",
-      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
@@ -8243,7 +8524,7 @@
       "isPremium": false,
       "isGodSeries": true,
       "imageUrl": "/images/kalabhairava.jpg",
-      "videoUrl": "https://www.youtube.com/embed/S_B7y1G84k8",
+      "videoUrl": "https://www.youtube.com/embed/1jwZ-iVRi44",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
@@ -8543,7 +8824,7 @@
       "isPremium": false,
       "isGodSeries": false,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "videoUrl": "https://www.youtube.com/embed/5D3CeeZ6X1s",
+      "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
       "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
