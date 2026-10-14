@@ -104,6 +104,7 @@
             m.classList.remove('flex');
             m.style.display = 'none';
             m.style.pointerEvents = 'none';
+            m.style.visibility = 'hidden';
           }
         });
 
@@ -132,7 +133,7 @@
           window.appInstance.openQuickPreviewModal(itemOrId);
           return;
         }
-        var all = (window.COURSES_DATA && window.COURSES_DATA.content) || [];
+        var all = (window.COURSES_DATA && window.COURSES_DATA.content) || (window.heritageData && window.heritageData.content) || [];
         var item = typeof itemOrId === 'object' ? itemOrId : all.find(function(x) { return x && String(x.id) === String(itemOrId); });
         var m = document.getElementById('quick-preview-modal');
         var b = document.getElementById('quick-preview-modal-body');
@@ -144,6 +145,7 @@
           m.classList.add('flex');
           m.style.display = 'flex';
           m.style.pointerEvents = 'auto';
+          m.style.visibility = 'visible';
           document.body.style.overflow = 'hidden';
         }
       } catch(e) { console.warn('Error opening quick preview modal:', e); }
@@ -155,7 +157,7 @@
           window.appInstance.playContent(itemOrId, isAudio);
           return;
         }
-        var all = (window.COURSES_DATA && window.COURSES_DATA.content) || [];
+        var all = (window.COURSES_DATA && window.COURSES_DATA.content) || (window.heritageData && window.heritageData.content) || [];
         var item = typeof itemOrId === 'object' ? itemOrId : all.find(function(x) { return x && String(x.id) === String(itemOrId); });
         var m = document.getElementById('media-modal');
         var t = document.getElementById('media-modal-title');
@@ -170,6 +172,7 @@
           m.classList.add('flex');
           m.style.display = 'flex';
           m.style.pointerEvents = 'auto';
+          m.style.visibility = 'visible';
           document.body.style.overflow = 'hidden';
         }
       } catch(e) { console.warn('Error playing content:', e); }
@@ -183,6 +186,7 @@
           m.classList.remove('flex');
           m.style.display = 'none';
           m.style.pointerEvents = 'none';
+          m.style.visibility = 'hidden';
         }
         document.body.style.overflow = '';
       } catch(e) { console.warn('Error closing quick preview modal:', e); }
@@ -196,6 +200,7 @@
           m.classList.remove('flex');
           m.style.display = 'none';
           m.style.pointerEvents = 'none';
+          m.style.visibility = 'hidden';
         }
         var b = document.getElementById('media-modal-body');
         if (b) b.innerHTML = '';
@@ -210,6 +215,8 @@
           window.closeQuickPreviewModal();
         } else if (e.target.id === 'media-modal') {
           window.closeMediaModal();
+        } else if (e.target.id === 'granth-reader-modal') {
+          window.closeGranthReader();
         } else if (e.target.id === 'payment-modal') {
           if (window.closePaymentModal) window.closePaymentModal();
           else window.closeAllModals();
@@ -718,7 +725,16 @@
     window.closeGranthReader = function() {
       try {
         var m = document.getElementById('granth-reader-modal');
-        if (m) { m.classList.add('hidden'); m.classList.remove('flex'); m.style.display = 'none'; }
+        if (m) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+          m.style.display = 'none';
+          m.style.pointerEvents = 'none';
+          m.style.visibility = 'hidden';
+        }
+        var videoIframe = document.getElementById('reader-video-iframe');
+        if (videoIframe) videoIframe.src = '';
+        document.body.style.overflow = '';
       } catch(e) {}
     };
 
@@ -1736,7 +1752,7 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=141.0">
+  <link rel="stylesheet" href="styles.css?v=142.0">
   <link rel="stylesheet" href="flipbook.css?v=98">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap&display=swap" rel="stylesheet">
   <script>
@@ -2693,7 +2709,7 @@
     </section>
 
     <!-- ── 📖 ULTRA-LUXURY 150+ PAGE DIGITAL GRANTH READER MODAL ── -->
-    <div id="granth-reader-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-2xl hidden items-center justify-center p-2 sm:p-6 overflow-y-auto">
+    <div id="granth-reader-modal" class="modal-overlay fixed inset-0 z-[125] bg-black/90 backdrop-blur-2xl hidden items-center justify-center p-2 sm:p-6 overflow-y-auto">
       <div class="relative w-full max-w-5xl bg-[#0d0f15] border-2 border-gold/50 rounded-3xl overflow-hidden shadow-2xl shadow-gold/20 flex flex-col my-auto max-h-[92vh]">
         
         <!-- Reader Header Toolbar -->
@@ -3588,7 +3604,7 @@
   <!-- MODALS -->
 
   <!-- Media Player Modal -->
-  <div id="media-modal" class="modal-overlay fixed inset-0 z-[120] hidden items-center justify-center p-4">
+  <div id="media-modal" class="modal-overlay fixed inset-0 z-[130] hidden items-center justify-center p-4">
     <div id="media-modal-container" class="bg-[#101116] border border-white/10 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative transition-all duration-300">
       <!-- Top header bar -->
       <div class="flex justify-between items-center px-6 py-4 border-b border-white/5">
@@ -3604,7 +3620,7 @@
 
   
   <!-- ── 🔍 NETFLIX-STYLE QUICK PREVIEW MODAL ── -->
-  <div id="quick-preview-modal" class="modal-overlay fixed inset-0 z-[115] hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+  <div id="quick-preview-modal" class="modal-overlay fixed inset-0 z-[120] hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
     <div class="bg-[#0d0f16] border border-white/15 rounded-3xl w-full max-w-3xl shadow-[0_25px_60px_rgba(0,0,0,0.95)] relative overflow-hidden max-h-[92vh] overflow-y-auto no-scrollbar font-sans">
       <button id="close-quick-preview-btn" type="button" onclick="window.closeQuickPreviewModal ? window.closeQuickPreviewModal() : window.closeAllModals()" class="modal-close absolute top-4 right-5 text-white/80 hover:text-white transition-colors text-2xl font-bold bg-black/70 hover:bg-black/90 w-10 h-10 rounded-full flex items-center justify-center border border-white/30 cursor-pointer shadow-lg" style="z-index: 9999 !important; pointer-events: auto !important;" title="Close Preview">&times;</button>
       <div id="quick-preview-modal-body">
@@ -3663,8 +3679,8 @@
     </div>
   </div>
 
-  <script type="module" src="data.js?v=141.0"></script>
-  <script type="module" src="app-prod.js?v=141.0"></script>
+  <script type="module" src="data.js?v=142.0"></script>
+  <script type="module" src="app-prod.js?v=142.0"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {

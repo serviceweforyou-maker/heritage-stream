@@ -1181,10 +1181,21 @@ body.modal-open .floating-btn-group {
   transform: scale(0.98);
 }
 
-/* ── 🛡️ MODAL OVERLAY & CARD RESPONSIVENESS FIXES (v139.0) ── */
-.modal-overlay.hidden {
+/* ── 🛡️ UNIVERSAL MODAL OVERLAY & ZERO-TRAP POINTER-EVENTS (v142.0) ── */
+.modal-overlay:not(.hidden),
+#granth-reader-modal:not(.hidden) {
+  display: flex !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.modal-overlay.hidden,
+#granth-reader-modal.hidden {
   display: none !important;
   pointer-events: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
 }
 
 .content-card {

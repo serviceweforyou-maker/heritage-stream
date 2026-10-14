@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=141.0";
-import heritageData from "./data.js?v=141.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=141.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=142.0";
+import heritageData from "./data.js?v=142.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=142.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -424,6 +424,10 @@ class AppController {
     window.appInstance = this; // global reference for script tags
     window.openQuickPreviewModal = (itemOrId) => this.openQuickPreviewModal(itemOrId);
     window.playContent = (itemOrId, isAudio) => this.playContent(itemOrId, isAudio);
+    window.closeQuickPreviewModal = () => this.closeQuickPreviewModal();
+    window.closeMediaModal = () => this.closeMediaModal();
+    window.closeGranthReader = () => this.closeGranthReader();
+    window.openGranthReader = (granth) => this.openGranthReader(granth);
     this.isSubscribed = DatabaseService.isSubscribed();
     DatabaseService.verifySubscriptionIntegrity();
     this.userScores = DatabaseService.getUserScores();
@@ -467,16 +471,21 @@ class AppController {
     this.init();
   }
 
-    async init() {
-    // Load live contents
-    try {
-      this.contentData = await DatabaseService.fetchContent();
-    } catch (e) {
-      console.error("Failed to load content data:", e);
-    }
+  async init() {
+    // Instant First Paint: Ensure contentData is ready immediately from memory (0ms latency)
     if (!this.contentData || !this.contentData.content || !this.contentData.content.length) {
       this.contentData = DatabaseService.normalizeData(heritageData || (typeof window !== "undefined" ? window.COURSES_DATA : null));
     }
+
+    // Non-blocking background sync for live db updates
+    setTimeout(async () => {
+      try {
+        const liveData = await DatabaseService.fetchContent();
+        if (liveData && liveData.content && liveData.content.length > (this.contentData?.content?.length || 0)) {
+          this.contentData = liveData;
+        }
+      } catch (e) {}
+    }, 1500);
 
     const safeInit = (name, fn) => {
       try {
@@ -595,20 +604,27 @@ class AppController {
     window.addEventListener('hashchange', updateMobileDockActive);
     updateMobileDockActive();
 
-    // Scroll event for header background shift (top 36px utility bar + 64px nav = 100px total)
+    // Scroll event for header background shift (optimized with rAF and passive listener)
     const header = document.querySelector('header');
     if (header) {
+      let scrollTicking = false;
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          header.style.background = 'rgba(7, 8, 12, 0.92)';
-          header.style.borderBottomColor = 'rgba(255, 255, 255, 0.12)';
-          header.style.boxShadow = '0 8px 32px rgba(0,0,0,0.6)';
-        } else {
-          header.style.background = 'rgba(7, 8, 12, 0.3)';
-          header.style.borderBottomColor = 'rgba(255, 255, 255, 0.06)';
-          header.style.boxShadow = 'none';
+        if (!scrollTicking) {
+          window.requestAnimationFrame(() => {
+            if (window.scrollY > 40) {
+              header.style.background = '#07090f';
+              header.style.borderBottomColor = 'rgba(212, 175, 55, 0.4)';
+              header.style.boxShadow = '0 8px 32px rgba(0,0,0,0.8)';
+            } else {
+              header.style.background = '#07090f';
+              header.style.borderBottomColor = 'rgba(212, 175, 55, 0.25)';
+              header.style.boxShadow = 'none';
+            }
+            scrollTicking = false;
+          });
+          scrollTicking = true;
         }
-      });
+      }, { passive: true });
     }
     
     // Bind click sound effects (wrapped safely)
@@ -890,10 +906,16 @@ class AppController {
       btn.onclick = (e) => {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
-        const found = all.find(x => x.id === id);
+        let found = all.find(x => String(x.id) === String(id));
+        if (!found) {
+          const fallbackList = (typeof heritageData !== 'undefined' ? heritageData.content : []).concat(typeof window !== 'undefined' && window.COURSES_DATA ? window.COURSES_DATA.content : []);
+          found = fallbackList.find(x => x && String(x.id) === String(id));
+        }
         if (found) {
           const isAudio = !!found.audioUrl && (found.category === 'Audiobooks & Legends' || found.category === 'Ebook & Audio Series');
           this.playContent(found, isAudio);
+        } else if (id) {
+          this.playContent(id, false);
         }
       };
     });
@@ -902,9 +924,15 @@ class AppController {
       btn.onclick = (e) => {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
-        const found = all.find(x => x.id === id);
+        let found = all.find(x => String(x.id) === String(id));
+        if (!found) {
+          const fallbackList = (typeof heritageData !== 'undefined' ? heritageData.content : []).concat(typeof window !== 'undefined' && window.COURSES_DATA ? window.COURSES_DATA.content : []);
+          found = fallbackList.find(x => x && String(x.id) === String(id));
+        }
         if (found) {
           this.openQuickPreviewModal(found);
+        } else if (id) {
+          this.openQuickPreviewModal(id);
         }
       };
     });
@@ -1155,8 +1183,8 @@ class AppController {
 
   // ── 🔗 BIND CARD CLICKS & INTERACTIONS ──
   bindCardInteractions(container) {
-    if (!container || !this.contentData) return;
-    const all = this.contentData.content || [];
+    if (!container) return;
+    const all = (this.contentData && this.contentData.content) || (typeof heritageData !== 'undefined' ? heritageData.content : []) || (typeof window !== 'undefined' && window.COURSES_DATA ? window.COURSES_DATA.content : []) || [];
 
     // 1. Play Button Click
     container.querySelectorAll('.quick-play-btn').forEach(btn => {
@@ -1329,12 +1357,14 @@ class AppController {
     modal.classList.add('flex');
     modal.style.display = 'flex';
     modal.style.pointerEvents = 'auto';
+    modal.style.visibility = 'visible';
+    modal.style.opacity = '1';
     document.body.style.overflow = 'hidden';
 
     // Backdrop dismissal
     modal.onclick = (e) => {
       if (e.target === modal) {
-        this.closeQuickPreviewModal();
+        this.closeMediaModal();
       }
     };
   }
@@ -3824,29 +3854,8 @@ class AppController {
 
     grid.innerHTML = filtered.map(item => this.createContentCardHTML(item, item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series', 'w-full')).join('');
 
-    // Bind card clicks in grid
-    grid.querySelectorAll('.content-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('.watchlist-toggle-btn')) return;
-        const id = card.getAttribute('data-id');
-        const type = card.getAttribute('data-type');
-        const item = all.find(x => String(x.id) === String(id));
-        if (item) {
-          this.playContent(item, type === 'audio');
-        }
-      });
-    });
-
-    // Bind watchlist toggle buttons in grid
-    grid.querySelectorAll('.watchlist-toggle-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        const id = btn.getAttribute('data-id');
-        this.toggleWatchlist(id);
-        this.renderCatalogGrid();
-      });
-    });
+    // Bind card interactions (play button, watchlist toggle, preview button, and card clicks)
+    this.bindCardInteractions(grid);
   }
 
 
@@ -7012,10 +7021,9 @@ class AppController {
     });
 
     // Close Reader Modal
-    if (closeBtn && modal) {
+    if (closeBtn) {
       closeBtn.onclick = function() {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
+        self.closeGranthReader();
       };
     }
   }
@@ -7236,6 +7244,26 @@ class AppController {
     // Show Modal
     modal.classList.remove('hidden');
     modal.classList.add('flex');
+    modal.style.display = 'flex';
+    modal.style.pointerEvents = 'auto';
+    modal.style.visibility = 'visible';
+    modal.style.opacity = '1';
+    document.body.style.overflow = 'hidden';
+
+    // Backdrop dismissal
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        this.closeGranthReader();
+      }
+    };
+
+    const closeGranthBtn = document.getElementById('close-granth-reader-btn');
+    if (closeGranthBtn) {
+      closeGranthBtn.onclick = (e) => {
+        if (e) e.stopPropagation();
+        this.closeGranthReader();
+      };
+    }
   }
 
   // ── 🏆 NETFLIX-STYLE "TOP 10 IN INDIA TODAY" RANKED ROW ──
@@ -7455,6 +7483,7 @@ class AppController {
       m.classList.remove('flex');
       m.style.display = 'none';
       m.style.pointerEvents = 'none';
+      m.style.visibility = 'hidden';
     }
     document.body.style.overflow = '';
     if (typeof window.closeQuickPreviewModal === 'function') {
@@ -7469,6 +7498,7 @@ class AppController {
       m.classList.remove('flex');
       m.style.display = 'none';
       m.style.pointerEvents = 'none';
+      m.style.visibility = 'hidden';
     }
     const b = document.getElementById('media-modal-body');
     if (b) b.innerHTML = '';
@@ -7478,12 +7508,35 @@ class AppController {
     }
   }
 
+  closeGranthReader() {
+    const m = document.getElementById('granth-reader-modal');
+    if (m) {
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      m.style.display = 'none';
+      m.style.pointerEvents = 'none';
+      m.style.visibility = 'hidden';
+    }
+    const videoIframe = document.getElementById('reader-video-iframe');
+    if (videoIframe) videoIframe.src = '';
+    document.body.style.overflow = '';
+    if (typeof window.closeGranthReader === 'function') {
+      try { window.closeGranthReader(); } catch(e) {}
+    }
+  }
+
   openQuickPreviewModal(itemOrId) {
     if (!itemOrId) return;
     let item = itemOrId;
     if (typeof itemOrId === 'string' || typeof itemOrId === 'number') {
       const all = (this.contentData && this.contentData.content) || [];
       item = all.find(x => String(x.id) === String(itemOrId));
+      if (!item && typeof heritageData !== 'undefined' && Array.isArray(heritageData.content)) {
+        item = heritageData.content.find(x => String(x.id) === String(itemOrId));
+      }
+      if (!item && typeof window !== 'undefined' && Array.isArray(window.COURSES_DATA)) {
+        item = window.COURSES_DATA.find(x => String(x.id) === String(itemOrId));
+      }
     }
     const modal = document.getElementById('quick-preview-modal');
     const body = document.getElementById('quick-preview-modal-body');
@@ -7640,6 +7693,8 @@ class AppController {
       this.closeQuickPreviewModal();
       if (window.flipBook) {
         window.flipBook.open(item);
+      } else if (typeof this.openGranthReader === 'function') {
+        this.openGranthReader(item);
       } else {
         this.playContent(item, false);
       }
@@ -7655,7 +7710,11 @@ class AppController {
     body.querySelectorAll('.related-card').forEach(card => {
       card.addEventListener('click', () => {
         const rId = card.getAttribute('data-id');
-        const found = all.find(x => x.id === rId);
+        let found = all.find(x => String(x.id) === String(rId));
+        if (!found) {
+          const fallbackList = (typeof heritageData !== 'undefined' ? heritageData.content : []).concat(typeof window !== 'undefined' && window.COURSES_DATA ? window.COURSES_DATA.content : []);
+          found = fallbackList.find(x => x && String(x.id) === String(rId));
+        }
         if (found) {
           this.openQuickPreviewModal(found);
         }
@@ -7665,17 +7724,23 @@ class AppController {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     modal.style.display = 'flex';
+    modal.style.pointerEvents = 'auto';
+    modal.style.visibility = 'visible';
+    modal.style.opacity = '1';
     document.body.style.overflow = 'hidden';
+
+    // Backdrop dismissal
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        this.closeQuickPreviewModal();
+      }
+    };
 
     const closeBtn = modal.querySelector('.modal-close') || document.getElementById('close-quick-preview-btn');
     if (closeBtn) {
       closeBtn.onclick = (e) => {
         if (e) e.stopPropagation();
-        if (typeof window.closeQuickPreviewModal === 'function') {
-          window.closeQuickPreviewModal();
-        } else {
-          this.closeAllModals();
-        }
+        this.closeQuickPreviewModal();
       };
     }
   }
