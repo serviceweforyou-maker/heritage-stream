@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=139.0";
-import heritageData from "./data.js?v=139.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=139.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=140.0";
+import heritageData from "./data.js?v=140.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=140.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -655,16 +655,19 @@ class AppController {
     const all = this.contentData.content || [];
     if (!all.length) return;
 
-    // Curate top 6-8 blockbuster featured items across categories
+    // Curate top blockbuster featured items across categories
     const preferredIds = [
+      'free_kukke_subrahmanya_naga',
+      'free_veerabhadra_birth_shiva',
+      'free_krishna_breaks_ego_garuda_sudarshana',
+      'free_krishna_kamsa_divine_power',
+      'free_abhimanyu_chakravyuha_defeat',
+      'free_hanuman_bheema_kadali_vana',
+      'free_shiva_sharabha_narasimha',
+      'free_hanuman_saturday_blessings',
+      'free_krishna_ranchor_war_wisdom',
       'course_mudra_sleep_clarity',
-      'hampi',
-      'dashavatara',
-      'chola',
-      'bhagavad_gita',
-      'meenakshi',
-      'course_pranayama_neuro_somatic',
-      'shivaji'
+      'hampi'
     ];
 
     let featuredList = preferredIds.map(id => all.find(x => x.id === id)).filter(Boolean);
@@ -705,6 +708,11 @@ class AppController {
                     <span class="text-[10px] font-mono font-extrabold uppercase tracking-widest text-gold bg-gold/20 border border-gold/40 px-3 py-1 rounded-full backdrop-blur-md shadow-sm">
                       ⚜️ ${item.category || 'Featured Masterpiece'}
                     </span>
+                    ${!item.isPremium ? `
+                      <span class="text-xs font-mono font-extrabold text-emerald-300 bg-emerald-600/30 border border-emerald-400/50 px-2.5 py-0.5 rounded-full backdrop-blur-md animate-pulse">
+                        ⭐ 100% FREE SHOWCASE
+                      </span>
+                    ` : ''}
                     <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-2.5 py-0.5 rounded-full backdrop-blur-md">
                       4K ULTRA HD
                     </span>
@@ -7200,16 +7208,16 @@ class AppController {
     if (!all.length) return;
 
     const top10Ids = [
+      'free_kukke_subrahmanya_naga',
+      'free_veerabhadra_birth_shiva',
+      'free_krishna_breaks_ego_garuda_sudarshana',
       'hampi',
+      'free_abhimanyu_chakravyuha_defeat',
+      'free_krishna_kamsa_divine_power',
       'course_mudra_vigyan_stress',
+      'free_shiva_sharabha_narasimha',
       'chola',
-      'dashavatara',
-      'sundials',
-      'ajanta',
-      'kailasa',
-      'nalanda',
-      'rigveda_astronomy',
-      'nataraja_cosmology'
+      'free_hanuman_saturday_blessings'
     ];
 
     let top10Items = [];
