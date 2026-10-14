@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=140.0";
-import heritageData from "./data.js?v=140.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=140.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=141.0";
+import heritageData from "./data.js?v=141.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=141.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -680,7 +680,7 @@ class AppController {
 
     // Render Container HTML with all slides and navigation controls
     spotlight.innerHTML = `
-      <div id="spotlight-carousel-wrapper" class="relative min-h-[520px] md:min-h-[600px] lg:min-h-[660px] flex items-end justify-start overflow-hidden bg-[#07090f] select-none">
+      <div id="spotlight-carousel-wrapper" class="relative w-full h-full min-h-[440px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[640px] flex items-end justify-start overflow-hidden bg-[#07090f] select-none">
         
         <!-- Slides Container -->
         <div id="spotlight-slides-track" class="absolute inset-0 w-full h-full">
@@ -691,17 +691,25 @@ class AppController {
             const isActive = idx === this.spotlightIndex;
 
             return `
-              <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 pointer-events-none scale-105'}" data-slide-idx="${idx}">
-                <!-- 16:9 Backdrop Image with Vignette & Gradients -->
-                <img src="${item.imageUrl || '/images/hampi.jpg'}" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.72] contrast-[1.08]" alt="${item.title}">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#07090f] via-[#07090f]/60 to-transparent"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-[#07090f] via-[#07090f]/75 to-transparent max-w-3xl"></div>
+              <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 pointer-events-none scale-102'}" data-slide-idx="${idx}">
+                <!-- Ambient Blur Fill for Seamless Pro Fitting -->
+                <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+                  <img src="${item.imageUrl || '/images/hampi.jpg'}" class="w-full h-full object-cover object-top filter blur-2xl opacity-25 scale-110" aria-hidden="true">
+                </div>
+
+                <!-- 16:9 Cinema Billboard Image - Strict Top Alignment (Heads, Crowns, Skies & Titles 100% Intact) -->
+                <img src="${item.imageUrl || '/images/hampi.jpg'}" class="spotlight-hero-img absolute inset-0 w-full h-full object-cover object-top filter brightness-[0.80] contrast-[1.05]" alt="${item.title}">
+                
+                <!-- Seamless Cinematic Gradients -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#07090f] via-[#07090f]/60 to-transparent pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#07090f]/90 via-[#07090f]/50 to-transparent max-w-3xl pointer-events-none"></div>
+                <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#07090f]/35 to-transparent pointer-events-none"></div>
                 
                 <!-- Bottom Radial Glow -->
                 <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-gold/10 blur-3xl pointer-events-none"></div>
 
                 <!-- Slide Content Information -->
-                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-10 md:p-16 z-20 max-w-3xl space-y-4">
+                <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 md:p-14 z-20 max-w-3xl space-y-3 sm:space-y-4">
                   
                   <!-- Category & Badges -->
                   <div class="flex items-center gap-2 flex-wrap">
@@ -725,7 +733,7 @@ class AppController {
                   </div>
 
                   <!-- Title -->
-                  <h1 class="text-2xl sm:text-4xl md:text-5xl font-black font-serif text-white leading-tight drop-shadow-2xl line-clamp-2">
+                  <h1 class="text-xl sm:text-3xl md:text-5xl font-black font-serif text-white leading-tight drop-shadow-2xl line-clamp-2">
                     ${item.title}
                   </h1>
 
@@ -735,21 +743,21 @@ class AppController {
                   </p>
 
                   <!-- Spotlight CTA Action Buttons -->
-                  <div class="flex items-center gap-3 pt-2 flex-wrap">
-                    <button class="spotlight-slide-play-btn px-6 sm:px-8 py-3.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-gold/30 hover:scale-105 flex items-center gap-2.5 cursor-pointer" data-id="${item.id}">
+                  <div class="flex items-center gap-2.5 sm:gap-3 pt-2 flex-wrap">
+                    <button class="spotlight-slide-play-btn px-5 sm:px-8 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-gold/30 hover:scale-105 flex items-center gap-2 cursor-pointer" data-id="${item.id}">
                       <span>${isLocked ? '🔒 Unlock VIP Stream' : (isAudio ? '🎙️ Listen Saga' : '▶ Start Streaming')}</span>
                     </button>
 
-                    <button class="spotlight-slide-preview-btn px-5 sm:px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all hover:scale-105 flex items-center gap-2 cursor-pointer backdrop-blur-md" data-id="${item.id}">
+                    <button class="spotlight-slide-preview-btn px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all hover:scale-105 flex items-center gap-2 cursor-pointer backdrop-blur-md" data-id="${item.id}">
                       <span>ℹ️ Synopsis &amp; Chapters</span>
                     </button>
 
-                    <button class="spotlight-slide-watchlist-btn w-11 h-11 rounded-full bg-black/60 border border-white/20 hover:border-gold text-white flex items-center justify-center text-base hover:scale-110 transition-all cursor-pointer backdrop-blur-md" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
+                    <button class="spotlight-slide-watchlist-btn w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/60 border border-white/20 hover:border-gold text-white flex items-center justify-center text-sm sm:text-base hover:scale-110 transition-all cursor-pointer backdrop-blur-md" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
                       ${isOnWatchlist ? '✓' : '＋'}
                     </button>
 
                     ${!this.isSubscribed ? `
-                      <button onclick="window.appInstance?.openPaymentModal ? window.appInstance.openPaymentModal('trial') : null" class="hidden sm:inline-flex px-4 py-3.5 rounded-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold font-mono transition-all hover:scale-105 items-center gap-1.5 cursor-pointer">
+                      <button onclick="window.appInstance?.openPaymentModal ? window.appInstance.openPaymentModal('trial') : null" class="hidden sm:inline-flex px-4 py-3 sm:py-3.5 rounded-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold font-mono transition-all hover:scale-105 items-center gap-1.5 cursor-pointer">
                         <span>⚡ Get Pass ₹29</span>
                       </button>
                     ` : ''}
@@ -762,19 +770,17 @@ class AppController {
         </div>
 
         <!-- Left Navigation Arrow (❮) -->
-        <button id="spotlight-prev-btn" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/50 hover:bg-gold hover:text-black text-white/80 flex items-center justify-center text-xl font-bold transition-all border border-white/20 hover:border-gold hover:scale-110 cursor-pointer backdrop-blur-md shadow-lg" title="Previous Slide">
+        <button id="spotlight-prev-btn" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-gold hover:text-black text-white/90 flex items-center justify-center text-sm sm:text-xl font-bold transition-all border border-white/20 hover:border-gold hover:scale-110 cursor-pointer backdrop-blur-md shadow-lg" title="Previous Slide">
           ❮
         </button>
 
         <!-- Right Navigation Arrow (❯) -->
-        <button id="spotlight-next-btn" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/50 hover:bg-gold hover:text-black text-white/80 flex items-center justify-center text-xl font-bold transition-all border border-white/20 hover:border-gold hover:scale-110 cursor-pointer backdrop-blur-md shadow-lg" title="Next Slide">
+        <button id="spotlight-next-btn" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-gold hover:text-black text-white/90 flex items-center justify-center text-sm sm:text-xl font-bold transition-all border border-white/20 hover:border-gold hover:scale-110 cursor-pointer backdrop-blur-md shadow-lg" title="Next Slide">
           ❯
         </button>
 
-        <!-- Bottom Carousel Indicators (Luxury Badges) -->
-        
         <!-- Top-Right Minimalist Slide Counter (Mobile & Tablet Friendly) -->
-        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 z-30 flex items-center gap-1.5 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30 text-gold font-mono text-[11px] font-bold shadow-lg">
+        <div class="absolute top-3 right-3 sm:top-5 sm:right-6 z-30 flex items-center gap-1.5 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30 text-gold font-mono text-[10px] sm:text-[11px] font-bold shadow-lg">
           <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
           <span id="spotlight-slide-counter">${this.spotlightIndex + 1} / ${featuredList.length}</span>
         </div>
@@ -802,9 +808,12 @@ class AppController {
         if (i === targetIdx) {
           s.className = "spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out opacity-100 z-10 scale-100";
         } else {
-          s.className = "spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out opacity-0 z-0 pointer-events-none scale-105";
+          s.className = "spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out opacity-0 z-0 pointer-events-none scale-102";
         }
       });
+
+      const counter = spotlight.querySelector('#spotlight-slide-counter');
+      if (counter) counter.textContent = `${targetIdx + 1} / ${featuredList.length}`;
 
       const pills = spotlight.querySelectorAll('.spotlight-indicator-pill');
       pills.forEach((p, i) => {
@@ -834,6 +843,36 @@ class AppController {
         goToSlide(this.spotlightIndex + 1);
         restartAutoPlay();
       };
+    }
+
+    // Mobile Touch Gesture Support (Swipe Left / Right like Netflix)
+    const carouselWrapper = spotlight.querySelector('#spotlight-carousel-wrapper');
+    if (carouselWrapper) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      carouselWrapper.addEventListener('touchstart', (e) => {
+        if (e.changedTouches && e.changedTouches[0]) {
+          touchStartX = e.changedTouches[0].clientX;
+          touchStartY = e.changedTouches[0].clientY;
+        }
+      }, { passive: true });
+
+      carouselWrapper.addEventListener('touchend', (e) => {
+        if (e.changedTouches && e.changedTouches[0]) {
+          const touchEndX = e.changedTouches[0].clientX;
+          const touchEndY = e.changedTouches[0].clientY;
+          const diffX = touchStartX - touchEndX;
+          const diffY = touchStartY - touchEndY;
+          if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+            if (diffX > 0) {
+              goToSlide(this.spotlightIndex + 1);
+            } else {
+              goToSlide(this.spotlightIndex - 1);
+            }
+            restartAutoPlay();
+          }
+        }
+      }, { passive: true });
     }
 
     // Bind Indicator Pills
@@ -7243,7 +7282,7 @@ class AppController {
       return `
         <div class="top10-card-wrapper flex items-end">
           <div class="top10-rank-num">${idx + 1}</div>
-          <div class="content-card w-[150px] xs:w-[175px] sm:w-[210px] md:w-[240px] flex-shrink-0 rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/60 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/15" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
+          <div class="content-card w-[170px] xs:w-[195px] sm:w-[220px] md:w-[245px] flex-shrink-0 rounded-2xl overflow-hidden bg-[#0e1017] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/60 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/15" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
             
             <!-- Top Badges -->
             <div class="absolute top-2.5 right-2.5 z-20 flex items-center gap-1.5">

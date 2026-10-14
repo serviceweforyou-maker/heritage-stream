@@ -132,21 +132,28 @@ header#main-header {
 }
 
 /* =============================================
-   CINEMA-GRADE HERO SPOTLIGHT SLIDER (Perfect Pro Fitting)
+   CINEMA-GRADE HERO SPOTLIGHT SLIDER (Flawless Fitting - No Top Cut)
    ============================================= */
 #hero-spotlight {
   position: relative;
   width: 100%;
-  height: clamp(620px, 82vh, 880px);
-  min-height: 580px;
-  background: #07080c;
+  height: clamp(540px, 76vh, 800px);
+  min-height: 520px;
+  background: #07090f;
   overflow: hidden;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   #hero-spotlight {
-    height: clamp(560px, 78vh, 680px);
-    min-height: 530px;
+    height: clamp(480px, 68vh, 560px);
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-spotlight {
+    height: clamp(430px, 62vh, 500px);
+    min-height: 420px;
   }
 }
 
@@ -155,17 +162,19 @@ header#main-header {
   inset: 0;
   width: 100%;
   height: 100%;
+  transform-origin: center top !important;
   will-change: opacity, transform;
-  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.spotlight-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
+.spotlight-slide img,
+.spotlight-hero-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important; /* CRITICAL: Anchors directly to top so deity crowns, heads, titles are 100% visible */
+  transform-origin: center top !important;
   will-change: transform;
-  transition: transform 7.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Spotlight Navigation Glass Buttons */
@@ -1190,3 +1199,54 @@ body.modal-open .floating-btn-group {
     pointer-events: none;
   }
 }
+
+/* ── 🌟 CINEMATIC HERO SPOTLIGHT CAROUSEL & ZERO TOP-CUT FRAMING (v141.0) ── */
+#hero-spotlight {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #07090f;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  contain: paint;
+}
+
+#spotlight-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #07090f;
+  /* Pro responsive viewport clamp tuned so 16:9 artwork fits without extreme top/bottom crop */
+  height: clamp(440px, 64vh, 520px);
+}
+
+@media (min-width: 640px) {
+  #spotlight-carousel-wrapper {
+    height: clamp(500px, 68vh, 580px);
+  }
+}
+
+@media (min-width: 768px) {
+  #spotlight-carousel-wrapper {
+    height: clamp(540px, 72vh, 650px);
+  }
+}
+
+@media (min-width: 1024px) {
+  #spotlight-carousel-wrapper {
+    height: clamp(580px, 76vh, 720px);
+  }
+}
+
+/* Strict top-alignment & zero distortion for billboard hero images */
+.spotlight-slide {
+  transform-origin: center top !important;
+}
+
+.spotlight-slide img,
+.spotlight-hero-img {
+  object-fit: cover !important;
+  object-position: center top !important;
+  transform-origin: center top !important;
+  will-change: transform, opacity;
+}
+
