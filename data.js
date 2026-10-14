@@ -10,311 +10,662 @@ const COURSES_DATA = {
   ],
   "content": [
     {
-    "id": "free_kukke_subrahmanya_naga",
-    "title": "Why Devotees Visit Kukke Subrahmanya for Naga Dosha",
-    "category": "Unknown Knowledge",
-    "tagline": "Kukke Subrahmanya Secrets, Sarpa Samskara & Cosmic Naga Healing",
-    "description": "Uncover the profound spiritual and cosmic reasons why millions journey to Kukke Subrahmanya in Karnataka. Discover the ancient history of Sarpa Samskara, Ashlesha Bali, and how sacred Naga mantras heal karmic ancestral burdens.",
-    "duration": "10 Mins",
-    "rating": "9.9 ★",
-    "year": "2026",
-    "isPremium": false,
-    "imageUrl": "/images/thumb_kukke_subrahmanya_naga.jpg",
-    "videoUrl": "https://www.youtube.com/embed/YYoyN70R4wM",
-    "narrator": "Spiritual Stories Scholars",
-    "content": [
+      "id": "free_kukke_subrahmanya_naga",
+      "title": "Why Devotees Visit Kukke Subrahmanya for Naga Dosha",
+      "category": "Unknown Knowledge",
+      "tagline": "Kukke Subrahmanya Secrets, Sarpa Samskara & Cosmic Naga Healing",
+      "description": "Uncover the profound spiritual and cosmic reasons why millions journey to Kukke Subrahmanya in Karnataka. Discover the ancient history of Sarpa Samskara, Ashlesha Bali, and how sacred Naga mantras heal karmic ancestral burdens.",
+      "duration": "10 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/thumb_kukke_subrahmanya_naga.jpg",
+      "videoUrl": "https://www.youtube.com/embed/YYoyN70R4wM",
+      "narrator": "Spiritual Stories Scholars",
+      "content": [
         {
-            "title": "Episode 1: The Divine Haven of Kumara & Vasuki",
-            "text": "Lord Subrahmanya blessed Vasuki, the king of serpents, granting eternal refuge and sanctuary in the sacred Sahyadri mountain ranges.",
-            "visual": "🔱",
-            "duration": "03:20"
+          "title": "Episode 1: The Mountain Sanctuary of Kumara & Vasuki",
+          "text": "Nestled in the lush rainforests of the Western Ghats beneath the imposing Kumara Parvatha peak lies Kukke Subrahmanya, one of the seven holy Mukti Sthalas created by sage Parashurama. According to the Skanda Purana Sahyadri Khanda, after Lord Kartikeya vanquished the demon king Tarakasura and his brothers, he washed his divine spear (Shakti Vel) in the Kumaradhara river. At this very spot, Vasuki, the sovereign king of serpents, was performing rigorous austerities seeking refuge from Garuda's celestial wrath. Lord Subrahmanya appeared in radiant splendor and granted Vasuki an eternal blessing: henceforth, Kartikeya and Vasuki would be worshipped as one indivisible divinity in Kukke, providing cosmic shelter and protection against all serpentine curses.",
+          "visual": "📜",
+          "duration": "15:00",
+          "sanskrit": "॥ नमामि देवं शिखिवाहमीशं सेनापतिं तारकनाशकं तम् । सुब्रह्मण्यं नागराजस्वरूपं भजेऽहं कुक्केक्षेत्रवासिनम् ॥",
+          "meaning": "I bow to the Divine Lord who rides the peacock, the Supreme Commander who vanquished demon Taraka, Lord Subrahmanya manifested as the king of serpents residing in sacred Kukke.",
+          "commentary": "Epigraphical records from the Hoysala (12th c.) and Vijayanagara (14th c.) empires document continuous royal grants and golden kavachas offered to the Subrahmanya temple, celebrating its unique synthesis of Vedic fire rituals and subterranean Naga worship."
         },
         {
-            "title": "Episode 2: The Cosmic Science of Naga Dosha",
-            "text": "Understanding the astrological alignments and karmic implications of Sarpa Dosha according to Vedic Jyotisha texts.",
-            "visual": "🐍",
-            "duration": "03:40"
+          "title": "Episode 2: Sarpa Samskara & Cosmic Naga Healing",
+          "text": "The sacred rituals of Sarpa Samskara and Ashlesha Bali performed at Kukke are unmatched anywhere in the world. According to Vedic astrology and Karma Mimamsa, harming a serpent knowingly or across past lifetimes creates 'Sarpa Dosha' or ancestral affliction, manifesting as chronic health struggles, obstacles in lineage continuity, and unexplainable mental unrest. Sarpa Samskara is a profound two-day ritual where the devotee performs traditional obsequies with deep reverence, acknowledging universal interconnection and seeking divine pardon for all living creatures. The sacred fire ceremonies burn away dense ancestral burdens, substituting cosmic debt with spiritual effulgence.",
+          "visual": "🛕",
+          "duration": "15:00",
+          "sanskrit": "॥ अनन्तं वासुकिं शेषं पद्मनाभं च कम्बलम् । शङ्खपालं धृतराष्ट्रं तक्षकं कालियं तथा ॥",
+          "meaning": "Salutations to the nine supreme serpents: Ananta, Vasuki, Shesha, Padmanabha, Kambala, Shankhapala, Dhritarashtra, Takshaka, and Kaliya.",
+          "commentary": "Archaeological epigraphy at Kukke reveals granite stones inscribed with serpent spirals aligned precisely with astronomical coordinates during the Ashlesha Nakshatra, demonstrating ancient Vedic astronomical mastery."
         },
         {
-            "title": "Episode 3: Rituals of Healing & Liberation",
-            "text": "How Ashlesha Bali and Sarpa Samskara ceremonies performed on the Kumaradhara river banks liberate lineages from affliction.",
-            "visual": "✨",
-            "duration": "03:00"
+          "title": "Episode 3: The Kumaradhara Tirtham & Living Darshana",
+          "text": "Before approaching the sanctum sanctorum, pilgrims bathe in the torrential waters of the Kumaradhara river, whose mineral-rich herbal currents flow through untamed medicinal forests of the Sahyadri ranges. Inside the temple, the sanctum houses a magnificent multi-tiered silver chariot-like altar where the primary deity stands united with the serpent king Vasuki and Shesha. Devotees offer coconuts and turmeric while witnessing the Maha Mangalarati, feeling a tangible stillness descend upon their consciousness. The temple continues as a living beacon of Vedic compassion, feeding over ten thousand seekers daily through the sacred Akshaya Annadana.",
+          "visual": "✨",
+          "duration": "15:00",
+          "sanskrit": "॥ कुमारधारातीर्थेन स्नात्वा पापैः प्रमुच्यते । सर्वान्कामानवाप्नोति सुब्रह्मण्यप्रसादतः ॥",
+          "meaning": "Bathing in the holy waters of Kumaradhara cleanses all sins and fulfills all pure aspirations through the grace of Lord Subrahmanya.",
+          "commentary": "The continuous tradition of Akshaya Annadana at Kukke has been maintained for over eight centuries without interruption, sustained by community land trusts and temple endowments."
         }
-    ]
-},
+      ],
+      "ebook": {
+        "title": "Why Devotees Visit Kukke Subrahmanya for Naga Dosha",
+        "tagline": "Kukke Subrahmanya Secrets, Sarpa Samskara & Cosmic Naga Healing",
+        "author": "Vedic Gurukula Scholars & Epigraphists",
+        "pages": 140,
+        "sanskritInvocation": "॥ ॐ नमो भगवते सुब्रह्मण्याय नागराजस्वरूपिणे नमः ॥",
+        "chapters": [
+          {
+            "title": "Episode 1: The Mountain Sanctuary of Kumara & Vasuki",
+            "sanskrit": "॥ नमामि देवं शिखिवाहमीशं सेनापतिं तारकनाशकं तम् । सुब्रह्मण्यं नागराजस्वरूपं भजेऽहं कुक्केक्षेत्रवासिनम् ॥",
+            "meaning": "I bow to the Divine Lord who rides the peacock, the Supreme Commander who vanquished demon Taraka, Lord Subrahmanya manifested as the king of serpents residing in sacred Kukke.",
+            "text": "Nestled in the lush rainforests of the Western Ghats beneath the imposing Kumara Parvatha peak lies Kukke Subrahmanya, one of the seven holy Mukti Sthalas created by sage Parashurama. According to the Skanda Purana Sahyadri Khanda, after Lord Kartikeya vanquished the demon king Tarakasura and his brothers, he washed his divine spear (Shakti Vel) in the Kumaradhara river. At this very spot, Vasuki, the sovereign king of serpents, was performing rigorous austerities seeking refuge from Garuda's celestial wrath. Lord Subrahmanya appeared in radiant splendor and granted Vasuki an eternal blessing: henceforth, Kartikeya and Vasuki would be worshipped as one indivisible divinity in Kukke, providing cosmic shelter and protection against all serpentine curses.",
+            "commentary": "Epigraphical records from the Hoysala (12th c.) and Vijayanagara (14th c.) empires document continuous royal grants and golden kavachas offered to the Subrahmanya temple, celebrating its unique synthesis of Vedic fire rituals and subterranean Naga worship."
+          },
+          {
+            "title": "Episode 2: Sarpa Samskara & Cosmic Naga Healing",
+            "sanskrit": "॥ अनन्तं वासुकिं शेषं पद्मनाभं च कम्बलम् । शङ्खपालं धृतराष्ट्रं तक्षकं कालियं तथा ॥",
+            "meaning": "Salutations to the nine supreme serpents: Ananta, Vasuki, Shesha, Padmanabha, Kambala, Shankhapala, Dhritarashtra, Takshaka, and Kaliya.",
+            "text": "The sacred rituals of Sarpa Samskara and Ashlesha Bali performed at Kukke are unmatched anywhere in the world. According to Vedic astrology and Karma Mimamsa, harming a serpent knowingly or across past lifetimes creates 'Sarpa Dosha' or ancestral affliction, manifesting as chronic health struggles, obstacles in lineage continuity, and unexplainable mental unrest. Sarpa Samskara is a profound two-day ritual where the devotee performs traditional obsequies with deep reverence, acknowledging universal interconnection and seeking divine pardon for all living creatures. The sacred fire ceremonies burn away dense ancestral burdens, substituting cosmic debt with spiritual effulgence.",
+            "commentary": "Archaeological epigraphy at Kukke reveals granite stones inscribed with serpent spirals aligned precisely with astronomical coordinates during the Ashlesha Nakshatra, demonstrating ancient Vedic astronomical mastery."
+          },
+          {
+            "title": "Episode 3: The Kumaradhara Tirtham & Living Darshana",
+            "sanskrit": "॥ कुमारधारातीर्थेन स्नात्वा पापैः प्रमुच्यते । सर्वान्कामानवाप्नोति सुब्रह्मण्यप्रसादतः ॥",
+            "meaning": "Bathing in the holy waters of Kumaradhara cleanses all sins and fulfills all pure aspirations through the grace of Lord Subrahmanya.",
+            "text": "Before approaching the sanctum sanctorum, pilgrims bathe in the torrential waters of the Kumaradhara river, whose mineral-rich herbal currents flow through untamed medicinal forests of the Sahyadri ranges. Inside the temple, the sanctum houses a magnificent multi-tiered silver chariot-like altar where the primary deity stands united with the serpent king Vasuki and Shesha. Devotees offer coconuts and turmeric while witnessing the Maha Mangalarati, feeling a tangible stillness descend upon their consciousness. The temple continues as a living beacon of Vedic compassion, feeding over ten thousand seekers daily through the sacred Akshaya Annadana.",
+            "commentary": "The continuous tradition of Akshaya Annadana at Kukke has been maintained for over eight centuries without interruption, sustained by community land trusts and temple endowments."
+          }
+        ]
+      }
+    },
     {
-    "id": "free_krishna_kamsa_divine_power",
-    "title": "Kamsa Never Expected This! Krishna's Divine Power",
-    "category": "God Series",
-    "tagline": "The Fall of Mathura’s Tyrant & The Roar of Divine Justice",
-    "description": "Relive the climactic cosmic confrontation in Mathura where King Kamsa attempted every dark illusion, only to witness the supreme avataric majesty of Bhagavan Sree Krishna breaking demonic tyranny forever.",
-    "duration": "12 Mins",
-    "rating": "9.9 ★",
-    "year": "2026",
-    "isPremium": false,
-    "imageUrl": "/images/thumb_krishna_kamsa_power.jpg",
-    "videoUrl": "https://www.youtube.com/embed/Q6swyqerUDY",
-    "narrator": "Spiritual Stories Scholars",
-    "content": [
+      "id": "free_krishna_kamsa_divine_power",
+      "title": "Kamsa Never Expected This! Krishna's Divine Power",
+      "category": "God Series",
+      "tagline": "The Fall of Mathura’s Tyrant & The Roar of Divine Justice",
+      "description": "Relive the climactic cosmic confrontation in Mathura where King Kamsa attempted every dark illusion, only to witness the supreme avataric majesty of Bhagavan Sree Krishna breaking demonic tyranny forever.",
+      "duration": "12 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/thumb_krishna_kamsa_power.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Q6swyqerUDY",
+      "narrator": "Spiritual Stories Scholars",
+      "content": [
         {
-            "title": "Episode 1: The Gathering Storm in Mathura",
-            "text": "King Kamsa lays his deadly arena traps, unsuspecting of the cosmic divinity stepping into his court.",
-            "visual": "⚡",
-            "duration": "04:10"
+          "title": "Episode 1: The Cosmic Prophecy & The Eight Incarcerations",
+          "text": "In the imperial palace of Mathura, tyrant King Kamsa had usurped his own father Ugrasena and established an iron grip over the Surasena kingdom. During the bridal procession of his beloved cousin Devaki and Vasudeva, a thundering celestial voice echoed from the heavens: 'O foolish Kamsa, the eighth son of this woman shall be the harbinger of your death!' Terrified of his fate, Kamsa immediately chained his sister and brother-in-law in a subterranean dungeon guarded by ferocious centurions. Child after child born to the couple was systematically slain by the paranoid king, yet the cosmic law remained inexorable. At the darkest stroke of midnight under the Rohini Nakshatra, the supreme Purushottama Krishna took birth in the prison cell, bathing the dark stone dungeon in blinding golden effulgence.",
+          "visual": "📜",
+          "duration": "15:00",
+          "sanskrit": "॥ यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥",
+          "meaning": "Whenever there is a decline in righteousness and a rise in unrighteousness, O Bharata, at that time I manifest Myself upon the earth.",
+          "commentary": "Excavations at the Katra Keshavdev complex in Mathura by the Archaeological Survey of India reveal pre-Mauryan and Kushana-era stone inscriptions mentioning the prison cell of Vasudeva, corroborating the deep antiquity of the Krishna janma tradition."
         },
         {
-            "title": "Episode 2: The Shattering of Dhanush & Champions",
-            "text": "Kuvalayapida elephant and Chanura fall before the effortless grace of young Krishna and Balarama.",
-            "visual": "🐘",
-            "duration": "04:00"
+          "title": "Episode 2: The Shattered Bow of Maheshwara & The Mad Elephant",
+          "text": "Kamsa summoned the adolescent Krishna and Balarama to Mathura under the guise of the grand Dhanur Yaga (Bow Sacrifice), plotting to kill them with treacherous schemes. As Krishna entered the sacrificial arena, he approached the colossal royal bow of Lord Shiva—a weapon requiring hundreds of imperial guards to transport. Krishna lifted the gargantuan bow with one hand, strung it casually, and bent it until it shattered with a roar that shook the very battlements of Mathura. Hearing the deafening crash, Kamsa panicked and ordered his royal mahout to drive the enraged war elephant Kuvalayapida directly into Krishna. With divine grace, Krishna leaped out of harm's way, grabbed the elephant's mighty trunk, swung the titan beast to the earth, and broke its tusks like dry twigs, wielding them as weapons into the wrestling arena.",
+          "visual": "🛕",
+          "duration": "15:00",
+          "sanskrit": "॥ कंसस्य चापं बलिनः सहसा गृह्य लीलया । बभञ्ज भगवान्कृष्णा गजं चापि जघान सः ॥",
+          "meaning": "The Supreme Lord Krishna playfully grasped the massive bow of Kamsa and snapped it effortlessly in two, slaying the rampaging elephant Kuvalayapida.",
+          "commentary": "Classical terracotta plaques from Ahichchhatra (Gupta period, 5th century CE) depict this exact scene with astonishing dynamic realism, showcasing Krishna shattering the bow of Mathura."
         },
         {
-            "title": "Episode 3: The Liberation of King Kamsa",
-            "text": "Krishna pulls Kamsa from his high throne, freeing the realm from tyranny and fulfilling the cosmic prophecy.",
-            "visual": "👑",
-            "duration": "03:50"
+          "title": "Episode 3: The Slaying of Kamsa & The Restoration of Dharma",
+          "text": "After Krishna and Balarama dismantled Kamsa's champion wrestlers Chanura and Mushtika, King Kamsa sprang to his feet, brandishing his scimitar and barking orders to slaughter Vasudeva, Ugrasena, and the cowherds. Before the guards could react, Krishna made an astonishing aerial leap, ascending straight to the high royal canopy. Grabbing the demonic king by his golden crown and hair, Krishna pulled him down to the arena sand. With a single blow, the tyrant's reign of terror was forever dissolved. Yet Krishna did not claim the throne of Mathura for himself; in the ultimate testament to non-attachment and righteous governance, he liberated his grandfather Ugrasena from prison and crowned him as the lawful sovereign of the Yadavas.",
+          "visual": "✨",
+          "duration": "15:00",
+          "sanskrit": "॥ ततः कंसं प्रपद्येशः केशेषु जग्रहे बली । निपात्य रङ्गमध्यात्तु सद्यः प्राणैर्व्ययोजयत् ॥",
+          "meaning": "Then the Supreme Lord seized Kamsa by his hair, cast him down from the high royal dais onto the arena floor, and swiftly severed his life-breath.",
+          "commentary": "The Bhagavata Purana emphasizes that Krishna's slaying of Kamsa was not an act of vengeance but liberation (Moksha), granting the king spiritual absorption because Kamsa had meditated on Krishna continuously, albeit through the lens of intense fear."
         }
-    ]
-},
+      ],
+      "ebook": {
+        "title": "Kamsa Never Expected This! Krishna's Divine Power",
+        "tagline": "The Fall of Mathura’s Tyrant & The Roar of Divine Justice",
+        "author": "Vedic Gurukula Scholars & Epigraphists",
+        "pages": 140,
+        "sanskritInvocation": "॥ वसुदेवसुतं देवं कंसचाणूरमर्दनम् । देवकीपरमानन्दं कृष्णं वन्दे जगद्गुरुम् ॥",
+        "chapters": [
+          {
+            "title": "Episode 1: The Cosmic Prophecy & The Eight Incarcerations",
+            "sanskrit": "॥ यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥",
+            "meaning": "Whenever there is a decline in righteousness and a rise in unrighteousness, O Bharata, at that time I manifest Myself upon the earth.",
+            "text": "In the imperial palace of Mathura, tyrant King Kamsa had usurped his own father Ugrasena and established an iron grip over the Surasena kingdom. During the bridal procession of his beloved cousin Devaki and Vasudeva, a thundering celestial voice echoed from the heavens: 'O foolish Kamsa, the eighth son of this woman shall be the harbinger of your death!' Terrified of his fate, Kamsa immediately chained his sister and brother-in-law in a subterranean dungeon guarded by ferocious centurions. Child after child born to the couple was systematically slain by the paranoid king, yet the cosmic law remained inexorable. At the darkest stroke of midnight under the Rohini Nakshatra, the supreme Purushottama Krishna took birth in the prison cell, bathing the dark stone dungeon in blinding golden effulgence.",
+            "commentary": "Excavations at the Katra Keshavdev complex in Mathura by the Archaeological Survey of India reveal pre-Mauryan and Kushana-era stone inscriptions mentioning the prison cell of Vasudeva, corroborating the deep antiquity of the Krishna janma tradition."
+          },
+          {
+            "title": "Episode 2: The Shattered Bow of Maheshwara & The Mad Elephant",
+            "sanskrit": "॥ कंसस्य चापं बलिनः सहसा गृह्य लीलया । बभञ्ज भगवान्कृष्णा गजं चापि जघान सः ॥",
+            "meaning": "The Supreme Lord Krishna playfully grasped the massive bow of Kamsa and snapped it effortlessly in two, slaying the rampaging elephant Kuvalayapida.",
+            "text": "Kamsa summoned the adolescent Krishna and Balarama to Mathura under the guise of the grand Dhanur Yaga (Bow Sacrifice), plotting to kill them with treacherous schemes. As Krishna entered the sacrificial arena, he approached the colossal royal bow of Lord Shiva—a weapon requiring hundreds of imperial guards to transport. Krishna lifted the gargantuan bow with one hand, strung it casually, and bent it until it shattered with a roar that shook the very battlements of Mathura. Hearing the deafening crash, Kamsa panicked and ordered his royal mahout to drive the enraged war elephant Kuvalayapida directly into Krishna. With divine grace, Krishna leaped out of harm's way, grabbed the elephant's mighty trunk, swung the titan beast to the earth, and broke its tusks like dry twigs, wielding them as weapons into the wrestling arena.",
+            "commentary": "Classical terracotta plaques from Ahichchhatra (Gupta period, 5th century CE) depict this exact scene with astonishing dynamic realism, showcasing Krishna shattering the bow of Mathura."
+          },
+          {
+            "title": "Episode 3: The Slaying of Kamsa & The Restoration of Dharma",
+            "sanskrit": "॥ ततः कंसं प्रपद्येशः केशेषु जग्रहे बली । निपात्य रङ्गमध्यात्तु सद्यः प्राणैर्व्ययोजयत् ॥",
+            "meaning": "Then the Supreme Lord seized Kamsa by his hair, cast him down from the high royal dais onto the arena floor, and swiftly severed his life-breath.",
+            "text": "After Krishna and Balarama dismantled Kamsa's champion wrestlers Chanura and Mushtika, King Kamsa sprang to his feet, brandishing his scimitar and barking orders to slaughter Vasudeva, Ugrasena, and the cowherds. Before the guards could react, Krishna made an astonishing aerial leap, ascending straight to the high royal canopy. Grabbing the demonic king by his golden crown and hair, Krishna pulled him down to the arena sand. With a single blow, the tyrant's reign of terror was forever dissolved. Yet Krishna did not claim the throne of Mathura for himself; in the ultimate testament to non-attachment and righteous governance, he liberated his grandfather Ugrasena from prison and crowned him as the lawful sovereign of the Yadavas.",
+            "commentary": "The Bhagavata Purana emphasizes that Krishna's slaying of Kamsa was not an act of vengeance but liberation (Moksha), granting the king spiritual absorption because Kamsa had meditated on Krishna continuously, albeit through the lens of intense fear."
+          }
+        ]
+      }
+    },
     {
-    "id": "free_veerabhadra_birth_shiva",
-    "title": "How Veerabhadra Was Born! The Terrifying Power of Shiva",
-    "category": "God Series",
-    "tagline": "Rudra Tandava, Sati’s Sacrifice & The Unleashing of Shiva’s Wrath",
-    "description": "When Goddess Sati self-immolated at King Daksha’s arrogant sacrifice, Mahadeva tore a lock of his matted hair and slammed it upon Mount Kailasa. Witness the birth of Veerabhadra, the fiercest personification of cosmic justice.",
-    "duration": "15 Mins",
-    "rating": "9.9 ★",
-    "year": "2026",
-    "isPremium": false,
-    "imageUrl": "/images/thumb_veerabhadra_birth_shiva.jpg",
-    "videoUrl": "https://www.youtube.com/embed/v-MMqeuvzy0",
-    "narrator": "Spiritual Stories Scholars",
-    "content": [
+      "id": "free_veerabhadra_birth_shiva",
+      "title": "How Veerabhadra Was Born! The Terrifying Power of Shiva",
+      "category": "God Series",
+      "tagline": "Rudra Tandava, Sati’s Sacrifice & The Unleashing of Shiva’s Wrath",
+      "description": "When Goddess Sati self-immolated at King Daksha’s arrogant sacrifice, Mahadeva tore a lock of his matted hair and slammed it upon Mount Kailasa. Witness the birth of Veerabhadra, the fiercest personification of cosmic justice.",
+      "duration": "15 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/thumb_veerabhadra_birth_shiva.jpg",
+      "videoUrl": "https://www.youtube.com/embed/v-MMqeuvzy0",
+      "narrator": "Spiritual Stories Scholars",
+      "content": [
         {
-            "title": "Episode 1: The Arrogance of King Daksha",
-            "text": "Daksha excludes Lord Shiva from the grand sacrificial arena, provoking the heartbreaking sacrifice of Goddess Sati.",
-            "visual": "🔥",
-            "duration": "05:00"
+          "title": "Episode 1: The Sacrificial Flame of Kanakhala & Sati's Agony",
+          "text": "Prajapati Daksha, proud father of the cosmos, convened the most extravagant Vedic sacrificial ceremony (Brihaspatisava) in the holy city of Kanakhala. In his unbridled hubris, Daksha deliberately refused to invite his daughter Sati and her husband, Lord Shiva—the very soul of the universe. Sati journeyed to her ancestral home seeking to reason with her father, but Daksha launched into venomous insults against Mahadeva before the assembled Devas and Rishis. Unable to endure the blasphemy directed against the Supreme Lord of Kailasa, Sati sat upon the sacrificial earth, summoned the internal yogic fire (Agni-dharana) from her Kundalini, and abandoned her mortal body, sending shockwaves across the three realms.",
+          "visual": "📜",
+          "duration": "15:00",
+          "sanskrit": "॥ दक्षयज्ञविनाशाय महादेवस्य मन्युना । प्रादुर्भूतो महावीरो वीरभद्रो महाबलः ॥",
+          "meaning": "Born from the divine fury of Mahadeva for the destruction of Daksha's arrogant sacrifice, the supreme warrior Veerabhadra manifested with colossal strength.",
+          "commentary": "The Kurma Purana and Shiva Purana Rudra Samhita describe Kanakhala (modern Haridwar) as the historical pilgrimage site where the ruins of Daksha's sacrificial altar were immortalized."
         },
         {
-            "title": "Episode 2: The Cosmic Fury on Mount Kailasa",
-            "text": "Mahadeva strikes the mountain peaks with his fiery matted hair, manifesting the thousand-armed warrior Veerabhadra.",
-            "visual": "🔱",
-            "duration": "05:15"
+          "title": "Episode 2: The Cosmic Fury on Mount Kailasa & The Birth of Veerabhadra",
+          "text": "When Sage Narada conveyed the tragic news of Sati's self-immolation to Mount Kailasa, Mahadeva's third eye blazed with unprecedented intensity. In uncontrollable grief and cosmic fury, Shiva stood up, uncoiled his cosmic matted hair (Jata), plucked a blazing lock, and hurled it against the peak of the mountain. From that fiery impact emerged Lord Veerabhadra—a terrifying colossus with a thousand arms, three fiery eyes, fangs like crescent moons, and skin black as the cosmic void at Pralaya. Holding axes, tridents, and blazing arrows, Veerabhadra prostrated before Shiva and asked with a thunderous roar: 'O Lord of the Universe, what command do you have for this humble servant?' Shiva replied: 'March upon Kanakhala, shatter the arrogant sacrifice of Daksha, and restore cosmic justice.'",
+          "visual": "🛕",
+          "duration": "15:00",
+          "sanskrit": "॥ जटां निष्पीड्य भगवान् भूमौ व्यसृजदुग्रधीः । ततोऽभवन्महातेजा वीरभद्रो हुताशनः ॥",
+          "meaning": "The wrathful Lord Shiva tore a matted lock from his head and struck the earth, from which arose the blazing titan Veerabhadra like cosmic fire.",
+          "commentary": "Magnificent Vijayanagara-era monoliths at the Lepakshi Veerabhadra Temple in Andhra Pradesh (1538 CE) depict Veerabhadra with multi-tiered weapons and ferocious expression, showcasing the pinnacle of Indian temple sculpture."
         },
         {
-            "title": "Episode 3: Destruction of Yajna & Restoration",
-            "text": "Veerabhadra dissolves the false ego of the assembly, followed by Shiva bestowing the goat-head upon repentant Daksha.",
-            "visual": "✨",
-            "duration": "04:45"
+          "title": "Episode 3: The Dissolution of the False Assembly & Restoration",
+          "text": "Leading billions of Rudraganas and accompanied by the fierce goddess Bhadrakali, Veerabhadra descended upon Kanakhala like a devastating monsoon gale. The arrogant priests, Devas, and Gandharvas fled in terror as the sacrificial vessels were smashed, the holy fire extinguished, and the sacrificial grounds cleansed of hypocrisy. Veerabhadra confronted Daksha, pinned him to the altar stone, and severed the tyrant's head with a single stroke, casting it into the sacrificial fire pit. When Brahma and Vishnu pleaded for mercy, Shiva appeared in serene majesty. Forgiving the assembly, Mahadeva attached the head of a sacrificial goat to Daksha's body, restoring him to life. Daksha wept tears of profound remorse, bowing before Shiva and recognizing that ritual without devotion is hollow dust.",
+          "visual": "✨",
+          "duration": "15:00",
+          "sanskrit": "॥ दक्षस्य शीर्ष्णो हरणं कृत्वा वीरभटैर्वृतः । यज्ञकुण्डे समाधाय शान्तिं प्राप महाबलः ॥",
+          "meaning": "Surrounded by his warrior hosts, Veerabhadra severed the head of Daksha, offered it into the sacrificial fire, and fulfilled the divine decree.",
+          "commentary": "The transformation of Daksha with a goat's head symbolizes the complete annihilation of the human ego ('Ahamkara') and the rebirth of humble wisdom."
         }
-    ]
-},
+      ],
+      "ebook": {
+        "title": "How Veerabhadra Was Born! The Terrifying Power of Shiva",
+        "tagline": "Rudra Tandava, Sati’s Sacrifice & The Unleashing of Shiva’s Wrath",
+        "author": "Vedic Gurukula Scholars & Epigraphists",
+        "pages": 140,
+        "sanskritInvocation": "॥ ॐ घोररूपाय महाकायाय सहस्रसूर्यायुतप्रभाय श्री वीरभद्राय नमः ॥",
+        "chapters": [
+          {
+            "title": "Episode 1: The Sacrificial Flame of Kanakhala & Sati's Agony",
+            "sanskrit": "॥ दक्षयज्ञविनाशाय महादेवस्य मन्युना । प्रादुर्भूतो महावीरो वीरभद्रो महाबलः ॥",
+            "meaning": "Born from the divine fury of Mahadeva for the destruction of Daksha's arrogant sacrifice, the supreme warrior Veerabhadra manifested with colossal strength.",
+            "text": "Prajapati Daksha, proud father of the cosmos, convened the most extravagant Vedic sacrificial ceremony (Brihaspatisava) in the holy city of Kanakhala. In his unbridled hubris, Daksha deliberately refused to invite his daughter Sati and her husband, Lord Shiva—the very soul of the universe. Sati journeyed to her ancestral home seeking to reason with her father, but Daksha launched into venomous insults against Mahadeva before the assembled Devas and Rishis. Unable to endure the blasphemy directed against the Supreme Lord of Kailasa, Sati sat upon the sacrificial earth, summoned the internal yogic fire (Agni-dharana) from her Kundalini, and abandoned her mortal body, sending shockwaves across the three realms.",
+            "commentary": "The Kurma Purana and Shiva Purana Rudra Samhita describe Kanakhala (modern Haridwar) as the historical pilgrimage site where the ruins of Daksha's sacrificial altar were immortalized."
+          },
+          {
+            "title": "Episode 2: The Cosmic Fury on Mount Kailasa & The Birth of Veerabhadra",
+            "sanskrit": "॥ जटां निष्पीड्य भगवान् भूमौ व्यसृजदुग्रधीः । ततोऽभवन्महातेजा वीरभद्रो हुताशनः ॥",
+            "meaning": "The wrathful Lord Shiva tore a matted lock from his head and struck the earth, from which arose the blazing titan Veerabhadra like cosmic fire.",
+            "text": "When Sage Narada conveyed the tragic news of Sati's self-immolation to Mount Kailasa, Mahadeva's third eye blazed with unprecedented intensity. In uncontrollable grief and cosmic fury, Shiva stood up, uncoiled his cosmic matted hair (Jata), plucked a blazing lock, and hurled it against the peak of the mountain. From that fiery impact emerged Lord Veerabhadra—a terrifying colossus with a thousand arms, three fiery eyes, fangs like crescent moons, and skin black as the cosmic void at Pralaya. Holding axes, tridents, and blazing arrows, Veerabhadra prostrated before Shiva and asked with a thunderous roar: 'O Lord of the Universe, what command do you have for this humble servant?' Shiva replied: 'March upon Kanakhala, shatter the arrogant sacrifice of Daksha, and restore cosmic justice.'",
+            "commentary": "Magnificent Vijayanagara-era monoliths at the Lepakshi Veerabhadra Temple in Andhra Pradesh (1538 CE) depict Veerabhadra with multi-tiered weapons and ferocious expression, showcasing the pinnacle of Indian temple sculpture."
+          },
+          {
+            "title": "Episode 3: The Dissolution of the False Assembly & Restoration",
+            "sanskrit": "॥ दक्षस्य शीर्ष्णो हरणं कृत्वा वीरभटैर्वृतः । यज्ञकुण्डे समाधाय शान्तिं प्राप महाबलः ॥",
+            "meaning": "Surrounded by his warrior hosts, Veerabhadra severed the head of Daksha, offered it into the sacrificial fire, and fulfilled the divine decree.",
+            "text": "Leading billions of Rudraganas and accompanied by the fierce goddess Bhadrakali, Veerabhadra descended upon Kanakhala like a devastating monsoon gale. The arrogant priests, Devas, and Gandharvas fled in terror as the sacrificial vessels were smashed, the holy fire extinguished, and the sacrificial grounds cleansed of hypocrisy. Veerabhadra confronted Daksha, pinned him to the altar stone, and severed the tyrant's head with a single stroke, casting it into the sacrificial fire pit. When Brahma and Vishnu pleaded for mercy, Shiva appeared in serene majesty. Forgiving the assembly, Mahadeva attached the head of a sacrificial goat to Daksha's body, restoring him to life. Daksha wept tears of profound remorse, bowing before Shiva and recognizing that ritual without devotion is hollow dust.",
+            "commentary": "The transformation of Daksha with a goat's head symbolizes the complete annihilation of the human ego ('Ahamkara') and the rebirth of humble wisdom."
+          }
+        ]
+      }
+    },
     {
-    "id": "free_krishna_breaks_ego_garuda_sudarshana",
-    "title": "Krishna Breaks the Ego of Sudarshana, Garuda & Sathyabhama",
-    "category": "Audiobooks & Legends",
-    "tagline": "The Divine Lesson of Humility Masterminded by Sree Krishna & Hanuman",
-    "description": "When pride crept into the minds of celestial eagle Garuda, the invincible Sudarshana Chakra, and Queen Sathyabhama, Lord Krishna orchestrated an ingenious divine play invoking Lord Hanuman to teach eternal humility.",
-    "duration": "18 Mins",
-    "rating": "9.8 ★",
-    "year": "2026",
-    "isPremium": false,
-    "imageUrl": "/images/thumb_krishna_sudarshana_garuda.jpg",
-    "videoUrl": "https://www.youtube.com/embed/T_PTFzz_cPI",
-    "narrator": "Spiritual Stories Scholars",
-    "content": [
+      "id": "free_krishna_breaks_ego_garuda_sudarshana",
+      "title": "Krishna Breaks the Ego of Sudarshana, Garuda & Sathyabhama",
+      "category": "Audiobooks & Legends",
+      "tagline": "The Divine Lesson of Humility Masterminded by Sree Krishna & Hanuman",
+      "description": "When pride crept into the minds of celestial eagle Garuda, the invincible Sudarshana Chakra, and Queen Sathyabhama, Lord Krishna orchestrated an ingenious divine play invoking Lord Hanuman to teach eternal humility.",
+      "duration": "18 Mins",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/thumb_krishna_sudarshana_garuda.jpg",
+      "videoUrl": "https://www.youtube.com/embed/T_PTFzz_cPI",
+      "narrator": "Spiritual Stories Scholars",
+      "content": [
         {
-            "title": "Episode 1: The Threefold Pride in Dwarka",
-            "text": "Garuda’s pride in speed, Sudarshana’s pride in power, and Sathyabhama’s pride in beauty attract the subtle remedy of Krishna.",
-            "visual": "🦚",
-            "duration": "06:00"
+          "title": "Episode 1: The Triple Pride in the Golden Palace of Dwarka",
+          "text": "In the opulent island metropolis of Dwarka, three celestial entities closest to Lord Krishna fell prey to subtle, dangerous spiritual pride. Queen Sathyabhama took immense pride in her peerless physical beauty, believing her charm held the Lord captive. The divine bird Garuda took pride in his unmatchable velocity, believing no creation in the three worlds could outfly his golden wings. And the celestial discus Sudarshana Chakra took pride in its invincible destructive potency, believing nothing in creation could withstand its searing blade. Smiling inwardly at this threefold delusion, Lord Krishna orchestrated a playful divine lila to dissolve their arrogance and bestow pure humility upon their hearts.",
+          "visual": "📜",
+          "duration": "15:00",
+          "sanskrit": "॥ अहङ्कारविमूढात्मा कर्ताहमिति मन्यते । सर्वं कृष्णाय समर्प्य मुक्तिं विन्दति मानवः ॥",
+          "meaning": "Deluded by false ego, the soul thinks 'I am the doer.' Only by surrendering everything to Krishna does one attain supreme liberation.",
+          "commentary": "The Garga Samhita notes that spiritual pride ('Vaidika Ahamkara') is the subtlest and most difficult obstacle to overcome on the path of liberation, requiring divine intervention to shatter."
         },
         {
+          "title": "Episode 2: The Messenger Summoning Mahavira Hanuman",
+          "text": "Krishna instructed Garuda: 'Fly to the Gandhamadana mountain and tell the monkey warrior Hanuman that Lord Rama summons him to Dwarka.' Garuda flew at hypersonic speeds, puffed up with arrogance. Arriving at Kadali Vana, he haughtily commanded Hanuman to follow him. Hanuman smiled gently and replied: 'You proceed ahead, O bird; I am old and shall follow slowly.' Disdainful of the aged monkey, Garuda sped back to Dwarka at maximum velocity—only to find Hanuman already standing peacefully inside Krishna's royal audience chamber! Terrified, Sudarshana Chakra expanded to block the portal, but Hanuman nonchalantly caught the blazing disc between his teeth like a child's toy, chewing on it playfully as if it were a betel nut.",
+          "visual": "🛕",
+          "duration": "15:00",
+          "sanskrit": "॥ गरुडस्य गतं गर्वं सुदर्शनस्य च तेजसः । सत्यभामा सौन्दर्यं च हृतं कृष्णेन लीलया ॥",
+          "meaning": "The speed of Garuda, the radiant power of Sudarshana, and the pride of Sathyabhama's beauty were all humbled by Krishna's effortless grace.",
+          "commentary": "Temple murals in coastal Karnataka and Maharashtra often depict Hanuman holding Sudarshana Chakra in his mouth, symbolizing that pure Rama Bhakti transcends even the most devastating celestial armaments."
+        },
+        {
+          "title": "Episode 3: The True Darshana of Sita-Rama & Liberation",
+          "text": "Entering the palace, Hanuman looked around and asked with furrowed brow: 'Where is my Lord Rama? And who is this adorned woman sitting beside him? My eyes behold only Janaki beside Raghunatha.' Hearing this, Sathyabhama realized her cosmetic beauty was utterly invisible to a pure soul whose gaze was anchored only in divine virtue. Krishna and Queen Rukmini immediately assumed the radiant roopa of Sri Rama and Mother Sita. Hanuman collapsed in tears of transcendent ecstasy at the feet of the Lord. Garuda, Sudarshana, and Sathyabhama fell to their knees in profound shame, understanding that velocity, martial power, and physical glamour are mere transient shadows compared to pure, unadulterated devotion.",
+          "visual": "✨",
+          "duration": "15:00",
+          "sanskrit": "॥ सीतासमेतं श्रीरामं दृष्ट्वा ननाम मारुतिः । अहङ्कारं विहायाथ सर्वे नम्रमुपागताः ॥",
+          "meaning": "Beholding Lord Rama united with Mother Sita, Maruti prostrated in ecstasy; shedding their ego, all present bowed in deep humility.",
+          "commentary": "This celebrated legend from the Bhaktamala highlights that genuine spiritual greatness lies not in cosmic powers (Siddhis), but in egoless service to the Divine."
+        }
+      ],
+      "ebook": {
+        "title": "Krishna Breaks the Ego of Sudarshana, Garuda & Sathyabhama",
+        "tagline": "The Divine Lesson of Humility Masterminded by Sree Krishna & Hanuman",
+        "author": "Vedic Gurukula Scholars & Epigraphists",
+        "pages": 140,
+        "sanskritInvocation": "॥ ॐ नमो विष्णवे सर्वलोकाधिपतये निरहङ्कारदायिने नमः ॥",
+        "chapters": [
+          {
+            "title": "Episode 1: The Triple Pride in the Golden Palace of Dwarka",
+            "sanskrit": "॥ अहङ्कारविमूढात्मा कर्ताहमिति मन्यते । सर्वं कृष्णाय समर्प्य मुक्तिं विन्दति मानवः ॥",
+            "meaning": "Deluded by false ego, the soul thinks 'I am the doer.' Only by surrendering everything to Krishna does one attain supreme liberation.",
+            "text": "In the opulent island metropolis of Dwarka, three celestial entities closest to Lord Krishna fell prey to subtle, dangerous spiritual pride. Queen Sathyabhama took immense pride in her peerless physical beauty, believing her charm held the Lord captive. The divine bird Garuda took pride in his unmatchable velocity, believing no creation in the three worlds could outfly his golden wings. And the celestial discus Sudarshana Chakra took pride in its invincible destructive potency, believing nothing in creation could withstand its searing blade. Smiling inwardly at this threefold delusion, Lord Krishna orchestrated a playful divine lila to dissolve their arrogance and bestow pure humility upon their hearts.",
+            "commentary": "The Garga Samhita notes that spiritual pride ('Vaidika Ahamkara') is the subtlest and most difficult obstacle to overcome on the path of liberation, requiring divine intervention to shatter."
+          },
+          {
             "title": "Episode 2: The Messenger Summoning Mahavira Hanuman",
-            "text": "Garuda is humbled by Hanuman’s effortless flight, and Sudarshana is caught like a child's toy under Hanuman’s tongue.",
-            "visual": "🦅",
-            "duration": "06:10"
-        },
-        {
-            "title": "Episode 3: The True Darshana of Sita-Rama",
-            "text": "Hanuman bows only before Sita and Rama, revealing that external glamour fades before pure selfless devotion.",
-            "visual": "🕉️",
-            "duration": "05:50"
-        }
-    ]
-},
+            "sanskrit": "॥ गरुडस्य गतं गर्वं सुदर्शनस्य च तेजसः । सत्यभामा सौन्दर्यं च हृतं कृष्णेन लीलया ॥",
+            "meaning": "The speed of Garuda, the radiant power of Sudarshana, and the pride of Sathyabhama's beauty were all humbled by Krishna's effortless grace.",
+            "text": "Krishna instructed Garuda: 'Fly to the Gandhamadana mountain and tell the monkey warrior Hanuman that Lord Rama summons him to Dwarka.' Garuda flew at hypersonic speeds, puffed up with arrogance. Arriving at Kadali Vana, he haughtily commanded Hanuman to follow him. Hanuman smiled gently and replied: 'You proceed ahead, O bird; I am old and shall follow slowly.' Disdainful of the aged monkey, Garuda sped back to Dwarka at maximum velocity—only to find Hanuman already standing peacefully inside Krishna's royal audience chamber! Terrified, Sudarshana Chakra expanded to block the portal, but Hanuman nonchalantly caught the blazing disc between his teeth like a child's toy, chewing on it playfully as if it were a betel nut.",
+            "commentary": "Temple murals in coastal Karnataka and Maharashtra often depict Hanuman holding Sudarshana Chakra in his mouth, symbolizing that pure Rama Bhakti transcends even the most devastating celestial armaments."
+          },
+          {
+            "title": "Episode 3: The True Darshana of Sita-Rama & Liberation",
+            "sanskrit": "॥ सीतासमेतं श्रीरामं दृष्ट्वा ननाम मारुतिः । अहङ्कारं विहायाथ सर्वे नम्रमुपागताः ॥",
+            "meaning": "Beholding Lord Rama united with Mother Sita, Maruti prostrated in ecstasy; shedding their ego, all present bowed in deep humility.",
+            "text": "Entering the palace, Hanuman looked around and asked with furrowed brow: 'Where is my Lord Rama? And who is this adorned woman sitting beside him? My eyes behold only Janaki beside Raghunatha.' Hearing this, Sathyabhama realized her cosmetic beauty was utterly invisible to a pure soul whose gaze was anchored only in divine virtue. Krishna and Queen Rukmini immediately assumed the radiant roopa of Sri Rama and Mother Sita. Hanuman collapsed in tears of transcendent ecstasy at the feet of the Lord. Garuda, Sudarshana, and Sathyabhama fell to their knees in profound shame, understanding that velocity, martial power, and physical glamour are mere transient shadows compared to pure, unadulterated devotion.",
+            "commentary": "This celebrated legend from the Bhaktamala highlights that genuine spiritual greatness lies not in cosmic powers (Siddhis), but in egoless service to the Divine."
+          }
+        ]
+      }
+    },
     {
-    "id": "free_krishna_ranchor_war_wisdom",
-    "title": "Why Lord Krishna Ran Away from Battlefield: Mystery of Ranchor",
-    "category": "Unknown Knowledge",
-    "tagline": "Strategic Retreat vs Cowardice: The Timeless Military Genius of Krishna",
-    "description": "Why did the master of the universe flee from Jarasandha to earn the epithet Ranchor Rai? Discover the profound psychological and geopolitical strategy of tactical retreat that laid the foundation for the golden city of Dwarka.",
-    "duration": "14 Mins",
-    "rating": "9.9 ★",
-    "year": "2026",
-    "isPremium": false,
-    "imageUrl": "/images/thumb_krishna_ranchor_wisdom.jpg",
-    "videoUrl": "https://www.youtube.com/embed/c_mkFIrgUEU",
-    "narrator": "Spiritual Stories Scholars",
-    "content": [
+      "id": "free_krishna_ranchor_war_wisdom",
+      "title": "Why Lord Krishna Ran Away from Battlefield: Mystery of Ranchor",
+      "category": "Unknown Knowledge",
+      "tagline": "Strategic Retreat vs Cowardice: The Timeless Military Genius of Krishna",
+      "description": "Why did the master of the universe flee from Jarasandha to earn the epithet Ranchor Rai? Discover the profound psychological and geopolitical strategy of tactical retreat that laid the foundation for the golden city of Dwarka.",
+      "duration": "14 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/thumb_krishna_ranchor_wisdom.jpg",
+      "videoUrl": "https://www.youtube.com/embed/c_mkFIrgUEU",
+      "narrator": "Spiritual Stories Scholars",
+      "content": [
         {
-            "title": "Episode 1: Jarasandha’s Seventeen Invasions",
-            "text": "Krishna spared Jarasandha repeatedly to systematically eliminate the tyrannical kings of the earth who gathered in his armies.",
-            "visual": "⚔️",
-            "duration": "04:30"
+          "title": "Episode 1: The Seventeen Invasions of Jarasandha",
+          "text": "Following the death of his son-in-law Kamsa, the imperial emperor Jarasandha of Magadha declared total war upon Mathura. With twenty-three Akshauhini divisions of armored war chariots, war elephants, and elite infantry, Jarasandha besieged the city. Seventeen times Jarasandha marched against Mathura, and seventeen times Krishna and Balarama decimated his military legions, yet spared Jarasandha's life. Krishna's long-range strategic vision was extraordinary: rather than eliminating Jarasandha immediately, he used Jarasandha's military campaigns as a giant magnet to systematically draw out and eliminate the corrupt, warmongering warlords of northern India, paving the way for the eventual establishment of the righteous Pandava empire.",
+          "visual": "📜",
+          "duration": "15:00",
+          "sanskrit": "॥ नीतिज्ञः सर्वधर्मज्ञः कृष्णः परपुरञ्जयः । लोकसंरक्षणार्थाय रणं त्यक्त्वा पलायितः ॥",
+          "meaning": "Master of diplomacy and knower of all righteousness, Krishna, the conqueror of enemy citadels, departed the battlefield solely for the preservation of the people.",
+          "commentary": "The Mahabharata Sabhaparva explains Krishna's profound political philosophy: systemic dismantling of tyrannical feudal coalitions requires tactical patience over impulsive victory."
         },
         {
+          "title": "Episode 2: The Strategic Withdrawal from Mathura",
+          "text": "When Jarasandha allied with the barbarian king Kalayavana to launch a simultaneous two-front invasion of Mathura, Krishna made a profound decision that confounded martial purists: he ordered a tactical retreat. Turning his back to the battlefield, Krishna ran, earning the epithet 'Ranchor' (He who fled the battlefield). While lesser warriors prized personal ego and bloody martyrdom, Krishna understood that true leadership preserves the lives, culture, and future of innocent citizens. By drawing Kalayavana away from the city into a desolate mountain cave, Krishna tricked the tyrant into waking the sleeping sage Muchukunda, whose fiery yogic gaze incinerated Kalayavana into ashes without Krishna lifting a single weapon.",
+          "visual": "🛕",
+          "duration": "15:00",
+          "sanskrit": "॥ नाहं मानार्थमिच्छामि न जयं लोककण्टकम् । प्रजानां रक्षणं धर्मो युद्धे त्यागोऽपि शोभते ॥",
+          "meaning": "I desire neither personal glory nor a hollow triumph over tyrants; the protection of the citizenry is the supreme dharma, and tactical withdrawal in battle is honorable.",
+          "commentary": "In Gujarat and Rajasthan, millions revere Lord Krishna under the sacred name 'Ranchorrai' (Dakore Temple), celebrating tactical intelligence, emotional mastery, and the rejection of vain martial posturing."
+        },
+        {
+          "title": "Episode 3: The Golden Fortress of Dwarka & The New Era",
+          "text": "Overnight, through divine yogic power, Krishna relocated the entire population of Mathura to the fortified western coast of Saurashtra, founding the maritime empire of Dwarka. Surrounded by the Arabian Sea, Dwarka was an impregnable architectural marvel connected to global maritime trade routes, protected by cosmic defense grids, and governed through a democratic republican assembly (Sudharma Sabha). Krishna's strategic retreat transformed a vulnerable inland city into the world's most prosperous spiritual and commercial civilization, proving forever that stepping back with wisdom is infinitely superior to charging forward in foolish pride.",
+          "visual": "✨",
+          "duration": "15:00",
+          "sanskrit": "॥ समुद्रमध्ये नगरीं रम्यां द्वारवतीं शुभाम् । विश्वकर्मविधानेन रचयामास माधवः ॥",
+          "meaning": "In the midst of the western ocean, Madhava instructed celestial architect Vishwakarma to construct the auspicious, magnificent island citadel of Dvaravati.",
+          "commentary": "Marine archaeological excavations led by Dr. S.R. Rao off the coast of Bet Dwarka revealed submerged cyclopean stone walls, triangular anchors, and seal engravings dating to the late Bronze Age, validating the historical marine fortress of Krishna."
+        }
+      ],
+      "ebook": {
+        "title": "Why Lord Krishna Ran Away from Battlefield: Mystery of Ranchor",
+        "tagline": "Strategic Retreat vs Cowardice: The Timeless Military Genius of Krishna",
+        "author": "Vedic Gurukula Scholars & Epigraphists",
+        "pages": 140,
+        "sanskritInvocation": "॥ ॐ श्री रणछोडराय नमः । द्वारकाधीशाय गोविन्दाय नमो नमः ॥",
+        "chapters": [
+          {
+            "title": "Episode 1: The Seventeen Invasions of Jarasandha",
+            "sanskrit": "॥ नीतिज्ञः सर्वधर्मज्ञः कृष्णः परपुरञ्जयः । लोकसंरक्षणार्थाय रणं त्यक्त्वा पलायितः ॥",
+            "meaning": "Master of diplomacy and knower of all righteousness, Krishna, the conqueror of enemy citadels, departed the battlefield solely for the preservation of the people.",
+            "text": "Following the death of his son-in-law Kamsa, the imperial emperor Jarasandha of Magadha declared total war upon Mathura. With twenty-three Akshauhini divisions of armored war chariots, war elephants, and elite infantry, Jarasandha besieged the city. Seventeen times Jarasandha marched against Mathura, and seventeen times Krishna and Balarama decimated his military legions, yet spared Jarasandha's life. Krishna's long-range strategic vision was extraordinary: rather than eliminating Jarasandha immediately, he used Jarasandha's military campaigns as a giant magnet to systematically draw out and eliminate the corrupt, warmongering warlords of northern India, paving the way for the eventual establishment of the righteous Pandava empire.",
+            "commentary": "The Mahabharata Sabhaparva explains Krishna's profound political philosophy: systemic dismantling of tyrannical feudal coalitions requires tactical patience over impulsive victory."
+          },
+          {
             "title": "Episode 2: The Strategic Withdrawal from Mathura",
-            "text": "Choosing peace and preservation for the citizens of Mathura over personal martial ego and vanity.",
-            "visual": "🏃",
-            "duration": "05:00"
-        },
-        {
-            "title": "Episode 3: The Golden Fortress of Dwarka",
-            "text": "Building an impregnable island empire in Gujarat that transformed the economic and spiritual destiny of ancient India.",
-            "visual": "🏛️",
-            "duration": "04:30"
-        }
-    ]
-},
+            "sanskrit": "॥ नाहं मानार्थमिच्छामि न जयं लोककण्टकम् । प्रजानां रक्षणं धर्मो युद्धे त्यागोऽपि शोभते ॥",
+            "meaning": "I desire neither personal glory nor a hollow triumph over tyrants; the protection of the citizenry is the supreme dharma, and tactical withdrawal in battle is honorable.",
+            "text": "When Jarasandha allied with the barbarian king Kalayavana to launch a simultaneous two-front invasion of Mathura, Krishna made a profound decision that confounded martial purists: he ordered a tactical retreat. Turning his back to the battlefield, Krishna ran, earning the epithet 'Ranchor' (He who fled the battlefield). While lesser warriors prized personal ego and bloody martyrdom, Krishna understood that true leadership preserves the lives, culture, and future of innocent citizens. By drawing Kalayavana away from the city into a desolate mountain cave, Krishna tricked the tyrant into waking the sleeping sage Muchukunda, whose fiery yogic gaze incinerated Kalayavana into ashes without Krishna lifting a single weapon.",
+            "commentary": "In Gujarat and Rajasthan, millions revere Lord Krishna under the sacred name 'Ranchorrai' (Dakore Temple), celebrating tactical intelligence, emotional mastery, and the rejection of vain martial posturing."
+          },
+          {
+            "title": "Episode 3: The Golden Fortress of Dwarka & The New Era",
+            "sanskrit": "॥ समुद्रमध्ये नगरीं रम्यां द्वारवतीं शुभाम् । विश्वकर्मविधानेन रचयामास माधवः ॥",
+            "meaning": "In the midst of the western ocean, Madhava instructed celestial architect Vishwakarma to construct the auspicious, magnificent island citadel of Dvaravati.",
+            "text": "Overnight, through divine yogic power, Krishna relocated the entire population of Mathura to the fortified western coast of Saurashtra, founding the maritime empire of Dwarka. Surrounded by the Arabian Sea, Dwarka was an impregnable architectural marvel connected to global maritime trade routes, protected by cosmic defense grids, and governed through a democratic republican assembly (Sudharma Sabha). Krishna's strategic retreat transformed a vulnerable inland city into the world's most prosperous spiritual and commercial civilization, proving forever that stepping back with wisdom is infinitely superior to charging forward in foolish pride.",
+            "commentary": "Marine archaeological excavations led by Dr. S.R. Rao off the coast of Bet Dwarka revealed submerged cyclopean stone walls, triangular anchors, and seal engravings dating to the late Bronze Age, validating the historical marine fortress of Krishna."
+          }
+        ]
+      }
+    },
     {
-    "id": "free_shiva_sharabha_narasimha",
-    "title": "Sharabha Avatar of Shiva: Restoring Cosmic Peace",
-    "category": "God Series",
-    "tagline": "The Eight-Legged Beast-Bird Avatar Restoring Universal Equilibrium",
-    "description": "After slaying Hiranyakashipu, the divine fury of Lord Narasimha threatened to burn the three worlds. Discover how Mahadeva manifested as Sharabha, an awe-inspiring entity harmonizing Vaishnava and Shaiva cosmic forces.",
-    "duration": "16 Mins",
-    "rating": "9.8 ★",
-    "year": "2026",
-    "isPremium": false,
-    "imageUrl": "/images/thumb_shiva_sharabha_avatar.jpg",
-    "videoUrl": "https://www.youtube.com/embed/cIbVzdguHfw",
-    "narrator": "Spiritual Stories Scholars",
-    "content": [
+      "id": "free_shiva_sharabha_narasimha",
+      "title": "Sharabha Avatar of Shiva: Restoring Cosmic Peace",
+      "category": "God Series",
+      "tagline": "The Eight-Legged Beast-Bird Avatar Restoring Universal Equilibrium",
+      "description": "After slaying Hiranyakashipu, the divine fury of Lord Narasimha threatened to burn the three worlds. Discover how Mahadeva manifested as Sharabha, an awe-inspiring entity harmonizing Vaishnava and Shaiva cosmic forces.",
+      "duration": "16 Mins",
+      "rating": "9.8 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/thumb_shiva_sharabha_avatar.jpg",
+      "videoUrl": "https://www.youtube.com/embed/cIbVzdguHfw",
+      "narrator": "Spiritual Stories Scholars",
+      "content": [
         {
-            "title": "Episode 1: The Unquenched Fury of Narasimha",
-            "text": "The universe trembles as the man-lion avatar continues his cosmic roar after the defeat of demon Hiranyakashipu.",
-            "visual": "🦁",
-            "duration": "05:15"
+          "title": "Episode 1: The Unquenched Fury of the Man-Lion",
+          "text": "After disemboweling the demon king Hiranyakashipu upon the threshold of twilight, the fiery wrath of Lord Narasimha did not subside. His cosmic roar shattered galaxies, his blazing mane scorched the celestial spheres, and the universe threatened to disintegrate under the unbearable heat of his transcendent fury. Brahma, Indra, and the Sapta Rishis approached Prahlada, urging the pure child to pacify the Lord with prayers. Though Narasimha blessed his child-devotee with tender compassion, the residual cosmic fire of the avatar remained so overwhelmingly potent that the balance of the elements (Pancha Bhootas) began to destabilize across the cosmos.",
+          "visual": "📜",
+          "duration": "15:00",
+          "sanskrit": "॥ प्रह्लादहृदयानन्दं भक्तसंरक्षणे रतम् । नृसिंहं घोररूपं च दृष्ट्वा देवाः प्रकम्पिताः ॥",
+          "meaning": "Beholding the terrifying form of Lord Narasimha, whose fierce ecstasy in protecting devotee Prahlada continued unabated, the Devas trembled in cosmic fear.",
+          "commentary": "The Sharabha Upanishad and Linga Purana record this esoteric cosmic event as the crucible where divine energies required harmonization through an equally colossal manifestation of Mahadeva."
         },
         {
-            "title": "Episode 2: Manifestation of the Eight-Legged Sharabha",
-            "text": "Lord Shiva assumes the magnificent avian-feline form with wings of lightning to embrace and pacify Narasimha.",
-            "visual": "🦅",
-            "duration": "05:30"
+          "title": "Episode 2: The Eight-Legged Sharabha & The Wings of Lightning",
+          "text": "In response to the prayers of the terrified Devas, Lord Shiva manifested the extraordinary Sharabha avatar—an awe-inspiring entity possessing the body of a golden lion, eight powerful legs, two colossal wings of thunder and lightning, the head of a fierce mythic bird (Pakshiraja), and claws of diamond. In his heart sat Goddess Durga as Pratyangira, wielding the power of universal dissolution. Sharabha descended from the heavens with a celestial wind that cooled the burning atmosphere. Spreading his radiant wings, Sharabha gently embraced Lord Narasimha, encasing the fiery man-lion in a field of sublime cosmic energy to absorb the uncontained solar heat.",
+          "visual": "🛕",
+          "duration": "15:00",
+          "sanskrit": "॥ अष्टपादं पक्षिराजं शरभं चन्द्रशेखरम् । सहस्रबाहुरुद्रेशं वन्देऽहं शान्तिदायकम् ॥",
+          "meaning": "I bow to the eight-legged king of celestial birds, Lord Sharabha adorned with the crescent moon, the thousand-armed Rudra who bestows cosmic peace.",
+          "commentary": "The Airavatesvara Temple at Darasuram (Tamil Nadu, 12th century Chola architecture) features breathtaking stone carvings of Sharabhamurti subduing Narasimha, celebrated as an emblem of supreme cosmic equilibrium."
         },
         {
-            "title": "Episode 3: The Synthesis of Supreme Divine Energies",
-            "text": "Narasimha sheds his ferocious body and honors Sharabha, proving that Vishnu and Shiva are two facets of one supreme reality.",
-            "visual": "✨",
-            "duration": "05:15"
+          "title": "Episode 3: The Synthesis of Supreme Divine Energies (Hari-Hara)",
+          "text": "As Sharabha's wings enveloped Narasimha, the man-lion avatar recognized his own divine essence reflected in the eyes of Mahadeva. The ferocious wrath melted into infinite peace. Narasimha shed his physical lion form, offering his hide to Lord Shiva as an eternal seat of honor. From Narasimha's heart emerged the Gandaberunda bird, and the two avatars embraced as indivisible expressions of the one supreme Paramatman. The legend reveals the deepest secret of Sanatana Dharma: sectarian divisions between Shaivism and Vaishnavism are illusions of the narrow mind, for Hari and Hara are two chambers of the single beating heart of the universe.",
+          "visual": "✨",
+          "duration": "15:00",
+          "sanskrit": "॥ शिवाय विष्णुरूपाय शिवरूपाय विष्णवे । शिवस्य हृदयं विष्णुर्विष्णोश्च हृदयं शिवः ॥",
+          "meaning": "Shiva is the embodiment of Vishnu, and Vishnu is the embodiment of Shiva; Vishnu resides in the heart of Shiva, and Shiva resides in the heart of Vishnu.",
+          "commentary": "The Harihara philosophy is physically manifested in monumental Karnataka shrines such as Harihareshwara Temple (1223 CE), where the central deity is sculpted as half-Shiva (Trishula) and half-Vishnu (Shankha-Chakra)."
         }
-    ]
-},
+      ],
+      "ebook": {
+        "title": "Sharabha Avatar of Shiva: Restoring Cosmic Peace",
+        "tagline": "The Eight-Legged Beast-Bird Avatar Restoring Universal Equilibrium",
+        "author": "Vedic Gurukula Scholars & Epigraphists",
+        "pages": 140,
+        "sanskritInvocation": "॥ ॐ खं खं खं शरभाय पक्षिराजाय महादेवाय हुं फट् स्वाहा ॥",
+        "chapters": [
+          {
+            "title": "Episode 1: The Unquenched Fury of the Man-Lion",
+            "sanskrit": "॥ प्रह्लादहृदयानन्दं भक्तसंरक्षणे रतम् । नृसिंहं घोररूपं च दृष्ट्वा देवाः प्रकम्पिताः ॥",
+            "meaning": "Beholding the terrifying form of Lord Narasimha, whose fierce ecstasy in protecting devotee Prahlada continued unabated, the Devas trembled in cosmic fear.",
+            "text": "After disemboweling the demon king Hiranyakashipu upon the threshold of twilight, the fiery wrath of Lord Narasimha did not subside. His cosmic roar shattered galaxies, his blazing mane scorched the celestial spheres, and the universe threatened to disintegrate under the unbearable heat of his transcendent fury. Brahma, Indra, and the Sapta Rishis approached Prahlada, urging the pure child to pacify the Lord with prayers. Though Narasimha blessed his child-devotee with tender compassion, the residual cosmic fire of the avatar remained so overwhelmingly potent that the balance of the elements (Pancha Bhootas) began to destabilize across the cosmos.",
+            "commentary": "The Sharabha Upanishad and Linga Purana record this esoteric cosmic event as the crucible where divine energies required harmonization through an equally colossal manifestation of Mahadeva."
+          },
+          {
+            "title": "Episode 2: The Eight-Legged Sharabha & The Wings of Lightning",
+            "sanskrit": "॥ अष्टपादं पक्षिराजं शरभं चन्द्रशेखरम् । सहस्रबाहुरुद्रेशं वन्देऽहं शान्तिदायकम् ॥",
+            "meaning": "I bow to the eight-legged king of celestial birds, Lord Sharabha adorned with the crescent moon, the thousand-armed Rudra who bestows cosmic peace.",
+            "text": "In response to the prayers of the terrified Devas, Lord Shiva manifested the extraordinary Sharabha avatar—an awe-inspiring entity possessing the body of a golden lion, eight powerful legs, two colossal wings of thunder and lightning, the head of a fierce mythic bird (Pakshiraja), and claws of diamond. In his heart sat Goddess Durga as Pratyangira, wielding the power of universal dissolution. Sharabha descended from the heavens with a celestial wind that cooled the burning atmosphere. Spreading his radiant wings, Sharabha gently embraced Lord Narasimha, encasing the fiery man-lion in a field of sublime cosmic energy to absorb the uncontained solar heat.",
+            "commentary": "The Airavatesvara Temple at Darasuram (Tamil Nadu, 12th century Chola architecture) features breathtaking stone carvings of Sharabhamurti subduing Narasimha, celebrated as an emblem of supreme cosmic equilibrium."
+          },
+          {
+            "title": "Episode 3: The Synthesis of Supreme Divine Energies (Hari-Hara)",
+            "sanskrit": "॥ शिवाय विष्णुरूपाय शिवरूपाय विष्णवे । शिवस्य हृदयं विष्णुर्विष्णोश्च हृदयं शिवः ॥",
+            "meaning": "Shiva is the embodiment of Vishnu, and Vishnu is the embodiment of Shiva; Vishnu resides in the heart of Shiva, and Shiva resides in the heart of Vishnu.",
+            "text": "As Sharabha's wings enveloped Narasimha, the man-lion avatar recognized his own divine essence reflected in the eyes of Mahadeva. The ferocious wrath melted into infinite peace. Narasimha shed his physical lion form, offering his hide to Lord Shiva as an eternal seat of honor. From Narasimha's heart emerged the Gandaberunda bird, and the two avatars embraced as indivisible expressions of the one supreme Paramatman. The legend reveals the deepest secret of Sanatana Dharma: sectarian divisions between Shaivism and Vaishnavism are illusions of the narrow mind, for Hari and Hara are two chambers of the single beating heart of the universe.",
+            "commentary": "The Harihara philosophy is physically manifested in monumental Karnataka shrines such as Harihareshwara Temple (1223 CE), where the central deity is sculpted as half-Shiva (Trishula) and half-Vishnu (Shankha-Chakra)."
+          }
+        ]
+      }
+    },
     {
-    "id": "free_hanuman_saturday_blessings",
-    "title": "Why Saturdays Belong to Lord Hanuman: Shielding from Shani's Gaze",
-    "category": "Unknown Knowledge",
-    "tagline": "The Ancient Puranic Pact Between Lord Hanuman and Shani Dev",
-    "description": "Discover why Saturday devotion to Lord Hanuman dissolves the harshest planetary influences of Sade Sati and Shani Dosha. Understand the sacred vow made by Lord Shani when Hanuman rescued him from Ravana’s Lanka.",
-    "duration": "12 Mins",
-    "rating": "9.9 ★",
-    "year": "2026",
-    "isPremium": false,
-    "imageUrl": "/images/thumb_hanuman_saturday_blessings.jpg",
-    "videoUrl": "https://www.youtube.com/embed/fsE2aPGsphs",
-    "narrator": "Spiritual Stories Scholars",
-    "content": [
+      "id": "free_hanuman_saturday_blessings",
+      "title": "Why Saturdays Belong to Lord Hanuman: Shielding from Shani's Gaze",
+      "category": "Unknown Knowledge",
+      "tagline": "The Ancient Puranic Pact Between Lord Hanuman and Shani Dev",
+      "description": "Discover why Saturday devotion to Lord Hanuman dissolves the harshest planetary influences of Sade Sati and Shani Dosha. Understand the sacred vow made by Lord Shani when Hanuman rescued him from Ravana’s Lanka.",
+      "duration": "12 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/thumb_hanuman_saturday_blessings.jpg",
+      "videoUrl": "https://www.youtube.com/embed/fsE2aPGsphs",
+      "narrator": "Spiritual Stories Scholars",
+      "content": [
         {
-            "title": "Episode 1: Ravana's Imprisonment of the Navagrahas",
-            "text": "In Lanka, the proud demon king imprisoned the nine planetary deities face-down under his throne.",
-            "visual": "🪐",
-            "duration": "04:00"
+          "title": "Episode 1: The Incarceration of the Navagrahas in Lanka",
+          "text": "The demon king Ravana, intoxicated by boons of near-invincibility granted by Brahma and Shiva, conquered the celestial realms. In his unbridled arrogance, Ravana captured the Navagrahas—the nine planetary intelligences governing cosmic time and human karma. To humiliate them and prevent unfavorable planetary alignments during the birth of his son Meghanada, Ravana laid Surya, Chandra, Mangala, Budha, Guru, Shukra, Shani, Rahu, and Ketu face-down upon the floor of his throne room, using their chained backs as stepping stones whenever he climbed upon his golden throne.",
+          "visual": "📜",
+          "duration": "15:00",
+          "sanskrit": "॥ रावणस्य महादर्पादहङ्काराच्च दुर्मतेः । ग्रहाः सर्वे निबद्धाश्च पादपीठे विलोकिताः ॥",
+          "meaning": "Due to the colossal pride and tyrannical intellect of Ravana, all the planetary deities were bound in chains and placed face-down beneath his imperial footstool.",
+          "commentary": "Classical Jyotish epigraphy in Tamil Nadu and Kerala details how Ravana's attempt to manipulate celestial mechanics ultimately sealed his doom, fulfilling the astrological law of inescapable karmic recoil."
         },
         {
-            "title": "Episode 2: The Rescue by Mahavira Hanuman",
-            "text": "During the burning of Lanka, Hanuman breaks the shackles holding Shani Dev and the planets in captivity.",
-            "visual": "🔥",
-            "duration": "04:15"
+          "title": "Episode 2: The Severing of Shani's Chains during the Burning of Lanka",
+          "text": "When Mahavira Hanuman allowed himself to be bound and brought before Ravana, the demon king foolishly set Hanuman's tail ablaze. Transforming his fiery tail into an instrument of righteous reckoning, Hanuman leaped across the ramparts of golden Lanka, burning the opulent palaces of the demons. Reaching the imperial throne room, Hanuman discovered the chained Navagrahas. With his adamantine mace (Gada), Hanuman shattered the enchanted steel shackles binding Shani Dev, lifting the planetary lord of justice onto his broad shoulders and carrying him to safety outside the burning citadel.",
+          "visual": "🛕",
+          "duration": "15:00",
+          "sanskrit": "॥ लङ्कादाहसमये तु मारुतिर्महाबलः । शनेर्बन्धान् व्यपोहाय मोक्षं प्रादात् कृपानिधिः ॥",
+          "meaning": "During the burning of Lanka, the mighty Maruti, reservoir of compassion, severed the heavy shackles of Shani Dev and granted him liberation.",
+          "commentary": "The Parashara Samhita records that Shani Dev's limbs had been bruised by centuries of demonic chains; Hanuman massaged Shani's body with pure sesame oil (Til Taila), establishing the ritual offering of oil to Lord Shani on Saturdays."
         },
         {
-            "title": "Episode 3: The Eternal Saturday Protection Pledge",
-            "text": "Shani Dev vows never to harm or torment any devotee who sincerely chants the Hanuman Chalisa on Saturdays.",
-            "visual": "📿",
-            "duration": "03:45"
+          "title": "Episode 3: The Eternal Saturday Covenant of Protection",
+          "text": "Overwhelmed with gratitude for his liberation, Shani Dev bowed before Hanuman and spoke: 'O supreme Rudra avatar, you have saved my honor and freed the cosmic order from tyranny. In return, I make a solemn, unbreakable vow before the three worlds: whenever a soul chants the Hanuman Chalisa, meditates upon your sacred name, or offers prayers to you on my day (Saturday), my stern karmic gaze shall transform into an armor of divine protection. No planetary malevolence, Sade Sati affliction, or negative astral influence shall ever torment a sincere devotee of Hanuman!'",
+          "visual": "✨",
+          "duration": "15:00",
+          "sanskrit": "॥ यः स्मरेद् हनूमन्तं शनैश्चरदिने सुधीः । न तस्य बाधते सौरी सर्वकामप्रदो भवेत् ॥",
+          "meaning": "Whoever remembers and worships Lord Hanuman on Saturday with sincere intellect, Shani Dev shall never afflict them with suffering, but shall grant all righteous blessings.",
+          "commentary": "Every Saturday across millions of shrines in India, devotees offer vermilion (Sindoor) and mustard or sesame oil lamps, celebrating this cosmic pact of divine shielding and fearlessness."
         }
-    ]
-},
+      ],
+      "ebook": {
+        "title": "Why Saturdays Belong to Lord Hanuman: Shielding from Shani's Gaze",
+        "tagline": "The Ancient Puranic Pact Between Lord Hanuman and Shani Dev",
+        "author": "Vedic Gurukula Scholars & Epigraphists",
+        "pages": 140,
+        "sanskritInvocation": "॥ ॐ नमो हनुमते रुद्रावताराय शनिबाधाविनाशकाय नमः ॥",
+        "chapters": [
+          {
+            "title": "Episode 1: The Incarceration of the Navagrahas in Lanka",
+            "sanskrit": "॥ रावणस्य महादर्पादहङ्काराच्च दुर्मतेः । ग्रहाः सर्वे निबद्धाश्च पादपीठे विलोकिताः ॥",
+            "meaning": "Due to the colossal pride and tyrannical intellect of Ravana, all the planetary deities were bound in chains and placed face-down beneath his imperial footstool.",
+            "text": "The demon king Ravana, intoxicated by boons of near-invincibility granted by Brahma and Shiva, conquered the celestial realms. In his unbridled arrogance, Ravana captured the Navagrahas—the nine planetary intelligences governing cosmic time and human karma. To humiliate them and prevent unfavorable planetary alignments during the birth of his son Meghanada, Ravana laid Surya, Chandra, Mangala, Budha, Guru, Shukra, Shani, Rahu, and Ketu face-down upon the floor of his throne room, using their chained backs as stepping stones whenever he climbed upon his golden throne.",
+            "commentary": "Classical Jyotish epigraphy in Tamil Nadu and Kerala details how Ravana's attempt to manipulate celestial mechanics ultimately sealed his doom, fulfilling the astrological law of inescapable karmic recoil."
+          },
+          {
+            "title": "Episode 2: The Severing of Shani's Chains during the Burning of Lanka",
+            "sanskrit": "॥ लङ्कादाहसमये तु मारुतिर्महाबलः । शनेर्बन्धान् व्यपोहाय मोक्षं प्रादात् कृपानिधिः ॥",
+            "meaning": "During the burning of Lanka, the mighty Maruti, reservoir of compassion, severed the heavy shackles of Shani Dev and granted him liberation.",
+            "text": "When Mahavira Hanuman allowed himself to be bound and brought before Ravana, the demon king foolishly set Hanuman's tail ablaze. Transforming his fiery tail into an instrument of righteous reckoning, Hanuman leaped across the ramparts of golden Lanka, burning the opulent palaces of the demons. Reaching the imperial throne room, Hanuman discovered the chained Navagrahas. With his adamantine mace (Gada), Hanuman shattered the enchanted steel shackles binding Shani Dev, lifting the planetary lord of justice onto his broad shoulders and carrying him to safety outside the burning citadel.",
+            "commentary": "The Parashara Samhita records that Shani Dev's limbs had been bruised by centuries of demonic chains; Hanuman massaged Shani's body with pure sesame oil (Til Taila), establishing the ritual offering of oil to Lord Shani on Saturdays."
+          },
+          {
+            "title": "Episode 3: The Eternal Saturday Covenant of Protection",
+            "sanskrit": "॥ यः स्मरेद् हनूमन्तं शनैश्चरदिने सुधीः । न तस्य बाधते सौरी सर्वकामप्रदो भवेत् ॥",
+            "meaning": "Whoever remembers and worships Lord Hanuman on Saturday with sincere intellect, Shani Dev shall never afflict them with suffering, but shall grant all righteous blessings.",
+            "text": "Overwhelmed with gratitude for his liberation, Shani Dev bowed before Hanuman and spoke: 'O supreme Rudra avatar, you have saved my honor and freed the cosmic order from tyranny. In return, I make a solemn, unbreakable vow before the three worlds: whenever a soul chants the Hanuman Chalisa, meditates upon your sacred name, or offers prayers to you on my day (Saturday), my stern karmic gaze shall transform into an armor of divine protection. No planetary malevolence, Sade Sati affliction, or negative astral influence shall ever torment a sincere devotee of Hanuman!'",
+            "commentary": "Every Saturday across millions of shrines in India, devotees offer vermilion (Sindoor) and mustard or sesame oil lamps, celebrating this cosmic pact of divine shielding and fearlessness."
+          }
+        ]
+      }
+    },
     {
-    "id": "free_abhimanyu_chakravyuha_defeat",
-    "title": "5 Secrets About Why Abhimanyu Was Defeated in Chakravyuha",
-    "category": "Docu-Series",
-    "tagline": "The Incomplete Secret Heard in Subhadra’s Womb & Kaurava Betrayal",
-    "description": "The 16-year-old warrior son of Arjuna breached the impenetrable Chakravyuha alone. Analyze the five hidden factors, planetary curses, and warrior code violations that sealed Abhimanyu’s immortal martyrdom on Kurukshetra.",
-    "duration": "20 Mins",
-    "rating": "9.9 ★",
-    "year": "2026",
-    "isPremium": false,
-    "imageUrl": "/images/thumb_abhimanyu_chakravyuha_mystery.jpg",
-    "videoUrl": "https://www.youtube.com/embed/weiIRMU0mws",
-    "narrator": "Spiritual Stories Scholars",
-    "content": [
+      "id": "free_abhimanyu_chakravyuha_defeat",
+      "title": "5 Secrets About Why Abhimanyu Was Defeated in Chakravyuha",
+      "category": "Docu-Series",
+      "tagline": "The Incomplete Secret Heard in Subhadra’s Womb & Kaurava Betrayal",
+      "description": "The 16-year-old warrior son of Arjuna breached the impenetrable Chakravyuha alone. Analyze the five hidden factors, planetary curses, and warrior code violations that sealed Abhimanyu’s immortal martyrdom on Kurukshetra.",
+      "duration": "20 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/thumb_abhimanyu_chakravyuha_mystery.jpg",
+      "videoUrl": "https://www.youtube.com/embed/weiIRMU0mws",
+      "narrator": "Spiritual Stories Scholars",
+      "content": [
         {
-            "title": "Episode 1: The Womb Knowledge of Subhadra",
-            "text": "Arjuna described the formation to pregnant Subhadra, but she fell asleep before the technique of exit was revealed.",
-            "visual": "🌀",
-            "duration": "06:30"
+          "title": "Episode 1: The Womb Transmission of Subhadra & The Spiral Labyrinth",
+          "text": "During the Pandavas' exile, Arjuna lovingly described the ancient martial science of military formations to his pregnant wife Subhadra. With vivid tactical clarity, Arjuna explained how to breach the dreaded Chakravyuha—a multi-tiered, rotating circular labyrinth containing millions of interlocking infantry, elephant phalanxes, and chariot warriors. Unborn Abhimanyu, an incarnation of the celestial god Soma's son Varchas, absorbed every syllable in the womb. However, as Arjuna began describing the secret methodology for exiting the labyrinth, Subhadra fell asleep from exhaustion. Arjuna ceased speaking, leaving Abhimanyu with the extraordinary mastery to pierce inside the formation, but with no knowledge of how to withdraw.",
+          "visual": "📜",
+          "duration": "15:00",
+          "sanskrit": "॥ गर्भस्थ एव शुश्राव चक्रव्यूहस्य भेदनम् । निर्गमं न विजानाति निद्रया मोहितं मनः ॥",
+          "meaning": "While yet in the womb, he heard the secret technique to breach the Chakravyuha; but he knew not the path of exit, as his mother's mind was overcome with sleep.",
+          "commentary": "Ancient Indian prenatal science (Garbha Sanskar) as documented in the Charaka Samhita affirms that the fetus possesses sensory awareness and neuro-acoustic responsiveness from the sixth month of gestation."
         },
         {
-            "title": "Episode 2: Jayadratha’s Boon Blocking the Pandavas",
-            "text": "Lord Shiva’s single-day boon granted Jayadratha the power to hold back Bheema, Nakula, and Sahadeva at the entrance.",
-            "visual": "🛡️",
-            "duration": "07:00"
+          "title": "Episode 2: Jayadratha's Single-Day Boon of Shiva",
+          "text": "On the thirteenth day of the Kurukshetra War, Dronacharya arranged the Kaurava forces into the impenetrable Chakravyuha. With Arjuna lured far away to the southern front by the Samsaptaka warriors, sixteen-year-old Abhimanyu stepped forward to lead the Pandavas. Piercing the formation like lightning, Abhimanyu opened a corridor for Bheema, Satyaki, and the Pandava legions. However, King Jayadratha of Sindhu stood at the gateway. Armed with a boon granted by Lord Shiva that allowed him to hold back all Pandavas except Arjuna for exactly one day, Jayadratha locked the entrance behind Abhimanyu, isolating the teenage warrior entirely alone within the rotating belly of the enemy army.",
+          "visual": "🛕",
+          "duration": "15:00",
+          "sanskrit": "॥ शिवदत्तेन वरेण जयद्रथः पराक्रमी । ररक्ष व्यूहद्वारं तु पाण्डवानां महाचमूम् ॥",
+          "meaning": "Through the supreme boon granted by Lord Shiva, the powerful Jayadratha guarded the entrance of the formation, holding back the entire Pandava army.",
+          "commentary": "Hero stones (Viragal) excavated across Karnataka and Maharashtra frequently depict the Chakravyuha as a multi-spiral mandala, celebrating heroic warriors who breached enemy ranks against impossible odds."
         },
         {
-            "title": "Episode 3: The Violation of Kurukshetra War Code",
-            "text": "Six maharathis simultaneously assault the weaponless youth, triggering Krishna’s pledge to bring swift divine retribution.",
-            "visual": "⚔️",
-            "duration": "06:30"
+          "title": "Episode 3: The Violation of the War Code & The Immortal Martyrdom",
+          "text": "Isolated deep within the enemy core, Abhimanyu fought with superhuman valor. He slaughtered thousands of elite warriors, severed the armor of Karna, slew Duryodhana's son Lakshmana, and routed the veteran generals. Desperate and terrified of total defeat, Drona, Karna, Ashwatthama, Kripa, Kritavarma, and Shakuni simultaneously attacked the lone youth from all directions—a brazen violation of the ancient Kshatriya code of single combat. His bow shattered, his chariot destroyed, and his horses killed, Abhimanyu picked up a heavy wooden chariot wheel, spinning it like Sudarshana Chakra against the charging legions. When struck down from behind, Abhimanyu smiled in serene transcendence, knowing his sacrifice had exposed the bankruptcy of the Kauravas and guaranteed the triumph of Dharma.",
+          "visual": "✨",
+          "duration": "15:00",
+          "sanskrit": "॥ एकाकिनं हतं दृष्ट्वा षड्भी रथिभिरावृतम् । धर्मेण विजयं प्राप्य अमरत्वं गतो युवान् ॥",
+          "meaning": "Beholding the youth slain alone, surrounded unlawfully by six veteran Maharathis, he achieved victory through righteousness and entered the immortal realms.",
+          "commentary": "The Mahabharata Dronaparva records that the celestial Devas rained heavenly flowers upon Abhimanyu's body, celebrating him as the brightest star in the epic pantheon of cosmic righteousness."
         }
-    ]
-},
+      ],
+      "ebook": {
+        "title": "5 Secrets About Why Abhimanyu Was Defeated in Chakravyuha",
+        "tagline": "The Incomplete Secret Heard in Subhadra’s Womb & Kaurava Betrayal",
+        "author": "Vedic Gurukula Scholars & Epigraphists",
+        "pages": 140,
+        "sanskritInvocation": "॥ ॐ वीराग्रण्याय धनुर्धराय सौभद्राय नमः ॥",
+        "chapters": [
+          {
+            "title": "Episode 1: The Womb Transmission of Subhadra & The Spiral Labyrinth",
+            "sanskrit": "॥ गर्भस्थ एव शुश्राव चक्रव्यूहस्य भेदनम् । निर्गमं न विजानाति निद्रया मोहितं मनः ॥",
+            "meaning": "While yet in the womb, he heard the secret technique to breach the Chakravyuha; but he knew not the path of exit, as his mother's mind was overcome with sleep.",
+            "text": "During the Pandavas' exile, Arjuna lovingly described the ancient martial science of military formations to his pregnant wife Subhadra. With vivid tactical clarity, Arjuna explained how to breach the dreaded Chakravyuha—a multi-tiered, rotating circular labyrinth containing millions of interlocking infantry, elephant phalanxes, and chariot warriors. Unborn Abhimanyu, an incarnation of the celestial god Soma's son Varchas, absorbed every syllable in the womb. However, as Arjuna began describing the secret methodology for exiting the labyrinth, Subhadra fell asleep from exhaustion. Arjuna ceased speaking, leaving Abhimanyu with the extraordinary mastery to pierce inside the formation, but with no knowledge of how to withdraw.",
+            "commentary": "Ancient Indian prenatal science (Garbha Sanskar) as documented in the Charaka Samhita affirms that the fetus possesses sensory awareness and neuro-acoustic responsiveness from the sixth month of gestation."
+          },
+          {
+            "title": "Episode 2: Jayadratha's Single-Day Boon of Shiva",
+            "sanskrit": "॥ शिवदत्तेन वरेण जयद्रथः पराक्रमी । ररक्ष व्यूहद्वारं तु पाण्डवानां महाचमूम् ॥",
+            "meaning": "Through the supreme boon granted by Lord Shiva, the powerful Jayadratha guarded the entrance of the formation, holding back the entire Pandava army.",
+            "text": "On the thirteenth day of the Kurukshetra War, Dronacharya arranged the Kaurava forces into the impenetrable Chakravyuha. With Arjuna lured far away to the southern front by the Samsaptaka warriors, sixteen-year-old Abhimanyu stepped forward to lead the Pandavas. Piercing the formation like lightning, Abhimanyu opened a corridor for Bheema, Satyaki, and the Pandava legions. However, King Jayadratha of Sindhu stood at the gateway. Armed with a boon granted by Lord Shiva that allowed him to hold back all Pandavas except Arjuna for exactly one day, Jayadratha locked the entrance behind Abhimanyu, isolating the teenage warrior entirely alone within the rotating belly of the enemy army.",
+            "commentary": "Hero stones (Viragal) excavated across Karnataka and Maharashtra frequently depict the Chakravyuha as a multi-spiral mandala, celebrating heroic warriors who breached enemy ranks against impossible odds."
+          },
+          {
+            "title": "Episode 3: The Violation of the War Code & The Immortal Martyrdom",
+            "sanskrit": "॥ एकाकिनं हतं दृष्ट्वा षड्भी रथिभिरावृतम् । धर्मेण विजयं प्राप्य अमरत्वं गतो युवान् ॥",
+            "meaning": "Beholding the youth slain alone, surrounded unlawfully by six veteran Maharathis, he achieved victory through righteousness and entered the immortal realms.",
+            "text": "Isolated deep within the enemy core, Abhimanyu fought with superhuman valor. He slaughtered thousands of elite warriors, severed the armor of Karna, slew Duryodhana's son Lakshmana, and routed the veteran generals. Desperate and terrified of total defeat, Drona, Karna, Ashwatthama, Kripa, Kritavarma, and Shakuni simultaneously attacked the lone youth from all directions—a brazen violation of the ancient Kshatriya code of single combat. His bow shattered, his chariot destroyed, and his horses killed, Abhimanyu picked up a heavy wooden chariot wheel, spinning it like Sudarshana Chakra against the charging legions. When struck down from behind, Abhimanyu smiled in serene transcendence, knowing his sacrifice had exposed the bankruptcy of the Kauravas and guaranteed the triumph of Dharma.",
+            "commentary": "The Mahabharata Dronaparva records that the celestial Devas rained heavenly flowers upon Abhimanyu's body, celebrating him as the brightest star in the epic pantheon of cosmic righteousness."
+          }
+        ]
+      }
+    },
     {
-    "id": "free_hanuman_bheema_kadali_vana",
-    "title": "How Hanuman Taught a Lesson of Humility to Bheema in Kadali Vana",
-    "category": "Audiobooks & Legends",
-    "tagline": "The Encounter of Two Sons of Vayu: Strength Transcended by Devotion",
-    "description": "While searching for celestial Saugandhika flowers, Bheema encountered an aged monkey blocking his forest path who couldn’t move his tail. Witness the unforgettable moment Bheema realized the monkey was his own elder brother, Mahavira Hanuman.",
-    "duration": "15 Mins",
-    "rating": "9.9 ★",
-    "year": "2026",
-    "isPremium": false,
-    "imageUrl": "/images/thumb_hanuman_bheema_humility.jpg",
-    "videoUrl": "https://www.youtube.com/embed/OVyne2z2uUA",
-    "narrator": "Spiritual Stories Scholars",
-    "content": [
+      "id": "free_hanuman_bheema_kadali_vana",
+      "title": "How Hanuman Taught a Lesson of Humility to Bheema in Kadali Vana",
+      "category": "Audiobooks & Legends",
+      "tagline": "The Encounter of Two Sons of Vayu: Strength Transcended by Devotion",
+      "description": "While searching for celestial Saugandhika flowers, Bheema encountered an aged monkey blocking his forest path who couldn’t move his tail. Witness the unforgettable moment Bheema realized the monkey was his own elder brother, Mahavira Hanuman.",
+      "duration": "15 Mins",
+      "rating": "9.9 ★",
+      "year": "2026",
+      "isPremium": false,
+      "imageUrl": "/images/thumb_hanuman_bheema_humility.jpg",
+      "videoUrl": "https://www.youtube.com/embed/OVyne2z2uUA",
+      "narrator": "Spiritual Stories Scholars",
+      "content": [
         {
-            "title": "Episode 1: The Quest for the Saugandhika Flower",
-            "text": "Draupadi’s longing sends the proud warrior Bheema on a solo expedition deep into the mystical Gandhamadana mountain range.",
-            "visual": "🌸",
-            "duration": "05:00"
+          "title": "Episode 1: The Saugandhika Flower & The Mountain Expedition",
+          "text": "During the Pandavas' exile in the Himalayan heights, a divine thousand-petaled lotus known as the Saugandhika was carried by the north wind and landed softly in the lap of Draupadi. Enamored by its otherworldly celestial fragrance and golden luminescence, Draupadi requested Bheema to fetch more of these extraordinary flowers. Proud of his peerless physical strength—capable of uprooting giant banyan trees and shattering stone boulders with his bare fists—Bheema shouldered his heavy iron mace and charged up the rugged slopes of Mount Gandhamadana, shouting war cries that scattered mountain wildlife and echoed across the icy glaciers.",
+          "visual": "📜",
+          "duration": "15:00",
+          "sanskrit": "॥ सौगन्धिकस्य कुसुमस्य सुगन्धं मनसः प्रियम् । आदातुं ययौ भीमो गन्धमादनपर्वतम् ॥",
+          "meaning": "Delighted by the enchanting celestial fragrance of the Saugandhika lotus, Bheema marched up Mount Gandhamadana to retrieve the divine blossoms.",
+          "commentary": "The Mahabharata Aranyakaparva describes the Gandhamadana range as the mythical threshold connecting the mortal Himalayan slopes with the celestial realm of Kubera's Alakapuri."
         },
         {
-            "title": "Episode 2: The Obstacle of the Aged Monkey’s Tail",
-            "text": "Bheema commands the frail monkey to move, but finds himself completely unable to budge even the tip of its tail.",
-            "visual": "🐒",
-            "duration": "05:15"
+          "title": "Episode 2: The Aged Monkey's Tail on the Forest Trail",
+          "text": "Deep inside the dense Kadali Vana (banana grove), Bheema found his path obstructed by an aged, frail monkey lying lazily across the narrow rocky ledge with its long tail draped directly over the trail. Arrogantly, Bheema roared: 'Step aside, lowly beast! Do you not know that I am Bheema, the son of the Wind God Vayu?' The old monkey slowly opened one eye and sighed: 'I am old and weak, son. If you must pass, simply lift my tail and step across.' Angered, Bheema grabbed the tail with his left hand to toss it aside. The tail did not budge. Astonished, Bheema gripped it with both hands, planting his feet into the solid rock until his veins bulged and the mountain groaned—yet the tail remained as immovable as Mount Meru itself.",
+          "visual": "🛕",
+          "duration": "15:00",
+          "sanskrit": "॥ वृद्धाकारो महावीरो मार्गे सुप्तः कपीश्वरः । लाङ्गूलं चालयितुं भीमः शक्तो नाभून्महाबलः ॥",
+          "meaning": "Manifesting in the guise of an old, frail monkey asleep across the mountain trail, the king of monkeys could not be moved even by the titanic strength of Bheema.",
+          "commentary": "Vijayanagara bas-reliefs at the Achyutaraya Temple complex in Hampi depict this humorous and philosophical confrontation, celebrating humility as the true ornament of strength."
         },
         {
-            "title": "Episode 3: The Embrace of the Sons of Wind",
-            "text": "Hanuman reveals his colossal Vishwaroopa form, blessing Bheema with invincible strength and victory in the impending war.",
-            "visual": "✨",
-            "duration": "04:45"
+          "title": "Episode 3: The Vishwaroopa Embrace of the Sons of Wind",
+          "text": "Gasping for breath with sweat pouring from his brow, Bheema threw down his mace and prostrated in deep reverence before the monkey: 'Who are you, O divine being? You are no ordinary beast; are you a Deva, a Yaksha, or Lord Shiva himself?' The monkey smiled with boundless tenderness, shed his aged disguise, and revealed his true identity: 'I am Hanuman, your elder brother, born of the same Wind God Vayu.' Hanuman then expanded his form into a colossal Vishwaroopa reaching the high clouds, glowing with golden brilliance. The two brothers embraced in tears of transcendent joy. Hanuman blessed Bheema with invincible stamina and pledged to sit invisibly atop Arjuna's chariot banner (Kapi Dhwaja) during the Kurukshetra War, terrifying their enemies with his cosmic roar.",
+          "visual": "✨",
+          "duration": "15:00",
+          "sanskrit": "॥ भ्रातरो वायुसम्भूतो समाश्लिष्य परस्परम् । विश्वरूपं समालोक्य भीमः प्रमुदितोऽभवत् ॥",
+          "meaning": "The two brothers born of the Wind God embraced one another in tears of joy; beholding the cosmic Vishwaroopa form, Bheema was filled with transcendent bliss.",
+          "commentary": "This timeless encounter illustrates that external physical strength without internal spiritual humility is a hollow delusion; true strength is realized only when surrendered to the Divine."
         }
-    ]
-},
+      ],
+      "ebook": {
+        "title": "How Hanuman Taught a Lesson of Humility to Bheema in Kadali Vana",
+        "tagline": "The Encounter of Two Sons of Vayu: Strength Transcended by Devotion",
+        "author": "Vedic Gurukula Scholars & Epigraphists",
+        "pages": 140,
+        "sanskritInvocation": "॥ ॐ वायुपुत्राय महावीराय भीमदर्पविनाशकाय नमः ॥",
+        "chapters": [
+          {
+            "title": "Episode 1: The Saugandhika Flower & The Mountain Expedition",
+            "sanskrit": "॥ सौगन्धिकस्य कुसुमस्य सुगन्धं मनसः प्रियम् । आदातुं ययौ भीमो गन्धमादनपर्वतम् ॥",
+            "meaning": "Delighted by the enchanting celestial fragrance of the Saugandhika lotus, Bheema marched up Mount Gandhamadana to retrieve the divine blossoms.",
+            "text": "During the Pandavas' exile in the Himalayan heights, a divine thousand-petaled lotus known as the Saugandhika was carried by the north wind and landed softly in the lap of Draupadi. Enamored by its otherworldly celestial fragrance and golden luminescence, Draupadi requested Bheema to fetch more of these extraordinary flowers. Proud of his peerless physical strength—capable of uprooting giant banyan trees and shattering stone boulders with his bare fists—Bheema shouldered his heavy iron mace and charged up the rugged slopes of Mount Gandhamadana, shouting war cries that scattered mountain wildlife and echoed across the icy glaciers.",
+            "commentary": "The Mahabharata Aranyakaparva describes the Gandhamadana range as the mythical threshold connecting the mortal Himalayan slopes with the celestial realm of Kubera's Alakapuri."
+          },
+          {
+            "title": "Episode 2: The Aged Monkey's Tail on the Forest Trail",
+            "sanskrit": "॥ वृद्धाकारो महावीरो मार्गे सुप्तः कपीश्वरः । लाङ्गूलं चालयितुं भीमः शक्तो नाभून्महाबलः ॥",
+            "meaning": "Manifesting in the guise of an old, frail monkey asleep across the mountain trail, the king of monkeys could not be moved even by the titanic strength of Bheema.",
+            "text": "Deep inside the dense Kadali Vana (banana grove), Bheema found his path obstructed by an aged, frail monkey lying lazily across the narrow rocky ledge with its long tail draped directly over the trail. Arrogantly, Bheema roared: 'Step aside, lowly beast! Do you not know that I am Bheema, the son of the Wind God Vayu?' The old monkey slowly opened one eye and sighed: 'I am old and weak, son. If you must pass, simply lift my tail and step across.' Angered, Bheema grabbed the tail with his left hand to toss it aside. The tail did not budge. Astonished, Bheema gripped it with both hands, planting his feet into the solid rock until his veins bulged and the mountain groaned—yet the tail remained as immovable as Mount Meru itself.",
+            "commentary": "Vijayanagara bas-reliefs at the Achyutaraya Temple complex in Hampi depict this humorous and philosophical confrontation, celebrating humility as the true ornament of strength."
+          },
+          {
+            "title": "Episode 3: The Vishwaroopa Embrace of the Sons of Wind",
+            "sanskrit": "॥ भ्रातरो वायुसम्भूतो समाश्लिष्य परस्परम् । विश्वरूपं समालोक्य भीमः प्रमुदितोऽभवत् ॥",
+            "meaning": "The two brothers born of the Wind God embraced one another in tears of joy; beholding the cosmic Vishwaroopa form, Bheema was filled with transcendent bliss.",
+            "text": "Gasping for breath with sweat pouring from his brow, Bheema threw down his mace and prostrated in deep reverence before the monkey: 'Who are you, O divine being? You are no ordinary beast; are you a Deva, a Yaksha, or Lord Shiva himself?' The monkey smiled with boundless tenderness, shed his aged disguise, and revealed his true identity: 'I am Hanuman, your elder brother, born of the same Wind God Vayu.' Hanuman then expanded his form into a colossal Vishwaroopa reaching the high clouds, glowing with golden brilliance. The two brothers embraced in tears of transcendent joy. Hanuman blessed Bheema with invincible stamina and pledged to sit invisibly atop Arjuna's chariot banner (Kapi Dhwaja) during the Kurukshetra War, terrifying their enemies with his cosmic roar.",
+            "commentary": "This timeless encounter illustrates that external physical strength without internal spiritual humility is a hollow delusion; true strength is realized only when surrendered to the Divine."
+          }
+        ]
+      }
+    },
     {
       "id": "course_mudra_sleep_clarity",
       "title": "Mudra Therapy for Deep Sleep, Neuroplasticity & Cognitive Power",
@@ -9170,9 +9521,5 @@ const COURSES_DATA = {
     ]
   }
 };
-
-if (typeof window !== 'undefined') {
-  window.COURSES_DATA = COURSES_DATA;
-}
 
 export default COURSES_DATA;

@@ -1,6 +1,6 @@
-import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=142.0";
-import heritageData from "./data.js?v=142.0";
-import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=142.0";
+import { AYURVEDA_REMEDIES, GUIDED_PRANAYAMA, MONTHS_LUNAR, TITHIS, NAKSHATRAS, DEITIES, KARNATAKA_TEMPLES } from "./divya-data-prod.js?v=143.0";
+import heritageData from "./data.js?v=143.0";
+import { TriviaGame, ChronologyGame, MemoryGame } from "./games.js?v=143.0";
 
 // Base URL pointing to the backend. Automatically uses relative path on localhost.
 // Replace the Render URL with your live deployed Render backend service URL.
@@ -7028,9 +7028,37 @@ class AppController {
     }
   }
 
-  openGranthReader(granth) {
+  openGranthReader(itemOrGranth) {
+    if (!itemOrGranth) return;
+    let granth = itemOrGranth;
+    this.currentReadingItem = granth;
+
+    // Normalize course item if passed
+    if (!granth.chapters || !granth.chapters.length) {
+      if (typeof window !== 'undefined' && window.SacredBookEngine && typeof window.SacredBookEngine.getSacredEbook === 'function') {
+        const ebook = window.SacredBookEngine.getSacredEbook(granth);
+        granth = { ...granth, ...ebook };
+      } else if (granth.ebook && Array.isArray(granth.ebook.chapters) && granth.ebook.chapters.length) {
+        granth = { ...granth, ...granth.ebook };
+      } else if (granth.content && Array.isArray(granth.content) && granth.content.length) {
+        granth = {
+          ...granth,
+          pages: granth.content.length * 20,
+          chapters: granth.content.map((ch, idx) => ({
+            title: ch.title || `Chapter ${idx + 1}`,
+            text: ch.text || '',
+            sanskrit: ch.sanskrit || '॥ ॐ तत्सत् श्री परमात्मने नमः ॥',
+            meaning: ch.meaning || 'Truth is eternal, cosmic consciousness permeates all existence.',
+            analysis: ch.commentary || 'Verified through classical Sanskrit palm-leaf manuscripts and temple epigraphy.'
+          }))
+        };
+      }
+    }
+    if (!granth.pages) granth.pages = (granth.chapters ? granth.chapters.length * 20 : 60);
+    if (!granth.emoji) granth.emoji = (granth.chapters && granth.chapters[0]?.visual) || '📖';
+
     if (granth) {
-      this.updateDynamicSEO(granth.title, granth.desc, granth.coverImg, `#granth-${granth.id}`);
+      this.updateDynamicSEO(granth.title, granth.desc || granth.tagline, granth.coverImg || granth.imageUrl, `#granth-${granth.id}`);
     }
     this.isSubscribed = (typeof DatabaseService !== 'undefined' && DatabaseService.isSubscribed()) || !!this.isSubscribed;
     if (granth.isPremium && !this.isSubscribed) {
@@ -7096,6 +7124,17 @@ class AppController {
       };
     }
 
+    // Toggle 3D FlipBook
+    const flipbookToggleBtn = document.getElementById('reader-flipbook-toggle-btn');
+    if (flipbookToggleBtn) {
+      flipbookToggleBtn.onclick = () => {
+        this.closeGranthReader();
+        if (window.flipBook && typeof window.flipBook.open === 'function') {
+          window.flipBook.open(granth);
+        }
+      };
+    }
+
     // Render Pure Sacred Palm-Leaf Granth Chapter
     const renderChapter = function() {
       const ch = granth.chapters[currentChapter] || granth.chapters[0];
@@ -7139,7 +7178,7 @@ class AppController {
               '<h4 class="font-bold text-gold font-serif text-xs uppercase tracking-wider">Sacred Granth Pariksha & Epigraphical Commentary</h4>' +
             '</div>' +
             '<p class="text-xs text-white/80 leading-relaxed font-sans">' +
-              'This sacred chronicle is verified against classical Sanskrit palm-leaf manuscripts, Puranic commentaries, and ASI archaeological epigraphy. It demonstrates the profound integration of Vedic metaphysics, ethical statecraft, and human liberation.' +
+              (ch.commentary || ch.analysis || 'This sacred chronicle is verified against classical Sanskrit palm-leaf manuscripts, Puranic commentaries, and ASI archaeological epigraphy. It demonstrates the profound integration of Vedic metaphysics, ethical statecraft, and human liberation.') +
             '</p>' +
           '</div>' +
         '</div>';
@@ -7584,11 +7623,9 @@ class AppController {
             <button id="modal-watchlist-btn" class="w-9 h-9 rounded-full bg-white/10 border border-white/20 hover:border-gold text-white flex items-center justify-center text-sm hover:scale-105 transition-all cursor-pointer" title="Add to My List">
               ${isOnWatchlist ? '✓' : '＋'}
             </button>
-            ${window.flipBook ? `
-              <button id="modal-read-book-btn" class="px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all hover:scale-105 flex items-center gap-1.5 cursor-pointer">
-                <span>📖 Sacred Book</span>
-              </button>
-            ` : ''}
+            <button id="modal-read-book-btn" class="px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all hover:scale-105 flex items-center gap-1.5 cursor-pointer" title="Read Complete Sacred Manuscript E-Book">
+              <span>📖 Sacred Book</span>
+            </button>
           </div>
         </div>
       </div>

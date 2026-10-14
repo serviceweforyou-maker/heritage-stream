@@ -1752,8 +1752,8 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=142.0">
-  <link rel="stylesheet" href="flipbook.css?v=98">
+  <link rel="stylesheet" href="styles.css?v=143.0">
+  <link rel="stylesheet" href="flipbook.css?v=143.0">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
@@ -2723,6 +2723,7 @@
           </div>
           <div class="flex items-center gap-2">
             <!-- Paper / Dark Mode Toggle -->
+            <button id="reader-flipbook-toggle-btn" class="px-2.5 py-1 rounded-lg border border-gold/40 bg-gold/15 text-[11px] text-gold font-bold hover:bg-gold hover:text-black transition-all flex items-center gap-1 shadow-sm cursor-pointer" title="Read as 3D Interactive FlipBook">📖 <span class="hidden sm:inline">3D FlipBook</span></button>
             <button id="reader-video-toggle-btn" class="px-3 py-1 rounded-lg border border-red-500/40 bg-red-600/20 text-red-300 hover:bg-red-600 hover:text-white text-[11px] font-bold transition-all flex items-center gap-1.5 shadow-sm" title="Watch 4K Video Episode">🎬 <span class="hidden sm:inline">Watch Video</span></button>
             <button id="reader-theme-toggle-btn" class="px-2.5 py-1 rounded-lg border border-white/20 bg-white/5 text-[11px] text-white hover:border-gold transition-all" title="Toggle Parchment / Dark Mode">
               📜 Parchment
@@ -3679,8 +3680,9 @@
     </div>
   </div>
 
-  <script type="module" src="data.js?v=142.0"></script>
-  <script type="module" src="app-prod.js?v=142.0"></script>
+  <script src="flipbook.js?v=143.0"></script>
+  <script type="module" src="data.js?v=143.0"></script>
+  <script type="module" src="app-prod.js?v=143.0"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -4258,9 +4260,7 @@
     </div>
   </div>
 
-  <script src="flipbook.js?v=118.0"></script>
-
-            <!-- ── 🎬 NETFLIX-STYLE AUTHENTICATION MODAL (SIGN IN / REGISTER / LOGOUT) ── -->
+  <!-- ── 🎬 NETFLIX-STYLE AUTHENTICATION MODAL (SIGN IN / REGISTER / LOGOUT) ── -->
   <div id="netflix-auth-modal" class="modal-overlay fixed inset-0 z-[110] hidden items-center justify-center p-3 sm:p-5 overflow-y-auto font-sans">
     <div class="bg-[#090b12] border-2 border-gold/45 rounded-3xl w-full max-w-md shadow-[0_30px_80px_rgba(0,0,0,0.99)] relative p-6 sm:p-8 max-h-[92vh] overflow-y-auto no-scrollbar font-sans space-y-6" style="background-color: #090b12 !important; opacity: 1 !important;">
       

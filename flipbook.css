@@ -488,3 +488,68 @@
     display: none !important;
   }
 }
+
+
+/* ── SACRED SCRIPTURE & COMMENTARY ENHANCEMENTS ── */
+.fb-sanskrit-box {
+  background: rgba(212, 175, 55, 0.09);
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.fb-sanskrit-shloka {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #8b4513;
+  margin-bottom: 3px;
+  letter-spacing: 0.02em;
+}
+.fb-sanskrit-meaning {
+  font-size: 10px;
+  font-style: italic;
+  color: #5c3a10;
+  line-height: 1.4;
+}
+.fb-commentary-box {
+  background: rgba(139, 110, 60, 0.08);
+  border-left: 3px solid #d4af37;
+  padding: 8px 12px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 10px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: #4a3319;
+}
+.fb-commentary-title {
+  font-weight: 800;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #8b6e3c;
+  margin-bottom: 3px;
+}
+.fb-dropcap {
+  float: left;
+  font-size: 36px;
+  line-height: 0.85;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: #8b4513;
+  margin-right: 8px;
+  margin-top: 2px;
+}
+.fb-chapter-body {
+  overflow-y: auto !important;
+  max-height: 335px;
+  padding-right: 4px;
+}
+.fb-chapter-body::-webkit-scrollbar {
+  width: 3px;
+}
+.fb-chapter-body::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 3px;
+}
