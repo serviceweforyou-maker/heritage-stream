@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>3D Astral Sanctum: Kailash & Vaikuntha Cosmic Voyage | Sanatana360</title>
+  <meta name="description" content="Experience a 3D WebGL cosmic flight through sacred geometry, Mount Kailash, and floating illuminated diyas with 8D spatial audio.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Three.js + OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #030508;
+      color: #E2E8F0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      touch-action: none;
+    }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    
+    #canvas-container {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+    }
+
+    /* Glass overlay elements */
+    .glass-hud {
+      background: rgba(10, 14, 26, 0.7);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    }
+    
+    .glow-gold {
+      filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.6));
+    }
+
+    /* Diya pulse */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.08); filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.9)); }
+    }
+    .diya-btn-pulse {
+      animation: pulseGlow 2.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="relative w-screen h-screen select-none">
+
+  <!-- 3D WebGL Canvas Target -->
+  <div id="canvas-container"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="absolute top-0 left-0 w-full z-20 px-4 py-3 flex items-center justify-between pointer-events-auto">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-2.5 glass-hud px-3.5 py-1.5 rounded-full hover:border-amber-400/50 transition">
+        <span class="text-xl">🕉️</span>
+        <span class="font-cinzel font-bold text-sm bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-500 bg-clip-text text-transparent">Sanatana360</span>
+      </a>
+      
+      <div class="hidden md:flex items-center gap-2 glass-hud px-3 py-1 rounded-full text-xs text-amber-300 font-mono">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+        <span id="activeDiyasCount">38,420 Floating Diyas Worldwide</span>
+      </div>
+    </div>
+
+    <!-- Quick Links & Controls -->
+    <div class="flex items-center gap-2 text-xs">
+      <!-- Realm Switcher -->
+      <div class="glass-hud rounded-full p-1 flex items-center gap-1">
+        <button id="themeKailash" class="px-3 py-1 rounded-full bg-amber-500 text-slate-950 font-bold transition">🏔️ Kailash</button>
+        <button id="themeVaikuntha" class="px-3 py-1 rounded-full text-slate-300 hover:text-white transition">🌌 Vaikuntha</button>
+        <button id="themeSamadhi" class="px-3 py-1 rounded-full text-slate-300 hover:text-white transition">✨ Samadhi</button>
+      </div>
+
+      <!-- 8D Audio Toggle -->
+      <button id="audioToggleBtn" class="glass-hud px-3 py-2 rounded-full text-slate-200 hover:text-amber-400 transition flex items-center gap-1.5" title="Toggle 8D Spatial Audio">
+        <i class="fa-solid fa-volume-high text-amber-400" id="audioIcon"></i>
+        <span class="hidden sm:inline" id="audioLabel">8D Audio</span>
+      </button>
+
+      <a href="divya-darshana.html" class="glass-hud px-3 py-2 rounded-full text-slate-300 hover:text-amber-300 transition hidden lg:inline">
+        Live Temples
+      </a>
+    </div>
+  </header>
+
+  <!-- Center Crosshair / Prompt for Touch/Click -->
+  <div id="instructionBanner" class="absolute top-20 left-1/2 -translate-x-1/2 z-20 pointer-events-none text-center">
+    <div class="glass-hud px-4 py-1.5 rounded-full text-xs text-amber-300/90 font-mono tracking-wide border border-amber-500/20">
+      <i class="fa-solid fa-hand-pointer mr-1.5"></i> Drag to orbit 360° • Pinch to zoom • Tap to light a Diya
+    </div>
+  </div>
+
+  <!-- Bottom Interactive HUD: Light a Diya & Recite Shloka -->
+  <footer class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 w-full max-w-xl px-4 pointer-events-auto">
+    <div class="glass-hud p-4 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-4 border border-amber-500/30">
+      
+      <!-- Current Sacred Focal Shloka -->
+      <div class="text-center sm:text-left">
+        <span class="text-[10px] font-mono uppercase text-amber-400/80 tracking-widest block" id="shlokaTitle">
+          MAHAMRITYUNJAYA DHYANA
+        </span>
+        <p class="font-cinzel text-xs sm:text-sm text-white font-semibold tracking-wide" id="shlokaText">
+          ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्
+        </p>
+        <p class="text-[11px] text-slate-400 italic" id="shlokaTranslation">
+          We meditate upon the Three-Eyed Lord of Transcendence.
+        </p>
+      </div>
+
+      <!-- Offer Diya Action -->
+      <button id="offerDiyaBtn" class="flex-shrink-0 diya-btn-pulse px-5 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center gap-2 hover:scale-105 transition-all">
+        <span class="text-lg">🪔</span>
+        <span>Offer Diya</span>
+      </button>
+
+    </div>
+  </footer>
+
+  <!-- Diya Blessing Toast -->
+  <div id="diyaToast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-30 pointer-events-none opacity-0 transition-opacity duration-500">
+    <div class="glass-hud px-5 py-2.5 rounded-full border border-amber-400 text-amber-300 font-cinzel text-xs font-bold shadow-2xl flex items-center gap-2">
+      <span>✨</span>
+      <span id="toastMsg">Your consecrated Diya has been placed in the Cosmos. Om Shanti!</span>
+    </div>
+  </div>
+
+  <!-- Three.js 3D Astral Sanctum Engine -->
+  <script>
+    // 1. SETUP THREE.JS SCENE, CAMERA, RENDERER
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x050811, 0.0018);
+
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
+    camera.position.set(0, 30, 95);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.25;
+    container.appendChild(renderer.domElement);
+
+    // Orbit Controls
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.maxDistance = 250;
+    controls.minDistance = 15;
+    controls.maxPolarAngle = Math.PI / 2 + 0.1; // Don't go deep underground
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.45;
+
+    // 2. LIGHTING
+    const ambientLight = new THREE.AmbientLight(0x223355, 0.8);
+    scene.add(ambientLight);
+
+    const centralLight = new THREE.PointLight(0xffbe3b, 3, 200);
+    centralLight.position.set(0, 15, 0);
+    scene.add(centralLight);
+
+    // 3. 12,000 PARTICLE COSMIC NEBULA STARFIELD
+    const starCount = 12000;
+    const starGeo = new THREE.BufferGeometry();
+    const starPos = new Float32Array(starCount * 3);
+    const starColors = new Float32Array(starCount * 3);
+
+    const palette = [
+      new THREE.Color(0xffffff),
+      new THREE.Color(0xfde047), // gold
+      new THREE.Color(0x93c5fd), // celestial blue
+      new THREE.Color(0xf472b6), // lotus pink
+      new THREE.Color(0xfb923c)  // saffron
+    ];
+
+    for (let i = 0; i < starCount; i++) {
+      const radius = THREE.MathUtils.randFloat(80, 800);
+      const theta = THREE.MathUtils.randFloat(0, Math.PI * 2);
+      const phi = THREE.MathUtils.randFloat(0, Math.PI);
+
+      starPos[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+      starPos[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+      starPos[i * 3 + 2] = radius * Math.cos(phi);
+
+      const col = palette[Math.floor(Math.random() * palette.length)];
+      starColors[i * 3] = col.r;
+      starColors[i * 3 + 1] = col.g;
+      starColors[i * 3 + 2] = col.b;
+    }
+
+    starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+    starGeo.setAttribute('color', new THREE.BufferAttribute(starColors, 3));
+
+    const starMat = new THREE.PointsMaterial({
+      size: 1.8,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.85
+    });
+
+    const starField = new THREE.Points(starGeo, starMat);
+    scene.add(starField);
+
+    // 4. 3D SACRED GEOMETRY: ROTATING SRI YANTRA & CHAKRA RINGS
+    const yantraGroup = new THREE.Group();
+
+    // Concentric golden rings
+    const ringRadii = [12, 20, 28, 38, 50];
+    ringRadii.forEach((r, idx) => {
+      const ringGeo = new THREE.RingGeometry(r - 0.2, r + 0.2, 64);
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: idx % 2 === 0 ? 0xf59e0b : 0xfde68a,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.45
+      });
+      const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+      ringMesh.rotation.x = Math.PI / 2;
+      ringMesh.position.y = (idx - 2) * 1.5;
+      yantraGroup.add(ringMesh);
+    });
+
+    // 9 Interlocking Sacred Geometry Triangles in 3D
+    for (let t = 0; t < 9; t++) {
+      const shape = new THREE.Shape();
+      const s = 14 + t * 2.2;
+      const isUp = t % 2 === 0;
+      if (isUp) {
+        shape.moveTo(0, s);
+        shape.lineTo(-s * 0.866, -s * 0.5);
+        shape.lineTo(s * 0.866, -s * 0.5);
+        shape.closePath();
+      } else {
+        shape.moveTo(0, -s);
+        shape.lineTo(-s * 0.866, s * 0.5);
+        shape.lineTo(s * 0.866, s * 0.5);
+        shape.closePath();
+      }
+
+      const points = shape.getPoints();
+      const geom = new THREE.BufferGeometry().setFromPoints(points);
+      const line = new THREE.LineLoop(geom, new THREE.LineBasicMaterial({
+        color: 0xfbbf24,
+        transparent: true,
+        opacity: 0.55,
+        linewidth: 2
+      }));
+      line.rotation.x = Math.PI / 2;
+      line.position.y = (t - 4) * 2;
+      yantraGroup.add(line);
+    }
+
+    scene.add(yantraGroup);
+
+    // 5. SACRED MOUNT KAILASH / LOTUS ALTAR (Central Monument)
+    const altarGroup = new THREE.Group();
+
+    // Sacred Shiva Lingam / Cosmic Pillar at Center
+    const lingamGeo = new THREE.CylinderGeometry(2.5, 3.2, 12, 32);
+    const lingamMat = new THREE.MeshStandardMaterial({
+      color: 0x111827,
+      metalness: 0.8,
+      roughness: 0.2,
+      emissive: 0x221105,
+      emissiveIntensity: 0.4
+    });
+    const lingamMesh = new THREE.Mesh(lingamGeo, lingamMat);
+    lingamMesh.position.y = 6;
+    altarGroup.add(lingamMesh);
+
+    // Lingam Top Dome
+    const domeGeo = new THREE.SphereGeometry(2.5, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
+    const domeMesh = new THREE.Mesh(domeGeo, lingamMat);
+    domeMesh.position.y = 12;
+    altarGroup.add(domeMesh);
+
+    // Golden Yoni Base
+    const yoniGeo = new THREE.CylinderGeometry(7, 8, 2, 32);
+    const yoniMat = new THREE.MeshStandardMaterial({
+      color: 0xd97706,
+      metalness: 0.6,
+      roughness: 0.3
+    });
+    const yoniMesh = new THREE.Mesh(yoniGeo, yoniMat);
+    yoniMesh.position.y = 1;
+    altarGroup.add(yoniMesh);
+
+    // Cosmic Glowing Lotus Petals
+    const petalCount = 16;
+    for (let p = 0; p < petalCount; p++) {
+      const angle = (p / petalCount) * Math.PI * 2;
+      const petalGeo = new THREE.ConeGeometry(2, 6, 4);
+      const petalMat = new THREE.MeshStandardMaterial({
+        color: 0xf59e0b,
+        emissive: 0x78350f,
+        roughness: 0.4
+      });
+      const petal = new THREE.Mesh(petalGeo, petalMat);
+      petal.position.set(Math.cos(angle) * 7.5, 1.5, Math.sin(angle) * 7.5);
+      petal.rotation.x = Math.PI / 3;
+      petal.rotation.y = angle;
+      altarGroup.add(petal);
+    }
+
+    scene.add(altarGroup);
+
+    // 6. FLOATING CONSECRATED DIYAS COLLECTION
+    const diyas = [];
+    const diyaGroup = new THREE.Group();
+    scene.add(diyaGroup);
+
+    function createDiya(x, y, z) {
+      const singleDiya = new THREE.Group();
+
+      // Brass base
+      const baseGeo = new THREE.CylinderGeometry(0.8, 0.4, 0.4, 16);
+      const baseMat = new THREE.MeshStandardMaterial({ color: 0xd97706, metalness: 0.9, roughness: 0.2 });
+      const base = new THREE.Mesh(baseGeo, baseMat);
+      singleDiya.add(base);
+
+      // Flame
+      const flameGeo = new THREE.ConeGeometry(0.35, 1.0, 12);
+      const flameMat = new THREE.MeshBasicMaterial({ color: 0xffedd5 });
+      const flame = new THREE.Mesh(flameGeo, flameMat);
+      flame.position.y = 0.6;
+      singleDiya.add(flame);
+
+      // Point Light
+      const pLight = new THREE.PointLight(0xf59e0b, 1.8, 25);
+      pLight.position.y = 0.7;
+      singleDiya.add(pLight);
+
+      singleDiya.position.set(x, y, z);
+      singleDiya.userData = {
+        baseY: y,
+        floatSpeed: THREE.MathUtils.randFloat(0.5, 1.5),
+        floatOffset: THREE.MathUtils.randFloat(0, Math.PI * 2),
+        orbitRadius: Math.sqrt(x*x + z*z),
+        orbitAngle: Math.atan2(z, x),
+        orbitSpeed: THREE.MathUtils.randFloat(0.002, 0.008)
+      };
+
+      diyaGroup.add(singleDiya);
+      diyas.push(singleDiya);
+      return singleDiya;
+    }
+
+    // Pre-seed 60 floating community diyas in a wide cosmic spiral
+    for (let d = 0; d < 60; d++) {
+      const r = THREE.MathUtils.randFloat(18, 90);
+      const th = THREE.MathUtils.randFloat(0, Math.PI * 2);
+      const y = THREE.MathUtils.randFloat(-8, 25);
+      createDiya(Math.cos(th) * r, y, Math.sin(th) * r);
+    }
+
+    // 7. USER OFFER DIYA ACTION
+    let localDiyasOffered = 0;
+    function offerUserDiya() {
+      // Spawn right in front of camera and gently float inwards towards Lingam
+      const dir = new THREE.Vector3();
+      camera.getWorldDirection(dir);
+      const spawnPos = camera.position.clone().add(dir.multiplyScalar(20));
+
+      const newDiya = createDiya(spawnPos.x, spawnPos.y, spawnPos.z);
+      localDiyasOffered++;
+
+      // Trigger WebAudio bell
+      playSpatialChime();
+
+      // Show toast
+      const toast = document.getElementById('diyaToast');
+      toast.style.opacity = '1';
+      setTimeout(() => { toast.style.opacity = '0'; }, 3500);
+
+      const countEl = document.getElementById('activeDiyasCount');
+      countEl.textContent = `${38420 + localDiyasOffered} Floating Diyas Worldwide`;
+    }
+
+    document.getElementById('offerDiyaBtn').addEventListener('click', offerUserDiya);
+
+    // Tap/Click to place Diya in 3D
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    window.addEventListener('dblclick', (e) => {
+      mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      raycaster.setFromCamera(mouse, camera);
+      const targetPos = raycaster.ray.origin.clone().add(raycaster.ray.direction.multiplyScalar(40));
+      createDiya(targetPos.x, targetPos.y, targetPos.z);
+      playSpatialChime();
+      localDiyasOffered++;
+      document.getElementById('activeDiyasCount').textContent = `${38420 + localDiyasOffered} Floating Diyas Worldwide`;
+    });
+
+    // 8. 8D SPATIAL AUDIO ENGINE (WebAudio API)
+    let audioCtx = null;
+    let isAudioPlaying = false;
+    let omOscs = [];
+    let pannerNode = null;
+
+    function initSpatialAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+
+        // 8D Stereo Panner Node
+        if (audioCtx.createStereoPanner) {
+          pannerNode = audioCtx.createStereoPanner();
+          pannerNode.connect(audioCtx.destination);
+        }
+      }
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+    }
+
+    function start8DAudio() {
+      initSpatialAudio();
+      const dest = pannerNode || audioCtx.destination;
+
+      // 432 Hz + 216 Hz + 108 Hz Harmonic Om
+      const freqs = [108, 216, 432];
+      omOscs = [];
+
+      freqs.forEach(f => {
+        const osc = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        osc.frequency.setValueAtTime(f, audioCtx.currentTime);
+        g.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        osc.connect(g);
+        g.connect(dest);
+        osc.start();
+        omOscs.push(osc);
+      });
+
+      isAudioPlaying = true;
+      document.getElementById('audioIcon').className = 'fa-solid fa-pause text-amber-400';
+      document.getElementById('audioLabel').textContent = 'Pause 8D';
+    }
+
+    function stop8DAudio() {
+      omOscs.forEach(o => { try { o.stop(); } catch(e){} });
+      omOscs = [];
+      isAudioPlaying = false;
+      document.getElementById('audioIcon').className = 'fa-solid fa-volume-high text-amber-400';
+      document.getElementById('audioLabel').textContent = '8D Audio';
+    }
+
+    function playSpatialChime() {
+      if (!audioCtx) return;
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(528, now); // Love / Transformation frequency
+
+      g.gain.setValueAtTime(0, now);
+      g.gain.linearRampToValueAtTime(0.2, now + 0.05);
+      g.gain.exponentialRampToValueAtTime(0.001, now + 3.0);
+
+      osc.connect(g);
+      g.connect(pannerNode || audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 3.1);
+    }
+
+    document.getElementById('audioToggleBtn').addEventListener('click', () => {
+      if (isAudioPlaying) stop8DAudio();
+      else start8DAudio();
+    });
+
+    // 9. REALM THEME SWITCHER
+    const themes = {
+      kailash: {
+        bg: 0x050811,
+        fog: 0x050811,
+        yantraCol: 0xf59e0b,
+        shlokaTitle: "MAHAMRITYUNJAYA DHYANA",
+        shloka: "ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्",
+        meaning: "We meditate upon the Three-Eyed Lord of Transcendence."
+      },
+      vaikuntha: {
+        bg: 0x0f0b1a,
+        fog: 0x120a21,
+        yantraCol: 0x38bdf8,
+        shlokaTitle: "NARAYANA SUKTAM",
+        shloka: "ॐ नमो नारायणाय • ॐ विष्णवे नमः",
+        meaning: "Salutations to the All-Pervading Supreme Protector of Cosmos."
+      },
+      samadhi: {
+        bg: 0x020305,
+        fog: 0x030406,
+        yantraCol: 0xe879f9,
+        shlokaTitle: "GAYATRI PRARTHANA",
+        shloka: "ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि",
+        meaning: "May the divine solar light illuminate our inner intellect."
+      }
+    };
+
+    function setTheme(name) {
+      const t = themes[name];
+      scene.background = new THREE.Color(t.bg);
+      scene.fog.color = new THREE.Color(t.fog);
+      document.getElementById('shlokaTitle').textContent = t.shlokaTitle;
+      document.getElementById('shlokaText').textContent = t.shloka;
+      document.getElementById('shlokaTranslation').textContent = t.meaning;
+
+      ['themeKailash', 'themeVaikuntha', 'themeSamadhi'].forEach(id => {
+        const btn = document.getElementById(id);
+        btn.className = 'px-3 py-1 rounded-full text-slate-300 hover:text-white transition';
+      });
+      const activeBtn = document.getElementById('theme' + name.charAt(0).toUpperCase() + name.slice(1));
+      if (activeBtn) activeBtn.className = 'px-3 py-1 rounded-full bg-amber-500 text-slate-950 font-bold transition';
+    }
+
+    document.getElementById('themeKailash').addEventListener('click', () => setTheme('kailash'));
+    document.getElementById('themeVaikuntha').addEventListener('click', () => setTheme('vaikuntha'));
+    document.getElementById('themeSamadhi').addEventListener('click', () => setTheme('samadhi'));
+
+    // 10. ANIMATION LOOP
+    let clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const delta = clock.getDelta();
+      const time = clock.getElapsedTime();
+
+      // Rotate starfield very slowly
+      starField.rotation.y = time * 0.015;
+      starField.rotation.x = time * 0.008;
+
+      // Rotate Sri Yantra sacred geometry
+      yantraGroup.rotation.y = time * 0.08;
+      yantraGroup.rotation.z = Math.sin(time * 0.2) * 0.05;
+
+      // Animate floating diyas
+      diyas.forEach(diya => {
+        const ud = diya.userData;
+        ud.orbitAngle += ud.orbitSpeed;
+        diya.position.x = Math.cos(ud.orbitAngle) * ud.orbitRadius;
+        diya.position.z = Math.sin(ud.orbitAngle) * ud.orbitRadius;
+        diya.position.y = ud.baseY + Math.sin(time * ud.floatSpeed + ud.floatOffset) * 1.2;
+      });
+
+      // Update 8D spatial audio panner based on camera angle
+      if (pannerNode && audioCtx && isAudioPlaying) {
+        const panValue = Math.sin(camera.rotation.y);
+        pannerNode.pan.setValueAtTime(panValue, audioCtx.currentTime);
+      }
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Resize Handler
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>

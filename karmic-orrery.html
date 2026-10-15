@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>3D Karmic Orrery & Vedic Soul Blueprint | Sanatana360</title>
+  <meta name="description" content="Discover your cosmic destiny through an interactive 3D WebGL solar system orrery of the 9 Grahas with personalized Bhrigu Samhita karmic life readings.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪐</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+  
+  <!-- Three.js + OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #04060B;
+      color: #E2E8F0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      touch-action: none;
+    }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    .font-rozha { font-family: 'Rozha One', serif; }
+
+    #canvas-container {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+    }
+
+    .glass-hud {
+      background: rgba(10, 15, 29, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    }
+    
+    .glow-gold {
+      filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.5));
+    }
+  </style>
+</head>
+<body class="relative w-screen h-screen select-none">
+
+  <!-- 3D WebGL Canvas Target -->
+  <div id="canvas-container"></div>
+
+  <!-- Header / Nav -->
+  <header class="absolute top-0 left-0 w-full z-20 px-4 py-3 flex items-center justify-between pointer-events-auto">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-2.5 glass-hud px-3.5 py-1.5 rounded-full hover:border-amber-400/50 transition">
+        <span class="text-xl">🕉️</span>
+        <span class="font-cinzel font-bold text-sm bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-500 bg-clip-text text-transparent">Sanatana360</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-2 glass-hud px-3.5 py-1.5 rounded-full text-xs text-amber-300 font-mono">
+        <span>🪐 9 Grahas Active • Vedic Astrodynamics</span>
+      </div>
+    </div>
+
+    <!-- Right Controls -->
+    <div class="flex items-center gap-2 text-xs">
+      <button id="openBirthModalBtn" class="glass-hud px-3.5 py-1.5 rounded-full text-amber-300 border border-amber-500/40 font-bold hover:bg-amber-500/20 transition flex items-center gap-1.5 shadow-md">
+        <i class="fa-solid fa-calendar-star"></i>
+        <span>Align My Birth Chart</span>
+      </button>
+
+      <a href="divya-darshana.html" class="glass-hud px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-300 transition hidden sm:inline">
+        Live Temples
+      </a>
+    </div>
+  </header>
+
+  <!-- Instructions Overlay -->
+  <div class="absolute top-16 left-1/2 -translate-x-1/2 z-20 pointer-events-none text-center">
+    <div class="glass-hud px-4 py-1.5 rounded-full text-xs text-amber-300/90 font-mono tracking-wide border border-amber-500/20">
+      <i class="fa-solid fa-arrows-spin mr-1"></i> Orbit 360° • Click any Planet to inspect its Karmic Influence
+    </div>
+  </div>
+
+  <!-- Planet Quick Selector Dock (Bottom Left) -->
+  <div class="absolute bottom-6 left-4 z-20 pointer-events-auto max-w-[90vw] overflow-x-auto no-scrollbar pb-1">
+    <div class="glass-hud px-3 py-2 rounded-2xl flex items-center gap-1.5 text-xs">
+      <button class="planet-tab px-2.5 py-1 rounded-xl bg-amber-500 text-slate-950 font-bold transition flex items-center gap-1" data-planet="surya">
+        <span>☀️</span> <span>Surya</span>
+      </button>
+      <button class="planet-tab px-2.5 py-1 rounded-xl text-slate-300 hover:text-white transition flex items-center gap-1" data-planet="chandra">
+        <span>🌙</span> <span>Chandra</span>
+      </button>
+      <button class="planet-tab px-2.5 py-1 rounded-xl text-slate-300 hover:text-white transition flex items-center gap-1" data-planet="mangala">
+        <span>🔴</span> <span>Mangala</span>
+      </button>
+      <button class="planet-tab px-2.5 py-1 rounded-xl text-slate-300 hover:text-white transition flex items-center gap-1" data-planet="budha">
+        <span>🟢</span> <span>Budha</span>
+      </button>
+      <button class="planet-tab px-2.5 py-1 rounded-xl text-slate-300 hover:text-white transition flex items-center gap-1" data-planet="guru">
+        <span>🟡</span> <span>Brihaspati</span>
+      </button>
+      <button class="planet-tab px-2.5 py-1 rounded-xl text-slate-300 hover:text-white transition flex items-center gap-1" data-planet="shukra">
+        <span>⚪</span> <span>Shukra</span>
+      </button>
+      <button class="planet-tab px-2.5 py-1 rounded-xl text-slate-300 hover:text-white transition flex items-center gap-1" data-planet="shani">
+        <span>🪐</span> <span>Shani</span>
+      </button>
+      <button class="planet-tab px-2.5 py-1 rounded-xl text-slate-300 hover:text-white transition flex items-center gap-1" data-planet="rahu">
+        <span>🟣</span> <span>Rahu</span>
+      </button>
+      <button class="planet-tab px-2.5 py-1 rounded-xl text-slate-300 hover:text-white transition flex items-center gap-1" data-planet="ketu">
+        <span>🟤</span> <span>Ketu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Planet Dossier Card (Bottom Right / Sliding) -->
+  <div id="planetDossier" class="absolute bottom-6 right-4 z-20 pointer-events-auto w-80 sm:w-96 glass-hud p-5 rounded-3xl border border-amber-500/30 transition-all duration-300 shadow-2xl">
+    <div class="flex items-start justify-between mb-3">
+      <div>
+        <span class="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold" id="dossierSanskrit">
+          श्री सूर्य नारायण
+        </span>
+        <h3 class="font-cinzel text-xl font-bold text-white flex items-center gap-2" id="dossierName">
+          Surya • The Soul King
+        </h3>
+      </div>
+      <span class="text-2xl p-2 rounded-2xl bg-amber-500/10 border border-amber-500/20" id="dossierIcon">☀️</span>
+    </div>
+
+    <div class="space-y-2.5 text-xs">
+      <div class="p-2.5 rounded-xl bg-slate-900/60 border border-white/5">
+        <span class="text-[10px] text-slate-400 block uppercase font-mono">Governs & Archetype</span>
+        <p class="text-white font-medium" id="dossierArchetype">Atman (Soul), Vitality, Father, Leadership & Willpower</p>
+      </div>
+
+      <div class="p-2.5 rounded-xl bg-slate-900/60 border border-white/5">
+        <span class="text-[10px] text-amber-400 block uppercase font-mono">Karmic Life Lesson (Bhrigu Samhita)</span>
+        <p class="text-slate-300 leading-relaxed" id="dossierKarma">Overcoming ego and false pride. Learning that true authority serves with radiant humility like the morning sun.</p>
+      </div>
+
+      <div class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] text-amber-300 block font-mono">SACRED BEEJ MANTRA</span>
+          <span class="text-white font-semibold font-cinzel" id="dossierMantra">ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः</span>
+        </div>
+        <button id="copyMantraBtn" class="text-xs px-2 py-1 bg-amber-500 text-slate-950 font-bold rounded-lg hover:bg-amber-400 transition">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Align My Birth Chart & Generate Soul Blueprint -->
+  <div id="birthModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="glass-hud w-full max-w-lg p-6 sm:p-8 rounded-3xl border border-amber-500/40 shadow-2xl relative">
+      <button id="closeBirthModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">✕</button>
+
+      <div class="text-center mb-6">
+        <span class="text-3xl mb-2 inline-block">🪐</span>
+        <h2 class="font-cinzel text-2xl font-bold text-white">Align Your Cosmic Orrery</h2>
+        <p class="text-xs text-slate-400 mt-1">Enter your birth coordinates to reposition the 9 Grahas to your celestial moment.</p>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Your Full Name</label>
+          <input type="text" id="devoteeName" value="Aryavarta Devotee" class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-amber-400">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Date of Birth</label>
+            <input type="date" id="birthDate" value="1995-10-15" class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-400">
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Time of Birth</label>
+            <input type="time" id="birthTime" value="06:30" class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-400">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Birth City / Country</label>
+          <input type="text" id="birthCity" value="Bengaluru, Karnataka, India" class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-amber-400">
+        </div>
+
+        <button id="alignOrreryBtn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg hover:scale-[1.02] transition-transform mt-2">
+          ✨ Re-Align 3D Cosmos &amp; Generate Blueprint Card
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden Canvas for Soul Blueprint Card Generation (1080x1920) -->
+  <canvas id="blueprintCanvas" width="1080" height="1920" class="hidden"></canvas>
+
+  <!-- Three.js 3D Orrery Engine -->
+  <script>
+    // 1. SETUP THREE.JS SCENE
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x04060B, 0.0012);
+
+    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 3000);
+    camera.position.set(0, 75, 160);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.3;
+    container.appendChild(renderer.domElement);
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.maxDistance = 400;
+    controls.minDistance = 20;
+    controls.maxPolarAngle = Math.PI / 2 + 0.15;
+
+    // 2. LIGHTING
+    const ambientLight = new THREE.AmbientLight(0x223355, 1.2);
+    scene.add(ambientLight);
+
+    const sunPointLight = new THREE.PointLight(0xffedd5, 3.5, 600);
+    sunPointLight.position.set(0, 0, 0);
+    scene.add(sunPointLight);
+
+    // 3. STARFIELD
+    const starCount = 8000;
+    const starGeo = new THREE.BufferGeometry();
+    const starPos = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount; i++) {
+      const r = THREE.MathUtils.randFloat(200, 1200);
+      const th = THREE.MathUtils.randFloat(0, Math.PI * 2);
+      const ph = THREE.MathUtils.randFloat(0, Math.PI);
+      starPos[i*3] = r * Math.sin(ph) * Math.cos(th);
+      starPos[i*3+1] = r * Math.sin(ph) * Math.sin(th);
+      starPos[i*3+2] = r * Math.cos(ph);
+    }
+    starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+    const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 1.6, transparent: true, opacity: 0.75 });
+    const stars = new THREE.Points(starGeo, starMat);
+    scene.add(stars);
+
+    // 4. CENTRAL STAR: SURYA (SUN)
+    const sunGeo = new THREE.SphereGeometry(7, 32, 32);
+    const sunMat = new THREE.MeshBasicMaterial({ color: 0xffa600 });
+    const sunMesh = new THREE.Mesh(sunGeo, sunMat);
+    scene.add(sunMesh);
+
+    // Sun Glow Corona
+    const coronaGeo = new THREE.SphereGeometry(8.5, 32, 32);
+    const coronaMat = new THREE.MeshBasicMaterial({
+      color: 0xffd000,
+      transparent: true,
+      opacity: 0.25,
+      side: THREE.BackSide
+    });
+    const coronaMesh = new THREE.Mesh(coronaGeo, coronaMat);
+    scene.add(coronaMesh);
+
+    // 5. 9 GRAHAS DATA & 3D MODELS
+    const grahasData = {
+      surya: {
+        name: "Surya • The Soul King",
+        sanskrit: "श्री सूर्य नारायण",
+        archetype: "Atman (Soul), Vitality, Father, Leadership & Willpower",
+        karma: "Overcoming ego and false pride. Learning that true authority serves with radiant humility like the morning sun.",
+        mantra: "ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः",
+        color: 0xffa600,
+        radius: 0,
+        size: 7,
+        speed: 0
+      },
+      budha: {
+        name: "Budha • The Intellect",
+        sanskrit: "श्री बुध ग्रह (Mercury)",
+        archetype: "Buddhi (Discrimination), Analytical Mind, Speech & Commerce",
+        karma: "Balancing excessive analytical skepticism with intuitive wisdom. Honoring the truth in speech.",
+        mantra: "ॐ ब्रां ब्रीं ब्रौं सः बुधाय नमः",
+        color: 0x10b981,
+        radius: 20,
+        size: 1.8,
+        speed: 0.024
+      },
+      shukra: {
+        name: "Shukra • The Refiner",
+        sanskrit: "श्री शुक्र ग्रह (Venus)",
+        archetype: "Bhakti, Aesthetic Grace, Harmonious Relationships & Ojas",
+        karma: "Transforming possessive worldly desire (Kama) into unconditional devotion and pure spiritual aesthetics.",
+        mantra: "ॐ द्रां द्रीं द्रौं सः शुक्राय नमः",
+        color: 0xfde047,
+        radius: 32,
+        size: 2.4,
+        speed: 0.018
+      },
+      chandra: {
+        name: "Chandra • The Mind Lullaby",
+        sanskrit: "श्री चंद्र देव (Moon)",
+        archetype: "Manas (Mind), Emotional Fluidity, Mother & Intuitive Ocean",
+        karma: "Mastering mental mood fluctuations. Anchoring the restless tides of the heart into inner stillness.",
+        mantra: "ॐ श्रां श्रीं श्रौं सः चंद्रमसे नमः",
+        color: 0xe2e8f0,
+        radius: 46,
+        size: 2.2,
+        speed: 0.014
+      },
+      mangala: {
+        name: "Mangala • The Cosmic Warrior",
+        sanskrit: "श्री मंगल ग्रह (Mars)",
+        archetype: "Tejas (Fire), Physical Courage, Will, Initiative & Brotherhood",
+        karma: "Directing raw aggressive impulses into protective, selfless Dharmic action without anger.",
+        mantra: "ॐ क्रां क्रीं क्रौं सः भौमाय नमः",
+        color: 0xef4444,
+        radius: 62,
+        size: 2.0,
+        speed: 0.010
+      },
+      guru: {
+        name: "Brihaspati • The Divine Guru",
+        sanskrit: "श्री गुरु / बृहस्पति (Jupiter)",
+        archetype: "Jnana (Wisdom), Dharma, Spiritual Teacher, Fortune & Grace",
+        karma: "Sharing wisdom without patronizing dogmatism. Cultivating boundless generosity and faith in cosmic law.",
+        mantra: "ॐ ग्रां ग्रीं ग्रौं सः गुरवे नमः",
+        color: 0xf59e0b,
+        radius: 82,
+        size: 4.8,
+        speed: 0.007
+      },
+      shani: {
+        name: "Shani • The Karmic Adjudicator",
+        sanskrit: "श्री शनैश्चर देव (Saturn)",
+        archetype: "Karma, Vairagya (Detachment), Endurance, Justice & Time (Kala)",
+        karma: "Enduring life's necessary hardships without bitterness. Finding absolute peace in discipline and patience.",
+        mantra: "ॐ प्रां प्रीं प्रौं सः शनैश्चराय नमः",
+        color: 0x3b82f6,
+        radius: 106,
+        size: 4.0,
+        speed: 0.004,
+        hasRing: true
+      },
+      rahu: {
+        name: "Rahu • The Cosmic Ascending Node",
+        sanskrit: "श्री राहु देव (North Node)",
+        archetype: "Cosmic Innovation, Unorthodox Genius, Worldly Ambition & Maya",
+        karma: "Navigating intoxicating material obsessions without losing the core soul identity to illusions.",
+        mantra: "ॐ भ्रां भ्रीं भ्रौं सः राहवे नमः",
+        color: 0xa855f7,
+        radius: 126,
+        size: 2.5,
+        speed: 0.003
+      },
+      ketu: {
+        name: "Ketu • The Liberation Descent",
+        sanskrit: "श्री केतु देव (South Node)",
+        archetype: "Moksha, Mystic Insight, Dissolution, Tapas & Past Mastery",
+        karma: "Releasing residual subconscious past-life attachments to attain spiritual liberation and zero ego.",
+        mantra: "ॐ स्रां स्रीं स्रौं सः केतवे नमः",
+        color: 0xd97706,
+        radius: 144,
+        size: 2.3,
+        speed: -0.003
+      }
+    };
+
+    const planetMeshes = {};
+    const orbitGroup = new THREE.Group();
+    scene.add(orbitGroup);
+
+    Object.keys(grahasData).forEach(key => {
+      const data = grahasData[key];
+      if (data.radius === 0) {
+        planetMeshes[key] = sunMesh;
+        return;
+      }
+
+      // Orbit Line
+      const orbitGeo = new THREE.BufferGeometry();
+      const points = [];
+      const segments = 128;
+      for (let s = 0; s <= segments; s++) {
+        const th = (s / segments) * Math.PI * 2;
+        points.push(new THREE.Vector3(Math.cos(th) * data.radius, 0, Math.sin(th) * data.radius));
+      }
+      orbitGeo.setFromPoints(points);
+      const orbitMat = new THREE.LineBasicMaterial({ color: 0xd97706, transparent: true, opacity: 0.22 });
+      const orbitLine = new THREE.Line(orbitGeo, orbitMat);
+      orbitGroup.add(orbitLine);
+
+      // Planet Mesh
+      const pGeo = new THREE.SphereGeometry(data.size, 24, 24);
+      const pMat = new THREE.MeshStandardMaterial({
+        color: data.color,
+        roughness: 0.4,
+        metalness: 0.2
+      });
+      const pMesh = new THREE.Mesh(pGeo, pMat);
+
+      // Saturn Rings
+      if (data.hasRing) {
+        const ringGeo = new THREE.RingGeometry(data.size * 1.4, data.size * 2.3, 32);
+        const ringMat = new THREE.MeshBasicMaterial({ color: 0x93c5fd, side: THREE.DoubleSide, transparent: true, opacity: 0.6 });
+        const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+        ringMesh.rotation.x = Math.PI / 2 + 0.3;
+        pMesh.add(ringMesh);
+      }
+
+      pMesh.userData = {
+        key: key,
+        radius: data.radius,
+        angle: Math.random() * Math.PI * 2,
+        speed: data.speed
+      };
+
+      scene.add(pMesh);
+      planetMeshes[key] = pMesh;
+    });
+
+    // 6. 12 ZODIAC RASHI SKY BAND
+    const rashiNames = ["Mesha (Aries)", "Vrishabha (Taurus)", "Mithuna (Gemini)", "Karka (Cancer)", "Simha (Leo)", "Kanya (Virgo)", "Tula (Libra)", "Vrischika (Scorpio)", "Dhanu (Sagittarius)", "Makara (Capricorn)", "Kumbha (Aquarius)", "Meena (Pisces)"];
+    const rashiRadius = 175;
+    const rashiGroup = new THREE.Group();
+
+    for (let r = 0; r < 12; r++) {
+      const angle = (r / 12) * Math.PI * 2;
+      const markerGeo = new THREE.BoxGeometry(1.5, 0.4, 6);
+      const markerMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.5 });
+      const marker = new THREE.Mesh(markerGeo, markerMat);
+      marker.position.set(Math.cos(angle) * rashiRadius, 0, Math.sin(angle) * rashiRadius);
+      marker.rotation.y = -angle;
+      rashiGroup.add(marker);
+    }
+    scene.add(rashiGroup);
+
+    // 7. PLANET DOSSIER UPDATER & CAMERA FLY
+    function selectPlanet(key) {
+      const data = grahasData[key];
+      if (!data) return;
+
+      document.getElementById('dossierSanskrit').textContent = data.sanskrit;
+      document.getElementById('dossierName').textContent = data.name;
+      document.getElementById('dossierArchetype').textContent = data.archetype;
+      document.getElementById('dossierKarma').textContent = data.karma;
+      document.getElementById('dossierMantra').textContent = data.mantra;
+
+      // Update active tabs
+      document.querySelectorAll('.planet-tab').forEach(tab => {
+        if (tab.dataset.planet === key) {
+          tab.classList.remove('text-slate-300');
+          tab.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+        } else {
+          tab.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
+          tab.classList.add('text-slate-300');
+        }
+      });
+
+      // Fly camera smoothly towards the planet
+      const mesh = planetMeshes[key];
+      if (mesh) {
+        const targetPos = mesh.position.clone().add(new THREE.Vector3(0, 8, 20));
+        controls.target.copy(mesh.position);
+      }
+    }
+
+    document.querySelectorAll('.planet-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        selectPlanet(tab.dataset.planet);
+      });
+    });
+
+    // 8. BIRTH MODAL & SOUL BLUEPRINT GENERATOR
+    const birthModal = document.getElementById('birthModal');
+    document.getElementById('openBirthModalBtn').addEventListener('click', () => {
+      birthModal.classList.remove('hidden');
+      birthModal.classList.add('flex');
+    });
+    document.getElementById('closeBirthModalBtn').addEventListener('click', () => {
+      birthModal.classList.add('hidden');
+      birthModal.classList.remove('flex');
+    });
+
+    document.getElementById('alignOrreryBtn').addEventListener('click', () => {
+      const name = document.getElementById('devoteeName').value || 'Aryavarta Devotee';
+      const bDate = document.getElementById('birthDate').value;
+      const bCity = document.getElementById('birthCity').value;
+
+      // Re-align planets with pseudo-astronomical calculation based on Julian timestamp
+      const timestamp = new Date(bDate).getTime() || Date.now();
+      Object.keys(grahasData).forEach((k, idx) => {
+        const mesh = planetMeshes[k];
+        if (mesh && mesh.userData) {
+          mesh.userData.angle = ((timestamp * (idx + 1) * 0.00000005) % (Math.PI * 2));
+        }
+      });
+
+      birthModal.classList.add('hidden');
+      birthModal.classList.remove('flex');
+
+      generateBlueprintCard(name, bDate, bCity);
+    });
+
+    function generateBlueprintCard(name, bDate, bCity) {
+      const canvas = document.getElementById('blueprintCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Dark Cosmic Silk Background
+      const grad = ctx.createLinearGradient(0, 0, 1080, 1920);
+      grad.addColorStop(0, '#060913');
+      grad.addColorStop(0.5, '#120f24');
+      grad.addColorStop(1, '#030508');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1080, 1920);
+
+      // Gold Filigree Border
+      ctx.strokeStyle = '#F59E0B';
+      ctx.lineWidth = 14;
+      ctx.strokeRect(40, 40, 1000, 1840);
+      ctx.lineWidth = 3;
+      ctx.strokeRect(55, 55, 970, 1810);
+
+      // Header
+      ctx.fillStyle = '#D97706';
+      ctx.font = 'bold 36px "Plus Jakarta Sans", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('SANATANA360 • VEDIC COSMIC PASSPORT', 540, 150);
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 64px "Cinzel", serif';
+      ctx.fillText('Soul Blueprint & Karmic Matrix', 540, 240);
+
+      // Devotee Name
+      ctx.fillStyle = '#FDE047';
+      ctx.font = 'bold 54px "Cinzel", serif';
+      ctx.fillText(name.toUpperCase(), 540, 360);
+
+      ctx.fillStyle = '#94A3B8';
+      ctx.font = '32px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('Born: ' + bDate + ' • ' + bCity, 540, 420);
+
+      // Golden Sacred Yantra Emblem
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.arc(540, 680, 200, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.font = '120px sans-serif';
+      ctx.fillText('🪐', 540, 725);
+
+      // 4 Core Karmic Pillars
+      const pillars = [
+        { label: 'JANMA LAGNA (ASCENDANT)', val: 'Simha (Royal Willpower)', deity: 'Surya Narayana' },
+        { label: 'JANMA RASHI (MOON SIGN)', val: 'Vrischika (Mystic Depth)', deity: 'Mahadeva Shiva' },
+        { label: 'SOUL NAKSHATRA', val: 'Pushya (Supreme Auspiciousness)', deity: 'Brihaspati Guru' },
+        { label: 'PRIMARY LIFE DHARMA', val: 'Karma Yoga & Uplifting Community', deity: 'Sri Krishna' }
+      ];
+
+      pillars.forEach((p, i) => {
+        const y = 1000 + i * 150;
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+        ctx.fillRect(100, y - 50, 880, 120);
+
+        ctx.fillStyle = '#F59E0B';
+        ctx.font = 'bold 24px "Plus Jakarta Sans", sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillText(p.label, 130, y - 10);
+
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 36px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(p.val, 130, y + 40);
+
+        ctx.fillStyle = '#38BDF8';
+        ctx.font = 'italic 26px "Plus Jakarta Sans", sans-serif';
+        ctx.textAlign = 'right';
+        ctx.fillText('Deity: ' + p.deity, 950, y + 40);
+      });
+
+      // Soul Destiny Affirmation
+      ctx.fillStyle = '#FDE047';
+      ctx.font = 'italic 34px "Cinzel", serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('"You are not a drop in the ocean; you are the entire ocean in a drop."', 540, 1680);
+
+      ctx.fillStyle = '#94A3B8';
+      ctx.font = 'bold 26px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('Aligned via Sanatana360 3D Karmic Orrery • sanatana360.com', 540, 1780);
+
+      // Instant Download
+      const dataUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = name.replace(/\s+/g, '_') + '_Soul_Blueprint_Passport.png';
+      a.click();
+    }
+
+    document.getElementById('copyMantraBtn').addEventListener('click', () => {
+      const mantra = document.getElementById('dossierMantra').textContent;
+      navigator.clipboard.writeText(mantra).then(() => {
+        alert('✨ Sacred Beej Mantra copied to clipboard! Recite 108 times for auspicious grace.');
+      });
+    });
+
+    // 9. ANIMATION LOOP
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const delta = clock.getDelta();
+      const time = clock.getElapsedTime();
+
+      // Orbit the planets
+      Object.keys(grahasData).forEach(k => {
+        const mesh = planetMeshes[k];
+        if (mesh && mesh.userData && mesh.userData.radius > 0) {
+          mesh.userData.angle += mesh.userData.speed;
+          mesh.position.x = Math.cos(mesh.userData.angle) * mesh.userData.radius;
+          mesh.position.z = Math.sin(mesh.userData.angle) * mesh.userData.radius;
+          mesh.rotation.y += 0.01;
+        }
+      });
+
+      // Rotate Sun corona
+      coronaMesh.rotation.y = time * 0.1;
+      sunMesh.rotation.y = time * 0.05;
+
+      // Slow star rotation
+      stars.rotation.y = time * 0.005;
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>

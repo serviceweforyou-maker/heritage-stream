@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Voice of the Rishi: Interactive Living Sage Avatar | Sanatana360</title>
+  <meta name="description" content="Speak directly with an interactive ancient Vedic Rishi sitting beside a sacred fire. Receive timeless Upanishadic voice counsel for modern life challenges.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧘</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #040509;
+      color: #E2E8F0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    .font-rozha { font-family: 'Rozha One', serif; }
+
+    .glass-hud {
+      background: rgba(10, 14, 28, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Sacred Fire Canvas */
+    #fireCanvas {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Rishi Breathing Glow Animation */
+    @keyframes rishiBreath {
+      0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.4)); }
+      50% { transform: translateY(-4px) scale(1.015); filter: drop-shadow(0 0 45px rgba(245, 158, 11, 0.65)); }
+    }
+    .rishi-avatar-anim {
+      animation: rishiBreath 6s infinite ease-in-out;
+    }
+
+    /* Mic Listening Pulse */
+    @keyframes micPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+      50% { transform: scale(1.08); box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+    }
+    .mic-listening {
+      animation: micPulse 1.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="relative flex flex-col min-h-screen">
+
+  <!-- Sacred Fire & Night Embers Canvas -->
+  <canvas id="fireCanvas"></canvas>
+
+  <!-- Header -->
+  <header class="relative z-20 border-b border-white/10 bg-slate-950/80 backdrop-blur-md sticky top-0">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="text-2xl">🕉️</span>
+        <span class="font-cinzel text-xl font-bold bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-500 bg-clip-text text-transparent">Sanatana360</span>
+      </a>
+
+      <div class="hidden sm:flex items-center gap-2 glass-hud px-3.5 py-1.5 rounded-full text-xs text-amber-300 font-mono">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+        <span>Himalayan Hermitage • Sacred Dhuni Active</span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="toggleAudioVoiceBtn" class="glass-hud px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-200 hover:text-amber-400 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-volume-high text-amber-400" id="voiceMuteIcon"></i>
+          <span id="voiceMuteLabel">Voice On</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hermitage Stage -->
+  <main class="relative z-10 flex-1 max-w-7xl mx-auto px-4 py-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    
+    <!-- Left Column: The Living Sage Visual Stage (5 cols) -->
+    <div class="lg:col-span-5 flex flex-col items-center justify-center text-center relative py-8">
+      
+      <!-- Luminous Halo Aura -->
+      <div class="absolute w-72 h-72 rounded-full bg-gradient-to-tr from-amber-600/30 via-yellow-500/20 to-transparent blur-3xl pointer-events-none"></div>
+
+      <!-- Photorealistic Stylized Sage Avatar Silhouette & Sacred Dhuni -->
+      <div class="relative z-10 rishi-avatar-anim mb-4">
+        <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full border-2 border-amber-500/40 p-3 bg-gradient-to-b from-[#141221] to-[#08070e] flex items-center justify-center shadow-2xl relative overflow-hidden">
+          
+          <!-- Sage Artwork Icon / Emblem -->
+          <div class="text-7xl sm:text-8xl select-none">
+            🧘‍♂️
+          </div>
+
+          <!-- Bottom Sacred Fire Base Glow -->
+          <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-amber-600/50 via-orange-500/20 to-transparent pointer-events-none"></div>
+        </div>
+
+        <!-- Sacred Fire Dhuni Emblem -->
+        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 glass-hud px-4 py-1 rounded-full border border-amber-500/50 text-xs font-cinzel font-bold text-amber-300 shadow-xl flex items-center gap-1.5">
+          <span>🔥</span> <span>Sacred Agnihotra Dhuni</span>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h2 class="font-cinzel text-xl sm:text-2xl font-black text-white">Brahmarshi Vashistha</h2>
+        <p class="text-xs text-amber-400 font-mono mt-0.5">Master of Yoga Vasistha &amp; Vedic Seer</p>
+      </div>
+
+      <!-- Voice Status Banner -->
+      <div id="voiceStatusBadge" class="mt-4 glass-hud px-4 py-1.5 rounded-full text-xs text-slate-300 font-mono flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span id="voiceStatusText">Sage is in silent contemplation. Ask a question.</span>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Interactive Dialog & Dilemmas Hub (7 cols) -->
+    <div class="lg:col-span-7 flex flex-col gap-5">
+      
+      <!-- Speech & Input Bar -->
+      <div class="glass-hud p-6 rounded-3xl border border-amber-500/30 shadow-2xl">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-cinzel text-base font-bold text-amber-300 flex items-center gap-2">
+            <span>🗣️</span> Speak or Type to the Sage
+          </h3>
+          <span class="text-[10px] font-mono text-slate-400">Voice-to-Voice Enabled</span>
+        </div>
+
+        <!-- Input Area -->
+        <div class="flex items-center gap-2 mb-3">
+          <input type="text" id="userInputQuery" placeholder="Ask your deep life question (e.g., How do I find inner peace?)..." class="flex-1 bg-slate-900/90 border border-white/10 rounded-2xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-amber-400">
+          
+          <!-- Mic Button -->
+          <button id="micBtn" class="w-12 h-12 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 flex items-center justify-center text-lg font-bold transition shadow-lg flex-shrink-0" title="Tap to Speak with your Voice">
+            <i class="fa-solid fa-microphone" id="micIcon"></i>
+          </button>
+
+          <!-- Ask Button -->
+          <button id="askQueryBtn" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-bold text-xs uppercase tracking-wider hover:scale-105 transition shadow-lg flex-shrink-0">
+            Ask Sage
+          </button>
+        </div>
+
+        <!-- Quick 10 Deep Life Dilemmas Chips -->
+        <div>
+          <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-2">Or select a profound life challenge:</span>
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 text-xs" id="dilemmaChips">
+            <button class="dilemma-btn px-3 py-1.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:border-amber-400 hover:text-white transition whitespace-nowrap" data-idx="0">
+              ⚡ Overcoming Career Burnout
+            </button>
+            <button class="dilemma-btn px-3 py-1.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:border-amber-400 hover:text-white transition whitespace-nowrap" data-idx="1">
+              🥀 Healing from Betrayal
+            </button>
+            <button class="dilemma-btn px-3 py-1.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:border-amber-400 hover:text-white transition whitespace-nowrap" data-idx="2">
+              🌊 Conquering Fear of Failure
+            </button>
+            <button class="dilemma-btn px-3 py-1.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:border-amber-400 hover:text-white transition whitespace-nowrap" data-idx="3">
+              🕯️ Grieving Tragic Loss
+            </button>
+            <button class="dilemma-btn px-3 py-1.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:border-amber-400 hover:text-white transition whitespace-nowrap" data-idx="4">
+              ⚖️ Finding True Swadharma
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sage's Upanishadic Response Card -->
+      <div id="counselCard" class="glass-hud p-6 rounded-3xl border border-amber-500/30 space-y-4 shadow-2xl">
+        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">📜</span>
+            <span class="font-cinzel text-sm font-bold text-amber-300">The Rishi’s Counsel</span>
+          </div>
+          <button id="replayVoiceBtn" class="text-xs text-amber-400 hover:underline flex items-center gap-1">
+            <i class="fa-solid fa-volume-high"></i> Replay Voice
+          </button>
+        </div>
+
+        <!-- Sanskrit Shloka Box -->
+        <div class="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-center">
+          <p class="font-cinzel text-xs sm:text-sm font-bold text-amber-300" id="shlokaSanskrit">
+            मन एव मनुष्याणां कारणं बन्धमोक्षयोः
+          </p>
+          <p class="text-[11px] text-slate-400 italic mt-0.5" id="shlokaSource">
+            — Maitrayaniya Upanishad 6.34
+          </p>
+        </div>
+
+        <!-- Dharmic Guidance -->
+        <div class="space-y-2 text-xs sm:text-sm text-slate-200 leading-relaxed font-light">
+          <p id="counselText">
+            "Vatsa (My child)... The mind alone is the cause of both bondage and liberation. When you attach your worth to transient worldly outcomes, the storm of restlessness consumes you. Step back into the witness state (Sakshi Bhava). You are the eternal sky, not the passing clouds."
+          </p>
+        </div>
+
+        <!-- Daily Tapasya Action -->
+        <div class="p-3 rounded-2xl bg-slate-950/70 border border-white/5 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-mono text-amber-400 uppercase tracking-wider block font-bold">DAILY TAPASYA ACTION</span>
+            <span class="text-xs text-white" id="tapasyaAction">Practice 5 minutes of silent Pranayama before making any hasty decision today.</span>
+          </div>
+          <button id="shareCounselBtn" class="px-3 py-1.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs hover:bg-amber-400 transition flex items-center gap-1 shadow-md">
+            <span>📲</span> <span>Share</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Script Engine -->
+  <script>
+    // 1. DILEMMAS REPOSITORY
+    const dilemmas = [
+      {
+        question: "How do I overcome career burnout and constant exhaustion?",
+        sanskrit: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन",
+        source: "Bhagavad Gita 2.47",
+        counsel: "My child... Exhaustion comes not from noble action, but from the frantic anxiety over future praise and profit. Relinquish the craving for applause. Work with devotion as an offering (Yajna) to the Divine, and your stamina will become inexhaustible.",
+        action: "Spend the first hour of tomorrow working with 100% focus without checking notifications or praise."
+      },
+      {
+        question: "Someone close to me betrayed my trust. How do I let go of anger?",
+        sanskrit: "अक्रोधेन जयेत् क्रोधम् असाधुं साधुना जयेत्",
+        source: "Mahabharata, Udyoga Parva",
+        counsel: "Anger is like swallowing burning camphor and expecting the other person to choke. Holding grievance binds your soul to the offender. Forgive not because their act was righteous, but because your inner peace is too sacred to surrender to their ignorance.",
+        action: "Mentally chant 'Om Shanti' 11 times for the soul who hurt you, releasing their karmic weight from your heart."
+      },
+      {
+        question: "How do I conquer my paralyzing fear of failure?",
+        sanskrit: "उद्धरेदात्मनात्मानं नात्मानमवसादयेत्",
+        source: "Bhagavad Gita 6.5",
+        counsel: "Failure is merely an echo in the realm of Prakriti (nature). What you call failure is the Divine polishing your intellect. Stand tall like the mountain pine. You cannot lose what is eternally yours—the radiant Atman within.",
+        action: "Take one bold, delayed action today that your fear has kept you from completing."
+      },
+      {
+        question: "I am grieving a tragic loss and cannot find peace.",
+        sanskrit: "वासांसि जीर्णानि यथा विहाय नवानि गृह्णाति नरोऽपराणि",
+        source: "Bhagavad Gita 2.22",
+        counsel: "Weep if your eyes must shed rain, my child; grief is love honoring what was precious. But remember: just as a traveler casts off worn garments to wear new robes, the soul never dies. The light of your loved one is preserved forever in the lap of the Supreme.",
+        action: "Light an oil lamp or offer fresh water to the earth in loving gratitude for their immortal journey."
+      },
+      {
+        question: "What is my true Swadharma when society expects something else?",
+        sanskrit: "श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात्",
+        source: "Bhagavad Gita 3.35",
+        counsel: "Better is one's own natural duty performed with flaws than another's path imitated with flawless ease. Do not trade the authentic flame of your soul for the hollow applause of the crowd. Walk your genuine path with courage.",
+        action: "Write down 3 core values that feel intrinsically joyful to your soul, and anchor your decisions to them."
+      }
+    ];
+
+    let currentDilemma = dilemmas[0];
+    let isVoiceEnabled = true;
+
+    // 2. WEBAUDIO & SACRED FIRE CANVAS
+    const canvas = document.getElementById('fireCanvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    // Embers Particles
+    const embers = [];
+    for (let i = 0; i < 90; i++) {
+      embers.push({
+        x: width * 0.25 + (Math.random() - 0.5) * 160,
+        y: height * 0.75 + Math.random() * 80,
+        r: Math.random() * 3 + 1,
+        speedY: -Math.random() * 1.5 - 0.8,
+        speedX: (Math.random() - 0.5) * 1.2,
+        alpha: Math.random() * 0.8 + 0.2
+      });
+    }
+
+    function animateEmbers() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Render Embers rising from Dhuni
+      embers.forEach(em => {
+        em.y += em.speedY;
+        em.x += em.speedX;
+        em.alpha -= 0.005;
+
+        if (em.y < height * 0.2 || em.alpha <= 0) {
+          em.y = height * 0.75 + Math.random() * 80;
+          em.x = width * 0.25 + (Math.random() - 0.5) * 160;
+          em.alpha = Math.random() * 0.8 + 0.2;
+        }
+
+        ctx.fillStyle = 'rgba(245, 158, 11, ' + em.alpha + ')';
+        ctx.beginPath();
+        ctx.arc(em.x, em.y, em.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animateEmbers);
+    }
+    animateEmbers();
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    // 3. VOICE SYNTHESIS (Web Speech Synthesis)
+    function speakCounsel(text) {
+      if (!isVoiceEnabled || !window.speechSynthesis) return;
+
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 0.86; // slow, calming cadence
+      utterance.pitch = 0.85; // deep, resonant authority
+
+      const voices = window.speechSynthesis.getVoices();
+      const guruVoice = voices.find(v => v.lang.includes('en-IN') || v.lang.includes('en-GB') || v.name.includes('Natural'));
+      if (guruVoice) utterance.voice = guruVoice;
+
+      utterance.onstart = () => {
+        document.getElementById('voiceStatusText').textContent = 'Sage is speaking divine counsel... Listen deeply.';
+      };
+      utterance.onend = () => {
+        document.getElementById('voiceStatusText').textContent = 'Sage is in silent contemplation. Ask another question.';
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function applyDilemma(idx) {
+      currentDilemma = dilemmas[idx];
+      document.getElementById('shlokaSanskrit').textContent = currentDilemma.sanskrit;
+      document.getElementById('shlokaSource').textContent = '— ' + currentDilemma.source;
+      document.getElementById('counselText').textContent = '"' + currentDilemma.counsel + '"';
+      document.getElementById('tapasyaAction').textContent = currentDilemma.action;
+
+      speakCounsel(currentDilemma.counsel);
+    }
+
+    document.querySelectorAll('.dilemma-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.idx);
+        applyDilemma(idx);
+      });
+    });
+
+    document.getElementById('replayVoiceBtn').addEventListener('click', () => {
+      speakCounsel(currentDilemma.counsel);
+    });
+
+    // 4. SPEECH RECOGNITION (Mic Input)
+    const micBtn = document.getElementById('micBtn');
+    let recognition = null;
+    let isListening = false;
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+
+      recognition.onstart = () => {
+        isListening = true;
+        micBtn.classList.add('mic-listening', 'bg-red-500');
+        document.getElementById('voiceStatusText').textContent = 'Listening to your heart... Speak now.';
+      };
+
+      recognition.onresult = (e) => {
+        const spoken = e.results[0][0].transcript;
+        document.getElementById('userInputQuery').value = spoken;
+        handleCustomQuery(spoken);
+      };
+
+      recognition.onerror = () => {
+        stopMic();
+      };
+
+      recognition.onend = () => {
+        stopMic();
+      };
+    }
+
+    function stopMic() {
+      isListening = false;
+      micBtn.classList.remove('mic-listening', 'bg-red-500');
+      document.getElementById('voiceStatusText').textContent = 'Sage is in silent contemplation.';
+    }
+
+    micBtn.addEventListener('click', () => {
+      if (!recognition) {
+        alert('Voice microphone input is not supported in this browser. Please type your question.');
+        return;
+      }
+      if (isListening) recognition.stop();
+      else recognition.start();
+    });
+
+    // 5. QUERY HANDLER
+    function handleCustomQuery(q) {
+      if (!q.trim()) return;
+
+      // Smart semantic match or default deep Upanishadic answer
+      const lower = q.toLowerCase();
+      let matchedIdx = 0;
+      if (lower.includes('anger') || lower.includes('betray') || lower.includes('cheat')) matchedIdx = 1;
+      else if (lower.includes('fear') || lower.includes('fail') || lower.includes('money')) matchedIdx = 2;
+      else if (lower.includes('grief') || lower.includes('death') || lower.includes('sad')) matchedIdx = 3;
+      else if (lower.includes('dharma') || lower.includes('purpose') || lower.includes('career')) matchedIdx = 4;
+      else matchedIdx = 0;
+
+      applyDilemma(matchedIdx);
+    }
+
+    document.getElementById('askQueryBtn').addEventListener('click', () => {
+      const q = document.getElementById('userInputQuery').value;
+      handleCustomQuery(q);
+    });
+
+    // 6. TOGGLE VOICE MUTE
+    document.getElementById('toggleAudioVoiceBtn').addEventListener('click', () => {
+      isVoiceEnabled = !isVoiceEnabled;
+      if (!isVoiceEnabled && window.speechSynthesis) window.speechSynthesis.cancel();
+      document.getElementById('voiceMuteIcon').className = isVoiceEnabled ? 'fa-solid fa-volume-high text-amber-400' : 'fa-solid fa-volume-xmark text-slate-500';
+      document.getElementById('voiceMuteLabel').textContent = isVoiceEnabled ? 'Voice On' : 'Voice Off';
+    });
+
+    // 7. SHARE COUNSEL
+    document.getElementById('shareCounselBtn').addEventListener('click', () => {
+      const text = encodeURIComponent('🕉️ Brahmarshi Vashistha Wisdom from Sanatana360:
+
+' + currentDilemma.sanskrit + '
+"' + currentDilemma.counsel + '"
+
+Daily Tapasya: ' + currentDilemma.action + '
+
+Receive sacred counsel at: https://www.sanatana360.com/rishi-avatar.html');
+      window.open('https://api.whatsapp.com/send?text=' + text, '_blank');
+    });
+
+    // INIT
+    applyDilemma(0);
+  </script>
+</body>
+</html>
