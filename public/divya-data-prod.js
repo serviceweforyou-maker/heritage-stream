@@ -955,7 +955,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "10:30 PM",
         "desc": "Night lullaby and resting ceremony"
       }
-    ]
+    ],
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream"
   },
   {
     "id": "tirupati_balaji",
@@ -1002,7 +1008,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "01:30 AM",
         "desc": "Night divine lullaby and repose"
       }
-    ]
+    ],
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream"
   },
   {
     "id": "kashi_vishwanath",
@@ -1049,7 +1061,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "10:30 PM",
         "desc": "Damaru naad and night rest ritual"
       }
-    ]
+    ],
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream"
   },
   {
     "id": "somnath_jyotirlinga",
@@ -1091,7 +1109,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:00 PM",
         "desc": "Sunset Maha Deeparadhana with conch resonates"
       }
-    ]
+    ],
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream"
   },
   {
     "id": "mahakaleshwar_ujjain",
@@ -1138,7 +1162,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "10:30 PM",
         "desc": "Night resting ritual accompanied by damaru beats"
       }
-    ]
+    ],
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream"
   },
   {
     "id": "ayodhya_ram_mandir",
@@ -1190,7 +1220,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "10:00 PM",
         "desc": "Bedtime lullaby and temple closure"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "iskcon_bangalore",
@@ -1232,7 +1268,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:00 PM",
         "desc": "Jai Sacinandana Gaura Hari Kirtan"
       }
-    ]
+    ],
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream"
   },
   {
     "id": "iskcon_vrindavan",
@@ -1274,7 +1316,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:00 PM",
         "desc": "Evening kirtan dance in the central courtyard"
       }
-    ]
+    ],
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream"
   },
   {
     "id": "vaishno_devi_katra",
@@ -1311,7 +1359,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:00 PM",
         "desc": "Dusk Shringara and floral Chhatra offerings"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "parmarth_niketan_ganga",
@@ -1348,7 +1402,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "06:00 PM",
         "desc": "Deeparadhana with hundreds of brass oil lamps"
       }
-    ]
+    ],
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream"
   },
   {
     "id": "siddhivinayak_mumbai",
@@ -1395,7 +1455,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "09:50 PM",
         "desc": "Bedtime prayers and closing of doors"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "jagannath_puri",
@@ -1442,7 +1508,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "11:30 PM",
         "desc": "Night repose ceremony with Gitagovinda recital"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "tulja_bhavani",
@@ -1484,7 +1556,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:00 PM",
         "desc": "Grand gondhal and deepam ceremony"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "khatu_shyam_ji",
@@ -1531,7 +1609,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:30 PM",
         "desc": "Evening conch blowing and deepam"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "salasar_balaji",
@@ -1573,7 +1657,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "08:00 PM",
         "desc": "Night Maha Aarti and Hanuman Chalisa chanting"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "kedarnath_dham",
@@ -1615,7 +1705,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "06:30 PM",
         "desc": "Evening bell chimes echoing in the Himalayas"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "udupi_krishna_matha",
@@ -1657,7 +1753,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:00 PM",
         "desc": "Night silver chariot and lamp illumination"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "meenakshi_madurai",
@@ -1699,7 +1801,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "09:30 PM",
         "desc": "Divine night resting procession of Sundareswarar"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "chamundeshwari_mysuru",
@@ -1741,7 +1849,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:30 PM",
         "desc": "Evening golden lamp worship"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "pashupatinath_nepal",
@@ -1778,7 +1892,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "06:00 PM",
         "desc": "Evening riverbank musical deeparadhana with Vedic fire dance"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "dwarkadhish_mandir",
@@ -1825,7 +1945,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "09:30 PM",
         "desc": "Night resting ritual and closure"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "badrinath_temple",
@@ -1867,7 +1993,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "06:00 PM",
         "desc": "Evening golden lamp worship and Kapoor aarti"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "har_ki_pauri_haridwar",
@@ -1904,7 +2036,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "06:30 PM",
         "desc": "World-famous sunset aarti with giant flaming brass lamps"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "srisailam_mallikarjuna",
@@ -1946,7 +2084,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "09:30 PM",
         "desc": "Night repose ceremony"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "rameswaram_ramanatha",
@@ -1988,7 +2132,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "08:30 PM",
         "desc": "Night divine repose ritual"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "trimbakeshwar_nashik",
@@ -2030,7 +2180,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:00 PM",
         "desc": "Evening musical deepam"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "omkareshwar_jyotirlinga",
@@ -2072,7 +2228,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "08:30 PM",
         "desc": "Evening Chaupar game played for Lord Shiva & Parvati"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "kolhapur_mahalakshmi",
@@ -2114,7 +2276,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "08:00 PM",
         "desc": "Evening torchlight illumination"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "bhimashankar_jyotirlinga",
@@ -2156,7 +2324,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:30 PM",
         "desc": "Evening lamp ceremony"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "grishneshwar_jyotirlinga",
@@ -2198,7 +2372,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "08:00 PM",
         "desc": "Night deeparadhana"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "baidyanath_deoghar",
@@ -2235,7 +2415,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:30 PM",
         "desc": "Evening floral snake and sandalwood shringara"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "nageshwar_jyotirlinga",
@@ -2277,7 +2463,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:00 PM",
         "desc": "Evening camphor aarti"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "banke_bihari_vrindavan",
@@ -2319,7 +2511,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "09:25 PM",
         "desc": "Night final blessing"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "radha_rani_barsana",
@@ -2361,7 +2559,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:00 PM",
         "desc": "Evening golden lamp worship"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "govind_devji_jaipur",
@@ -2408,7 +2612,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "06:30 PM",
         "desc": "Evening courtly deepam"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "kukke_subramanya",
@@ -2450,7 +2660,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:30 PM",
         "desc": "Night floral illumination"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "dharmasthala_manjunatha",
@@ -2492,7 +2708,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:30 PM",
         "desc": "Evening temple lamp lighting"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "sringeri_sharada",
@@ -2534,7 +2756,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "08:30 PM",
         "desc": "Night Sphatika Linga puja by Jagadguru Shankaracharya"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "murudeshwar_temple",
@@ -2576,7 +2804,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "07:00 PM",
         "desc": "Evening ocean-side camphor deepam"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   },
   {
     "id": "guruvayur_temple",
@@ -2623,7 +2857,13 @@ export const GLOBAL_TEMPLES_LIVE = [
         "time": "09:00 PM",
         "desc": "Night fragrant herbal incense smoke offering"
       }
-    ]
+    ],
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
   }
 ];
 if (typeof window !== "undefined") { window.GLOBAL_TEMPLES_LIVE = GLOBAL_TEMPLES_LIVE; }

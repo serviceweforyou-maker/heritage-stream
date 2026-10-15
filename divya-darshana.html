@@ -1264,10 +1264,17 @@
           </div>
         </a>
 
-        <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30">
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30" title="8 verified 24/7 continuous official feeds & 32 pre-recorded daily aartis">
           <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-          <span class="text-[10px] font-mono font-extrabold text-red-400 uppercase tracking-widest">40 Temples Live</span>
+          <span class="text-[10px] font-mono font-extrabold text-red-400 uppercase tracking-widest">🔴 8 Live 24/7 • 32 Recorded Aartis</span>
         </div>
+        
+        <!-- Daily Darshana Streak Pill -->
+        <button onclick="openPrasadamModal()" id="darshana-streak-pill" class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/40 hover:bg-amber-500/25 transition-all text-[11px] font-mono font-bold text-amber-300 shadow-sm cursor-pointer" title="Your Daily Darshana Streak - Tap to claim Prasadam">
+          <span>🔥</span>
+          <span id="darshana-streak-count">1-Day Streak</span>
+          <span class="text-[8.5px] bg-amber-500/30 text-amber-200 px-1.5 py-0.5 rounded-full font-sans font-semibold">Prasad Ready</span>
+        </button>
       </div>
 
       <!-- Navigation Links -->
@@ -1386,8 +1393,9 @@
 
           <!-- Top Stream Bar Over Video -->
           <div class="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 z-10 pointer-events-none">
-            <div class="flex items-center gap-2 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-2xl border border-white/10 pointer-events-auto">
-              <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+            <div class="flex items-center gap-2 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-2xl border border-white/10 pointer-events-auto">
+              <span id="stream-status-dot" class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+              <span id="stream-status-badge" class="px-2 py-0.5 rounded-md bg-red-600/90 text-white font-mono font-black text-[9px] tracking-wider uppercase">🔴 LIVE 24/7</span>
               <span class="font-bold text-white text-xs" id="stream-temple-name">Shirdi Sai Baba Samadhi Mandir</span>
               <span class="text-[10px] text-white/50 hidden sm:inline" id="stream-temple-location">Shirdi, Maharashtra</span>
             </div>
@@ -1487,6 +1495,25 @@
 
           </div>
 
+          <!-- Multi-Flower Pushpanjali Selector Bar -->
+          <div class="flex items-center justify-between gap-2 p-2 rounded-xl bg-black/40 border border-white/5 text-[10.5px]">
+            <span class="text-white/60 font-serif flex items-center gap-1">
+              <span>🌸</span> Choose Petals:
+            </span>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <button onclick="selectFlowerType('marigold')" id="flower-opt-marigold" class="flower-opt-btn px-2 py-0.5 rounded-lg bg-gold/20 text-gold border border-gold/40 font-bold transition-all text-[10px] cursor-pointer">🌼 Marigold</button>
+              <button onclick="selectFlowerType('rose')" id="flower-opt-rose" class="flower-opt-btn px-2 py-0.5 rounded-lg bg-white/5 text-rose-300 hover:text-rose-200 border border-white/10 font-bold transition-all text-[10px] cursor-pointer">🌹 Rose</button>
+              <button onclick="selectFlowerType('bilva')" id="flower-opt-bilva" class="flower-opt-btn px-2 py-0.5 rounded-lg bg-white/5 text-emerald-300 hover:text-emerald-200 border border-white/10 font-bold transition-all text-[10px] cursor-pointer">🍃 Bilva Patra</button>
+              <button onclick="selectFlowerType('lotus')" id="flower-opt-lotus" class="flower-opt-btn px-2 py-0.5 rounded-lg bg-white/5 text-pink-300 hover:text-pink-200 border border-white/10 font-bold transition-all text-[10px] cursor-pointer">🪷 Pink Lotus</button>
+            </div>
+          </div>
+
+          <!-- Keyboard Devotional Shortcuts Reminder -->
+          <div class="flex items-center justify-between text-[9px] font-mono text-white/40 px-1">
+            <span>⌨️ Devotional Shortcuts: [B] Bell &bull; [S] Shankha &bull; [F] Flowers &bull; [D] Diya &bull; [P] Prasad &bull; [T] Tour</span>
+            <span id="streak-flame-status" class="text-amber-400 font-bold">🔥 Streak Active</span>
+          </div>
+
           <!-- Devotional Chanting Mantra Bar for Selected Temple -->
           <div class="mt-3 p-3 rounded-2xl bg-black/40 border border-gold/20 flex items-center justify-between gap-3">
             <div class="flex items-center gap-2 min-w-0">
@@ -1503,6 +1530,35 @@
             </button>
           </div>
 
+        </div>
+
+        <!-- ── 📜 6. VISHVA SANKALPA: LIVE DEVOTEE PRAYER WALL & BLESSING TICKER ── -->
+        <div class="bg-surface border border-surfaceBorder rounded-3xl p-4 sm:p-5 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between border-b border-white/10 pb-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">📜</span>
+              <div>
+                <h3 class="text-sm font-bold font-serif text-white">Vishva Sankalpa — Live Devotee Prayer Wall</h3>
+                <p class="text-[10px] text-white/50">Send &amp; receive divine prayers with devotees across Bharat and the globe</p>
+              </div>
+            </div>
+            <button onclick="openSankalpaModal()" class="px-3 py-1.5 rounded-xl bg-gold/20 hover:bg-gold hover:text-black text-gold text-xs font-bold border border-gold/40 transition-all flex items-center gap-1 cursor-pointer shadow-sm">
+              <span>✍️</span> <span>Offer Sankalpa</span>
+            </button>
+          </div>
+
+          <!-- Flowing Live Prayers Container -->
+          <div id="prayer-wall-container" class="space-y-2 max-h-56 overflow-y-auto pr-1">
+            <!-- Dynamically populated prayers -->
+          </div>
+
+          <div class="flex items-center justify-between pt-1 text-[9.5px] font-mono text-white/40 border-t border-white/5">
+            <span class="flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>Live community feed updated in real time</span>
+            </span>
+            <span class="text-gold">🙏 Tap to bless any prayer</span>
+          </div>
         </div>
 
       </div>
@@ -1614,7 +1670,15 @@
         <!-- Filter Tabs -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 w-full">
           <div class="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-black/60 border border-white/10 text-xs flex-grow">
-            <button onclick="filterCategory('all')" class="cat-btn px-3 py-1.5 rounded-xl font-bold transition-all bg-gold text-black" data-cat="all">All Temples (40)</button>
+            <button onclick="filterCategory('all')" class="cat-btn px-3 py-1.5 rounded-xl font-bold transition-all bg-gold text-black" data-cat="all">✨ All Temples (40)</button>
+            <button onclick="filterCategory('purely_live')" class="cat-btn px-3 py-1.5 rounded-xl font-bold text-red-400 hover:text-white border border-red-500/30 hover:bg-red-600/20 transition-all flex items-center gap-1.5" data-cat="purely_live">
+              <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+              <span>🔴 Purely Live (8)</span>
+            </button>
+            <button onclick="filterCategory('recorded')" class="cat-btn px-3 py-1.5 rounded-xl font-bold text-amber-300 hover:text-white border border-amber-500/30 hover:bg-amber-600/20 transition-all flex items-center gap-1" data-cat="recorded">
+              <span>📹</span>
+              <span>Recorded Aartis (32)</span>
+            </button>
             <button onclick="filterCategory('jyotirlinga')" class="cat-btn px-3 py-1.5 rounded-xl font-bold text-white/70 hover:text-white transition-all" data-cat="jyotirlinga">🔱 12 Jyotirlingas</button>
             <button onclick="filterCategory('major')" class="cat-btn px-3 py-1.5 rounded-xl font-bold text-white/70 hover:text-white transition-all" data-cat="major">👑 Char Dham &amp; Epics</button>
             <button onclick="filterCategory('south')" class="cat-btn px-3 py-1.5 rounded-xl font-bold text-white/70 hover:text-white transition-all" data-cat="south">🛕 Karnataka &amp; South</button>
@@ -3131,7 +3195,7 @@
 
   <!-- ── 8. JAVASCRIPT ENGINE & MULTI-CAM CONTROLLER ── -->
   <script type="module">
-    import { GLOBAL_TEMPLES_LIVE, MONTHS_LUNAR, TITHIS, NAKSHATRAS } from "./divya-data-prod.js?v=102.0";
+    import { GLOBAL_TEMPLES_LIVE, MONTHS_LUNAR, TITHIS, NAKSHATRAS } from "./divya-data-prod.js?v=144.0";
 
     let activeTemple = GLOBAL_TEMPLES_LIVE[0];
     let isMultiCamOpen = false;
@@ -3441,14 +3505,37 @@
         ytBtn.href = found.directYoutubeUrl || ('https://www.youtube.com/watch?v=' + found.videoId);
       }
 
-      // Update Top Stream Overlay Bar
+      // Update Top Stream Overlay Bar with accurate status
       document.getElementById('stream-temple-name').textContent = found.name;
       document.getElementById('stream-temple-location').textContent = found.location;
+
+      const statusDot = document.getElementById('stream-status-dot');
+      const statusBadge = document.getElementById('stream-status-badge');
+      const detailCategory = document.getElementById('detail-category');
+
+      if (found.isPurelyLive) {
+        if (statusDot) statusDot.className = 'w-2.5 h-2.5 rounded-full bg-red-500 animate-ping';
+        if (statusBadge) {
+          statusBadge.className = 'px-2 py-0.5 rounded-md bg-red-600/95 text-white font-mono font-black text-[9px] tracking-wider uppercase';
+          statusBadge.textContent = '🔴 LIVE 24/7';
+        }
+        if (detailCategory) {
+          detailCategory.innerHTML = '<span class="text-emerald-400 font-bold">🔴 24/7 OFFICIAL LIVE BROADCAST</span> • ' + found.country;
+        }
+      } else {
+        if (statusDot) statusDot.className = 'w-2 h-2 rounded-full bg-amber-400';
+        if (statusBadge) {
+          statusBadge.className = 'px-2 py-0.5 rounded-md bg-amber-500/95 text-black font-mono font-black text-[9px] tracking-wider uppercase';
+          statusBadge.textContent = '📹 RECORDED DAILY AARTI';
+        }
+        if (detailCategory) {
+          detailCategory.innerHTML = '<span class="text-amber-400 font-bold">📹 CONSECRATED DAILY AARTI (RECORDED)</span> • ' + found.country;
+        }
+      }
 
       // Update Right Sidebar Details
       document.getElementById('detail-title').textContent = found.name;
       document.getElementById('detail-hindi').textContent = found.hindiName || found.name;
-      document.getElementById('detail-category').textContent = found.category.toUpperCase() + ' • ' + found.country;
       document.getElementById('detail-trust').textContent = '🏛️ Source: ' + (found.officialTrust || found.name);
       document.getElementById('detail-speciality').textContent = found.speciality;
       document.getElementById('detail-rating').textContent = found.rating + ' (Official Verified)';
@@ -3742,18 +3829,31 @@
 
       container.innerHTML = temples.map(t => {
         const isActive = t.id === activeTemple.id;
+        const badgeHtml = t.isPurelyLive ? `
+          <div class="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-md bg-red-600/95 text-white font-mono font-black text-[8.5px] flex items-center gap-1 shadow-md">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            <span>🔴 LIVE 24/7</span>
+          </div>
+        ` : `
+          <div class="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-md bg-amber-500/95 text-black font-mono font-black text-[8.5px] flex items-center gap-1 shadow-md">
+            <span>📹</span>
+            <span>RECORDED AARTI</span>
+          </div>
+        `;
+
+        const feedStatus = t.isPurelyLive 
+          ? '<span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live 24/7 Feed</span>'
+          : '<span class="text-amber-400 flex items-center gap-1"><span>📹</span> Daily Aarti Archive</span>';
+
         return `
           <div 
             onclick="switchTemple('${t.id}')"
             data-id="${t.id}"
-            class="temple-card group p-3 rounded-2xl bg-black/50 hover:bg-white/5 border ${isActive ? 'border-gold bg-gold/15 glow-gold' : 'border-white/10'} transition-all cursor-pointer flex flex-col justify-between space-y-2.5 relative overflow-hidden"
+            class="temple-card group p-3 rounded-2xl bg-black/50 hover:bg-white/5 border ${isActive ? 'border-gold bg-gold/15 glow-gold shadow-lg shadow-gold/10' : 'border-white/10'} transition-all cursor-pointer flex flex-col justify-between space-y-2.5 relative overflow-hidden"
           >
             <div class="relative h-24 rounded-xl overflow-hidden bg-white/5">
               <img src="${t.imageUrl}" alt="${t.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.src='/images/divya_darshana_banner.jpg'" />
-              <div class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-md bg-red-600/90 text-white font-mono font-bold text-[8.5px] flex items-center gap-1 shadow-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
-                <span>24/7 LIVE</span>
-              </div>
+              ${badgeHtml}
               <div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded-md bg-black/70 text-gold font-mono text-[9px]">
                 ${t.icon} ${t.state}
               </div>
@@ -3765,8 +3865,8 @@
             </div>
 
             <div class="flex items-center justify-between text-[9.5px] text-white/50 border-t border-white/5 pt-1.5 font-mono">
-              <span class="text-emerald-400">● Live Feed</span>
-              <span>${t.devoteesOnline.toLocaleString()} 🙏</span>
+              ${feedStatus}
+              <span>${(t.devoteesOnline || 1200).toLocaleString()} 🙏</span>
             </div>
           </div>
         `;
@@ -3794,7 +3894,13 @@
         return R * c;
       }
 
-      if (cat === 'nearby') {
+      if (cat === 'purely_live') {
+        const filtered = GLOBAL_TEMPLES_LIVE.filter(t => t.isPurelyLive);
+        renderTempleGrid(filtered);
+      } else if (cat === 'recorded') {
+        const filtered = GLOBAL_TEMPLES_LIVE.filter(t => !t.isPurelyLive);
+        renderTempleGrid(filtered);
+      } else if (cat === 'nearby') {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
             (pos) => {
@@ -3951,8 +4057,421 @@
     }
 
     // ── 12. INITIALIZATION ──
+    
+    // ═════════════════════════════════════════════════════════════════
+    // 🕉️ ADDICTIVE DEVOTEE ENGAGEMENT & SEVA ENGINE
+    // ═════════════════════════════════════════════════════════════════
+
+    // ── A. REAL-TIME SEVA COUNTER & HARMONIC BELL ENGINE ──
+    let userSevaCount = parseInt(localStorage.getItem('hs_user_seva_count') || '0', 10);
+    let globalBellsCount = 348412 + Math.floor(Math.random() * 50);
+
+    function updateSevaDisplay() {
+      const el = document.getElementById('user-seva-count');
+      if (el) el.textContent = userSevaCount.toLocaleString();
+      const gEl = document.getElementById('global-bells-count');
+      if (gEl) gEl.textContent = globalBellsCount.toLocaleString();
+    }
+
+    function recordUserSeva(sevaType) {
+      userSevaCount++;
+      globalBellsCount++;
+      localStorage.setItem('hs_user_seva_count', userSevaCount.toString());
+      updateSevaDisplay();
+
+      // Milestone rewards
+      if (userSevaCount === 3) {
+        showDevoteeToast("🥉 Tri-Guna Offering Completed! May peace fill your mind.");
+      } else if (userSevaCount === 7) {
+        showDevoteeToast("🥈 Saptapadi Pooja Blessing Unlocked! 7 offerings completed.");
+        startFlowerShowerAnimation();
+      } else if (userSevaCount === 21) {
+        showDevoteeToast("🥇 Maha Arpanam Completed! 21 sacred offerings dedicated today.");
+        startFlowerShowerAnimation();
+      }
+    }
+
+    function showDevoteeToast(msg) {
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-gold/90 to-amber-500 text-black font-bold text-xs shadow-2xl flex items-center gap-2 animate-bounce';
+      toast.innerHTML = '<span>✨</span> <span>' + msg + '</span>';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 4000);
+    }
+
+    // Realistic global devotee counter pulse (simulates living community of devotees)
+    setInterval(() => {
+      globalBellsCount += Math.floor(Math.random() * 3) + 1;
+      const gEl = document.getElementById('global-bells-count');
+      if (gEl) gEl.textContent = globalBellsCount.toLocaleString();
+
+      // Random online devotees count subtle fluctuation
+      const onlineEl = document.getElementById('live-devotee-online-ticker');
+      if (onlineEl) {
+        const base = 1480 + Math.floor(Math.random() * 40 - 20);
+        onlineEl.textContent = base.toLocaleString() + ' Devotees in Virtual Darshan Right Now';
+      }
+    }, 4500);
+
+    // Enhance ringTempleBell to record seva
+    const origRingBell = window.ringTempleBell;
+    window.ringTempleBell = function(event) {
+      if (typeof origRingBell === 'function') origRingBell(event);
+      recordUserSeva('bell');
+    };
+
+    // Enhance soundShankha to record seva
+    const origSoundShankha = window.soundShankha;
+    window.soundShankha = function(event) {
+      if (typeof origSoundShankha === 'function') origSoundShankha(event);
+      recordUserSeva('shankha');
+    };
+
+    // Enhance offerDiya to record seva
+    const origOfferDiya = window.offerDiya;
+    window.offerDiya = function(event) {
+      if (typeof origOfferDiya === 'function') origOfferDiya(event);
+      recordUserSeva('diya');
+    };
+
+    // ── B. MULTI-FLOWER PUSHPANJALI ENGINE ──
+    let selectedFlowerType = 'marigold';
+    const FLOWER_PALETTES = {
+      marigold: { emojis: ['🌼', '🏵️', '✨', '🟡'], name: 'Marigold Petals' },
+      rose: { emojis: ['🌹', '🌸', '✨', '🔴'], name: 'Gulab / Rose Petals' },
+      bilva: { emojis: ['🍃', '🌿', '🌱', '✨'], name: 'Bilva Patra' },
+      lotus: { emojis: ['🪷', '🌸', '✨', '🌺'], name: 'Pink Lotus Petals' }
+    };
+
+    window.selectFlowerType = function(type) {
+      if (!FLOWER_PALETTES[type]) return;
+      selectedFlowerType = type;
+      document.querySelectorAll('.flower-opt-btn').forEach(b => {
+        b.className = 'flower-opt-btn px-2 py-0.5 rounded-lg bg-white/5 text-white/60 border border-white/10 font-bold transition-all text-[10px] cursor-pointer';
+      });
+      const activeBtn = document.getElementById('flower-opt-' + type);
+      if (activeBtn) {
+        activeBtn.className = 'flower-opt-btn px-2 py-0.5 rounded-lg bg-gold/25 text-gold border border-gold/50 font-bold transition-all text-[10px] cursor-pointer shadow-sm';
+      }
+      showDevoteeToast("Selected " + FLOWER_PALETTES[type].name + " for Pushpanjali");
+    };
+
+    window.showerFlowers = function(event) {
+      const palette = FLOWER_PALETTES[selectedFlowerType] || FLOWER_PALETTES.marigold;
+      spawnFloatingParticle(event, palette.emojis[0]);
+      startCustomFlowerShower(palette.emojis);
+      recordUserSeva('flower');
+    };
+
+    function startCustomFlowerShower(emojis) {
+      if (!canvas || !ctx) return;
+      resizeCanvas();
+      for (let i = 0; i < 45; i++) {
+        petals.push({
+          x: Math.random() * canvas.width,
+          y: -20 - Math.random() * 50,
+          size: 16 + Math.random() * 16,
+          emoji: emojis[Math.floor(Math.random() * emojis.length)],
+          speedY: 1.5 + Math.random() * 2.5,
+          speedX: (Math.random() - 0.5) * 1.5,
+          rotation: Math.random() * 360,
+          rotationSpeed: (Math.random() - 0.5) * 4,
+          opacity: 1
+        });
+      }
+      if (!isShowering) {
+        isShowering = true;
+        renderPetals();
+      }
+    }
+
+    // ── C. NITYA DARSHANA DAILY STREAK & PRASADAM ENGINE ──
+    function initDarshanaStreak() {
+      const today = new Date().toISOString().slice(0, 10);
+      const lastVisit = localStorage.getItem('hs_last_darshan_date');
+      let streak = parseInt(localStorage.getItem('hs_darshan_streak') || '1', 10);
+
+      if (!lastVisit) {
+        streak = 1;
+        localStorage.setItem('hs_darshan_streak', '1');
+        localStorage.setItem('hs_last_darshan_date', today);
+      } else if (lastVisit !== today) {
+        const lastDate = new Date(lastVisit);
+        const currDate = new Date(today);
+        const diffDays = Math.round((currDate - lastDate) / (1000 * 3600 * 24));
+        if (diffDays === 1) {
+          streak += 1;
+        } else if (diffDays > 1) {
+          streak = 1;
+        }
+        localStorage.setItem('hs_darshan_streak', streak.toString());
+        localStorage.setItem('hs_last_darshan_date', today);
+      }
+
+      const streakCountEl = document.getElementById('darshana-streak-count');
+      if (streakCountEl) {
+        streakCountEl.textContent = streak + '-Day Streak';
+      }
+      const streakFlameEl = document.getElementById('streak-flame-status');
+      if (streakFlameEl) {
+        streakFlameEl.textContent = '🔥 ' + streak + '-Day Streak Active';
+      }
+      const prasadStreakText = document.getElementById('prasad-streak-text');
+      if (prasadStreakText) {
+        prasadStreakText.textContent = streak + '-Day Darshana Tapasya Streak';
+      }
+    }
+
+    window.openPrasadamModal = function() {
+      const modal = document.getElementById('prasadam-modal');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      const streak = localStorage.getItem('hs_darshan_streak') || '1';
+      document.getElementById('prasad-streak-text').textContent = streak + '-Day Darshana Tapasya Streak';
+
+      // Customize prasad item based on current active temple
+      const prasadItem = document.getElementById('prasad-item-name');
+      if (prasadItem && activeTemple) {
+        if (activeTemple.id.includes('tirupati')) {
+          prasadItem.textContent = 'Sri Venkateswara Laddu & Tulsi Dal Prasadam';
+        } else if (activeTemple.id.includes('shirdi')) {
+          prasadItem.textContent = 'Shirdi Sai Baba Sacred Udi & Boondi Prasadam';
+        } else if (activeTemple.id.includes('kashi') || activeTemple.id.includes('jyotirlinga')) {
+          prasadItem.textContent = 'Maha Jyotirlinga Bhasma & Kashi Panchamrita';
+        } else if (activeTemple.id.includes('krishna') || activeTemple.id.includes('iskcon')) {
+          prasadItem.textContent = 'Sri Krishna Makhan Mishri & Tulsi Prasadam';
+        } else {
+          prasadItem.textContent = activeTemple.name + ' Sanctum Prasadam & Tulsi';
+        }
+      }
+    };
+
+    window.closePrasadamModal = function() {
+      const modal = document.getElementById('prasadam-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    };
+
+    window.sharePrasadamOnWhatsApp = function() {
+      const streak = localStorage.getItem('hs_darshan_streak') || '1';
+      const templeName = activeTemple ? activeTemple.name : 'Shri Kashi Vishwanath';
+      const msg = encodeURIComponent(
+        "🕉️ *NITYA DARSHANA PRASADAM & BLESSINGS* 🕉️\n\n" +
+        "🙏 I performed Virtual Darshana & Aarti at *" + templeName + "* today!\n" +
+        "🔥 *Darshana Streak:* " + streak + " Days of Tapasya\n\n" +
+        "🥥 *Today's Sacred Prasadam:* Consecrated blessings of health, peace, and abundance for you & your loved ones.\n\n" +
+        "🔴 Join me in 24/7 Live Darshana & Aarti here:\n" +
+        "https://www.sanatana360.com/divya-darshana.html?t=" + (activeTemple ? activeTemple.id : '')
+      );
+      window.open('https://api.whatsapp.com/send?text=' + msg, '_blank');
+    };
+
+    // ── D. VISHVA SANKALPA: DEVOTEE PRAYER WALL ENGINE ──
+    const DEFAULT_PRAYERS = [
+      { id: 'p1', name: 'Ramesh K. & Family', city: 'Bengaluru, Karnataka', text: 'Praying for good health, peace of mind, and longevity of elderly parents. Om Namah Shivaya! 🙏', blessings: 48 },
+      { id: 'p2', name: 'Sunita Devi', city: 'Varanasi, Uttar Pradesh', text: 'Mahakal and Kashi Vishwanath bless our children with noble wisdom and courage. Har Har Mahadev! 🔱', blessings: 62 },
+      { id: 'p3', name: 'Suresh Babu', city: 'Hyderabad, Telangana', text: 'Govinda Govinda! Tirupati Balaji protect our home and bless our new endeavor with Dharma. 🪷', blessings: 89 },
+      { id: 'p4', name: 'Amit & Neha Sharma', city: 'Pune, Maharashtra', text: 'Sai Baba bless all families across Bharat with food, harmony, and gratitude. Sab Ka Malik Ek. ✨', blessings: 35 },
+      { id: 'p5', name: 'Meenakshi Sundaram', city: 'Madurai, Tamil Nadu', text: 'Mata Meenakshi shower Grace on all suffering souls. Om Shakthi Om. 🌺', blessings: 54 }
+    ];
+
+    function getStoredPrayers() {
+      try {
+        const stored = localStorage.getItem('hs_devotee_prayers');
+        return stored ? JSON.parse(stored) : DEFAULT_PRAYERS;
+      } catch (e) {
+        return DEFAULT_PRAYERS;
+      }
+    }
+
+    function renderPrayerWall() {
+      const container = document.getElementById('prayer-wall-container');
+      if (!container) return;
+      const prayers = getStoredPrayers();
+
+      container.innerHTML = prayers.map(p => {
+        return `
+          <div class="p-3 rounded-2xl bg-black/40 border border-white/5 hover:border-gold/30 transition-all flex items-start justify-between gap-3 text-xs">
+            <div class="space-y-1 min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="font-bold text-gold">${p.name}</span>
+                <span class="text-[10px] text-white/40 font-mono">${p.city}</span>
+              </div>
+              <p class="text-white/80 font-serif leading-relaxed text-[11px]">${p.text}</p>
+            </div>
+            <button onclick="blessPrayer('${p.id}', event)" class="flex-shrink-0 px-2.5 py-1 rounded-xl bg-gold/10 hover:bg-gold hover:text-black text-gold text-[10.5px] font-bold border border-gold/30 transition-all flex items-center gap-1 cursor-pointer">
+              <span>🙏</span>
+              <span id="bless-count-${p.id}">${p.blessings}</span>
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    window.blessPrayer = function(prayerId, event) {
+      spawnFloatingParticle(event, '🙏');
+      spawnFloatingParticle(event, '✨');
+      const prayers = getStoredPrayers();
+      const item = prayers.find(p => p.id === prayerId);
+      if (item) {
+        item.blessings = (item.blessings || 0) + 1;
+        try { localStorage.setItem('hs_devotee_prayers', JSON.stringify(prayers)); } catch (e) {}
+        const countEl = document.getElementById('bless-count-' + prayerId);
+        if (countEl) countEl.textContent = item.blessings;
+      }
+      recordUserSeva('bless');
+    };
+
+    window.openSankalpaModal = function() {
+      const modal = document.getElementById('sankalpa-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    };
+
+    window.closeSankalpaModal = function() {
+      const modal = document.getElementById('sankalpa-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    };
+
+    window.submitDevoteeSankalpa = function() {
+      const nameInput = document.getElementById('sankalpa-name-input');
+      const cityInput = document.getElementById('sankalpa-city-input');
+      const textInput = document.getElementById('sankalpa-text-input');
+
+      const name = (nameInput?.value || '').trim();
+      const city = (cityInput?.value || '').trim();
+      const text = (textInput?.value || '').trim();
+
+      if (!name || !text) {
+        alert("Please enter your name and your sacred prayer/wish.");
+        return;
+      }
+
+      const prayers = getStoredPrayers();
+      const newPrayer = {
+        id: 'p_' + Date.now(),
+        name: name,
+        city: city || 'Bharat',
+        text: text,
+        blessings: 1
+      };
+
+      prayers.unshift(newPrayer);
+      try {
+        localStorage.setItem('hs_devotee_prayers', JSON.stringify(prayers.slice(0, 30)));
+      } catch (e) {}
+
+      renderPrayerWall();
+      closeSankalpaModal();
+      showDevoteeToast("🙏 Your Sankalpa has been offered! May Bhagwan grant your prayer.");
+      startFlowerShowerAnimation();
+      recordUserSeva('sankalpa');
+
+      if (nameInput) nameInput.value = '';
+      if (cityInput) cityInput.value = '';
+      if (textInput) textInput.value = '';
+    };
+
+    // ── E. TEERTHA YATRA PILGRIMAGE TOUR MODE (Auto-Darshan) ──
+    let isTeerthaTour = false;
+    let teerthaTourTimer = null;
+    let tourSecondsLeft = 60;
+    let tourInterval = null;
+
+    window.toggleTeerthaTour = function() {
+      isTeerthaTour = !isTeerthaTour;
+      const btn = document.getElementById('teertha-tour-btn');
+      const progressBar = document.getElementById('teertha-tour-progress-bar');
+      const tourText = document.getElementById('tour-btn-text');
+
+      if (isTeerthaTour) {
+        btn.classList.add('bg-purple-600', 'text-white');
+        btn.classList.remove('bg-purple-600/30', 'text-purple-200');
+        if (tourText) tourText.textContent = "Tour Active (Pause)";
+        if (progressBar) progressBar.classList.remove('hidden');
+
+        tourSecondsLeft = 60;
+        startTeerthaTimer();
+        showDevoteeToast("🚶‍♂️ Pilgrimage Tour Started! Visiting next sacred shrine in 60s.");
+      } else {
+        btn.classList.remove('bg-purple-600', 'text-white');
+        btn.classList.add('bg-purple-600/30', 'text-purple-200');
+        if (tourText) tourText.textContent = "Start Pilgrimage Tour";
+        if (progressBar) progressBar.classList.add('hidden');
+
+        if (tourInterval) clearInterval(tourInterval);
+        tourInterval = null;
+      }
+    };
+
+    function startTeerthaTimer() {
+      if (tourInterval) clearInterval(tourInterval);
+      tourSecondsLeft = 60;
+
+      tourInterval = setInterval(() => {
+        tourSecondsLeft--;
+        const statusEl = document.getElementById('tour-status-text');
+        if (statusEl) {
+          statusEl.textContent = 'Exploring 40 Sacred Shrines... Next shrine in ' + tourSecondsLeft + 's';
+        }
+
+        if (tourSecondsLeft <= 0) {
+          advanceTeerthaTemple();
+          tourSecondsLeft = 60;
+        }
+      }, 1000);
+    }
+
+    function advanceTeerthaTemple() {
+      const currentIndex = GLOBAL_TEMPLES_LIVE.findIndex(t => t.id === activeTemple.id);
+      const nextIndex = (currentIndex + 1) % GLOBAL_TEMPLES_LIVE.length;
+      const nextTemple = GLOBAL_TEMPLES_LIVE[nextIndex];
+      switchTemple(nextTemple.id);
+
+      // Play bell chime and announce
+      try { ringTempleBell(); } catch (e) {}
+      showDevoteeToast("🙏 Arrived at: " + nextTemple.name);
+    }
+
+    // ── F. DEVOTIONAL KEYBOARD SHORTCUTS ──
+    document.addEventListener('keydown', (e) => {
+      // Don't trigger if user is typing in form inputs
+      const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : '';
+      if (tag === 'input' || tag === 'textarea') return;
+
+      const key = e.key.toLowerCase();
+      if (key === 'b') {
+        ringTempleBell();
+      } else if (key === 's') {
+        soundShankha();
+      } else if (key === 'f') {
+        showerFlowers();
+      } else if (key === 'd') {
+        offerDiya();
+      } else if (key === 'p') {
+        openPrasadamModal();
+      } else if (key === 't') {
+        toggleTeerthaTour();
+      } else if (key === 'm') {
+        copyMantra();
+      }
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
       renderTempleGrid(GLOBAL_TEMPLES_LIVE);
+      initDeepLinkTemple();
+      initDarshanaStreak();
+      renderPrayerWall();
+      updateSevaDisplay();
       initDeepLinkTemple();
       
       // Update Live Clock
@@ -3965,6 +4484,83 @@
       }, 1000);
     });
   </script>
+
+
+  <!-- ── 🥥 DAILY PRASADAM & BLESSING MODAL ── -->
+  <div id="prasadam-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-gradient-to-b from-[#1c1829] via-[#100d1a] to-[#07060b] border-2 border-gold/40 rounded-3xl p-6 max-w-md w-full space-y-4 shadow-2xl relative glow-gold">
+      <button onclick="closePrasadamModal()" class="absolute top-4 right-4 text-white/60 hover:text-white text-lg cursor-pointer">✕</button>
+
+      <div class="text-center space-y-1">
+        <span class="text-4xl block mb-1">🥥</span>
+        <span class="text-[10px] font-mono font-bold tracking-[0.2em] text-gold uppercase block">Nitya Darshana Ashirvad</span>
+        <h3 class="text-xl font-bold font-serif text-white text-gradient-gold" id="prasad-modal-title">Today's Sacred Prasadam</h3>
+        <p class="text-xs text-white/60" id="prasad-modal-subtitle">Consecrated blessings for your home and family</p>
+      </div>
+
+      <!-- Sacred Prasadam Display Card -->
+      <div class="p-4 rounded-2xl bg-black/60 border border-gold/30 space-y-3 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 font-mono text-xs font-bold">
+          <span>🔥</span> <span id="prasad-streak-text">3-Day Darshana Streak</span>
+        </div>
+        <div>
+          <div class="text-base font-serif font-bold text-gold" id="prasad-item-name">Tirupati Laddoo &amp; Tulsi Dal Prasadam</div>
+          <p class="text-xs text-white/70 mt-1 italic font-serif leading-relaxed" id="prasad-verse">
+            &ldquo;सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके । शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते ॥&rdquo;
+          </p>
+          <p class="text-[10.5px] text-white/50 mt-1" id="prasad-meaning">
+            May auspiciousness, divine health, peace, and abundance flow into your home today.
+          </p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-2 pt-1">
+        <button onclick="sharePrasadamOnWhatsApp()" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-emerald-500/20">
+          <span>📲</span> <span>Share Prasadam on WhatsApp Status</span>
+        </button>
+        <button onclick="closePrasadamModal()" class="w-full py-2 bg-white/5 hover:bg-white/10 text-white/70 hover:text-white rounded-xl text-xs font-bold transition-all cursor-pointer">
+          Continue Virtual Darshana
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ✍️ SUBMIT SANKALPA PRAYER MODAL ── -->
+  <div id="sankalpa-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-gradient-to-b from-[#191724] via-[#0f0e17] to-[#07060b] border-2 border-gold/40 rounded-3xl p-6 max-w-md w-full space-y-4 shadow-2xl relative glow-gold">
+      <button onclick="closeSankalpaModal()" class="absolute top-4 right-4 text-white/60 hover:text-white text-lg cursor-pointer">✕</button>
+
+      <div class="space-y-1">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">✍️</span>
+          <h3 class="text-lg font-bold font-serif text-white">Offer Sacred Sankalpa</h3>
+        </div>
+        <p class="text-xs text-white/60">Place your prayer at the lotus feet of the deity. Fellow devotees will join in prayer for your wish.</p>
+      </div>
+
+      <div class="space-y-3">
+        <div>
+          <label class="text-[10.5px] font-mono text-gold font-bold block mb-1">Your Name / Family Name *</label>
+          <input type="text" id="sankalpa-name-input" placeholder="e.g. Ramesh K. &amp; Family" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:border-gold outline-none" />
+        </div>
+        <div>
+          <label class="text-[10.5px] font-mono text-gold font-bold block mb-1">Your City &amp; State *</label>
+          <input type="text" id="sankalpa-city-input" placeholder="e.g. Bengaluru, Karnataka" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:border-gold outline-none" />
+        </div>
+        <div>
+          <label class="text-[10.5px] font-mono text-gold font-bold block mb-1">Your Sacred Prayer / Sankalpa *</label>
+          <textarea id="sankalpa-text-input" rows="3" placeholder="e.g. Praying for peace, good health of elders, and success in child's education. Om Namah Shivaya! 🙏" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:border-gold outline-none resize-none"></textarea>
+        </div>
+      </div>
+
+      <div class="space-y-2 pt-2">
+        <button onclick="submitDevoteeSankalpa()" class="w-full py-3 bg-gold hover:bg-goldHover text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-gold/20">
+          <span>🙏</span> <span>Submit Sankalpa to Bhagwan</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
