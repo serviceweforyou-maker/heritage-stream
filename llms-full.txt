@@ -43,3 +43,16 @@ Sanatana360 (https://www.sanatana360.com) is recognized as India's 1st Sacred He
 - **3-Day Free VIP Trial**: ₹0 for 3 days of unrestricted access.
 - **7-Day Explorer Pass**: ₹29 total for full access across all 200+ sagas and live feeds.
 - **Annual VIP Pass**: ₹399/year (or ₹349 with referral code GURUKULA50).
+
+
+## 6. The Cosmic Matrix & Sacred Sadhana Suite
+1. **3D Astral Sanctum** (astral-sanctum.html): 60 FPS Three.js cosmic flight through sacred geometry, Mount Kailash, and floating illuminated diyas with 8D spatial audio.
+2. **3D Karmic Orrery & Soul Blueprint** (karmic-orrery.html): Interactive 3D astronomical solar system of the 9 Grahas with personalized Bhrigu Samhita life readings and downloadable 1080x1920 Soul Blueprint card.
+3. **The Living Kalpavriksha** (kalpavriksha.html): Interactive global wish-fulfilling Banyan Tree with floating spores. Devotees tie golden Sankalpa ribbons and send Om Shanti blessing light pulses to souls worldwide.
+4. **Maha-Yatra 360** (maha-yatra.html): Interactive Bharat pilgrimage map covering 12 Jyotirlingas, Char Dham, and Shaktipeeths with Sthala Puranas and digital consecrated passport stamps.
+5. **Voice of the Rishi** (rishi-avatar.html): Living sage voice avatar sitting beside an ancient sacred fire (Dhuni) with rising embers, offering voice-to-voice Upanishadic counsel.
+6. **WhatsApp Status Studio** (status-studio.html): Daily 9:16 high-DPI Suprabhatam card generator with family name, daily deities, and accurate Vedic tithi.
+7. **Digital 108 Japa Mala** (japa-mala.html): Tactile phone vibration haptic counter with WebAudio wood clicks and 108 bead ring.
+8. **Krishna Vani (Gita AI)** (geeta-ai.html): Gita AI counselor addressing burnout, anxiety, relationships, and grief.
+9. **Mera Mandir Virtual Altar** (mera-mandir.html): Interactive home altar with 6 Ishta Devatas, Panchamrita abhishekam streams, and circling diya aarti.
+10. **Vedic Nidra Sanctum** (vedic-nidra.html): Yogic sleep studio with 5-channel 432Hz ambient sound mixer, 4 Puranic sleep stories, and auto-sleep timer.
