@@ -2864,6 +2864,536 @@ export const GLOBAL_TEMPLES_LIVE = [
     "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
     "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
     "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan"
+  },
+  {
+    "id": "salangpur_hanumanji",
+    "name": "Shree Kashtbhanjan Dev Hanumanji Mandir Salangpur",
+    "hindiName": "श्री कष्टभंजन देव हनुमानजी मंदिर सारंगपुर (लाइव दर्शन)",
+    "deity": "Lord Hanuman (Salangpur Kashtbhanjan Dev)",
+    "category": "major",
+    "location": "Salangpur, Botad, Gujarat, India",
+    "state": "Gujarat",
+    "country": "India",
+    "videoId": "KomUNKwJu6c",
+    "fallbackVideoId": "P32yfttB2L0",
+    "officialTrust": "Shree Kashtabhanjan Dev Hanumanji Temple Trust, Salangpur Dham",
+    "liveStreamUrl": "https://www.youtube.com/embed/KomUNKwJu6c?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/@salangpurhanumanji/live",
+    "imageUrl": "https://img.youtube.com/vi/KomUNKwJu6c/hqdefault.jpg",
+    "icon": "🚩",
+    "coords": {
+      "lat": 22.1481,
+      "lng": 71.7482
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 18900,
+    "speciality": "World-renowned wish-fulfilling deity of Lord Hanuman in divine golden kavach, consecrated by Gopalanand Swami to eliminate all fears and afflictions",
+    "mantra": "ॐ हं हनुमते रुद्रात्मकाय हुं फट् | ॐ कष्टभञ्जनाय नमः",
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream",
+    "aartis": [
+      {
+        "name": "Mangala Aarti",
+        "time": "05:30 AM",
+        "desc": "Dawn awakening and first divine darshan"
+      },
+      {
+        "name": "Shringar Aarti",
+        "time": "07:00 AM",
+        "desc": "Gold ornamentation & floral alankara"
+      },
+      {
+        "name": "Rajbhog Aarti",
+        "time": "12:00 PM",
+        "desc": "Midday sacred naivedyam offering"
+      },
+      {
+        "name": "Sandhya Aarti",
+        "time": "07:30 PM",
+        "desc": "Sunset deeparadhana with brass bells"
+      }
+    ]
+  },
+  {
+    "id": "mayapur_chandrodaya",
+    "name": "ISKCON Sri Mayapur Chandrodaya Mandir",
+    "hindiName": "इस्कॉन श्री मायापुर चंद्रोदय मंदिर (विश्व मुख्यालय - लाइव दर्शन)",
+    "deity": "Sri Sri Radha Madhava, Ashta Sakhis & Sri Pancha Tattva",
+    "category": "major",
+    "location": "Sri Dham Mayapur, Nadia, West Bengal, India",
+    "state": "West Bengal",
+    "country": "India",
+    "videoId": "jTkVziszV0c",
+    "fallbackVideoId": "jTkVziszV0c",
+    "officialTrust": "ISKCON Mayapur (Mayapur TV Official)",
+    "liveStreamUrl": "https://www.youtube.com/embed/jTkVziszV0c?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/@MayapurTVOfficial/live",
+    "imageUrl": "https://img.youtube.com/vi/jTkVziszV0c/hqdefault.jpg",
+    "icon": "🪷",
+    "coords": {
+      "lat": 23.4244,
+      "lng": 88.3908
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 14200,
+    "speciality": "World Headquarters of ISKCON on the holy confluence of Ganga & Jalangi, home to the Temple of the Vedic Planetarium and ecstatic Sankirtan",
+    "mantra": "हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे | हरे राम हरे राम राम राम हरे हरे",
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream",
+    "aartis": [
+      {
+        "name": "Mangala Aarti",
+        "time": "04:30 AM",
+        "desc": "Auspicious dawn greeting of Sri Sri Radha Madhava"
+      },
+      {
+        "name": "Tulsi Puja",
+        "time": "05:00 AM",
+        "desc": "Circumambulation & veneration of Vrinda Devi"
+      },
+      {
+        "name": "Darshan Aarti",
+        "time": "07:00 AM",
+        "desc": "Morning Shringara revelation with Govindam prayers"
+      },
+      {
+        "name": "Sandhya Gaura Aarti",
+        "time": "06:30 PM",
+        "desc": "Evening Gaura Aarti with grand mridanga kirtan"
+      }
+    ]
+  },
+  {
+    "id": "golden_temple_amritsar",
+    "name": "Sachkhand Sri Harmandir Sahib (Golden Temple) Amritsar",
+    "hindiName": "सचकखंड श्री हरिमंदिर साहिब (स्वर्ण मंदिर) अमृतसर (लाइव गुरबाणी)",
+    "deity": "Sri Guru Granth Sahib Ji & Akal Takht Sahib",
+    "category": "major",
+    "location": "Amritsar, Punjab, India",
+    "state": "Punjab",
+    "country": "India",
+    "videoId": "QNCvG0C8-sc",
+    "fallbackVideoId": "QNCvG0C8-sc",
+    "officialTrust": "Shiromani Gurdwara Parbandhak Committee (SGPC Sri Amritsar)",
+    "liveStreamUrl": "https://www.youtube.com/embed/QNCvG0C8-sc?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/@SGPCSriAmritsar/live",
+    "imageUrl": "https://img.youtube.com/vi/QNCvG0C8-sc/hqdefault.jpg",
+    "icon": "✨",
+    "coords": {
+      "lat": 31.62,
+      "lng": 74.8765
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 34800,
+    "speciality": "Supreme spiritual center of Sikhism surrounded by the holy Amrit Sarovar, radiating 24/7 divine Gurbani Kirtan and equality through Guru Ka Langar",
+    "mantra": "ੴ सतिनामु करता पुरखु निरभउ निरवैरु अकाल मूरति अजूनी सैभं गुर प्रसादि ॥ जपु ॥ आदि सचु जुगादि सचु ॥",
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream",
+    "aartis": [
+      {
+        "name": "Palki Sahib Sewa",
+        "time": "04:30 AM",
+        "desc": "Ceremonial carrying of Guru Granth Sahib from Akal Takht"
+      },
+      {
+        "name": "Asa Di Var Kirtan",
+        "time": "06:00 AM",
+        "desc": "Morning devotional morning hymns"
+      },
+      {
+        "name": "Rehras Sahib",
+        "time": "06:30 PM",
+        "desc": "Sunset prayer at twilight"
+      },
+      {
+        "name": "Sukh-Aasan Sewa",
+        "time": "10:00 PM",
+        "desc": "Retiring of Guru Granth Sahib to Sri Akal Takht Sahib"
+      }
+    ]
+  },
+  {
+    "id": "dashashwamedh_ghat",
+    "name": "Dashashwamedh Ghat Maha Ganga Aarti Varanasi",
+    "hindiName": "दशाश्वमेध घाट महा गंगा आरती काशी वाराणसी (लाइव दर्शन)",
+    "deity": "Maa Ganga & Lord Shiva (Vishwanath)",
+    "category": "aarti",
+    "location": "Dashashwamedh Ghat, Varanasi, Uttar Pradesh, India",
+    "state": "Uttar Pradesh",
+    "country": "India",
+    "videoId": "Nruk2wFVFQc",
+    "fallbackVideoId": "Nruk2wFVFQc",
+    "officialTrust": "Ganga Seva Nidhi Dashashwamedh Ghat Varanasi",
+    "liveStreamUrl": "https://www.youtube.com/embed/Nruk2wFVFQc?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=Nruk2wFVFQc",
+    "imageUrl": "https://img.youtube.com/vi/Nruk2wFVFQc/hqdefault.jpg",
+    "icon": "🌊",
+    "coords": {
+      "lat": 25.3076,
+      "lng": 83.0107
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 21500,
+    "speciality": "Sacred ghat where Lord Brahma performed ten horse sacrifices; world-renowned for seven priests performing synchronized brass deeparadhana facing Mother Ganga",
+    "mantra": "ॐ नमो गङ्गायै विश्वरूपिण्यै नारायproperty्यै नमो नमः | हर हर गङ्गे जय माँ गङ्गे",
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream",
+    "aartis": [
+      {
+        "name": "Subah-e-Banaras",
+        "time": "05:30 AM",
+        "desc": "Dawn Vedic chanting, yoga, and Surya Namaskar"
+      },
+      {
+        "name": "Madhyahna Pooja",
+        "time": "12:00 PM",
+        "desc": "Midday floral tribute to Ganga Maiya"
+      },
+      {
+        "name": "Maha Sandhya Aarti",
+        "time": "06:45 PM",
+        "desc": "World-famous 7-priest multi-tiered brass lamp aarti"
+      },
+      {
+        "name": "Shayan Aarti",
+        "time": "09:00 PM",
+        "desc": "Night lullaby offering on the tranquil ghats"
+      }
+    ]
+  },
+  {
+    "id": "bhakti_tv_live",
+    "name": "Bhakti TV 24/7 Live Hindu Devotional Telecast",
+    "hindiName": "भक्ति टीवी 24/7 लाइव हिंदू धार्मिक प्रसारण",
+    "deity": "Sarva Deva & Devis (Lord Balaji, Shiva, Devi)",
+    "category": "major",
+    "location": "Hyderabad, Telangana / Pan-India",
+    "state": "Telangana",
+    "country": "India",
+    "videoId": "i_0k9wWNCtA",
+    "fallbackVideoId": "i_0k9wWNCtA",
+    "officialTrust": "Bhakti TV Live Network",
+    "liveStreamUrl": "https://www.youtube.com/embed/i_0k9wWNCtA?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/watch?v=i_0k9wWNCtA",
+    "imageUrl": "https://img.youtube.com/vi/i_0k9wWNCtA/hqdefault.jpg",
+    "icon": "📺",
+    "coords": {
+      "lat": 17.385,
+      "lng": 78.4867
+    },
+    "rating": "4.9 ★",
+    "devoteesOnline": 17200,
+    "speciality": "Dedicated 24/7 non-stop devotional satellite telecast broadcasting live morning suprabhatams, grand temple abhishekams, and sacred chanting across India",
+    "mantra": "ॐ नमो नारायणाय | ॐ नमः शिवाय | ॐ श्री मात्रे नमः",
+    "isPurelyLive": true,
+    "streamType": "live_24x7",
+    "streamBadge": "🔴 LIVE 24/7",
+    "streamBadgeClass": "bg-red-600/95 text-white border-red-500/40",
+    "streamStatusText": "Official 24/7 Continuous Feed",
+    "darshanType": "Purely Live 24/7 Stream",
+    "aartis": [
+      {
+        "name": "Suprabhata Seva",
+        "time": "05:00 AM",
+        "desc": "Dawn awakening stotrams from sacred shrines"
+      },
+      {
+        "name": "Nitya Kalyanam",
+        "time": "11:00 AM",
+        "desc": "Divine celestial wedding ceremony telecast"
+      },
+      {
+        "name": "Sandhya Deeparadhana",
+        "time": "06:30 PM",
+        "desc": "Twilight temple camphor offerings"
+      },
+      {
+        "name": "Ekantha Seva",
+        "time": "10:00 PM",
+        "desc": "Night lullaby hymns for peace and rest"
+      }
+    ]
+  },
+  {
+    "id": "dagdusheth_ganpati",
+    "name": "Shrimant Dagdusheth Halwai Ganpati Mandir Pune",
+    "hindiName": "श्रीमंत दगडूशेठ हलवाई गणपती मंदिर पुणे (लाइव दर्शन)",
+    "deity": "Lord Ganesha (Dagdusheth Halwai)",
+    "category": "major",
+    "location": "Budhwar Peth, Pune, Maharashtra, India",
+    "state": "Maharashtra",
+    "country": "India",
+    "videoId": "TCRunnmAKTk",
+    "fallbackVideoId": "TCRunnmAKTk",
+    "officialTrust": "Shrimant Dagdusheth Halwai Ganpati Public Trust, Pune",
+    "liveStreamUrl": "https://www.youtube.com/embed/TCRunnmAKTk?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/@dagdushethganpati",
+    "imageUrl": "https://img.youtube.com/vi/TCRunnmAKTk/hqdefault.jpg",
+    "icon": "🐘",
+    "coords": {
+      "lat": 18.5163,
+      "lng": 73.8562
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 24100,
+    "speciality": "Legendary wish-fulfilling idol of Lord Ganesha adorned with 8 kilograms of pure gold ornaments, visited by millions of devotees each year",
+    "mantra": "ॐ गं गणपतये नमः | वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ । निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥",
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan",
+    "aartis": [
+      {
+        "name": "Suprabhatam Aarti",
+        "time": "05:00 AM",
+        "desc": "Morning awakening ritual with Shehnai"
+      },
+      {
+        "name": "Madhyahna Aarti",
+        "time": "12:00 PM",
+        "desc": "Midday Rajbhog Modak offering"
+      },
+      {
+        "name": "Maha Sandhya Aarti",
+        "time": "07:30 PM",
+        "desc": "Sunset Dhoop deeparadhana with percussion"
+      },
+      {
+        "name": "Shej Aarti",
+        "time": "10:30 PM",
+        "desc": "Night slumber ritual closing sanctum doors"
+      }
+    ]
+  },
+  {
+    "id": "baps_swaminarayan",
+    "name": "BAPS Swaminarayan Mandir Live Puja Darshan",
+    "hindiName": "बीएपीएस स्वामीनारायण मंदिर दैनिक पूजा दर्शन व आरती",
+    "deity": "Bhagwan Swaminarayan & Akshar Purushottam",
+    "category": "major",
+    "location": "Ahmedabad / Gandhinagar / International, Gujarat, India",
+    "state": "Gujarat",
+    "country": "India",
+    "videoId": "8-kiFZfNaVg",
+    "fallbackVideoId": "8-kiFZfNaVg",
+    "officialTrust": "BAPS Swaminarayan Sanstha (BAPS Live)",
+    "liveStreamUrl": "https://www.youtube.com/embed/8-kiFZfNaVg?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/@bapslive",
+    "imageUrl": "https://img.youtube.com/vi/8-kiFZfNaVg/hqdefault.jpg",
+    "icon": "🛕",
+    "coords": {
+      "lat": 23.2294,
+      "lng": 72.6741
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 16500,
+    "speciality": "Sanctified daily morning puja darshan, shringar aarti, and spiritual discourses from BAPS Swaminarayan temples worldwide",
+    "mantra": "स्वामिनारायण हरे | ॐ श्री स्वामिनारायणाय नमः | अक्षरं अहं ब्रह्म",
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan",
+    "aartis": [
+      {
+        "name": "Mangala Aarti",
+        "time": "06:00 AM",
+        "desc": "Dawn awakening of Bhagwan Swaminarayan"
+      },
+      {
+        "name": "Shangar Aarti",
+        "time": "07:30 AM",
+        "desc": "Morning royal ornamentation adoration"
+      },
+      {
+        "name": "Rajbhog Aarti",
+        "time": "11:15 AM",
+        "desc": "Pure Sattvic vegetarian feast offering"
+      },
+      {
+        "name": "Sandhya Aarti",
+        "time": "07:00 PM",
+        "desc": "Evening devotional light adoration"
+      }
+    ]
+  },
+  {
+    "id": "prem_mandir_vrindavan",
+    "name": "Prem Mandir Vrindavan (Temple of Divine Love)",
+    "hindiName": "प्रेम मंदिर वृंदावन (श्री राधा कृष्ण मंगला आरती व दर्शन)",
+    "deity": "Shri Radha Krishna & Shri Sita Rama",
+    "category": "major",
+    "location": "Raman Reti, Vrindavan, Mathura, Uttar Pradesh, India",
+    "state": "Uttar Pradesh",
+    "country": "India",
+    "videoId": "zY56OusDjsg",
+    "fallbackVideoId": "zY56OusDjsg",
+    "officialTrust": "Jagadguru Kripalu Parishat (JKP Vrindavan)",
+    "liveStreamUrl": "https://www.youtube.com/embed/zY56OusDjsg?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/@JKPLIVE",
+    "imageUrl": "https://img.youtube.com/vi/zY56OusDjsg/hqdefault.jpg",
+    "icon": "🦚",
+    "coords": {
+      "lat": 27.5714,
+      "lng": 77.6744
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 23400,
+    "speciality": "Monumental white Italian marble architectural marvel celebrating divine love of Shri Radha Krishna with intricate wall carvings and musical fountains",
+    "mantra": "राधे राधे गोविन्द गोविन्द राधे | श्री कृष्ण गोविन्द हरे मुरारी हे नाथ नारायण वासुदेवाय",
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan",
+    "aartis": [
+      {
+        "name": "Mangala Aarti",
+        "time": "05:30 AM",
+        "desc": "Dawn awakening with soulful sankirtan"
+      },
+      {
+        "name": "Bhoga Aarti",
+        "time": "12:00 PM",
+        "desc": "Noon Rajbhog feast offering"
+      },
+      {
+        "name": "Dhoop Aarti",
+        "time": "04:30 PM",
+        "desc": "Afternoon opening of sanctum gates"
+      },
+      {
+        "name": "Shayan Aarti",
+        "time": "08:15 PM",
+        "desc": "Night musical deeparadhana lullaby"
+      }
+    ]
+  },
+  {
+    "id": "ambaji_mata_gujarat",
+    "name": "Shree Arasuri Ambaji Mata Devasthan (Gabbar Hill)",
+    "hindiName": "श्री आरासुरी अंबाजी माता देवस्थान गब्बर (लाइव दर्शन व आरती)",
+    "deity": "Maa Ambaji (51 Shaktipeeth - Heart of Sati)",
+    "category": "shaktipeeth",
+    "location": "Gabbar Hill, Ambaji, Danta, Banaskantha, Gujarat, India",
+    "state": "Gujarat",
+    "country": "India",
+    "videoId": "4WBkEbapRys",
+    "fallbackVideoId": "4WBkEbapRys",
+    "officialTrust": "Shree Arasuri Ambaji Mata Devasthan Trust",
+    "liveStreamUrl": "https://www.youtube.com/embed/4WBkEbapRys?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/@officialambajitemple",
+    "imageUrl": "https://img.youtube.com/vi/4WBkEbapRys/hqdefault.jpg",
+    "icon": "🌺",
+    "coords": {
+      "lat": 24.3323,
+      "lng": 72.8496
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 15800,
+    "speciality": "Major Shaktipeeth without an idol where the consecrated golden Shree Viso Yantra is worshipped with pure Vedic rituals atop the Aravalli hills",
+    "mantra": "ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे | जय अम्बे गौरी मैया जय श्यामा गौरी",
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan",
+    "aartis": [
+      {
+        "name": "Mangala Aarti",
+        "time": "07:30 AM",
+        "desc": "Morning awakening of Mother Ambaji"
+      },
+      {
+        "name": "Rajbhog Offering",
+        "time": "12:00 PM",
+        "desc": "Midday royal feast adoration"
+      },
+      {
+        "name": "Sandhya Aarti",
+        "time": "07:00 PM",
+        "desc": "Twilight Deeparadhana across Gabbar hill"
+      },
+      {
+        "name": "Shayan Aarti",
+        "time": "09:00 PM",
+        "desc": "Closing of sanctum for the night"
+      }
+    ]
+  },
+  {
+    "id": "belur_math_ramakrishna",
+    "name": "Ramakrishna Math & Ramakrishna Mission Belur Math",
+    "hindiName": "रामकृष्ण मठ एवं रामकृष्ण मिशन बेलूड़ मठ (संध्या आरती)",
+    "deity": "Bhagavan Sri Ramakrishna Paramahamsa & Sri Sarada Devi",
+    "category": "major",
+    "location": "Belur, Howrah, West Bengal, India",
+    "state": "West Bengal",
+    "country": "India",
+    "videoId": "nLpwsaPcr04",
+    "fallbackVideoId": "nLpwsaPcr04",
+    "officialTrust": "Ramakrishna Math & Ramakrishna Mission, Belur Math",
+    "liveStreamUrl": "https://www.youtube.com/embed/nLpwsaPcr04?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1",
+    "directYoutubeUrl": "https://www.youtube.com/@belurmathofficial",
+    "imageUrl": "https://img.youtube.com/vi/nLpwsaPcr04/hqdefault.jpg",
+    "icon": "🕉️",
+    "coords": {
+      "lat": 22.6322,
+      "lng": 88.3562
+    },
+    "rating": "5.0 ★",
+    "devoteesOnline": 11300,
+    "speciality": "World headquarters founded by Swami Vivekananda embodying harmony of all religions on the holy banks of the Hooghly (Ganga) River",
+    "mantra": "ॐ स्थापकाय च धर्मस्य सर्वधर्मस्वरूपिणे । अवतारवरिष्ठाय रामकृष्णाय ते नमः ॥",
+    "isPurelyLive": false,
+    "streamType": "recorded_aarti",
+    "streamBadge": "📹 RECORDED DAILY AARTI",
+    "streamBadgeClass": "bg-amber-500/90 text-black border-amber-400/40",
+    "streamStatusText": "Consecrated Daily Aarti & Sanctum Darshan",
+    "darshanType": "Pre-Recorded Daily Aarti & Consecrated Darshan",
+    "aartis": [
+      {
+        "name": "Mangalarati",
+        "time": "04:30 AM",
+        "desc": "Dawn awakening service by the monastic order"
+      },
+      {
+        "name": "Bhog Arati",
+        "time": "11:30 AM",
+        "desc": "Midday consecrated food offering"
+      },
+      {
+        "name": "Sandhya Arati (Khandana Bhava Bandhana)",
+        "time": "06:30 PM",
+        "desc": "Famous vesper hymn composed by Swami Vivekananda"
+      },
+      {
+        "name": "Silent Meditation",
+        "time": "07:30 PM",
+        "desc": "Evening quiet reflection in prayer hall"
+      }
+    ]
   }
 ];
 if (typeof window !== "undefined") { window.GLOBAL_TEMPLES_LIVE = GLOBAL_TEMPLES_LIVE; }
