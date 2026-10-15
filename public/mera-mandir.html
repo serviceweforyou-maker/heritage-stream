@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mera Mandir™ | Interactive Personal Virtual Altar & Abhishekam Pooja Studio | Sanatana360</title>
+  <meta name="description" content="Perform authentic daily virtual pooja at your personal home altar. Select your Ishta Devata, perform holy water/milk abhishekam, apply chandan tilak, drape flower garlands, and perform circular aarti.">
+  <meta name="keywords" content="virtual temple altar, online pooja room, shiva lingam abhishekam online, tirupati balaji pooja, virtual aarti diya, mera mandir, Sanatana360">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKHEWYB53Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZKHEWYB53Q');
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#e6b964',
+            goldHover: '#cfa24a',
+            goldDark: '#8a6827',
+            surface: '#11131a',
+            surfaceBorder: '#232838',
+            bgDark: '#08090d',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { background-color: #07080c; color: #f1f2f6; font-family: 'Inter', sans-serif; }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #fff2cc 0%, #e6b964 50%, #9e7526 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-gold { box-shadow: 0 0 50px -5px rgba(230, 185, 100, 0.35); }
+    .aarti-circle-anim {
+      animation: aartiPradakshina 4s linear infinite;
+    }
+    @keyframes aartiPradakshina {
+      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg); }
+    }
+    .water-stream-anim {
+      animation: waterFlow 0.8s linear infinite;
+    }
+    @keyframes waterFlow {
+      0% { opacity: 0.8; transform: translateY(-5px) scaleX(0.9); }
+      50% { opacity: 1; transform: translateY(0) scaleX(1.1); }
+      100% { opacity: 0.8; transform: translateY(5px) scaleX(0.9); }
+    }
+    .swing-bell-anim {
+      animation: swingBell 0.6s ease-in-out infinite alternate;
+      transform-origin: top center;
+    }
+    @keyframes swingBell {
+      0% { transform: rotate(-16deg); }
+      100% { transform: rotate(16deg); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-gold selection:text-black">
+
+  <!-- ── 🔱 GLOBAL HEADER ── -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#07080c]/95 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-2 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-gold/30 via-gold/15 to-transparent border border-gold/40 flex items-center justify-center text-lg shadow-sm shadow-gold/20 group-hover:scale-105 transition-transform">
+            ⚜️
+          </div>
+          <div class="flex flex-col">
+            <span class="text-base sm:text-lg font-black font-serif tracking-wider text-gradient-gold leading-none">
+              Sanatana360
+            </span>
+            <span class="text-[8px] font-mono tracking-[0.2em] text-white/40 uppercase mt-0.5">
+              Mera Mandir &bull; Home Altar
+            </span>
+          </div>
+        </a>
+
+        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 font-mono text-[10px] font-bold">
+          <span>🛕</span> <span>Interactive Abhishekam &bull; Aarti</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-4 text-xs font-bold text-white/80">
+        <a href="/" class="hover:text-gold transition-colors">🏠 Home</a>
+        <a href="/divya-darshana.html" class="hover:text-gold transition-colors">🛕 Divya Darshana (50)</a>
+        <a href="/mera-mandir.html" class="text-gold border-b-2 border-gold pb-0.5">🛕 Mera Mandir</a>
+        <a href="/japa-mala.html" class="hover:text-gold transition-colors">📿 Japa Mala</a>
+        <a href="/geeta-ai.html" class="hover:text-gold transition-colors">🤖 Geeta AI</a>
+        <a href="/status-studio.html" class="hover:text-gold transition-colors">📲 Status Studio</a>
+        <a href="/vedic-nidra.html" class="hover:text-gold transition-colors">🌙 Vedic Nidra</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button onclick="toggleMandirBgm()" id="mandir-bgm-btn" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-gold/20 text-white hover:text-gold border border-white/10 text-xs font-bold transition-all flex items-center gap-1 cursor-pointer">
+          <span id="mandir-bgm-icon">🔇</span> <span id="mandir-bgm-text">Flute &bull; Chants</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 🌟 MAIN SANCTUM CONTAINER ── -->
+  <main class="flex-grow max-w-7xl mx-auto w-full px-3 sm:px-6 py-6 sm:py-8 space-y-6">
+
+    <!-- Top Altar Banner -->
+    <div class="flex flex-wrap items-center justify-between gap-3 bg-surface border border-surfaceBorder rounded-2xl p-3 sm:px-5">
+      <div class="flex items-center gap-2.5">
+        <span class="text-2xl">🪔</span>
+        <div>
+          <h1 class="text-sm sm:text-base font-bold font-serif text-white flex items-center gap-2">
+            <span id="mandir-title-text">My Sacred Home Mandir</span>
+            <span class="text-xs text-gold/70 font-mono">(Nitya Pooja)</span>
+          </h1>
+          <p class="text-[10.5px] text-white/50">Consecrated digital sanctum for daily devotion, wherever you are</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 text-xs font-mono font-bold">
+          <span>🔥</span> <span id="mandir-streak-text">1-Day Pooja Tapasya</span>
+        </div>
+        <button onclick="shareMandirOnWhatsApp()" class="px-3 py-1.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500 text-emerald-300 hover:text-black text-xs font-bold border border-emerald-500/40 transition-all flex items-center gap-1 cursor-pointer">
+          <span>📲</span> <span>Share Altar</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ── 6 ISHTA DEVATA SELECTION TABS ── -->
+    <div class="space-y-1.5">
+      <span class="text-[10px] font-mono uppercase tracking-widest text-gold font-bold block px-1">
+        Select Your Ishta Devata:
+      </span>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
+        <button onclick="selectDeity('shiva')" id="btn-deity-shiva" class="deity-btn p-2 rounded-xl bg-gold text-black font-extrabold border border-gold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md">
+          <span>🔱</span> <span>Shiva Lingam</span>
+        </button>
+        <button onclick="selectDeity('balaji')" id="btn-deity-balaji" class="deity-btn p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/80 font-bold border border-white/10 text-xs transition-all flex items-center justify-center gap-1.5">
+          <span>🪷</span> <span>Tirupati Balaji</span>
+        </button>
+        <button onclick="selectDeity('ganesha')" id="btn-deity-ganesha" class="deity-btn p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/80 font-bold border border-white/10 text-xs transition-all flex items-center justify-center gap-1.5">
+          <span>🐘</span> <span>Siddhivinayak</span>
+        </button>
+        <button onclick="selectDeity('hanuman')" id="btn-deity-hanuman" class="deity-btn p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/80 font-bold border border-white/10 text-xs transition-all flex items-center justify-center gap-1.5">
+          <span>🚩</span> <span>Hanuman Ji</span>
+        </button>
+        <button onclick="selectDeity('krishna')" id="btn-deity-krishna" class="deity-btn p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/80 font-bold border border-white/10 text-xs transition-all flex items-center justify-center gap-1.5">
+          <span>🦚</span> <span>Radha Krishna</span>
+        </button>
+        <button onclick="selectDeity('durga')" id="btn-deity-durga" class="deity-btn p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/80 font-bold border border-white/10 text-xs transition-all flex items-center justify-center gap-1.5">
+          <span>🌺</span> <span>Maa Durga</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ── 2-COLUMN WORKBENCH: 3D ALTAR SANCTUM + POOJA TOOLS ── -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- LEFT: 3D TEMPLE MANDAPAM SANCTUM (8 Cols) -->
+      <div class="lg:col-span-8 flex flex-col items-center space-y-4">
+        
+        <!-- The Sacred Mandapam Stage -->
+        <div class="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-3xl bg-gradient-to-b from-[#1b1406] via-[#100d08] to-[#060503] border-4 border-gold/40 shadow-2xl glow-gold overflow-hidden flex flex-col justify-between p-4 sm:p-6 select-none">
+
+          <!-- Hanging Brass Bells at Top Arch -->
+          <div class="flex items-start justify-between w-full px-4 sm:px-10 z-20 pointer-events-auto">
+            <button onclick="ringAltarBell('left')" class="group cursor-pointer flex flex-col items-center" title="Tap to ring brass bell">
+              <div class="w-1 h-8 bg-amber-700"></div>
+              <span class="text-3xl sm:text-4xl filter drop-shadow-lg group-hover:scale-110 transition-transform" id="bell-left">🔔</span>
+            </button>
+            
+            <!-- Ornate Top Torana (Mango Leaves & Marigold Garland) -->
+            <div class="flex items-center gap-1 bg-black/60 px-4 py-1 rounded-full border border-gold/30 text-gold font-serif text-[11px] font-bold shadow-md">
+              <span>🌿</span> <span>ॐ श्री गणेशाय नमः</span> <span>🌿</span>
+            </div>
+
+            <button onclick="ringAltarBell('right')" class="group cursor-pointer flex flex-col items-center" title="Tap to ring brass bell">
+              <div class="w-1 h-8 bg-amber-700"></div>
+              <span class="text-3xl sm:text-4xl filter drop-shadow-lg group-hover:scale-110 transition-transform" id="bell-right">🔔</span>
+            </button>
+          </div>
+
+          <!-- Central Sanctum Altar: Deity Idol, Tilak, Flowers & Abhishekam Stream -->
+          <div class="relative flex flex-col items-center justify-center flex-grow z-10">
+
+            <!-- Glowing Halo (Prabhavali) Behind Deity -->
+            <div class="absolute w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-gradient-to-br from-amber-400/25 via-gold/15 to-transparent blur-2xl pointer-events-none"></div>
+
+            <!-- Abhishekam Water/Milk Stream Overlay (Toggled on click) -->
+            <div id="abhishekam-stream" class="absolute -top-12 z-30 hidden flex-col items-center pointer-events-none">
+              <span class="text-3xl mb-1">🫗</span>
+              <div class="w-3.5 h-36 bg-gradient-to-b from-white/90 via-sky-200/80 to-sky-300/60 rounded-full water-stream-anim blur-[0.5px]"></div>
+              <div class="w-12 h-4 bg-sky-200/50 rounded-full blur-sm"></div>
+            </div>
+
+            <!-- Deity Centerpiece Visual & Base -->
+            <div class="relative flex flex-col items-center">
+              
+              <!-- Chandan / Kumkum Tilak Overlay on Forehead -->
+              <div id="tilak-overlay" class="absolute top-4 sm:top-6 z-20 hidden text-xl font-bold filter drop-shadow animate-pulse">
+                🔴
+              </div>
+
+              <!-- Fresh Flower Garland Drape Overlay -->
+              <div id="garland-overlay" class="absolute -top-2 z-20 hidden text-3xl sm:text-4xl filter drop-shadow">
+                🏵️
+              </div>
+
+              <!-- Main Deity Emblem / Idol -->
+              <div id="deity-idol" class="text-7xl sm:text-9xl transition-transform duration-500 filter drop-shadow-2xl">
+                🔱
+              </div>
+
+              <!-- Deity Altar Pedestal (Peetham) -->
+              <div class="w-36 sm:w-48 h-6 sm:h-8 rounded-xl bg-gradient-to-r from-goldDark via-gold to-goldDark border border-gold/60 shadow-xl flex items-center justify-center mt-2">
+                <span class="text-[9.5px] font-mono font-bold text-black uppercase tracking-wider" id="deity-peetham-name">
+                  Swayambhu Lingam
+                </span>
+              </div>
+            </div>
+
+            <!-- Circling Aarti Flame Overlay (Toggled on click) -->
+            <div id="circling-aarti-overlay" class="absolute inset-0 pointer-events-none z-30 hidden">
+              <div class="absolute top-1/2 left-1/2 aarti-circle-anim flex flex-col items-center">
+                <span class="text-3xl filter drop-shadow-[0_0_15px_#f59e0b]">🪔</span>
+                <span class="text-[9px] font-mono font-bold text-amber-300 bg-black/70 px-2 py-0.5 rounded-full border border-amber-500/40 mt-1">
+                  Maha Aarti
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Pooja Thali (Offerings Platform) -->
+          <div class="w-full flex items-center justify-between gap-2 bg-gradient-to-r from-black/80 via-black/90 to-black/80 border-t border-gold/30 pt-3 px-4 rounded-b-2xl z-20">
+            <div class="flex items-center gap-2">
+              <div class="flex items-center gap-1.5 text-xs text-amber-300">
+                <span class="text-base animate-pulse">🪔</span>
+                <span class="font-serif font-bold text-[11px] hidden sm:inline">Akhanda Deepam</span>
+              </div>
+            </div>
+
+            <!-- Active Offerings Tray (Coconut, Modak, Flowers) -->
+            <div class="flex items-center gap-3 text-lg" id="altar-offerings-tray">
+              <span title="Naivedyam (Coconut & Fruits)">🥥</span>
+              <span title="Tulsi & Bilva Patra">🍃</span>
+              <span title="Pushpanjali Flowers">🌸</span>
+              <span title="Panchamrita Prasadam">🍯</span>
+            </div>
+
+            <div class="flex items-center gap-1.5 text-xs text-amber-300">
+              <span class="font-serif font-bold text-[11px] hidden sm:inline">Dhupa Camphor</span>
+              <span class="text-base animate-pulse">💨</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mantra Bar for Selected Deity -->
+        <div class="w-full p-3.5 rounded-2xl bg-surface border border-gold/30 flex items-center justify-between gap-3 shadow-lg">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="text-xl">🕉️</span>
+            <div class="truncate">
+              <span class="text-[9.5px] font-mono text-gold uppercase font-bold block">Sacred Stuti &bull; Daily Mantra:</span>
+              <span class="text-xs sm:text-sm font-serif font-bold text-white tracking-wide truncate block" id="deity-mantra-stuti">
+                ॐ नमः शिवाय । कर्पूरगौरं करुणावतारं संसारसारम् ॥
+              </span>
+            </div>
+          </div>
+          <button onclick="copyAltarMantra()" class="px-2.5 py-1.5 rounded-xl bg-gold/15 hover:bg-gold hover:text-black text-gold text-[10.5px] font-bold transition-all whitespace-nowrap cursor-pointer">
+            📋 Copy
+          </button>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: INTERACTIVE POOJA RITUAL ACTION BUTTONS (4 Cols) -->
+      <div class="lg:col-span-4 space-y-4 bg-surface border border-surfaceBorder rounded-3xl p-5 sm:p-6 shadow-2xl">
+        
+        <div class="border-b border-white/10 pb-3">
+          <h2 class="text-sm font-bold font-serif text-white">Daily Pooja Rituals (Upacharas)</h2>
+          <p class="text-[10px] text-white/50">Perform traditional Vedic offerings with authentic acoustics</p>
+        </div>
+
+        <!-- 5 Sacred Ritual Buttons -->
+        <div class="space-y-2.5">
+          
+          <!-- 1. Jalabhishekam -->
+          <button onclick="performAbhishekam(event)" class="w-full p-3 rounded-2xl bg-white/5 hover:bg-sky-500/20 border border-white/10 hover:border-sky-500/40 text-left transition-all flex items-center justify-between group cursor-pointer active:scale-95">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform">🫗</span>
+              <div>
+                <span class="text-xs font-bold text-white block">Jalabhishekam</span>
+                <span class="text-[9.5px] text-sky-300 font-mono">Sacred Water / Milk Stream</span>
+              </div>
+            </div>
+            <span class="text-xs text-white/40 group-hover:text-sky-300">Pour &rarr;</span>
+          </button>
+
+          <!-- 2. Circular Diya Aarti -->
+          <button onclick="performAartiPradakshina(event)" class="w-full p-3 rounded-2xl bg-white/5 hover:bg-amber-500/20 border border-white/10 hover:border-amber-500/40 text-left transition-all flex items-center justify-between group cursor-pointer active:scale-95">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform">🪔</span>
+              <div>
+                <span class="text-xs font-bold text-white block">Deeparadhana Aarti</span>
+                <span class="text-[9.5px] text-amber-300 font-mono">Pradakshina Aarti Flame</span>
+              </div>
+            </div>
+            <span class="text-xs text-white/40 group-hover:text-amber-300">Circle &rarr;</span>
+          </button>
+
+          <!-- 3. Chandan Tilak -->
+          <button onclick="applyTilak(event)" class="w-full p-3 rounded-2xl bg-white/5 hover:bg-rose-500/20 border border-white/10 hover:border-rose-500/40 text-left transition-all flex items-center justify-between group cursor-pointer active:scale-95">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform">🔴</span>
+              <div>
+                <span class="text-xs font-bold text-white block">Chandan &amp; Kumkum</span>
+                <span class="text-[9.5px] text-rose-300 font-mono">Auspicious Sacred Tilak</span>
+              </div>
+            </div>
+            <span class="text-xs text-white/40 group-hover:text-rose-300">Apply &rarr;</span>
+          </button>
+
+          <!-- 4. Pushparchana Garland -->
+          <button onclick="offerGarland(event)" class="w-full p-3 rounded-2xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-left transition-all flex items-center justify-between group cursor-pointer active:scale-95">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform">🌸</span>
+              <div>
+                <span class="text-xs font-bold text-white block">Pushparchana</span>
+                <span class="text-[9.5px] text-emerald-300 font-mono">Marigold &amp; Lotus Garland</span>
+              </div>
+            </div>
+            <span class="text-xs text-white/40 group-hover:text-emerald-300">Drape &rarr;</span>
+          </button>
+
+          <!-- 5. Temple Bell Chime -->
+          <button onclick="ringAltarBell('left')" class="w-full p-3 rounded-2xl bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold/40 text-left transition-all flex items-center justify-between group cursor-pointer active:scale-95">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform">🔔</span>
+              <div>
+                <span class="text-xs font-bold text-white block">Maha Ghanta Chime</span>
+                <span class="text-[9.5px] text-gold font-mono">Echoing Brass Resonance</span>
+              </div>
+            </div>
+            <span class="text-xs text-white/40 group-hover:text-gold">Ring &rarr;</span>
+          </button>
+
+        </div>
+
+        <!-- Seva Summary Card -->
+        <div class="p-3.5 rounded-2xl bg-black/40 border border-white/5 space-y-2 text-xs">
+          <div class="flex items-center justify-between">
+            <span class="text-white/60">Today's Altar Seva:</span>
+            <span class="font-mono text-gold font-bold" id="mandir-offerings-count">0 Offerings Completed</span>
+          </div>
+          <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+            <div id="mandir-progress-bar" class="bg-gold h-full w-0 transition-all duration-300"></div>
+          </div>
+          <p class="text-[10px] text-white/40">Complete all 5 offerings to unlock the daily Pavitra Ashirvad</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ── SCRIPT LOGIC & WEBAUDIO SOUNDSCAPES ── -->
+  <script>
+    const DEITIES = {
+      shiva: {
+        name: "Lord Shiva Lingam",
+        peetham: "Swayambhu Jyotirlinga",
+        icon: "🔱",
+        mantra: "ॐ नमः शिवाय । कर्पूरगौरं करुणावतारं संसारसारम् भुजगेन्द्रहारम् ॥",
+        greeting: "Har Har Mahadev!"
+      },
+      balaji: {
+        name: "Sri Venkateswara Swamy",
+        peetham: "Tirumala Ananda Nilayam",
+        icon: "🪷",
+        mantra: "ॐ नमो वेङ्कटेशाय । गोविन्दा गोविन्दा श्रीनिवासाय नमः ॥",
+        greeting: "Govinda Govinda!"
+      },
+      ganesha: {
+        name: "Lord Siddhivinayak Ganesha",
+        peetham: "Riddhi Siddhi Peetham",
+        icon: "🐘",
+        mantra: "ॐ गं गणपतये नमः । वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ॥",
+        greeting: "Ganapati Bappa Morya!"
+      },
+      hanuman: {
+        name: "Lord Hanuman (Salangpur)",
+        peetham: "Kashtbhanjandev Dham",
+        icon: "🚩",
+        mantra: "ॐ हं हनुमते रुद्रात्मकाय हुं फट् । मनोजवं मारुततुल्यवेगम् ॥",
+        greeting: "Jai Bajrangbali!"
+      },
+      krishna: {
+        name: "Sri Sri Radha Krishna",
+        peetham: "Vrindavan Nikunja Dham",
+        icon: "🦚",
+        mantra: "हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे । हरे राम हरे राम राम राम हरे हरे ॥",
+        greeting: "Radhey Radhey!"
+      },
+      durga: {
+        name: "Mata Durga Bhavani",
+        peetham: "Simhavahini Shaktipeeth",
+        icon: "🌺",
+        mantra: "सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके । शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते ॥",
+        greeting: "Jai Mata Di!"
+      }
+    };
+
+    let activeDeityKey = 'shiva';
+    let offeringsCompleted = 0;
+    let audioCtx = null;
+    let isBgmPlaying = false;
+    let bgmOsc = null;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function selectDeity(key) {
+      const d = DEITIES[key];
+      if (!d) return;
+      activeDeityKey = key;
+
+      document.querySelectorAll('.deity-btn').forEach(b => {
+        b.className = 'deity-btn p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/80 font-bold border border-white/10 text-xs transition-all flex items-center justify-center gap-1.5';
+      });
+      const activeBtn = document.getElementById('btn-deity-' + key);
+      if (activeBtn) {
+        activeBtn.className = 'deity-btn p-2 rounded-xl bg-gold text-black font-extrabold border border-gold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md';
+      }
+
+      document.getElementById('deity-idol').textContent = d.icon;
+      document.getElementById('deity-peetham-name').textContent = d.peetham;
+      document.getElementById('deity-mantra-stuti').textContent = d.mantra;
+      showToast("Altar consecrated for " + d.name + " (" + d.greeting + ")");
+    }
+
+    // ── 🫗 1. JALABHISHEKAM RITUAL ──
+    function performAbhishekam(event) {
+      const stream = document.getElementById('abhishekam-stream');
+      if (stream) {
+        stream.classList.remove('hidden');
+        stream.classList.add('flex');
+        setTimeout(() => {
+          stream.classList.add('hidden');
+          stream.classList.remove('flex');
+        }, 4000);
+      }
+
+      // Synthesize soothing gentle water flow stream
+      try {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+        const bufferSize = ctx.sampleRate * 2.5;
+        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = (Math.random() * 2 - 1) * 0.15;
+        }
+        const whiteNoise = ctx.createBufferSource();
+        whiteNoise.buffer = buffer;
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(800, now);
+        filter.Q.setValueAtTime(4.0, now);
+
+        const gain = ctx.createGain();
+        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 2.5);
+
+        whiteNoise.connect(filter);
+        filter.connect(gain);
+        gain.connect(ctx.destination);
+
+        whiteNoise.start(now);
+      } catch (e) {}
+
+      incrementSevaProgress('Abhishekam completed');
+    }
+
+    // ── 🪔 2. CIRCLING DEEPARADHANA AARTI ──
+    function performAartiPradakshina(event) {
+      const aarti = document.getElementById('circling-aarti-overlay');
+      if (aarti) {
+        aarti.classList.remove('hidden');
+        setTimeout(() => aarti.classList.add('hidden'), 5000);
+      }
+      ringAltarBell('right');
+      incrementSevaProgress('Deeparadhana Aarti dedicated');
+    }
+
+    // ── 🔴 3. CHANDAN & KUMKUM TILAK ──
+    function applyTilak(event) {
+      const tilak = document.getElementById('tilak-overlay');
+      if (tilak) {
+        tilak.classList.remove('hidden');
+      }
+      playSoftChime(880);
+      incrementSevaProgress('Chandan & Kumkum Tilak applied');
+    }
+
+    // ── 🌸 4. PUSHPARCHANA GARLAND ──
+    function offerGarland(event) {
+      const garland = document.getElementById('garland-overlay');
+      if (garland) {
+        garland.classList.remove('hidden');
+      }
+      playSoftChime(1174);
+      incrementSevaProgress('Fresh Pushparchana Garland draped');
+    }
+
+    // ── 🔔 5. BRASS TEMPLE BELL CHIME ──
+    function ringAltarBell(side) {
+      const bellEl = document.getElementById('bell-' + side);
+      if (bellEl) {
+        bellEl.classList.remove('swing-bell-anim');
+        void bellEl.offsetWidth;
+        bellEl.classList.add('swing-bell-anim');
+        setTimeout(() => bellEl.classList.remove('swing-bell-anim'), 1200);
+      }
+
+      try {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+        const freqs = [587.33, 880.00, 1174.66, 1760.00];
+        const gains = [0.6, 0.4, 0.25, 0.1];
+
+        freqs.forEach((f, i) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = i === 0 ? 'sine' : 'triangle';
+          osc.frequency.setValueAtTime(f, now);
+          gain.gain.setValueAtTime(gains[i], now);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 3.0);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 3.0);
+        });
+      } catch (e) {}
+
+      incrementSevaProgress('Temple Bell sounded');
+    }
+
+    function playSoftChime(freq) {
+      try {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.frequency.setValueAtTime(freq, now);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 1.2);
+      } catch (e) {}
+    }
+
+    function incrementSevaProgress(msg) {
+      offeringsCompleted++;
+      const bar = document.getElementById('mandir-progress-bar');
+      const countEl = document.getElementById('mandir-offerings-count');
+      const pct = Math.min(100, offeringsCompleted * 20);
+
+      if (bar) bar.style.width = pct + '%';
+      if (countEl) countEl.textContent = offeringsCompleted + ' Offerings Completed';
+
+      showToast("✨ " + msg + "!");
+      if (offeringsCompleted === 5) {
+        setTimeout(() => {
+          alert("🎉 Sampoorna Nitya Pooja Completed! May " + DEITIES[activeDeityKey].name + " bless your home with health, peace, and abundance.");
+        }, 500);
+      }
+    }
+
+    function toggleMandirBgm() {
+      isBgmPlaying = !isBgmPlaying;
+      const btnText = document.getElementById('mandir-bgm-text');
+      const icon = document.getElementById('mandir-bgm-icon');
+
+      if (isBgmPlaying) {
+        try {
+          const ctx = getAudioContext();
+          const osc1 = ctx.createOscillator();
+          const osc2 = ctx.createOscillator();
+          const masterGain = ctx.createGain();
+
+          osc1.type = 'sine';
+          osc1.frequency.setValueAtTime(136.1, ctx.currentTime); // Cosmic Om
+
+          osc2.type = 'triangle';
+          osc2.frequency.setValueAtTime(272.2, ctx.currentTime);
+
+          const g1 = ctx.createGain();
+          const g2 = ctx.createGain();
+          g1.gain.setValueAtTime(0.12, ctx.currentTime);
+          g2.gain.setValueAtTime(0.06, ctx.currentTime);
+          masterGain.gain.setValueAtTime(0.15, ctx.currentTime);
+
+          osc1.connect(g1);
+          osc2.connect(g2);
+          g1.connect(masterGain);
+          g2.connect(masterGain);
+          masterGain.connect(ctx.destination);
+
+          osc1.start();
+          osc2.start();
+
+          bgmOsc = { osc1, osc2, masterGain };
+        } catch (e) {}
+
+        if (btnText) btnText.textContent = "Chants Playing";
+        if (icon) icon.textContent = "🔊";
+      } else {
+        if (bgmOsc) {
+          try {
+            bgmOsc.osc1.stop();
+            bgmOsc.osc2.stop();
+          } catch (e) {}
+          bgmOsc = null;
+        }
+        if (btnText) btnText.textContent = "Flute • Chants";
+        if (icon) icon.textContent = "🔇";
+      }
+    }
+
+    function copyAltarMantra() {
+      const d = DEITIES[activeDeityKey];
+      navigator.clipboard.writeText(d.mantra);
+      showToast("✅ Sacred Stuti copied to clipboard!");
+    }
+
+    function shareMandirOnWhatsApp() {
+      const d = DEITIES[activeDeityKey];
+      const text = encodeURIComponent(
+        "🛕 *MERA MANDIR &bull; DAILY POOJA ASHIRVAD* 🛕\n\n" +
+        d.icon + " *" + d.name + "*\n" +
+        "🏛️ *" + d.peetham + "*\n\n" +
+        "🕉️ " + d.mantra + "\n\n" +
+        "🙏 I performed daily virtual abhishekam, tilak, and deeparadhana aarti at my personal home mandir on Sanatana360:\n" +
+        "https://www.sanatana360.com/mera-mandir.html"
+      );
+      window.open('https://api.whatsapp.com/send?text=' + text, '_blank');
+    }
+
+    function showToast(msg) {
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-2xl bg-gradient-to-r from-gold to-amber-500 text-black font-bold text-xs shadow-2xl flex items-center gap-2 animate-bounce';
+      toast.innerHTML = '<span>🪔</span> <span>' + msg + '</span>';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+  </script>
+
+  <!-- ── GLOBAL FOOTER ── -->
+  <footer class="mt-16 border-t border-white/10 py-8 text-center text-xs text-white/50 space-y-2">
+    <p>⚜️ Sanatana360 &bull; Sacred Sadhana Suite &bull; 100% Free Devotional Utility</p>
+    <div class="flex items-center justify-center gap-4 text-[11px] text-white/70">
+      <a href="/divya-darshana.html" class="hover:text-gold">🛕 Divya Darshana (50)</a>
+      <span>&bull;</span>
+      <a href="/japa-mala.html" class="hover:text-gold">📿 Digital Japa Mala</a>
+      <span>&bull;</span>
+      <a href="/geeta-ai.html" class="hover:text-gold">🤖 Geeta AI</a>
+      <span>&bull;</span>
+      <a href="/status-studio.html" class="hover:text-gold">📲 Status Studio</a>
+      <span>&bull;</span>
+      <a href="/vedic-nidra.html" class="hover:text-gold">🌙 Vedic Nidra</a>
+    </div>
+  </footer>
+
+</body>
+</html>

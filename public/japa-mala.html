@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital 108 Japa Mala Studio™ | Authentic Sacred Chanting & Meditation Counter | Sanatana360</title>
+  <meta name="description" content="Experience authentic 108 Rudraksha and Tulsi bead digital Japa Mala meditation with haptic touch feedback, wooden click acoustics, round tracking, and mantra japa guides.">
+  <meta name="keywords" content="108 japa mala counter, online rudraksha mala, tulsi mala japa, hare krishna counter, om namah shivaya japa, gayatri mantra counter, mahamrityunjaya japa">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKHEWYB53Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZKHEWYB53Q');
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#e6b964',
+            goldHover: '#cfa24a',
+            goldDark: '#8a6827',
+            surface: '#11131a',
+            surfaceBorder: '#232838',
+            bgDark: '#08090d',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { background-color: #07080c; color: #f1f2f6; font-family: 'Inter', sans-serif; }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #fff2cc 0%, #e6b964 50%, #9e7526 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-gold { box-shadow: 0 0 40px -5px rgba(230, 185, 100, 0.3); }
+    .bead-pulse {
+      animation: beadPulseAnim 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes beadPulseAnim {
+      0% { transform: scale(0.92); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .float-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 100;
+      animation: floatUp 1.8s ease-out forwards;
+    }
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-110px) scale(1.4); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-gold selection:text-black">
+
+  <!-- ── 🔱 GLOBAL HEADER ── -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#07080c]/95 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-2 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-gold/30 via-gold/15 to-transparent border border-gold/40 flex items-center justify-center text-lg shadow-sm shadow-gold/20 group-hover:scale-105 transition-transform">
+            ⚜️
+          </div>
+          <div class="flex flex-col">
+            <span class="text-base sm:text-lg font-black font-serif tracking-wider text-gradient-gold leading-none">
+              Sanatana360
+            </span>
+            <span class="text-[8px] font-mono tracking-[0.2em] text-white/40 uppercase mt-0.5">
+              Digital Japa Mala (108)
+            </span>
+          </div>
+        </a>
+
+        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 font-mono text-[10px] font-bold">
+          <span>📿</span> <span>Tactile Haptics &bull; Wood Audio</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-4 text-xs font-bold text-white/80">
+        <a href="/" class="hover:text-gold transition-colors">🏠 Home</a>
+        <a href="/divya-darshana.html" class="hover:text-gold transition-colors">🛕 Divya Darshana (50)</a>
+        <a href="/japa-mala.html" class="text-gold border-b-2 border-gold pb-0.5">📿 Japa Mala</a>
+        <a href="/status-studio.html" class="hover:text-gold transition-colors">📲 Status Studio</a>
+        <a href="/geeta-ai.html" class="hover:text-gold transition-colors">🤖 Geeta AI</a>
+        <a href="/mera-mandir.html" class="hover:text-gold transition-colors">🛕 Mera Mandir</a>
+        <a href="/vedic-nidra.html" class="hover:text-gold transition-colors">🌙 Vedic Nidra</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <div id="streak-pill" class="flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 text-xs font-mono font-bold">
+          <span>🔥</span> <span id="japa-streak-display">1-Day Sadhana</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 🌟 MAIN CONTENT ── -->
+  <main class="flex-grow max-w-7xl mx-auto w-full px-3 sm:px-6 py-6 sm:py-10 space-y-8">
+
+    <!-- Hero Title & Community Counter -->
+    <div class="text-center space-y-2 max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-mono font-bold uppercase tracking-widest">
+        <span>📿</span> Nitya Japa Sadhana &bull; 108 Sacred Beads
+      </div>
+      <h1 class="text-2xl sm:text-4xl font-black font-serif text-white tracking-wide">
+        Digital <span class="text-gradient-gold">108 Japa Mala Studio</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-white/60 leading-relaxed">
+        Focus your mind in pure meditation. Click or tap to move each consecrated bead with realistic tactile sound, haptic vibrations, and round tracking.
+      </p>
+
+      <!-- Live Global Chanting Counter Ticker -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-purple-950/40 border border-purple-500/30 text-xs font-mono text-purple-200 shadow-inner">
+        <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
+        <span>Global Devotees Chanted:</span>
+        <span id="global-japa-count" class="font-bold text-white text-sm">1,489,420</span>
+        <span class="text-purple-300/60">Mantras Today</span>
+      </div>
+    </div>
+
+    <!-- ── 2-COLUMN WORKBENCH: MALA COUNTER + MANTRA DETAILS ── -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
+
+      <!-- LEFT: INTERACTIVE JAPA MALA WHEEL & TAP BUTTON (7 Cols) -->
+      <div class="lg:col-span-7 flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl bg-surface border border-surfaceBorder shadow-2xl relative overflow-hidden space-y-6">
+
+        <!-- Mala Wheel Canvas / SVG -->
+        <div class="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center cursor-pointer select-none group" id="mala-wheel-container" onclick="advanceMalaBead(event)">
+          
+          <!-- Outer Progress Ring SVG -->
+          <svg class="absolute inset-0 w-full h-full -rotate-90 transform" viewBox="0 0 200 200">
+            <!-- Background Ring -->
+            <circle cx="100" cy="100" r="88" stroke="rgba(255, 255, 255, 0.08)" stroke-width="8" fill="none" />
+            <!-- Active Golden Progress Ring -->
+            <circle id="mala-progress-ring" cx="100" cy="100" r="88" stroke="#e6b964" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="552.92" stroke-dashoffset="552.92" class="transition-all duration-200" />
+          </svg>
+
+          <!-- Center Bead Core -->
+          <div id="center-bead" class="w-44 h-44 sm:w-56 sm:h-56 rounded-full bg-gradient-to-b from-[#251e13] via-[#15120d] to-[#0d0a07] border-2 border-gold/40 shadow-2xl glow-gold flex flex-col items-center justify-center text-center p-4 transition-transform active:scale-95 group-hover:border-gold">
+            <span class="text-xs font-mono uppercase tracking-widest text-gold font-bold mb-0.5">Bead Count</span>
+            <div class="flex items-baseline gap-1">
+              <span id="bead-number" class="text-5xl sm:text-6xl font-black font-mono text-white text-gradient-gold">0</span>
+              <span class="text-lg font-mono text-white/40">/108</span>
+            </div>
+            <span id="mala-round-label" class="text-[11px] font-mono text-amber-300 font-bold mt-1 bg-amber-500/15 px-2.5 py-0.5 rounded-full border border-amber-500/30">
+              Round 1 of 16
+            </span>
+            <span class="text-[9.5px] text-white/40 mt-1 block">Tap to Chant &bull; [Space]</span>
+          </div>
+
+          <!-- Hanging Meru Bead Tassel at Top -->
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none">
+            <div class="w-5 h-5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 border border-white/40 shadow-md"></div>
+            <div class="w-1.5 h-6 bg-red-600 shadow-sm"></div>
+            <span class="text-[9px] font-mono font-bold text-gold uppercase mt-0.5">Guru Meru</span>
+          </div>
+
+        </div>
+
+        <!-- 3 Quick Action Controls Under Wheel -->
+        <div class="grid grid-cols-3 gap-3 w-full max-w-sm pt-2">
+          <button onclick="advanceMalaBead(event)" class="py-3 px-4 rounded-2xl bg-gold hover:bg-goldHover text-black font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 shadow-lg shadow-gold/20 cursor-pointer active:scale-95">
+            <span>📿</span> <span>Chant Bead</span>
+          </button>
+          <button onclick="resetMalaRound()" class="py-3 px-3 rounded-2xl bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border border-white/10 font-bold text-xs transition-all flex items-center justify-center gap-1 cursor-pointer">
+            <span>🔄</span> <span>Reset Round</span>
+          </button>
+          <button onclick="toggleAudioChime()" id="audio-toggle-btn" class="py-3 px-3 rounded-2xl bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border border-white/10 font-bold text-xs transition-all flex items-center justify-center gap-1 cursor-pointer">
+            <span id="audio-icon">🔊</span> <span id="audio-label">Sound On</span>
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-white/50 w-full max-w-sm border-t border-white/5 pt-3">
+          <span>⌨️ Keyboard: Press [Space] or [Enter]</span>
+          <span class="text-emerald-400 font-mono font-bold" id="session-chants-count">Today's Total: 0</span>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: MANTRA SELECTOR & DEVOTIONAL WISDOM (5 Cols) -->
+      <div class="lg:col-span-5 space-y-5 bg-surface border border-surfaceBorder rounded-3xl p-5 sm:p-7 shadow-2xl">
+        
+        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🕉️</span>
+            <div>
+              <h3 class="text-sm font-bold font-serif text-white">Select Sacred Mantra</h3>
+              <p class="text-[10px] text-white/50">Align your breath with consecrated Sanskrit vibrations</p>
+            </div>
+          </div>
+          <span class="text-[9.5px] font-mono text-gold bg-gold/10 px-2 py-0.5 rounded-full border border-gold/30">
+            Consecrated
+          </span>
+        </div>
+
+        <!-- Mantra Selector Dropdown -->
+        <div class="space-y-1.5">
+          <label class="text-xs font-mono font-bold text-gold uppercase">Choose Mantra</label>
+          <select id="mantra-picker" onchange="changeMantra(this.value)" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 focus:border-gold text-white text-xs font-medium outline-none transition-all">
+            <option value="hare_krishna">🦚 Hare Krishna Maha Mantra (Kalyana)</option>
+            <option value="mahamrityunjaya">🔱 Maha Mrityunjaya Mantra (Lord Shiva)</option>
+            <option value="gayatri">☀️ Gayatri Maha Mantra (Surya Savitr)</option>
+            <option value="om_namah_shivaya">🕉️ Om Namah Shivaya (Shiva Panchakshari)</option>
+            <option value="om_hanumate">🚩 Om Hanumate Namah ( संकटमोचन )</option>
+            <option value="om_namo_narayanaya">🪷 Om Namo Bhagavate Vasudevaya</option>
+            <option value="ganesh_mantra">🐘 Om Gan Ganapataye Namah (Vighnaharta)</option>
+          </select>
+        </div>
+
+        <!-- Displayed Active Mantra Card -->
+        <div class="p-4 rounded-2xl bg-black/50 border border-gold/30 space-y-2.5 glow-gold">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-gold" id="active-mantra-title">Hare Krishna Maha Mantra</span>
+            <button onclick="copyActiveMantra()" class="text-[10px] font-mono text-white/60 hover:text-gold cursor-pointer">📋 Copy</button>
+          </div>
+          <p class="text-sm sm:text-base font-serif font-bold text-white text-gradient-gold leading-relaxed" id="active-mantra-sanskrit">
+            हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे ।<br>हरे राम हरे राम राम राम हरे हरे ॥
+          </p>
+          <p class="text-[11px] text-white/60 italic font-serif leading-relaxed" id="active-mantra-meaning">
+            &ldquo;O all-attractive Supreme Lord Krishna, O supreme pleasure energy Radha, please engage me in Your divine loving service.&rdquo;
+          </p>
+          <div class="flex items-center justify-between text-[10px] font-mono text-white/40 pt-1 border-t border-white/5">
+            <span>Significance: Kali-Santarana Upanishad</span>
+            <span class="text-gold font-bold">108 Chants = 1 Mala</span>
+          </div>
+        </div>
+
+        <!-- Mala Target Goal -->
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-white font-serif">Daily Japa Target</span>
+            <span class="font-mono text-gold font-bold" id="target-rounds-text">Target: 4 Malas (432 Chants)</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2">
+            <button onclick="setTargetRounds(1)" class="target-btn py-1.5 rounded-xl bg-white/5 hover:bg-gold/20 text-white hover:text-gold text-xs font-mono font-bold border border-white/10 transition-all">1 Mala</button>
+            <button onclick="setTargetRounds(4)" class="target-btn py-1.5 rounded-xl bg-gold/25 text-gold border border-gold/40 text-xs font-mono font-bold transition-all">4 Malas</button>
+            <button onclick="setTargetRounds(16)" class="target-btn py-1.5 rounded-xl bg-white/5 hover:bg-gold/20 text-white hover:text-gold text-xs font-mono font-bold border border-white/10 transition-all">16 Malas</button>
+            <button onclick="setTargetRounds(108)" class="target-btn py-1.5 rounded-xl bg-white/5 hover:bg-gold/20 text-white hover:text-gold text-xs font-mono font-bold border border-white/10 transition-all">108 Malas</button>
+          </div>
+        </div>
+
+        <!-- Share Japa Sadhana on WhatsApp -->
+        <button onclick="shareJapaProgress()" class="w-full py-3 bg-emerald-500/15 hover:bg-emerald-500 text-emerald-300 hover:text-black border border-emerald-500/40 rounded-xl text-xs font-extrabold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md">
+          <span>📲</span> <span>Share Japa Sadhana on WhatsApp</span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ── SCRIPT LOGIC ── -->
+  <script>
+    const MANTRAS = {
+      hare_krishna: {
+        title: "Hare Krishna Maha Mantra",
+        sanskrit: "हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे ।<br>हरे राम हरे राम राम राम हरे हरे ॥",
+        meaning: "O all-attractive Lord Krishna, O divine energy of Rama, please immerse my consciousness in Your transcendental service.",
+        textOnly: "हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे । हरे राम हरे राम राम राम हरे हरे ॥"
+      },
+      mahamrityunjaya: {
+        title: "Maha Mrityunjaya Mantra (Rigveda 7.59.12)",
+        sanskrit: "ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ।<br>उर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय माऽमृतात् ॥",
+        meaning: "We worship the Three-Eyed Lord Shiva, fragrant and nourishing all life. Free us from death and grant immortality.",
+        textOnly: "ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् । उर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय माऽमृतात् ॥"
+      },
+      gayatri: {
+        title: "Gayatri Maha Mantra (Rigveda 3.62.10)",
+        sanskrit: "ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात् ॥",
+        meaning: "We meditate upon the supreme divine brilliance of the Sun God Savitr. May He awaken and illuminate our intellect.",
+        textOnly: "ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात् ॥"
+      },
+      om_namah_shivaya: {
+        title: "Shiva Panchakshari Mantra (Yajurveda)",
+        sanskrit: "ॐ नमः शिवाय ।<br>ॐ ह्रीं श्रीं क्लीं नमः शिवाय ॥",
+        meaning: "Salutations to the Supreme Auspicious Consciousness (Shiva), ruler of earth, water, fire, air, and space.",
+        textOnly: "ॐ नमः शिवाय"
+      },
+      om_hanumate: {
+        title: "Hanuman Bija Mantra",
+        sanskrit: "ॐ हं हनुमते रुद्रात्मकाय हुं फट् ।<br>मनोजवं मारुततुल्यवेगं जितेन्द्रियं शरणं प्रपद्ये ॥",
+        meaning: "Salutations to Lord Hanuman, embodiment of Rudra, swift as the mind, destroyer of all distress and fears.",
+        textOnly: "ॐ हं हनुमते नमः"
+      },
+      om_namo_narayanaya: {
+        title: "Maha Ashtakshara Mantra",
+        sanskrit: "ॐ नमो भगवते वासुदेवाय ।<br>ॐ नमो नारायणाय ॥",
+        meaning: "I bow to Lord Vasudeva, the supreme omnipresent Lord in whom all living beings reside and flourish.",
+        textOnly: "ॐ नमो भगवते वासुदेवाय"
+      },
+      ganesh_mantra: {
+        title: "Ganesha Moola Mantra",
+        sanskrit: "ॐ गं गणपतये नमः ।<br>वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ॥",
+        meaning: "I bow to Lord Ganesha, the remover of all obstacles, endowed with the effulgence of ten million suns.",
+        textOnly: "ॐ गं गणपतये नमः"
+      }
+    };
+
+    let currentBead = 0;
+    let currentRound = 1;
+    let targetRounds = 4;
+    let totalChantsToday = parseInt(localStorage.getItem('hs_japa_total_today') || '0', 10);
+    let isAudioEnabled = true;
+    let audioCtx = null;
+    let globalJapaCount = 1489420 + Math.floor(Math.random() * 80);
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    // ── 🔊 TACTILE WOOD BEAD SOUND SYNTHESIS ──
+    function playBeadClickSound() {
+      if (!isAudioEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        const filter = ctx.createBiquadFilter();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800 + Math.random() * 150, now);
+        osc.frequency.exponentialRampToValueAtTime(140, now + 0.04);
+
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(650, now);
+        filter.Q.setValueAtTime(3.0, now);
+
+        gain.gain.setValueAtTime(0.5, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.05);
+      } catch (e) {}
+    }
+
+    // ── 🔔 CELEBRATORY MAHA ROUND BELL CHIME ──
+    function playMahaBellChime() {
+      try {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+        const freqs = [587.33, 880.00, 1174.66, 1760.00];
+        const gains = [0.5, 0.35, 0.2, 0.1];
+
+        freqs.forEach((f, i) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = i === 0 ? 'sine' : 'triangle';
+          osc.frequency.setValueAtTime(f, now);
+          gain.gain.setValueAtTime(gains[i], now);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 3.0);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 3.0);
+        });
+      } catch (e) {}
+    }
+
+    // ── 📿 ADVANCE MALA BEAD LOGIC ──
+    function advanceMalaBead(event) {
+      currentBead++;
+      totalChantsToday++;
+      globalJapaCount++;
+
+      // Trigger Web Haptic Vibration on Supported Mobile Devices
+      if (navigator.vibrate) {
+        navigator.vibrate(18);
+      }
+
+      playBeadClickSound();
+      spawnFloatingJapaParticle(event);
+
+      const core = document.getElementById('center-bead');
+      if (core) {
+        core.classList.remove('bead-pulse');
+        void core.offsetWidth;
+        core.classList.add('bead-pulse');
+      }
+
+      if (currentBead >= 108) {
+        currentBead = 0;
+        currentRound++;
+        playMahaBellChime();
+        showJapaToast("🎉 1 Full Mala (108 Mantras) Completed! Round " + currentRound + " Started.");
+      }
+
+      updateUI();
+      saveProgress();
+    }
+
+    function spawnFloatingJapaParticle(event) {
+      const el = document.createElement('div');
+      el.className = 'float-particle text-xl select-none';
+      const emojis = ['📿', '✨', '🌸', '🕉️', '🪷'];
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+      const x = event && event.clientX ? event.clientX : window.innerWidth / 2;
+      const y = event && event.clientY ? event.clientY : window.innerHeight / 2;
+
+      el.style.left = (x - 10 + (Math.random() - 0.5) * 30) + 'px';
+      el.style.top = (y - 20) + 'px';
+      document.body.appendChild(el);
+
+      setTimeout(() => el.remove(), 1800);
+    }
+
+    function updateUI() {
+      document.getElementById('bead-number').textContent = currentBead;
+      document.getElementById('mala-round-label').textContent = "Round " + currentRound + " of " + targetRounds;
+      document.getElementById('session-chants-count').textContent = "Today's Total: " + totalChantsToday.toLocaleString();
+      document.getElementById('global-japa-count').textContent = globalJapaCount.toLocaleString();
+
+      const totalCircumference = 552.92;
+      const offset = totalCircumference - (currentBead / 108) * totalCircumference;
+      const ring = document.getElementById('mala-progress-ring');
+      if (ring) {
+        ring.style.strokeDashoffset = offset;
+      }
+    }
+
+    function resetMalaRound() {
+      currentBead = 0;
+      updateUI();
+      showJapaToast("Mala bead counter reset to 0 for this round.");
+    }
+
+    function toggleAudioChime() {
+      isAudioEnabled = !isAudioEnabled;
+      const label = document.getElementById('audio-label');
+      const icon = document.getElementById('audio-icon');
+      if (label) label.textContent = isAudioEnabled ? 'Sound On' : 'Muted';
+      if (icon) icon.textContent = isAudioEnabled ? '🔊' : '🔇';
+    }
+
+    function changeMantra(key) {
+      const m = MANTRAS[key];
+      if (!m) return;
+      document.getElementById('active-mantra-title').textContent = m.title;
+      document.getElementById('active-mantra-sanskrit').innerHTML = m.sanskrit;
+      document.getElementById('active-mantra-meaning').innerHTML = "&ldquo;" + m.meaning + "&rdquo;";
+      showJapaToast("Active Mantra changed to " + m.title);
+    }
+
+    function copyActiveMantra() {
+      const picker = document.getElementById('mantra-picker').value;
+      const m = MANTRAS[picker] || MANTRAS.hare_krishna;
+      navigator.clipboard.writeText(m.textOnly);
+      showJapaToast("✅ Sacred Mantra copied to clipboard!");
+    }
+
+    function setTargetRounds(r) {
+      targetRounds = r;
+      document.querySelectorAll('.target-btn').forEach(b => {
+        b.className = 'target-btn py-1.5 rounded-xl bg-white/5 hover:bg-gold/20 text-white hover:text-gold text-xs font-mono font-bold border border-white/10 transition-all';
+      });
+      event.target.className = 'target-btn py-1.5 rounded-xl bg-gold/25 text-gold border border-gold/40 text-xs font-mono font-bold transition-all';
+      document.getElementById('target-rounds-text').textContent = "Target: " + targetRounds + " Malas (" + (targetRounds * 108) + " Chants)";
+      updateUI();
+    }
+
+    function showJapaToast(msg) {
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-gold to-amber-500 text-black font-bold text-xs shadow-2xl flex items-center gap-2 animate-bounce';
+      toast.innerHTML = '<span>✨</span> <span>' + msg + '</span>';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3500);
+    }
+
+    function saveProgress() {
+      localStorage.setItem('hs_japa_total_today', totalChantsToday.toString());
+      localStorage.setItem('hs_japa_current_bead', currentBead.toString());
+      localStorage.setItem('hs_japa_current_round', currentRound.toString());
+    }
+
+    function initStreak() {
+      const today = new Date().toISOString().slice(0, 10);
+      const lastVisit = localStorage.getItem('hs_last_japa_date');
+      let streak = parseInt(localStorage.getItem('hs_japa_streak') || '1', 10);
+
+      if (!lastVisit) {
+        streak = 1;
+        localStorage.setItem('hs_japa_streak', '1');
+        localStorage.setItem('hs_last_japa_date', today);
+      } else if (lastVisit !== today) {
+        const lastDate = new Date(lastVisit);
+        const currDate = new Date(today);
+        const diffDays = Math.round((currDate - lastDate) / (1000 * 3600 * 24));
+        if (diffDays === 1) streak += 1;
+        else if (diffDays > 1) streak = 1;
+        localStorage.setItem('hs_japa_streak', streak.toString());
+        localStorage.setItem('hs_last_japa_date', today);
+      }
+
+      document.getElementById('japa-streak-display').textContent = streak + '-Day Sadhana';
+    }
+
+    function shareJapaProgress() {
+      const picker = document.getElementById('mantra-picker').value;
+      const m = MANTRAS[picker] || MANTRAS.hare_krishna;
+      const text = encodeURIComponent(
+        "📿 *NITYA JAPA SADHANA PROGRESS* 📿\n\n" +
+        "🕉️ *Mantra:* " + m.title + "\n" +
+        "✨ *Completed Today:* " + totalChantsToday + " Chants (" + (currentRound - 1) + " Malas + " + currentBead + " Beads)\n" +
+        "🔥 *Daily Sadhana Streak:* " + (localStorage.getItem('hs_japa_streak') || '1') + " Days\n\n" +
+        "Chant online with 108 tactile haptic beads on Sanatana360:\n" +
+        "https://www.sanatana360.com/japa-mala.html"
+      );
+      window.open('https://api.whatsapp.com/send?text=' + text, '_blank');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' || e.key === 'Enter') {
+        e.preventDefault();
+        advanceMalaBead();
+      }
+    });
+
+    setInterval(() => {
+      globalJapaCount += Math.floor(Math.random() * 4) + 1;
+      const gEl = document.getElementById('global-japa-count');
+      if (gEl) gEl.textContent = globalJapaCount.toLocaleString();
+    }, 4000);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initStreak();
+      currentBead = parseInt(localStorage.getItem('hs_japa_current_bead') || '0', 10);
+      currentRound = parseInt(localStorage.getItem('hs_japa_current_round') || '1', 10);
+      updateUI();
+    });
+  </script>
+
+  <!-- ── GLOBAL FOOTER ── -->
+  <footer class="mt-16 border-t border-white/10 py-8 text-center text-xs text-white/50 space-y-2">
+    <p>⚜️ Sanatana360 &bull; Sacred Sadhana Suite &bull; 100% Free Devotional Utility</p>
+    <div class="flex items-center justify-center gap-4 text-[11px] text-white/70">
+      <a href="/divya-darshana.html" class="hover:text-gold">🛕 Divya Darshana (50)</a>
+      <span>&bull;</span>
+      <a href="/status-studio.html" class="hover:text-gold">📲 Status Studio</a>
+      <span>&bull;</span>
+      <a href="/geeta-ai.html" class="hover:text-gold">🤖 Geeta AI</a>
+      <span>&bull;</span>
+      <a href="/mera-mandir.html" class="hover:text-gold">🛕 Mera Mandir</a>
+      <span>&bull;</span>
+      <a href="/vedic-nidra.html" class="hover:text-gold">🌙 Vedic Nidra</a>
+    </div>
+  </footer>
+
+</body>
+</html>

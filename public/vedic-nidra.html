@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vedic Nidra & Sacred Sleep Sanctum | Sanatana360</title>
+  <meta name="description" content="Immerse in deep yogic sleep and serene meditation with 432Hz Vedic soundscapes, soothing bedtime Puranic narratives, and sacred ambient audio.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 50% 10%, #111827 0%, #080B14 70%, #030508 100%);
+      color: #E2E8F0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    .font-rozha { font-family: 'Rozha One', serif; }
+    
+    /* Starfield */
+    .starfield {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background-image: 
+        radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 100px 150px, #fef08a, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 250px 80px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 400px 300px, #fed7aa, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 550px 180px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 700px 380px, #bae6fd, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 900px 120px, #ffffff, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 1000px 500px;
+      opacity: 0.45;
+    }
+
+    /* Ambient Glow */
+    .moon-glow {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(147, 197, 253, 0.12) 0%, rgba(217, 119, 6, 0.04) 50%, transparent 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Pranayama Breathing Circle */
+    .breathe-circle {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.25) 0%, rgba(147, 197, 253, 0.1) 70%);
+      border: 2px solid rgba(245, 158, 11, 0.4);
+      box-shadow: 0 0 35px rgba(245, 158, 11, 0.2);
+      transition: all 4s ease-in-out;
+    }
+    .breathe-inhale {
+      transform: scale(1.35);
+      border-color: rgba(245, 158, 11, 0.8);
+      box-shadow: 0 0 55px rgba(245, 158, 11, 0.5);
+    }
+    .breathe-hold {
+      transform: scale(1.35);
+      border-color: rgba(147, 197, 253, 0.8);
+      box-shadow: 0 0 55px rgba(147, 197, 253, 0.5);
+    }
+    .breathe-exhale {
+      transform: scale(0.9);
+      border-color: rgba(245, 158, 11, 0.3);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+    }
+
+    /* Custom range sliders */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: rgba(255, 255, 255, 0.1);
+      height: 6px;
+      border-radius: 9999px;
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #F59E0B;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+      transition: transform 0.15s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.25);
+    }
+
+    /* Glass card */
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body class="relative flex flex-col min-h-screen">
+  <div class="starfield"></div>
+  <div class="moon-glow"></div>
+
+  <!-- Header / Nav -->
+  <header class="relative z-20 border-b border-white/10 bg-slate-950/70 backdrop-blur-md sticky top-0">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="text-2xl">🕉️</span>
+        <span class="font-cinzel text-xl font-bold bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-500 bg-clip-text text-transparent">Sanatana360</span>
+      </a>
+      
+      <div class="hidden lg:flex items-center gap-6 text-sm text-slate-300">
+        <a href="divya-darshana.html" class="hover:text-amber-400 transition flex items-center gap-1.5"><i class="fa-solid fa-om text-amber-500"></i> Divya Darshana</a>
+        <a href="japa-mala.html" class="hover:text-amber-400 transition flex items-center gap-1.5"><i class="fa-solid fa-ring text-amber-500"></i> Japa Mala</a>
+        <a href="geeta-ai.html" class="hover:text-amber-400 transition flex items-center gap-1.5"><i class="fa-solid fa-brain text-amber-500"></i> Geeta AI</a>
+        <a href="mera-mandir.html" class="hover:text-amber-400 transition flex items-center gap-1.5"><i class="fa-solid fa-place-of-worship text-amber-500"></i> Mera Mandir</a>
+        <a href="status-studio.html" class="hover:text-amber-400 transition flex items-center gap-1.5"><i class="fa-solid fa-image text-amber-500"></i> Status Studio</a>
+        <a href="vedic-nidra.html" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-0.5 flex items-center gap-1.5"><i class="fa-solid fa-moon"></i> Vedic Nidra</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="masterMuteBtn" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 flex items-center gap-2 transition">
+          <i class="fa-solid fa-volume-high text-amber-400" id="masterMuteIcon"></i>
+          <span id="masterMuteLabel">Play All</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="relative z-10 flex-1 max-w-7xl mx-auto px-4 py-8 w-full">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold mb-3 tracking-wide">
+        <i class="fa-solid fa-moon"></i> YOGIC SLEEP & SACRED SOUNDSCAPES
+      </div>
+      <h1 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-3">
+        Vedic Nidra Sanctum
+      </h1>
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+        Surrender the day’s restlessness. Breathe in sync with the cosmic pulse, blend harmonically tuned 432Hz sacred acoustic layers, and drift into peaceful rest with Vedic bedtime contemplation.
+      </p>
+    </div>
+
+    <!-- Main Grid: Mixer & Meditation Center -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column: Ambient Soundscape Mixer (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col gap-6">
+        
+        <!-- Sleep Timer Control -->
+        <div class="glass-panel p-6 rounded-2xl">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-cinzel text-lg font-bold text-amber-300 flex items-center gap-2">
+              <i class="fa-solid fa-hourglass-half"></i> Sleep Timer
+            </h2>
+            <span id="timerDisplay" class="font-mono text-sm font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-lg border border-amber-500/20">
+              Off
+            </span>
+          </div>
+
+          <div class="grid grid-cols-5 gap-2 mb-3">
+            <button class="timer-btn py-2 text-xs font-semibold rounded-lg bg-slate-800/80 hover:bg-amber-600 hover:text-white text-slate-300 border border-white/5 transition" data-minutes="15">15m</button>
+            <button class="timer-btn py-2 text-xs font-semibold rounded-lg bg-slate-800/80 hover:bg-amber-600 hover:text-white text-slate-300 border border-white/5 transition" data-minutes="30">30m</button>
+            <button class="timer-btn py-2 text-xs font-semibold rounded-lg bg-slate-800/80 hover:bg-amber-600 hover:text-white text-slate-300 border border-white/5 transition" data-minutes="45">45m</button>
+            <button class="timer-btn py-2 text-xs font-semibold rounded-lg bg-slate-800/80 hover:bg-amber-600 hover:text-white text-slate-300 border border-white/5 transition" data-minutes="60">60m</button>
+            <button class="timer-btn py-2 text-xs font-semibold rounded-lg bg-slate-800/80 hover:bg-red-600 hover:text-white text-slate-300 border border-white/5 transition" data-minutes="0">Cancel</button>
+          </div>
+          <p class="text-xs text-slate-400 italic">Volume gently fades over 2 minutes as you drift into deep sleep.</p>
+        </div>
+
+        <!-- Multi-Channel Sanctum Mixer -->
+        <div class="glass-panel p-6 rounded-2xl">
+          <div class="flex items-center justify-between mb-5">
+            <h2 class="font-cinzel text-lg font-bold text-amber-300 flex items-center gap-2">
+              <i class="fa-solid fa-sliders"></i> Sanctum Sound Mixer
+            </h2>
+            <button id="presetRelaxBtn" class="text-xs text-amber-400 hover:underline flex items-center gap-1">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Deep Sleep Preset
+            </button>
+          </div>
+
+          <div class="space-y-5">
+            <!-- Channel 1: 432Hz Om Tanpura Drone -->
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 hover:border-amber-500/30 transition">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 text-sm">🕉️</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-white">432Hz Sacred Om Drone</h4>
+                    <p class="text-[11px] text-slate-400">Harmonic Tanpura root chord</p>
+                  </div>
+                </div>
+                <button class="channel-toggle text-slate-400 hover:text-amber-400 transition" data-channel="om">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+              </div>
+              <input type="range" class="w-full channel-slider" data-channel="om" min="0" max="100" value="70">
+            </div>
+
+            <!-- Channel 2: Temple Monsoon Rain -->
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 hover:border-amber-500/30 transition">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-sm">🌧️</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-white">Vedic Temple Rain</h4>
+                    <p class="text-[11px] text-slate-400">Soothing courtyards rainfall</p>
+                  </div>
+                </div>
+                <button class="channel-toggle text-slate-400 hover:text-amber-400 transition" data-channel="rain">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+              </div>
+              <input type="range" class="w-full channel-slider" data-channel="rain" min="0" max="100" value="0">
+            </div>
+
+            <!-- Channel 3: Himalayan Pine Wind -->
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 hover:border-amber-500/30 transition">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-sm">🍃</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-white">Kedarnath Night Wind</h4>
+                    <p class="text-[11px] text-slate-400">Gentle cedar mountain breeze</p>
+                  </div>
+                </div>
+                <button class="channel-toggle text-slate-400 hover:text-amber-400 transition" data-channel="wind">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+              </div>
+              <input type="range" class="w-full channel-slider" data-channel="wind" min="0" max="100" value="0">
+            </div>
+
+            <!-- Channel 4: Distant Temple Chimes & Singing Bowl -->
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 hover:border-amber-500/30 transition">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-lg bg-yellow-500/10 flex items-center justify-center text-yellow-400 text-sm">🔔</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-white">Tibetan Singing Bowl & Chime</h4>
+                    <p class="text-[11px] text-slate-400">Periodic resonance bell at twilight</p>
+                  </div>
+                </div>
+                <button class="channel-toggle text-slate-400 hover:text-amber-400 transition" data-channel="bell">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+              </div>
+              <input type="range" class="w-full channel-slider" data-channel="bell" min="0" max="100" value="40">
+            </div>
+
+            <!-- Channel 5: Sacred River Ganga Ripples -->
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 hover:border-amber-500/30 transition">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-sm">🌊</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-white">Holy Ganga River Lullaby</h4>
+                    <p class="text-[11px] text-slate-400">Gentle flowing waters against stone steps</p>
+                  </div>
+                </div>
+                <button class="channel-toggle text-slate-400 hover:text-amber-400 transition" data-channel="river">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+              </div>
+              <input type="range" class="w-full channel-slider" data-channel="river" min="0" max="100" value="0">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Pranayama Pacer & Sleep Stories (7 cols) -->
+      <div class="lg:col-span-7 flex flex-col gap-6">
+
+        <!-- Pranayama Breath Pacer -->
+        <div class="glass-panel p-6 rounded-2xl flex flex-col sm:flex-row items-center gap-6 justify-between">
+          <div class="flex-1 text-center sm:text-left">
+            <div class="inline-flex items-center gap-1 text-xs text-amber-400 font-semibold mb-1">
+              <i class="fa-solid fa-lungs"></i> 4-7-8 RELAXATION PRANAYAMA
+            </div>
+            <h3 class="font-cinzel text-lg font-bold text-white mb-1">Cosmic Breath Sync</h3>
+            <p class="text-xs text-slate-400 mb-3">Slow your heart rate before sleep. Sync with the glowing circle.</p>
+            <div class="flex items-center gap-2 justify-center sm:justify-start">
+              <button id="toggleBreathingBtn" class="px-4 py-1.5 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition flex items-center gap-1.5">
+                <i class="fa-solid fa-play" id="breathePlayIcon"></i>
+                <span id="breathePlayLabel">Start Breathing</span>
+              </button>
+              <span id="breatheState" class="text-xs text-amber-300 font-medium px-2 py-1 bg-amber-500/10 rounded-md border border-amber-500/20">Ready</span>
+            </div>
+          </div>
+
+          <div class="flex-shrink-0 flex items-center justify-center relative">
+            <div id="breatheOrb" class="breathe-circle flex flex-col items-center justify-center text-center p-3">
+              <span id="breatheAction" class="font-cinzel text-xs font-bold text-amber-200">Breathe</span>
+              <span id="breatheCount" class="font-mono text-2xl font-black text-amber-400">4</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bedtime Puranic Sleep Stories -->
+        <div class="glass-panel p-6 rounded-2xl">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
+            <div>
+              <h2 class="font-cinzel text-xl font-bold text-amber-300 flex items-center gap-2">
+                <i class="fa-solid fa-book-open-reader"></i> Bedtime Sleep Stories
+              </h2>
+              <p class="text-xs text-slate-400">Sacred meditative journeys to dissolve waking anxiety.</p>
+            </div>
+            <!-- Narration Voice controls -->
+            <div class="flex items-center gap-2">
+              <button id="narrateBtn" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 text-xs font-semibold flex items-center gap-2 transition">
+                <i class="fa-solid fa-volume-high" id="narrateIcon"></i>
+                <span id="narrateLabel">Listen Narrator</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Story Tabs -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-4 scrollbar-thin">
+            <button class="story-tab px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-amber-500 text-slate-950 transition" data-story="0">
+              🌅 Ghats of Varanasi
+            </button>
+            <button class="story-tab px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-slate-800 text-slate-300 hover:text-white transition" data-story="1">
+              🌌 Ananta-Sayana of Vishnu
+            </button>
+            <button class="story-tab px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-slate-800 text-slate-300 hover:text-white transition" data-story="2">
+              🏔️ Kedarnath Pine Silence
+            </button>
+            <button class="story-tab px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-slate-800 text-slate-300 hover:text-white transition" data-story="3">
+              🔥 Sage Vasistha's Hermitage
+            </button>
+          </div>
+
+          <!-- Story Reader Container -->
+          <div id="storyViewer" class="p-6 rounded-xl bg-slate-950/80 border border-white/5 max-h-[380px] overflow-y-auto leading-relaxed text-sm text-slate-300 space-y-4 font-light">
+            <!-- Dynamic Story Content will be loaded here -->
+          </div>
+
+          <div class="mt-4 flex items-center justify-between text-xs text-slate-400">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-feather-pointed text-amber-500"></i> Pure Vedic Meditation</span>
+            <span id="storyWordCount">~650 words · 4 min read</span>
+          </div>
+        </div>
+
+        <!-- 30-Day Sleep Sadhana Streak -->
+        <div class="glass-panel p-4 rounded-xl flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+              ✨
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-white">Your Nidra Sadhana</h4>
+              <p class="text-xs text-slate-400">Consecutive peaceful nights logged: <strong id="streakCount" class="text-amber-400">3 nights</strong></p>
+            </div>
+          </div>
+          <button id="logNightBtn" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-xs font-medium text-amber-300 rounded-lg border border-white/10 transition">
+            + Log Tonight's Rest
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/5 bg-slate-950/80 py-6 mt-12 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-cinzel text-amber-400 font-bold">Sanatana360</span>
+        <span>• Vedic Nidra & Sacred Sleep Sanctum</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <a href="divya-darshana.html" class="hover:text-amber-400 transition">Divya Darshana</a>
+        <a href="japa-mala.html" class="hover:text-amber-400 transition">Japa Mala</a>
+        <a href="geeta-ai.html" class="hover:text-amber-400 transition">Geeta AI</a>
+        <a href="mera-mandir.html" class="hover:text-amber-400 transition">Mera Mandir</a>
+        <a href="status-studio.html" class="hover:text-amber-400 transition">Status Studio</a>
+      </div>
+      <div>
+        <span>May all beings find peace & tranquility. Om Shanti Shanti Shanti.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // STORIES REPOSITORY
+    const stories = [
+      {
+        title: "The Ghats of Varanasi at Twilight",
+        narrative: [
+          "The evening sun descends softly behind the spires of the ancient city of Kashi. The sky deepens from molten saffron into an expanse of twilight lapis lazuli.",
+          "You step gently onto a wooden wooden boat at Dashashwamedh Ghat. The sacred Ganga flows with an immense, unhurried grace—bearing the prayers, sorrows, and aspirations of countless millennia with absolute calm.",
+          "As the oars gently dip into the water, you hear the quiet rhythm: in... and out. The scent of marigolds, crushed betel leaf, and burning camphor drifts across the cool river breeze.",
+          "High upon the stone stairs, thousand-flamed brass lamps rise and fall in the sacred Aarti. Their golden glow paints reflections upon the shimmering ripples, like floating stars upon water.",
+          "Close your eyes and breathe in the holy stillness. You need carry none of today's burdens into the night. Like a floating leaf upon Mother Ganga's bosom, surrender yourself to the infinite flow. You are safe. You are at peace. Rest now in the sacred silence of Mahadeva."
+        ]
+      },
+      {
+        title: "Ananta-Sayana: The Cosmic Slumber of Maha Vishnu",
+        narrative: [
+          "Beyond time, beyond form, beyond the birth of galaxies lies the serene Kshira Sagara—the boundless Ocean of Milk.",
+          "Here, upon the thousand-headed golden serpent Adishesha, rests Bhagavan Maha Vishnu in Yogic Slumber. His skin holds the hue of a dark monsoon rain cloud, luminous and calm.",
+          "With every exhale of Vishnu, universes blossom into existence. With every inhale, they gently fold back into quiet potential. Nothing is strained. Everything is effortless.",
+          "Beside Him, Devi Lakshmi sits in loving quietude, anointing His lotus feet. In this realm, there is no deadline, no hurry, no conflict.",
+          "Rest your awareness on the slow, unshakeable pulse of Vishnu's cosmic breath. Feel the ocean waves gently cradling your thoughts. With each breath, your tension dissolves into the dark velvet expanse of cosmic grace. Sleep peacefully in the protection of Narayana."
+        ]
+      },
+      {
+        title: "The Whispering Cedars of Kedarnath",
+        narrative: [
+          "Night blankets the Garhwal Himalayas. The sacred temple of Kedarnath stands motionless, its ancient stone walls bathed in cool silver moonlight.",
+          "Far below, the Mandakini river carves its eternal path through rock and ice, its steady murmur singing an ancient lullaby to the towering mountains.",
+          "The night air is pure, crisp, and infused with the scent of wet pine, juniper, and wild snow-flowers. You wrap a warm woolen shawl around yourself as you sit on a stone terrace.",
+          "Look up into the Himalayan sky. Millions of sharp, untamed stars shimmer with clarity unseen in the noisy plains below. Each star is a silent witness to eternity.",
+          "Shiva, the Auspicious One, sits in deep Dhyana atop Mount Kailash. In His stillness, your own mind finds a sanctuary of rest. Allow the mountain cool to soothe your forehead. Release every thought. Let silence be your blanket tonight."
+        ]
+      },
+      {
+        title: "Sage Vasistha's Hermitage under the Starry Sky",
+        narrative: [
+          "In the foothills near the banks of the sacred Saraswati, the ancient hermitage of Brahmarshi Vasistha rests in tranquil dusk.",
+          "Cows resting in the goshala chew peacefully, their calm presence filling the courtyard with profound groundedness. Smoke from the evening Agnihotra homa rises in gentle wisps through the banyan canopy.",
+          "Sage Vasistha sits beneath a Kadamba tree, smiling gently at Arundhati. There is a deep, unshakeable equilibrium here—a harmony born from thousands of years of living in Dharma.",
+          "As darkness settles, crickets sing their soft harmonic drone. The cool earth releases the warmth of the daylight sun.",
+          "Lay your body down upon the soft grass of the hermitage. Feel the steadfast support of Mother Earth beneath your spine. You have walked your path faithfully today. Now let the wisdom of the Rishis guard your sleep. Om Shanti."
+        ]
+      }
+    ];
+
+    let currentStoryIdx = 0;
+
+    function renderStory(idx) {
+      currentStoryIdx = idx;
+      const story = stories[idx];
+      const container = document.getElementById('storyViewer');
+      container.innerHTML = `
+        <h3 class="font-cinzel text-xl font-bold text-amber-300 mb-3">${story.title}</h3>
+        ${story.narrative.map(p => `<p class="leading-relaxed">${p}</p>`).join('')}
+      `;
+
+      // Update active tab styles
+      document.querySelectorAll('.story-tab').forEach((tab, i) => {
+        if (i === idx) {
+          tab.classList.remove('bg-slate-800', 'text-slate-300');
+          tab.classList.add('bg-amber-500', 'text-slate-950');
+        } else {
+          tab.classList.remove('bg-amber-500', 'text-slate-950');
+          tab.classList.add('bg-slate-800', 'text-slate-300');
+        }
+      });
+    }
+
+    // WEB AUDIO API SANCTUM SYNTHESIZER
+    let audioCtx = null;
+    let masterGain = null;
+    let isPlaying = false;
+
+    const channels = {
+      om: { gain: null, oscs: [], isPlaying: false, baseVol: 0.7 },
+      rain: { gain: null, node: null, isPlaying: false, baseVol: 0.0 },
+      wind: { gain: null, node: null, isPlaying: false, baseVol: 0.0 },
+      bell: { gain: null, timer: null, isPlaying: false, baseVol: 0.4 },
+      river: { gain: null, node: null, isPlaying: false, baseVol: 0.0 }
+    };
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+        masterGain = audioCtx.createGain();
+        masterGain.gain.setValueAtTime(1.0, audioCtx.currentTime);
+        masterGain.connect(audioCtx.destination);
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    // 1. 432 Hz OM TANPURA SYNTH
+    function startOmSynth() {
+      if (channels.om.isPlaying) return;
+      initAudio();
+      
+      const omGain = audioCtx.createGain();
+      const vol = parseFloat(document.querySelector('.channel-slider[data-channel="om"]').value) / 100;
+      omGain.gain.setValueAtTime(vol * 0.4, audioCtx.currentTime);
+      omGain.connect(masterGain);
+      channels.om.gain = omGain;
+
+      // 432 Hz Root + 216 Hz Octave + 108 Hz Sub-drone + 324 Hz Fifth (Pa)
+      const freqs = [108, 216, 324, 432];
+      channels.om.oscs = [];
+
+      freqs.forEach((freq, idx) => {
+        const osc = audioCtx.createOscillator();
+        const oscGain = audioCtx.createGain();
+        osc.type = idx === 0 ? 'sine' : (idx === 1 ? 'triangle' : 'sine');
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+        // subtle vibrato LFO
+        const lfo = audioCtx.createOscillator();
+        const lfoGain = audioCtx.createGain();
+        lfo.frequency.setValueAtTime(0.1 + idx * 0.05, audioCtx.currentTime);
+        lfoGain.gain.setValueAtTime(0.8, audioCtx.currentTime);
+        lfo.connect(osc.frequency);
+        lfo.start();
+
+        oscGain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+        osc.connect(oscGain);
+        oscGain.connect(omGain);
+        osc.start();
+        channels.om.oscs.push({ osc, lfo });
+      });
+
+      channels.om.isPlaying = true;
+    }
+
+    function stopOmSynth() {
+      if (!channels.om.isPlaying) return;
+      channels.om.oscs.forEach(o => {
+        try { o.osc.stop(); o.lfo.stop(); } catch(e){}
+      });
+      channels.om.oscs = [];
+      channels.om.isPlaying = false;
+    }
+
+    // 2. RAIN SYNTH (Pink Noise with Bandpass)
+    function startRainSynth() {
+      if (channels.rain.isPlaying) return;
+      initAudio();
+
+      const bufferSize = audioCtx.sampleRate * 2;
+      const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        b0 = 0.99886 * b0 + white * 0.0555179;
+        b1 = 0.99332 * b1 + white * 0.0750759;
+        b2 = 0.96900 * b2 + white * 0.1538520;
+        b3 = 0.86650 * b3 + white * 0.3104856;
+        b4 = 0.55000 * b4 + white * 0.5329522;
+        b5 = -0.7616 * b5 - white * 0.0168980;
+        output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.11;
+        b6 = white * 0.115926;
+      }
+
+      const whiteNoise = audioCtx.createBufferSource();
+      whiteNoise.buffer = noiseBuffer;
+      whiteNoise.loop = true;
+
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(1000, audioCtx.currentTime);
+
+      const rainGain = audioCtx.createGain();
+      const vol = parseFloat(document.querySelector('.channel-slider[data-channel="rain"]').value) / 100;
+      rainGain.gain.setValueAtTime(vol * 0.3, audioCtx.currentTime);
+
+      whiteNoise.connect(filter);
+      filter.connect(rainGain);
+      rainGain.connect(masterGain);
+      whiteNoise.start();
+
+      channels.rain.gain = rainGain;
+      channels.rain.node = whiteNoise;
+      channels.rain.isPlaying = true;
+    }
+
+    function stopRainSynth() {
+      if (!channels.rain.isPlaying) return;
+      try { channels.rain.node.stop(); } catch(e){}
+      channels.rain.isPlaying = false;
+    }
+
+    // 3. MOUNTAIN WIND SYNTH
+    function startWindSynth() {
+      if (channels.wind.isPlaying) return;
+      initAudio();
+
+      const bufferSize = audioCtx.sampleRate * 3;
+      const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        output[i] = Math.random() * 2 - 1;
+      }
+
+      const noise = audioCtx.createBufferSource();
+      noise.buffer = noiseBuffer;
+      noise.loop = true;
+
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(350, audioCtx.currentTime);
+      filter.Q.setValueAtTime(3.0, audioCtx.currentTime);
+
+      // LFO modulating wind resonance
+      const lfo = audioCtx.createOscillator();
+      lfo.frequency.setValueAtTime(0.12, audioCtx.currentTime);
+      const lfoGain = audioCtx.createGain();
+      lfoGain.gain.setValueAtTime(180, audioCtx.currentTime);
+      lfo.connect(lfoGain);
+      lfoGain.connect(filter.frequency);
+      lfo.start();
+
+      const windGain = audioCtx.createGain();
+      const vol = parseFloat(document.querySelector('.channel-slider[data-channel="wind"]').value) / 100;
+      windGain.gain.setValueAtTime(vol * 0.25, audioCtx.currentTime);
+
+      noise.connect(filter);
+      filter.connect(windGain);
+      windGain.connect(masterGain);
+      noise.start();
+
+      channels.wind.gain = windGain;
+      channels.wind.node = noise;
+      channels.wind.lfo = lfo;
+      channels.wind.isPlaying = true;
+    }
+
+    function stopWindSynth() {
+      if (!channels.wind.isPlaying) return;
+      try { channels.wind.node.stop(); channels.wind.lfo.stop(); } catch(e){}
+      channels.wind.isPlaying = false;
+    }
+
+    // 4. SINGING BOWL / TEMPLE BELL
+    function triggerSingingBowl() {
+      if (!audioCtx) return;
+      const vol = parseFloat(document.querySelector('.channel-slider[data-channel="bell"]').value) / 100;
+      if (vol <= 0.01) return;
+
+      const fundamental = 280; // D tone
+      const harmonics = [1, 2.76, 5.4, 8.9];
+      const gains = [0.4, 0.18, 0.08, 0.02];
+
+      harmonics.forEach((h, i) => {
+        const osc = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(fundamental * h, audioCtx.currentTime);
+
+        const now = audioCtx.currentTime;
+        g.gain.setValueAtTime(0, now);
+        g.gain.linearRampToValueAtTime(gains[i] * vol, now + 0.08);
+        g.gain.exponentialRampToValueAtTime(0.0001, now + 6.5);
+
+        osc.connect(g);
+        g.connect(masterGain);
+        osc.start(now);
+        osc.stop(now + 6.6);
+      });
+    }
+
+    function startBellCycle() {
+      if (channels.bell.isPlaying) return;
+      initAudio();
+      triggerSingingBowl();
+      channels.bell.timer = setInterval(() => {
+        triggerSingingBowl();
+      }, 14000);
+      channels.bell.isPlaying = true;
+    }
+
+    function stopBellCycle() {
+      if (!channels.bell.isPlaying) return;
+      clearInterval(channels.bell.timer);
+      channels.bell.isPlaying = false;
+    }
+
+    // 5. RIVER SYNTH
+    function startRiverSynth() {
+      if (channels.river.isPlaying) return;
+      initAudio();
+
+      const bufferSize = audioCtx.sampleRate * 2;
+      const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        output[i] = (Math.random() * 2 - 1) * 0.4;
+      }
+
+      const noise = audioCtx.createBufferSource();
+      noise.buffer = noiseBuffer;
+      noise.loop = true;
+
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(600, audioCtx.currentTime);
+      filter.Q.setValueAtTime(1.2, audioCtx.currentTime);
+
+      const riverGain = audioCtx.createGain();
+      const vol = parseFloat(document.querySelector('.channel-slider[data-channel="river"]').value) / 100;
+      riverGain.gain.setValueAtTime(vol * 0.25, audioCtx.currentTime);
+
+      noise.connect(filter);
+      filter.connect(riverGain);
+      riverGain.connect(masterGain);
+      noise.start();
+
+      channels.river.gain = riverGain;
+      channels.river.node = noise;
+      channels.river.isPlaying = true;
+    }
+
+    function stopRiverSynth() {
+      if (!channels.river.isPlaying) return;
+      try { channels.river.node.stop(); } catch(e){}
+      channels.river.isPlaying = false;
+    }
+
+    // MASTER PLAY / PAUSE
+    function toggleMasterPlay() {
+      initAudio();
+      if (!isPlaying) {
+        // Start active channels
+        startOmSynth();
+        startBellCycle();
+        if (parseFloat(document.querySelector('.channel-slider[data-channel="rain"]').value) > 5) startRainSynth();
+        if (parseFloat(document.querySelector('.channel-slider[data-channel="wind"]').value) > 5) startWindSynth();
+        if (parseFloat(document.querySelector('.channel-slider[data-channel="river"]').value) > 5) startRiverSynth();
+
+        isPlaying = true;
+        document.getElementById('masterMuteLabel').textContent = 'Pause All';
+        document.getElementById('masterMuteIcon').className = 'fa-solid fa-pause text-amber-400';
+        updateChannelToggleIcons();
+      } else {
+        stopOmSynth();
+        stopRainSynth();
+        stopWindSynth();
+        stopBellCycle();
+        stopRiverSynth();
+
+        isPlaying = false;
+        document.getElementById('masterMuteLabel').textContent = 'Play All';
+        document.getElementById('masterMuteIcon').className = 'fa-solid fa-volume-high text-amber-400';
+        updateChannelToggleIcons();
+      }
+    }
+
+    function updateChannelToggleIcons() {
+      document.querySelectorAll('.channel-toggle').forEach(btn => {
+        const ch = btn.dataset.channel;
+        const icon = btn.querySelector('i');
+        if (channels[ch] && channels[ch].isPlaying) {
+          icon.className = 'fa-solid fa-pause text-amber-400';
+        } else {
+          icon.className = 'fa-solid fa-play text-slate-400';
+        }
+      });
+    }
+
+    // SLIDER EVENT LISTENERS
+    document.querySelectorAll('.channel-slider').forEach(slider => {
+      slider.addEventListener('input', (e) => {
+        const ch = e.target.dataset.channel;
+        const val = parseFloat(e.target.value) / 100;
+        if (channels[ch] && channels[ch].gain) {
+          channels[ch].gain.gain.setValueAtTime(val * 0.4, audioCtx.currentTime);
+        }
+        if (val > 0.05 && !channels[ch].isPlaying && isPlaying) {
+          if (ch === 'om') startOmSynth();
+          if (ch === 'rain') startRainSynth();
+          if (ch === 'wind') startWindSynth();
+          if (ch === 'bell') startBellCycle();
+          if (ch === 'river') startRiverSynth();
+          updateChannelToggleIcons();
+        } else if (val === 0 && channels[ch].isPlaying) {
+          if (ch === 'om') stopOmSynth();
+          if (ch === 'rain') stopRainSynth();
+          if (ch === 'wind') stopWindSynth();
+          if (ch === 'bell') stopBellCycle();
+          if (ch === 'river') stopRiverSynth();
+          updateChannelToggleIcons();
+        }
+      });
+    });
+
+    // INDIVIDUAL CHANNEL TOGGLES
+    document.querySelectorAll('.channel-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        initAudio();
+        const ch = btn.dataset.channel;
+        if (channels[ch].isPlaying) {
+          if (ch === 'om') stopOmSynth();
+          if (ch === 'rain') stopRainSynth();
+          if (ch === 'wind') stopWindSynth();
+          if (ch === 'bell') stopBellCycle();
+          if (ch === 'river') stopRiverSynth();
+        } else {
+          const slider = document.querySelector(`.channel-slider[data-channel="${ch}"]`);
+          if (parseFloat(slider.value) < 10) slider.value = 50;
+          if (ch === 'om') startOmSynth();
+          if (ch === 'rain') startRainSynth();
+          if (ch === 'wind') startWindSynth();
+          if (ch === 'bell') startBellCycle();
+          if (ch === 'river') startRiverSynth();
+        }
+        updateChannelToggleIcons();
+      });
+    });
+
+    // PRESET: DEEP SLEEP
+    document.getElementById('presetRelaxBtn').addEventListener('click', () => {
+      document.querySelector('.channel-slider[data-channel="om"]').value = 65;
+      document.querySelector('.channel-slider[data-channel="rain"]').value = 35;
+      document.querySelector('.channel-slider[data-channel="wind"]').value = 20;
+      document.querySelector('.channel-slider[data-channel="bell"]').value = 25;
+      document.querySelector('.channel-slider[data-channel="river"]').value = 15;
+      if (!isPlaying) toggleMasterPlay();
+      else {
+        // apply all sliders
+        document.querySelectorAll('.channel-slider').forEach(s => s.dispatchEvent(new Event('input')));
+      }
+    });
+
+    // SLEEP TIMER LOGIC
+    let sleepTimer = null;
+    let timerSecondsRemaining = 0;
+
+    function setSleepTimer(minutes) {
+      clearInterval(sleepTimer);
+      if (minutes === 0) {
+        timerSecondsRemaining = 0;
+        document.getElementById('timerDisplay').textContent = 'Off';
+        document.getElementById('timerDisplay').className = 'font-mono text-sm font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-lg border border-amber-500/20';
+        return;
+      }
+      timerSecondsRemaining = minutes * 60;
+      updateTimerUI();
+
+      sleepTimer = setInterval(() => {
+        timerSecondsRemaining--;
+        if (timerSecondsRemaining <= 120 && masterGain && audioCtx) {
+          // 2 minute smooth volume fade-out
+          const fraction = Math.max(0, timerSecondsRemaining / 120);
+          masterGain.gain.setValueAtTime(fraction, audioCtx.currentTime);
+        }
+        if (timerSecondsRemaining <= 0) {
+          clearInterval(sleepTimer);
+          toggleMasterPlay();
+          document.getElementById('timerDisplay').textContent = 'Completed 💤';
+          if (masterGain && audioCtx) masterGain.gain.setValueAtTime(1.0, audioCtx.currentTime);
+        } else {
+          updateTimerUI();
+        }
+      }, 1000);
+    }
+
+    function updateTimerUI() {
+      const mins = Math.floor(timerSecondsRemaining / 60);
+      const secs = timerSecondsRemaining % 60;
+      document.getElementById('timerDisplay').textContent = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      document.getElementById('timerDisplay').className = 'font-mono text-sm font-semibold px-2.5 py-1 bg-amber-500 text-slate-950 rounded-lg shadow-lg';
+    }
+
+    document.querySelectorAll('.timer-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mins = parseInt(btn.dataset.minutes);
+        setSleepTimer(mins);
+      });
+    });
+
+    // PRANAYAMA 4-7-8 PACER
+    let breathingInterval = null;
+    let isBreathing = false;
+
+    function startBreathingCycle() {
+      isBreathing = true;
+      document.getElementById('breathePlayLabel').textContent = 'Pause';
+      document.getElementById('breathePlayIcon').className = 'fa-solid fa-pause';
+      
+      const orb = document.getElementById('breatheOrb');
+      const actionEl = document.getElementById('breatheAction');
+      const countEl = document.getElementById('breatheCount');
+      const stateEl = document.getElementById('breatheState');
+
+      let phase = 'inhale'; // inhale (4s), hold (7s), exhale (8s)
+      let sec = 4;
+
+      function step() {
+        if (!isBreathing) return;
+        
+        if (phase === 'inhale') {
+          actionEl.textContent = 'Inhale';
+          stateEl.textContent = 'Inhaling Prana';
+          orb.className = 'breathe-circle breathe-inhale flex flex-col items-center justify-center text-center p-3';
+        } else if (phase === 'hold') {
+          actionEl.textContent = 'Hold';
+          stateEl.textContent = 'Retaining Stillness';
+          orb.className = 'breathe-circle breathe-hold flex flex-col items-center justify-center text-center p-3';
+        } else if (phase === 'exhale') {
+          actionEl.textContent = 'Exhale';
+          stateEl.textContent = 'Releasing Restlessness';
+          orb.className = 'breathe-circle breathe-exhale flex flex-col items-center justify-center text-center p-3';
+        }
+        
+        countEl.textContent = sec;
+        sec--;
+
+        if (sec < 0) {
+          if (phase === 'inhale') {
+            phase = 'hold';
+            sec = 7;
+          } else if (phase === 'hold') {
+            phase = 'exhale';
+            sec = 8;
+          } else if (phase === 'exhale') {
+            phase = 'inhale';
+            sec = 4;
+          }
+        }
+      }
+
+      step();
+      breathingInterval = setInterval(step, 1000);
+    }
+
+    function stopBreathingCycle() {
+      isBreathing = false;
+      clearInterval(breathingInterval);
+      document.getElementById('breathePlayLabel').textContent = 'Start Breathing';
+      document.getElementById('breathePlayIcon').className = 'fa-solid fa-play';
+      document.getElementById('breatheOrb').className = 'breathe-circle flex flex-col items-center justify-center text-center p-3';
+      document.getElementById('breatheAction').textContent = 'Breathe';
+      document.getElementById('breatheCount').textContent = '4';
+      document.getElementById('breatheState').textContent = 'Ready';
+    }
+
+    document.getElementById('toggleBreathingBtn').addEventListener('click', () => {
+      if (isBreathing) stopBreathingCycle();
+      else startBreathingCycle();
+    });
+
+    // STORY NARRATOR (Web Speech Synthesis)
+    let isNarrating = false;
+    let speechUtterance = null;
+
+    function toggleNarration() {
+      if (!window.speechSynthesis) {
+        alert('Voice narration is not supported on this device. Please read along with the text.');
+        return;
+      }
+
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        isNarrating = false;
+        document.getElementById('narrateLabel').textContent = 'Listen Narrator';
+        document.getElementById('narrateIcon').className = 'fa-solid fa-volume-high';
+        return;
+      }
+
+      const story = stories[currentStoryIdx];
+      const fullText = story.title + '. ' + story.narrative.join(' ');
+      speechUtterance = new SpeechSynthesisUtterance(fullText);
+      speechUtterance.rate = 0.85; // slow, relaxing bedtime tempo
+      speechUtterance.pitch = 0.95;
+
+      const voices = window.speechSynthesis.getVoices();
+      const calmVoice = voices.find(v => v.lang.includes('en-IN') || v.lang.includes('en-GB') || v.name.includes('Natural'));
+      if (calmVoice) speechUtterance.voice = calmVoice;
+
+      speechUtterance.onend = () => {
+        isNarrating = false;
+        document.getElementById('narrateLabel').textContent = 'Listen Narrator';
+        document.getElementById('narrateIcon').className = 'fa-solid fa-volume-high';
+      };
+
+      window.speechSynthesis.speak(speechUtterance);
+      isNarrating = true;
+      document.getElementById('narrateLabel').textContent = 'Pause Voice';
+      document.getElementById('narrateIcon').className = 'fa-solid fa-pause';
+    }
+
+    document.getElementById('narrateBtn').addEventListener('click', toggleNarration);
+
+    // STORY TAB SWITCHING
+    document.querySelectorAll('.story-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const idx = parseInt(tab.dataset.story);
+        if (window.speechSynthesis && window.speechSynthesis.speaking) {
+          window.speechSynthesis.cancel();
+          isNarrating = false;
+          document.getElementById('narrateLabel').textContent = 'Listen Narrator';
+        }
+        renderStory(idx);
+      });
+    });
+
+    // LOG TONIGHT'S REST
+    document.getElementById('logNightBtn').addEventListener('click', () => {
+      let streak = parseInt(localStorage.getItem('vedic_nidra_streak') || '3');
+      streak += 1;
+      localStorage.setItem('vedic_nidra_streak', streak);
+      document.getElementById('streakCount').textContent = `${streak} nights`;
+      alert('✨ Shanti! Tonight’s restful session has been recorded. May you wake with divine vitality.');
+    });
+
+    // INIT PAGE
+    document.getElementById('masterMuteBtn').addEventListener('click', toggleMasterPlay);
+    renderStory(0);
+
+    const savedStreak = localStorage.getItem('vedic_nidra_streak');
+    if (savedStreak) {
+      document.getElementById('streakCount').textContent = `${savedStreak} nights`;
+    }
+  </script>
+</body>
+</html>
