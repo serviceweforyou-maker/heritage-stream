@@ -952,7 +952,7 @@ app.post('/api/content', verifyAdminSession, (req, res) => {
   if (isAudio) {
     newItem.narrator = tagline || "Voice of Heritage";
     newItem.duration = duration || "10:00";
-    newItem.audioUrl = mediaUrl || "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg";
+    newItem.audioUrl = mediaUrl || "";
   } else {
     newItem.tagline = tagline || "Divine Legacy";
     newItem.duration = duration || "30 Mins";

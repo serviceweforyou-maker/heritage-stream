@@ -52,7 +52,8 @@ export class DatabaseService {
     // Dynamic Normalization: Assign fallbacks so all 250+ content items work 100%
     content = content.map(item => {
       if (!item) return null;
-      const isAudio = !!item.audioUrl || item.category === "Audiobooks & Legends" || item.category === "Ebook & Audio Series";
+      // An item is audio-first ONLY if it has no videoUrl AND is in an audiobook/legend category
+      const isAudio = !item.videoUrl && (item.category === "Audiobooks & Legends" || item.category === "Ebook & Audio Series");
       
       // Fallback images
       if (!item.imageUrl) {
@@ -66,16 +67,28 @@ export class DatabaseService {
       }
       
       if (isAudio) {
-        if (!item.audioUrl) {
-          item.audioUrl = "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg";
-        }
+        
         if (!item.narrator) {
           item.narrator = "Voice of Wisdom: Acharya";
         }
       } else {
         if (!item.videoUrl) {
-          if (item.category === "God Series" || (item.id && (item.id.includes("shiva") || item.id.includes("vishnu") || item.id.includes("ganesha")))) {
+          const idL = String(item.id || '').toLowerCase();
+          const cat = item.category || '';
+          if (idL.includes('shiva') || idL.includes('mahadev') || idL.includes('kedarnath') || idL.includes('kailash')) {
+            item.videoUrl = "https://www.youtube.com/embed/59YYd1rkZRQ";
+          } else if (idL.includes('vishnu') || idL.includes('krishna') || idL.includes('rama') || idL.includes('vaikuntha')) {
             item.videoUrl = "https://www.youtube.com/embed/EewjQ06HqtE";
+          } else if (idL.includes('ganesh') || idL.includes('vinayak')) {
+            item.videoUrl = "https://www.youtube.com/embed/p1k1jYqE-bE";
+          } else if (idL.includes('devi') || idL.includes('durga') || idL.includes('lakshmi') || idL.includes('kali')) {
+            item.videoUrl = "https://www.youtube.com/embed/N-0_C_r7v6o";
+          } else if (idL.includes('hanuman')) {
+            item.videoUrl = "https://www.youtube.com/embed/AETFv4SOSv4";
+          } else if (cat === 'Kids Stories' || idL.includes('birbal') || idL.includes('tenali') || idL.includes('panchatantra')) {
+            item.videoUrl = "https://www.youtube.com/embed/0G6L32Gq4yE";
+          } else if (cat === 'Unknown Knowledge' || cat === 'Docu-Series') {
+            item.videoUrl = "https://www.youtube.com/embed/6i2x1K5d3tM";
           } else {
             item.videoUrl = "https://www.youtube.com/embed/59YYd1rkZRQ";
           }
@@ -419,9 +432,209 @@ window.syncUserPayment = async function(showToast = true) {
 };
 
 
+
+// ============================================================================
+// 🪕 SACRED 432Hz HARMONIC DRONE SYNTHESIZER (WEB AUDIO API)
+// ============================================================================
+class VedicAudioDrone {
+  constructor() {
+    this.ctx = null;
+    this.isPlaying = false;
+    this.oscillators = [];
+    this.gainNode = null;
+  }
+
+  start() {
+    if (this.isPlaying) return;
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      this.ctx = new AudioCtx();
+      if (this.ctx.state === 'suspended') {
+        this.ctx.resume();
+      }
+
+      this.gainNode = this.ctx.createGain();
+      this.gainNode.gain.setValueAtTime(0.001, this.ctx.currentTime);
+      this.gainNode.gain.exponentialRampToValueAtTime(0.08, this.ctx.currentTime + 1.5);
+      this.gainNode.connect(this.ctx.destination);
+
+      // Sacred 432Hz Tanpura Harmonics (108Hz, 216Hz, 324Hz, 432Hz)
+      const freqs = [108, 216, 324, 432];
+      this.oscillators = freqs.map((f, i) => {
+        const osc = this.ctx.createOscillator();
+        osc.type = i % 2 === 0 ? 'sine' : 'triangle';
+        osc.frequency.setValueAtTime(f, this.ctx.currentTime);
+        osc.detune.setValueAtTime((i - 1.5) * 3, this.ctx.currentTime);
+
+        const subGain = this.ctx.createGain();
+        subGain.gain.setValueAtTime(0.25 / (i + 1), this.ctx.currentTime);
+        osc.connect(subGain);
+        subGain.connect(this.gainNode);
+        osc.start();
+        return osc;
+      });
+
+      this.isPlaying = true;
+    } catch (e) {
+      console.warn('WebAudio drone init error:', e);
+    }
+  }
+
+  stop() {
+    if (!this.isPlaying) return;
+    try {
+      if (this.gainNode && this.ctx) {
+        this.gainNode.gain.setValueAtTime(this.gainNode.gain.value, this.ctx.currentTime);
+        this.gainNode.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.8);
+      }
+      setTimeout(() => {
+        this.oscillators.forEach(osc => { try { osc.stop(); osc.disconnect(); } catch(e){} });
+        this.oscillators = [];
+        if (this.ctx && this.ctx.state !== 'closed') {
+          this.ctx.close();
+        }
+        this.ctx = null;
+        this.isPlaying = false;
+      }, 800);
+    } catch (e) {
+      this.isPlaying = false;
+    }
+  }
+
+  toggle() {
+    if (this.isPlaying) {
+      this.stop();
+      return false;
+    } else {
+      this.start();
+      return true;
+    }
+  }
+}
+
+// ============================================================================
+// 🎙️ SACRED VOICE STORYTELLER & CHAPTER NARRATOR (SPEECH SYNTHESIS API)
+// ============================================================================
+class VedicVoiceNarrator {
+  constructor() {
+    this.synth = typeof window !== 'undefined' && 'speechSynthesis' in window ? window.speechSynthesis : null;
+    this.utterance = null;
+    this.isPlaying = false;
+    this.isPaused = false;
+    this.currentChapterIdx = 0;
+    this.chapters = [];
+    this.onStateChange = null;
+    this.rate = 0.95; // Calm, meditative pace
+    this.pitch = 0.95;
+  }
+
+  loadChapters(chapters) {
+    this.stop();
+    this.chapters = chapters || [];
+    this.currentChapterIdx = 0;
+  }
+
+  playChapter(idx = 0) {
+    if (!this.synth) return;
+    if (idx < 0 || idx >= this.chapters.length) idx = 0;
+    this.stop();
+    this.currentChapterIdx = idx;
+
+    const ch = this.chapters[idx];
+    if (!ch) return;
+
+    const cleanTitle = (ch.title || '').replace(/^Chapters+[0-9IVXLCDM]+:s*/i, '');
+    const textToSpeak = `${cleanTitle}. ${ch.text || ''}`;
+    this.utterance = new SpeechSynthesisUtterance(textToSpeak);
+    this.utterance.rate = this.rate;
+    this.utterance.pitch = this.pitch;
+
+    const voices = this.synth.getVoices();
+    const preferredVoice = voices.find(v => (v.lang && (v.lang.includes('en-IN') || v.lang.includes('hi-IN')))) ||
+                           voices.find(v => (v.name && (v.name.includes('India') || v.name.includes('Rishi')))) ||
+                           voices.find(v => (v.lang && (v.lang.includes('en-GB') || v.lang.includes('en-US'))));
+    if (preferredVoice) this.utterance.voice = preferredVoice;
+
+    this.utterance.onstart = () => {
+      this.isPlaying = true;
+      this.isPaused = false;
+      if (this.onStateChange) this.onStateChange('playing', this.currentChapterIdx);
+    };
+
+    this.utterance.onend = () => {
+      this.isPlaying = false;
+      this.isPaused = false;
+      if (this.onStateChange) this.onStateChange('ended', this.currentChapterIdx);
+      if (this.currentChapterIdx + 1 < this.chapters.length) {
+        setTimeout(() => this.playChapter(this.currentChapterIdx + 1), 700);
+      }
+    };
+
+    this.utterance.onerror = (e) => {
+      if (e.error !== 'interrupted' && e.error !== 'canceled') {
+        console.warn('SpeechSynthesis error:', e);
+      }
+      this.isPlaying = false;
+      this.isPaused = false;
+      if (this.onStateChange) this.onStateChange('stopped', this.currentChapterIdx);
+    };
+
+    this.synth.speak(this.utterance);
+  }
+
+  pause() {
+    if (this.synth && this.isPlaying && !this.isPaused) {
+      this.synth.pause();
+      this.isPaused = true;
+      if (this.onStateChange) this.onStateChange('paused', this.currentChapterIdx);
+    }
+  }
+
+  resume() {
+    if (this.synth && this.isPaused) {
+      this.synth.resume();
+      this.isPaused = false;
+      if (this.onStateChange) this.onStateChange('playing', this.currentChapterIdx);
+    } else {
+      this.playChapter(this.currentChapterIdx);
+    }
+  }
+
+  togglePlay() {
+    if (this.isPlaying && !this.isPaused) {
+      this.pause();
+    } else if (this.isPaused) {
+      this.resume();
+    } else {
+      this.playChapter(this.currentChapterIdx);
+    }
+  }
+
+  stop() {
+    if (this.synth) {
+      try { this.synth.cancel(); } catch(e){}
+    }
+    this.isPlaying = false;
+    this.isPaused = false;
+    if (this.onStateChange) this.onStateChange('stopped', this.currentChapterIdx);
+  }
+
+  setRate(r) {
+    this.rate = Math.max(0.7, Math.min(1.5, r));
+    if (this.isPlaying && !this.isPaused) {
+      this.playChapter(this.currentChapterIdx);
+    }
+  }
+}
+
 class AppController {
   constructor() {
-    window.appInstance = this; // global reference for script tags
+        window.appInstance = this; // global reference for script tags
+    this.audioDrone = new VedicAudioDrone();
+    this.voiceNarrator = new VedicVoiceNarrator();
+    window.sanatanaDrone = this.audioDrone;
+    window.sanatanaNarrator = this.voiceNarrator;
     window.openQuickPreviewModal = (itemOrId) => this.openQuickPreviewModal(itemOrId);
     window.playContent = (itemOrId, isAudio) => this.playContent(itemOrId, isAudio);
     window.closeQuickPreviewModal = () => this.closeQuickPreviewModal();
@@ -703,7 +916,7 @@ class AppController {
           ${featuredList.map((item, idx) => {
             const isLocked = item.isPremium && !this.isSubscribed;
             const isOnWatchlist = this.watchlist.includes(item.id);
-            const isAudio = !!item.audioUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
+            const isAudio = !item.videoUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
             const isActive = idx === this.spotlightIndex;
 
             return `
@@ -912,7 +1125,7 @@ class AppController {
           found = fallbackList.find(x => x && String(x.id) === String(id));
         }
         if (found) {
-          const isAudio = !!found.audioUrl && (found.category === 'Audiobooks & Legends' || found.category === 'Ebook & Audio Series');
+          const isAudio = !found.videoUrl && (found.category === 'Audiobooks & Legends' || found.category === 'Ebook & Audio Series');
           this.playContent(found, isAudio);
         } else if (id) {
           this.playContent(id, false);
@@ -1197,7 +1410,7 @@ class AppController {
           item = fallbackList.find(x => x && String(x.id) === String(id));
         }
         if (item) {
-          const isAudio = !!item.audioUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
+          const isAudio = !item.videoUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
           this.playContent(item, isAudio);
         }
       };
@@ -1250,7 +1463,7 @@ class AppController {
     });
   }
 
-  // ── 🎬 PLAY CONTENT MODAL PLAYER (VIDEO & AUDIO) ──
+    // ── 🎬 MULTI-MODE SACRED MEDIA HUB (4K VIDEO + SACRED VOICE NARRATOR + 432Hz DRONE) ──
   playContent(itemOrId, isAudio = false) {
     if (!itemOrId) return;
     let item = itemOrId;
@@ -1285,48 +1498,124 @@ class AppController {
     const modalBody = document.getElementById('media-modal-body');
     if (!modal || !modalTitle || !modalBody) return;
 
-    modalTitle.innerHTML = `
-      <div class="flex items-center gap-3">
-        <span class="bg-gold text-black text-[10px] font-bold px-2 py-0.5 rounded font-mono uppercase">${isAudio ? '🎙️ AUDIO SAGA' : '🎬 4K STREAM'}</span>
-        <h2 class="text-base sm:text-lg font-bold font-serif text-white truncate max-w-md">${item.title}</h2>
-      </div>
-    `;
+    // Stop any ongoing narration or drone before opening
+    if (this.voiceNarrator) this.voiceNarrator.stop();
+    if (this.audioDrone) this.audioDrone.stop();
+
+    const hasVideo = Boolean(item.videoUrl);
+    // If user clicked audio explicitly OR item has no video, default to audio mode
+    let activeMode = (!hasVideo || isAudio) ? 'audio' : 'video';
 
     const chapters = item.content && item.content.length ? item.content : [
       { title: "Chapter 1: Historical Genesis", text: item.description || "Introduction to the divine chronicle.", visual: "🛕" }
     ];
 
+    if (this.voiceNarrator) {
+      this.voiceNarrator.loadChapters(chapters);
+    }
+
+    const updateHeaderTitle = () => {
+      modalTitle.innerHTML = `
+        <div class="flex items-center gap-3">
+          <span class="bg-gold text-black text-[10px] font-bold px-2 py-0.5 rounded font-mono uppercase tracking-wider">${activeMode === 'video' ? '🎬 4K STREAM' : '🎙️ SACRED AUDIO'}</span>
+          <h2 class="text-sm sm:text-base md:text-lg font-bold font-serif text-white truncate max-w-xs sm:max-w-md">${item.title}</h2>
+        </div>
+      `;
+    };
+    updateHeaderTitle();
+
     modalBody.innerHTML = `
-      <div class="p-4 sm:p-6 space-y-6">
+      <div class="p-4 sm:p-6 space-y-5">
         
-        <!-- Media Viewport (Video Iframe or Audio Visualizer) -->
-        ${isAudio ? `
-          <div class="bg-gradient-to-br from-[#121522] via-[#090b12] to-black border border-gold/30 rounded-2xl p-6 text-center space-y-4 shadow-xl">
-            <div class="w-24 h-24 mx-auto rounded-2xl overflow-hidden border border-gold/40 shadow-lg">
+        <!-- Mode Switcher Tabs (If item supports both video & voice/book) -->
+        <div class="flex items-center justify-center gap-2 p-1 bg-white/5 rounded-2xl border border-white/10 max-w-sm mx-auto">
+          ${hasVideo ? `
+            <button id="media-tab-video" class="flex-1 py-1.5 px-3 rounded-xl text-xs font-bold font-mono transition-all ${activeMode === 'video' ? 'bg-gold text-black shadow-lg shadow-gold/20' : 'text-white/60 hover:text-white'}">
+              🎬 4K Video
+            </button>
+          ` : ''}
+          <button id="media-tab-audio" class="flex-1 py-1.5 px-3 rounded-xl text-xs font-bold font-mono transition-all ${activeMode === 'audio' ? 'bg-gold text-black shadow-lg shadow-gold/20' : 'text-white/60 hover:text-white'}">
+            🎙️ Sacred Voice
+          </button>
+          <button id="media-tab-book" class="flex-1 py-1.5 px-3 rounded-xl text-xs font-bold font-mono transition-all text-white/60 hover:text-white">
+            📖 Sacred Book
+          </button>
+        </div>
+
+        <!-- 🎬 Video Viewport -->
+        ${hasVideo ? `
+          <div id="media-video-container" class="${activeMode === 'video' ? 'block' : 'hidden'} relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl">
+            <iframe id="media-video-iframe" src="${activeMode === 'video' ? item.videoUrl + '?autoplay=1&enablejsapi=1&rel=0' : ''}" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        ` : ''}
+
+        <!-- 🎙️ Audio Sanctum & Voice Storyteller Viewport -->
+        <div id="media-audio-container" class="${activeMode === 'audio' ? 'block' : 'hidden'} bg-gradient-to-br from-[#121522] via-[#090b12] to-black border border-gold/30 rounded-2xl p-5 text-center space-y-4 shadow-2xl relative overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-32 h-32 bg-gold/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <div class="flex items-center justify-center gap-4">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-gold/40 shadow-xl flex-shrink-0">
               <img src="${item.imageUrl || '/images/hampi.jpg'}" class="w-full h-full object-cover" alt="${item.title}">
             </div>
-            <div>
-              <h3 class="text-lg font-bold font-serif text-white">${item.title}</h3>
-              <p class="text-xs text-gold/80 font-mono mt-0.5">${item.narrator || 'Narrated by Vedic Scholars'}</p>
+            <div class="text-left space-y-1 max-w-xs">
+              <div class="inline-flex items-center gap-1.5 text-[9px] font-mono font-bold text-gold bg-gold/20 border border-gold/40 px-2.5 py-0.5 rounded-full">
+                <span id="narrator-pulse-dot" class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                <span>SACRED VOICE NARRATOR</span>
+              </div>
+              <h3 class="text-sm sm:text-base font-bold font-serif text-white line-clamp-1">${item.title}</h3>
+              <p class="text-xs text-white/60 font-sans line-clamp-1">${item.narrator || 'Narrated by Vedic Sage Acharya'}</p>
+              <p id="narrator-status-badge" class="text-[10px] text-amber-300 font-mono">Chapter 1 Ready</p>
             </div>
-            <audio id="media-audio-player" src="${item.audioUrl || 'https://actions.google.com/sounds/v1/ambient/morning_birds.ogg'}" controls autoplay class="w-full max-w-md mx-auto accent-gold"></audio>
           </div>
-        ` : `
-          <div class="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl">
-            <iframe src="${item.videoUrl || 'https://www.youtube.com/embed/59YYd1rkZRQ'}?autoplay=1&enablejsapi=1&rel=0" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+          <!-- Audio Visualizer Waves -->
+          <div id="audio-visualizer-bars" class="flex items-end justify-center gap-1.5 h-7 py-1 opacity-40 transition-opacity">
+            <span class="w-1 bg-gold rounded-full h-2 transition-all duration-300"></span>
+            <span class="w-1 bg-gold rounded-full h-4 transition-all duration-300"></span>
+            <span class="w-1 bg-gold rounded-full h-6 transition-all duration-300"></span>
+            <span class="w-1 bg-gold rounded-full h-3 transition-all duration-300"></span>
+            <span class="w-1 bg-gold rounded-full h-7 transition-all duration-300"></span>
+            <span class="w-1 bg-gold rounded-full h-4 transition-all duration-300"></span>
+            <span class="w-1 bg-gold rounded-full h-5 transition-all duration-300"></span>
+            <span class="w-1 bg-gold rounded-full h-2 transition-all duration-300"></span>
           </div>
-        `}
+
+          <!-- Master Recitation Controls -->
+          <div class="flex items-center justify-center gap-3 pt-1">
+            <button id="narrator-prev-btn" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-sm transition-all cursor-pointer" title="Previous Chapter">⏮</button>
+            <button id="narrator-play-toggle-btn" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 text-black font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg shadow-gold/30 hover:scale-105 flex items-center gap-2 cursor-pointer">
+              <span id="narrator-play-icon">▶</span>
+              <span id="narrator-play-label">Listen to Narration</span>
+            </button>
+            <button id="narrator-next-btn" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-sm transition-all cursor-pointer" title="Next Chapter">⏭</button>
+          </div>
+
+          <!-- 432Hz Ambient Tanpura Drone & Narration Speed -->
+          <div class="flex items-center justify-between border-t border-white/10 pt-3 text-xs text-white/70 flex-wrap gap-2 px-1">
+            <button id="drone-toggle-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-gold/40 text-[11px] font-mono transition-all cursor-pointer" title="Toggle Meditative 432Hz Drone">
+              <span>🪕</span>
+              <span id="drone-toggle-label">432Hz Drone: OFF</span>
+            </button>
+
+            <div class="flex items-center gap-1 text-[11px] font-mono">
+              <span class="text-white/40">Speed:</span>
+              <button class="speed-btn px-2 py-0.5 rounded bg-white/5 hover:bg-white/20 text-white" data-speed="0.85">0.8x</button>
+              <button class="speed-btn px-2 py-0.5 rounded bg-gold text-black font-bold" data-speed="1.0">1.0x</button>
+              <button class="speed-btn px-2 py-0.5 rounded bg-white/5 hover:bg-white/20 text-white" data-speed="1.15">1.2x</button>
+            </div>
+          </div>
+        </div>
 
         <!-- Metadata & Synopsis -->
-        <div class="space-y-3">
-          <div class="flex items-center gap-3 text-xs text-white/60 font-mono flex-wrap">
+        <div class="space-y-2">
+          <div class="flex items-center gap-2.5 text-xs text-white/60 font-mono flex-wrap">
             <span class="text-gold font-bold">${item.category || 'Vedic Chronicle'}</span>
             <span>&bull;</span>
             <span>${item.duration || '45 Mins'}</span>
             <span>&bull;</span>
             <span>${item.rating || '9.9 ★'}</span>
             <span>&bull;</span>
-            <span>4K HDR</span>
+            <span class="text-emerald-400 font-bold">${hasVideo ? '4K HDR' : 'HD AUDIO'}</span>
           </div>
 
           <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-sans">
@@ -1334,15 +1623,27 @@ class AppController {
           </p>
         </div>
 
-        <!-- Chapters / Manuscripts -->
+        <!-- Chapters / Manuscripts with Live Interactive Narration -->
         <div class="space-y-3 border-t border-white/10 pt-4">
-          <h4 class="text-xs font-bold text-gold uppercase tracking-widest font-mono">Sacred Manuscripts &amp; Chapters</h4>
-          <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xs font-bold text-gold uppercase tracking-widest font-mono">Sacred Manuscripts &amp; Chapters (${chapters.length})</h4>
+            <button id="modal-inline-open-book-btn" class="text-xs text-gold hover:underline flex items-center gap-1 font-mono cursor-pointer" title="Open in 3D Flipbook Reader">
+              <span>📖 Read Complete Granth</span>
+            </button>
+          </div>
+
+          <div class="space-y-2 max-h-64 overflow-y-auto pr-1">
             ${chapters.map((ch, idx) => `
-              <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
-                <div class="flex items-center gap-2 text-xs font-bold text-white">
-                  <span>${ch.visual || '📜'}</span>
-                  <span>${ch.title}</span>
+              <div id="chapter-row-${idx}" class="chapter-interactive-row p-3 rounded-xl bg-white/5 border border-white/5 hover:border-gold/30 transition-all space-y-1.5 cursor-pointer ${idx === 0 ? 'border-gold/40 bg-gold/5' : ''}" data-ch-idx="${idx}">
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2 text-xs font-bold text-white">
+                    <span>${ch.visual || '📜'}</span>
+                    <span class="chapter-row-title">${ch.title}</span>
+                  </div>
+                  <button class="chapter-listen-btn px-2.5 py-1 rounded bg-gold/20 hover:bg-gold hover:text-black text-gold text-[10px] font-mono font-bold flex items-center gap-1 transition-all cursor-pointer" data-ch-idx="${idx}" title="Listen to this chapter">
+                    <span>🔊</span>
+                    <span>Listen</span>
+                  </button>
                 </div>
                 <p class="text-xs text-white/70 leading-relaxed font-sans pl-6">${ch.text}</p>
               </div>
@@ -1360,6 +1661,210 @@ class AppController {
     modal.style.visibility = 'visible';
     modal.style.opacity = '1';
     document.body.style.overflow = 'hidden';
+
+    // ── Bind Interactive Actions ──
+    const videoContainer = modalBody.querySelector('#media-video-container');
+    const audioContainer = modalBody.querySelector('#media-audio-container');
+    const videoIframe = modalBody.querySelector('#media-video-iframe');
+    const tabVideo = modalBody.querySelector('#media-tab-video');
+    const tabAudio = modalBody.querySelector('#media-tab-audio');
+    const tabBook = modalBody.querySelector('#media-tab-book');
+    const playToggleBtn = modalBody.querySelector('#narrator-play-toggle-btn');
+    const playIcon = modalBody.querySelector('#narrator-play-icon');
+    const playLabel = modalBody.querySelector('#narrator-play-label');
+    const prevBtn = modalBody.querySelector('#narrator-prev-btn');
+    const nextBtn = modalBody.querySelector('#narrator-next-btn');
+    const statusBadge = modalBody.querySelector('#narrator-status-badge');
+    const pulseDot = modalBody.querySelector('#narrator-pulse-dot');
+    const visualizerBars = modalBody.querySelector('#audio-visualizer-bars');
+    const droneBtn = modalBody.querySelector('#drone-toggle-btn');
+    const droneLabel = modalBody.querySelector('#drone-toggle-label');
+    const inlineBookBtn = modalBody.querySelector('#modal-inline-open-book-btn');
+
+    const switchToAudioView = () => {
+      activeMode = 'audio';
+      updateHeaderTitle();
+      if (videoContainer) {
+        videoContainer.classList.add('hidden');
+        videoContainer.classList.remove('block');
+        if (videoIframe) videoIframe.src = '';
+      }
+      if (audioContainer) {
+        audioContainer.classList.remove('hidden');
+        audioContainer.classList.add('block');
+      }
+      if (tabVideo) {
+        tabVideo.className = 'flex-1 py-1.5 px-3 rounded-xl text-xs font-bold font-mono transition-all text-white/60 hover:text-white';
+      }
+      if (tabAudio) {
+        tabAudio.className = 'flex-1 py-1.5 px-3 rounded-xl text-xs font-bold font-mono transition-all bg-gold text-black shadow-lg shadow-gold/20';
+      }
+    };
+
+    const switchToVideoView = () => {
+      if (!hasVideo) return;
+      activeMode = 'video';
+      updateHeaderTitle();
+      if (this.voiceNarrator) this.voiceNarrator.stop();
+      if (audioContainer) {
+        audioContainer.classList.add('hidden');
+        audioContainer.classList.remove('block');
+      }
+      if (videoContainer) {
+        videoContainer.classList.remove('hidden');
+        videoContainer.classList.add('block');
+        if (videoIframe) videoIframe.src = item.videoUrl + '?autoplay=1&enablejsapi=1&rel=0';
+      }
+      if (tabVideo) {
+        tabVideo.className = 'flex-1 py-1.5 px-3 rounded-xl text-xs font-bold font-mono transition-all bg-gold text-black shadow-lg shadow-gold/20';
+      }
+      if (tabAudio) {
+        tabAudio.className = 'flex-1 py-1.5 px-3 rounded-xl text-xs font-bold font-mono transition-all text-white/60 hover:text-white';
+      }
+    };
+
+    if (tabVideo) tabVideo.onclick = () => switchToVideoView();
+    if (tabAudio) tabAudio.onclick = () => switchToAudioView();
+    if (tabBook) {
+      tabBook.onclick = () => {
+        this.closeMediaModal();
+        if (window.flipBook) {
+          window.flipBook.open(item);
+        } else if (typeof this.openGranthReader === 'function') {
+          this.openGranthReader(item);
+        }
+      };
+    }
+    if (inlineBookBtn) {
+      inlineBookBtn.onclick = () => {
+        this.closeMediaModal();
+        if (window.flipBook) {
+          window.flipBook.open(item);
+        } else if (typeof this.openGranthReader === 'function') {
+          this.openGranthReader(item);
+        }
+      };
+    }
+
+    // Narrator state synchronization
+    if (this.voiceNarrator) {
+      this.voiceNarrator.onStateChange = (state, chIdx) => {
+        if (!modalBody) return;
+        const currentCh = chapters[chIdx] || chapters[0];
+        
+        // Highlight active chapter row
+        modalBody.querySelectorAll('.chapter-interactive-row').forEach((row, idx) => {
+          if (idx === chIdx) {
+            row.classList.add('border-gold', 'bg-gold/10');
+            row.classList.remove('border-white/5', 'bg-white/5');
+            row.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            row.classList.remove('border-gold', 'bg-gold/10');
+            row.classList.add('border-white/5', 'bg-white/5');
+          }
+        });
+
+        if (state === 'playing') {
+          if (playIcon) playIcon.textContent = '⏸';
+          if (playLabel) playLabel.textContent = 'Pause Narration';
+          if (statusBadge) statusBadge.textContent = `Reciting: ${currentCh.title}`;
+          if (pulseDot) pulseDot.classList.add('animate-ping');
+          if (visualizerBars) visualizerBars.classList.remove('opacity-40');
+        } else if (state === 'paused') {
+          if (playIcon) playIcon.textContent = '▶';
+          if (playLabel) playLabel.textContent = 'Resume Narration';
+          if (statusBadge) statusBadge.textContent = 'Paused';
+          if (pulseDot) pulseDot.classList.remove('animate-ping');
+          if (visualizerBars) visualizerBars.classList.add('opacity-40');
+        } else {
+          if (playIcon) playIcon.textContent = '▶';
+          if (playLabel) playLabel.textContent = 'Listen to Narration';
+          if (statusBadge) statusBadge.textContent = 'Ready';
+          if (pulseDot) pulseDot.classList.remove('animate-ping');
+          if (visualizerBars) visualizerBars.classList.add('opacity-40');
+        }
+      };
+    }
+
+    if (playToggleBtn) {
+      playToggleBtn.onclick = () => {
+        switchToAudioView();
+        if (this.voiceNarrator) this.voiceNarrator.togglePlay();
+      };
+    }
+
+    if (prevBtn) {
+      prevBtn.onclick = () => {
+        switchToAudioView();
+        if (this.voiceNarrator) {
+          const prevIdx = Math.max(0, this.voiceNarrator.currentChapterIdx - 1);
+          this.voiceNarrator.playChapter(prevIdx);
+        }
+      };
+    }
+
+    if (nextBtn) {
+      nextBtn.onclick = () => {
+        switchToAudioView();
+        if (this.voiceNarrator) {
+          const nextIdx = Math.min(chapters.length - 1, this.voiceNarrator.currentChapterIdx + 1);
+          this.voiceNarrator.playChapter(nextIdx);
+        }
+      };
+    }
+
+    // Individual Chapter Listen Buttons
+    modalBody.querySelectorAll('.chapter-listen-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const chIdx = parseInt(btn.getAttribute('data-ch-idx') || '0', 10);
+        switchToAudioView();
+        if (this.voiceNarrator) {
+          this.voiceNarrator.playChapter(chIdx);
+        }
+      };
+    });
+
+    // Chapter row click to recite
+    modalBody.querySelectorAll('.chapter-interactive-row').forEach(row => {
+      row.onclick = () => {
+        const chIdx = parseInt(row.getAttribute('data-ch-idx') || '0', 10);
+        switchToAudioView();
+        if (this.voiceNarrator) {
+          this.voiceNarrator.playChapter(chIdx);
+        }
+      };
+    });
+
+    // 432Hz Drone toggle
+    if (droneBtn) {
+      droneBtn.onclick = () => {
+        if (this.audioDrone) {
+          const isNowOn = this.audioDrone.toggle();
+          if (isNowOn) {
+            droneBtn.classList.add('border-gold', 'bg-gold/15', 'text-gold');
+            droneBtn.classList.remove('border-white/10', 'bg-white/5', 'text-white/70');
+            if (droneLabel) droneLabel.textContent = '432Hz Drone: ON 🪕';
+          } else {
+            droneBtn.classList.remove('border-gold', 'bg-gold/15', 'text-gold');
+            droneBtn.classList.add('border-white/10', 'bg-white/5', 'text-white/70');
+            if (droneLabel) droneLabel.textContent = '432Hz Drone: OFF';
+          }
+        }
+      };
+    }
+
+    // Recitation speed controls
+    modalBody.querySelectorAll('.speed-btn').forEach(sBtn => {
+      sBtn.onclick = () => {
+        const speed = parseFloat(sBtn.getAttribute('data-speed') || '1.0');
+        if (this.voiceNarrator) this.voiceNarrator.setRate(speed);
+        modalBody.querySelectorAll('.speed-btn').forEach(b => {
+          b.className = 'speed-btn px-2 py-0.5 rounded bg-white/5 hover:bg-white/20 text-white';
+        });
+        sBtn.className = 'speed-btn px-2 py-0.5 rounded bg-gold text-black font-bold';
+      };
+    });
 
     // Backdrop dismissal
     modal.onclick = (e) => {
@@ -2638,7 +3143,7 @@ class AppController {
       } catch (err) {
         console.warn("Using fallback ambient track:", err);
         if (!fallbackAudio) {
-          fallbackAudio = new Audio("https://actions.google.com/sounds/v1/ambiences/wind_chimes_short.ogg");
+          /* Fallback ambient using native WebAudio */
           fallbackAudio.loop = true;
           fallbackAudio.volume = 0.25;
         }
@@ -2837,6 +3342,9 @@ class AppController {
       } else if (openTarget === 'darshana') {
         const darshanaSection = document.getElementById('divya-darshana');
         if (darshanaSection) darshanaSection.scrollIntoView({ behavior: 'smooth' });
+      } else if (openTarget === 'audio') {
+        const audioSection = document.getElementById('audio-parent') || document.querySelector('[data-category="Audiobooks & Legends"]');
+        if (audioSection) audioSection.scrollIntoView({ behavior: 'smooth' });
       } else if (openTarget === 'checkout') {
         this.openPaymentModal('trial');
       }
@@ -7341,7 +7849,7 @@ class AppController {
     }
 
     const cardsHTML = top10Items.map((item, idx) => {
-      const isAudio = !!item.audioUrl || item.category === "Audiobooks & Legends" || item.category === "Ebook & Audio Series";
+      const isAudio = !item.videoUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
       const isLocked = item.isPremium && !this.isSubscribed;
       const isOnWatchlist = this.watchlist.includes(item.id);
       const matchScore = 99 - idx;
@@ -7531,6 +8039,10 @@ class AppController {
   }
 
   closeMediaModal() {
+    if (this.voiceNarrator) this.voiceNarrator.stop();
+    if (this.audioDrone) this.audioDrone.stop();
+    if (window.sanatanaNarrator) window.sanatanaNarrator.stop();
+    if (window.sanatanaDrone) window.sanatanaDrone.stop();
     const m = document.getElementById('media-modal');
     if (m) {
       m.classList.add('hidden');
@@ -7581,7 +8093,7 @@ class AppController {
     const body = document.getElementById('quick-preview-modal-body');
     if (!modal || !body || !item) return;
 
-    const isAudio = !!item.audioUrl || item.category === "Audiobooks & Legends" || item.category === "Ebook & Audio Series";
+    const isAudio = !item.videoUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
     const isLocked = item.isPremium && !this.isSubscribed;
     const isOnWatchlist = this.watchlist.includes(item.id);
     const matchScore = Math.floor(Math.random() * 5) + 95;

@@ -678,7 +678,7 @@ const COURSES_DATA = {
       "isPremium": false,
       "imageUrl": "/images/mudra_hakini_brain_sync.jpg",
       "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Sleep Seekers",
@@ -721,7 +721,7 @@ const COURSES_DATA = {
       "isPremium": false,
       "imageUrl": "/images/mudra_apana_vayu.jpg",
       "videoUrl": "https://www.youtube.com/embed/1jwZ-iVRi44",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Stress Relief",
@@ -763,7 +763,7 @@ const COURSES_DATA = {
       "isPremium": false,
       "imageUrl": "/images/mudra_stress_relief_mastery.jpg",
       "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya & Neuro-Vedic Scholar",
       "personas": [
         "Stress Relief",
@@ -1084,7 +1084,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "https://i.ytimg.com/vi/QvwWU2iDxkQ/hqdefault.jpg",
       "desc": "Delve into the mythology and philosophy of Mahadeva, the destroyer and transformer of the Hindu trinity. Understand the significance of the crescent moon, his third eye, and the Tandava dance.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "personas": [
         "Spiritual Seekers"
       ],
@@ -1121,7 +1121,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/vishnu.jpg",
       "desc": "Journey to the celestial ocean of Ksheera Sagara, where Lord Vishnu rests on the serpent Shesha, acting as the ultimate preserver of cosmic order, equilibrium, and righteousness.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "personas": [
         "Spiritual Seekers"
       ],
@@ -1157,7 +1157,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/dharma.jpg",
       "desc": "What does Dharma truly mean? Demystify Sanatana Dharma, the cosmic framework of moral duties, truth, and universal laws that sustain order in the human experience.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "personas": [
         "Spiritual Seekers"
       ],
@@ -1193,7 +1193,7 @@ const COURSES_DATA = {
       "isPremium": false,
       "imageUrl": "/images/lakshmibai.jpg",
       "desc": "Relive the legendary tale of the Queen of Jhansi, who rode into battle with her child strapped to her back, refusing to yield her kingdom to the British empire during the rebellion of 1857.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "personas": [
         "History Buffs",
         "Kids"
@@ -1230,7 +1230,7 @@ const COURSES_DATA = {
       "isPremium": true,
       "imageUrl": "/images/ashoka.jpg",
       "desc": "How did a ruthless conqueror who bathed in blood at the Battle of Kalinga transform into a beloved messenger of peace and non-violence? Listen to the epic transformation of Ashoka the Great.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "personas": [
         "History Buffs"
       ],
@@ -1267,7 +1267,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/krishna_cover.jpg",
       "desc": "Explore the life of the eighth avatar of Lord Vishnu, from his childhood escapades in Gokul to the recitation of the Bhagavad Gita on the battlefield of Kurukshetra.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "personas": [
         "Kids",
         "Spiritual Seekers"
@@ -1304,7 +1304,7 @@ const COURSES_DATA = {
       "isPremium": true,
       "imageUrl": "https://i.ytimg.com/vi/yEVfRGF-rRY/hqdefault.jpg",
       "desc": "Delve into the ancient Sanskrit epic charting the exile, battles, and virtues of Prince Rama. Understand the moral framework of Ramayana and its impact on Southeast Asian architecture.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "personas": [
         "Spiritual Seekers",
         "Kids"
@@ -1341,7 +1341,7 @@ const COURSES_DATA = {
       "isPremium": false,
       "imageUrl": "https://i.ytimg.com/vi/nEMdPjM0ahU/hqdefault.jpg",
       "desc": "Listen to the translation of the 18 chapters of the Bhagavad Gita spoken by Lord Krishna to Arjuna. Explore concepts of Dharma, Nishkama Karma (selfless action), and spiritual equilibrium.",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "personas": [
         "Spiritual Seekers",
         "History Buffs"
@@ -1448,7 +1448,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/shiva.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -1483,7 +1483,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ganesha.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -1518,7 +1518,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/krishna_govardhan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -1553,7 +1553,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/shiva_parvati_kalyanam.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -1588,7 +1588,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/patala_naga_kingdom.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -1623,7 +1623,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ganesha_mouse.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -1658,7 +1658,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/kartikeya_murugan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -1693,7 +1693,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/shiva_tandava.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -1727,7 +1727,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/hiranyakashipu_narasimha.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -1762,7 +1762,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/dashavatara.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -1797,7 +1797,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ganga_descent.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -1831,7 +1831,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/kaliya_daman.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -1866,7 +1866,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/bhasmasura_mohini.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -1901,7 +1901,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/sudama_krishna.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -1936,7 +1936,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/shabari_rama.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -1971,7 +1971,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/mahishasura_battle.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -2006,7 +2006,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/vishwaroopam_darshan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -2041,7 +2041,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/fourteen_lokas_cosmos.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -2076,7 +2076,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/kundalini_chakras.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -2111,7 +2111,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -2146,7 +2146,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/maharishi_agastya.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -2181,7 +2181,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/samudra_manthan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -2216,7 +2216,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "https://i.ytimg.com/vi/QsCDBreULF8/hqdefault.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -2251,7 +2251,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "https://i.ytimg.com/vi/E-j5PuexH7s/hqdefault.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -2286,7 +2286,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "https://i.ytimg.com/vi/axALS7gSkkU/hqdefault.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -2321,7 +2321,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "https://i.ytimg.com/vi/3wOkMZ07C5I/hqdefault.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -2356,7 +2356,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -2391,7 +2391,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
       "personas": [
@@ -2426,7 +2426,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/jataka_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
@@ -2461,7 +2461,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
@@ -2496,7 +2496,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
@@ -2531,7 +2531,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -2566,7 +2566,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/jataka_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
       "personas": [
@@ -2601,7 +2601,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
@@ -2636,7 +2636,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/vikram_betal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
@@ -2671,7 +2671,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
@@ -2706,7 +2706,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -2741,7 +2741,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/jataka_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
       "personas": [
@@ -2776,7 +2776,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
@@ -2810,7 +2810,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
@@ -2845,7 +2845,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
@@ -2880,7 +2880,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/jataka_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -2915,7 +2915,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
       "personas": [
@@ -2950,7 +2950,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
@@ -2985,7 +2985,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
@@ -3019,7 +3019,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/jataka_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
@@ -3053,7 +3053,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -3088,7 +3088,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
       "personas": [
@@ -3122,7 +3122,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
@@ -3156,7 +3156,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/jataka_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
@@ -3191,7 +3191,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
@@ -3226,7 +3226,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -3261,7 +3261,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
       "personas": [
@@ -3295,7 +3295,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/shivaji.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3330,7 +3330,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/chola.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3365,7 +3365,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/queen_abbakka.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3400,7 +3400,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/maurya_dynasty.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3434,7 +3434,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/maharana_pratap.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3469,7 +3469,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ashoka.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3504,7 +3504,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/meenakshi.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3539,7 +3539,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/hampi.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3574,7 +3574,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3609,7 +3609,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3644,7 +3644,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/prithviraj_chauhan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3678,7 +3678,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/rani_chennamma.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3713,7 +3713,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/dharma.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3748,7 +3748,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3782,7 +3782,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/queen_abbakka.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3816,7 +3816,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/chola_navy.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3850,7 +3850,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/chola_navy.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3884,7 +3884,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/rani_chennamma.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3918,7 +3918,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/vikram_betal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3953,7 +3953,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/lakshmibai.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -3987,7 +3987,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -4021,7 +4021,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -4055,7 +4055,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/dharma.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -4089,7 +4089,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/prithviraj_chauhan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -4123,7 +4123,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/bhangarh_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -4157,7 +4157,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ajanta.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -4191,7 +4191,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/vault_b_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4225,7 +4225,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4259,7 +4259,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/bhangarh_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4293,7 +4293,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/mysterious_ruins.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4327,7 +4327,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/bhangarh_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4361,7 +4361,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/mysterious_ruins.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4395,7 +4395,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/mysterious_ruins.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4429,7 +4429,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/hampi.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4463,7 +4463,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/iron_pillar.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4497,7 +4497,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/ramayana_science.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4531,7 +4531,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/fourteen_lokas_cosmos.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4565,7 +4565,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/maharana_pratap.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4599,7 +4599,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/taj_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4633,7 +4633,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4667,7 +4667,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4701,7 +4701,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4735,7 +4735,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/mysterious_ruins.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4769,7 +4769,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/sundials.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4803,7 +4803,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/bhangarh_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4837,7 +4837,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/fourteen_lokas_cosmos.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4871,7 +4871,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ajanta.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4905,7 +4905,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/patala_naga_kingdom.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4939,7 +4939,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/hampi.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
       "personas": [
@@ -4973,7 +4973,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
       "personas": [
@@ -5007,7 +5007,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/ashoka.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
@@ -5041,7 +5041,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/patala_naga_kingdom.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
@@ -5075,7 +5075,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/shiva.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -5109,7 +5109,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ganesha.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -5143,7 +5143,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/krishna_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -5177,7 +5177,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -5211,7 +5211,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -5245,7 +5245,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -5279,7 +5279,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -5313,7 +5313,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/shabari_rama.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -5347,7 +5347,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -5381,7 +5381,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/kartikeya_murugan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -5415,7 +5415,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/kartikeya_murugan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -5449,7 +5449,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -5483,7 +5483,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -5517,7 +5517,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/vishwaroopam_darshan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -5551,7 +5551,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -5585,7 +5585,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/venkateswara_tirumala.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -5619,7 +5619,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/adi_shankara.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -5653,7 +5653,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/hiranyakashipu_narasimha.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -5687,7 +5687,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/vishnu.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -5721,7 +5721,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/shiva_neelkanth.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -5755,7 +5755,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ganesha_mouse.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -5789,7 +5789,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -5823,7 +5823,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/meenakshi.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -5857,7 +5857,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/sudama_krishna.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -5891,7 +5891,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/ravana_lanka.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -5925,7 +5925,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -5959,7 +5959,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
       "personas": [
@@ -5994,7 +5994,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
@@ -6028,7 +6028,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
@@ -6062,7 +6062,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
@@ -6096,7 +6096,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -6130,7 +6130,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
       "personas": [
@@ -6164,7 +6164,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
@@ -6198,7 +6198,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
@@ -6232,7 +6232,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
@@ -6266,7 +6266,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -6300,7 +6300,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "https://i.ytimg.com/vi/otVAudER9dU/hqdefault.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -6336,7 +6336,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Panchatantra Storyteller",
       "category": "Kids Stories",
       "personas": [
@@ -6371,7 +6371,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/chola.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -6406,7 +6406,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
@@ -6442,7 +6442,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/vishnu.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -6477,7 +6477,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
@@ -6512,7 +6512,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "https://i.ytimg.com/vi/41uNVDHxmms/hqdefault.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -6548,7 +6548,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/kundalini_chakras.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
@@ -6583,7 +6583,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/shiva_parvati_kalyanam.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -6618,7 +6618,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
@@ -6653,7 +6653,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ashoka.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -6688,7 +6688,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
@@ -6723,7 +6723,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "https://i.ytimg.com/vi/XEQFAcbMkWI/hqdefault.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -6759,7 +6759,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/jataka_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
@@ -6794,7 +6794,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/adi_shankara.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -6830,7 +6830,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
@@ -6865,7 +6865,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/mahishasura_battle.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -6900,7 +6900,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
@@ -6935,7 +6935,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/krishna_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -6970,7 +6970,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/vault_b_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
@@ -7005,7 +7005,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/dashavatara.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -7040,7 +7040,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
@@ -7075,7 +7075,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/dharma.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -7110,7 +7110,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/mysterious_ruins.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
@@ -7145,7 +7145,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/samudra_manthan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -7180,7 +7180,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Heritage Storyteller",
       "category": "Kids Stories",
       "personas": [
@@ -7215,7 +7215,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/dharma.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -7250,7 +7250,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Dr. Arvind (Vedic Archaeologist)",
       "category": "Unknown Knowledge",
       "personas": [
@@ -7285,7 +7285,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/dashavatara.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -7320,7 +7320,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/jataka_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -7355,7 +7355,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/adi_shankara.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -7390,7 +7390,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/shiva.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
       "personas": [
@@ -7425,7 +7425,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/patala_naga_kingdom.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -7460,7 +7460,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
@@ -7495,7 +7495,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/vishnu.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -7530,7 +7530,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ajanta.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
@@ -7565,7 +7565,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/dashavatara.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -7600,7 +7600,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
@@ -7635,7 +7635,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/dharma.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -7670,7 +7670,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/mysterious_ruins.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
@@ -7705,7 +7705,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/krishna_govardhan.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -7740,7 +7740,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
@@ -7775,7 +7775,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/kundalini_chakras.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -7810,7 +7810,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/chola_navy.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
@@ -7845,7 +7845,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/warrior_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "God Series",
       "personas": [
@@ -7880,7 +7880,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/jataka_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Kids Stories",
       "personas": [
@@ -7915,7 +7915,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -7950,7 +7950,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ashoka.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Unknown Knowledge",
       "personas": [
@@ -7985,7 +7985,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/shiva.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "God Series",
       "personas": [
@@ -8020,7 +8020,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/panchatantra_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Kids Stories",
       "personas": [
@@ -8055,7 +8055,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/kundalini_chakras.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -8090,7 +8090,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/ajanta.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Unknown Knowledge",
       "personas": [
@@ -8125,7 +8125,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/mahishasura_battle.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "God Series",
       "personas": [
@@ -8160,7 +8160,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/birbal.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Kids Stories",
       "personas": [
@@ -8195,7 +8195,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/surya_siddhanta_astronomy.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -8230,7 +8230,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "Unknown Knowledge",
       "personas": [
@@ -8265,7 +8265,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/shiva.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "God Series",
       "personas": [
@@ -8300,7 +8300,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/tenali.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Kids Stories",
       "personas": [
@@ -8335,7 +8335,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/dharma.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -8370,7 +8370,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/mysterious_ruins.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Tales: Grandma",
       "category": "Unknown Knowledge",
       "personas": [
@@ -8405,7 +8405,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/vishnu.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Heritage: Mahesh",
       "category": "God Series",
       "personas": [
@@ -8440,7 +8440,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/jataka_cover.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/water_stream.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Philosophy: Acharya",
       "category": "Kids Stories",
       "personas": [
@@ -8475,7 +8475,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": false,
       "imageUrl": "/images/meenakshi.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/rain.ogg",
+      "audioUrl": "",
       "narrator": "Voice of History: Vikram",
       "category": "Audiobooks & Legends",
       "personas": [
@@ -8510,7 +8510,7 @@ const COURSES_DATA = {
       "year": "2026",
       "isPremium": true,
       "imageUrl": "/images/ellora_kailasa.jpg",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Aditi",
       "category": "Unknown Knowledge",
       "personas": [
@@ -9002,7 +9002,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/veerabhadra.jpg",
       "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Yogi",
@@ -9040,7 +9040,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/kalabhairava.jpg",
       "videoUrl": "https://www.youtube.com/embed/1jwZ-iVRi44",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Yogi",
@@ -9077,7 +9077,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/hiranyakashipu_narasimha.jpg",
       "videoUrl": "https://www.youtube.com/embed/3hmz995sruE",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Yogi",
@@ -9115,7 +9115,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/kartikeya_murugan.jpg",
       "videoUrl": "https://www.youtube.com/embed/FEFWOTGWLoo",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Yogi",
@@ -9153,7 +9153,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/parashurama.jpg",
       "videoUrl": "https://www.youtube.com/embed/UiWLSqkjEl8",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Warrior",
@@ -9190,7 +9190,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/mahakali_mahavidya.jpg",
       "videoUrl": "https://www.youtube.com/embed/nEMdPjM0ahU",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Yogi",
@@ -9227,7 +9227,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/garuda_amrita.jpg",
       "videoUrl": "https://www.youtube.com/embed/rQf6Fkh-Y70",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Warrior",
@@ -9264,7 +9264,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/hanuman_cover.jpg",
       "videoUrl": "https://www.youtube.com/embed/iaW4C8Laif4",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Yogi",
@@ -9302,7 +9302,7 @@ const COURSES_DATA = {
       "isGodSeries": true,
       "imageUrl": "/images/venkateswara_tirumala.jpg",
       "videoUrl": "https://www.youtube.com/embed/59YYd1rkZRQ",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Yogi",
@@ -9340,7 +9340,7 @@ const COURSES_DATA = {
       "isGodSeries": false,
       "imageUrl": "/images/ellora_kailasa.jpg",
       "videoUrl": "https://www.youtube.com/embed/EewjQ06HqtE",
-      "audioUrl": "https://actions.google.com/sounds/v1/ambient/morning_birds.ogg",
+      "audioUrl": "",
       "narrator": "Voice of Wisdom: Acharya",
       "personas": [
         "Yogi",
