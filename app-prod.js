@@ -3200,9 +3200,34 @@ class AppController {
           gridContainer.classList.add('hidden');
           standardContainer.classList.remove('hidden');
         } else {
-          // Filter matching content from all catalog items
           const allItems = this.contentData.content || [];
-          const matching = allItems.filter(x => x.personas && x.personas.includes(persona));
+          let matching = [];
+
+          if (persona === 'Kids') {
+            matching = allItems.filter(x => 
+              x.category === 'Kids Stories' || 
+              (x.personas && x.personas.some(p => ['Kids', 'Parents', 'Young Seekers', 'Students', 'Math Lovers'].includes(p)))
+            );
+          } else if (persona === 'Adults') {
+            matching = allItems.filter(x => 
+              (x.personas && x.personas.some(p => ['Executives', 'Leadership Seekers', 'High Performers', 'Stress Relief', 'Sleep Seekers', 'Mindfulness Seekers', 'Philosophy Buffs', 'Science Enthusiasts'].includes(p))) ||
+              x.category === 'Unknown Knowledge' ||
+              x.category === 'Wellness & Mudra Shastra'
+            );
+          } else if (persona === 'Seniors') {
+            matching = allItems.filter(x => 
+              x.category === 'God Series' || 
+              x.category === 'Audiobooks & Legends' ||
+              (x.personas && x.personas.some(p => ['Devotees', 'Temple Explorers', 'Spiritual Seekers', 'Yogic Healers'].includes(p)))
+            );
+          } else if (persona === 'Spiritual Seekers') {
+            matching = allItems.filter(x => 
+              (x.personas && x.personas.some(p => ['Spiritual Seekers', 'Yogis', 'Devotees', 'Breathwork Enthusiasts', 'Yogic Healers', 'Mindfulness Seekers'].includes(p))) ||
+              x.category === 'God Series'
+            );
+          } else {
+            matching = allItems.filter(x => x.personas && x.personas.includes(persona));
+          }
           const combinedHTML = matching.map(item => this.createContentCardHTML(item, !item.videoUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series'), 'w-full')).join('');
 
           if (combinedHTML.length > 0) {
