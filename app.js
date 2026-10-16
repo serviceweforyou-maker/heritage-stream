@@ -876,7 +876,6 @@ class AppController {
     const spotlight = document.getElementById('hero-spotlight');
     if (!spotlight || !this.contentData) return;
 
-    // Clear any previously running auto-slide interval
     if (this._spotlightInterval) {
       clearInterval(this._spotlightInterval);
       this._spotlightInterval = null;
@@ -885,7 +884,6 @@ class AppController {
     const all = this.contentData.content || [];
     if (!all.length) return;
 
-    // Curate top blockbuster featured items across categories
     const preferredIds = [
       'free_kukke_subrahmanya_naga',
       'free_veerabhadra_birth_shiva',
@@ -908,227 +906,170 @@ class AppController {
     this.spotlightIndex = this.spotlightIndex || 0;
     if (this.spotlightIndex >= featuredList.length) this.spotlightIndex = 0;
 
-    // Render Container HTML with all slides and navigation controls
     spotlight.innerHTML = `
-      <div id="spotlight-carousel-wrapper" class="relative w-full h-full min-h-[440px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[640px] flex items-end justify-start overflow-hidden bg-[#07090f] select-none">
+      <div id="spotlight-carousel-wrapper" class="relative w-full h-[65vh] sm:h-[72vh] md:h-[80vh] min-h-[460px] max-h-[820px] flex items-end justify-start overflow-hidden bg-[#141414] select-none">
         
-        <!-- Slides Container -->
+        <!-- Slides Track -->
         <div id="spotlight-slides-track" class="absolute inset-0 w-full h-full">
           ${featuredList.map((item, idx) => {
             const isLocked = item.isPremium && !this.isSubscribed;
             const isOnWatchlist = this.watchlist.includes(item.id);
             const isAudio = !item.videoUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series');
             const isActive = idx === this.spotlightIndex;
+            const matchScore = 98 - (idx % 4);
 
             return `
-              <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 pointer-events-none scale-102'}" data-slide-idx="${idx}">
-                <!-- Ambient Blur Fill for Seamless Pro Fitting -->
-                <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-                  <img src="${item.imageUrl || '/images/hampi.jpg'}" class="w-full h-full object-cover object-top filter blur-2xl opacity-25 scale-110" aria-hidden="true">
-                </div>
-
-                <!-- 16:9 Cinema Billboard Image - Strict Top Alignment (Heads, Crowns, Skies & Titles 100% Intact) -->
-                <img src="${item.imageUrl || '/images/hampi.jpg'}" class="spotlight-hero-img absolute inset-0 w-full h-full object-cover object-top filter brightness-[0.80] contrast-[1.05]" alt="${item.title}">
+              <div class="spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 pointer-events-none scale-105'}" data-slide-idx="${idx}">
                 
-                <!-- Seamless Cinematic Gradients -->
-                <div class="absolute inset-0 bg-gradient-to-t from-[#07090f] via-[#07090f]/60 to-transparent pointer-events-none"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-[#07090f]/90 via-[#07090f]/50 to-transparent max-w-3xl pointer-events-none"></div>
-                <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#07090f]/35 to-transparent pointer-events-none"></div>
+                <!-- Cinema Backdrop Image -->
+                <img src="${item.imageUrl || '/images/hampi.jpg'}" class="spotlight-hero-img absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.75] contrast-[1.08]" alt="${item.title}">
                 
-                <!-- Bottom Radial Glow -->
-                <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-gold/10 blur-3xl pointer-events-none"></div>
+                <!-- Netflix Multi-Layer Vignettes -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/50 to-transparent pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#141414]/95 via-[#141414]/60 to-transparent max-w-4xl pointer-events-none"></div>
+                <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
 
-                <!-- Slide Content Information -->
-                <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 md:p-14 z-20 max-w-3xl space-y-3 sm:space-y-4">
+                <!-- Netflix Billboard Content Block -->
+                <div class="absolute bottom-10 sm:bottom-16 left-4 sm:left-12 md:left-16 z-20 max-w-2xl space-y-3 sm:space-y-4 font-sans">
                   
-                  <!-- Category & Badges -->
-                  <div class="flex items-center gap-2 flex-wrap">
-                    <span class="text-[10px] font-mono font-extrabold uppercase tracking-widest text-gold bg-gold/20 border border-gold/40 px-3 py-1 rounded-full backdrop-blur-md shadow-sm">
-                      ⚜️ ${item.category || 'Featured Masterpiece'}
+                  <!-- Billboard Badges -->
+                  <div class="flex items-center gap-2.5 flex-wrap">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-red-600/90 text-white text-[10px] sm:text-xs font-mono font-black uppercase tracking-wider">
+                      🔥 TOP 10 TODAY
                     </span>
-                    ${!item.isPremium ? `
-                      <span class="text-xs font-mono font-extrabold text-emerald-300 bg-emerald-600/30 border border-emerald-400/50 px-2.5 py-0.5 rounded-full backdrop-blur-md animate-pulse">
-                        ⭐ 100% FREE SHOWCASE
-                      </span>
-                    ` : ''}
-                    <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-2.5 py-0.5 rounded-full backdrop-blur-md">
-                      4K ULTRA HD
-                    </span>
-                    <span class="text-xs font-mono text-amber-300 bg-black/60 px-2 py-0.5 rounded-full border border-white/10 backdrop-blur-md">
-                      ${item.rating || '9.9 ★'}
-                    </span>
-                    <span class="text-xs font-mono text-white/70 bg-black/60 px-2 py-0.5 rounded-full border border-white/10 backdrop-blur-md">
-                      ${item.duration || '50 Mins'}
-                    </span>
+                    <span class="text-xs sm:text-sm font-bold text-emerald-400 font-mono">${matchScore}% Match</span>
+                    <span class="text-xs font-mono text-white/70 bg-black/60 px-2 py-0.5 rounded border border-white/20">4K Ultra HD</span>
+                    <span class="text-xs font-mono text-white/70 bg-black/60 px-2 py-0.5 rounded border border-white/20">5.1 Audio</span>
                   </div>
 
-                  <!-- Title -->
-                  <h1 class="text-xl sm:text-3xl md:text-5xl font-black font-serif text-white leading-tight drop-shadow-2xl line-clamp-2">
+                  <!-- Billboard Title -->
+                  <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-serif text-white leading-tight drop-shadow-2xl line-clamp-2">
                     ${item.title}
                   </h1>
 
-                  <!-- Tagline & Description -->
-                  <p class="text-xs sm:text-sm text-white/80 leading-relaxed max-w-2xl font-sans line-clamp-2 sm:line-clamp-3">
-                    ${item.description || item.tagline || 'Experience the authentic depth of ancient Indian heritage, consciousness, and timeless wisdom.'}
+                  <!-- Synopsis -->
+                  <p class="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed font-sans line-clamp-2 sm:line-clamp-3 max-w-xl drop-shadow">
+                    ${item.description || item.tagline || 'Experience timeless Indian wisdom, profound sacred chronicles, and transformative spiritual insight.'}
                   </p>
 
-                  <!-- Spotlight CTA Action Buttons -->
-                  <div class="flex items-center gap-2.5 sm:gap-3 pt-2 flex-wrap">
-                    <button class="spotlight-slide-play-btn px-5 sm:px-8 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-gold/30 hover:scale-105 flex items-center gap-2 cursor-pointer" data-id="${item.id}">
-                      <span>${isLocked ? '🔒 Unlock VIP Stream' : (isAudio ? '🎙️ Listen Saga' : '▶ Start Streaming')}</span>
+                  <!-- Netflix Primary CTA Buttons -->
+                  <div class="flex items-center gap-3 pt-2 flex-wrap">
+                    <button class="spotlight-slide-play-btn netflix-billboard-btn-play" data-id="${item.id}" title="Stream Now">
+                      <span>▶</span>
+                      <span>${isLocked ? 'Unlock Pass' : 'Play'}</span>
                     </button>
 
-                    <button class="spotlight-slide-preview-btn px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all hover:scale-105 flex items-center gap-2 cursor-pointer backdrop-blur-md" data-id="${item.id}">
-                      <span>ℹ️ Synopsis &amp; Chapters</span>
+                    <button class="spotlight-slide-preview-btn netflix-billboard-btn-info" data-id="${item.id}" title="Episodes & Synopsis">
+                      <span>ℹ</span>
+                      <span>More Info</span>
                     </button>
 
-                    <button class="spotlight-slide-watchlist-btn w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/60 border border-white/20 hover:border-gold text-white flex items-center justify-center text-sm sm:text-base hover:scale-110 transition-all cursor-pointer backdrop-blur-md" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
+                    <button class="spotlight-slide-watchlist-btn w-10 h-10 rounded-full border-2 border-white/40 hover:border-white bg-black/40 text-white flex items-center justify-center text-lg hover:scale-110 transition-all cursor-pointer backdrop-blur-md" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
                       ${isOnWatchlist ? '✓' : '＋'}
                     </button>
-
-                    ${!this.isSubscribed ? `
-                      <button onclick="window.appInstance?.openPaymentModal ? window.appInstance.openPaymentModal('trial') : null" class="hidden sm:inline-flex px-4 py-3 sm:py-3.5 rounded-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold font-mono transition-all hover:scale-105 items-center gap-1.5 cursor-pointer">
-                        <span>⚡ Get Pass ₹29</span>
-                      </button>
-                    ` : ''}
                   </div>
 
                 </div>
+
+                <!-- Bottom-Right Maturity Rating & Sound Control -->
+                <div class="hidden sm:flex absolute right-0 bottom-14 sm:bottom-20 z-30 items-center">
+                  <button id="billboard-audio-toggle-btn" class="w-10 h-10 rounded-full border border-white/30 bg-black/50 hover:bg-black/80 text-white flex items-center justify-center text-base mr-4 transition-all cursor-pointer backdrop-blur-md" title="Toggle 432Hz Ambient Audio">
+                    <span id="billboard-audio-icon">🔇</span>
+                  </button>
+                  <div class="netflix-maturity-tag">
+                    U/A 7+
+                  </div>
+                </div>
+
               </div>
             `;
           }).join('')}
         </div>
 
         <!-- Left Navigation Arrow (❮) -->
-        <button id="spotlight-prev-btn" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-gold hover:text-black text-white/90 flex items-center justify-center text-sm sm:text-xl font-bold transition-all border border-white/20 hover:border-gold hover:scale-110 cursor-pointer backdrop-blur-md shadow-lg" title="Previous Slide">
+        <button id="spotlight-prev-btn" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-black/80 text-white/90 flex items-center justify-center text-xl font-bold transition-all border border-white/20 hover:border-white hover:scale-110 cursor-pointer backdrop-blur-md shadow-2xl" title="Previous Slide">
           ❮
         </button>
 
         <!-- Right Navigation Arrow (❯) -->
-        <button id="spotlight-next-btn" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-gold hover:text-black text-white/90 flex items-center justify-center text-sm sm:text-xl font-bold transition-all border border-white/20 hover:border-gold hover:scale-110 cursor-pointer backdrop-blur-md shadow-lg" title="Next Slide">
+        <button id="spotlight-next-btn" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-black/80 text-white/90 flex items-center justify-center text-xl font-bold transition-all border border-white/20 hover:border-white hover:scale-110 cursor-pointer backdrop-blur-md shadow-2xl" title="Next Slide">
           ❯
         </button>
 
-        <!-- Top-Right Minimalist Slide Counter (Mobile & Tablet Friendly) -->
-        <div class="absolute top-3 right-3 sm:top-5 sm:right-6 z-30 flex items-center gap-1.5 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30 text-gold font-mono text-[10px] sm:text-[11px] font-bold shadow-lg">
-          <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-          <span id="spotlight-slide-counter">${this.spotlightIndex + 1} / ${featuredList.length}</span>
-        </div>
-
-        <!-- Bottom Carousel Indicators (Hidden on Mobile to Prevent Button Overlap, Visible on Tablet/Desktop) -->
-        <div class="hidden md:flex absolute bottom-8 lg:bottom-10 right-6 lg:right-12 z-40 items-center gap-2 bg-black/80 backdrop-blur-xl px-3.5 py-2 rounded-full border border-gold/30 shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
-          ${featuredList.map((item, idx) => `
-            <button class="spotlight-indicator-pill w-7 h-7 sm:w-8 sm:h-8 rounded-full text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center cursor-pointer ${idx === this.spotlightIndex ? 'bg-gradient-to-r from-gold to-amber-400 text-black shadow-lg shadow-gold/40 scale-110 ring-2 ring-gold/60' : 'bg-white/10 hover:bg-white/20 text-white/70 hover:text-white'}" data-slide-idx="${idx}" title="${item.title}">
-              ${idx + 1}
-            </button>
+        <!-- Top-Right Netflix Slide Indicator Bars -->
+        <div class="absolute top-4 right-4 sm:top-6 sm:right-10 z-30 flex items-center gap-1.5">
+          ${featuredList.map((_, idx) => `
+            <button class="spotlight-indicator-bar h-1 transition-all duration-300 rounded-full cursor-pointer ${idx === this.spotlightIndex ? 'w-6 bg-red-600' : 'w-2.5 bg-white/30 hover:bg-white/60'}" data-slide-idx="${idx}" title="Slide ${idx + 1}"></button>
           `).join('')}
         </div>
 
       </div>
     `;
 
-    // Slide Switcher Function
-    const goToSlide = (targetIdx) => {
-      if (targetIdx < 0) targetIdx = featuredList.length - 1;
-      if (targetIdx >= featuredList.length) targetIdx = 0;
-      this.spotlightIndex = targetIdx;
-
+    const goToSlide = (newIdx) => {
       const slides = spotlight.querySelectorAll('.spotlight-slide');
+      const bars = spotlight.querySelectorAll('.spotlight-indicator-bar');
+      if (!slides.length) return;
+
+      this.spotlightIndex = (newIdx + featuredList.length) % featuredList.length;
+
       slides.forEach((s, i) => {
-        if (i === targetIdx) {
-          s.className = "spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out opacity-100 z-10 scale-100";
+        if (i === this.spotlightIndex) {
+          s.classList.remove('opacity-0', 'pointer-events-none', 'scale-105');
+          s.classList.add('opacity-100', 'z-10', 'scale-100');
         } else {
-          s.className = "spotlight-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out opacity-0 z-0 pointer-events-none scale-102";
+          s.classList.remove('opacity-100', 'z-10', 'scale-100');
+          s.classList.add('opacity-0', 'pointer-events-none', 'scale-105');
         }
       });
 
-      const counter = spotlight.querySelector('#spotlight-slide-counter');
-      if (counter) counter.textContent = `${targetIdx + 1} / ${featuredList.length}`;
-
-      const pills = spotlight.querySelectorAll('.spotlight-indicator-pill');
-      pills.forEach((p, i) => {
-        if (i === targetIdx) {
-          p.className = "spotlight-indicator-pill w-7 h-7 sm:w-8 sm:h-8 rounded-full text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center cursor-pointer bg-gradient-to-r from-gold to-amber-400 text-black shadow-lg shadow-gold/40 scale-110 ring-2 ring-gold/60";
+      bars.forEach((b, i) => {
+        if (i === this.spotlightIndex) {
+          b.className = 'spotlight-indicator-bar h-1 transition-all duration-300 rounded-full cursor-pointer w-6 bg-red-600';
         } else {
-          p.className = "spotlight-indicator-pill w-7 h-7 sm:w-8 sm:h-8 rounded-full text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center cursor-pointer bg-white/10 hover:bg-white/20 text-white/70 hover:text-white";
+          b.className = 'spotlight-indicator-bar h-1 transition-all duration-300 rounded-full cursor-pointer w-2.5 bg-white/30 hover:bg-white/60';
         }
       });
     };
 
-    // Bind Prev & Next Buttons
-    const prevBtn = spotlight.querySelector('#spotlight-prev-btn');
-    const nextBtn = spotlight.querySelector('#spotlight-next-btn');
-
-    if (prevBtn) {
-      prevBtn.onclick = (e) => {
-        e.stopPropagation();
-        goToSlide(this.spotlightIndex - 1);
-        restartAutoPlay();
-      };
-    }
-
-    if (nextBtn) {
-      nextBtn.onclick = (e) => {
-        e.stopPropagation();
-        goToSlide(this.spotlightIndex + 1);
-        restartAutoPlay();
-      };
-    }
-
-    // Mobile Touch Gesture Support (Swipe Left / Right like Netflix)
-    const carouselWrapper = spotlight.querySelector('#spotlight-carousel-wrapper');
-    if (carouselWrapper) {
-      let touchStartX = 0;
-      let touchStartY = 0;
-      carouselWrapper.addEventListener('touchstart', (e) => {
-        if (e.changedTouches && e.changedTouches[0]) {
-          touchStartX = e.changedTouches[0].clientX;
-          touchStartY = e.changedTouches[0].clientY;
-        }
-      }, { passive: true });
-
-      carouselWrapper.addEventListener('touchend', (e) => {
-        if (e.changedTouches && e.changedTouches[0]) {
-          const touchEndX = e.changedTouches[0].clientX;
-          const touchEndY = e.changedTouches[0].clientY;
-          const diffX = touchStartX - touchEndX;
-          const diffY = touchStartY - touchEndY;
-          if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-            if (diffX > 0) {
-              goToSlide(this.spotlightIndex + 1);
-            } else {
-              goToSlide(this.spotlightIndex - 1);
-            }
-            restartAutoPlay();
-          }
-        }
-      }, { passive: true });
-    }
-
-    // Bind Indicator Pills
-    spotlight.querySelectorAll('.spotlight-indicator-pill').forEach(pill => {
-      pill.onclick = (e) => {
-        e.stopPropagation();
-        const idx = parseInt(pill.getAttribute('data-slide-idx') || '0', 10);
-        goToSlide(idx);
-        restartAutoPlay();
-      };
+    spotlight.querySelector('#spotlight-prev-btn')?.addEventListener('click', () => {
+      goToSlide(this.spotlightIndex - 1);
+      resetAutoSlide();
     });
 
-    // Bind Action Buttons across all slides
+    spotlight.querySelector('#spotlight-next-btn')?.addEventListener('click', () => {
+      goToSlide(this.spotlightIndex + 1);
+      resetAutoSlide();
+    });
+
+    spotlight.querySelectorAll('.spotlight-indicator-bar').forEach(bar => {
+      bar.addEventListener('click', () => {
+        const sIdx = parseInt(bar.getAttribute('data-slide-idx') || '0', 10);
+        goToSlide(sIdx);
+        resetAutoSlide();
+      });
+    });
+
+    // Billboard Audio Toggle
+    const audioBtn = spotlight.querySelector('#billboard-audio-toggle-btn');
+    const audioIcon = spotlight.querySelector('#billboard-audio-icon');
+    if (audioBtn && this.audioDrone) {
+      audioBtn.onclick = () => {
+        const isNowOn = this.audioDrone.toggle();
+        if (audioIcon) audioIcon.textContent = isNowOn ? '🔊' : '🔇';
+      };
+    }
+
+    // Play & Preview Event Delegation
     spotlight.querySelectorAll('.spotlight-slide-play-btn').forEach(btn => {
       btn.onclick = (e) => {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
-        let found = all.find(x => String(x.id) === String(id));
-        if (!found) {
-          const fallbackList = (typeof heritageData !== 'undefined' ? heritageData.content : []).concat(typeof window !== 'undefined' && window.COURSES_DATA ? window.COURSES_DATA.content : []);
-          found = fallbackList.find(x => x && String(x.id) === String(id));
-        }
+        const found = all.find(x => String(x.id) === String(id));
         if (found) {
           const isAudio = !found.videoUrl && (found.category === 'Audiobooks & Legends' || found.category === 'Ebook & Audio Series');
           this.playContent(found, isAudio);
-        } else if (id) {
+        } else {
           this.playContent(id, false);
         }
       };
@@ -1138,16 +1079,7 @@ class AppController {
       btn.onclick = (e) => {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
-        let found = all.find(x => String(x.id) === String(id));
-        if (!found) {
-          const fallbackList = (typeof heritageData !== 'undefined' ? heritageData.content : []).concat(typeof window !== 'undefined' && window.COURSES_DATA ? window.COURSES_DATA.content : []);
-          found = fallbackList.find(x => x && String(x.id) === String(id));
-        }
-        if (found) {
-          this.openQuickPreviewModal(found);
-        } else if (id) {
-          this.openQuickPreviewModal(id);
-        }
+        this.openQuickPreviewModal(id);
       };
     });
 
@@ -1161,36 +1093,16 @@ class AppController {
       };
     });
 
-    // Auto Play Timer (Rotates every 5.5s)
-    const startAutoPlay = () => {
+    const resetAutoSlide = () => {
       if (this._spotlightInterval) clearInterval(this._spotlightInterval);
       this._spotlightInterval = setInterval(() => {
         goToSlide(this.spotlightIndex + 1);
-      }, 5500);
+      }, 7000);
     };
-
-    const stopAutoPlay = () => {
-      if (this._spotlightInterval) {
-        clearInterval(this._spotlightInterval);
-        this._spotlightInterval = null;
-      }
-    };
-
-    const restartAutoPlay = () => {
-      stopAutoPlay();
-      startAutoPlay();
-    };
-
-    const wrapper = spotlight.querySelector('#spotlight-carousel-wrapper');
-    if (wrapper) {
-      wrapper.onmouseenter = stopAutoPlay;
-      wrapper.onmouseleave = startAutoPlay;
-    }
-
-    startAutoPlay();
+    resetAutoSlide();
   }
 
-  // ── 📚 MASTER CONTENT ROWS RENDERING (7 CATEGORIES + SLIDERS) ──
+    // ── 📚 MASTER CONTENT ROWS RENDERING (7 CATEGORIES + NETFLIX SLIDERS) ──
   renderContentRows() {
     const standardContainer = document.getElementById('standard-library-rows');
     if (!this.contentData) return;
@@ -1218,13 +1130,23 @@ class AppController {
     ];
 
     const categoryIcons = {
-      "Docu-Series": "🎬",
+      "Docu-Series": "🍿",
       "Audiobooks & Legends": "🎧",
-      "God Series": "🔱",
+      "God Series": "🏹",
       "Virtual Tours": "🛕",
-      "Kids Stories": "🧒",
-      "Unknown Knowledge": "🔒",
+      "Kids Stories": "👶",
+      "Unknown Knowledge": "🏛️",
       "Wellness & Mudra Shastra": "🧘"
+    };
+
+    const categoryTitles = {
+      "Docu-Series": "Trending Sagas & 4K Blockbusters",
+      "Audiobooks & Legends": "Screen-Free Audiobooks & Sacred Legends",
+      "God Series": "Sacred Epics & Divine Avatars (Shiva, Krishna, Rama)",
+      "Virtual Tours": "24/7 Live Shrines & Sacred Bharat Pilgrimage",
+      "Kids Stories": "Kids & Family Gurukula (Panchatantra & Math)",
+      "Unknown Knowledge": "Ancient Engineering & Lost Civilizations",
+      "Wellness & Mudra Shastra": "Mind Healing, Mudras & 432Hz Shanti"
     };
 
     const categoryIds = {
@@ -1244,18 +1166,19 @@ class AppController {
       const rowId = 'scroll-row-' + catIdx;
       const parentId = categoryIds[cat] || ('row-parent-' + catIdx);
       const icon = categoryIcons[cat] || '✨';
+      const displayTitle = categoryTitles[cat] || cat;
 
-      const cardsHTML = items.map(item => this.createContentCardHTML(item, item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series')).join('');
+      const cardsHTML = items.map(item => this.createContentCardHTML(item, !item.videoUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series'))).join('');
 
       return `
-        <div id="${parentId}" class="netflix-row space-y-3">
+        <div id="${parentId}" class="netflix-row space-y-3 relative group">
           <!-- Row Header with Nav Buttons -->
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2.5">
               <span class="text-xl">${icon}</span>
               <div>
                 <h3 class="text-lg sm:text-xl font-bold font-serif text-white tracking-wide flex items-center gap-2">
-                  <span>${cat}</span>
+                  <span>${displayTitle}</span>
                   <span class="text-[10px] font-mono text-gold bg-gold/15 border border-gold/30 px-2 py-0.5 rounded-full font-bold">${items.length} Sagas</span>
                 </h3>
               </div>
@@ -1267,9 +1190,13 @@ class AppController {
             </div>
           </div>
 
-          <!-- Horizontal Sliding Carousel Container -->
-          <div id="${rowId}" class="flex gap-4 sm:gap-5 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth scroll-snap-x">
-            ${cardsHTML}
+          <!-- Horizontal Sliding Carousel Container with Netflix Handles -->
+          <div class="relative">
+            <button class="netflix-row-handle left row-prev-btn hidden md:flex" data-row="${rowId}" aria-label="Scroll Left">‹</button>
+            <div id="${rowId}" class="flex gap-4 sm:gap-5 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth scroll-snap-x">
+              ${cardsHTML}
+            </div>
+            <button class="netflix-row-handle right row-next-btn hidden md:flex" data-row="${rowId}" aria-label="Scroll Right">›</button>
           </div>
         </div>
       `;
@@ -1277,13 +1204,13 @@ class AppController {
 
     standardContainer.innerHTML = rowsHTML;
 
-    // Bind scroll buttons for horizontal carousels
-    document.querySelectorAll('.carousel-nav-btn').forEach(btn => {
+    // Bind scroll buttons & Netflix handles for horizontal carousels
+    document.querySelectorAll('.carousel-nav-btn, .netflix-row-handle').forEach(btn => {
       btn.onclick = () => {
         const targetRowId = btn.getAttribute('data-row');
         const scrollRow = document.getElementById(targetRowId);
         if (scrollRow) {
-          const isNext = btn.classList.contains('row-next-btn');
+          const isNext = btn.classList.contains('row-next-btn') || btn.classList.contains('right');
           const scrollAmount = scrollRow.clientWidth * 0.75;
           scrollRow.scrollBy({ left: isNext ? scrollAmount : -scrollAmount, behavior: 'smooth' });
         }
@@ -1311,17 +1238,21 @@ class AppController {
     if (this.watchlist && this.watchlist.length > 0) {
       const watchlistItems = all.filter(x => this.watchlist.includes(x.id));
       if (watchlistItems.length > 0) {
-        const cards = watchlistItems.map(item => this.createContentCardHTML(item, item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series')).join('');
+        const cards = watchlistItems.map(item => this.createContentCardHTML(item, !item.videoUrl && (item.category === 'Audiobooks & Legends' || item.category === 'Ebook & Audio Series'))).join('');
         dynamicHTML += `
-          <div class="netflix-row space-y-3">
+          <div class="netflix-row space-y-3 relative group">
             <div class="flex items-center justify-between">
               <h3 class="text-lg sm:text-xl font-bold font-serif text-white flex items-center gap-2">
                 <span>🔖</span> <span>My Sacred Watchlist</span>
                 <span class="text-[10px] font-mono text-gold bg-gold/15 border border-gold/30 px-2 py-0.5 rounded-full font-bold">${watchlistItems.length}</span>
               </h3>
             </div>
-            <div class="flex gap-4 sm:gap-5 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth">
-              ${cards}
+            <div class="relative">
+              <button class="netflix-row-handle left row-prev-btn hidden md:flex" data-row="watchlist-scroll-row" aria-label="Scroll Left">‹</button>
+              <div id="watchlist-scroll-row" class="flex gap-4 sm:gap-5 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth">
+                ${cards}
+              </div>
+              <button class="netflix-row-handle right row-next-btn hidden md:flex" data-row="watchlist-scroll-row" aria-label="Scroll Right">›</button>
             </div>
           </div>
         `;
@@ -1334,68 +1265,72 @@ class AppController {
     }
   }
 
-  // ── 🎴 GENERATE SINGLE HIGH-FIDELITY CONTENT CARD HTML ──
+  // ── 🎴 GENERATE AUTHENTIC NETFLIX CONTENT CARD HTML ──
   createContentCardHTML(item, isAudio = false, customClass = '') {
     if (!item) return '';
     const isLocked = item.isPremium && !this.isSubscribed;
     const isOnWatchlist = this.watchlist.includes(item.id);
-    const cardWidth = customClass || 'w-[170px] xs:w-[195px] sm:w-[220px] md:w-[240px]';
+    const cardWidth = customClass || 'w-[185px] xs:w-[215px] sm:w-[240px] md:w-[265px]';
+    const matchScore = 95 + ((typeof item.id === 'string' ? item.id.length : 3) % 5);
 
     return `
-      <div class="content-card ${cardWidth} flex-shrink-0 rounded-2xl overflow-hidden bg-[#0d0f16] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/60 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/15" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
+      <div class="content-card ${cardWidth} flex-shrink-0 rounded-lg overflow-hidden bg-[#181818] border border-white/[0.08] cursor-pointer relative group transition-all duration-300 hover:border-gold/60 hover:scale-105 hover:z-30 hover:shadow-2xl hover:shadow-black" data-id="${item.id}" data-type="${isAudio ? 'audio' : 'video'}">
         
         <!-- Top Badges -->
-        <div class="absolute top-2.5 right-2.5 z-20 flex items-center gap-1.5">
+        <div class="absolute top-2 right-2 z-20 flex items-center gap-1.5">
           ${item.isPremium ? `
-            <span class="w-5 h-5 rounded-full ${isLocked ? 'bg-red-500/20 border-red-500/40 text-red-400' : 'bg-gold/20 border-gold/40 text-gold'} border flex items-center justify-center text-[9px] backdrop-blur-md">
+            <span class="w-5 h-5 rounded-full ${isLocked ? 'bg-red-600/30 border-red-500/50 text-red-300' : 'bg-gold/30 border-gold/50 text-gold'} border flex items-center justify-center text-[9px] backdrop-blur-md">
               ${isLocked ? '🔒' : '🔑'}
             </span>
           ` : `
-            <span class="text-[8px] font-extrabold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-1.5 py-0.5 rounded backdrop-blur-md font-mono">
+            <span class="text-[8px] font-extrabold text-emerald-300 bg-emerald-600/30 border border-emerald-500/40 px-1.5 py-0.5 rounded backdrop-blur-md font-mono">
               FREE
             </span>
           `}
         </div>
 
-        <!-- Thumbnail Image Container -->
-        <div class="h-36 sm:h-40 w-full relative overflow-hidden bg-black/60">
-          <img src="${item.imageUrl || '/images/hampi.jpg'}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="${item.title}">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0d0f16] via-transparent to-black/25 z-10 pointer-events-none"></div>
+        <!-- 16:9 Thumbnail Image -->
+        <div class="aspect-video w-full relative overflow-hidden bg-black/60">
+          <img src="${item.imageUrl || '/images/hampi.jpg'}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108" alt="${item.title}">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-black/20 z-10 pointer-events-none"></div>
           
-          <!-- Hover Micro-Action Tray -->
-          <div class="card-hover-actions absolute inset-x-0 bottom-2.5 px-3 flex items-center justify-between z-20">
+          <!-- Netflix Hover Action Tray -->
+          <div class="card-hover-actions absolute inset-x-0 bottom-2 px-2.5 flex items-center justify-between z-20">
             <div class="flex items-center gap-1.5">
-              <button class="quick-play-btn w-8 h-8 rounded-full bg-gold hover:bg-gold/90 text-black flex items-center justify-center text-xs font-bold shadow-lg shadow-gold/30 hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="Play Now">
+              <button class="quick-play-btn w-8 h-8 rounded-full bg-white hover:bg-white/90 text-black flex items-center justify-center text-xs font-bold shadow-lg hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="Play Now">
                 ${isLocked ? '🔒' : '▶'}
               </button>
-              <button class="watchlist-toggle-btn w-8 h-8 rounded-full bg-black/70 border border-white/20 hover:border-gold text-white flex items-center justify-center text-xs hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
+              <button class="watchlist-toggle-btn w-8 h-8 rounded-full bg-[#2a2a2a]/80 border border-white/20 hover:border-white text-white flex items-center justify-center text-xs hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
                 ${isOnWatchlist ? '✓' : '＋'}
               </button>
             </div>
-            <button class="quick-preview-btn w-8 h-8 rounded-full bg-black/70 border border-white/20 hover:border-gold text-white flex items-center justify-center text-xs hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="More Details &amp; Episodes">
-              ℹ
+            <button class="quick-preview-btn w-8 h-8 rounded-full bg-[#2a2a2a]/80 border border-white/20 hover:border-white text-white flex items-center justify-center text-xs hover:scale-110 transition-all cursor-pointer" data-id="${item.id}" title="Episodes &amp; More Info">
+              ∨
             </button>
           </div>
         </div>
 
-        <!-- Meta Information Body -->
-        <div class="p-3 space-y-1">
-          <div class="flex items-center justify-between text-[10px] text-white/60 font-mono">
-            <span class="text-gold font-bold truncate max-w-[120px]">${item.category || 'Vedic Saga'}</span>
-            <span>${item.duration || '30 Mins'}</span>
+        <!-- Card Meta Details -->
+        <div class="p-2.5 space-y-1">
+          <div class="flex items-center gap-2 text-[10px] font-mono">
+            <span class="text-emerald-400 font-bold">${matchScore}% Match</span>
+            <span class="text-white/50 border border-white/10 px-1 rounded text-[8px]">U/A 7+</span>
+            <span class="text-white/60 ml-auto">${item.duration || '30m'}</span>
           </div>
           <h4 class="font-bold text-xs sm:text-sm font-serif text-white line-clamp-1 group-hover:text-gold transition-colors">${item.title}</h4>
-          <p class="text-[10px] text-white/50 line-clamp-1 font-sans">${item.tagline || item.description || ''}</p>
-          <div class="flex items-center gap-1.5 pt-1 text-[8px] font-mono text-white/50">
-            <span class="border border-white/10 px-1 rounded">4K UHD</span>
-            <span class="text-gold font-bold ml-auto">${item.rating || '9.8 ★'}</span>
+          <div class="flex items-center gap-1.5 text-[9px] text-white/50 font-sans truncate">
+            <span>${item.category || 'Vedic Saga'}</span>
+            <span>&bull;</span>
+            <span class="text-gold/90 font-mono">${item.rating || '9.8 ★'}</span>
+            <span>&bull;</span>
+            <span>4K HDR</span>
           </div>
         </div>
       </div>
     `;
   }
 
-  // ── 🔗 BIND CARD CLICKS & INTERACTIONS ──
+    // ── 🔗 BIND CARD CLICKS & INTERACTIONS ──
   bindCardInteractions(container) {
     if (!container) return;
     const all = (this.contentData && this.contentData.content) || (typeof heritageData !== 'undefined' ? heritageData.content : []) || (typeof window !== 'undefined' && window.COURSES_DATA ? window.COURSES_DATA.content : []) || [];

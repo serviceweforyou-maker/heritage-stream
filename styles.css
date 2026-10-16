@@ -1261,3 +1261,111 @@ body.modal-open .floating-btn-group {
   will-change: transform, opacity;
 }
 
+
+
+/* ==========================================================================
+   🎬 NETFLIX OTT AUTHENTIC UI ENHANCEMENTS (v151.0)
+   ========================================================================== */
+.netflix-billboard-btn-play {
+  background-color: #ffffff;
+  color: #000000 !important;
+  font-weight: 800;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.95rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  user-select: none;
+}
+.netflix-billboard-btn-play:hover {
+  background-color: rgba(255, 255, 255, 0.88);
+  transform: scale(1.04);
+}
+
+.netflix-billboard-btn-info {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.95rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  user-select: none;
+}
+.netflix-billboard-btn-info:hover {
+  background-color: rgba(109, 109, 110, 0.45);
+  transform: scale(1.04);
+}
+
+.netflix-maturity-tag {
+  background-color: rgba(20, 20, 20, 0.75);
+  border-left: 3px solid #d4af37;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.9rem;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(8px);
+  user-select: none;
+}
+
+/* Netflix Row Hover Handles */
+.netflix-row-handle {
+  position: absolute;
+  top: 0;
+  bottom: 1rem;
+  width: 3.5rem;
+  background: rgba(10, 12, 18, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.25s ease, background 0.25s ease;
+  z-index: 30;
+  cursor: pointer;
+}
+.netflix-row:hover .netflix-row-handle {
+  opacity: 1;
+}
+.netflix-row-handle:hover {
+  background: rgba(10, 12, 18, 0.9);
+  color: var(--gold);
+}
+.netflix-row-handle.left {
+  left: 0;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.netflix-row-handle.right {
+  right: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+/* Netflix Scrubber Bar on Cards */
+.netflix-card-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  z-index: 25;
+}
+.netflix-card-progress-fill {
+  height: 100%;
+  background: #e50914;
+}
