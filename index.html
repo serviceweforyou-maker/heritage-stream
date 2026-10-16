@@ -2144,7 +2144,298 @@
   </section>
 
   <!-- Main Container -->
+  
   <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-16 space-y-12 md:space-y-24 w-full">
+
+    <!-- ── 🧭 SANATANA GUIDED SADHANA & GOAL COMPASS (LINEAR A ➔ B ➔ C ➔ D JOURNEY) ── -->
+    <section id="guided-sadhana-hub" class="space-y-8 scroll-mt-28">
+
+      <!-- Top Control Bar: Mode Switcher & Spiritual Passport -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 p-4 rounded-3xl bg-gradient-to-r from-[#121522] via-[#0d0f17] to-[#121522] border border-gold/30 shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <!-- Left: Spiritual Passport Badge -->
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-gold/30 to-amber-500/10 border border-gold/50 flex items-center justify-center text-2xl shadow-lg shadow-gold/20 flex-shrink-0">
+            <span id="passport-level-icon">🥉</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span id="passport-level-name" class="text-xs sm:text-sm font-extrabold font-serif text-white uppercase tracking-wider">Level 1: Jijnasu (Seeker)</span>
+              <span id="sadhana-streak-badge" class="px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] font-mono font-bold">🔥 0-Day Streak</span>
+            </div>
+            <p id="passport-milestone-hint" class="text-[11px] text-white/60 font-sans mt-0.5">Complete today's 4-step ritual to unlock Sadhaka rank!</p>
+          </div>
+        </div>
+
+        <!-- Right: Mode Switcher (Guided Pathway vs Explorer Mode) -->
+        <div class="flex items-center gap-1.5 p-1 bg-black/60 rounded-2xl border border-white/10 w-full md:w-auto justify-center">
+          <button id="view-mode-guided-btn" class="flex-1 md:flex-none px-4 py-2 rounded-xl text-xs font-bold font-mono transition-all bg-gold text-black shadow-lg shadow-gold/20 flex items-center justify-center gap-1.5 cursor-pointer">
+            <span>🧭</span>
+            <span>Guided Pathway</span>
+          </button>
+          <button id="view-mode-explorer-btn" class="flex-1 md:flex-none px-4 py-2 rounded-xl text-xs font-bold font-mono transition-all text-white/60 hover:text-white flex items-center justify-center gap-1.5 cursor-pointer">
+            <span>🌌</span>
+            <span>Explorer (All 260+)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 1-Click Spiritual Goal Compass ("Where do you want to start?") -->
+      <div class="space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-gold">Step 1 &bull; Choose Your Goal</span>
+            <h2 class="text-lg sm:text-xl md:text-2xl font-black font-serif text-white">What Brings You to Sanatana360 Today?</h2>
+          </div>
+          <p class="text-xs text-white/50 font-sans">Pick 1 goal — we will personalize your journey:</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          
+          <!-- Goal 1: Peace & Sleep -->
+          <div class="goal-compass-card p-4 rounded-2xl bg-[#0e1017] border border-white/10 hover:border-emerald-400/60 hover:bg-emerald-950/20 transition-all duration-300 cursor-pointer group relative overflow-hidden" data-goal="peace">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-xl group-hover:scale-110 transition-transform flex-shrink-0">
+                🌿
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-sm font-bold font-serif text-white group-hover:text-emerald-300 transition-colors">Peace &amp; Deep Sleep</h3>
+                  <span class="goal-selected-indicator hidden text-emerald-400 text-xs">✓ Active</span>
+                </div>
+                <p class="text-[11px] text-white/60 leading-relaxed font-sans">Relieve anxiety, balance chakras with mudras &amp; sleep with 432Hz Vedic Nidra.</p>
+                <div class="pt-1 text-[10px] font-mono text-emerald-400/80 font-bold flex items-center gap-1">
+                  <span>Pathway: Mudra ➔ 432Hz ➔ Nidra</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Goal 2: Daily Devotion -->
+          <div class="goal-compass-card p-4 rounded-2xl bg-[#0e1017] border border-white/10 hover:border-gold/60 hover:bg-gold/5 transition-all duration-300 cursor-pointer group relative overflow-hidden" data-goal="devotion">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-xl group-hover:scale-110 transition-transform flex-shrink-0">
+                🛕
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-sm font-bold font-serif text-white group-hover:text-gold transition-colors">Daily Devotion &amp; Puja</h3>
+                  <span class="goal-selected-indicator hidden text-gold text-xs">✓ Active</span>
+                </div>
+                <p class="text-[11px] text-white/60 leading-relaxed font-sans">Morning puja in your personal mandir, 108 japa mala, and live aarti at 50+ shrines.</p>
+                <div class="pt-1 text-[10px] font-mono text-gold/80 font-bold flex items-center gap-1">
+                  <span>Pathway: Mandir ➔ Japa ➔ Darshan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Goal 3: Wisdom & Gita -->
+          <div class="goal-compass-card p-4 rounded-2xl bg-[#0e1017] border border-white/10 hover:border-amber-400/60 hover:bg-amber-950/20 transition-all duration-300 cursor-pointer group relative overflow-hidden" data-goal="wisdom">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-xl group-hover:scale-110 transition-transform flex-shrink-0">
+                📖
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-sm font-bold font-serif text-white group-hover:text-amber-300 transition-colors">Wisdom &amp; Gita Guidance</h3>
+                  <span class="goal-selected-indicator hidden text-amber-400 text-xs">✓ Active</span>
+                </div>
+                <p class="text-[11px] text-white/60 leading-relaxed font-sans">Resolve modern stress with Bhagavad Gita AI, 3D Granthalaya, and sage discourses.</p>
+                <div class="pt-1 text-[10px] font-mono text-amber-400/80 font-bold flex items-center gap-1">
+                  <span>Pathway: Geeta AI ➔ Granth ➔ Sage</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Goal 4: Culture for Kids -->
+          <div class="goal-compass-card p-4 rounded-2xl bg-[#0e1017] border border-white/10 hover:border-cyan-400/60 hover:bg-cyan-950/20 transition-all duration-300 cursor-pointer group relative overflow-hidden" data-goal="kids">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl group-hover:scale-110 transition-transform flex-shrink-0">
+                👶
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-sm font-bold font-serif text-white group-hover:text-cyan-300 transition-colors">Culture for Kids</h3>
+                  <span class="goal-selected-indicator hidden text-cyan-400 text-xs">✓ Active</span>
+                </div>
+                <p class="text-[11px] text-white/60 leading-relaxed font-sans">Bedtime Panchatantra audio stories, mental Vedic math games, and Sanskrit karaoke.</p>
+                <div class="pt-1 text-[10px] font-mono text-cyan-400/80 font-bold flex items-center gap-1">
+                  <span>Pathway: Stories ➔ Math ➔ Shloka</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── ☀️ THE 4-STEP DAILY SADHANA ROUTINE (A ➔ B ➔ C ➔ D) ── -->
+      <div class="p-5 sm:p-7 rounded-3xl bg-gradient-to-br from-[#11131c] via-[#0b0d14] to-black border border-gold/40 shadow-2xl space-y-6 relative overflow-hidden">
+        
+        <!-- Header & Progress Tracker -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-5">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-gold/20 border border-gold/40 text-gold text-[10px] font-mono font-bold uppercase tracking-wider">Step 2 &bull; Daily Sadhana</span>
+              <span class="text-xs text-white/50 font-mono">15 Mins Total</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black font-serif text-white">Your Daily Linear Spiritual Blueprint (A ➔ B ➔ C ➔ D)</h2>
+            <p class="text-xs text-white/70 font-sans">Do not jump randomly. Follow these 4 sacred micro-steps every day for unbroken peace &amp; growth.</p>
+          </div>
+
+          <!-- Progress Ring & Reward Badge -->
+          <div class="flex items-center gap-4 bg-white/5 border border-white/10 p-3 rounded-2xl flex-shrink-0">
+            <div class="text-right">
+              <div class="text-xs font-mono font-bold text-gold flex items-center justify-end gap-1">
+                <span>🪙</span> <span id="sadhana-coins-today">+0 / +200</span>
+              </div>
+              <p id="sadhana-progress-label" class="text-[10px] text-white/60 font-mono">0 of 4 Completed</p>
+            </div>
+            
+            <div class="relative w-12 h-12 flex items-center justify-center">
+              <svg class="w-12 h-12 transform -rotate-90" viewBox="0 0 36 36">
+                <path class="text-white/10" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path id="sadhana-progress-ring" class="text-gold transition-all duration-500" stroke-dasharray="0, 100" stroke-width="3.5" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+              <span id="sadhana-progress-percent" class="absolute text-[11px] font-mono font-bold text-white">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- The 4 Linear Step Cards (A, B, C, D) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+          <!-- Step A: Morning Japa -->
+          <div id="sadhana-step-card-a" class="sadhana-step-card p-4 rounded-2xl bg-[#090b10] border border-white/10 hover:border-gold/50 transition-all flex flex-col justify-between space-y-4 group relative">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="w-7 h-7 rounded-full bg-gold/20 text-gold border border-gold/40 flex items-center justify-center text-xs font-black font-mono">A</span>
+                <span class="text-[10px] font-mono text-amber-300/80 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">🌅 07:00 AM</span>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold font-serif text-white group-hover:text-gold transition-colors">Gayatri Japa (108 Beads)</h4>
+                <p class="text-[11px] text-white/60 font-sans mt-1">Awaken your intellect with digital 108 mantra chanting.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 pt-2 border-t border-white/5">
+              <div class="flex items-center justify-between text-[10px] font-mono text-white/50">
+                <span>⏱️ 5 Mins</span>
+                <span class="text-gold">+50 Coins</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="japa-mala.html" target="_blank" class="sadhana-action-link flex-1 py-2 px-3 rounded-xl bg-white/10 hover:bg-gold hover:text-black text-white text-xs font-bold font-mono text-center transition-all flex items-center justify-center gap-1">
+                  <span>Start Beads</span> <span>➔</span>
+                </a>
+                <button class="sadhana-check-btn w-9 h-9 rounded-xl border border-white/20 bg-white/5 hover:border-gold text-white flex items-center justify-center text-sm transition-all cursor-pointer" data-step="a" title="Mark Done">
+                  ✓
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step B: Midday Gita -->
+          <div id="sadhana-step-card-b" class="sadhana-step-card p-4 rounded-2xl bg-[#090b10] border border-white/10 hover:border-gold/50 transition-all flex flex-col justify-between space-y-4 group relative">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="w-7 h-7 rounded-full bg-gold/20 text-gold border border-gold/40 flex items-center justify-center text-xs font-black font-mono">B</span>
+                <span class="text-[10px] font-mono text-amber-300/80 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">☀️ 01:00 PM</span>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold font-serif text-white group-hover:text-gold transition-colors">Geeta AI Life Clarity</h4>
+                <p class="text-[11px] text-white/60 font-sans mt-1">Ask 1 dilemma to Sri Krishna for philosophical clarity.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 pt-2 border-t border-white/5">
+              <div class="flex items-center justify-between text-[10px] font-mono text-white/50">
+                <span>⏱️ 2 Mins</span>
+                <span class="text-gold">+50 Coins</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="geeta-ai.html" target="_blank" class="sadhana-action-link flex-1 py-2 px-3 rounded-xl bg-white/10 hover:bg-gold hover:text-black text-white text-xs font-bold font-mono text-center transition-all flex items-center justify-center gap-1">
+                  <span>Ask Krishna</span> <span>➔</span>
+                </a>
+                <button class="sadhana-check-btn w-9 h-9 rounded-xl border border-white/20 bg-white/5 hover:border-gold text-white flex items-center justify-center text-sm transition-all cursor-pointer" data-step="b" title="Mark Done">
+                  ✓
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step C: Evening Aarti -->
+          <div id="sadhana-step-card-c" class="sadhana-step-card p-4 rounded-2xl bg-[#090b10] border border-white/10 hover:border-gold/50 transition-all flex flex-col justify-between space-y-4 group relative">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="w-7 h-7 rounded-full bg-gold/20 text-gold border border-gold/40 flex items-center justify-center text-xs font-black font-mono">C</span>
+                <span class="text-[10px] font-mono text-amber-300/80 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">🛕 06:30 PM</span>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold font-serif text-white group-hover:text-gold transition-colors">Sandhya Aarti &amp; Diya</h4>
+                <p class="text-[11px] text-white/60 font-sans mt-1">Light a digital diya &amp; attend live aarti across 50 shrines.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 pt-2 border-t border-white/5">
+              <div class="flex items-center justify-between text-[10px] font-mono text-white/50">
+                <span>⏱️ 5 Mins</span>
+                <span class="text-gold">+50 Coins</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="mera-mandir.html" target="_blank" class="sadhana-action-link flex-1 py-2 px-3 rounded-xl bg-white/10 hover:bg-gold hover:text-black text-white text-xs font-bold font-mono text-center transition-all flex items-center justify-center gap-1">
+                  <span>Enter Mandir</span> <span>➔</span>
+                </a>
+                <button class="sadhana-check-btn w-9 h-9 rounded-xl border border-white/20 bg-white/5 hover:border-gold text-white flex items-center justify-center text-sm transition-all cursor-pointer" data-step="c" title="Mark Done">
+                  ✓
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step D: Night Nidra -->
+          <div id="sadhana-step-card-d" class="sadhana-step-card p-4 rounded-2xl bg-[#090b10] border border-white/10 hover:border-gold/50 transition-all flex flex-col justify-between space-y-4 group relative">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="w-7 h-7 rounded-full bg-gold/20 text-gold border border-gold/40 flex items-center justify-center text-xs font-black font-mono">D</span>
+                <span class="text-[10px] font-mono text-indigo-300/80 bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">🌙 10:00 PM</span>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold font-serif text-white group-hover:text-indigo-300 transition-colors">432Hz Vedic Nidra Sleep</h4>
+                <p class="text-[11px] text-white/60 font-sans mt-1">Delta-wave guided yoga nidra for deep anxiety-free sleep.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 pt-2 border-t border-white/5">
+              <div class="flex items-center justify-between text-[10px] font-mono text-white/50">
+                <span>⏱️ 10 Mins</span>
+                <span class="text-gold">+50 Coins</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="vedic-nidra.html" target="_blank" class="sadhana-action-link flex-1 py-2 px-3 rounded-xl bg-white/10 hover:bg-gold hover:text-black text-white text-xs font-bold font-mono text-center transition-all flex items-center justify-center gap-1">
+                  <span>Sleep Session</span> <span>➔</span>
+                </a>
+                <button class="sadhana-check-btn w-9 h-9 rounded-xl border border-white/20 bg-white/5 hover:border-gold text-white flex items-center justify-center text-sm transition-all cursor-pointer" data-step="d" title="Mark Done">
+                  ✓
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Completion Celebration Banner (shown when 4/4 complete) -->
+        <div id="sadhana-all-done-banner" class="hidden p-4 rounded-2xl bg-gradient-to-r from-gold/20 via-amber-500/20 to-gold/20 border border-gold/50 text-center space-y-1">
+          <p class="text-sm font-extrabold text-gold font-serif">🎉 Sadhana Siddhi Achieved Today!</p>
+          <p class="text-xs text-white/80 font-sans">You completed all 4 steps (A, B, C, D). +200 Gyan Coins credited &amp; daily streak preserved!</p>
+        </div>
+
+      </div>
+
+    </section>
+
     
     <!-- Library Section -->
     <section id="library" class="space-y-10 scroll-mt-24">

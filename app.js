@@ -738,6 +738,7 @@ class AppController {
     safeInit("initAskRishiAI", this.initAskRishiAI);
     safeInit("initArchetypeCertificate", this.initArchetypeCertificate);
     safeInit("initViralReferral", this.initViralReferral);
+    safeInit("initGuidedSadhanaHub", this.initGuidedSadhanaHub);
     safeInit("initDailyGurukulaEngine", this.initDailyGurukulaEngine);
     safeInit("initKidsModeToggle", this.initKidsModeToggle);
     safeInit("initPWA", this.initPWA);
@@ -8774,6 +8775,254 @@ class AppController {
     link.download = 'Gurukula_Certificate_' + name.replace(/\s+/g, '_') + '.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
+  }
+
+  // ── 🧭 GUIDED SADHANA HUB, GOAL COMPASS & STREAK TRACKER (A ➔ B ➔ C ➔ D) ──
+  initGuidedSadhanaHub() {
+    const hub = document.getElementById('guided-sadhana-hub');
+    if (!hub) return;
+
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const storageKey = 'hs_sadhana_state_' + todayStr;
+    
+    // Read state
+    let state = { a: false, b: false, c: false, d: false };
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) state = JSON.parse(saved);
+    } catch(e) {}
+
+    // Streak and level calculation
+    let streak = parseInt(localStorage.getItem('hs_sadhana_streak') || '0', 10);
+    const lastCompletedDate = localStorage.getItem('hs_sadhana_last_date');
+    const yesterdayStr = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+
+    if (lastCompletedDate && lastCompletedDate !== todayStr && lastCompletedDate !== yesterdayStr) {
+      streak = 0;
+      localStorage.setItem('hs_sadhana_streak', '0');
+    }
+
+    const updateMetricsUI = () => {
+      let completedCount = 0;
+      if (state.a) completedCount++;
+      if (state.b) completedCount++;
+      if (state.c) completedCount++;
+      if (state.d) completedCount++;
+
+      const pct = completedCount * 25;
+      const progressRing = document.getElementById('sadhana-progress-ring');
+      const progressPercent = document.getElementById('sadhana-progress-percent');
+      const progressLabel = document.getElementById('sadhana-progress-label');
+      const coinsToday = document.getElementById('sadhana-coins-today');
+      const allDoneBanner = document.getElementById('sadhana-all-done-banner');
+      const streakBadge = document.getElementById('sadhana-streak-badge');
+      const passportIcon = document.getElementById('passport-level-icon');
+      const passportName = document.getElementById('passport-level-name');
+      const passportHint = document.getElementById('passport-milestone-hint');
+
+      if (progressRing) progressRing.setAttribute('stroke-dasharray', pct + ', 100');
+      if (progressPercent) progressPercent.textContent = pct + '%';
+      if (progressLabel) progressLabel.textContent = completedCount + ' of 4 Completed';
+      if (coinsToday) coinsToday.textContent = '+' + (completedCount * 50) + ' / +200';
+
+      if (streakBadge) {
+        streakBadge.textContent = '🔥 ' + streak + '-Day Streak';
+      }
+
+      // Update Passport Level
+      if (passportIcon && passportName && passportHint) {
+        if (streak >= 14) {
+          passportIcon.textContent = '👑';
+          passportName.textContent = 'Level 4: Jnani (The Sage)';
+          passportHint.textContent = 'Master of Vedic wisdom and unbroken daily Sadhana!';
+        } else if (streak >= 7) {
+          passportIcon.textContent = '🥇';
+          passportName.textContent = 'Level 3: Upasaka (Devotee)';
+          passportHint.textContent = (14 - streak) + ' more days to reach Jnani (The Sage) status!';
+        } else if (streak >= 3) {
+          passportIcon.textContent = '🥈';
+          passportName.textContent = 'Level 2: Sadhaka (Practitioner)';
+          passportHint.textContent = (7 - streak) + ' more days to reach Upasaka rank!';
+        } else {
+          passportIcon.textContent = '🥉';
+          passportName.textContent = 'Level 1: Jijnasu (Seeker)';
+          passportHint.textContent = "Complete today's 4-step ritual to unlock Sadhaka rank!";
+        }
+      }
+
+      // All Done Banner
+      if (allDoneBanner) {
+        if (completedCount === 4) {
+          allDoneBanner.classList.remove('hidden');
+          if (lastCompletedDate !== todayStr) {
+            streak++;
+            localStorage.setItem('hs_sadhana_streak', String(streak));
+            localStorage.setItem('hs_sadhana_last_date', todayStr);
+            if (streakBadge) streakBadge.textContent = '🔥 ' + streak + '-Day Streak';
+            if (typeof this.awardGyanCoins === 'function') {
+              this.awardGyanCoins(100, '4-Step Sadhana Completion');
+            }
+          }
+        } else {
+          allDoneBanner.classList.add('hidden');
+        }
+      }
+
+      // Card checked visual states
+      ['a', 'b', 'c', 'd'].forEach(step => {
+        const card = document.getElementById('sadhana-step-card-' + step);
+        const btn = card ? card.querySelector('.sadhana-check-btn') : null;
+        if (card && btn) {
+          if (state[step]) {
+            card.classList.add('border-gold/60', 'bg-gold/5');
+            card.classList.remove('border-white/10');
+            btn.classList.add('bg-gold', 'text-black', 'border-gold', 'font-black');
+            btn.classList.remove('bg-white/5', 'text-white', 'border-white/20');
+            btn.innerHTML = '✓';
+            btn.title = 'Completed (Click to unmark)';
+          } else {
+            card.classList.remove('border-gold/60', 'bg-gold/5');
+            card.classList.add('border-white/10');
+            btn.classList.remove('bg-gold', 'text-black', 'border-gold', 'font-black');
+            btn.classList.add('bg-white/5', 'text-white', 'border-white/20');
+            btn.innerHTML = '✓';
+            btn.title = 'Mark Done';
+          }
+        }
+      });
+    };
+
+    // 1. Bind Step Checkbox Buttons
+    hub.querySelectorAll('.sadhana-check-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const step = btn.getAttribute('data-step');
+        if (!step) return;
+        state[step] = !state[step];
+        localStorage.setItem(storageKey, JSON.stringify(state));
+        if (state[step]) {
+          if (typeof SoundEffects !== 'undefined' && SoundEffects.playSuccess) {
+            try { SoundEffects.playSuccess(); } catch(err){}
+          }
+          if (typeof this.awardGyanCoins === 'function') {
+            this.awardGyanCoins(50, 'Step ' + step.toUpperCase() + ' Sadhana');
+          } else {
+            this.showToast('✨ Step ' + step.toUpperCase() + ' Completed! +50 Gyan Coins');
+          }
+        }
+        updateMetricsUI();
+      };
+    });
+
+    // 2. Action Links auto-check on click
+    hub.querySelectorAll('.sadhana-action-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const card = link.closest('.sadhana-step-card');
+        const btn = card ? card.querySelector('.sadhana-check-btn') : null;
+        const step = btn ? btn.getAttribute('data-step') : null;
+        if (step && !state[step]) {
+          state[step] = true;
+          localStorage.setItem(storageKey, JSON.stringify(state));
+          if (typeof this.awardGyanCoins === 'function') {
+            this.awardGyanCoins(50, 'Step ' + step.toUpperCase() + ' Sadhana');
+          }
+          updateMetricsUI();
+        }
+      });
+    });
+
+    // 3. Goal Compass Selection
+    const savedGoal = localStorage.getItem('hs_spiritual_goal') || 'devotion';
+    const applyGoal = (goal, isUserClick = false) => {
+      hub.querySelectorAll('.goal-compass-card').forEach(c => {
+        const g = c.getAttribute('data-goal');
+        const ind = c.querySelector('.goal-selected-indicator');
+        if (g === goal) {
+          c.classList.add('border-gold', 'ring-2', 'ring-gold/30', 'bg-gold/10');
+          c.classList.remove('border-white/10', 'bg-[#0e1017]');
+          if (ind) ind.classList.remove('hidden');
+        } else {
+          c.classList.remove('border-gold', 'ring-2', 'ring-gold/30', 'bg-gold/10');
+          c.classList.add('border-white/10', 'bg-[#0e1017]');
+          if (ind) ind.classList.add('hidden');
+        }
+      });
+      localStorage.setItem('hs_spiritual_goal', goal);
+
+      if (isUserClick) {
+        if (goal === 'kids') {
+          const kidsTab = document.querySelector('.persona-tab-btn[data-persona="Kids"]');
+          if (kidsTab) kidsTab.click();
+          this.showToast("👶 Switched to Kids Culture & Panchatantra pathway!");
+          const lib = document.getElementById('library');
+          if (lib) lib.scrollIntoView({ behavior: 'smooth' });
+        } else if (goal === 'peace') {
+          this.showToast("🌿 Switched to Peace, Mudras & Vedic Nidra pathway!");
+          const stepD = document.getElementById('sadhana-step-card-d');
+          if (stepD) stepD.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else if (goal === 'wisdom') {
+          this.showToast("📖 Switched to Bhagavad Gita & Granthalaya pathway!");
+          const stepB = document.getElementById('sadhana-step-card-b');
+          if (stepB) stepB.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else if (goal === 'devotion') {
+          this.showToast("🛕 Switched to Mandir, Japa Mala & Darshana pathway!");
+          const stepA = document.getElementById('sadhana-step-card-a');
+          if (stepA) stepA.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    };
+
+    hub.querySelectorAll('.goal-compass-card').forEach(card => {
+      card.onclick = () => {
+        const goal = card.getAttribute('data-goal');
+        if (goal) applyGoal(goal, true);
+      };
+    });
+    applyGoal(savedGoal, false);
+
+    // 4. Guided vs Explorer Mode Switcher
+    const guidedBtn = document.getElementById('view-mode-guided-btn');
+    const explorerBtn = document.getElementById('view-mode-explorer-btn');
+    const savedMode = localStorage.getItem('hs_view_mode') || 'guided';
+
+    const setViewMode = (mode, isClick = false) => {
+      localStorage.setItem('hs_view_mode', mode);
+      const isGuided = mode === 'guided';
+      if (guidedBtn && explorerBtn) {
+        if (isGuided) {
+          guidedBtn.className = 'flex-1 md:flex-none px-4 py-2 rounded-xl text-xs font-bold font-mono transition-all bg-gold text-black shadow-lg shadow-gold/20 flex items-center justify-center gap-1.5 cursor-pointer';
+          explorerBtn.className = 'flex-1 md:flex-none px-4 py-2 rounded-xl text-xs font-bold font-mono transition-all text-white/60 hover:text-white flex items-center justify-center gap-1.5 cursor-pointer';
+        } else {
+          explorerBtn.className = 'flex-1 md:flex-none px-4 py-2 rounded-xl text-xs font-bold font-mono transition-all bg-gold text-black shadow-lg shadow-gold/20 flex items-center justify-center gap-1.5 cursor-pointer';
+          guidedBtn.className = 'flex-1 md:flex-none px-4 py-2 rounded-xl text-xs font-bold font-mono transition-all text-white/60 hover:text-white flex items-center justify-center gap-1.5 cursor-pointer';
+        }
+      }
+
+      // Hide or show complex secondary sections in Guided mode to prevent cognitive overload
+      const cosmicMatrix = document.getElementById('cosmic-matrix');
+      const mysteryVault = document.getElementById('mystery-vault');
+      const playZone = document.getElementById('play-zone');
+
+      if (isGuided) {
+        if (cosmicMatrix) cosmicMatrix.classList.add('hidden');
+        if (mysteryVault) mysteryVault.classList.add('hidden');
+        if (playZone) playZone.classList.add('hidden');
+      } else {
+        if (cosmicMatrix) cosmicMatrix.classList.remove('hidden');
+        if (mysteryVault) mysteryVault.classList.remove('hidden');
+        if (playZone) playZone.classList.remove('hidden');
+      }
+
+      if (isClick) {
+        this.showToast(isGuided ? "🧭 Guided Pathway Active: Focused, distraction-free daily routine." : "🌌 Explorer Mode Active: All 260+ masterclasses & cosmic matrix unlocked!");
+      }
+    };
+
+    if (guidedBtn) guidedBtn.onclick = () => setViewMode('guided', true);
+    if (explorerBtn) explorerBtn.onclick = () => setViewMode('explorer', true);
+    setViewMode(savedMode, false);
+
+    updateMetricsUI();
   }
 
 }
