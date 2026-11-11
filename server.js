@@ -1087,8 +1087,19 @@ app.post('/api/create-cashfree-order', async (req, res) => {
 
   let cleanName = (name || "").trim() || "Heritage Explorer";
 
+  let orderAmount = 29.00;
+  if (typeof req.body.amount === 'number' && req.body.amount > 0) {
+    orderAmount = Number(req.body.amount.toFixed(2));
+  } else if (req.body.plan === 'kundali_21') {
+    orderAmount = 21.00;
+  } else if (req.body.plan === 'trial' || req.body.amount === 29) {
+    orderAmount = 29.00;
+  } else if (req.body.plan === 'annual') {
+    orderAmount = 399.00;
+  }
+
   const payload = {
-    order_amount: (req.body.plan === 'trial' || req.body.amount === 29 ? 29.00 : 399.00),
+    order_amount: orderAmount,
     order_currency: "INR",
     order_id: orderId,
     customer_details: {
@@ -1100,7 +1111,8 @@ app.post('/api/create-cashfree-order', async (req, res) => {
     order_meta: {
       return_url: returnUrl,
       notify_url: `${publicBaseUrl}/api/cashfree-webhook`
-    }
+    },
+    order_note: req.body.order_note || (orderAmount === 21 ? "Vedic Kundali & Graha Remedy" : "Sanatana360 Pass")
   };
 
   try {
@@ -1249,16 +1261,22 @@ app.get('/api/verify-payment', async (req, res) => {
         writeDB(db);
       }
 
-      const planName = paidAmount === 29 ? 'trial' : 'annual';
-      return res.redirect(`${targetFrontend}/index.html?payment=success&order_id=${order_id}&amount=${paidAmount}&plan=${planName}`);
+      const planName = paidAmount === 21 ? 'kundali_21' : (paidAmount === 29 ? 'trial' : 'annual');
+      const baseRedirect = targetFrontend.includes('.html') ? targetFrontend : `${targetFrontend}/index.html`;
+      const sep = baseRedirect.includes('?') ? '&' : '?';
+      return res.redirect(`${baseRedirect}${sep}payment=success&order_id=${order_id}&amount=${paidAmount}&plan=${planName}`);
     } else {
       const status = orderData?.order_status || 'PENDING';
       console.warn(`⚠️ Cashfree order ${order_id} not yet confirmed (status: ${status}). Redirecting to pending/verify view.`);
-      return res.redirect(`${targetFrontend}/index.html?payment=pending&order_id=${order_id}&status=${status}`);
+      const baseRedirect = targetFrontend.includes('.html') ? targetFrontend : `${targetFrontend}/index.html`;
+      const sep = baseRedirect.includes('?') ? '&' : '?';
+      return res.redirect(`${baseRedirect}${sep}payment=pending&order_id=${order_id}&status=${status}`);
     }
   } catch (err) {
     console.error("Cashfree Order Verification Error:", err.message);
-    return res.redirect(`${targetFrontend}/index.html?payment=pending&order_id=${order_id}&error=${encodeURIComponent(err.message)}`);
+    const baseRedirect = targetFrontend.includes('.html') ? targetFrontend : `${targetFrontend}/index.html`;
+    const sep = baseRedirect.includes('?') ? '&' : '?';
+    return res.redirect(`${baseRedirect}${sep}payment=pending&order_id=${order_id}&error=${encodeURIComponent(err.message)}`);
   }
 });
 
