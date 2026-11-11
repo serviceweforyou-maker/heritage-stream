@@ -1811,67 +1811,126 @@
   </div>
 
 
-    <!-- ── 🌟 UNIFIED 3-TIER MASTER HEADER (Flawless Laptop & Mobile Fitting) ── -->
-  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-gold/25 flex flex-col bg-[#07090f] shadow-2xl shadow-black/90 select-none" id="main-header" style="background-color: #07090f !important;">
-    
-    <!-- ── TIER 1: PRIMARY MASTER BRAND & CORE ACTIONS (Height: 56px) ── -->
-    <div class="max-w-7xl mx-auto w-full px-2.5 sm:px-4 lg:px-6 h-14 flex items-center justify-between gap-1.5 sm:gap-2.5 relative">
+    <!-- ── 🌟 UNIFIED LUXURY MASTER HEADER (Sleek 64px Desktop / 56px Mobile) ── -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#060811]/95 backdrop-blur-xl shadow-2xl select-none" id="main-header">
+    <div class="max-w-7xl mx-auto w-full px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-4 relative">
       
-      <!-- Left: Brand Logo & Fast AI/Kids Shortcuts -->
-      <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink min-w-0">
-        <a href="/" class="flex items-center gap-2 group flex-shrink-0">
+      <!-- Left: Brand Logo & Sleek Navigation Links -->
+      <div class="flex items-center gap-3 sm:gap-6 min-w-0">
+        <a href="/" class="flex items-center gap-2 group flex-shrink-0" title="Sanatana360 Home">
           <div class="w-8.5 h-8.5 rounded-xl bg-gradient-to-br from-gold/30 via-gold/15 to-transparent border border-gold/50 flex items-center justify-center text-lg shadow-sm shadow-gold/20 group-hover:scale-105 transition-transform flex-shrink-0">
             ⚜️
           </div>
           <div class="flex flex-col min-w-0">
-            <span class="text-sm sm:text-base lg:text-lg font-extrabold font-serif tracking-wider text-gradient-gold leading-none group-hover:opacity-90 transition-opacity whitespace-nowrap">
+            <span class="text-base sm:text-lg font-black font-serif tracking-wider text-gradient-gold leading-none group-hover:opacity-90 transition-opacity whitespace-nowrap">
               Sanatana360
             </span>
-            <span class="text-[7px] sm:text-[7.5px] font-mono tracking-[0.2em] text-gold/60 uppercase leading-tight mt-0.5 whitespace-nowrap hidden sm:block">
+            <span class="text-[7.5px] font-mono tracking-[0.2em] text-gold/60 uppercase leading-tight mt-0.5 whitespace-nowrap hidden sm:block">
               Heritage OTT &amp; Gurukula
             </span>
           </div>
         </a>
 
-        <!-- Fast Feature Shortcuts in Tier 1 (Visible on 2XL / Ultra-wide desktops to protect laptop width) -->
-        <div class="hidden 2xl:flex items-center gap-1.5 ml-2 border-l border-white/10 pl-2.5">
-          <button id="header-daily-gurukula-btn" onclick="window.openDailyGurukulaModal()" class="h-8 px-2.5 py-1 rounded-full text-amber-300 bg-amber-500/15 border border-amber-500/40 hover:bg-amber-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm animate-pulse whitespace-nowrap" title="Daily 5-Minute Morning Gurukula Challenge">
-            <span>☀️</span> <span>Daily Gurukula</span>
-            <span id="header-gurukula-streak-badge" class="text-[9px] font-mono text-gold bg-black/60 px-1.5 py-0.2 rounded-full border border-gold/40">🔥 1d</span>
-          </button>
-          <button id="header-kids-mode-btn" onclick="window.openKidsGurukula()" class="h-8 px-2.5 py-1 rounded-full text-emerald-300 bg-emerald-500/15 border border-emerald-500/40 hover:bg-emerald-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm whitespace-nowrap">
-            <span>🧒</span> <span>Kids Gurukula</span>
-          </button>
-          <button id="header-rishi-btn" onclick="window.openRishiModal()" class="h-8 px-2.5 py-1 rounded-full text-purple-300 bg-purple-500/15 border border-purple-500/40 hover:bg-purple-500/25 transition-all text-xs font-bold flex items-center gap-1 cursor-pointer shadow-sm whitespace-nowrap">
-            <span>🕉️</span> <span>Ask Rishi AI</span>
-          </button>
-        </div>
+        <!-- Desktop Nav Links (Netflix / Disney+ Hotstar Style) -->
+        <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-xs font-semibold text-white/70">
+          <a href="#library" class="px-2.5 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">
+            🎬 Streaming
+          </a>
+          <a href="kundali-remedy.html" class="px-2.5 py-1.5 rounded-lg text-amber-300 hover:text-white hover:bg-white/5 transition-all flex items-center gap-1.5 whitespace-nowrap group">
+            <span>🔮</span>
+            <span class="font-bold">Kundali Remedy</span>
+            <span class="text-[9px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-1 rounded group-hover:bg-amber-400 group-hover:text-black transition-colors">₹21</span>
+          </a>
+          <a href="divya-darshana.html" class="px-2.5 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all flex items-center gap-1.5 whitespace-nowrap">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+            </span>
+            <span>🛕 Live Darshan</span>
+          </a>
+          <a href="vedic-math.html" class="px-2.5 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">
+            🧒 Kids Gurukula
+          </a>
+          <a href="#guided-sadhana-hub" class="px-2.5 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">
+            🧘 Daily Sadhana
+          </a>
+
+          <!-- More Tools Dropdown (Sleek, uncluttered) -->
+          <div class="relative group">
+            <button type="button" class="px-2.5 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all flex items-center gap-1 whitespace-nowrap text-white/70 cursor-pointer">
+              <span>✨ Tools</span>
+              <span class="text-[8px] opacity-60">▼</span>
+            </button>
+            <div class="absolute left-0 top-full mt-2 w-56 rounded-2xl overflow-hidden shadow-2xl hidden group-hover:block z-[110] p-2 space-y-1 border border-gold/30 bg-[#090b14]/95 backdrop-blur-xl">
+              <button id="header-gita-btn" onclick="window.appInstance?.openGitaModal ? window.appInstance.openGitaModal() : (window.location.href='geeta-ai.html')" class="w-full text-left px-3 py-2 text-xs text-white/90 hover:text-gold hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 cursor-pointer">
+                <span>📜</span> <span>Geeta AI Guru</span>
+              </button>
+              <button id="header-rishi-btn" onclick="window.appInstance?.openRishiModal ? window.appInstance.openRishiModal() : (window.location.href='rishi-ai.html')" class="w-full text-left px-3 py-2 text-xs text-white/90 hover:text-gold hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 cursor-pointer">
+                <span>🕉️</span> <span>Ask Rishi AI</span>
+              </button>
+              <button id="header-mudra-btn" onclick="window.openMudraModal ? window.openMudraModal() : (window.location.href='mudra-studio.html')" class="w-full text-left px-3 py-2 text-xs text-white/90 hover:text-gold hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 cursor-pointer">
+                <span>🧘</span> <span>Mudra Studio</span>
+              </button>
+              <button id="header-dosha-btn" onclick="window.appInstance?.openDoshaModal ? window.appInstance.openDoshaModal() : (window.location.href='dosha-analyzer.html')" class="w-full text-left px-3 py-2 text-xs text-white/90 hover:text-gold hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 cursor-pointer">
+                <span>🌿</span> <span>Ayurvedic Dosha</span>
+              </button>
+              <button id="header-raga-btn" onclick="window.appInstance?.openRagaModal ? window.appInstance.openRagaModal() : (window.location.href='raga-therapy.html')" class="w-full text-left px-3 py-2 text-xs text-white/90 hover:text-gold hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 cursor-pointer">
+                <span>🪕</span> <span>Raga Therapy</span>
+              </button>
+              <button id="header-archetype-btn" onclick="window.openArchetypeModal ? window.openArchetypeModal() : (window.location.href='vedic-archetype.html')" class="w-full text-left px-3 py-2 text-xs text-white/90 hover:text-gold hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 cursor-pointer">
+                <span>🎭</span> <span>Vedic Archetype</span>
+              </button>
+              <div class="border-t border-white/10 my-1"></div>
+              <button id="header-daily-gurukula-btn" onclick="window.openDailyGurukulaModal()" class="w-full text-left px-3 py-2 text-xs text-amber-300 hover:text-white hover:bg-amber-500/15 rounded-xl transition-all flex items-center justify-between cursor-pointer">
+                <span class="flex items-center gap-2"><span>☀️</span> <span>Daily Gurukula</span></span>
+                <span id="header-gurukula-streak-badge" class="text-[9px] font-mono text-gold bg-black/60 px-1.5 py-0.2 rounded border border-gold/30">🔥 1d</span>
+              </button>
+              <button id="header-referral-btn" onclick="window.openReferralModal()" class="w-full text-left px-3 py-2 text-xs text-emerald-300 hover:text-white hover:bg-emerald-500/15 rounded-xl transition-all flex items-center gap-2 cursor-pointer">
+                <span>🎁</span> <span>Refer Friends (₹50 OFF)</span>
+              </button>
+              <!-- Hidden hook for kids mode btn to preserve ID selector without cluttering UI -->
+              <button id="header-kids-mode-btn" onclick="window.openKidsGurukula ? window.openKidsGurukula() : (window.location.href='vedic-math.html')" class="hidden" aria-hidden="true"></button>
+            </div>
+          </div>
+        </nav>
       </div>
 
-      <!-- Center & Right: Search, Utilities, Pass & Profile -->
-      <div class="flex items-center gap-1.5 sm:gap-2 ml-auto flex-shrink-0">
+      <!-- Right: Trust Signals, WhatsApp Support, Search, VIP Pass CTA & User Auth -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 ml-auto flex-shrink-0">
         
-        <!-- Search Input with Responsive Width & Expand on Focus -->
-        <div class="relative flex items-center">
-          <input type="text" id="search-input" placeholder="Search sagas, temples..." class="h-8.5 w-20 xs:w-26 sm:w-32 md:w-36 lg:w-40 xl:w-48 focus:w-28 sm:focus:w-44 md:focus:w-52 bg-[#141826] border border-white/15 hover:border-gold/40 focus:border-gold rounded-full px-2.5 py-1 pl-7 text-xs text-white placeholder-white/40 focus:outline-none transition-all duration-300 shadow-inner">
-          <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
+        <!-- Trust Signal Badge (RBI & SSL Certified) - Desktop XL -->
+        <div class="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-[10.5px] font-mono text-emerald-400 font-bold" title="100% Secure RBI-Approved Cashfree & SSL 256-Bit Encryption">
+          <span>🛡️</span>
+          <span>100% RBI &amp; SSL Verified</span>
         </div>
 
+        <!-- WhatsApp Live Support Button -->
+        <a href="https://api.whatsapp.com/send?phone=919035442904&text=Namaste!%20I%20have%20a%20question%20about%20Sanatana360" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 h-8.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/35 hover:bg-emerald-500/25 text-emerald-300 text-xs font-bold transition-all shadow-sm flex-shrink-0 cursor-pointer" title="Direct WhatsApp Support with Sevak">
+          <span>💬</span>
+          <span class="hidden md:inline">Sevak Support</span>
+          <span class="md:hidden">Support</span>
+        </a>
+
         <!-- Ambient Soundscape Toggle Button -->
-        <button id="ambient-music-btn" class="hidden xl:inline-flex items-center gap-1.5 h-8.5 px-2.5 py-1 rounded-full bg-[#141826] border border-white/15 hover:border-gold/50 hover:bg-gold/10 text-xs font-semibold text-white/80 transition-all cursor-pointer select-none flex-shrink-0" title="Play Temple Ambience Music">
+        <button id="ambient-music-btn" class="hidden 2xl:inline-flex items-center gap-1.5 h-8.5 px-2.5 py-1 rounded-full bg-[#141826] border border-white/15 hover:border-gold/50 hover:bg-gold/10 text-xs font-semibold text-white/80 transition-all cursor-pointer select-none flex-shrink-0" title="Play Temple Ambience Music">
           <span id="ambient-music-icon">🪕</span>
           <span>Ambience</span>
         </button>
 
-        <!-- Get Pass CTA Button (Compact & Dynamic) -->
+        <!-- Search Input -->
+        <div class="relative flex items-center">
+          <input type="text" id="search-input" placeholder="Search..." class="h-8.5 w-20 xs:w-26 sm:w-32 md:w-36 lg:w-44 focus:w-28 sm:focus:w-44 md:focus:w-52 bg-[#121524] border border-white/15 hover:border-gold/40 focus:border-gold rounded-full px-2.5 py-1 pl-7 text-xs text-white placeholder-white/40 focus:outline-none transition-all shadow-inner">
+          <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-white/40 text-xs pointer-events-none">🔍</span>
+        </div>
+
+        <!-- VIP Pass CTA Button (High-Converting ₹29) -->
         <button id="header-get-pass-btn" onclick="window.openPaymentModal ? window.openPaymentModal('trial') : (window.appInstance && window.appInstance.openPaymentModal('trial'))" class="h-8.5 inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 rounded-full bg-gradient-to-r from-gold via-amber-400 to-yellow-500 hover:from-gold/90 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wide transition-all duration-300 shadow-lg shadow-gold/30 hover:scale-105 active:scale-95 cursor-pointer flex-shrink-0 whitespace-nowrap animate-pulse" title="Get Sanatana360 7-Day All-Access Pass for ₹29">
           <span>⚡</span>
-          <span class="font-black">VIP Pass</span>
+          <span class="font-black hidden xs:inline">VIP Pass</span>
           <span class="text-[10px] font-mono font-black bg-black text-gold px-1.5 py-0.5 rounded-full">₹29</span>
         </button>
 
         <!-- User Profile Dropdown / Sign In Button -->
-        <!-- Netflix-Style Sign In Button (Visible when logged out) -->
         <button id="header-auth-btn" onclick="window.appInstance?.openAuthModal ? window.appInstance.openAuthModal('signin') : (document.getElementById('netflix-auth-modal')?.classList.remove('hidden'), document.getElementById('netflix-auth-modal')?.classList.add('flex'))" class="h-8.5 px-3 sm:px-3.5 py-1 rounded-full bg-[#141826] hover:bg-gold hover:text-black border border-gold/40 text-gold font-extrabold text-xs transition-all flex items-center gap-1.5 cursor-pointer shadow-sm flex-shrink-0 whitespace-nowrap" title="Sign In to Sanatana360">
           <span>🔑</span>
           <span>Sign In</span>
@@ -1886,7 +1945,7 @@
             <span class="text-[8px] opacity-60 flex-shrink-0">▼</span>
           </button>
           
-          <!-- Dropdown Menu (Solid 100% Opaque Luxury Slate, perfectly aligned to screen) -->
+          <!-- Dropdown Menu -->
           <div class="absolute right-0 top-full mt-2 w-64 max-w-[calc(100vw-20px)] rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.99)] hidden group-hover:block z-[120] p-3 space-y-2 border border-gold/40" style="background-color: #090b12 !important; opacity: 1 !important;">
             <div id="dropdown-sub-status-card" class="p-3 rounded-xl bg-gradient-to-r from-gold/15 to-emerald-500/15 border border-gold/40 mb-1" style="background-color: #121624 !important;">
               <div class="flex items-center justify-between">
@@ -1900,7 +1959,6 @@
               <div class="text-[8px] text-white/60 font-mono mt-0.5" id="dropdown-sub-expiry">Expires: 365 Days Validity</div>
             </div>
 
-            
             <button onclick="window.syncUserPayment()" class="w-full text-left px-3.5 py-2.5 text-xs text-emerald-300 hover:text-emerald-200 rounded-xl transition-all flex items-center gap-2 font-bold cursor-pointer border border-emerald-500/30 hover:border-emerald-500/60 shadow-sm" style="background-color: #0c1c16 !important;">
               <span class="animate-spin text-xs">⚡</span> <span>Sync / Restore Bank Payment</span>
             </button>
@@ -1920,8 +1978,8 @@
           </div>
         </div>
 
-        <!-- Hamburger Menu Button (mobile only) -->
-        <button id="mobile-menu-btn" class="md:hidden w-8.5 h-8.5 flex flex-col items-center justify-center gap-1 rounded-xl border border-white/15 bg-[#141826] cursor-pointer hover:border-gold/40 flex-shrink-0" aria-label="Menu">
+        <!-- Hamburger Menu Button (mobile & tablet) -->
+        <button id="mobile-menu-btn" class="lg:hidden w-8.5 h-8.5 flex flex-col items-center justify-center gap-1 rounded-xl border border-white/15 bg-[#141826] cursor-pointer hover:border-gold/40 flex-shrink-0" aria-label="Menu">
           <span class="mobile-bar w-4 h-0.5 bg-white/80 rounded-full transition-all"></span>
           <span class="mobile-bar w-4 h-0.5 bg-white/80 rounded-full transition-all"></span>
           <span class="mobile-bar w-4 h-0.5 bg-white/80 rounded-full transition-all"></span>
@@ -1929,125 +1987,32 @@
       </div>
     </div>
 
-    <!-- ── TIER 2: PRIMARY STREAMING & SACRED EPICS BAR (Desktop / Laptop: Height: 40px) ── -->
-    <div class="hidden md:flex w-full sub-nav-tier-2 h-10 items-center justify-center shadow-inner" style="background-color: #0a0d17 !important;">
-      <nav class="flex items-center justify-start lg:justify-center gap-2 lg:gap-3 px-4 max-w-7xl mx-auto w-full text-xs font-bold text-white/80 whitespace-nowrap overflow-x-auto no-scrollbar scroll-smooth">
-        
-        <a href="#library" class="sec-nav-pill px-3.5 py-1 rounded-full bg-[#141826] border border-white/10 hover:border-gold/50 hover:bg-gold/15 hover:text-white transition-all flex items-center gap-1.5 text-white/90 shadow-sm">
-          <span>📚</span> Library &amp; Sagas
-        </a>
-
-        <a href="#granthalaya-library" class="sec-nav-pill px-3.5 py-1 rounded-full bg-gold/15 border border-gold/50 text-gold hover:bg-gold/25 transition-all flex items-center gap-1.5 font-serif shadow-sm">
-          <span>📖</span> Granthalaya (26 Epics)
-        </a>
-
-        <button type="button" onclick="window.openDailyGurukulaModal()" class="sec-nav-pill px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/50 text-amber-300 hover:bg-amber-500/25 transition-all flex items-center gap-1.5 font-bold shadow-sm cursor-pointer animate-pulse" title="Daily 5-Minute Morning Gurukula Challenge">
-          <span>☀️</span> Daily Gurukula <span class="text-[9px] font-mono text-gold bg-black/60 px-1.5 py-0.2 rounded-full border border-gold/40">🔥 1d</span>
-        </button>
-
-        <button type="button" onclick="window.openKidsGurukula()" class="sec-nav-pill px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/50 text-emerald-300 hover:bg-emerald-500/25 transition-all flex items-center gap-1.5 font-bold shadow-sm cursor-pointer" title="Kids Gurukula (Panchatantra, Moral Sagas &amp; Vedic Math)">
-          <span>🧒</span> Kids Gurukula
-        </button>
-
-        <a href="/blog.html" class="sec-nav-pill px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/50 text-amber-300 hover:bg-amber-500/25 transition-all flex items-center gap-1.5 font-bold shadow-sm" title="100+ Ancient Mysteries &amp; Vedic Science Articles">
-          <span>📰</span> Blog (100+ Mysteries)
-        </a>
-
-        <a href="#explorer" class="sec-nav-pill px-3.5 py-1 rounded-full bg-[#141826] border border-white/10 hover:border-gold/50 hover:bg-gold/15 hover:text-white transition-all flex items-center gap-1.5 text-white/90 shadow-sm">
-          <span>🗺️</span> Map Explorer
-        </a>
-
-        <a href="#mystery-vault" class="sec-nav-pill px-3.5 py-1 rounded-full bg-[#141826] border border-amber-500/30 hover:border-amber-400 hover:bg-amber-500/15 transition-all flex items-center gap-1.5 text-amber-300 shadow-sm">
-          <span>🔒</span> Mystery Vaults
-        </a>
-
-        <a href="#play-zone" class="sec-nav-pill px-3.5 py-1 rounded-full bg-[#141826] border border-white/10 hover:border-gold/50 hover:bg-gold/15 hover:text-white transition-all flex items-center gap-1.5 text-white/90 shadow-sm">
-          <span>🎮</span> Play Zone &amp; Trivia
-        </a>
-
-        <a href="#dashboard" class="sec-nav-pill px-3.5 py-1 rounded-full bg-[#141826] border border-white/10 hover:border-gold/50 hover:bg-gold/15 hover:text-white transition-all flex items-center gap-1.5 text-white/90 shadow-sm">
-          <span>📊</span> Dashboard
-        </a>
-      </nav>
-    </div>
-
-    <!-- ── TIER 3: SACRED WELLNESS & SPIRITUAL AI INSTRUMENTS BAR (Desktop / Laptop: Height: 36px) ── -->
-    <div class="hidden md:flex w-full sub-nav-tier-3 h-9 items-center justify-center shadow-sm" style="background-color: #06080e !important;">
-      <nav class="flex items-center justify-start lg:justify-center gap-2 lg:gap-2.5 px-4 max-w-7xl mx-auto w-full text-[11px] font-bold text-white/75 whitespace-nowrap overflow-x-auto no-scrollbar scroll-smooth">
-        
-        <!-- 🌟 EYE-CATCHING HIGHLIGHTED LIVE DARSHANA BUTTON 🌟 -->
-        <a href="https://www.sanatana360.com/divya-darshana.html" target="_self" class="sec-nav-pill px-3.5 py-0.5 rounded-full bg-gradient-to-r from-red-600 via-amber-500 to-gold hover:from-red-500 hover:to-gold text-black font-black transition-all flex items-center gap-1.5 shadow-lg shadow-red-600/30 animate-pulse hover:scale-105 mr-1" title="Watch 40+ Official 24/7 Live Temple Streams &amp; Virtual Aarti">
-          <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-          <span class="text-white font-extrabold tracking-wide">🔴 LIVE DARSHANA</span>
-          <span class="text-[9px] font-mono font-black bg-black text-gold px-1.5 py-0.2 rounded-full uppercase tracking-wider">40 TEMPLES</span>
-        </a>
-        
-        <button id="header-mudra-btn" onclick="window.openMudraModal()" class="sec-nav-pill px-3 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 hover:bg-amber-500/25 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm">
-          <span>🧘</span> Mudra Studio
-        </button>
-
-        <button id="header-gita-btn" onclick="window.openGitaModal()" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-gold/40 hover:text-gold transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
-          <span>📜</span> Gita Compass
-        </button>
-
-        <button id="header-dosha-btn" onclick="window.openDoshaModal()" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-emerald-400 hover:text-emerald-300 transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
-          <span>🌿</span> Ayurvedic Dosha
-        </button>
-
-        <button id="header-raga-btn" onclick="window.openRagaModal()" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-purple-400 hover:text-purple-300 transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
-          <span>🪕</span> Raga Therapy
-        </button>
-
-        <button id="header-archetype-btn" onclick="window.openArchetypeModal()" class="sec-nav-pill px-3 py-0.5 rounded-full bg-[#141826] border border-white/10 hover:border-gold/40 hover:text-gold transition-all flex items-center gap-1.5 cursor-pointer text-white/80">
-          <span>👑</span> Archetype Test
-        </button>
-
-        <button id="header-referral-btn" onclick="window.openReferralModal()" class="sec-nav-pill px-3 py-0.5 rounded-full text-amber-400 bg-amber-500/20 border border-amber-500/40 hover:bg-amber-500/30 transition-all flex items-center gap-1.5 cursor-pointer font-bold">
-          <span>🎁</span> ₹50 Off (GURUKULA50)
-        </button>
-      </nav>
-    </div>
-
-    <!-- ── HEADER ROW (MOBILE): SMOOTH TOUCH CATEGORY & WELLNESS CHIPS BAR (Height: 40px) ── -->
-    <div class="md:hidden w-full bg-[#06080e] border-t border-white/[0.08] h-10 flex items-center sub-nav-mask-container shadow-inner" style="background-color: #06080e !important;">
-      <nav class="flex items-center gap-1.5 px-3 text-[10.5px] font-bold text-white/80 whitespace-nowrap overflow-x-auto no-scrollbar scroll-smooth">
-        <a href="#library" class="sec-nav-pill px-2.5 py-1 rounded-full bg-[#141826] border border-white/10 hover:bg-white/10 text-white/90 flex items-center gap-1">
-          <span>📚</span> Library
-        </a>
-        <a href="#granthalaya-library" class="sec-nav-pill px-2.5 py-1 rounded-full bg-gold/15 border border-gold/40 text-gold font-serif flex items-center gap-1">
-          <span>📖</span> Granthalaya
-        </a>
-        <button onclick="document.getElementById('header-mudra-btn')?.click() || window.appInstance?.openMudraModal()" class="flex-shrink-0 px-2.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold flex items-center gap-1">
-          <span>🧘</span> Mudras
-        </button>
-        <a href="https://www.sanatana360.com/divya-darshana.html" target="_self" class="sec-nav-pill px-2.5 py-1 rounded-full bg-gradient-to-r from-red-600/30 to-gold/30 border border-gold text-gold font-extrabold flex items-center gap-1 animate-pulse">
-          <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
-          <span>🔴 Live Darshana</span>
-        </a>
-        <a href="kundali-remedy.html" class="sec-nav-pill px-2.5 py-1 rounded-full bg-gradient-to-r from-purple-900/50 via-amber-900/40 to-yellow-900/30 border border-amber-400/60 text-amber-300 font-extrabold flex items-center gap-1.5 shadow-sm hover:scale-105 transition-transform animate-pulse" title="Instant Janam Kundali & Graha Problem Solver (₹21 Dakshina)">
-          <span>🔮</span> <span>Kundali Remedy</span>
-          <span class="text-[9px] font-mono font-black bg-amber-500 text-black px-1.5 py-0.2 rounded-full">₹21</span>
-        </a>
-        <button onclick="document.getElementById('header-gita-btn')?.click() || window.appInstance?.openGitaModal()" class="sec-nav-pill px-2.5 py-1 rounded-full bg-[#141826] border border-white/10 hover:bg-white/10 text-white/80 flex items-center gap-1">
-          <span>📜</span> Gita
-        </button>
-        <button onclick="document.getElementById('header-kids-mode-btn')?.click() || window.appInstance?.openKidsModeModal()" class="sec-nav-pill px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 flex items-center gap-1">
-          <span>🧒</span> Kids
-        </button>
-        <button onclick="document.getElementById('header-dosha-btn')?.click() || window.appInstance?.openDoshaModal()" class="sec-nav-pill px-2.5 py-1 rounded-full bg-[#141826] border border-white/10 hover:bg-white/10 text-white/80 flex items-center gap-1">
-          <span>🌿</span> Ayurveda
-        </button>
-        <a href="#mystery-vault" class="sec-nav-pill px-2.5 py-1 rounded-full bg-[#141826] border border-white/10 hover:bg-white/10 text-white/80 flex items-center gap-1">
-          <span>🔒</span> Vaults
-        </a>
-        <a href="#play-zone" class="sec-nav-pill px-2.5 py-1 rounded-full bg-[#141826] border border-white/10 hover:bg-white/10 text-white/80 flex items-center gap-1">
-          <span>🎮</span> Play
-        </a>
-      </nav>
-    </div>
-
     <!-- ── MOBILE DROPDOWN NAVIGATION DRAWER ── -->
-    <div id="mobile-nav-menu" class="hidden md:hidden border-t border-white/10 px-4 py-4 space-y-3 max-h-[80vh] overflow-y-auto shadow-2xl" style="background-color: #07090f !important; opacity: 1 !important;">
+    <div id="mobile-nav-menu" class="hidden lg:hidden border-t border-white/10 px-4 py-4 space-y-3 max-h-[82vh] overflow-y-auto shadow-2xl bg-[#060811]/98 backdrop-blur-xl">
+
+      <!-- Trust Badge on Mobile -->
+      <div class="flex items-center justify-between p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-mono font-bold">
+        <span class="flex items-center gap-1.5"><span>🛡️</span> <span>100% RBI &amp; SSL Verified</span></span>
+        <span class="text-[10px] bg-emerald-500/20 px-2 py-0.5 rounded text-emerald-300 font-sans">TRUSTED</span>
+      </div>
+
+      <!-- Mobile Kundali Remedy Card (₹21 Dakshina) -->
+      <a href="kundali-remedy.html" class="p-3.5 rounded-2xl bg-gradient-to-r from-purple-950/70 via-purple-900/50 to-amber-950/50 border border-purple-500/50 flex items-center justify-between gap-3 shadow-lg block group">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span class="text-2xl group-hover:scale-110 transition-transform flex-shrink-0">🔮</span>
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5 text-amber-300 text-xs font-black uppercase tracking-wider">
+              <span>Kundali &amp; Graha Remedy</span>
+            </div>
+            <p class="text-[11px] text-white/80 mt-0.5 leading-tight font-sans">
+              Instant 3-Step Vedic Diagnostic &bull; 21-Day Sacred Remedy
+            </p>
+          </div>
+        </div>
+        <div class="text-right flex-shrink-0">
+          <span class="text-[10px] font-mono font-black bg-amber-400 text-black px-2 py-1 rounded-full shadow-md whitespace-nowrap">₹21 Dakshina ➔</span>
+        </div>
+      </a>
 
       <!-- Mobile High-Impact VIP Pass Card -->
       <div id="mobile-vip-pass-card" class="p-3.5 rounded-2xl bg-gradient-to-r from-gold/25 via-amber-500/20 to-yellow-600/10 border-2 border-gold flex items-center justify-between gap-3 shadow-xl shadow-gold/20">
@@ -2063,6 +2028,12 @@
           Get ₹29 ➔
         </button>
       </div>
+
+      <!-- Mobile WhatsApp Support Button -->
+      <a href="https://api.whatsapp.com/send?phone=919035442904&text=Namaste!%20I%20have%20a%20question%20about%20Sanatana360" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3.5 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 font-bold text-xs flex items-center justify-between hover:bg-emerald-500/25 transition-all">
+        <span class="flex items-center gap-2"><span>💬</span> <span>Live WhatsApp Sevak Help</span></span>
+        <span class="font-mono text-[10px] text-emerald-400">+91 9035442904</span>
+      </a>
       
       <!-- Mobile Profile & Account Status Header Card -->
       <div class="p-3.5 rounded-2xl bg-[#141826] border border-gold/40 flex items-center justify-between gap-3" style="background-color: #141826 !important;">
@@ -2105,7 +2076,7 @@
       <div class="text-[9px] font-mono font-bold uppercase text-gold/80 tracking-wider">Streaming &amp; Catalog</div>
       <a href="#library" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-semibold text-white hover:bg-white/5 hover:text-gold transition-all">📚 Library &amp; Sagas</a>
       <a href="#granthalaya-library" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-bold text-gold hover:bg-white/5 transition-all">📖 Grand Granthalaya (26 Epics)</a>
-      <a href="https://www.sanatana360.com/divya-darshana.html" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-bold text-amber-300 hover:bg-white/5 transition-all">✨ Divya Darshana (40 Live Temples)</a>
+      <a href="divya-darshana.html" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-bold text-amber-300 hover:bg-white/5 transition-all">✨ Divya Darshana (40 Live Temples)</a>
       <a href="/blog.html" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-bold text-gold hover:bg-white/5 transition-all">📰 100+ Mysteries Blog</a>
       <a href="#catalog-explorer" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-bold text-amber-300 hover:bg-white/5 transition-all">👁️ Explore All 250+ Catalog</a>
       <a href="#mystery-vault" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-sm font-semibold text-white/80 hover:bg-white/5 transition-all">🔒 Secret Mystery Vaults</a>
@@ -2159,7 +2130,7 @@
   <!-- Hero Section (Spotlight) -->
   
   <!-- ── 🛕 JIOHOTSTAR / SONYLIV STYLE 24/7 LIVE AARTI STATUS TICKER ── -->
-  <div class="mt-[96px] md:mt-[133px] bg-gradient-to-r from-black via-[#10121a] to-black border-b border-gold/25 py-2 px-3 sm:px-4 z-40 relative select-none">
+  <div class="mt-[56px] sm:mt-[64px] bg-gradient-to-r from-black via-[#10121a] to-black border-b border-gold/25 py-2 px-3 sm:px-4 z-40 relative select-none">
     <div class="max-w-7xl mx-auto flex items-center justify-between text-xs gap-3">
       <div class="flex items-center gap-2 font-mono overflow-hidden">
         <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-600/30 border border-red-500/50 text-red-300 text-[10px] font-bold uppercase tracking-wider flex-shrink-0 animate-pulse">

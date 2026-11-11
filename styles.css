@@ -1369,3 +1369,27 @@ body.modal-open .floating-btn-group {
   height: 100%;
   background: #e50914;
 }
+
+/* =============================================
+   ULTRA-PROFESSIONAL LUXURY HEADER NAVIGATION
+   ============================================= */
+.lux-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+.lux-nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.lux-nav-link.active {
+  color: #e6c65b;
+  background-color: rgba(212, 175, 55, 0.1);
+}
