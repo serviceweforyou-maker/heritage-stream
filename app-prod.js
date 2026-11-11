@@ -632,6 +632,7 @@ class AppController {
   constructor() {
         window.appInstance = this; // global reference for script tags
     window.openPaymentModal = (plan = 'trial') => this.openPaymentModal(plan);
+    window.switchPillarHub = (pillar) => this.switchPillarHub(pillar);
     this.audioDrone = new VedicAudioDrone();
     this.voiceNarrator = new VedicVoiceNarrator();
     window.sanatanaDrone = this.audioDrone;
@@ -929,6 +930,23 @@ class AppController {
                 <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/50 to-transparent pointer-events-none"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-[#141414]/95 via-[#141414]/60 to-transparent max-w-4xl pointer-events-none"></div>
                 <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
+
+                <!-- Top-Right Dual-Action Floating Kundali Hook (Desktop) -->
+                <div class="hidden lg:flex absolute top-14 right-8 z-30 max-w-xs pointer-events-auto">
+                  <a href="kundali-remedy.html" class="p-3.5 rounded-2xl bg-[#0c0e18]/85 border border-purple-500/50 hover:border-amber-400 backdrop-blur-md shadow-2xl flex items-center gap-3 transition-all hover:scale-105 group">
+                    <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-400 flex items-center justify-center text-xl flex-shrink-0 animate-pulse">
+                      🔮
+                    </div>
+                    <div class="min-w-0">
+                      <span class="text-[9px] font-mono font-bold text-amber-300 uppercase tracking-widest block">Facing Life Delays?</span>
+                      <h4 class="text-xs font-bold text-white group-hover:text-amber-300 transition-colors leading-tight">Janam Kundali &amp; Graha Remedy</h4>
+                      <div class="flex items-center gap-1.5 mt-0.5">
+                        <span class="text-[9px] font-mono text-emerald-400 font-bold">₹21 Shubh Dakshina</span>
+                        <span class="text-[10px] text-amber-400">➔</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
 
                 <!-- Netflix Billboard Content Block -->
                 <div class="absolute bottom-10 sm:bottom-16 left-4 sm:left-12 md:left-16 z-20 max-w-2xl space-y-3 sm:space-y-4 font-sans">
@@ -2974,6 +2992,38 @@ class AppController {
         };
       }
     }
+  }
+
+
+  // ── 🌐 5-PILLAR WORLD SWITCHER (Instant Hub Focus) ──
+  switchPillarHub(pillar) {
+    const tabs = document.querySelectorAll('.pillar-tab-btn');
+    tabs.forEach(tab => {
+      if (tab.getAttribute('data-pillar') === pillar) {
+        tab.className = 'pillar-tab-btn active px-3.5 py-2 rounded-xl text-xs sm:text-sm font-extrabold flex items-center gap-1.5 transition-all cursor-pointer whitespace-nowrap bg-gradient-to-r from-gold to-amber-500 text-black shadow-md shadow-gold/20';
+      } else {
+        tab.className = 'pillar-tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold text-white/70 hover:text-white hover:bg-white/5 flex items-center gap-1.5 transition-all cursor-pointer whitespace-nowrap';
+      }
+    });
+
+    const sections = {
+      all: document.getElementById('library'),
+      astrology: document.getElementById('kundali-remedy-hub') || document.getElementById('cosmic-matrix'),
+      darshan: document.getElementById('divya-darshana'),
+      kids: document.getElementById('gurukula-kits'),
+      sadhana: document.getElementById('guided-sadhana-hub')
+    };
+
+    const target = sections[pillar];
+    if (target) {
+      const yOffset = -120;
+      const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+
+    try {
+      localStorage.setItem('hs_active_pillar', pillar);
+    } catch(e) {}
   }
 
   // Handle premium locked prompts & dynamic buy button visibility
