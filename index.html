@@ -151,6 +151,24 @@
       } catch(e) { console.warn('Error opening quick preview modal:', e); }
     };
 
+    window.openPaymentModal = function(plan) {
+      try {
+        if (window.appInstance && typeof window.appInstance.openPaymentModal === 'function') {
+          window.appInstance.openPaymentModal(plan || 'trial');
+          return;
+        }
+        var m = document.getElementById('payment-modal');
+        if (m) {
+          m.classList.remove('hidden');
+          m.classList.add('flex');
+          m.style.display = 'flex';
+          m.style.pointerEvents = 'auto';
+          m.style.visibility = 'visible';
+          document.body.style.overflow = 'hidden';
+        }
+      } catch(e) { console.warn('openPaymentModal error:', e); }
+    };
+
     window.playContent = function(itemOrId, isAudio) {
       try {
         if (window.appInstance && typeof window.appInstance.playContent === 'function') {
@@ -1846,10 +1864,10 @@
         </button>
 
         <!-- Get Pass CTA Button (Compact & Dynamic) -->
-        <button id="header-get-pass-btn" onclick="window.appInstance?.openPaymentModal ? window.appInstance.openPaymentModal('trial') : null" class="h-8.5 inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1 rounded-full bg-gradient-to-r from-gold via-amber-400 to-amber-500 hover:from-gold/90 hover:to-amber-600 text-black font-extrabold text-xs uppercase tracking-wide transition-all duration-300 shadow-md shadow-gold/25 hover:scale-105 cursor-pointer flex-shrink-0 whitespace-nowrap" title="Get Sanatana360 Pass">
+        <button id="header-get-pass-btn" onclick="window.openPaymentModal ? window.openPaymentModal('trial') : (window.appInstance && window.appInstance.openPaymentModal('trial'))" class="h-8.5 inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 rounded-full bg-gradient-to-r from-gold via-amber-400 to-yellow-500 hover:from-gold/90 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wide transition-all duration-300 shadow-lg shadow-gold/30 hover:scale-105 active:scale-95 cursor-pointer flex-shrink-0 whitespace-nowrap animate-pulse" title="Get Sanatana360 7-Day All-Access Pass for ₹29">
           <span>⚡</span>
-          <span class="hidden sm:inline font-black">Get Pass</span>
-          <span class="text-[9px] sm:text-[10px] font-mono font-black bg-black/25 text-black px-1.5 py-0.2 rounded-full">₹29</span>
+          <span class="font-black">VIP Pass</span>
+          <span class="text-[10px] font-mono font-black bg-black text-gold px-1.5 py-0.5 rounded-full">₹29</span>
         </button>
 
         <!-- User Profile Dropdown / Sign In Button -->
@@ -2026,6 +2044,21 @@
 
     <!-- ── MOBILE DROPDOWN NAVIGATION DRAWER ── -->
     <div id="mobile-nav-menu" class="hidden md:hidden border-t border-white/10 px-4 py-4 space-y-3 max-h-[80vh] overflow-y-auto shadow-2xl" style="background-color: #07090f !important; opacity: 1 !important;">
+
+      <!-- Mobile High-Impact VIP Pass Card -->
+      <div id="mobile-vip-pass-card" class="p-3.5 rounded-2xl bg-gradient-to-r from-gold/25 via-amber-500/20 to-yellow-600/10 border-2 border-gold flex items-center justify-between gap-3 shadow-xl shadow-gold/20">
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5 text-gold text-xs font-black uppercase tracking-wider">
+            <span>⚡</span> <span>VIP All-Access Pass</span>
+          </div>
+          <p class="text-[11px] text-white/90 mt-0.5 leading-tight font-sans">
+            Unlock 260+ Sagas &amp; 40+ Live Temples for just <strong class="text-gold font-mono">₹29</strong>
+          </p>
+        </div>
+        <button onclick="window.openPaymentModal ? window.openPaymentModal('trial') : (window.appInstance && window.appInstance.openPaymentModal('trial'))" class="px-3 py-2 rounded-xl bg-gradient-to-r from-gold to-amber-400 text-black font-black text-xs shadow-md shadow-gold/30 hover:scale-105 active:scale-95 transition-all flex-shrink-0 whitespace-nowrap cursor-pointer">
+          Get ₹29 ➔
+        </button>
+      </div>
       
       <!-- Mobile Profile & Account Status Header Card -->
       <div class="p-3.5 rounded-2xl bg-[#141826] border border-gold/40 flex items-center justify-between gap-3" style="background-color: #141826 !important;">
@@ -2146,6 +2179,48 @@
   <!-- Main Container -->
   
   <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-16 space-y-12 md:space-y-24 w-full">
+
+    <!-- ── ⚡ HIGH-CONVERTING LIMITED-TIME VIP PASS BANNER (Above The Fold) ── -->
+    <div id="hero-vip-conversion-banner" class="rounded-3xl bg-gradient-to-r from-[#1a150b] via-[#211a0c] to-[#120f08] border-2 border-gold/70 p-4 sm:p-6 shadow-2xl shadow-gold/15 relative overflow-hidden">
+      <div class="absolute -top-16 -right-16 w-64 h-64 bg-gold/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-5 relative z-10">
+        <div class="flex items-start sm:items-center gap-4 text-left">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-gold/30 via-amber-500/20 to-transparent border border-gold flex items-center justify-center text-3xl sm:text-4xl shadow-lg shadow-gold/25 flex-shrink-0 animate-bounce">
+            ⚡
+          </div>
+          <div class="space-y-1">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gold/20 border border-gold/50 text-gold text-[10px] font-mono font-black uppercase tracking-wider">
+              <span>🔥 70% OFF LIMITED TIME BLESSING PASS</span>
+            </div>
+            <h3 class="text-lg sm:text-2xl font-black font-serif text-white leading-tight">
+              Unlock All 260+ Sacred Epics, 40+ Live Shrines &amp; Audiobooks for Just <span class="text-gold font-mono">₹29</span>
+            </h3>
+            <p class="text-xs sm:text-sm text-white/70 max-w-2xl font-sans">
+              Instant 7-Day All-Access Pass &bull; No Ads &bull; 4K Ultra HD &bull; Vedic Sleep Stories &bull; 1-Click WhatsApp Support
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto flex-shrink-0">
+          <button onclick="window.openPaymentModal ? window.openPaymentModal('trial') : (window.appInstance && window.appInstance.openPaymentModal('trial'))" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-gold via-amber-400 to-yellow-500 hover:from-gold/90 hover:to-amber-500 text-black font-black text-sm uppercase tracking-wider shadow-xl shadow-gold/30 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap">
+            <span>⚡</span>
+            <span>Activate ₹29 Pass Now</span>
+            <span>➔</span>
+          </button>
+          <div class="text-[10px] text-emerald-400 font-bold flex items-center gap-1 text-center sm:text-left">
+            <span>✓</span> <span>UPI, GPay, Paytm, Cards</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Badges Bar -->
+      <div class="mt-4 pt-3.5 border-t border-gold/20 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-xs text-white/60 font-mono">
+        <span class="flex items-center gap-1 text-gold">🛡️ 100% RBI Compliant Cashfree Gateway</span>
+        <span class="flex items-center gap-1 text-emerald-400">⚡ Instant Digital Activation</span>
+        <span class="flex items-center gap-1 text-amber-300">💬 Instant WhatsApp Assistance</span>
+        <span class="flex items-center gap-1 text-white/70">✨ Cancel Anytime</span>
+      </div>
+    </div>
 
     <!-- ── 🧭 SANATANA GUIDED SADHANA & GOAL COMPASS (LINEAR A ➔ B ➔ C ➔ D JOURNEY) ── -->
     <section id="guided-sadhana-hub" class="space-y-8 scroll-mt-28">
@@ -6492,15 +6567,34 @@
   <!-- ── 💬 COMPACT FLOATING WHATSAPP SUPPORT (Bottom-Right with Hide Option) ── -->
   <div id="floating-whatsapp-wrapper" class="fixed z-[60] flex items-center select-none transition-all duration-300 floating-btn-group" style="position: fixed !important; z-index: 40 !important;">
     <div class="flex items-center bg-[#25D366] rounded-full p-0.5 shadow-[0_4px_15px_rgba(37,211,102,0.4)] border border-emerald-300/90 group">
-      <a href="https://wa.me/919900000000?text=Namaste!%20I%20have%20a%20question%20about%20Sanatana360%20Pass" target="_blank" rel="noopener noreferrer" id="whatsapp-support-btn" class="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full text-black font-extrabold text-[10px] sm:text-xs uppercase tracking-wide cursor-pointer hover:opacity-90 transition-opacity" title="Chat with WhatsApp Support">
+      <a href="https://api.whatsapp.com/send?phone=919035442904&text=Namaste!%20I%20want%20to%20activate%20my%20Sanatana360%20Pass%20or%20have%20a%20question" target="_blank" rel="noopener noreferrer" id="whatsapp-support-btn" class="flex items-center gap-1 sm:gap-1.5 px-3 py-1.5 rounded-full text-black font-extrabold text-[10px] sm:text-xs uppercase tracking-wide cursor-pointer hover:opacity-90 transition-opacity" title="Chat with WhatsApp Sevak (+91 9035442904)">
+        <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
         <span class="text-xs sm:text-sm">💬</span>
-        <span class="font-black text-[10px] sm:text-xs hidden xs:inline">Support</span>
+        <span class="font-black text-[10px] sm:text-xs">Chat with Sevak</span>
       </a>
       <button type="button" onclick="event.stopPropagation(); window.hideWhatsAppFloating()" class="w-4 h-4 rounded-full bg-black/20 hover:bg-black/60 text-black hover:text-white flex items-center justify-center text-[10px] font-black mr-1 cursor-pointer transition-colors" title="Hide WhatsApp">&times;</button>
     </div>
   </div>
   </div>
 
+
+
+  <!-- ── ⚡ STICKY MOBILE CONVERSION BAR (Bottom Docked) ── -->
+  <div id="sticky-mobile-conversion-bar" class="fixed bottom-0 inset-x-0 z-40 bg-[#0c0e17]/95 border-t border-gold/40 backdrop-blur-lg px-3 py-2.5 flex items-center justify-between gap-2.5 shadow-[0_-10px_30px_rgba(0,0,0,0.8)] md:hidden transition-all duration-300">
+    <div class="flex items-center gap-2 min-w-0">
+      <span class="w-8 h-8 rounded-xl bg-gold/20 border border-gold/40 flex items-center justify-center text-base flex-shrink-0">⚡</span>
+      <div class="min-w-0">
+        <div class="text-xs font-black text-white leading-tight truncate flex items-center gap-1.5">
+          <span>All-Access Pass</span>
+          <span class="text-[10px] font-mono text-gold bg-gold/15 px-1.5 py-0.2 rounded font-bold">₹29</span>
+        </div>
+        <div class="text-[10px] text-white/60 truncate">Unlock 260+ Sagas &amp; Live Shrines</div>
+      </div>
+    </div>
+    <button onclick="window.openPaymentModal ? window.openPaymentModal('trial') : (window.appInstance && window.appInstance.openPaymentModal('trial'))" class="px-4 py-2 rounded-xl bg-gradient-to-r from-gold to-amber-400 text-black font-black text-xs uppercase tracking-wider shadow-lg shadow-gold/30 flex-shrink-0 cursor-pointer active:scale-95 transition-all">
+      Get Pass ➔
+    </button>
+  </div>
 
 </body>
 </html>

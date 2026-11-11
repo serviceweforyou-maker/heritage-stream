@@ -631,6 +631,7 @@ class VedicVoiceNarrator {
 class AppController {
   constructor() {
         window.appInstance = this; // global reference for script tags
+    window.openPaymentModal = (plan = 'trial') => this.openPaymentModal(plan);
     this.audioDrone = new VedicAudioDrone();
     this.voiceNarrator = new VedicVoiceNarrator();
     window.sanatanaDrone = this.audioDrone;
@@ -963,6 +964,13 @@ class AppController {
                       <span>ℹ</span>
                       <span>More Info</span>
                     </button>
+
+                    ${!this.isSubscribed ? `
+                      <button class="spotlight-slide-vip-btn px-4 sm:px-5 py-2.5 rounded-full bg-gradient-to-r from-gold via-amber-400 to-yellow-500 hover:from-gold/90 hover:to-amber-500 text-black font-black text-xs sm:text-sm uppercase tracking-wider flex items-center gap-1.5 shadow-xl shadow-gold/25 hover:scale-105 active:scale-95 transition-all cursor-pointer animate-pulse" onclick="window.openPaymentModal ? window.openPaymentModal('trial') : (window.appInstance && window.appInstance.openPaymentModal('trial'))" title="Get Sanatana360 7-Day All-Access Pass for ₹29">
+                        <span>⚡</span>
+                        <span>Unlock VIP (₹29)</span>
+                      </button>
+                    ` : ''}
 
                     <button class="spotlight-slide-watchlist-btn w-10 h-10 rounded-full border-2 border-white/40 hover:border-white bg-black/40 text-white flex items-center justify-center text-lg hover:scale-110 transition-all cursor-pointer backdrop-blur-md" data-id="${item.id}" title="${isOnWatchlist ? 'Remove from My List' : 'Add to My List'}">
                       ${isOnWatchlist ? '✓' : '＋'}
@@ -2975,10 +2983,17 @@ class AppController {
     const floatingPromoBar = document.getElementById('floating-promo-bar');
     const subBadge = document.getElementById('header-sub-badge');
 
+    const mobileVipCard = document.getElementById('mobile-vip-pass-card');
+    const heroVipBanner = document.getElementById('hero-vip-conversion-banner');
+    const stickyMobileBar = document.getElementById('sticky-mobile-conversion-bar');
+
     if (this.isSubscribed) {
       // HIDE BUY OPTIONS FOR SUBSCRIBED USERS
       if (headerGetPassBtn) headerGetPassBtn.style.display = 'none';
       if (floatingPromoBar) floatingPromoBar.style.display = 'none';
+      if (mobileVipCard) mobileVipCard.style.display = 'none';
+      if (heroVipBanner) heroVipBanner.style.display = 'none';
+      if (stickyMobileBar) stickyMobileBar.style.display = 'none';
       if (subBadge) subBadge.classList.remove('hidden');
 
       if (promoCard) {
