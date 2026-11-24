@@ -4465,10 +4465,7 @@ class AppController {
 
     if (!pupilGroups.length) return;
 
-    window.addEventListener('mousemove', (e) => {
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
-
+    const handlePointer = (mouseX, mouseY) => {
       pupilGroups.forEach((pupilGroup, idx) => {
         const eyeSvg = eyeSvgs[idx];
         const pupil = pupils[idx];
@@ -4478,7 +4475,7 @@ class AppController {
         const eyeCenterX = rect.left + rect.width / 2;
         const eyeCenterY = rect.top + rect.height / 2;
 
-        // Calculate delta
+        // Calculate delta from eye center to pointer
         const dx = mouseX - eyeCenterX;
         const dy = mouseY - eyeCenterY;
         const dist = Math.hypot(dx, dy);
@@ -4486,18 +4483,19 @@ class AppController {
         // Sense mouse direction
         const angle = Math.atan2(dy, dx);
 
-        // Limit maximum eyeball deflection radius to 8px so it stays inside masked sclera bounds
-        const maxDeflection = 8;
-        const deflection = Math.min(maxDeflection, dist / 35);
+        // Limit maximum eyeball deflection radius to 7.5px so it stays inside masked sclera bounds
+        const maxDeflection = 7.5;
+        const deflection = Math.min(maxDeflection, dist / 32);
 
         const tx = Math.cos(angle) * deflection;
         const ty = Math.sin(angle) * deflection;
 
-        // Apply transformation to eyeball pupil-group
+        // Apply transformation to eyeball pupil-group (both CSS and SVG transform attr for universal cross-browser support)
         pupilGroup.style.transform = `translate(${tx}px, ${ty}px)`;
+        pupilGroup.setAttribute('transform', `translate(${tx.toFixed(2)}, ${ty.toFixed(2)})`);
 
         // Interactive Sensing:
-        // Dilate pupil when mouse is far (relaxed eye), constrict when mouse is hovering close (focused eye)
+        // Dilate pupil when pointer is far (relaxed eye), constrict when pointer is hovering close (focused eye)
         if (pupil) {
           if (dist < 120) {
             // Focus response (constrict pupil)
@@ -4506,12 +4504,19 @@ class AppController {
             eyeSvg.style.transform = 'scaleY(0.82) scaleX(1.02)';
           } else {
             // Relax response (dilate pupil to normal)
-            pupil.setAttribute('r', '9');
+            pupil.setAttribute('r', '8.5');
             eyeSvg.style.transform = 'scaleY(1.0) scaleX(1.0)';
           }
         }
       });
-    });
+    };
+
+    window.addEventListener('mousemove', (e) => handlePointer(e.clientX, e.clientY));
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) {
+        handlePointer(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
 
     // Natural blink simulation cycle
     setInterval(() => {
