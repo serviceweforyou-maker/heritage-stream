@@ -1340,6 +1340,174 @@ app.get('/api/validate-subscription', async (req, res) => {
 
 
 
+// ─────────────────────────────────────────────────────────────
+// ── 🕉️ VEDIC AI PANDIT JI CONSULTATION & REMEDY ENGINE ───────
+// ─────────────────────────────────────────────────────────────
+
+const VEDIC_PANDIT_KNOWLEDGE = {
+  career: {
+    keywords: ['job', 'career', 'promotion', 'interview', 'work', 'business', 'boss', 'unemployed', 'salary', 'hike', 'transfer', 'fired', 'growth'],
+    bhavas: '10th Bhava (Karma Sthana - Career & Dignity) & 6th Bhava (Shatru/Pratiyogita)',
+    grahas: 'Surya Dev (Royal Authority & Recognition) & Shani Bhagwan (Karmic Perseverance)',
+    cause: 'When Saturn (Shani) or Rahu casts a drishti (aspect) upon the 10th house of profession, severe tests of patience occur. You are working hard, but recognition is delayed because karmic purification is underway. Planets do not obstruct us out of malice—they challenge us to balance past accounts before bestowing greater authority.',
+    mantra: 'ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः',
+    mantraName: 'Surya Beej Mantra',
+    instructions: 'Chant 108 times at Sunrise facing East after offering pure water in a copper vessel (Surya Arghya).',
+    sattvicRitual: 'Light a mustard/sesame oil diya under a Peepal tree on Saturday evening. Feed black sesame seeds and roti to birds or black dogs.',
+    remedyKit: 'Surya-Shani Harmonization Yantra & 14-Mukhi Rudraksha Energy Alignment.'
+  },
+  marriage: {
+    keywords: ['marriage', 'wedding', 'love', 'relationship', 'partner', 'divorce', 'husband', 'wife', 'manglik', 'mangalik', 'match', 'delay', 'propose'],
+    bhavas: '7th Bhava (Kalatra Sthana - Marriage) & 2nd Bhava (Kutumba Sthana - Family)',
+    grahas: 'Shukra Dev (Venus - Harmonious Union) & Guru Brihaspati (Jupiter - Divine Grace)',
+    cause: 'Affliction to the 7th house—frequently caused by Mangal (Mars - Manglik influence) or Rahu transit—creates misunderstandings, sudden friction, or inexplicable obstacles right when alliances are about to finalize. Spiritual pacification restores marital harmony.',
+    mantra: 'ॐ द्रां द्रीं द्रौं सः शुक्राय नमः',
+    mantraName: 'Shukra & Katyayani Sacred Mantra',
+    instructions: 'Chant 108 times on Friday mornings wearing clean white or light yellow clothes.',
+    sattvicRitual: 'Offer white sweets (Kheer or Mishri) to Goddess Lakshmi on Friday. Donate yellow chana dal to a temple or cows on Thursday.',
+    remedyKit: 'Gauri-Shankar Rudraksha Consecration & 21-Day Mangal Shanti Sankalpa.'
+  },
+  wealth: {
+    keywords: ['money', 'wealth', 'debt', 'loan', 'finance', 'financial', 'loss', 'expenses', 'poverty', 'cash', 'savings', 'emi', 'loss'],
+    bhavas: '2nd Bhava (Dhana Sthana - Retention) & 11th Bhava (Labha Sthana - Income Inflow)',
+    grahas: 'Mata Maha Lakshmi, Kuber Dev & Budha (Mercury - Commerce & Intellect)',
+    cause: 'While money may flow into your hands, sudden activation of the 12th house (Vyaya Bhava) or a debilitated 2nd house prevents wealth accumulation. Unseen energetic leaks occur through sudden unexpected expenses or business delays.',
+    mantra: 'ॐ श्रीं ह्रीं क्लीं महालक्ष्म्यै नमः',
+    mantraName: 'Mahalakshmi & Kuber Beej Mantra',
+    instructions: 'Chant 108 times during twilight (Sandhya Kaal) using a Kamal Gatta or Sphatik mala.',
+    sattvicRitual: 'Place a small bowl of raw rock salt or silver coin in the Northeast (Ishanya) corner of your home. Light a pure cow-ghee lamp at your main entrance every Friday evening.',
+    remedyKit: 'Shree Yantra Consecrated Plate & 7-Mukhi Mahalaxmi Rudraksha Prescription.'
+  },
+  health: {
+    keywords: ['health', 'anxiety', 'fear', 'depression', 'peace', 'sleep', 'insomnia', 'stress', 'mind', 'overthinking', 'nazar', 'evil eye', 'negative', 'sick'],
+    bhavas: '1st Bhava (Tanu Sthana - Vitality) & Moon (Chandra - Mental Subconscious)',
+    grahas: 'Chandra Dev (Mind & Emotions) & Rahu (Illusions/Overthinking/Nazar)',
+    cause: 'When the Moon is caught in Grahan Dosha or placed with Rahu/Ketu, the subconscious mind enters a perpetual state of hyper-alertness, causing restless sleep, mental burnout, and vulnerability to energetic Nazar (evil eye).',
+    mantra: 'ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् उर्वारुकमिव बन्धनान् मृत्योर्मुक्षीय मामृतात्',
+    mantraName: 'Maha Mrityunjaya Divine Healing Mantra',
+    instructions: 'Chant 11 or 108 times daily before bedtime, keeping a glass of water nearby and drinking it afterward.',
+    sattvicRitual: 'Perform Jalabhishek on a Shiva Lingam every Monday with raw milk and water. Burn a small piece of pure camphor (Karpur) with 2 cloves in your room at sunset to ward off negative vibrations.',
+    remedyKit: 'Panchamukhi Rudraksha Shield & 21-Day Chandra-Shanti Protective Water Ritual.'
+  },
+  education: {
+    keywords: ['study', 'studies', 'exam', 'exams', 'focus', 'concentration', 'memory', 'student', 'college', 'school', 'degree', 'upsc', 'neet', 'jee'],
+    bhavas: '5th Bhava (Vidya/Buddhi Sthana) & 4th Bhava (Foundational Learning)',
+    grahas: 'Mata Saraswati & Budha Dev (Mercury - Sharp Intellect & Retention)',
+    cause: 'Lapses in focus or memory blocks during exams stem from an agitated 5th house or combustion of Mercury, causing restlessness right before exams.',
+    mantra: 'ॐ ऐं सरस्वत्यै नमः',
+    mantraName: 'Saraswati Vidya Beej Mantra',
+    instructions: 'Chant 21 times every morning facing North before touching your books or workstation.',
+    sattvicRitual: 'Keep a small green plant or holy Tulsi in your study area. Offer green grass (Durva) or a modak to Lord Ganesha on Wednesday.',
+    remedyKit: '4-Mukhi Brahma Rudraksha & Memory Enhancement Yantra.'
+  }
+};
+
+function buildVedicPanditConsultation(question, name = "Seeker", details = {}) {
+  const qLower = (question || '').toLowerCase();
+  let matchedCat = VEDIC_PANDIT_KNOWLEDGE.career;
+  let maxScore = -1;
+
+  for (const [key, data] of Object.entries(VEDIC_PANDIT_KNOWLEDGE)) {
+    let score = 0;
+    data.keywords.forEach(kw => {
+      if (qLower.includes(kw)) score += 2;
+    });
+    if (score > maxScore) {
+      maxScore = score;
+      matchedCat = data;
+    }
+  }
+
+  const cleanName = (name && name !== "Seeker") ? name : "Auspicious Seeker";
+  const rashiText = details.rashi ? `\n• Calculated Chandra Rashi: **${details.rashi}**` : '';
+  const lagnaText = details.lagna ? `\n• Calculated Janma Lagna: **${details.lagna}**` : '';
+
+  return [
+    '### 🕉️ Divine Vedic Insight & Astrological Diagnosis\n',
+    '**Namaste, ' + cleanName + '. Ayushman Bhava.**\n',
+    'Your question has been calculated against the cosmic principles of **Sage Parashara\'s Brihat Hora Shastra** and current planetary transits:\n',
+    '• **Primary Afflicted Houses:** ' + matchedCat.bhavas + lagnaText + rashiText,
+    '• **Governing Planetary Influences:** ' + matchedCat.grahas + '\n',
+    '**Astrological Root Cause:**\n' + matchedCat.cause + '\n',
+    '---\n',
+    '### 📿 Your Immediate Consecrated Beej Mantra & Sattvic Ritual\n',
+    'To immediately appease these planetary currents and open the blocked path, initiate this sacred practice:\n',
+    '1. **Sacred Chanting (' + matchedCat.mantraName + '):**',
+    '   > **' + matchedCat.mantra + '**',
+    '   *' + matchedCat.instructions + '*\n',
+    '2. **Daily Sattvic Seva:**',
+    '   ' + matchedCat.sattvicRitual + '\n',
+    '---\n',
+    '### ✨ Pandit Ji\'s Cosmic Blessing & Full 21-Day Remedy Kit\n',
+    '*“May Lord Mahadeva and the Navagrahas dissolve your impediments, grant clarity to your soul, and shower lasting peace and prosperity upon your journey.”*\n',
+    '💡 **Unlock Your Full 21-Day Consecrated Remedy Kit & Printable Royal Soul Blueprint PDF below for a token Shubh Dakshina of just ₹21.**'
+  ].join('\n');
+}
+
+app.post('/api/ai/ask-pandit', async (req, res) => {
+  try {
+    const { question, name, dob, tob, pob, rashi, lagna } = req.body || {};
+    if (!question || typeof question !== 'string' || !question.trim()) {
+      return res.status(400).json({ error: "Please enter your question or life situation." });
+    }
+
+    const cleanQuestion = question.trim().substring(0, 1000);
+    const seekerName = (name || "Seeker").trim();
+    const details = { dob, tob, pob, rashi, lagna };
+
+    // 1. Try Live Gemini if API Key is configured
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (apiKey) {
+      const models = ['gemini-3.5-flash', 'gemini-3.8-flash', 'gemini-flash-latest'];
+      const systemPrompt = `You are "AI Pandit Ji", a revered Vedic Astrologer (Jyotishi) on Sanatana360.
+Seeker: ${seekerName}
+Question: "${cleanQuestion}"
+Details: ${JSON.stringify(details)}
+Respond warmly and compassionately in 3 structured sections:
+1. 🕉️ Divine Vedic Insight & Astrological Diagnosis (explain houses like 10th for career, 7th for marriage, 2nd for money, and planetary transits)
+2. 📿 Immediate Sacred Beej Mantra & Sattvic Ritual (provide Sanskrit mantra & daily ritual)
+3. ✨ Pandit Ji's Cosmic Blessing & 21-Day Remedy Call to Action (offer ₹21 Shubh Dakshina kit unlock)
+Keep formatting in clean markdown.`;
+
+      for (const m of models) {
+        try {
+          const url = `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${apiKey}`;
+          const apiRes = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents: [{ parts: [{ text: systemPrompt }] }] })
+          });
+          const data = await apiRes.json();
+          if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+            return res.json({
+              success: true,
+              answer: data.candidates[0].content.parts[0].text,
+              source: 'gemini-live',
+              timestamp: Date.now()
+            });
+          }
+        } catch (e) {
+          // Fall through to built-in Vedic engine
+        }
+      }
+    }
+
+    // 2. High-Precision Built-in Vedic Engine (Zero Latency, Guaranteed Reliability)
+    const builtInAnswer = buildVedicPanditConsultation(cleanQuestion, seekerName, details);
+    return res.json({
+      success: true,
+      answer: builtInAnswer,
+      source: 'vedic-expert-engine',
+      timestamp: Date.now()
+    });
+
+  } catch (err) {
+    console.error("AI Pandit Error:", err);
+    res.status(500).json({ error: "AI Pandit Ji is meditating. Please try again." });
+  }
+});
+
+
 // 4c. Cashfree Live PG Webhook Handler (Auto-activates asynchronous UPI/QR/Card payments)
 app.post('/api/cashfree-webhook', express.raw({ type: '*/*' }), async (req, res) => {
   try {

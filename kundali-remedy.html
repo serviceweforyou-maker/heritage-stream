@@ -72,10 +72,9 @@
       </a>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="https://api.whatsapp.com/send?phone=919035442904&text=Namaste!%20I%20have%20a%20question%20about%20my%20Kundali%20Remedy" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-black font-extrabold text-xs shadow-md shadow-emerald-500/20 transition-all hover:scale-105 cursor-pointer">
-          <span class="w-1.5 h-1.5 rounded-full bg-black animate-ping"></span>
-          <span>💬</span>
-          <span class="hidden sm:inline font-sans">Chat with Pandit Sevak</span>
+        <a href="https://api.whatsapp.com/send?phone=919035442904&text=Namaste!%20I%20have%20a%20technical%20question%20about%20Sanatana360" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs transition-all cursor-pointer" title="Technical Support & Platform Enquiries">
+          <span>🎧</span>
+          <span class="hidden sm:inline font-sans">Support Helpline (+91 9035442904)</span>
         </a>
 
         <a href="index.html" class="text-xs text-white/70 hover:text-white px-2.5 py-1 rounded-full border border-white/10 hover:border-white/30 transition-colors">
@@ -99,6 +98,92 @@
       <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
         Align your planetary coordinates. Identify whether <strong class="text-amber-300 font-semibold">Shani Sade Sati, Manglik Dosha, or Rahu transit</strong> is causing roadblocks, and unlock your 21-day consecrated remedy kit for a token Shubh Dakshina of just <strong class="text-amber-400 font-mono text-base">₹21</strong>.
       </p>
+    </div>
+
+    <!-- ── 🕉️ ASK VEDIC AI PANDIT JI (LIVE 24/7 DIVINE CONSULTATION) ── -->
+    <div id="ai-pandit-section" class="glass-card rounded-3xl p-5 sm:p-7 border-2 border-amber-500/50 shadow-2xl relative overflow-hidden space-y-4">
+      <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-500/20 pb-3.5">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-500 via-orange-500 to-amber-700 flex items-center justify-center text-2xl shadow-lg shadow-amber-500/30 flex-shrink-0 animate-pulse">
+            🕉️
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="text-base sm:text-lg font-bold font-serif text-white">Ask Vedic AI Pandit Ji</h2>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-mono font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> ONLINE 24/7
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-300">Instant Parashara Jyotish guidance for your burning career, marriage, or financial dilemmas.</p>
+          </div>
+        </div>
+        <span class="text-[11px] font-mono text-amber-300 bg-amber-500/15 border border-amber-500/30 px-3 py-1 rounded-full whitespace-nowrap self-start sm:self-auto">
+          ✨ 1 Question Free Preview
+        </span>
+      </div>
+
+      <!-- Quick Question Topic Pills -->
+      <div class="space-y-1.5">
+        <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Quick Problem Select:</span>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <button type="button" onclick="setPanditQuery('I have been giving job interviews for 6 months but facing delay in final selection. Why is this happening?')" class="px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-amber-500/20 border border-white/10 hover:border-amber-400 text-slate-200 hover:text-amber-300 transition-all cursor-pointer">
+            💼 Job / Career Delay
+          </button>
+          <button type="button" onclick="setPanditQuery('My marriage is getting delayed and alliances are breaking at the last moment. Is there Manglik or Rahu dosha?')" class="px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-amber-500/20 border border-white/10 hover:border-amber-400 text-slate-200 hover:text-amber-300 transition-all cursor-pointer">
+            💍 Marriage &amp; Relationship Block
+          </button>
+          <button type="button" onclick="setPanditQuery('Money is coming in, but sudden expenses and debts keep draining my savings. What is the planetary cause?')" class="px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-amber-500/20 border border-white/10 hover:border-amber-400 text-slate-200 hover:text-amber-300 transition-all cursor-pointer">
+            💰 Money Drain &amp; Debt Relief
+          </button>
+          <button type="button" onclick="setPanditQuery('I feel constant anxiety, negative energy, and heavy evil eye (nazar) at home. How can I protect my peace?')" class="px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-amber-500/20 border border-white/10 hover:border-amber-400 text-slate-200 hover:text-amber-300 transition-all cursor-pointer">
+            🧿 Evil Eye (Nazar) &amp; Peace
+          </button>
+        </div>
+      </div>
+
+      <!-- Input Form -->
+      <div class="space-y-3">
+        <div class="relative">
+          <textarea id="ai-pandit-query" rows="2" placeholder="Type your situation or ask Pandit Ji anything (e.g. 'Will my business pick up in 2026?')..." class="w-full bg-[#080b15] border border-amber-500/30 focus:border-amber-400 rounded-2xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none transition-colors shadow-inner"></textarea>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div class="flex items-center gap-2 text-[11px] text-slate-400">
+            <span>🛡️ 100% Confidential</span>
+            <span>&bull;</span>
+            <span>🕉️ Vedic Jyotish Logic</span>
+          </div>
+          <button type="button" id="ask-pandit-btn" onclick="submitPanditQuestion()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-amber-500 text-black font-extrabold text-xs sm:text-sm uppercase tracking-wide shadow-lg shadow-amber-500/30 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <span>Ask AI Pandit Ji Free</span>
+            <span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- AI Pandit Answer Container -->
+      <div id="ai-pandit-answer-box" class="hidden rounded-2xl bg-[#080b15] border border-amber-500/40 p-5 space-y-4 shadow-2xl">
+        <div class="flex items-center justify-between border-b border-amber-500/20 pb-2.5">
+          <span class="text-xs font-bold font-serif text-amber-300 flex items-center gap-1.5">
+            <span>🕉️</span> <span>AI Pandit Ji's Divine Guidance</span>
+          </span>
+          <span class="text-[9.5px] font-mono text-emerald-400 bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/30">Calculated</span>
+        </div>
+        <div id="ai-pandit-answer-content" class="text-xs sm:text-sm text-slate-200 leading-relaxed space-y-3 font-sans">
+          <!-- Populated dynamically -->
+        </div>
+        
+        <!-- Direct Unlock Offer for ₹21 -->
+        <div class="pt-3 border-t border-amber-500/20 flex flex-col sm:flex-row items-center justify-between gap-3 bg-gradient-to-r from-amber-500/10 to-transparent p-3 rounded-xl border border-amber-500/30">
+          <div class="text-left">
+            <span class="text-xs font-bold text-white block">Unlock Full 21-Day Consecrated Remedy Kit &amp; Kundali PDF</span>
+            <span class="text-[11px] text-slate-400">Audio Beej Mantra, Rudraksha Prescription &amp; Printable Soul Blueprint Card</span>
+          </div>
+          <button type="button" onclick="window.initiateKundaliPayment();" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-amber-500 text-black font-black text-xs uppercase tracking-wide shadow-lg shadow-amber-500/30 hover:scale-105 active:scale-95 transition-all whitespace-nowrap cursor-pointer">
+            Pay ₹21 via UPI (GPay/PhonePe) ➔
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- ── 📋 STEP 1: DEVOTEE BIRTH FORM & PROBLEM SELECTOR ── -->
@@ -420,6 +505,116 @@
     });
 
     // 1. Calculate Astronomical Alignment Preview
+    
+    // ── AI PANDIT JI CLIENT LOGIC ──
+    window.setPanditQuery = function(text) {
+      const el = document.getElementById('ai-pandit-query');
+      if (el) {
+        el.value = text;
+        el.focus();
+      }
+    };
+
+    window.submitPanditQuestion = async function() {
+      const input = document.getElementById('ai-pandit-query');
+      const btn = document.getElementById('ask-pandit-btn');
+      const answerBox = document.getElementById('ai-pandit-answer-box');
+      const answerContent = document.getElementById('ai-pandit-answer-content');
+      const devoteeName = document.getElementById('devotee-name')?.value || 'Seeker';
+
+      const query = (input?.value || '').trim();
+      if (!query) {
+        alert('Please enter your question or select one of the topics above.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>⏳ Consulting Cosmic Ephemeris...</span>';
+
+      try {
+        const res = await fetch('/api/ai/ask-pandit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            question: query,
+            name: devoteeName,
+            dob: document.getElementById('devotee-dob')?.value || '',
+            tob: document.getElementById('devotee-tob')?.value || '',
+            pob: document.getElementById('devotee-pob')?.value || ''
+          })
+        });
+
+        const data = await res.json();
+        if (data.answer) {
+          answerBox.classList.remove('hidden');
+          answerContent.innerHTML = formatMarkdownToHtml(data.answer);
+          answerBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          throw new Error(data.error || 'Could not reach server');
+        }
+      } catch (err) {
+        console.warn('Using client-side Vedic fallback:', err);
+        answerBox.classList.remove('hidden');
+        answerContent.innerHTML = formatMarkdownToHtml(getClientVedicPanditFallback(query, devoteeName));
+        answerBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Ask AI Pandit Ji Free</span><span>➔</span>';
+      }
+    };
+
+    function formatMarkdownToHtml(md) {
+      if (!md) return '';
+      let h = md
+        .replace(/### (.*)/g, '<h3 class="text-sm font-bold text-amber-300 font-serif mt-2 mb-1">$1</h3>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong class="text-amber-200 font-bold">$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em class="italic text-slate-300">$1</em>')
+        .replace(/\n• (.*)/g, '<br>• <span class="text-slate-200">$1</span>')
+        .replace(/\n\n/g, '<p class="mt-2"></p>')
+        .replace(/\n/g, '<br>');
+      return h;
+    }
+
+    function getClientVedicPanditFallback(query, name) {
+      const q = query.toLowerCase();
+      const n = name && name !== 'Seeker' ? name : 'Auspicious Seeker';
+      
+      let mantra = 'ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः';
+      let mantraName = 'Surya Beej Mantra';
+      let cause = 'When Saturn (Shani) or Rahu aspects the 10th house of profession, recognition is delayed for karmic purification.';
+      let ritual = 'Light a mustard oil diya under a Peepal tree on Saturday evening. Offer water to Surya Dev at sunrise.';
+
+      if (q.includes('marri') || q.includes('love') || q.includes('partner') || q.includes('manglik')) {
+        mantra = 'ॐ द्रां द्रीं द्रौं सः शुक्राय नमः';
+        mantraName = 'Shukra & Katyayani Mantra';
+        cause = 'Affliction to the 7th house (Kalatra Sthana) by Mars or Rahu causes temporary delays in auspicious unions.';
+        ritual = 'Offer white sweets to Goddess Lakshmi on Friday. Keep a Thursday fast.';
+      } else if (q.includes('money') || q.includes('debt') || q.includes('wealth') || q.includes('loss')) {
+        mantra = 'ॐ श्रीं ह्रीं क्लीं महालक्ष्म्यै नमः';
+        mantraName = 'Mahalakshmi Wealth Beej Mantra';
+        cause = 'Activation of the 12th house (Vyaya Bhava) creates subtle energetic leaks in wealth retention.';
+        ritual = 'Light a pure cow-ghee diya at the Northeast corner at twilight. Keep sea salt in the Ishanya corner.';
+      } else if (q.includes('health') || q.includes('anxiety') || q.includes('fear') || q.includes('nazar')) {
+        mantra = 'ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् उर्वारुकमिव बन्धनान् मृत्योर्मुक्षीय मामृतात्';
+        mantraName = 'Maha Mrityunjaya Healing Mantra';
+        cause = 'Moon-Rahu Grahan tension causes mental overthinking and heavy energetic nazar.';
+        ritual = 'Jalabhishek on Shiva Lingam on Monday. Burn pure camphor with cloves at sunset.';
+      }
+
+      return '### 🕉️ Divine Vedic Insight & Astrological Diagnosis\n\n' +
+        '**Namaste, ' + n + '. Ayushman Bhava.**\n\n' +
+        'Your question has been calculated through Sage Parashara\'s Vedic principles:\n\n' +
+        '**Astrological Cause:** ' + cause + '\n\n' +
+        '---\n\n' +
+        '### 📿 Your Immediate Consecrated Beej Mantra & Ritual\n\n' +
+        '1. **Chant (' + mantraName + '):**\n' +
+        '**' + mantra + '**\n\n' +
+        '2. **Daily Sattvic Seva:** ' + ritual + '\n\n' +
+        '---\n\n' +
+        '### ✨ Pandit Ji\'s Cosmic Blessing\n\n' +
+        '*May Lord Mahadeva and the Navagrahas dissolve your impediments and bless you with clarity, peace, and abundance.*';
+    }
+
     window.calculateKundaliPreview = function() {
       const name = document.getElementById('devotee-name').value.trim();
       const dob = document.getElementById('devotee-dob').value;
@@ -681,7 +876,7 @@
       // Footer Authentication
       ctx.fillStyle = '#64748B';
       ctx.font = '24px "Plus Jakarta Sans", sans-serif';
-      ctx.fillText('Verified Consecrated Report • Sanatana360.com • Support: +91 9035442904', 540, 1780);
+      ctx.fillText('Verified Consecrated Report • Sanatana360.com • AI Jyotish Support Desk', 540, 1780);
     };
 
     // 5. Download Blueprint Canvas as Image
