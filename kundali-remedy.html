@@ -532,9 +532,13 @@
       btn.innerHTML = '<span>⏳ Consulting Cosmic Ephemeris...</span>';
 
       try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 4500);
+
         const res = await fetch('/api/ai/ask-pandit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          signal: controller.signal,
           body: JSON.stringify({
             question: query,
             name: devoteeName,
@@ -543,14 +547,15 @@
             pob: document.getElementById('devotee-pob')?.value || ''
           })
         });
+        clearTimeout(timeoutId);
 
         const data = await res.json();
-        if (data.answer) {
+        if (data && data.answer) {
           answerBox.classList.remove('hidden');
           answerContent.innerHTML = formatMarkdownToHtml(data.answer);
           answerBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } else {
-          throw new Error(data.error || 'Could not reach server');
+          throw new Error(data?.error || 'Could not reach server');
         }
       } catch (err) {
         console.warn('Using client-side Vedic fallback:', err);
