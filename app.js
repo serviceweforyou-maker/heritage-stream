@@ -932,7 +932,7 @@ class AppController {
                 <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
 
                 <!-- Top-Right Dual-Action Floating Kundali Hook (Desktop) -->
-                <div class="hidden lg:flex absolute top-14 right-8 z-30 max-w-xs pointer-events-auto">
+                <div class="hidden xl:flex absolute top-6 right-8 z-30 max-w-xs pointer-events-auto">
                   <a href="kundali-remedy.html" class="p-3.5 rounded-2xl bg-[#0c0e18]/85 border border-purple-500/50 hover:border-amber-400 backdrop-blur-md shadow-2xl flex items-center gap-3 transition-all hover:scale-105 group">
                     <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-400 flex items-center justify-center text-xl flex-shrink-0 animate-pulse">
                       🔮

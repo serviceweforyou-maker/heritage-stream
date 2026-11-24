@@ -1393,3 +1393,9 @@ body.modal-open .floating-btn-group {
   color: #e6c65b;
   background-color: rgba(212, 175, 55, 0.1);
 }
+
+/* Mobile Dock Center VIP Conversion Pill */
+.mobile-dock-vip-btn {
+  border: 1.5px solid #d4af37;
+  min-width: 68px;
+}
